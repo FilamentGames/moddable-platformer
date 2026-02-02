@@ -1,5 +1,5 @@
 @tool
-extends ParallaxBackground
+extends Parallax2D
 
 ## Use this to tint the texture of the background a different color.
 @export var tint: Color = Color.WHITE:
