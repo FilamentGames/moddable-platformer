@@ -54,3 +54,6 @@ func _on_body_entered(_body):
 		await _collect_sound_player.finished
 
 	queue_free()
+
+func _get_property_list() -> Array:
+	return []
