@@ -7,7 +7,7 @@ editor_description = "This scene uses a Parallax2D node to repeat a background i
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=554252723]
 scroll_scale = Vector2(0.5, 1)
-repeat_size = Vector2(1536, 384)
+repeat_size = Vector2(1920, 1080)
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=534259580]
 editor_description = "Because the background sprite is smaller than the game viewport, we enable texture repeat, and define a region that is the same size as the viewport.
