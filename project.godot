@@ -31,6 +31,10 @@ window/size/window_height_override=720
 window/stretch/mode="canvas_items"
 window/size/mode.web=4
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/gut/plugin.cfg")
+
 [global_group]
 
 players=""
