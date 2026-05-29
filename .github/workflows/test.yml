@@ -1,0 +1,30 @@
+name: Unit Tests
+
+on:
+  push:
+
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    container:
+      image: barichello/godot-ci:4.6.2
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Fix dubious ownership
+        run: git config --global --add safe.directory "*"
+
+      - name: Run Godot import
+        run: |
+          { godot --headless --editor & echo $! > pid; } | { grep -m1 "loading_editor_layout" && kill -9 $(cat pid) && rm pid; }
+          echo "Done importing assets"
+        # From https://superuser.com/a/1302819
+
+      - name: Run GUT tests
+        run: ./run_tests.sh
+
+      - name: Verify script errors
+        run: |
+          ! ./run_tests.sh 2>&1 | grep -w "SCRIPT ERROR"
