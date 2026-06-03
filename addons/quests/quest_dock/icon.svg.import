@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cavojn74qp7ij"
-path="res://.godot/imported/Script.svg-34c66aae9c985e3e0470426acbbcda04.ctex"
+uid="uid://cq5hjhucic0t7"
+path="res://.godot/imported/icon.svg-46d62f44e9c13daaa16ef9440029cee0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/gut/images/Script.svg"
-dest_files=["res://.godot/imported/Script.svg-34c66aae9c985e3e0470426acbbcda04.ctex"]
+source_file="res://addons/quests/quest_dock/icon.svg"
+dest_files=["res://.godot/imported/icon.svg-46d62f44e9c13daaa16ef9440029cee0.ctex"]
 
 [params]
 
