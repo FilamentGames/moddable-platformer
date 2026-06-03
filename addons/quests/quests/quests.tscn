@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bicuh1jmtvc1b"]
+
+[ext_resource type="Script" uid="uid://cub01csirx6lk" path="res://addons/quests/quests/quests.gd" id="1_vulhk"]
+
+[node name="Quests" type="Node" unique_id=1908096250]
+script = ExtResource("1_vulhk")
+text_data = Array[String](["Welcome to Baby Godot! My name is \"Default Godot Icon That's Included In Every Project\". I will be your guide through this greyboxed quest experience! Lorem Ipsum and stuff.", "This is the second Quest text.", "This is a third line of quest text. At this point, the \"next\" button should be disabled since we're out of text data."])
