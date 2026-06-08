@@ -1,0 +1,9 @@
+extends Object
+class_name AbstractMessagingInbox
+## Abstract class that contains the main signals/properties of an object that the EditorGameMessagingService can access
+
+## The ID of the object. This allows the messaging service to send messages to the correct recipient.
+var id: int
+
+## Emitted when the debugger responds with the current quest text
+signal quest_text(text: String)

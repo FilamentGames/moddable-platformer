@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bvh17w5gcc28n"]
+
+[ext_resource type="Script" uid="uid://c15g2mnaubofd" path="res://components/babygodot/test_progress_quest.gd" id="1_1i863"]
+
+[node name="TestProgressQuest" type="Node" unique_id=1692964634]
+script = ExtResource("1_1i863")
