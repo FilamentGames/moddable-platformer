@@ -7,12 +7,16 @@ var dock: EditorDock
 ## Holds the actual scene contained within the dock
 var dock_scene: BabyGodotQuestDock
 
-func _enable_plugin() -> void:
-	pass
+## Holds the instance of the quests bridge debugger plugin
+var bridge: BabyGodotQuestsBridge
 
+const global_message_service_name = "GlobalMessagingService"
+
+func _enable_plugin() -> void:
+	add_autoload_singleton(global_message_service_name, "res://addons/quests/bridge/editor_game_messaging_service.gd")
 
 func _disable_plugin() -> void:
-	pass
+	remove_autoload_singleton(global_message_service_name)
 
 func _enter_tree() -> void:
 	var quests: BabyGodotQuests = preload("res://addons/quests/quests/quests.tscn").instantiate()
@@ -27,6 +31,10 @@ func _enter_tree() -> void:
 
 	add_dock(dock)
 
+	bridge = BabyGodotQuestsBridge.new()
+	add_debugger_plugin(bridge)
+
 func _exit_tree() -> void:
+	remove_debugger_plugin(bridge)
 	remove_dock(dock)
 	dock.queue_free()
