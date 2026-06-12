@@ -46,4 +46,3 @@ func test_can_dispatch_a_global_message():
 
 	assert_eq(spy_1.get_number_of_calls(), 1)
 	assert_eq(spy_2.get_number_of_calls(), 1)
-
