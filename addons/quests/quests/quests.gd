@@ -9,6 +9,9 @@ class_name BabyGodotQuests
 ## Dispatched when text in the quest window is updated
 signal text_updated()
 
+## An object with methods `get_editor_scene`/`set_editor_scene` that provides access to the current editor scene. This should be the main plugin.
+var editor_scene_provider
+
 var _current_text_line: int = 0
 
 ## Get the current line of text of the quest
@@ -24,3 +27,11 @@ func next() -> void:
 ## If the UI can manually proceed to the next line of text
 func can_proceed() -> bool:
 	return _current_text_line < text_data.size() - 1
+
+func save_checkpoint() -> void:
+	editor_scene_provider.save_editor_scene_as_checkpoint()
+	print("Saved checkpoint")
+
+func load_checkpoint() -> void:
+	editor_scene_provider.set_editor_scene()
+	print("Tried to load checkpoint")
