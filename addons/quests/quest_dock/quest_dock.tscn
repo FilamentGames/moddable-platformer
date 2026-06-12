@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cq5hjhucic0t7" path="res://addons/quests/quest_dock/icon.svg" id="1_oli51"]
 [ext_resource type="Script" uid="uid://se5fyfgofqps" path="res://addons/quests/quest_dock/quest_dock.gd" id="1_qqxpi"]
 
-[node name="QuestDock" type="Control" unique_id=827491016 node_paths=PackedStringArray("text", "next_button")]
+[node name="QuestDock" type="Control" unique_id=827491016 node_paths=PackedStringArray("text", "next_button", "save_checkpoint_button", "load_checkpoint_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,6 +13,8 @@ grow_vertical = 2
 script = ExtResource("1_qqxpi")
 text = NodePath("Container/QuestText")
 next_button = NodePath("Container/NextButton")
+save_checkpoint_button = NodePath("Container/HBoxContainer/SaveButton")
+load_checkpoint_button = NodePath("Container/HBoxContainer/Button2")
 
 [node name="Container" type="VBoxContainer" parent="." unique_id=1210857552]
 layout_mode = 1
@@ -32,7 +34,7 @@ custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu elit eu justo tempus volutpat euismod sit amet sem. In id turpis sem. Cras dignissim imperdiet tellus eu consectetur. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus consectetur, nibh at volutpat rutrum, magna leo malesuada orci, non suscipit risus lectus a est. Pellentesque interdum turpis eget lorem ornare vestibulum. Phasellus vel enim eros. Curabitur volutpat mattis sem at tempor. Fusce at ex vitae nibh rutrum blandit. Donec vulputate lectus vel venenatis aliquet. Praesent elit augue, venenatis vel malesuada quis, pretium et justo. Praesent eu tincidunt orci."
+text = "Welcome to Baby Godot! My name is \"Default Godot Icon That's Included In Every Project\". I will be your guide through this greyboxed quest experience! Lorem Ipsum and stuff."
 autowrap_mode = 2
 
 [node name="NextButton" type="Button" parent="Container" unique_id=1692289482]
@@ -40,6 +42,18 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 10
 text = "Next"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Container" unique_id=1213718530]
+layout_mode = 2
+alignment = 1
+
+[node name="SaveButton" type="Button" parent="Container/HBoxContainer" unique_id=694438811]
+layout_mode = 2
+text = "Save"
+
+[node name="Button2" type="Button" parent="Container/HBoxContainer" unique_id=1849041134]
+layout_mode = 2
+text = "Load"
 
 [node name="Spacer" type="Control" parent="Container" unique_id=1644551487]
 custom_minimum_size = Vector2(0, 32)
