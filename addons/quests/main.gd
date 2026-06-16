@@ -13,18 +13,28 @@ var bridge: BabyGodotQuestsBridge
 var checkpoints: CheckpointHelper = CheckpointHelper.new()
 
 const global_message_service_name = "GlobalMessagingService"
+const game_continuity_service_name = "GlobalContinuityManager"
 
 func _enable_plugin() -> void:
 	add_autoload_singleton(global_message_service_name, "res://addons/quests/bridge/editor_game_messaging_service.gd")
+	add_autoload_singleton(game_continuity_service_name, "res://addons/quests/continuity/game_continuity_manager.gd")
 
 func _disable_plugin() -> void:
 	remove_autoload_singleton(global_message_service_name)
+	remove_autoload_singleton(game_continuity_service_name)
 
 func save_editor_scene_as_checkpoint() -> void:
 	checkpoints.save_editor_scene_as_checkpoint()
 
+func get_editor_scene():
+	return EditorInterface.get_edited_scene_root()
+
 func set_editor_scene() -> void:
 	checkpoints.set_editor_scene()
+
+func update_and_save_node(node: Node) -> void:
+	EditorInterface.set_object_edited(node)
+	EditorInterface.save_scene()
 
 func _enter_tree() -> void:
 	checkpoints.plugin = self

@@ -22,6 +22,7 @@ Global="*res://scripts/global.gd"
 Actions="*res://scripts/actions.gd"
 WebSceneSelector="uid://cag3i6auntfwn"
 GlobalMessagingService="*uid://c6du7tqdd0g8g"
+GlobalContinuityManager="*uid://bx3b7hampbvmm"
 
 [display]
 

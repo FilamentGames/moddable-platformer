@@ -36,3 +36,6 @@ func request_quest_text() -> void:
 ## Move text forward in the current quest.
 static func progress_quest() -> void:
 	_send_message_static("progress_quest")
+
+static func save_player_position(position: Vector2) -> void:
+	_send_message_static("save_player_position", [-1, position])

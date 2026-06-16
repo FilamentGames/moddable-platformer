@@ -30,6 +30,9 @@ func _capture(message, data, session_id):
 			GlobalQuests.quests.next()
 			_send_message(session_id, sender_id, "text_updated", [GlobalQuests.quests.get_current_text()])
 			return true
+		"save_player_position":
+			GlobalQuests.quests.update_player_position(data[1])
+			return true
 	return false
 
 func _setup_session(session_id):

@@ -120,6 +120,7 @@ func _ready():
 	else:
 		Global.gravity_changed.connect(_on_gravity_changed)
 		Global.lives_changed.connect(_on_lives_changed)
+		GlobalContinuityManager.register_player_object(self)
 
 	original_position = position
 	_set_speed(speed)
