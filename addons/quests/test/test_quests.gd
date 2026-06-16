@@ -31,3 +31,31 @@ func test_stays_in_bounds_of_text_array():
 func test_knows_when_text_is_done():
 	quests.next()
 	assert_false(quests.can_proceed(), "Expecting `can_proceed` to be false")
+
+class MockSceneProvider:
+	var _scene: Node2D
+	var _player: Player
+
+	func get_editor_scene() -> Node2D:
+		var scene = Node2D.new()
+		var player = Player.new()
+		player.name = "Potato"
+		scene.add_child(player)
+		player.owner = scene
+		_scene = scene
+		_player = player
+		return scene
+	
+	func update_and_save_node(node: Node) -> void:
+		pass
+
+func test_it_can_update_the_players_position_in_editor():
+	var provider = autofree(MockSceneProvider.new())
+	quests.editor_scene_provider = provider
+	quests.update_player_position(Vector2(25, 50))
+
+	assert_eq(provider._player.position.x, 25.0)
+	assert_eq(provider._player.position.y, 50.0)
+
+	provider._player.free()
+	provider._scene.free()

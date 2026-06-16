@@ -35,3 +35,14 @@ func save_checkpoint() -> void:
 func load_checkpoint() -> void:
 	editor_scene_provider.set_editor_scene()
 	print("Tried to load checkpoint")
+
+func update_player_position(pos: Vector2) -> void:
+	var scene: Node2D = editor_scene_provider.get_editor_scene()
+	var flat_scene_children = scene.find_children("*")
+	var player_index = flat_scene_children.find_custom(func(child):
+		return is_instance_of(child, Player)
+	)
+	if player_index != -1:
+		var player = flat_scene_children[player_index]
+		player.position = pos
+		editor_scene_provider.update_and_save_node(player)
