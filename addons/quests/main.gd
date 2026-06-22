@@ -33,7 +33,7 @@ func set_editor_scene() -> void:
 	checkpoints.set_editor_scene()
 
 func update_and_save_node(node: Node) -> void:
-	EditorInterface.set_object_edited(node)
+	EditorInterface.set_object_edited(node, true)
 	EditorInterface.save_scene()
 
 func _enter_tree() -> void:
