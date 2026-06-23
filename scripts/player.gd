@@ -83,6 +83,9 @@ var original_position: Vector2
 
 # Whether the player-character is currently shrunk. See _shrink().
 var _is_shrunk := false
+
+## If the player's movement is locked (e.g. they are in a dialogue conversation)
+var movement_locked: bool = false
 #endregion
 
 #region References to other nodes and resources in the Player scene
@@ -248,6 +251,10 @@ func _shrink() -> void:
 func _physics_process(delta):
 	# Don't move if there are no lives left.
 	if Global.lives <= 0:
+		return
+	
+	# Don't move if in some kind of cutscene, dialogue, etc.
+	if movement_locked:
 		return
 
 	# Remove the '#' below to enable the phase special ability

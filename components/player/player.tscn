@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://umb21eb2y1oj" path="res://scripts/player.gd" id="1_w3ms2"]
 [ext_resource type="SpriteFrames" uid="uid://c2wpvtw1stuyq" path="res://components/player/spriteframes-inkdrinker-red.tres" id="2_msaml"]
 [ext_resource type="AudioStream" uid="uid://dmx2rtf2vy1" path="res://assets/sounds/244654__dsg__pop-2.ogg" id="3_ph1f6"]
+[ext_resource type="Script" uid="uid://de8gy7evmnev5" path="res://components/babygodot/npc/player_dialogue_component.gd" id="3_pvtfm"]
 [ext_resource type="AudioStream" uid="uid://bx1joarpc14j5" path="res://assets/sounds/538066__stevielematt__boing.ogg" id="3_wa6cj"]
 [ext_resource type="AudioStream" uid="uid://p0b3e0t7h8j3" path="res://assets/sounds/596541__tothrec2__large-wings-flapping-foley.ogg" id="4_mpawu"]
 
@@ -53,6 +54,12 @@ autoplay = "idle"
 position = Vector2(0, -46)
 shape = SubResource("CapsuleShape2D_7x5a4")
 one_way_collision = true
+
+[node name="PlayerDialogueComponent" type="Node" parent="." unique_id=1376200695 node_paths=PackedStringArray("player")]
+editor_description = "This node controls logic for dialogue interactions. It exists as its own node so we don't have to mess with the base Player class too much"
+script = ExtResource("3_pvtfm")
+player = NodePath("..")
+metadata/_custom_type_script = "uid://de8gy7evmnev5"
 
 [node name="SoundEffects" type="Node" parent="." unique_id=971926404]
 
