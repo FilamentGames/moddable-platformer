@@ -2,7 +2,7 @@ extends Node2D
 
 @export var label: Label
 
-var bridge: InGameQuestsBridge = InGameQuestsBridge.new()
+var bridge := InGameQuestsBridge.new()
 
 func _ready():
 	bridge.quest_text.connect(_update_quest_text)

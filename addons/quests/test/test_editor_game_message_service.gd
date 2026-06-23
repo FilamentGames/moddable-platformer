@@ -29,8 +29,8 @@ func test_in_game_objects_only_receive_messages_for_their_id():
 	assert_eq(spy.get_number_of_calls(), 0)
 
 func test_clears_objects_after_they_are_destroyed():
-	var bridge = InGameQuestsBridge.new(service)
-	var id: int = bridge.id
+	var bridge := InGameQuestsBridge.new(service)
+	var id := bridge.id
 	bridge.free()
 
 	assert_false(service._object_map.has(id), "EditorGameMessagingService clears unused references")

@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://cyhp2s5q1v3mg"]
+
+[ext_resource type="Script" uid="uid://deltjlxf6ctfu" path="res://components/babygodot/dialogue_box/dialogue_box.gd" id="1_j2sh0"]
+[ext_resource type="Script" uid="uid://1ifd6uq30ui5" path="res://components/babygodot/dialogue_box/components/just_pressed_button_shortcut.gd" id="2_62bfi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j2sh0"]
+bg_color = Color(0.16070803, 0.16070803, 0.16070803, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.38, 0.38, 0.38, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="LabelSettings" id="LabelSettings_j2sh0"]
+font_size = 24
+
+[node name="DialogueBox" type="Node2D" unique_id=718634705 node_paths=PackedStringArray("label", "next_button")]
+script = ExtResource("1_j2sh0")
+label = NodePath("Panel/MarginContainer/VBoxContainer/DialogueText")
+next_button = NodePath("Panel/MarginContainer/VBoxContainer/NextButton")
+
+[node name="Panel" type="Panel" parent="." unique_id=377623138]
+z_index = 100
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -304.0
+offset_top = -159.0
+offset_right = 304.0
+offset_bottom = 159.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_j2sh0")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=1674483679]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer" unique_id=1069544845]
+layout_mode = 2
+
+[node name="DialogueText" type="Label" parent="Panel/MarginContainer/VBoxContainer" unique_id=1638166865]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_vertical = 3
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean feugiat elit ut quam ullamcorper dictum. Vivamus iaculis dignissim eleifend. Sed blandit risus at consectetur accumsan."
+label_settings = SubResource("LabelSettings_j2sh0")
+autowrap_mode = 2
+
+[node name="NextButton" type="Button" parent="Panel/MarginContainer/VBoxContainer" unique_id=2044829538]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Next"
+
+[node name="JustPressedButtonShortcut" type="Node" parent="Panel/MarginContainer/VBoxContainer/NextButton" unique_id=377620363 node_paths=PackedStringArray("button")]
+script = ExtResource("2_62bfi")
+button = NodePath("..")
+metadata/_custom_type_script = "uid://1ifd6uq30ui5"
+
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/NextButton" to="." method="_on_next_button_click"]

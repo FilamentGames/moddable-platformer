@@ -12,7 +12,7 @@ signal text_updated()
 ## An object with methods `get_editor_scene`/`set_editor_scene` that provides access to the current editor scene. This should be the main plugin.
 var editor_scene_provider
 
-var _current_text_line: int = 0
+var _current_text_line := 0
 
 ## Get the current line of text of the quest
 func get_current_text() -> String:
@@ -39,10 +39,7 @@ func load_checkpoint() -> void:
 func update_player_position(pos: Vector2) -> void:
 	var scene: Node2D = editor_scene_provider.get_editor_scene()
 	var flat_scene_children = scene.find_children("*")
-	var player_index = flat_scene_children.find_custom(func(child):
-		return is_instance_of(child, Player)
-	)
-	if player_index != -1:
-		var player = flat_scene_children[player_index]
+	var player: Player = BabyGodotUtils.get_first_child_of_type(scene, Player)
+	if player:
 		player.position = pos
 		editor_scene_provider.update_and_save_node(player)

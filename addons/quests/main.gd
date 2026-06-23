@@ -10,7 +10,7 @@ var dock_scene: BabyGodotQuestDock
 ## Holds the instance of the quests bridge debugger plugin
 var bridge: BabyGodotQuestsBridge
 
-var checkpoints: CheckpointHelper = CheckpointHelper.new()
+var checkpoints := CheckpointHelper.new()
 
 const global_message_service_name = "GlobalMessagingService"
 const game_continuity_service_name = "GlobalContinuityManager"
