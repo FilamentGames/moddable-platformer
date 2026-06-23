@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cyhp2s5q1v3mg"]
 
 [ext_resource type="Script" uid="uid://deltjlxf6ctfu" path="res://components/babygodot/dialogue_box/dialogue_box.gd" id="1_j2sh0"]
+[ext_resource type="Script" uid="uid://1ifd6uq30ui5" path="res://components/babygodot/dialogue_box/components/just_pressed_button_shortcut.gd" id="2_62bfi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j2sh0"]
 bg_color = Color(0.16070803, 0.16070803, 0.16070803, 1)
@@ -64,5 +65,10 @@ autowrap_mode = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Next"
+
+[node name="JustPressedButtonShortcut" type="Node" parent="Panel/MarginContainer/VBoxContainer/NextButton" unique_id=377620363 node_paths=PackedStringArray("button")]
+script = ExtResource("2_62bfi")
+button = NodePath("..")
+metadata/_custom_type_script = "uid://1ifd6uq30ui5"
 
 [connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/NextButton" to="." method="_on_next_button_click"]

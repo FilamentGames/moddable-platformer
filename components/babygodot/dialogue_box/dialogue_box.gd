@@ -18,9 +18,9 @@ signal finished
 func _ready() -> void:
 	_get_next_text()
 
-func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("player_action"):
-		_get_next_text()
+# func _process(_delta: float) -> void:
+# 	if Input.is_action_just_pressed("player_action"):
+# 		_get_next_text()
 
 ## Loads the next text or queues for deletion when there is no more text to fetch
 func _get_next_text() -> void:
