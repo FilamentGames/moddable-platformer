@@ -2,7 +2,7 @@ extends GutTest
 ## Tests for the PlayerDialogueComponent and Npc objects
 
 class MockPlayer extends CharacterBody2D:
-	var movement_locked: bool = false
+	var movement_locked := false
 
 var player: MockPlayer
 var player_dialogue: PlayerDialogueComponent
@@ -20,7 +20,7 @@ func make_dialogue_box_stub_prefab() -> PackedScene:
 	label.owner = dialogue
 	next_button.owner = dialogue
 
-	var scene: PackedScene = PackedScene.new()
+	var scene := PackedScene.new()
 	scene.pack(dialogue)
 	return scene
 

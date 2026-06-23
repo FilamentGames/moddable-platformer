@@ -3,7 +3,7 @@ class_name InGameQuestsBridge
 ## Object that communicates with the EditorGameMessagingService. Each instance acts as a unique "inbox" that the service can deliver messages to.
 
 ## The ID to be used for the next object
-static var _next_id: int = 0
+static var _next_id := 0
 
 ## A link to the current EditorGameMessagingService
 var _service: EditorGameMessagingService

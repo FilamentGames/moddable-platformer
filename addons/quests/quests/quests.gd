@@ -12,7 +12,7 @@ signal text_updated()
 ## An object with methods `get_editor_scene`/`set_editor_scene` that provides access to the current editor scene. This should be the main plugin.
 var editor_scene_provider
 
-var _current_text_line: int = 0
+var _current_text_line := 0
 
 ## Get the current line of text of the quest
 func get_current_text() -> String:

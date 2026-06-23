@@ -10,7 +10,7 @@ class_name PlayerDialogueComponent
 var dialogue_zones: Array[Npc]
 
 ## Whether the player's movement is locked or not
-var movement_locked: bool = false:
+var movement_locked := false:
 	get:
 		return _movement_locked
 	set(val):
@@ -20,7 +20,7 @@ var movement_locked: bool = false:
 			player.movement_locked = val
 		_movement_locked = val
 
-var _movement_locked: bool = false
+var _movement_locked := false
 
 func _process(_delta: float) -> void:
 	if movement_locked:

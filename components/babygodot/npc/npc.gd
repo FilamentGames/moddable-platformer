@@ -35,7 +35,7 @@ func _player_entered(player: CharacterBody2D):
 ## This is run when a body exits the player detector
 func _player_exited(player: CharacterBody2D):
 	_get_player_dialogue_component_and(player, func(component: PlayerDialogueComponent):
-		var index: int = component.dialogue_zones.rfind(self)
+		var index := component.dialogue_zones.rfind(self)
 		component.dialogue_zones.remove_at(index)
 	)
 

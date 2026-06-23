@@ -20,7 +20,7 @@ func _get_sender_id(data: Array) -> int:
 	return -1
 
 func _capture(message, data, session_id):
-	var sender_id: int = _get_sender_id(data)
+	var sender_id := _get_sender_id(data)
 	var parsed_message = message.split(prefix + ":")[1]
 	match parsed_message:
 		"get_quest_text":

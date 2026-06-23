@@ -3,7 +3,7 @@ class_name GameContinuityManager
 ## Registers the state of things in-game so that they persist into the editor after the game is closed.
 
 ## If a player object has been registered
-var _player_registered: bool = false
+var _player_registered := false
 
 ## A reference to the current player object
 var _player: Node2D
