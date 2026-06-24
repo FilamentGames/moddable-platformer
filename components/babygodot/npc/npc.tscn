@@ -153,6 +153,7 @@ autoplay = "default"
 position = Vector2(0, -250)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=18542653]
+collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=226621961]
 position = Vector2(0, -6.5)

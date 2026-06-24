@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://67eoedabcb3s"]
+
+[ext_resource type="Script" uid="uid://bv4utu2r7ll2v" path="res://components/babygodot/scroll/condition_types/inspector_checkbox_scroll_condition.gd" id="1_l1krr"]
+
+[node name="InspectorCheckboxScrollCondition" type="Node" unique_id=75788105]
+script = ExtResource("1_l1krr")
