@@ -1,0 +1,216 @@
+[gd_scene format=3 uid="uid://dpk1jwflxtjbn"]
+
+[ext_resource type="Script" uid="uid://odpmnclrocgd" path="res://components/babygodot/scroll/scroll.gd" id="1_6emoc"]
+[ext_resource type="Texture2D" uid="uid://cfiq6r0hyed15" path="res://components/babygodot/scroll/temp_scroll_sprite.png" id="1_p47yg"]
+[ext_resource type="Script" uid="uid://cmjoxjruwj1sh" path="res://components/babygodot/scroll/components/scroll_animator.gd" id="2_3qrth"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3qrth"]
+radius = 59.15
+
+[sub_resource type="Animation" id="Animation_3i822"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_rkd5d"]
+resource_name = "activate_scroll"
+length = 0.36666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate:a")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667),
+"transitions": PackedFloat32Array(1, 1.9318728),
+"update": 0,
+"values": [0.25, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.33333334),
+"transitions": PackedFloat32Array(5.8563447, 0.5, 1.1),
+"update": 0,
+"values": [Vector2(0.9, 0.9), Vector2(1.1, 1.1), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_3qrth"]
+resource_name = "deactivate_scroll"
+length = 0.36666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate:a")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667),
+"transitions": PackedFloat32Array(1, 1.9318728),
+"update": 0,
+"values": [1.0, 0.25]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.33333334),
+"transitions": PackedFloat32Array(5.8563447, 0.5, 1.1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.8, 0.8), Vector2(0.9, 0.9)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6na1a"]
+_data = {
+&"RESET": SubResource("Animation_3i822"),
+&"activate_scroll": SubResource("Animation_rkd5d"),
+&"deactivate_scroll": SubResource("Animation_3qrth")
+}
+
+[sub_resource type="Animation" id="Animation_6na1a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_tqbn7"]
+resource_name = "scroll_hover"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:y")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-12.0, 12.0, -12.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4y73o"]
+_data = {
+&"RESET": SubResource("Animation_6na1a"),
+&"scroll_hover": SubResource("Animation_tqbn7")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p47yg"]
+bg_color = Color(1, 0.94918746, 0.8001831, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.79, 0.7605067, 0.6794, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="SystemFont" id="SystemFont_p47yg"]
+font_names = PackedStringArray("Times New Roman", "DejaVu Serif", "Serif", "Sans-Serif")
+subpixel_positioning = 0
+oversampling = 5.0
+
+[node name="Scroll" type="Node2D" unique_id=2086611064 node_paths=PackedStringArray("label")]
+script = ExtResource("1_6emoc")
+label = NodePath("ConditionTextContainer/Label")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1123366197]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1664803361]
+shape = SubResource("CircleShape2D_3qrth")
+debug_color = Color(0, 0.6, 0.69803923, 0)
+
+[node name="SpriteContainer" type="Node2D" parent="." unique_id=1704429697]
+scale = Vector2(0.37318838, 0.33426967)
+
+[node name="Sprite2D" type="Sprite2D" parent="SpriteContainer" unique_id=2097020058]
+texture = ExtResource("1_p47yg")
+
+[node name="ScrollAnimator" type="Node" parent="SpriteContainer/Sprite2D" unique_id=1436095518 node_paths=PackedStringArray("animator")]
+script = ExtResource("2_3qrth")
+animator = NodePath("../UnlockAnimation")
+metadata/_custom_type_script = "uid://cmjoxjruwj1sh"
+
+[node name="UnlockAnimation" type="AnimationPlayer" parent="SpriteContainer/Sprite2D" unique_id=1842395322]
+libraries/ = SubResource("AnimationLibrary_6na1a")
+
+[node name="HoverAnimation" type="AnimationPlayer" parent="SpriteContainer" unique_id=552900981]
+libraries/ = SubResource("AnimationLibrary_4y73o")
+autoplay = &"scroll_hover"
+
+[node name="ConditionTextContainer" type="Panel" parent="." unique_id=1678815813]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -175.0
+offset_top = -250.0
+offset_right = 175.0
+offset_bottom = -100.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_p47yg")
+
+[node name="Label" type="RichTextLabel" parent="ConditionTextContainer" unique_id=2020083514]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.44, 0.3696, 0.1584, 1)
+theme_override_fonts/normal_font = SubResource("SystemFont_p47yg")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "Lorem Ipsum
+
+Do thing to collect scroll"
+scroll_active = false
+autowrap_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="condition_updated" from="." to="SpriteContainer/Sprite2D/ScrollAnimator" method="_trigger_animation"]
+[connection signal="body_entered" from="Area2D" to="." method="_player_collect" unbinds=1]

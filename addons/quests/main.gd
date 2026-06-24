@@ -52,8 +52,15 @@ func _enter_tree() -> void:
 
 	add_dock(dock)
 
+	_connect_scene_edit_signal()
+
 	bridge = BabyGodotQuestsBridge.new()
 	add_debugger_plugin(bridge)
+
+func _connect_scene_edit_signal() -> void:
+	scene_changed.connect(func(_arg: Variant):
+		GlobalQuests.quests.current_scene_updated.emit()
+	)
 
 func _exit_tree() -> void:
 	remove_debugger_plugin(bridge)

@@ -6,6 +6,8 @@ class_name BabyGodotQuests
 ## The list of text lines for the quest. This will probably be replaced with a more robust system that is handled by a resource in the future.
 @export var text_data: Array[String] = []
 
+signal current_scene_updated()
+
 ## Dispatched when text in the quest window is updated
 signal text_updated()
 

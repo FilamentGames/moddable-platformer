@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bxwbigtvw3dh4"]
+
+[ext_resource type="Script" uid="uid://cmjoxjruwj1sh" path="res://components/babygodot/scroll/components/scroll_animator.gd" id="1_nagwp"]
+
+[node name="ScrollAnimator" type="Node" unique_id=1438532908]
+script = ExtResource("1_nagwp")
