@@ -10,6 +10,10 @@ class_name ScrollGateBehavior
 var bridge: InGameQuestsBridge
 
 func _ready() -> void:
+	if Engine.is_editor_hint():
+		# Access the global var directly in editor
+		_on_scroll_collected(GlobalQuests.quests.scrolls_collected.size())
+		return
 	if not bridge:
 		bridge = InGameQuestsBridge.new()
 	bridge.scroll_quantity.connect(_on_scroll_collected)
