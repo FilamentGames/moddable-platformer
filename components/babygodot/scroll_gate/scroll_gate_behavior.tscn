@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://nnn7cxawnw5f"]
+
+[ext_resource type="Script" uid="uid://bgey0y7oc4yru" path="res://components/babygodot/scroll_gate/scroll_gate_behavior.gd" id="1_5jstl"]
+
+[node name="ScrollGateBehavior" type="Node" unique_id=20029680]
+script = ExtResource("1_5jstl")

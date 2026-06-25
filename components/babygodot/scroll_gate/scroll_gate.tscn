@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bk3nplruhw7kp"]
+
+[ext_resource type="PackedScene" uid="uid://nnn7cxawnw5f" path="res://components/babygodot/scroll_gate/scroll_gate_behavior.tscn" id="1_j4oyk"]
+[ext_resource type="Texture2D" uid="uid://d2uesk6kurr2a" path="res://assets/tiles-threadbare.png" id="2_qc8qj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dt3ue"]
+size = Vector2(128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_odeah"]
+atlas = ExtResource("2_qc8qj")
+region = Rect2(1280, 128, 128, 128)
+
+[node name="ScrollGate" type="StaticBody2D" unique_id=68402488]
+collision_layer = 4
+collision_mask = 0
+
+[node name="ScrollGateBehavior" parent="." unique_id=20029680 node_paths=PackedStringArray("target_object") instance=ExtResource("1_j4oyk")]
+target_object = NodePath("..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1034297921]
+shape = SubResource("RectangleShape2D_dt3ue")
+debug_color = Color(0, 0.6, 0.69803923, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1029317515]
+texture = SubResource("AtlasTexture_odeah")
+
+[node name="Label" type="Label" parent="." unique_id=1029201000]
+offset_left = -393.0
+offset_top = -12.0
+offset_right = -91.0
+offset_bottom = 11.0
+text = "You need to collect 1 scroll to move on!"
