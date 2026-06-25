@@ -40,6 +40,9 @@ func _capture(message, data, session_id):
 		"get_number_of_scrolls":
 			_send_message(session_id, sender_id, "reply_get_number_of_scrolls", [GlobalQuests.quests.scrolls_collected.size()])
 			return true
+		"set_inspector_dock_visible":
+			GlobalQuests.quests.set_inspector_dock_visible(data[1])
+			return true
 	return false
 
 func _setup_session(session_id):

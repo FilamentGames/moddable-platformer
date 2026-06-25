@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://478o42c7ut27"]
+
+[ext_resource type="Script" uid="uid://c21p0obgodnhd" path="res://components/babygodot/inspector_visibility_trigger/inspector_visibility_trigger.gd" id="1_v6ahq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ugq68"]
+resource_local_to_scene = true
+size = Vector2(94, 258)
+
+[node name="InspectorVisibilityTrigger" type="Area2D" unique_id=964568534]
+collision_layer = 0
+script = ExtResource("1_v6ahq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1188064065]
+shape = SubResource("RectangleShape2D_ugq68")
+
+[connection signal="body_entered" from="." to="." method="_on_player_enter" unbinds=1]
