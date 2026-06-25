@@ -45,6 +45,9 @@ func load_checkpoint() -> void:
 	editor_scene_provider.set_editor_scene()
 	print("Tried to load checkpoint")
 
+func set_inspector_dock_visible(visible: bool) -> void:
+	editor_scene_provider.set_inspector_dock_visible(visible)
+
 func update_player_position(pos: Vector2) -> void:
 	var scene: Node2D = editor_scene_provider.get_editor_scene()
 	var player: Player = BabyGodotUtils.get_first_child_of_type(scene, Player)

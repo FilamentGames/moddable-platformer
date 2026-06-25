@@ -49,5 +49,10 @@ func get_number_of_scrolls() -> void:
 static func progress_quest() -> void:
 	_send_message_static("progress_quest")
 
+## Save the player's last position in the continuity system
 static func save_player_position(position: Vector2) -> void:
 	_send_message_static("save_player_position", [-1, position])
+
+## Set the Inspector Dock to be opened (`visible=true`) or hidden (`visible=false`)
+static func set_inspector_dock_visible(visible: bool) -> void:
+	_send_message_static("set_inspector_dock_visible", [-1, visible])

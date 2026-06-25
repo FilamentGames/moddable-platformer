@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://d0v802hnw7unk" path="res://components/babygodot/npc/npc.tscn" id="18_074og"]
 [ext_resource type="PackedScene" uid="uid://dpk1jwflxtjbn" path="res://components/babygodot/scroll/scroll.tscn" id="19_82xsv"]
 [ext_resource type="PackedScene" uid="uid://bk3nplruhw7kp" path="res://components/babygodot/scroll_gate/scroll_gate.tscn" id="19_cegan"]
+[ext_resource type="PackedScene" uid="uid://478o42c7ut27" path="res://components/babygodot/inspector_visibility_trigger/inspector_visibility_trigger.tscn" id="20_82xsv"]
 [ext_resource type="PackedScene" uid="uid://67eoedabcb3s" path="res://components/babygodot/scroll/condition_types/inspector_checkbox_scroll_condition.tscn" id="20_getpj"]
 
 [node name="Main" type="Node2D" unique_id=1511591426]
@@ -301,7 +302,7 @@ position = Vector2(2331, 461)
 [node name="InspectorCheckboxScrollCondition" parent="Scroll" unique_id=75788105 instance=ExtResource("20_getpj")]
 
 [node name="Player" parent="." unique_id=1469322580 instance=ExtResource("2_7yl00")]
-position = Vector2(103, 478)
+position = Vector2(107, 488)
 collision_mask = 7
 sprite_frames = ExtResource("9_qmofe")
 
@@ -344,3 +345,10 @@ position = Vector2(465, 424)
 
 [node name="ScrollGate" parent="." unique_id=68402488 instance=ExtResource("19_cegan")]
 position = Vector2(4541, 319)
+
+[node name="InspectorVisibilityTrigger2" parent="." unique_id=964568534 instance=ExtResource("20_82xsv")]
+position = Vector2(1236, 525)
+set_inspector_to = 1
+
+[node name="InspectorVisibilityTrigger" parent="." unique_id=614941668 instance=ExtResource("20_82xsv")]
+position = Vector2(107, 501)
