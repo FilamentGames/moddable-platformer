@@ -4,6 +4,9 @@ var gate: Node
 var gate_behavior: ScrollGateBehavior
 var service: MockEditorGameMessagingService
 
+func before_all():
+	InGameQuestsBridge._enabled = false
+
 func before_each():
 	service = autofree(MockEditorGameMessagingService.new())
 	gate = autofree(Node.new())
