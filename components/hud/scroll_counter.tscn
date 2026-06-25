@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://tgqcl8qnq2dg"]
+
+[ext_resource type="Script" uid="uid://dhavvm41hheph" path="res://components/hud/scroll_counter.gd" id="1_w8p4w"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_w8p4w"]
+font_size = 64
+
+[node name="ScrollCounter" type="Control" unique_id=895733905 node_paths=PackedStringArray("scroll_count_label")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1530.0
+offset_bottom = -1029.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w8p4w")
+scroll_count_label = NodePath("HBoxContainer/ScrollAmountLabel")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=205919404]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="HBoxContainer" unique_id=162405083]
+layout_mode = 2
+text = "Scrolls Collected:"
+label_settings = SubResource("LabelSettings_w8p4w")
+
+[node name="Spacer" type="Control" parent="HBoxContainer" unique_id=1039331370]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="ScrollAmountLabel" type="Label" parent="HBoxContainer" unique_id=1558553495]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_w8p4w")

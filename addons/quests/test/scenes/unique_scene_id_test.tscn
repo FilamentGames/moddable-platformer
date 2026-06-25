@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://dl34j7hmvhjl7"]
+
+[ext_resource type="PackedScene" uid="uid://daf24t18h3n5e" path="res://components/coin/coin.tscn" id="1_d0u87"]
+[ext_resource type="PackedScene" uid="uid://dpk1jwflxtjbn" path="res://components/babygodot/scroll/scroll.tscn" id="2_ee6cg"]
+
+[node name="UniqueSceneIdTest" type="Node2D" unique_id=973336570]
+
+[node name="Scroll" parent="." unique_id=2086611064 instance=ExtResource("2_ee6cg")]
+position = Vector2(840, 323)
+
+[node name="Coins" type="Node2D" parent="." unique_id=1757824868]
+position = Vector2(45, 306)
+
+[node name="Coin" parent="Coins" unique_id=1095254317 instance=ExtResource("1_d0u87")]
+position = Vector2(118, -219)
+
+[node name="Coin2" parent="Coins" unique_id=132076387 instance=ExtResource("1_d0u87")]
+position = Vector2(442, -208)
+
+[node name="Coin3" parent="Coins" unique_id=1537283035 instance=ExtResource("1_d0u87")]
+
+[node name="Coin4" parent="Coins" unique_id=1952635921 instance=ExtResource("1_d0u87")]
+position = Vector2(89, 63)
+
+[node name="Coin5" parent="Coins" unique_id=446545265 instance=ExtResource("1_d0u87")]
+position = Vector2(199, 98)
+
+[node name="Coin6" parent="Coins" unique_id=1575490728 instance=ExtResource("1_d0u87")]
+position = Vector2(310, 101)
+
+[node name="Coin7" parent="Coins" unique_id=1490086668 instance=ExtResource("1_d0u87")]
+position = Vector2(420, 73)
+
+[node name="Coin8" parent="Coins" unique_id=1961610427 instance=ExtResource("1_d0u87")]
+position = Vector2(532, 8)

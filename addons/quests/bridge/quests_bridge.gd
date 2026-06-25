@@ -33,6 +33,13 @@ func _capture(message, data, session_id):
 		"save_player_position":
 			GlobalQuests.quests.update_player_position(data[1])
 			return true
+		"collect_scroll":
+			GlobalQuests.quests.collect_scroll(data[1])
+			_send_message(session_id, -1, "scrolls_updated", [GlobalQuests.quests.scrolls_collected.size()])
+			return true
+		"get_number_of_scrolls":
+			_send_message(session_id, sender_id, "reply_get_number_of_scrolls", [GlobalQuests.quests.scrolls_collected.size()])
+			return true
 	return false
 
 func _setup_session(session_id):

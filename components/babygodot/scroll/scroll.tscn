@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://odpmnclrocgd" path="res://components/babygodot/scroll/scroll.gd" id="1_6emoc"]
 [ext_resource type="Texture2D" uid="uid://cfiq6r0hyed15" path="res://components/babygodot/scroll/temp_scroll_sprite.png" id="1_p47yg"]
+[ext_resource type="PackedScene" uid="uid://f2mqtjb5kfo8" path="res://components/babygodot/scroll/components/scroll_continuity.tscn" id="2_3i822"]
 [ext_resource type="Script" uid="uid://cmjoxjruwj1sh" path="res://components/babygodot/scroll/components/scroll_animator.gd" id="2_3qrth"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3qrth"]
@@ -156,6 +157,8 @@ oversampling = 5.0
 script = ExtResource("1_6emoc")
 label = NodePath("ConditionTextContainer/Label")
 
+[node name="ScrollContinuity" parent="." unique_id=1035343625 instance=ExtResource("2_3i822")]
+
 [node name="Area2D" type="Area2D" parent="." unique_id=1123366197]
 collision_layer = 0
 
@@ -212,5 +215,6 @@ autowrap_mode = 2
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[connection signal="collected" from="." to="ScrollContinuity" method="_on_collect"]
 [connection signal="condition_updated" from="." to="SpriteContainer/Sprite2D/ScrollAnimator" method="_trigger_animation"]
 [connection signal="body_entered" from="Area2D" to="." method="_player_collect" unbinds=1]

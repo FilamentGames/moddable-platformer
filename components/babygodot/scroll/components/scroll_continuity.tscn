@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://f2mqtjb5kfo8"]
+
+[ext_resource type="Script" uid="uid://x1yflpgy1dti" path="res://components/babygodot/scroll/components/scroll_continuity.gd" id="1_ki52j"]
+
+[node name="ScrollContinuity" type="Node" unique_id=1035343625]
+script = ExtResource("1_ki52j")

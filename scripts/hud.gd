@@ -33,7 +33,7 @@ func _ready():
 	set_process(false)
 	set_physics_process(false)
 
-	show_specials = show_specials
+	# show_specials = show_specials
 
 	Global.lives_changed.connect(_on_lives_changed)
 

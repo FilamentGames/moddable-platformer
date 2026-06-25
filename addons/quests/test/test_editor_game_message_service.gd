@@ -1,12 +1,5 @@
 extends GutTest
 
-## A testing stub version of `EditorGameMessagingService` that does not actually connect to a debugger plugin
-class MockEditorGameMessagingService extends EditorGameMessagingService:
-	func _init() -> void:
-		pass
-	func _set_up_connection() -> void:
-		pass
-
 var service: MockEditorGameMessagingService
 
 func before_each():
