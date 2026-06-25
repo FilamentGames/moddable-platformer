@@ -6,13 +6,20 @@ class_name BabyGodotQuests
 ## The list of text lines for the quest. This will probably be replaced with a more robust system that is handled by a resource in the future.
 @export var text_data: Array[String] = []
 
+## Dispatched when the current scene has changed
 signal current_scene_updated()
 
 ## Dispatched when text in the quest window is updated
 signal text_updated()
 
+## Dispatched when a new scroll is collected
+signal scroll_collected()
+
 ## An object with methods `get_editor_scene`/`set_editor_scene` that provides access to the current editor scene. This should be the main plugin.
 var editor_scene_provider
+
+## The scrolls the player has collected in the game.
+var scrolls_collected: Array[String]
 
 var _current_text_line := 0
 
@@ -40,8 +47,17 @@ func load_checkpoint() -> void:
 
 func update_player_position(pos: Vector2) -> void:
 	var scene: Node2D = editor_scene_provider.get_editor_scene()
-	var flat_scene_children = scene.find_children("*")
 	var player: Player = BabyGodotUtils.get_first_child_of_type(scene, Player)
 	if player:
 		player.position = pos
 		editor_scene_provider.update_and_save_node(player)
+
+func collect_scroll(scroll_id: String) -> void:
+	var scene: Node2D = editor_scene_provider.get_editor_scene()
+	var target_scroll := UniqueSceneId.find_by_id(scene, scroll_id)
+	if target_scroll:
+		target_scroll.get_parent().remove_child(target_scroll)
+		target_scroll.free()
+		editor_scene_provider.update_and_save_node(scene)
+		scrolls_collected.push_back(scroll_id)
+		scroll_collected.emit()

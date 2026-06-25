@@ -59,3 +59,33 @@ func test_it_can_update_the_players_position_in_editor():
 
 	provider._player.free()
 	provider._scene.free()
+
+class MockScrollSceneProvider extends MockSceneProvider:
+	var _scroll: Scroll
+
+	func get_editor_scene() -> Node2D:
+		var scene = Node2D.new()
+		scene.scene_file_path = "res://testing_file.tscn"
+		var scroll = Scroll.new()
+		scroll.name = "UnitTestScroll"
+		scene.add_child(scroll)
+		scroll.owner = scene
+		_scene = scene
+		_scroll = scroll
+		return scene
+
+
+func test_it_can_register_a_scroll_as_collected():
+	var spy: CallableSpy = autofree(CallableSpy.new())
+	quests.scroll_collected.connect(spy.callable)
+	var provider = autofree(MockScrollSceneProvider.new())
+	quests.editor_scene_provider = provider
+
+	quests.collect_scroll("res://testing_file.tscn%UnitTestScroll")
+
+	assert_null(provider._scroll)
+	assert_not_null(provider._scene)
+	assert_eq(quests.scrolls_collected.size(), 1)
+	assert_eq(spy.get_number_of_calls(), 1)
+
+	provider._scene.free()

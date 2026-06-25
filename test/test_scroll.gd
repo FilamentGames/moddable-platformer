@@ -65,4 +65,12 @@ func test_it_emits_a_signal_when_a_condition_status_changes():
 	assert_eq(spy.get_number_of_calls(), 1)
 	assert_true(spy._calls[0][0])
 
+func test_it_emits_a_signal_when_it_is_collected_by_the_player():
+	condition.condition_met = true
+	add_child(scroll)
+	var spy: CallableSpy = autofree(CallableSpy.new())
+	scroll.collected.connect(spy.callable)
 
+	scroll._player_collect()
+
+	assert_eq(spy.get_number_of_calls(), 1)

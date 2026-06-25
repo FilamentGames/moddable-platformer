@@ -36,6 +36,8 @@ func _capture(message: String, data: Array) -> bool:
 			"reply_get_quest_text":
 				recipient.quest_text.emit(data[0])
 				return true
+			"reply_get_number_of_scrolls":
+				recipient.scroll_quantity.emit(data[0])
 	return false
 
 func _handle_global_messages(message: String, data: Array) -> bool:
@@ -44,4 +46,7 @@ func _handle_global_messages(message: String, data: Array) -> bool:
 			for obj: AbstractMessagingInbox in _object_map.values():
 				obj.quest_text.emit(data[0])
 			return true
+		"scrolls_updated":
+			for obj: AbstractMessagingInbox in _object_map.values():
+				obj.scroll_quantity.emit(data[0])
 	return false

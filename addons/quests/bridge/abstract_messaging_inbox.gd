@@ -1,3 +1,4 @@
+@abstract
 extends Object
 class_name AbstractMessagingInbox
 ## Abstract class that contains the main signals/properties of an object that the EditorGameMessagingService can access
@@ -7,3 +8,6 @@ var id: int
 
 ## Emitted when the debugger responds with the current quest text
 signal quest_text(text: String)
+
+## Emitted when the debugger responds with the current number of scrolls
+signal scroll_quantity(quantity: int)

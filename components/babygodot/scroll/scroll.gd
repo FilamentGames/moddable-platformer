@@ -5,6 +5,9 @@ class_name Scroll
 ## Emitted when the child condition has been updated. Mainly used to hook up UI/animation changes
 signal condition_updated(val: bool)
 
+## Emitted when the scroll is collected. Used for communicating with continuity system, could also be used for collection animations.
+signal collected
+
 @export_group("Internal Refs")
 ## The label that shows the scroll's current unlock condition
 @export var label: RichTextLabel
@@ -35,6 +38,12 @@ func _clear_error_state() -> void:
 	if label and condition:
 		label.text = condition.get_label_text()
 
+func print_all_properties():
+	for prop in get_property_list():
+		var prop_name = prop.name
+		var prop_value = get(prop_name)
+		print(prop_name, ": ", prop_value)
+
 func _ready() -> void:
 	if is_instance_of(get_parent(), Viewport):
 		print("Ignoring error state check since we're opening the scroll prefab directly")
@@ -51,13 +60,13 @@ func _ready() -> void:
 	)
 	condition_updated.emit(condition.is_condition_met())
 	_clear_error_state()
-	
 
 ## Called when the player collides with the scroll and tries to collect it
 func _player_collect() -> void:
 	if not condition:
 		return
 	if condition.is_condition_met():
+		collected.emit()
 		queue_free()
 
 func _exit_tree() -> void:

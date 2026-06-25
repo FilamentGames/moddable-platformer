@@ -33,6 +33,14 @@ static func _send_message_static(name: String, args: Array = []) -> void:
 func request_quest_text() -> void:
 	_send_message("get_quest_text")
 
+## Registers a scroll with specific `scroll_id` as collected. Increases the scroll count and tells the continuity system to delete the scroll object in the editor.
+func collect_scroll(scroll_id: String) -> void:
+	_send_message("collect_scroll", [scroll_id])
+
+## Requests the number of collected scrolls from the Quests system. Will be emitted from the `scroll_quantity` signal once it is received.
+func get_number_of_scrolls() -> void:
+	_send_message("get_number_of_scrolls")
+
 ## Move text forward in the current quest.
 static func progress_quest() -> void:
 	_send_message_static("progress_quest")
