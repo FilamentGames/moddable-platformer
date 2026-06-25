@@ -29,7 +29,7 @@ var _internal_err_state := false
 var condition: ScrollCondition
 
 func _set_error_state() -> void:
-	modulate = Color8(200, 0, 0, 200)
+	modulate = Color(200.0/255, 0, 0, 200.0/255)
 	if label:
 		label.text = "ERROR!\n\nScroll object needs [code]ScrollCondition[/code] child to work properly."
 
