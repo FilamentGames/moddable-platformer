@@ -9,5 +9,8 @@ var id: int
 ## Emitted when the debugger responds with the current quest text
 signal quest_text(text: String)
 
+## Emitted when the debugger responds with the current collection of quest text that can be proceeded with the next button
+signal all_nextbutton_quest_text(text: Array[String])
+
 ## Emitted when the debugger responds with the current number of scrolls
 signal scroll_quantity(quantity: int)

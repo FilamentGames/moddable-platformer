@@ -15,6 +15,9 @@ class_name DialogueBox
 ## Emitted once dialogue is done and the dialogue box is queued for deletion
 signal finished
 
+## Emitted when the next button is pressed
+signal next
+
 func _ready() -> void:
 	_get_next_text()
 
@@ -28,4 +31,5 @@ func _get_next_text() -> void:
 
 ## Function wired up to be called when the next button is clicked
 func _on_next_button_click():
+	next.emit()
 	_get_next_text()

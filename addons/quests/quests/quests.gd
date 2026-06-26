@@ -27,9 +27,20 @@ var _current_text_line := 0
 func get_current_text() -> String:
 	return text_data[_current_text_line].dialogue_line
 
+## Get all upcoming lines that can be read with just the Next Button
+func get_all_nextbutton_quest_text() -> Array[String]:
+	var array: Array[String] = []
+	var i := _current_text_line
+	while i < text_data.size() - 1 and text_data[i].progress_method == QuestLine.ProgressMethod.NextButton:
+		array.push_back(text_data[i].dialogue_line)
+		i += 1
+	array.push_back(text_data[i].dialogue_line)
+	return array
+	
+	
 ## Move to the next line of text
 func next(method := QuestLine.ProgressMethod.NextButton) -> void:
-	if text_data[_current_text_line].progress_method != method:
+	if text_data[_current_text_line].progress_method != QuestLine.ProgressMethod.NextButton and text_data[_current_text_line].progress_method != method:
 		return
 	_current_text_line += 1
 	_current_text_line = min(_current_text_line, text_data.size() - 1)

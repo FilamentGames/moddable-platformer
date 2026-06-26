@@ -5,6 +5,9 @@ class_name Npc
 ## The lines of dialogue this NPC says.
 @export var dialogue_lines: Array[String]
 
+## If enabled, bypass the `dialogue_lines` field and show the current Quest dialogue line instead.
+@export var use_global_quest_dialogue := false
+
 @export_group("Internal Refs")
 ## The triggerable area for the NPC.
 @export var player_detector: Area2D
@@ -17,6 +20,19 @@ var dialogue_box_prefab: PackedScene = preload("res://components/babygodot/dialo
 
 ## A reference to the last spawned dialogue box
 var current_dialogue_box: DialogueBox
+
+var bridge: InGameQuestsBridge
+
+func _ready() -> void:
+	if not use_global_quest_dialogue:
+		return
+	if not bridge:
+		bridge = InGameQuestsBridge.new()
+	bridge.all_nextbutton_quest_text.connect(func(text: Array[String]):
+		dialogue_lines = text.duplicate()
+	)
+	bridge.request_all_nextbutton_quest_text()
+		
 
 ## Tries to find the `PlayerDialogueComponent` child of `player` and then passes it to a callable if it exists.
 func _get_player_dialogue_component_and(player: Node, fn: Callable) -> void:
@@ -46,6 +62,10 @@ func spawn_dialogue_box(player_component: PlayerDialogueComponent) -> void:
 	dialogue_box.finished.connect(func():
 		player_component.finished_dialogue.call_deferred()
 	)
+	if bridge:
+		dialogue_box.next.connect(func():
+			InGameQuestsBridge.progress_quest()
+		)
 	dialogue_container.add_child(dialogue_box)
 
 	current_dialogue_box = dialogue_box

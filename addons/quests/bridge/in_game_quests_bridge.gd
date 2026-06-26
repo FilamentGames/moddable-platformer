@@ -37,6 +37,10 @@ static func _send_message_static(name: String, args: Array = []) -> void:
 func request_quest_text() -> void:
 	_send_message("get_quest_text")
 
+## Requests the next available lines of quest text that can be read with just the "Next Button" progress method
+func request_all_nextbutton_quest_text() -> void:
+	_send_message("get_all_nextbutton_quest_text")
+
 ## Registers a scroll with specific `scroll_id` as collected. Increases the scroll count and tells the continuity system to delete the scroll object in the editor.
 func collect_scroll(scroll_id: String) -> void:
 	_send_message("collect_scroll", [scroll_id])

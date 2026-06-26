@@ -42,7 +42,7 @@
 
 [node name="Main2" type="Node2D" unique_id=1511591426]
 
-[node name="MasterLevelLock" type="Node" parent="." unique_id=2035773341]
+[node name="MasterLevelLock" type="Node" parent="." unique_id=678410586]
 script = ExtResource("1_p5pw3")
 
 [node name="GameLogic" type="Node" parent="." unique_id=1461208797 instance=ExtResource("1_eem6l")]
@@ -66,6 +66,7 @@ tile_set = ExtResource("8_v78as")
 position = Vector2(551, 582)
 script = ExtResource("10_7xjhb")
 dialogue_lines = Array[String](["Threadbare is unstable. You must get to the loom."])
+use_global_quest_dialogue = true
 player_detector = NodePath("Area2D")
 dialogue_container = NodePath("DialogueMount")
 

@@ -1,141 +1,7 @@
 [gd_scene format=3 uid="uid://d0v802hnw7unk"]
 
 [ext_resource type="Script" uid="uid://n1rnbm4rnt0t" path="res://components/babygodot/npc/npc.gd" id="1_0ff8d"]
-[ext_resource type="Texture2D" uid="uid://b635ubfqcnull" path="res://components/babygodot/npc/elder_idle.png" id="1_vm3ky"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0ff8d"]
-atlas = ExtResource("1_vm3ky")
-region = Rect2(0, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3vgxj"]
-atlas = ExtResource("1_vm3ky")
-region = Rect2(192, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_s4pxf"]
-atlas = ExtResource("1_vm3ky")
-region = Rect2(384, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_h7jtr"]
-atlas = ExtResource("1_vm3ky")
-region = Rect2(576, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gl72b"]
-atlas = ExtResource("1_vm3ky")
-region = Rect2(768, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_m4rmw"]
-atlas = ExtResource("1_vm3ky")
-region = Rect2(960, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_irrgw"]
-atlas = ExtResource("1_vm3ky")
-region = Rect2(1152, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bqlo7"]
-atlas = ExtResource("1_vm3ky")
-region = Rect2(1344, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kadce"]
-atlas = ExtResource("1_vm3ky")
-region = Rect2(1536, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mu8jq"]
-atlas = ExtResource("1_vm3ky")
-region = Rect2(1728, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_eq1h6"]
-atlas = ExtResource("1_vm3ky")
-region = Rect2(1920, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xdwj0"]
-atlas = ExtResource("1_vm3ky")
-region = Rect2(2112, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hqv6i"]
-atlas = ExtResource("1_vm3ky")
-region = Rect2(2304, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_soarh"]
-atlas = ExtResource("1_vm3ky")
-region = Rect2(2496, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7b686"]
-atlas = ExtResource("1_vm3ky")
-region = Rect2(2688, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yxcnt"]
-atlas = ExtResource("1_vm3ky")
-region = Rect2(2880, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gavtb"]
-atlas = ExtResource("1_vm3ky")
-region = Rect2(3072, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2gmxy"]
-atlas = ExtResource("1_vm3ky")
-region = Rect2(3264, 0, 192, 192)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ul50u"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0ff8d")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3vgxj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_s4pxf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_h7jtr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gl72b")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_m4rmw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_irrgw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bqlo7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kadce")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mu8jq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_eq1h6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xdwj0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hqv6i")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_soarh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7b686")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yxcnt")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gavtb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2gmxy")
-}],
-"loop": true,
-"name": &"default",
-"speed": 10.0
-}]
+[ext_resource type="SpriteFrames" uid="uid://e65igl5tjet" path="res://components/babygodot/npc/elder.tres" id="2_0ff8d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0ff8d"]
 size = Vector2(300, 137)
@@ -146,7 +12,7 @@ player_detector = NodePath("Area2D")
 dialogue_container = NodePath("DialogueMount")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1376270546]
-sprite_frames = SubResource("SpriteFrames_ul50u")
+sprite_frames = ExtResource("2_0ff8d")
 autoplay = "default"
 
 [node name="DialogueMount" type="Node2D" parent="." unique_id=1542232851]

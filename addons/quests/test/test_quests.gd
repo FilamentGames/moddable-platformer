@@ -62,6 +62,16 @@ func test_can_register_a_mode_switch():
 
 	assert_eq(quests.get_current_text(), "Test")
 
+func test_can_get_next_lines_progressable_with_just_next_button():
+	quests.text_data = [make_quest_line("Lorem"), make_quest_line("Ipsum", QuestLine.ProgressMethod.ScriptTrigger), make_quest_line("Test")]
+
+	assert_eq(quests.get_all_nextbutton_quest_text(), ["Lorem", "Ipsum"])
+
+	quests.next()
+	quests.next(QuestLine.ProgressMethod.ScriptTrigger)
+
+	assert_eq(quests.get_all_nextbutton_quest_text(), ["Test"])
+
 
 class MockSceneProvider:
 	var _scene: Node2D

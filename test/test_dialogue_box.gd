@@ -42,3 +42,13 @@ func test_it_emits_a_signal_and_queues_for_deletion_once_finished():
 
 	assert_eq(spy.get_number_of_calls(), 1)
 	assert_true(dialogue.is_queued_for_deletion())
+
+func test_it_emits_a_signal_when_next_button_is_clicked():
+	var spy: CallableSpy = autofree(CallableSpy.new())
+	dialogue.dialogue_lines = ["Lorem", "Ipsum"]
+	dialogue.next.connect(spy.callable)
+	add_child(dialogue)
+
+	dialogue._on_next_button_click()
+
+	assert_eq(spy.get_number_of_calls(), 1)

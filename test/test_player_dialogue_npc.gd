@@ -35,6 +35,9 @@ func create_player_detector() -> void:
 	add_collision_shape_as_child(npc.player_detector)
 	npc.add_child(npc.player_detector)
 
+func before_all():
+	InGameQuestsBridge._enabled = false
+
 func before_each():
 	player = autofree(MockPlayer.new())
 	player_dialogue = autofree(PlayerDialogueComponent.new())
@@ -136,3 +139,27 @@ func test_spawned_dialogue_box_does_not_affect_npc_dialogue_data():
 	npc.current_dialogue_box._on_next_button_click()
 
 	assert_eq(npc.dialogue_lines.size(), 2)
+
+func test_npc_can_get_the_current_quest_line():
+	npc.free()
+
+	npc = autofree(Npc.new())
+	npc.dialogue_lines = []
+	npc.use_global_quest_dialogue = true
+	npc.dialogue_box_prefab = autofree(make_dialogue_box_stub_prefab())
+	npc.dialogue_container = autofree(Node2D.new())
+	npc.bridge = autofree(InGameQuestsBridge.new(autofree(MockEditorGameMessagingService.new())))
+
+	add_child(npc)
+	npc.bridge.all_nextbutton_quest_text.emit(["Current Quest"] as Array[String])
+
+	npc._player_entered(player)
+	
+	sender.action_down("player_action").wait_frames(1)
+	player_dialogue._process(1)
+	await(sender.idle)
+	sender.action_up("player_action").wait_frames(1)
+	player_dialogue._process(1)
+	await(sender.idle)
+
+	assert_eq(npc.current_dialogue_box.dialogue_lines[0], "Current Quest")

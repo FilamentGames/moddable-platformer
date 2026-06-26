@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bkdtuh1mxbcnw"]
 
-[ext_resource type="Texture2D" uid="uid://cq5hjhucic0t7" path="res://addons/quests/quest_dock/icon.svg" id="1_oli51"]
 [ext_resource type="Script" uid="uid://se5fyfgofqps" path="res://addons/quests/quest_dock/quest_dock.gd" id="1_qqxpi"]
+[ext_resource type="SpriteFrames" uid="uid://e65igl5tjet" path="res://components/babygodot/npc/elder.tres" id="2_qqxpi"]
 
 [node name="QuestDock" type="Control" unique_id=827491016 node_paths=PackedStringArray("text", "next_button", "save_checkpoint_button", "load_checkpoint_button")]
 layout_mode = 3
@@ -24,17 +24,24 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Clippy" type="TextureRect" parent="Container" unique_id=685462348]
+[node name="Control" type="CenterContainer" parent="Container" unique_id=740562403]
+custom_minimum_size = Vector2(192, 192)
 layout_mode = 2
-texture = ExtResource("1_oli51")
-stretch_mode = 3
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Clippy" type="AnimatedSprite2D" parent="Container/Control" unique_id=1918933574]
+sprite_frames = ExtResource("2_qqxpi")
+autoplay = "default"
+frame_progress = 0.90277296
+centered = false
 
 [node name="QuestText" type="Label" parent="Container" unique_id=1955315214]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
-text = "Welcome to Baby Godot! My name is \"Default Godot Icon That's Included In Every Project\". I will be your guide through this greyboxed quest experience! Lorem Ipsum and stuff."
+text = "test quest line that can be progressed with next button"
 autowrap_mode = 2
 
 [node name="NextButton" type="Button" parent="Container" unique_id=1692289482]

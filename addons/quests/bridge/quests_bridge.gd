@@ -26,6 +26,9 @@ func _capture(message, data, session_id):
 		"get_quest_text":
 			_send_message(session_id, sender_id, "reply_get_quest_text", [GlobalQuests.quests.get_current_text()])
 			return true
+		"get_all_nextbutton_quest_text":
+			_send_message(session_id, sender_id, "reply_get_all_nextbutton_quest_text", [GlobalQuests.quests.get_all_nextbutton_quest_text()])
+			return true
 		"progress_quest":
 			GlobalQuests.quests.next(QuestLine.ProgressMethod.ScriptTrigger)
 			_send_message(session_id, sender_id, "text_updated", [GlobalQuests.quests.get_current_text()])
