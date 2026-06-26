@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bdw65vdpeptck"]
+
+[ext_resource type="Script" uid="uid://c204y3amh8gkj" path="res://addons/quests_devtools/tool_objects/master_level_lock.gd" id="1_pdo3f"]
+
+[node name="MasterLevelLock" type="Node" unique_id=1711727194]
+editor_description = "This prevents you from playing the master copy of a level by mistake. It is automatically removed by developer tools when it copies to the clone level!"
+script = ExtResource("1_pdo3f")

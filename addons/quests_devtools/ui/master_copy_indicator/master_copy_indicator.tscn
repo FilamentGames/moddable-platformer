@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bsxbei3a4lslw"]
+
+[ext_resource type="Script" uid="uid://cxtypn6okekh1" path="res://addons/quests_devtools/ui/master_copy_indicator/master_copy_indicator.gd" id="1_vsfnb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rwpsc"]
+
+[node name="MasterCopyIndicator" type="Label" unique_id=1216785468]
+z_index = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "You are editing the master copy of a level. You cannot play this copy in play mode directly, you will have to play the clone."
+mouse_filter = 1
+text = "[MASTER COPY]"
+label_settings = SubResource("LabelSettings_rwpsc")
+script = ExtResource("1_vsfnb")
+
+[node name="Panel" type="ColorRect" parent="." unique_id=693453139]
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.34901962, 0, 1)
