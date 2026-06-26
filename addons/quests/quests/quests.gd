@@ -64,3 +64,10 @@ func collect_scroll(scroll_id: String) -> void:
 		editor_scene_provider.update_and_save_node(scene)
 		scrolls_collected.push_back(scroll_id)
 		scroll_collected.emit()
+
+## Resets the player's quest progress. Mainly useful for dev tools.
+func reset_progress() -> void:
+	_current_text_line = 0
+	scrolls_collected = []
+	text_updated.emit()
+	scroll_collected.emit()
