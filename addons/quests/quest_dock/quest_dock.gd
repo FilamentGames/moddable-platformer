@@ -30,9 +30,13 @@ func _enter_tree() -> void:
 
 func update_text():
 	text.text = quests_provider.get_current_text()
+	_update_next_button_state()
 
 func next():
 	quests_provider.next()
+	_update_next_button_state()
+
+func _update_next_button_state():
 	next_button.disabled = !quests_provider.can_proceed()
 
 func save_checkpoint():
