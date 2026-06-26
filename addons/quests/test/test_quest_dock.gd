@@ -2,12 +2,18 @@ extends GutTest
 
 var dock: BabyGodotQuestDock
 
+func make_quest_line(text: String, progress_method := QuestLine.ProgressMethod.NextButton) -> QuestLine:
+	var line: QuestLine = autofree(QuestLine.new())
+	line.dialogue_line = text
+	line.progress_method = progress_method
+	return line
+
 func before_each():
 	dock = autofree(BabyGodotQuestDock.new())
 	dock.text = autofree(Label.new())
 	dock.next_button = autofree(Button.new())
 	dock.quests_provider = autofree(BabyGodotQuests.new())
-	dock.quests_provider.text_data = ["Lorem Ipsum", "Test"]
+	dock.quests_provider.text_data = [make_quest_line("Lorem Ipsum"), make_quest_line("Test")]
 	add_child(dock)
 
 func test_gets_quest_text_on_load():

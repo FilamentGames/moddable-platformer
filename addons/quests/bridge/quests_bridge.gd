@@ -27,7 +27,7 @@ func _capture(message, data, session_id):
 			_send_message(session_id, sender_id, "reply_get_quest_text", [GlobalQuests.quests.get_current_text()])
 			return true
 		"progress_quest":
-			GlobalQuests.quests.next()
+			GlobalQuests.quests.next(QuestLine.ProgressMethod.ScriptTrigger)
 			_send_message(session_id, sender_id, "text_updated", [GlobalQuests.quests.get_current_text()])
 			return true
 		"save_player_position":
@@ -42,6 +42,9 @@ func _capture(message, data, session_id):
 			return true
 		"set_inspector_dock_visible":
 			GlobalQuests.quests.set_inspector_dock_visible(data[1])
+			return true
+		"register_mode_switch":
+			GlobalQuests.quests.register_mode_switch()
 			return true
 	return false
 

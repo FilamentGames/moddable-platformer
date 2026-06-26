@@ -1,7 +1,37 @@
 [gd_scene format=3 uid="uid://bicuh1jmtvc1b"]
 
 [ext_resource type="Script" uid="uid://cub01csirx6lk" path="res://addons/quests/quests/quests.gd" id="1_vulhk"]
+[ext_resource type="Script" uid="uid://wcqap044q4nm" path="res://addons/quests/quests/quest_line.gd" id="2_fdhqc"]
+
+[sub_resource type="Resource" id="Resource_4jxrl"]
+script = ExtResource("2_fdhqc")
+dialogue_line = "test quest line that can be progressed with next button"
+metadata/_custom_type_script = "uid://wcqap044q4nm"
+
+[sub_resource type="Resource" id="Resource_nbcr1"]
+script = ExtResource("2_fdhqc")
+dialogue_line = "Find me in the world of Threadbare! Press Play!"
+progress_method = 1
+metadata/_custom_type_script = "uid://wcqap044q4nm"
+
+[sub_resource type="Resource" id="Resource_u38ty"]
+script = ExtResource("2_fdhqc")
+dialogue_line = "Concentrate! Pause the flow of time!"
+progress_method = 1
+metadata/_custom_type_script = "uid://wcqap044q4nm"
+
+[sub_resource type="Resource" id="Resource_fdhqc"]
+script = ExtResource("2_fdhqc")
+dialogue_line = "Yes, Storyweaver! Select the pile of rocks and clear them from your path. When you're done, hit Play and let time flow through Threadbare again!"
+progress_method = 2
+metadata/_custom_type_script = "uid://wcqap044q4nm"
+
+[sub_resource type="Resource" id="Resource_leoq5"]
+script = ExtResource("2_fdhqc")
+dialogue_line = "You show great promise! Proceed to the Knit Witch."
+progress_method = 2
+metadata/_custom_type_script = "uid://wcqap044q4nm"
 
 [node name="Quests" type="Node" unique_id=1908096250]
 script = ExtResource("1_vulhk")
-text_data = Array[String](["Find me in the world of Threadbare! Press Play!", "Yes, Storyweaver! Select the pile of rocks and clear them from your path. When you're done, hit Play and let time flow through Threadbare again!", "You show great promise! Proceed to the Knit Witch."])
+text_data = Array[ExtResource("2_fdhqc")]([SubResource("Resource_4jxrl"), SubResource("Resource_nbcr1"), SubResource("Resource_u38ty"), SubResource("Resource_fdhqc"), SubResource("Resource_leoq5")])

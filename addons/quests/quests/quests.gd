@@ -4,7 +4,7 @@ class_name BabyGodotQuests
 ## The singleton object for the global "Quests" system, will store current quest progress
 
 ## The list of text lines for the quest. This will probably be replaced with a more robust system that is handled by a resource in the future.
-@export var text_data: Array[String] = []
+@export var text_data: Array[QuestLine] = []
 
 ## Dispatched when the current scene has changed
 signal current_scene_updated()
@@ -25,17 +25,24 @@ var _current_text_line := 0
 
 ## Get the current line of text of the quest
 func get_current_text() -> String:
-	return text_data[_current_text_line]
+	return text_data[_current_text_line].dialogue_line
 
 ## Move to the next line of text
-func next() -> void:
+func next(method := QuestLine.ProgressMethod.NextButton) -> void:
+	if text_data[_current_text_line].progress_method != method:
+		return
 	_current_text_line += 1
 	_current_text_line = min(_current_text_line, text_data.size() - 1)
 	text_updated.emit()
 
 ## If the UI can manually proceed to the next line of text
 func can_proceed() -> bool:
-	return _current_text_line < text_data.size() - 1
+	return _current_text_line < text_data.size() - 1 && text_data[_current_text_line].progress_method == QuestLine.ProgressMethod.NextButton
+
+## Register a mode switch, and progress quest text if it's currently waiting for a mode switch
+func register_mode_switch() -> void:
+	if text_data[_current_text_line].progress_method == QuestLine.ProgressMethod.ModeSwitch:
+		next(QuestLine.ProgressMethod.ModeSwitch)
 
 func save_checkpoint() -> void:
 	editor_scene_provider.save_editor_scene_as_checkpoint()

@@ -56,3 +56,7 @@ static func save_player_position(position: Vector2) -> void:
 ## Set the Inspector Dock to be opened (`visible=true`) or hidden (`visible=false`)
 static func set_inspector_dock_visible(visible: bool) -> void:
 	_send_message_static("set_inspector_dock_visible", [-1, visible])
+
+## Signal to the quests system that the player has switched between play/edit mode
+static func register_mode_switch() -> void:
+	_send_message_static("register_mode_switch")

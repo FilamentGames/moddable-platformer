@@ -2,9 +2,15 @@ extends GutTest
 
 var quests: BabyGodotQuests
 
+func make_quest_line(text: String, progress_method := QuestLine.ProgressMethod.NextButton) -> QuestLine:
+	var line: QuestLine = autofree(QuestLine.new())
+	line.dialogue_line = text
+	line.progress_method = progress_method
+	return line
+
 func before_each():
 	quests = autofree(BabyGodotQuests.new())
-	quests.text_data = ["Lorem Ipsum", "Test"]
+	quests.text_data = [make_quest_line("Lorem Ipsum"), make_quest_line("Test")]
 
 func test_has_quest_text():
 	assert_eq(quests.get_current_text(), "Lorem Ipsum")
@@ -31,6 +37,31 @@ func test_stays_in_bounds_of_text_array():
 func test_knows_when_text_is_done():
 	quests.next()
 	assert_false(quests.can_proceed(), "Expecting `can_proceed` to be false")
+
+func test_cannot_manually_proceed_if_progressmethod_is_not_nextbutton():
+	quests.text_data = [make_quest_line("Lorem Ipsum", QuestLine.ProgressMethod.ScriptTrigger), make_quest_line("Test")]
+
+	assert_false(quests.can_proceed())
+
+	quests.next()
+	assert_eq(quests.get_current_text(), "Lorem Ipsum")
+
+	quests.next(QuestLine.ProgressMethod.ScriptTrigger)
+	assert_eq(quests.get_current_text(), "Test")
+
+func test_can_register_a_mode_switch():
+	quests.text_data = [make_quest_line("Lorem"), make_quest_line("Ipsum", QuestLine.ProgressMethod.ModeSwitch), make_quest_line("Test")]
+
+	for i in 5:
+		quests.register_mode_switch()
+	
+	assert_eq(quests.get_current_text(), "Lorem")
+
+	quests.next()
+	quests.register_mode_switch()
+
+	assert_eq(quests.get_current_text(), "Test")
+
 
 class MockSceneProvider:
 	var _scene: Node2D

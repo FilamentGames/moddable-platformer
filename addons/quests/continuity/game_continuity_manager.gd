@@ -28,6 +28,7 @@ func _ready() -> void:
 		queue_free()
 		return
 	tree_exited.connect(_on_delete)
+	InGameQuestsBridge.register_mode_switch()
 
 func _process(delta: float) -> void:
 	if not _player:
@@ -37,6 +38,7 @@ func _process(delta: float) -> void:
 ## Run this function on delete
 func _on_delete() -> void:
 	InGameQuestsBridge.save_player_position(get_player_objects_last_position())
+	InGameQuestsBridge.register_mode_switch()
 
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_PREDELETE:
