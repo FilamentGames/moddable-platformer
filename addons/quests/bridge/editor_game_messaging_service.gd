@@ -1,4 +1,3 @@
-@tool
 extends Node
 class_name EditorGameMessagingService
 ## A class that maintains a single connection to the `BabyGodotQuestsBridge`, and essentially "multiplexes" that connection to specific objects in the game.
