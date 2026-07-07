@@ -65,6 +65,9 @@ func set_2d_viewport_focus(position: Vector2, zoom: float) -> void:
 		print("Tried to center camera in viewport, but can't!")
 		pass # Do nothing
 
+func set_current_edited_scene(path: String) -> void:
+	EditorInterface.open_scene_from_path(path)
+
 func _enter_tree() -> void:
 	checkpoints.plugin = self
 

@@ -76,6 +76,11 @@ func update_player_position(pos: Vector2) -> void:
 		player.position = pos
 		editor_scene_provider.update_and_save_node(player)
 		editor_scene_provider.set_2d_viewport_focus(player.position, default_editor_zoom)
+	else:
+		print("Couldn't find player object")
+
+func set_current_edited_scene(path: String) -> void:
+	editor_scene_provider.set_current_edited_scene(path)
 
 func collect_scroll(scroll_id: String) -> void:
 	var scene: Node2D = editor_scene_provider.get_editor_scene()

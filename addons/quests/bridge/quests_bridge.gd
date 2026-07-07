@@ -49,6 +49,9 @@ func _capture(message, data, session_id):
 		"register_mode_switch":
 			GlobalQuests.quests.register_mode_switch()
 			return true
+		"set_current_edited_scene":
+			GlobalQuests.quests.set_current_edited_scene(data[1])
+			return true
 	return false
 
 func _setup_session(session_id):

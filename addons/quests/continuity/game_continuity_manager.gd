@@ -11,6 +11,9 @@ var _player: Node2D
 ## The last known position of the player
 var _last_player_pos: Vector2
 
+## The last known played scene
+var _last_played_scene: String
+
 ## Registers the current player object
 func register_player_object(player: Node2D) -> void:
 	_player_registered = true
@@ -27,16 +30,23 @@ func _ready() -> void:
 		## Disable the autoload singleton in tests
 		queue_free()
 		return
+	_update_last_played_scene()
 	tree_exited.connect(_on_delete)
+	InGameQuestsBridge.set_current_edited_scene(_last_played_scene)
 	InGameQuestsBridge.register_mode_switch()
 
 func _process(delta: float) -> void:
 	if not _player:
 		return
 	_last_player_pos = _player.position
+	_update_last_played_scene()
+
+func _update_last_played_scene() -> void:
+	_last_played_scene = get_tree().current_scene.scene_file_path
 
 ## Run this function on delete
 func _on_delete() -> void:
+	InGameQuestsBridge.set_current_edited_scene(_last_played_scene)
 	InGameQuestsBridge.save_player_position(get_player_objects_last_position())
 	InGameQuestsBridge.register_mode_switch()
 

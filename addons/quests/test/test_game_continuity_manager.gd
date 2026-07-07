@@ -8,6 +8,10 @@ class MockGameContinuityManager extends GameContinuityManager:
 	func _on_delete() -> void:
 		if debugger_message_spy:
 			debugger_message_spy.callable.call()
+	
+	## Since we don't have access to the scene tree, just do nothing here
+	func _update_last_played_scene() -> void:
+		pass
 
 var continuity: MockGameContinuityManager
 var player: Node2D
