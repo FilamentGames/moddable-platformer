@@ -29,6 +29,9 @@ func save_editor_scene_as_checkpoint() -> void:
 func get_editor_scene():
 	return EditorInterface.get_edited_scene_root()
 
+func get_editor_viewport_2d() -> SubViewport:
+	return EditorInterface.get_editor_viewport_2d()
+
 func set_editor_scene() -> void:
 	checkpoints.set_editor_scene()
 
@@ -50,6 +53,17 @@ func set_inspector_dock_visible(visible: bool) -> void:
 		# Print a message to the output window so we know it would have worked in streamlined Godot
 		var verb := "open" if visible else "close"
 		print("Tried to " + verb + " the inspector dock but it's not possible in this version of Godot!")
+
+func set_2d_viewport_focus(position: Vector2, zoom: float) -> void:
+	# EditorInterface.get_canvas_item_editor only exists in our customized version of
+	# Godot, so avoid an error by checking for the method ahead of time.
+	var interface = EditorInterface
+	if interface.has_method("get_canvas_item_editor"):
+		var canvas_item_editor = interface.get_canvas_item_editor()
+		canvas_item_editor.set_viewport_focus(position, zoom)
+	else:
+		print("Tried to center camera in viewport, but can't!")
+		pass # Do nothing
 
 func _enter_tree() -> void:
 	checkpoints.plugin = self

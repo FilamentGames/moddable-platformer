@@ -6,6 +6,9 @@ class_name BabyGodotQuests
 ## The list of text lines for the quest. This will probably be replaced with a more robust system that is handled by a resource in the future.
 @export var text_data: Array[QuestLine] = []
 
+## The zoom level to reset to when the player jumps from game mode back to editor mode.
+@export var default_editor_zoom := 0.5
+
 ## Dispatched when the current scene has changed
 signal current_scene_updated()
 
@@ -72,6 +75,7 @@ func update_player_position(pos: Vector2) -> void:
 	if player:
 		player.position = pos
 		editor_scene_provider.update_and_save_node(player)
+		editor_scene_provider.set_2d_viewport_focus(player.position, default_editor_zoom)
 
 func collect_scroll(scroll_id: String) -> void:
 	var scene: Node2D = editor_scene_provider.get_editor_scene()

@@ -77,6 +77,9 @@ class MockSceneProvider:
 	var _scene: Node2D
 	var _player: Player
 
+	var _camera_pos: Vector2
+	var _zoom: float
+
 	func get_editor_scene() -> Node2D:
 		var scene = Node2D.new()
 		var player = Player.new()
@@ -89,14 +92,22 @@ class MockSceneProvider:
 	
 	func update_and_save_node(node: Node) -> void:
 		pass
+	
+	func set_2d_viewport_focus(position: Vector2, zoom: float) -> void:
+		_camera_pos = position
+		_zoom = zoom
 
 func test_it_can_update_the_players_position_in_editor():
+	quests.default_editor_zoom = randfn(0.0, 1.0)
 	var provider = autofree(MockSceneProvider.new())
 	quests.editor_scene_provider = provider
 	quests.update_player_position(Vector2(25, 50))
 
 	assert_eq(provider._player.position.x, 25.0)
 	assert_eq(provider._player.position.y, 50.0)
+
+	assert_eq(provider._camera_pos, provider._player.position, "Camera is focused on player position")
+	assert_eq(provider._zoom, quests.default_editor_zoom, "Zoom level is configurable on quest object")
 
 	provider._player.free()
 	provider._scene.free()
