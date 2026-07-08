@@ -26,6 +26,8 @@ var scrolls_collected: Array[String]
 
 var _current_text_line := 0
 
+var _last_player_pos: Vector2
+
 ## Get the current line of text of the quest
 func get_current_text() -> String:
 	return text_data[_current_text_line].dialogue_line
@@ -69,11 +71,14 @@ func load_checkpoint() -> void:
 func set_inspector_dock_visible(visible: bool) -> void:
 	editor_scene_provider.set_inspector_dock_visible(visible)
 
-func update_player_position(pos: Vector2) -> void:
+func register_player_position(pos: Vector2) -> void:
+	_last_player_pos = pos
+
+func update_player_position() -> void:
 	var scene: Node2D = editor_scene_provider.get_editor_scene()
 	var player: Player = BabyGodotUtils.get_first_child_of_type(scene, Player)
 	if player:
-		player.position = pos
+		player.position = _last_player_pos
 		editor_scene_provider.update_and_save_node(player)
 		editor_scene_provider.set_2d_viewport_focus(player.position, default_editor_zoom)
 	else:

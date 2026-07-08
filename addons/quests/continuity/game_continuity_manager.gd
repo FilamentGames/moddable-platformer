@@ -40,6 +40,8 @@ func _process(delta: float) -> void:
 		return
 	_last_player_pos = _player.position
 	_update_last_played_scene()
+	InGameQuestsBridge.set_current_edited_scene(_last_played_scene)
+	InGameQuestsBridge.save_player_position(get_player_objects_last_position())
 
 func _update_last_played_scene() -> void:
 	_last_played_scene = get_tree().current_scene.scene_file_path
@@ -48,7 +50,6 @@ func _update_last_played_scene() -> void:
 func _on_delete() -> void:
 	InGameQuestsBridge.set_current_edited_scene(_last_played_scene)
 	InGameQuestsBridge.save_player_position(get_player_objects_last_position())
-	InGameQuestsBridge.register_mode_switch()
 
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_PREDELETE:

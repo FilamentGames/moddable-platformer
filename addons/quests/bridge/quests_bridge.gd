@@ -34,7 +34,7 @@ func _capture(message, data, session_id):
 			_send_message(session_id, sender_id, "text_updated", [GlobalQuests.quests.get_current_text()])
 			return true
 		"save_player_position":
-			GlobalQuests.quests.update_player_position(data[1])
+			GlobalQuests.quests.register_player_position(data[1])
 			return true
 		"collect_scroll":
 			GlobalQuests.quests.collect_scroll(data[1])
@@ -57,4 +57,9 @@ func _capture(message, data, session_id):
 func _setup_session(session_id):
 	var session = get_session(session_id)
 	session.started.connect(func (): print("Quest bridge started"))
-	session.stopped.connect(func (): print("Quest bridge stopped"))
+	session.stopped.connect(_on_session_stop)
+
+func _on_session_stop() -> void:
+	print("Quest bridge stopped")
+	GlobalQuests.quests.update_player_position()
+	GlobalQuests.quests.register_mode_switch()

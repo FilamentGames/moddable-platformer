@@ -101,7 +101,8 @@ func test_it_can_update_the_players_position_in_editor():
 	quests.default_editor_zoom = randfn(0.0, 1.0)
 	var provider = autofree(MockSceneProvider.new())
 	quests.editor_scene_provider = provider
-	quests.update_player_position(Vector2(25, 50))
+	quests.register_player_position(Vector2(25, 50))
+	quests.update_player_position()
 
 	assert_eq(provider._player.position.x, 25.0)
 	assert_eq(provider._player.position.y, 50.0)
