@@ -63,9 +63,10 @@ func spawn_dialogue_box(player_component: PlayerDialogueComponent) -> void:
 		player_component.finished_dialogue.call_deferred()
 	)
 	if bridge:
-		dialogue_box.next.connect(func():
-			InGameQuestsBridge.progress_quest()
-		)
+		dialogue_box.next.connect(_progress_quest.bind(QuestLine.ProgressMethod.NextButton))
 	dialogue_container.add_child(dialogue_box)
 
 	current_dialogue_box = dialogue_box
+
+func _progress_quest(trigger_type: QuestLine.ProgressMethod) -> void:
+	InGameQuestsBridge.progress_quest(trigger_type)

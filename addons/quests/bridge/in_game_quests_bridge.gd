@@ -50,8 +50,8 @@ func get_number_of_scrolls() -> void:
 	_send_message("get_number_of_scrolls")
 
 ## Move text forward in the current quest.
-static func progress_quest() -> void:
-	_send_message_static("progress_quest")
+static func progress_quest(trigger_type: QuestLine.ProgressMethod = QuestLine.ProgressMethod.ScriptTrigger) -> void:
+	_send_message_static("progress_quest", [-1, trigger_type])
 
 ## Save the player's last position in the continuity system
 static func save_player_position(position: Vector2) -> void:

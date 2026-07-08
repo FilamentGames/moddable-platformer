@@ -30,7 +30,10 @@ func _capture(message, data, session_id):
 			_send_message(session_id, sender_id, "reply_get_all_nextbutton_quest_text", [GlobalQuests.quests.get_all_nextbutton_quest_text()])
 			return true
 		"progress_quest":
-			GlobalQuests.quests.next(QuestLine.ProgressMethod.ScriptTrigger)
+			var trigger_type := QuestLine.ProgressMethod.ScriptTrigger
+			if data.size() > 1:
+				trigger_type = data[1]
+			GlobalQuests.quests.next(trigger_type)
 			_send_message(session_id, sender_id, "text_updated", [GlobalQuests.quests.get_current_text()])
 			return true
 		"save_player_position":

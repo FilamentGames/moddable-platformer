@@ -4,9 +4,15 @@ extends GutTest
 class MockPlayer extends CharacterBody2D:
 	var movement_locked := false
 
+class NpcTesting extends Npc:
+	var trigger_type_used: int = -1
+
+	func _progress_quest(trigger_type: QuestLine.ProgressMethod) -> void:
+		trigger_type_used = trigger_type
+
 var player: MockPlayer
 var player_dialogue: PlayerDialogueComponent
-var npc: Npc
+var npc: NpcTesting
 var sender: GutInputSender = InputSender.new(Input)
 
 func make_dialogue_box_stub_prefab() -> PackedScene:
@@ -45,7 +51,7 @@ func before_each():
 	player_dialogue.player = player
 	player_dialogue.owner = player
 
-	npc = autofree(Npc.new())
+	npc = autofree(NpcTesting.new())
 	npc.dialogue_lines = ["Lorem", "Ipsum"]
 	npc.dialogue_box_prefab = autofree(make_dialogue_box_stub_prefab())
 	npc.dialogue_container = autofree(Node2D.new())
@@ -143,7 +149,7 @@ func test_spawned_dialogue_box_does_not_affect_npc_dialogue_data():
 func test_npc_can_get_the_current_quest_line():
 	npc.free()
 
-	npc = autofree(Npc.new())
+	npc = autofree(NpcTesting.new())
 	npc.dialogue_lines = []
 	npc.use_global_quest_dialogue = true
 	npc.dialogue_box_prefab = autofree(make_dialogue_box_stub_prefab())
@@ -163,3 +169,6 @@ func test_npc_can_get_the_current_quest_line():
 	await(sender.idle)
 
 	assert_eq(npc.current_dialogue_box.dialogue_lines[0], "Current Quest")
+
+	npc.current_dialogue_box.next.emit()
+	assert_eq(npc.trigger_type_used, QuestLine.ProgressMethod.NextButton, "Npc uses NextButton instead of script trigger")
