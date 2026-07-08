@@ -3,15 +3,26 @@
 [ext_resource type="Script" uid="uid://cub01csirx6lk" path="res://addons/quests/quests/quests.gd" id="1_vulhk"]
 [ext_resource type="Script" uid="uid://wcqap044q4nm" path="res://addons/quests/quests/quest_line.gd" id="2_fdhqc"]
 
-[sub_resource type="Resource" id="Resource_4jxrl"]
-script = ExtResource("2_fdhqc")
-dialogue_line = "test quest line that can be progressed with next button"
-metadata/_custom_type_script = "uid://wcqap044q4nm"
-
 [sub_resource type="Resource" id="Resource_nbcr1"]
 script = ExtResource("2_fdhqc")
 dialogue_line = "Find me in the world of Threadbare! Press Play!"
 progress_method = 1
+metadata/_custom_type_script = "uid://wcqap044q4nm"
+
+[sub_resource type="Resource" id="Resource_4jxrl"]
+script = ExtResource("2_fdhqc")
+dialogue_line = "Threadbare is unstable. You must get to the loom."
+progress_method = 2
+metadata/_custom_type_script = "uid://wcqap044q4nm"
+
+[sub_resource type="Resource" id="Resource_nilgx"]
+script = ExtResource("2_fdhqc")
+dialogue_line = "These rocks fell and blocked the path."
+metadata/_custom_type_script = "uid://wcqap044q4nm"
+
+[sub_resource type="Resource" id="Resource_x3eip"]
+script = ExtResource("2_fdhqc")
+dialogue_line = "You are the Story Weaver. You have the power to edit the world of Threadbare."
 metadata/_custom_type_script = "uid://wcqap044q4nm"
 
 [sub_resource type="Resource" id="Resource_u38ty"]
@@ -34,4 +45,4 @@ metadata/_custom_type_script = "uid://wcqap044q4nm"
 
 [node name="Quests" type="Node" unique_id=1908096250]
 script = ExtResource("1_vulhk")
-text_data = Array[ExtResource("2_fdhqc")]([SubResource("Resource_4jxrl"), SubResource("Resource_nbcr1"), SubResource("Resource_u38ty"), SubResource("Resource_fdhqc"), SubResource("Resource_leoq5")])
+text_data = Array[ExtResource("2_fdhqc")]([SubResource("Resource_nbcr1"), SubResource("Resource_4jxrl"), SubResource("Resource_nilgx"), SubResource("Resource_x3eip"), SubResource("Resource_u38ty"), SubResource("Resource_fdhqc"), SubResource("Resource_leoq5")])
