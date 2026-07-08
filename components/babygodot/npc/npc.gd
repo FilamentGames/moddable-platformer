@@ -31,6 +31,9 @@ func _ready() -> void:
 	bridge.all_nextbutton_quest_text.connect(func(text: Array[String]):
 		dialogue_lines = text.duplicate()
 	)
+	bridge.quest_text.connect(func(_text):
+		bridge.request_all_nextbutton_quest_text()
+	)
 	bridge.request_all_nextbutton_quest_text()
 		
 
