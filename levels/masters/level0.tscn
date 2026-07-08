@@ -68,7 +68,7 @@ tile_map_data = PackedByteArray("AAAAAAUAAAACAAAAAAABAAUAAAACAAAAAAACAAUAAAACAAA
 tile_set = ExtResource("8_v78as")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1105582793]
-tile_map_data = PackedByteArray("AAD//wgAAQAFAAIAAAD//wcAAQAFAAIAAAD//wYAAQAFAAIAAAD//wUAAQAFAAIAAAD//wQAAQAFAAIAAAD//wMAAQAFAAIAAAD//wIAAQAFAAIAAAD//wEAAQAFAAIAAAD//wAAAQAFAAIAAAD/////AQAFAAIAAAD///7/AQAFAAIAAAD///3/AQAFAAIAAAD///z/AQAFAAIAAAD///v/AQAFAAIAAAAAAAgAAQAFAAIAAAAiAAgAAQAFAAIAAAAhAAgAAQAFAAIAAAAgAAgAAQAFAAIAAAAfAAgAAQAFAAIAAAAeAAgAAQAFAAIAAAAdAAgAAQAFAAIAAAAcAAgAAQAFAAIAAAAbAAgAAQAFAAIAAAAaAAgAAQAFAAIAAAAZAAgAAQAFAAIAAAAYAAgAAQAFAAIAAAAXAAgAAQAFAAIAAAAWAAgAAQAFAAIAAAAVAAgAAQAFAAIAAAAUAAgAAQAFAAIAAAATAAgAAQAFAAIAAAASAAgAAQAFAAIAAAARAAgAAQAFAAIAAAAQAAgAAQAFAAIAAAAPAAgAAQAFAAIAAAAOAAgAAQAFAAIAAAANAAgAAQAFAAIAAAAMAAgAAQAFAAIAAAALAAgAAQAFAAIAAAAKAAgAAQAFAAIAAAAJAAgAAQAFAAIAAAAIAAgAAQAFAAIAAAAHAAgAAQAFAAIAAAAGAAgAAQAFAAIAAAAFAAgAAQAFAAIAAAAEAAgAAQAFAAIAAAAjAAgAAQAFAAIAAAAjAAcAAQAFAAIAAAAjAAYAAQAFAAIAAAAjAAUAAQAFAAIAAAAjAAQAAQAFAAIAAAAjAAMAAQAFAAIAAAAjAAEAAQAFAAIAAAAjAAAAAQAFAAIAAAAjAP//AQAFAAIAAAAjAP7/AQAFAAIAAAAjAP3/AQAFAAIAAAAjAPz/AQAFAAIAAAAjAPv/AQAFAAIAAAAjAPr/AQAFAAIAAAAjAPn/AQAFAAIAAAAjAPj/AQAFAAIAAAAjAPf/AQAFAAIAAAAjAPb/AQAFAAIAAAAjAPX/AQAFAAIAAAAiAAcAAQAFAAIAAAAiAAYAAQAFAAIAAAAiAAUAAQAFAAIAAAAiAAQAAQAFAAIAAAAiAAMAAQAFAAIAAAAiAAEAAQAFAAIAAAAiAAAAAQAFAAIAAAAiAP//AQAFAAIAAAAiAP7/AQAFAAIAAAAiAP3/AQAFAAIAAAAiAPz/AQAFAAIAAAAiAPv/AQAFAAIAAAAiAPr/AQAFAAIAAAAiAPn/AQAFAAIAAAAiAPj/AQAFAAIAAAAiAPf/AQAFAAIAAAAiAPb/AQAFAAIAAAAiAPX/AQAFAAIAAAAQAAIAAQAFAAIAAAAQAAEAAQAFAAIAAAAQAAAAAQAFAAIAAAAQAP//AQAFAAIAAAAQAP7/AQAFAAIAAAAQAP3/AQAFAAIAAAAQAPz/AQAFAAIAAAAQAPv/AQAFAAIAAAAQAPr/AQAFAAIAAAAQAPn/AQAFAAIAAAAQAPj/AQAFAAIAAAAQAPf/AQAFAAIAAAAQAPb/AQAFAAIAAAAQAPX/AQAFAAIAAAAPAAIAAQAFAAIAAAAPAAEAAQAFAAIAAAAPAAAAAQAFAAIAAAAPAP//AQAFAAIAAAAPAP7/AQAFAAIAAAAPAP3/AQAFAAIAAAAPAPz/AQAFAAIAAAAPAPv/AQAFAAIAAAAPAPr/AQAFAAIAAAAPAPn/AQAFAAIAAAAPAPj/AQAFAAIAAAAPAPf/AQAFAAIAAAAPAPb/AQAFAAIAAAAPAPX/AQAFAAIAAAAFAAcAAQABAAEAAAAFAAYAAQABAAEAAAAFAAUAAQACAAAAAAAEAAcAAQABAAEAAAAEAAYAAQABAAEAAAAEAAUAAQABAAAAAAADAAcAAQABAAEAAAADAAYAAQABAAEAAAADAAUAAQABAAAAAAACAAcAAQABAAEAAAACAAYAAQABAAEAAAACAAUAAQABAAAAAAABAAcAAQABAAEAAAABAAYAAQABAAEAAAABAAUAAQABAAAAAAAAAAcAAQABAAEAAAAAAAYAAQABAAEAAAAAAAUAAQAAAAAAAAAJAAcAAQABAAEAAAAJAAYAAQABAAAAAAAIAAcAAQABAAEAAAAIAAYAAQABAAAAAAAHAAcAAQABAAEAAAAHAAYAAQABAAAAAAAGAAcAAQABAAEAAAAGAAYAAQABAAAAAAAUAAcAAQABAAEAAAAUAAYAAQABAAEAAAAUAAUAAQACAAAAAAATAAcAAQABAAEAAAATAAYAAQABAAEAAAATAAUAAQABAAAAAAASAAcAAQABAAEAAAASAAYAAQABAAEAAAASAAUAAQABAAAAAAARAAcAAQABAAEAAAARAAYAAQABAAEAAAARAAUAAQABAAAAAAAQAAcAAQABAAEAAAAQAAYAAQABAAEAAAAQAAUAAQABAAAAAAAPAAcAAQABAAEAAAAPAAYAAQABAAEAAAAPAAUAAQABAAAAAAAOAAcAAQABAAEAAAAOAAYAAQABAAEAAAAOAAUAAQABAAAAAAANAAcAAQABAAEAAAANAAYAAQABAAEAAAANAAUAAQABAAAAAAAMAAcAAQABAAEAAAAMAAYAAQABAAEAAAAMAAUAAQABAAAAAAALAAcAAQABAAEAAAALAAYAAQABAAEAAAALAAUAAQABAAAAAAAKAAcAAQABAAEAAAAKAAYAAQABAAEAAAAKAAUAAQAAAAAAAAAfAAMAAQABAAAAAAAgAAMAAQABAAAAAAAhAAMAAQABAAAAAAAfAAQAAQABAAEAAAAfAAUAAQABAAEAAAAfAAYAAQABAAEAAAAgAAYAAQABAAEAAAAgAAcAAQABAAEAAAAhAAcAAQABAAEAAAAfAAcAAQABAAEAAAAhAAYAAQABAAEAAAAgAAUAAQABAAEAAAAhAAUAAQABAAEAAAAgAAQAAQABAAEAAAAhAAQAAQABAAEAAAAcAAUAAQAJAAEAAAAdAAQAAQAJAAEAAAAeAAMAAQAJAAEAAAAeAAQAAQAJAAIAAAAdAAUAAQAJAAIAAAAcAAYAAQAJAAIAAAAeAAUAAQAKAAIAAAAeAAYAAQAKAAIAAAAdAAYAAQAKAAIAAAAcAAcAAQAKAAIAAAAdAAcAAQAKAAIAAAAeAAcAAQAKAAIAAAAbAAYAAQAEAAEAAAACAAQAAQABAAEAAAACAAMAAQABAAEAAAABAAIAAQAHAAEAAAADAAIAAQAIAAEAAAACAAIAAQABAAAAAAAkAAUAAQAFAAIAAAAlAAUAAQAFAAIAAAAlAAYAAQAFAAIAAAAmAAYAAQAFAAIAAAAmAAcAAQAFAAIAAAAnAAcAAQAFAAIAAAAnAAgAAQAFAAIAAAAoAAgAAQAFAAIAAAApAAgAAQAFAAIAAAAkAAYAAQAFAAIAAAAkAAcAAQAFAAIAAAAkAAgAAQAFAAIAAAAlAAcAAQAFAAIAAAAlAAgAAQAFAAIAAAAmAAUAAQAFAAIAAAAmAAgAAQAFAAIAAAAnAAUAAQAFAAIAAAAnAAYAAQAFAAIAAAAoAAUAAQAFAAIAAAAoAAYAAQAFAAIAAAAoAAcAAQAFAAIAAAApAAUAAQAFAAIAAAApAAYAAQAFAAIAAAApAAcAAQAFAAIAAAAqAAYAAQAFAAIAAAAqAAcAAQAFAAIAAAAqAAgAAQAFAAIAAAArAAYAAQAFAAIAAAArAAcAAQAFAAIAAAArAAgAAQAFAAIAAAAsAAYAAQAFAAIAAAAsAAcAAQAFAAIAAAAsAAgAAQAFAAIAAAAtAAYAAQAFAAIAAAAtAAcAAQAFAAIAAAAtAAgAAQAFAAIAAAAuAAYAAQAFAAIAAAAuAAcAAQAFAAIAAAAuAAgAAQAFAAIAAAAvAAUAAQAFAAIAAAAvAAYAAQAFAAIAAAAvAAcAAQAFAAIAAAAvAAgAAQAFAAIAAAAwAAUAAQAFAAIAAAAwAAYAAQAFAAIAAAAwAAcAAQAFAAIAAAAwAAgAAQAFAAIAAAAxAAUAAQAFAAIAAAAxAAYAAQAFAAIAAAAxAAcAAQAFAAIAAAAxAAgAAQAFAAIAAAAyAAUAAQAFAAIAAAAyAAYAAQAFAAIAAAAyAAcAAQAFAAIAAAAyAAgAAQAFAAIAAAAzAAUAAQAFAAIAAAAzAAYAAQAFAAIAAAAzAAcAAQAFAAIAAAAzAAgAAQAFAAIAAAApAAIAAQAFAAIAAAApAAMAAQAFAAIAAAApAAQAAQAFAAIAAAAwAAAAAQAFAAIAAAAwAAEAAQAFAAIAAAAwAAIAAQAFAAIAAAA1AAUAAQAFAAIAAAA1AAYAAQAFAAIAAAA2AAUAAQAFAAIAAAA2AAYAAQAFAAIAAAA3AAUAAQAFAAIAAAA3AAYAAQAFAAIAAAA0AAgAAQAFAAIAAAA1AAgAAQAFAAIAAAA2AAgAAQAFAAIAAAA3AAgAAQAFAAIAAAA4AAgAAQAFAAIAAAA5AAgAAQAFAAIAAAA6AAgAAQAFAAIAAAA7AAgAAQAFAAIAAAA8AAgAAQAFAAIAAAA9AAgAAQAFAAIAAAA+AAgAAQAFAAIAAAA/AAgAAQAFAAIAAABAAAgAAQAFAAIAAAA5AAcAAQAFAAIAAAA6AAcAAQAFAAIAAAA7AAcAAQAFAAIAAAA8AAcAAQAFAAIAAAA9AAcAAQAFAAIAAAA+AAcAAQAFAAIAAAA/AAcAAQAFAAIAAABAAAcAAQAFAAIAAAA7AAYAAQAFAAIAAAA8AAYAAQAFAAIAAAA9AAYAAQAFAAIAAAA+AAYAAQAFAAIAAAA/AAYAAQAFAAIAAABAAAYAAQAFAAIAAAA4AAUAAQAFAAIAAAA5AAUAAQAFAAIAAAA6AAUAAQAFAAIAAAA7AAUAAQAFAAIAAAA8AAUAAQAFAAIAAAA9AAUAAQAFAAIAAAA+AAUAAQAFAAIAAAA/AAUAAQAFAAIAAABAAAUAAQAFAAIAAAA4APX/AQAFAAIAAAA4APb/AQAFAAIAAAA4APf/AQAFAAIAAAA4APj/AQAFAAIAAAA4APn/AQAFAAIAAAA4APr/AQAFAAIAAAA4APv/AQAFAAIAAAA4APz/AQAFAAIAAAA4AP3/AQAFAAIAAAA4AP7/AQAFAAIAAAA4AP//AQAFAAIAAAA4AAAAAQAFAAIAAAA4AAEAAQAFAAIAAAA4AAIAAQAFAAIAAAA4AAMAAQAFAAIAAAA4AAQAAQAFAAIAAAA5APX/AQAFAAIAAAA5APb/AQAFAAIAAAA5APf/AQAFAAIAAAA5APj/AQAFAAIAAAA5APn/AQAFAAIAAAA5APr/AQAFAAIAAAA5APv/AQAFAAIAAAA5APz/AQAFAAIAAAA5AP3/AQAFAAIAAAA5AP7/AQAFAAIAAAA5AP//AQAFAAIAAAA5AAAAAQAFAAIAAAA5AAEAAQAFAAIAAAA5AAIAAQAFAAIAAAA5AAMAAQAFAAIAAAA5AAQAAQAFAAIAAAA6APX/AQAFAAIAAAA6APb/AQAFAAIAAAA6APf/AQAFAAIAAAA6APj/AQAFAAIAAAA6APn/AQAFAAIAAAA6APr/AQAFAAIAAAA6APv/AQAFAAIAAAA6APz/AQAFAAIAAAA6AP3/AQAFAAIAAAA6AP7/AQAFAAIAAAA6AP//AQAFAAIAAAA6AAAAAQAFAAIAAAA6AAEAAQAFAAIAAAA6AAIAAQAFAAIAAAA6AAMAAQAFAAIAAAA6AAQAAQAFAAIAAAA7APX/AQAFAAIAAAA7APb/AQAFAAIAAAA7APf/AQAFAAIAAAA7APj/AQAFAAIAAAA7APn/AQAFAAIAAAA7APr/AQAFAAIAAAA7APv/AQAFAAIAAAA7APz/AQAFAAIAAAA7AP3/AQAFAAIAAAA7AP7/AQAFAAIAAAA7AP//AQAFAAIAAAA7AAAAAQAFAAIAAAA7AAEAAQAFAAIAAAA7AAIAAQAFAAIAAAA7AAMAAQAFAAIAAAA7AAQAAQAFAAIAAAA8APX/AQABAAEAAAA8APb/AQABAAEAAAA8APf/AQABAAEAAAA8APj/AQABAAEAAAA8APn/AQABAAEAAAA8APr/AQABAAEAAAA8APv/AQABAAEAAAA8APz/AQABAAEAAAA8AP3/AQABAAEAAAA8AP7/AQABAAEAAAA8AP//AQABAAEAAAA8AAAAAQABAAEAAAA8AAEAAQABAAEAAAA8AAIAAQABAAEAAAA8AAMAAQABAAEAAAA8AAQAAQABAAEAAAA9APX/AQABAAEAAAA9APb/AQABAAEAAAA9APf/AQABAAEAAAA9APj/AQABAAEAAAA9APn/AQABAAEAAAA9APr/AQABAAEAAAA9APv/AQABAAEAAAA9APz/AQABAAEAAAA9AP3/AQABAAEAAAA9AP7/AQABAAEAAAA9AP//AQABAAEAAAA9AAAAAQABAAEAAAA9AAEAAQABAAEAAAA9AAIAAQABAAEAAAA9AAMAAQABAAEAAAA9AAQAAQABAAEAAAA+APX/AQABAAEAAAA+APb/AQABAAEAAAA+APf/AQABAAEAAAA+APj/AQABAAEAAAA+APn/AQABAAEAAAA+APr/AQABAAEAAAA+APv/AQABAAEAAAA+APz/AQABAAEAAAA+AP3/AQABAAEAAAA+AP7/AQABAAEAAAA+AP//AQABAAEAAAA+AAAAAQABAAEAAAA+AAEAAQABAAEAAAA+AAIAAQABAAEAAAA+AAMAAQABAAEAAAA+AAQAAQABAAEAAAA/APX/AQABAAEAAAA/APb/AQABAAEAAAA/APf/AQABAAEAAAA/APj/AQABAAEAAAA/APn/AQABAAEAAAA/APr/AQABAAEAAAA/APv/AQABAAEAAAA/APz/AQABAAEAAAA/AP3/AQABAAEAAAA/AP7/AQABAAEAAAA/AP//AQABAAEAAAA/AAAAAQABAAEAAAA/AAEAAQABAAEAAAA/AAIAAQABAAEAAAA/AAMAAQABAAEAAAA/AAQAAQABAAEAAABAAPX/AQABAAEAAABAAPb/AQABAAEAAABAAPf/AQABAAEAAABAAPj/AQABAAEAAABAAPn/AQABAAEAAABAAPr/AQABAAEAAABAAPv/AQABAAEAAABAAPz/AQABAAEAAABAAP3/AQABAAEAAABAAP7/AQABAAEAAABAAP//AQABAAEAAABAAAAAAQABAAEAAABAAAEAAQABAAEAAABAAAIAAQABAAEAAABAAAMAAQABAAEAAABAAAQAAQABAAEAAAArAAQAAQAEAAEAAAAsAAQAAQAJAAIAAAAsAAMAAQAJAAEAAAAtAAMAAQAKAAEAAAAuAAMAAQAKAAEAAAAvAAMAAQAKAAEAAAAwAAMAAQAKAAEAAAAxAAMAAQAKAAEAAAAyAAMAAQALAAEAAAAzAAQAAQALAAEAAAAyAAQAAQALAAIAAAAtAAQAAQAKAAIAAAAuAAQAAQAKAAIAAAAvAAQAAQAKAAIAAAAwAAQAAQAKAAIAAAAxAAQAAQAKAAIAAAAkAAMAAQAKAAEAAAAlAAMAAQAKAAEAAAAmAAMAAQALAAEAAAAmAAQAAQALAAIAAAAnAAQAAQAGAAEAAAAkAAQAAQAKAAIAAAAlAAQAAQAKAAIAAAABAAgAAQABAAEAAAACAAgAAQABAAEAAAADAAgAAQABAAEAAAA=")
+tile_map_data = PackedByteArray("AAD//wgAAQAFAAIAAAD//wcAAQAFAAIAAAD//wYAAQAFAAIAAAD//wUAAQAFAAIAAAD//wQAAQAFAAIAAAD//wMAAQAFAAIAAAD//wIAAQAFAAIAAAD//wEAAQAFAAIAAAD//wAAAQAFAAIAAAD/////AQAFAAIAAAD///7/AQAFAAIAAAD///3/AQAFAAIAAAD///z/AQAFAAIAAAD///v/AQAFAAIAAAAAAAgAAQAFAAIAAAAhAAgAAQAFAAIAAAAgAAgAAQAFAAIAAAAfAAgAAQAFAAIAAAAeAAgAAQAFAAIAAAAdAAgAAQAFAAIAAAAcAAgAAQAFAAIAAAAbAAgAAQAFAAIAAAAaAAgAAQAFAAIAAAAZAAgAAQAFAAIAAAAYAAgAAQAFAAIAAAAXAAgAAQAFAAIAAAAWAAgAAQAFAAIAAAAVAAgAAQAFAAIAAAAUAAgAAQAFAAIAAAATAAgAAQAFAAIAAAASAAgAAQAFAAIAAAARAAgAAQAFAAIAAAAQAAgAAQAFAAIAAAAPAAgAAQAFAAIAAAAOAAgAAQAFAAIAAAANAAgAAQAFAAIAAAAMAAgAAQAFAAIAAAALAAgAAQAFAAIAAAAKAAgAAQAFAAIAAAAJAAgAAQAFAAIAAAAIAAgAAQAFAAIAAAAHAAgAAQAFAAIAAAAGAAgAAQAFAAIAAAAFAAgAAQAFAAIAAAAEAAgAAQAFAAIAAAAQAPr/AQAFAAIAAAAQAPn/AQAFAAIAAAAQAPj/AQAFAAIAAAAQAPf/AQAFAAIAAAAQAPb/AQAFAAIAAAAQAPX/AQAFAAIAAAAFAAcAAQABAAEAAAAFAAYAAQABAAEAAAAFAAUAAQACAAAAAAAEAAcAAQABAAEAAAAEAAYAAQABAAEAAAAEAAUAAQABAAAAAAADAAcAAQABAAEAAAADAAYAAQABAAEAAAADAAUAAQABAAAAAAACAAcAAQABAAEAAAACAAYAAQABAAEAAAACAAUAAQABAAAAAAABAAcAAQABAAEAAAABAAYAAQABAAEAAAABAAUAAQABAAAAAAAAAAcAAQABAAEAAAAAAAYAAQABAAEAAAAAAAUAAQAAAAAAAAAJAAcAAQABAAEAAAAJAAYAAQABAAAAAAAIAAcAAQABAAEAAAAIAAYAAQABAAAAAAAHAAcAAQABAAEAAAAHAAYAAQABAAAAAAAGAAcAAQABAAEAAAAGAAYAAQABAAAAAAAUAAcAAQABAAEAAAAUAAYAAQABAAEAAAAUAAUAAQACAAAAAAATAAcAAQABAAEAAAATAAYAAQABAAEAAAATAAUAAQABAAAAAAASAAcAAQABAAEAAAASAAYAAQABAAEAAAASAAUAAQABAAAAAAARAAcAAQABAAEAAAARAAYAAQABAAEAAAARAAUAAQABAAAAAAAQAAcAAQABAAEAAAAQAAYAAQABAAEAAAAQAAUAAQABAAAAAAAPAAcAAQABAAEAAAAPAAYAAQABAAEAAAAPAAUAAQABAAAAAAAOAAcAAQABAAEAAAAOAAYAAQABAAEAAAAOAAUAAQABAAAAAAANAAcAAQABAAEAAAANAAYAAQABAAEAAAANAAUAAQABAAAAAAAMAAcAAQABAAEAAAAMAAYAAQABAAEAAAAMAAUAAQABAAAAAAALAAcAAQABAAEAAAALAAYAAQABAAEAAAALAAUAAQABAAAAAAAKAAcAAQABAAEAAAAKAAYAAQABAAEAAAAKAAUAAQAAAAAAAAAfAAMAAQABAAAAAAAgAAMAAQAKAAEAAAAhAAMAAQAFAAIAAAAfAAQAAQABAAEAAAAfAAUAAQABAAEAAAAfAAYAAQABAAEAAAAgAAYAAQABAAEAAAAgAAcAAQABAAEAAAAhAAcAAQAFAAIAAAAfAAcAAQABAAEAAAAhAAYAAQAFAAIAAAAgAAUAAQABAAEAAAAhAAUAAQAFAAIAAAAgAAQAAQAKAAIAAAAhAAQAAQAFAAIAAAAcAAUAAQAJAAEAAAAdAAQAAQAJAAEAAAAeAAMAAQAJAAEAAAAeAAQAAQAJAAIAAAAdAAUAAQAJAAIAAAAcAAYAAQAJAAIAAAAeAAUAAQAKAAIAAAAeAAYAAQAKAAIAAAAdAAYAAQAKAAIAAAAcAAcAAQAKAAIAAAAdAAcAAQAKAAIAAAAeAAcAAQAKAAIAAAAbAAYAAQAEAAEAAAACAAQAAQABAAEAAAACAAMAAQABAAEAAAABAAIAAQAHAAEAAAADAAIAAQAIAAEAAAACAAIAAQABAAAAAAABAAgAAQABAAEAAAACAAgAAQABAAEAAAADAAgAAQABAAEAAAAPAPH/AQAFAAIAAAAQAPT/AQAFAAIAAAAQAPP/AQAFAAIAAAAQAPL/AQAFAAIA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")
 tile_set = ExtResource("6_y5lv3")
 
 [node name="Npc_Premise" type="Node2D" parent="." unique_id=688628462 node_paths=PackedStringArray("player_detector", "dialogue_container") instance=ExtResource("3_27os8")]
@@ -78,25 +78,25 @@ use_global_quest_dialogue = true
 player_detector = NodePath("Area2D")
 dialogue_container = NodePath("DialogueMount")
 
-[node name="Npc_Puzzle" type="Node2D" parent="." unique_id=1439020895 node_paths=PackedStringArray("player_detector", "dialogue_container") instance=ExtResource("3_27os8")]
-position = Vector2(1708, 595)
+[node name="Npc_RockPuzzle" type="Node2D" parent="." unique_id=1439020895 node_paths=PackedStringArray("player_detector", "dialogue_container") instance=ExtResource("3_27os8")]
+position = Vector2(4057, 321)
 script = ExtResource("10_7xjhb")
 use_global_quest_dialogue = true
 player_detector = NodePath("Area2D")
 dialogue_container = NodePath("DialogueMount")
 
-[node name="Npc_WellDone" type="Node2D" parent="." unique_id=1405109528 node_paths=PackedStringArray("player_detector", "dialogue_container") instance=ExtResource("3_27os8")]
-position = Vector2(2164, 595)
+[node name="Npc_ScrollPuzzle" type="Node2D" parent="." unique_id=1405109528 node_paths=PackedStringArray("player_detector", "dialogue_container") instance=ExtResource("3_27os8")]
+position = Vector2(5812, 449)
 script = ExtResource("10_7xjhb")
 use_global_quest_dialogue = true
 player_detector = NodePath("Area2D")
 dialogue_container = NodePath("DialogueMount")
 
 [node name="RockPile" type="Node2D" parent="." unique_id=1439632278 instance=ExtResource("10_cs3j8")]
-position = Vector2(1955, 536)
+position = Vector2(4219, 320)
 rotation = -1.5707964
 script = ExtResource("12_lt15l")
-width = 2
+width = 1
 
 [node name="Coins" type="Node2D" parent="." unique_id=1860713878]
 
@@ -108,18 +108,18 @@ script = ExtResource("14_8jun3")
 texture = ExtResource("7_y3jo1")
 tint = Color(1, 1, 0, 1)
 
-[node name="Coin3" type="Area2D" parent="Coins" unique_id=900612708 groups=["coins"] instance=ExtResource("6_qy02x")]
+[node name="Coin_ReachedRockPuzzle" type="Area2D" parent="Coins" unique_id=900612708 groups=["coins"] instance=ExtResource("6_qy02x")]
 modulate = Color(1, 0, 0, 1)
-position = Vector2(1633, 558)
+position = Vector2(3982, 284)
 collision_layer = 2
 script = ExtResource("14_8jun3")
 texture = ExtResource("7_y3jo1")
 tint = Color(1, 0, 0, 1)
 
-[node name="TestProgressQuest" type="Node" parent="Coins/Coin3" unique_id=1692964634 instance=ExtResource("8_jo8x4")]
+[node name="TestProgressQuest" type="Node" parent="Coins/Coin_ReachedRockPuzzle" unique_id=1692964634 instance=ExtResource("8_jo8x4")]
 script = ExtResource("17_vnrdr")
 
-[node name="Label" type="Label" parent="Coins/Coin3" unique_id=1505039228]
+[node name="Label" type="Label" parent="Coins/Coin_ReachedRockPuzzle" unique_id=1505039228]
 offset_left = -53.0
 offset_top = -104.0
 offset_right = 372.0
@@ -127,18 +127,18 @@ offset_bottom = -55.0
 text = "Reached
 rocks"
 
-[node name="Coin8" type="Area2D" parent="Coins" unique_id=1095254317 groups=["coins"] instance=ExtResource("6_qy02x")]
+[node name="Coin_SolvedRockPuzzle" type="Area2D" parent="Coins" unique_id=1095254317 groups=["coins"] instance=ExtResource("6_qy02x")]
 modulate = Color(1, 0, 0, 1)
-position = Vector2(2078, 553)
+position = Vector2(4347, 262)
 collision_layer = 2
 script = ExtResource("14_8jun3")
 texture = ExtResource("7_y3jo1")
 tint = Color(1, 0, 0, 1)
 
-[node name="TestProgressQuest" type="Node" parent="Coins/Coin8" unique_id=1601536788 instance=ExtResource("8_jo8x4")]
+[node name="TestProgressQuest" type="Node" parent="Coins/Coin_SolvedRockPuzzle" unique_id=1601536788 instance=ExtResource("8_jo8x4")]
 script = ExtResource("17_vnrdr")
 
-[node name="Label" type="Label" parent="Coins/Coin8" unique_id=352849225]
+[node name="Label" type="Label" parent="Coins/Coin_SolvedRockPuzzle" unique_id=352849225]
 offset_left = -53.0
 offset_top = -104.0
 offset_right = 372.0
@@ -148,7 +148,15 @@ puzzle"
 
 [node name="Coin4" type="Area2D" parent="Coins" unique_id=1137508267 groups=["coins"] instance=ExtResource("6_qy02x")]
 modulate = Color(1, 1, 0, 1)
-position = Vector2(2443, -574)
+position = Vector2(4543, -574)
+collision_layer = 2
+script = ExtResource("14_8jun3")
+texture = ExtResource("7_y3jo1")
+tint = Color(1, 1, 0, 1)
+
+[node name="Coin8" type="Area2D" parent="Coins" unique_id=1399238642 groups=["coins"] instance=ExtResource("6_qy02x")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(3109, 315)
 collision_layer = 2
 script = ExtResource("14_8jun3")
 texture = ExtResource("7_y3jo1")
@@ -156,7 +164,7 @@ tint = Color(1, 1, 0, 1)
 
 [node name="Coin5" type="Area2D" parent="Coins" unique_id=1885911067 groups=["coins"] instance=ExtResource("6_qy02x")]
 modulate = Color(1, 1, 0, 1)
-position = Vector2(2880, 128)
+position = Vector2(4980, 128)
 collision_layer = 2
 script = ExtResource("14_8jun3")
 texture = ExtResource("7_y3jo1")
@@ -164,7 +172,7 @@ tint = Color(1, 1, 0, 1)
 
 [node name="Coin6" type="Area2D" parent="Coins" unique_id=1933861692 groups=["coins"] instance=ExtResource("6_qy02x")]
 modulate = Color(1, 1, 0, 1)
-position = Vector2(3136, -384)
+position = Vector2(5236, -384)
 collision_layer = 2
 script = ExtResource("14_8jun3")
 texture = ExtResource("7_y3jo1")
@@ -172,7 +180,7 @@ tint = Color(1, 1, 0, 1)
 
 [node name="Coin7" type="Area2D" parent="Coins" unique_id=877924302 groups=["coins"] instance=ExtResource("6_qy02x")]
 modulate = Color(1, 1, 0, 1)
-position = Vector2(3392, 128)
+position = Vector2(5492, 128)
 collision_layer = 2
 script = ExtResource("14_8jun3")
 texture = ExtResource("7_y3jo1")
@@ -180,7 +188,7 @@ tint = Color(1, 1, 0, 1)
 
 [node name="Coin12" type="Area2D" parent="Coins" unique_id=1400756821 groups=["coins"] instance=ExtResource("6_qy02x")]
 modulate = Color(1, 1, 0, 1)
-position = Vector2(3520, 128)
+position = Vector2(5620, 128)
 collision_layer = 2
 script = ExtResource("14_8jun3")
 texture = ExtResource("7_y3jo1")
@@ -188,7 +196,7 @@ tint = Color(1, 1, 0, 1)
 
 [node name="Coin13" type="Area2D" parent="Coins" unique_id=1524629582 groups=["coins"] instance=ExtResource("6_qy02x")]
 modulate = Color(1, 1, 0, 1)
-position = Vector2(3264, 128)
+position = Vector2(5364, 128)
 collision_layer = 2
 script = ExtResource("14_8jun3")
 texture = ExtResource("7_y3jo1")
@@ -196,7 +204,7 @@ tint = Color(1, 1, 0, 1)
 
 [node name="Coin14" type="Area2D" parent="Coins" unique_id=626819192 groups=["coins"] instance=ExtResource("6_qy02x")]
 modulate = Color(1, 1, 0, 1)
-position = Vector2(3008, 128)
+position = Vector2(5108, 128)
 collision_layer = 2
 script = ExtResource("14_8jun3")
 texture = ExtResource("7_y3jo1")
@@ -204,7 +212,7 @@ tint = Color(1, 1, 0, 1)
 
 [node name="Coin15" type="Area2D" parent="Coins" unique_id=1171510110 groups=["coins"] instance=ExtResource("6_qy02x")]
 modulate = Color(1, 1, 0, 1)
-position = Vector2(2752, 128)
+position = Vector2(4852, 128)
 collision_layer = 2
 script = ExtResource("14_8jun3")
 texture = ExtResource("7_y3jo1")
@@ -212,7 +220,7 @@ tint = Color(1, 1, 0, 1)
 
 [node name="Coin16" type="Area2D" parent="Coins" unique_id=1908526342 groups=["coins"] instance=ExtResource("6_qy02x")]
 modulate = Color(1, 1, 0, 1)
-position = Vector2(3840, 832)
+position = Vector2(5940, 832)
 collision_layer = 2
 script = ExtResource("14_8jun3")
 texture = ExtResource("7_y3jo1")
@@ -220,7 +228,7 @@ tint = Color(1, 1, 0, 1)
 
 [node name="Coin17" type="Area2D" parent="Coins" unique_id=454749508 groups=["coins"] instance=ExtResource("6_qy02x")]
 modulate = Color(1, 1, 0, 1)
-position = Vector2(3712, 960)
+position = Vector2(5812, 960)
 collision_layer = 2
 script = ExtResource("14_8jun3")
 texture = ExtResource("7_y3jo1")
@@ -228,7 +236,7 @@ tint = Color(1, 1, 0, 1)
 
 [node name="Coin20" type="Area2D" parent="Coins" unique_id=1085266310 groups=["coins"] instance=ExtResource("6_qy02x")]
 modulate = Color(1, 1, 0, 1)
-position = Vector2(3840, 704)
+position = Vector2(5940, 704)
 collision_layer = 2
 script = ExtResource("14_8jun3")
 texture = ExtResource("7_y3jo1")
@@ -236,7 +244,7 @@ tint = Color(1, 1, 0, 1)
 
 [node name="Coin18" type="Area2D" parent="Coins" unique_id=1088269011 groups=["coins"] instance=ExtResource("6_qy02x")]
 modulate = Color(1, 1, 0, 1)
-position = Vector2(3456, 960)
+position = Vector2(5556, 960)
 collision_layer = 2
 script = ExtResource("14_8jun3")
 texture = ExtResource("7_y3jo1")
@@ -244,7 +252,7 @@ tint = Color(1, 1, 0, 1)
 
 [node name="Coin21" type="Area2D" parent="Coins" unique_id=1307166331 groups=["coins"] instance=ExtResource("6_qy02x")]
 modulate = Color(1, 1, 0, 1)
-position = Vector2(3584, 960)
+position = Vector2(5684, 960)
 collision_layer = 2
 script = ExtResource("14_8jun3")
 texture = ExtResource("7_y3jo1")
@@ -252,7 +260,7 @@ tint = Color(1, 1, 0, 1)
 
 [node name="Coin19" type="Area2D" parent="Coins" unique_id=266906592 groups=["coins"] instance=ExtResource("6_qy02x")]
 modulate = Color(1, 1, 0, 1)
-position = Vector2(3840, 960)
+position = Vector2(5940, 960)
 collision_layer = 2
 script = ExtResource("14_8jun3")
 texture = ExtResource("7_y3jo1")
@@ -260,7 +268,7 @@ tint = Color(1, 1, 0, 1)
 
 [node name="Coin9" type="Area2D" parent="Coins" unique_id=2052277588 groups=["coins"] instance=ExtResource("6_qy02x")]
 modulate = Color(1, 1, 0, 1)
-position = Vector2(3173, -1430)
+position = Vector2(5273, -1430)
 collision_layer = 2
 script = ExtResource("14_8jun3")
 texture = ExtResource("7_y3jo1")
@@ -268,7 +276,7 @@ tint = Color(1, 1, 0, 1)
 
 [node name="Coin10" type="Area2D" parent="Coins" unique_id=2073649153 groups=["coins"] instance=ExtResource("6_qy02x")]
 modulate = Color(1, 1, 0, 1)
-position = Vector2(3008, -320)
+position = Vector2(5108, -320)
 collision_layer = 2
 script = ExtResource("14_8jun3")
 texture = ExtResource("7_y3jo1")
@@ -276,7 +284,7 @@ tint = Color(1, 1, 0, 1)
 
 [node name="Coin11" type="Area2D" parent="Coins" unique_id=1756350612 groups=["coins"] instance=ExtResource("6_qy02x")]
 modulate = Color(1, 1, 0, 1)
-position = Vector2(3264, -320)
+position = Vector2(5364, -320)
 collision_layer = 2
 script = ExtResource("14_8jun3")
 texture = ExtResource("7_y3jo1")
@@ -297,196 +305,70 @@ script = ExtResource("14_8jun3")
 texture = ExtResource("7_y3jo1")
 tint = Color(1, 0.560065, 0.377408, 1)
 
-[node name="SpecialCoin2" type="Area2D" parent="SpecialCoins" unique_id=825206894 instance=ExtResource("9_16axh")]
-editor_description = "Special coins are ignored when calculating the total number of coins that must be collected to win, though collecting one still counts towards that goal.
-
-The only difference compared to coin.tscn is that special_coin.tscn is not in the \"coins\" group.
-
-Use this scene for optional coins to the level, such as coins which can only be accessed by enabling new player abilitiies."
-modulate = Color(1, 0.560065, 0.377408, 1)
-position = Vector2(5821, 733)
-collision_layer = 2
-script = ExtResource("14_8jun3")
-texture = ExtResource("7_y3jo1")
-tint = Color(1, 0.560065, 0.377408, 1)
-
-[node name="SpecialCoin3" type="Area2D" parent="SpecialCoins" unique_id=1928633583 instance=ExtResource("9_16axh")]
-editor_description = "Special coins are ignored when calculating the total number of coins that must be collected to win, though collecting one still counts towards that goal.
-
-The only difference compared to coin.tscn is that special_coin.tscn is not in the \"coins\" group.
-
-Use this scene for optional coins to the level, such as coins which can only be accessed by enabling new player abilitiies."
-modulate = Color(1, 0.560065, 0.377408, 1)
-position = Vector2(7489, 836)
-collision_layer = 2
-script = ExtResource("14_8jun3")
-texture = ExtResource("7_y3jo1")
-tint = Color(1, 0.560065, 0.377408, 1)
-
-[node name="SpecialCoin4" type="Area2D" parent="SpecialCoins" unique_id=464909668 instance=ExtResource("9_16axh")]
-editor_description = "Special coins are ignored when calculating the total number of coins that must be collected to win, though collecting one still counts towards that goal.
-
-The only difference compared to coin.tscn is that special_coin.tscn is not in the \"coins\" group.
-
-Use this scene for optional coins to the level, such as coins which can only be accessed by enabling new player abilitiies."
-modulate = Color(1, 0.560065, 0.377408, 1)
-position = Vector2(7119, -994)
-collision_layer = 2
-script = ExtResource("14_8jun3")
-texture = ExtResource("7_y3jo1")
-tint = Color(1, 0.560065, 0.377408, 1)
-
-[node name="SpecialCoin5" type="Area2D" parent="SpecialCoins" unique_id=1857190868 instance=ExtResource("9_16axh")]
-editor_description = "Special coins are ignored when calculating the total number of coins that must be collected to win, though collecting one still counts towards that goal.
-
-The only difference compared to coin.tscn is that special_coin.tscn is not in the \"coins\" group.
-
-Use this scene for optional coins to the level, such as coins which can only be accessed by enabling new player abilitiies."
-modulate = Color(1, 0.560065, 0.377408, 1)
-position = Vector2(7016, -1031)
-collision_layer = 2
-script = ExtResource("14_8jun3")
-texture = ExtResource("7_y3jo1")
-tint = Color(1, 0.560065, 0.377408, 1)
-
-[node name="SpecialCoin6" type="Area2D" parent="SpecialCoins" unique_id=1174375143 instance=ExtResource("9_16axh")]
-editor_description = "Special coins are ignored when calculating the total number of coins that must be collected to win, though collecting one still counts towards that goal.
-
-The only difference compared to coin.tscn is that special_coin.tscn is not in the \"coins\" group.
-
-Use this scene for optional coins to the level, such as coins which can only be accessed by enabling new player abilitiies."
-modulate = Color(1, 0.560065, 0.377408, 1)
-position = Vector2(6912, -1069)
-collision_layer = 2
-script = ExtResource("14_8jun3")
-texture = ExtResource("7_y3jo1")
-tint = Color(1, 0.560065, 0.377408, 1)
-
-[node name="SpecialCoin7" type="Area2D" parent="SpecialCoins" unique_id=617770995 instance=ExtResource("9_16axh")]
-editor_description = "Special coins are ignored when calculating the total number of coins that must be collected to win, though collecting one still counts towards that goal.
-
-The only difference compared to coin.tscn is that special_coin.tscn is not in the \"coins\" group.
-
-Use this scene for optional coins to the level, such as coins which can only be accessed by enabling new player abilitiies."
-modulate = Color(1, 0.560065, 0.377408, 1)
-position = Vector2(6810, -1092)
-collision_layer = 2
-script = ExtResource("14_8jun3")
-texture = ExtResource("7_y3jo1")
-tint = Color(1, 0.560065, 0.377408, 1)
-
-[node name="SpecialCoin8" type="Area2D" parent="SpecialCoins" unique_id=1475798736 instance=ExtResource("9_16axh")]
-editor_description = "Special coins are ignored when calculating the total number of coins that must be collected to win, though collecting one still counts towards that goal.
-
-The only difference compared to coin.tscn is that special_coin.tscn is not in the \"coins\" group.
-
-Use this scene for optional coins to the level, such as coins which can only be accessed by enabling new player abilitiies."
-modulate = Color(1, 0.560065, 0.377408, 1)
-position = Vector2(6711, -1124)
-collision_layer = 2
-script = ExtResource("14_8jun3")
-texture = ExtResource("7_y3jo1")
-tint = Color(1, 0.560065, 0.377408, 1)
-
-[node name="SpecialCoin9" type="Area2D" parent="SpecialCoins" unique_id=1009914159 instance=ExtResource("9_16axh")]
-editor_description = "Special coins are ignored when calculating the total number of coins that must be collected to win, though collecting one still counts towards that goal.
-
-The only difference compared to coin.tscn is that special_coin.tscn is not in the \"coins\" group.
-
-Use this scene for optional coins to the level, such as coins which can only be accessed by enabling new player abilitiies."
-modulate = Color(1, 0.560065, 0.377408, 1)
-position = Vector2(6608, -1165)
-collision_layer = 2
-script = ExtResource("14_8jun3")
-texture = ExtResource("7_y3jo1")
-tint = Color(1, 0.560065, 0.377408, 1)
-
 [node name="Platforms" type="Node2D" parent="." unique_id=1115693790]
 position = Vector2(1920, -64)
 
 [node name="Platform" type="Node2D" parent="Platforms" unique_id=349244858 instance=ExtResource("10_cs3j8")]
-position = Vector2(960, 320)
+position = Vector2(3060, 320)
 script = ExtResource("12_lt15l")
 width = 2
 
 [node name="Platform4" type="Node2D" parent="Platforms" unique_id=1105171937 instance=ExtResource("10_cs3j8")]
-position = Vector2(1257, -1238)
+position = Vector2(3357, -1238)
 script = ExtResource("12_lt15l")
 width = 2
 one_way = true
 fall = true
 
 [node name="Platform5" type="Node2D" parent="Platforms" unique_id=783386559 instance=ExtResource("10_cs3j8")]
-position = Vector2(841, -927)
+position = Vector2(2941, -927)
 script = ExtResource("12_lt15l")
 width = 2
 one_way = true
 fall = true
 
 [node name="Platform6" type="Node2D" parent="Platforms" unique_id=328079907 instance=ExtResource("10_cs3j8")]
-position = Vector2(1161, -927)
+position = Vector2(3261, -927)
 script = ExtResource("12_lt15l")
 width = 2
 one_way = true
 fall = true
 
 [node name="Platform7" type="Node2D" parent="Platforms" unique_id=1586665119 instance=ExtResource("10_cs3j8")]
-position = Vector2(1481, -927)
+position = Vector2(3581, -927)
 script = ExtResource("12_lt15l")
 width = 2
 one_way = true
 fall = true
 
 [node name="Platform8" type="Node2D" parent="Platforms" unique_id=1264675022 instance=ExtResource("10_cs3j8")]
-position = Vector2(1801, -927)
+position = Vector2(3901, -927)
 script = ExtResource("12_lt15l")
 width = 2
 one_way = true
 fall = true
 
 [node name="Platform9" type="Node2D" parent="Platforms" unique_id=39900956 instance=ExtResource("10_cs3j8")]
-position = Vector2(527, -364)
+position = Vector2(2627, -364)
+script = ExtResource("12_lt15l")
+width = 2
+one_way = true
+fall = true
+
+[node name="Platform10" type="Node2D" parent="Platforms" unique_id=1645718994 instance=ExtResource("10_cs3j8")]
+position = Vector2(1193, 525)
 script = ExtResource("12_lt15l")
 width = 2
 one_way = true
 fall = true
 
 [node name="Platform2" type="Node2D" parent="Platforms" unique_id=16930057 instance=ExtResource("10_cs3j8")]
-position = Vector2(1216, -64)
+position = Vector2(3316, -64)
 script = ExtResource("12_lt15l")
 width = 2
 
 [node name="Platform3" type="Node2D" parent="Platforms" unique_id=1437689298 instance=ExtResource("10_cs3j8")]
-position = Vector2(1472, 320)
-script = ExtResource("12_lt15l")
-width = 2
-
-[node name="Platform11" type="Node2D" parent="Platforms" unique_id=589384553 instance=ExtResource("10_cs3j8")]
-position = Vector2(3904, 688)
-script = ExtResource("12_lt15l")
-
-[node name="Platform12" type="Node2D" parent="Platforms" unique_id=815919193 instance=ExtResource("10_cs3j8")]
-position = Vector2(5120, 418)
-script = ExtResource("12_lt15l")
-width = 2
-
-[node name="Platform13" type="Node2D" parent="Platforms" unique_id=1104826248 instance=ExtResource("10_cs3j8")]
-position = Vector2(4526, 84)
-script = ExtResource("12_lt15l")
-width = 2
-
-[node name="Platform14" type="Node2D" parent="Platforms" unique_id=1593548845 instance=ExtResource("10_cs3j8")]
-position = Vector2(3924, -191)
-script = ExtResource("12_lt15l")
-width = 2
-
-[node name="Platform15" type="Node2D" parent="Platforms" unique_id=985188403 instance=ExtResource("10_cs3j8")]
-position = Vector2(3390, -507)
-script = ExtResource("12_lt15l")
-width = 2
-
-[node name="Platform16" type="Node2D" parent="Platforms" unique_id=1471739714 instance=ExtResource("10_cs3j8")]
-position = Vector2(2816, -816)
+position = Vector2(3572, 320)
 script = ExtResource("12_lt15l")
 width = 2
 
@@ -501,7 +383,7 @@ get past
 this wall?"
 
 [node name="Scroll" type="Node2D" parent="." unique_id=2086611064 node_paths=PackedStringArray("label") instance=ExtResource("12_ycdye")]
-position = Vector2(3715, -1160)
+position = Vector2(5815, -1160)
 script = ExtResource("22_1tk8l")
 label = NodePath("ConditionTextContainer/Label")
 
@@ -537,7 +419,7 @@ floor_snap_length = 32.0
 script = ExtResource("31_0bbcg")
 
 [node name="Enemy2" type="CharacterBody2D" parent="Enemies" unique_id=628973578 instance=ExtResource("17_d6rl2")]
-position = Vector2(2781, 987)
+position = Vector2(3072, 984)
 collision_layer = 8
 collision_mask = 4
 floor_constant_speed = true
@@ -545,30 +427,21 @@ floor_snap_length = 32.0
 script = ExtResource("31_0bbcg")
 
 [node name="Enemy3" type="CharacterBody2D" parent="Enemies" unique_id=1452245350 instance=ExtResource("17_d6rl2")]
-position = Vector2(4096, 960)
+position = Vector2(6196, 960)
 collision_layer = 8
 collision_mask = 4
 floor_constant_speed = true
 floor_snap_length = 32.0
 script = ExtResource("31_0bbcg")
-
-[node name="Enemy4" type="CharacterBody2D" parent="Enemies" unique_id=1255273089 instance=ExtResource("17_d6rl2")]
-position = Vector2(7367, 870)
-collision_layer = 8
-collision_mask = 4
-floor_constant_speed = true
-floor_snap_length = 32.0
-script = ExtResource("31_0bbcg")
-squashable = false
 
 [node name="Flag" type="Area2D" parent="." unique_id=750563103 instance=ExtResource("18_crtlj")]
-position = Vector2(2504, 581)
+position = Vector2(4479, 315)
 collision_layer = 2
 script = ExtResource("33_twxhk")
 sprite_frames = ExtResource("34_ht26h")
 
 [node name="Flag2" type="Area2D" parent="." unique_id=1350700916 instance=ExtResource("18_crtlj")]
-position = Vector2(4711, 319)
+position = Vector2(6753, 417)
 collision_layer = 2
 script = ExtResource("33_twxhk")
 sprite_frames = ExtResource("34_ht26h")
@@ -582,30 +455,39 @@ position_smoothing_enabled = true
 script = ExtResource("19_oe8g1")
 
 [node name="TestDisplayQuestText" type="Node2D" parent="." unique_id=2107395699 node_paths=PackedStringArray("label") instance=ExtResource("20_hwrq4")]
+visible = false
 position = Vector2(3681, -1405)
 script = ExtResource("37_kexs0")
 label = NodePath("Label")
 
 [node name="TestDisplayQuestText2" type="Node2D" parent="." unique_id=1467953204 node_paths=PackedStringArray("label") instance=ExtResource("20_hwrq4")]
+visible = false
 position = Vector2(3700, -1252)
 script = ExtResource("37_kexs0")
 label = NodePath("Label")
 
 [node name="InspectorVisibilityTrigger" type="Area2D" parent="." unique_id=964568534 instance=ExtResource("23_uo3or")]
-position = Vector2(2078, 516)
+position = Vector2(246, 510)
 collision_layer = 0
 script = ExtResource("40_7xjhb")
 
+[node name="InspectorVisibilityTrigger2" type="Area2D" parent="." unique_id=1583390062 instance=ExtResource("23_uo3or")]
+position = Vector2(4419, 255)
+collision_layer = 0
+script = ExtResource("40_7xjhb")
+set_inspector_to = 1
+
 [node name="ScrollGate" type="StaticBody2D" parent="." unique_id=68402488 instance=ExtResource("24_obko3")]
-position = Vector2(4415, 319)
+position = Vector2(6373, 449)
 collision_layer = 4
 collision_mask = 0
 
 [connection signal="body_entered" from="Dangerzone" to="Dangerzone" method="_on_body_entered"]
 [connection signal="body_entered" from="Coins/Coin" to="Coins/Coin" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/Coin3" to="Coins/Coin3" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/Coin8" to="Coins/Coin8" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/Coin_ReachedRockPuzzle" to="Coins/Coin_ReachedRockPuzzle" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/Coin_SolvedRockPuzzle" to="Coins/Coin_SolvedRockPuzzle" method="_on_body_entered"]
 [connection signal="body_entered" from="Coins/Coin4" to="Coins/Coin4" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/Coin8" to="Coins/Coin8" method="_on_body_entered"]
 [connection signal="body_entered" from="Coins/Coin5" to="Coins/Coin5" method="_on_body_entered"]
 [connection signal="body_entered" from="Coins/Coin6" to="Coins/Coin6" method="_on_body_entered"]
 [connection signal="body_entered" from="Coins/Coin7" to="Coins/Coin7" method="_on_body_entered"]
@@ -623,16 +505,9 @@ collision_mask = 0
 [connection signal="body_entered" from="Coins/Coin10" to="Coins/Coin10" method="_on_body_entered"]
 [connection signal="body_entered" from="Coins/Coin11" to="Coins/Coin11" method="_on_body_entered"]
 [connection signal="body_entered" from="SpecialCoins/SpecialCoin" to="SpecialCoins/SpecialCoin" method="_on_body_entered"]
-[connection signal="body_entered" from="SpecialCoins/SpecialCoin2" to="SpecialCoins/SpecialCoin2" method="_on_body_entered"]
-[connection signal="body_entered" from="SpecialCoins/SpecialCoin3" to="SpecialCoins/SpecialCoin3" method="_on_body_entered"]
-[connection signal="body_entered" from="SpecialCoins/SpecialCoin4" to="SpecialCoins/SpecialCoin4" method="_on_body_entered"]
-[connection signal="body_entered" from="SpecialCoins/SpecialCoin5" to="SpecialCoins/SpecialCoin5" method="_on_body_entered"]
-[connection signal="body_entered" from="SpecialCoins/SpecialCoin6" to="SpecialCoins/SpecialCoin6" method="_on_body_entered"]
-[connection signal="body_entered" from="SpecialCoins/SpecialCoin7" to="SpecialCoins/SpecialCoin7" method="_on_body_entered"]
-[connection signal="body_entered" from="SpecialCoins/SpecialCoin8" to="SpecialCoins/SpecialCoin8" method="_on_body_entered"]
-[connection signal="body_entered" from="SpecialCoins/SpecialCoin9" to="SpecialCoins/SpecialCoin9" method="_on_body_entered"]
 [connection signal="collected" from="Scroll" to="Scroll/ScrollContinuity" method="_on_collect"]
 [connection signal="condition_updated" from="Scroll" to="Scroll/SpriteContainer/Sprite2D/ScrollAnimator" method="_trigger_animation"]
 [connection signal="body_entered" from="Flag" to="Flag" method="_on_body_entered"]
 [connection signal="body_entered" from="Flag2" to="Flag2" method="_on_body_entered"]
 [connection signal="body_entered" from="InspectorVisibilityTrigger" to="InspectorVisibilityTrigger" method="_on_player_enter" unbinds=1]
+[connection signal="body_entered" from="InspectorVisibilityTrigger2" to="InspectorVisibilityTrigger2" method="_on_player_enter" unbinds=1]
