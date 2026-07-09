@@ -40,19 +40,7 @@ func update_and_save_node(node: Node) -> void:
 	EditorInterface.save_scene()
 
 func set_inspector_dock_visible(visible: bool) -> void:
-	# EditorInterface.get_inspector_dock only exists in our customized version of Godot, 
-	# so avoid an error by checking for the method ahead of time.
-	var interface = EditorInterface
-	if interface.has_method("get_inspector_dock"):
-		var dock: EditorDock = interface.get_inspector_dock()
-		if visible:
-			dock.open()
-		else:
-			dock.close()
-	else:
-		# Print a message to the output window so we know it would have worked in streamlined Godot
-		var verb := "open" if visible else "close"
-		print("Tried to " + verb + " the inspector dock but it's not possible in this version of Godot!")
+	BabyGodotUtils.toggle_streamlined_exclusive_dock("get_inspector_dock", visible)
 
 func set_2d_viewport_focus(position: Vector2, zoom: float) -> void:
 	# EditorInterface.get_canvas_item_editor only exists in our customized version of
@@ -88,6 +76,9 @@ func _enter_tree() -> void:
 
 	bridge = BabyGodotQuestsBridge.new()
 	add_debugger_plugin(bridge)
+
+	BabyGodotUtils.toggle_streamlined_exclusive_dock("get_inspector_dock", false)
+	BabyGodotUtils.toggle_streamlined_exclusive_dock("get_scene_tree_dock", false)
 
 func _connect_scene_edit_signal() -> void:
 	scene_changed.connect(func(_arg: Variant):
