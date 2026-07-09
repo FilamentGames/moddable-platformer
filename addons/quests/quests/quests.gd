@@ -3,6 +3,12 @@ extends Node
 class_name BabyGodotQuests
 ## The singleton object for the global "Quests" system, will store current quest progress
 
+## Represents which mode the editor is in
+enum EditorMode {
+	PLAY, ## Represents play mode
+	EDIT ## Represents edit mode
+}
+
 ## The list of text lines for the quest. This will probably be replaced with a more robust system that is handled by a resource in the future.
 @export var text_data: Array[QuestLine] = []
 
@@ -56,8 +62,12 @@ func can_proceed() -> bool:
 	return _current_text_line < text_data.size() - 1 && text_data[_current_text_line].progress_method == QuestLine.ProgressMethod.NextButton
 
 ## Register a mode switch, and progress quest text if it's currently waiting for a mode switch
-func register_mode_switch() -> void:
-	if text_data[_current_text_line].progress_method == QuestLine.ProgressMethod.ModeSwitch:
+func register_mode_switch(mode: EditorMode = EditorMode.PLAY) -> void:
+	var target_mode = QuestLine.ProgressMethod.SwitchToPlay if mode == EditorMode.PLAY else QuestLine.ProgressMethod.SwitchToEdit
+	var current_progress_method = text_data[_current_text_line].progress_method
+	if current_progress_method == target_mode:
+		next(target_mode)
+	elif current_progress_method == QuestLine.ProgressMethod.ModeSwitch:
 		next(QuestLine.ProgressMethod.ModeSwitch)
 
 func save_checkpoint() -> void:

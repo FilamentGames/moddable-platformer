@@ -50,7 +50,7 @@ func _capture(message, data, session_id):
 			GlobalQuests.quests.set_inspector_dock_visible(data[1])
 			return true
 		"register_mode_switch":
-			GlobalQuests.quests.register_mode_switch()
+			GlobalQuests.quests.register_mode_switch(data[1])
 			return true
 		"set_current_edited_scene":
 			GlobalQuests.quests.set_current_edited_scene(data[1])
@@ -65,4 +65,4 @@ func _setup_session(session_id):
 func _on_session_stop() -> void:
 	print("Quest bridge stopped")
 	GlobalQuests.quests.update_player_position()
-	GlobalQuests.quests.register_mode_switch()
+	GlobalQuests.quests.register_mode_switch(BabyGodotQuests.EditorMode.EDIT)

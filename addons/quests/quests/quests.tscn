@@ -6,13 +6,13 @@
 [sub_resource type="Resource" id="Resource_nbcr1"]
 script = ExtResource("2_fdhqc")
 dialogue_line = "Find me in the world of Threadbare! Press Play!"
-progress_method = 1
+progress_method = 2
 metadata/_custom_type_script = "uid://wcqap044q4nm"
 
 [sub_resource type="Resource" id="Resource_4jxrl"]
 script = ExtResource("2_fdhqc")
 dialogue_line = "Threadbare is unstable. You must get to the loom."
-progress_method = 2
+progress_method = 4
 metadata/_custom_type_script = "uid://wcqap044q4nm"
 
 [sub_resource type="Resource" id="Resource_nilgx"]
@@ -28,19 +28,19 @@ metadata/_custom_type_script = "uid://wcqap044q4nm"
 [sub_resource type="Resource" id="Resource_u38ty"]
 script = ExtResource("2_fdhqc")
 dialogue_line = "Concentrate! Pause the flow of time!"
-progress_method = 1
+progress_method = 3
 metadata/_custom_type_script = "uid://wcqap044q4nm"
 
 [sub_resource type="Resource" id="Resource_fdhqc"]
 script = ExtResource("2_fdhqc")
 dialogue_line = "Yes, Storyweaver! Select the pile of rocks and clear them from your path. When you're done, hit Play and let time flow through Threadbare again!"
-progress_method = 2
+progress_method = 4
 metadata/_custom_type_script = "uid://wcqap044q4nm"
 
 [sub_resource type="Resource" id="Resource_leoq5"]
 script = ExtResource("2_fdhqc")
 dialogue_line = "You show great promise! Proceed to the Knit Witch."
-progress_method = 2
+progress_method = 4
 metadata/_custom_type_script = "uid://wcqap044q4nm"
 
 [node name="Quests" type="Node" unique_id=1908096250]

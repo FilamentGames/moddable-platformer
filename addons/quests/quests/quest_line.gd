@@ -4,6 +4,8 @@ class_name QuestLine
 enum ProgressMethod {
 	NextButton, ## The player can press the next button to move to the next line of text.
 	ModeSwitch, ## Switching between play/stop mode moves to the next line of text.
+	SwitchToPlay, ## Only triggered when the player switches from edit mode to play mode
+	SwitchToEdit, ## Only triggered when the player switches from play mode to edit mode
 	ScriptTrigger, ## An in-game trigger object can move to the next line of text.
 }
 

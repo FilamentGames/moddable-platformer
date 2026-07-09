@@ -62,8 +62,8 @@ static func set_inspector_dock_visible(visible: bool) -> void:
 	_send_message_static("set_inspector_dock_visible", [-1, visible])
 
 ## Signal to the quests system that the player has switched between play/edit mode
-static func register_mode_switch() -> void:
-	_send_message_static("register_mode_switch")
+static func register_mode_switch(mode: BabyGodotQuests.EditorMode = BabyGodotQuests.EditorMode.PLAY) -> void:
+	_send_message_static("register_mode_switch", [-1, mode])
 
 static func set_current_edited_scene(path: String) -> void:
 	_send_message_static("set_current_edited_scene", [-1, path])

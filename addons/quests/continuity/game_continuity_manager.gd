@@ -33,7 +33,7 @@ func _ready() -> void:
 	_update_last_played_scene()
 	tree_exited.connect(_on_delete)
 	InGameQuestsBridge.set_current_edited_scene(_last_played_scene)
-	InGameQuestsBridge.register_mode_switch()
+	InGameQuestsBridge.register_mode_switch(BabyGodotQuests.EditorMode.PLAY)
 
 func _process(delta: float) -> void:
 	if not _player:

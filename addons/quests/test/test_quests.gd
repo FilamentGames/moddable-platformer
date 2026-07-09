@@ -62,6 +62,24 @@ func test_can_register_a_mode_switch():
 
 	assert_eq(quests.get_current_text(), "Test")
 
+func test_can_register_a_switch_to_play_mode():
+	quests.text_data = [make_quest_line("Lorem"), make_quest_line("Ipsum", QuestLine.ProgressMethod.SwitchToPlay), make_quest_line("Test")]
+
+	for i in 5:
+		quests.register_mode_switch(BabyGodotQuests.EditorMode.PLAY)
+	
+	assert_eq(quests.get_current_text(), "Lorem")
+
+	quests.next()
+	quests.register_mode_switch(BabyGodotQuests.EditorMode.EDIT)
+
+	assert_eq(quests.get_current_text(), "Ipsum")
+
+	quests.register_mode_switch(BabyGodotQuests.EditorMode.PLAY)
+
+	assert_eq(quests.get_current_text(), "Test")
+
+
 func test_can_get_next_lines_progressable_with_just_next_button():
 	quests.text_data = [make_quest_line("Lorem"), make_quest_line("Ipsum", QuestLine.ProgressMethod.ScriptTrigger), make_quest_line("Test")]
 
