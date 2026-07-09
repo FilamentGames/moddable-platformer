@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://d2shfam8t0war"]
+
+[ext_resource type="PackedScene" uid="uid://nqjfw1ib51ut" path="res://components/babygodot/trigger/common/quest_trigger.tscn" id="1_v8cfe"]
+[ext_resource type="Script" uid="uid://mok7euh4l1ht" path="res://components/babygodot/trigger/quest_script_trigger/quest_script_trigger_behavior.gd" id="2_0pbfu"]
+
+[node name="QuestScriptTrigger" type="Node2D" unique_id=363506212]
+
+[node name="QuestTrigger" parent="." unique_id=1750362101 node_paths=PackedStringArray("behavior") instance=ExtResource("1_v8cfe")]
+behavior = NodePath("Behavior")
+
+[node name="Behavior" type="Node" parent="QuestTrigger" unique_id=85908824]
+script = ExtResource("2_0pbfu")

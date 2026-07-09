@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://nqjfw1ib51ut"]
+
+[ext_resource type="Script" uid="uid://bvs6l44borf1h" path="res://components/babygodot/trigger/common/quest_trigger.gd" id="1_y38bq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hmpfs"]
+resource_local_to_scene = true
+size = Vector2(94, 258)
+
+[node name="QuestTrigger" type="Area2D" unique_id=1750362101]
+collision_layer = 0
+script = ExtResource("1_y38bq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=490838596]
+shape = SubResource("RectangleShape2D_hmpfs")
+
+[connection signal="body_entered" from="." to="." method="_player_entered" unbinds=1]
