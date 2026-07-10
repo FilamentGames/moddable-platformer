@@ -291,7 +291,7 @@ position = Vector2(5869, -933)
 [node name="InspectorCheckboxScrollCondition" parent="Scroll" unique_id=75788105 instance=ExtResource("14_up8ep")]
 
 [node name="Player" parent="." unique_id=1469322580 instance=ExtResource("15_55ugf")]
-position = Vector2(6240.9253, 511.9917)
+position = Vector2(246, 630)
 collision_mask = 7
 sprite_frames = ExtResource("16_ap8do")
 
