@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cbr3k8b1gooxm"]
+
+[ext_resource type="Script" uid="uid://ynmusiscbscn" path="res://components/babygodot/scroll/condition_types/object_property_equality_scroll_condition.gd" id="1_ojvva"]
+
+[node name="ObjectPropertyEqualityScrollCondition" type="Node" unique_id=2071037534]
+script = ExtResource("1_ojvva")
