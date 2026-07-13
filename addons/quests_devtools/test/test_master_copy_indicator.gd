@@ -74,3 +74,59 @@ func test_it_removes_lock_from_clone_copy_and_doesnt_duplicate_lock_in_master():
 
 	master_copy.free()
 	clone_copy.free()
+
+func test_it_adds_editable_node_list_to_master_copy():
+	var scene: Node = autofree(Node.new())
+
+	var packed_scene: PackedScene = autofree(PackedScene.new())
+	packed_scene.pack(scene)
+	var master_copy: Node = autofree(MasterCopyIndicator._add_editable_node_list_to_scene(packed_scene).instantiate())
+	var clone_copy: Node = autofree(MasterCopyIndicator._lock_uneditable_nodes(packed_scene).instantiate())
+
+	assert_not_null(master_copy.get_node_or_null("EditableNodeList"))
+	assert_null(clone_copy.get_node_or_null("EditableNodeList"), "No errors when EditableNodeList is absent")
+
+	master_copy.free()
+	clone_copy.free()
+
+func test_it_sets_edit_lock_on_nodes_not_in_editable_node_list():
+	var scene: Node = autofree(Node.new())
+	var child1: Node2D = autofree(Node2D.new())
+	child1.name = "Node2D"
+	scene.add_child(child1)
+	child1.owner = scene
+	var editable_node_list: EditableNodeList = autofree(EditableNodeList.new())
+	editable_node_list.name = "EditableNodeList"
+	editable_node_list.nodes = [child1]
+	scene.add_child(editable_node_list)
+	editable_node_list.owner = scene
+
+	var packed_scene: PackedScene = autofree(PackedScene.new())
+	packed_scene.pack(scene)
+	var clone_copy: Node = autofree(MasterCopyIndicator._lock_uneditable_nodes(packed_scene).instantiate())
+
+	assert_true(clone_copy.get_node_or_null("EditableNodeList").has_meta("_edit_lock_"))
+	assert_false(clone_copy.get_node_or_null("Node2D").has_meta("_edit_lock_"))
+
+	clone_copy.free()
+
+func test_it_doesnt_lock_anything_if_editable_node_list_is_empty():
+	var scene: Node = autofree(Node.new())
+	var child1: Node2D = autofree(Node2D.new())
+	child1.name = "Node2D"
+	scene.add_child(child1)
+	child1.owner = scene
+	var editable_node_list: EditableNodeList = autofree(EditableNodeList.new())
+	editable_node_list.name = "EditableNodeList"
+	editable_node_list.nodes = []
+	scene.add_child(editable_node_list)
+	editable_node_list.owner = scene
+
+	var packed_scene: PackedScene = autofree(PackedScene.new())
+	packed_scene.pack(scene)
+	var clone_copy: Node = autofree(MasterCopyIndicator._lock_uneditable_nodes(packed_scene).instantiate())
+
+	assert_false(clone_copy.get_node_or_null("EditableNodeList").has_meta("_edit_lock_"))
+	assert_false(clone_copy.get_node_or_null("Node2D").has_meta("_edit_lock_"))
+
+	clone_copy.free()

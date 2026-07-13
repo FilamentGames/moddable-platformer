@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://j6xngoe7ah5f"]
+
+[ext_resource type="Script" uid="uid://cwvs5uqu4hx5e" path="res://addons/quests_devtools/tool_objects/editable_node_list.gd" id="1_q533l"]
+
+[node name="EditableNodeList" type="Node" unique_id=1820513090]
+script = ExtResource("1_q533l")

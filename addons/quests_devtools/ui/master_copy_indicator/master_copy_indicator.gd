@@ -22,33 +22,66 @@ func scene_saved(scene_path: String) -> void:
 	if scene_path.begins_with(master_copy_directory):
 		var scene: PackedScene = load(scene_path)
 		var root: Node = scene.instantiate()
-		var master_copy := _add_master_level_lock_to_scene(scene)
-		var clone_copy := _remove_master_level_lock_from_scene(scene)
+		var master_copy := _get_master_copy_scene(scene)
+		var clone_copy := _get_clone_copy_scene(scene)
 		_locked = true
 		ResourceSaver.save(master_copy, scene_path)
 		_locked = false
 		ResourceSaver.save(clone_copy, scene_path.replace(master_copy_directory, clone_copy_directory))
 
+static func _get_master_copy_scene(scene: PackedScene) -> PackedScene:
+	return _add_editable_node_list_to_scene(_add_master_level_lock_to_scene(scene))
+
+static func _get_clone_copy_scene(scene: PackedScene) -> PackedScene:
+	return _lock_uneditable_nodes(_remove_master_level_lock_from_scene(scene))
+
 static func _add_master_level_lock_to_scene(scene: PackedScene) -> PackedScene:
-	var root := scene.instantiate()
-	var packed_scene := PackedScene.new()
-	if not root.get_node_or_null("MasterLevelLock"):
-		var lock := MasterLevelLock.new()
-		lock.name = "MasterLevelLock"
-		root.add_child(lock)
-		lock.owner = root
-		root.move_child(lock, 0)
-	packed_scene.pack(root)
-	root.free() # Clear up the temp scene memory
-	return packed_scene
+	return _edit_scene(scene, func(root: Node):
+		if not root.get_node_or_null("MasterLevelLock"):
+			var lock := MasterLevelLock.new()
+			lock.name = "MasterLevelLock"
+			root.add_child(lock)
+			lock.owner = root
+			root.move_child(lock, 0)
+	)
 
 static func _remove_master_level_lock_from_scene(scene: PackedScene) -> PackedScene:
-	var root := scene.instantiate()
+	return _edit_scene(scene, func(root: Node):
+		var lock := root.get_node_or_null("MasterLevelLock")
+		if lock:
+			root.remove_child(lock)
+			lock.free()
+	)
+
+static func _add_editable_node_list_to_scene(scene: PackedScene) -> PackedScene:
+	return _edit_scene(scene, func(root: Node):
+		if not root.get_node_or_null("EditableNodeList"):
+			var editable_node_list := EditableNodeList.new()
+			editable_node_list.name = "EditableNodeList"
+			root.add_child(editable_node_list)
+			editable_node_list.owner = root
+			root.move_child(editable_node_list, 0)
+	)
+
+static func _lock_uneditable_nodes(scene: PackedScene) -> PackedScene:
+	return _edit_scene(scene, func(root: Node):
+		var editable_node_list := root.get_node_or_null("EditableNodeList")
+		if editable_node_list and not editable_node_list.nodes.is_empty():
+			## Lock all children by default
+			var flat_children := root.find_children("*", "", true, false)
+			for child in flat_children:
+				child.set_meta("_edit_lock_", true)
+
+			## Unlock the editable nodes. Their parents do not need to be unlocked.
+			for node in editable_node_list.nodes:
+				node.remove_meta("_edit_lock_")
+	)
+
+## Helper method to edit a packed scene and return a new packed scene with any changes made from the callable.
+static func _edit_scene(scene: PackedScene, callable: Callable) -> PackedScene:
 	var packed_scene := PackedScene.new()
-	var lock := root.get_node_or_null("MasterLevelLock")
-	if lock:
-		root.remove_child(lock)
-		lock.free()
+	var root := scene.instantiate()
+	callable.call(root)
 	packed_scene.pack(root)
 	root.free() # Clear up the temp scene memory
 	return packed_scene
