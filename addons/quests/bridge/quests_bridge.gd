@@ -55,6 +55,9 @@ func _capture(message, data, session_id):
 		"set_current_edited_scene":
 			GlobalQuests.quests.set_current_edited_scene(data[1])
 			return true
+		"activate_level_checkpoint":
+			GlobalQuests.quests.activate_level_checkpoint(data[1])
+			return true
 	return false
 
 func _setup_session(session_id):

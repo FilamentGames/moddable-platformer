@@ -34,6 +34,9 @@ var _current_text_line := 0
 
 var _last_player_pos: Vector2
 
+## Whether to ignore the player's position while we're forcing it to a specific position.
+var _lock_player_position := false
+
 ## Get the current line of text of the quest
 func get_current_text() -> String:
 	return text_data[_current_text_line].dialogue_line
@@ -72,6 +75,7 @@ func register_mode_switch(mode: EditorMode = EditorMode.PLAY) -> void:
 
 func save_checkpoint() -> void:
 	editor_scene_provider.save_editor_scene_as_checkpoint()
+	_lock_player_position = false
 	print("Saved checkpoint")
 
 func load_checkpoint() -> void:
@@ -82,6 +86,8 @@ func set_inspector_dock_visible(visible: bool) -> void:
 	editor_scene_provider.set_inspector_dock_visible(visible)
 
 func register_player_position(pos: Vector2) -> void:
+	if _lock_player_position:
+		return
 	_last_player_pos = pos
 
 func update_player_position() -> void:
@@ -106,6 +112,25 @@ func collect_scroll(scroll_id: String) -> void:
 		editor_scene_provider.update_and_save_node(scene)
 		scrolls_collected.push_back(scroll_id)
 		scroll_collected.emit()
+
+## Activates a "Knit Witch" checkpoint, replacing the checkpoint trigger with the knit witch NPC in the editor so the checkpoint cannot be triggered again.
+func activate_level_checkpoint(checkpoint_id: String) -> void:
+	var scene: Node2D = editor_scene_provider.get_editor_scene()
+	var target_checkpoint: Checkpoint = UniqueSceneId.find_by_id(scene, checkpoint_id)
+	if target_checkpoint:
+		var npc: Node2D = target_checkpoint.npc_prefab.instantiate()
+		target_checkpoint.get_parent().add_child(npc)
+		npc.owner = scene
+		npc.position = target_checkpoint.position
+		editor_scene_provider.update_and_save_node(scene)
+		var player: Player = BabyGodotUtils.get_first_child_of_type(scene, Player)
+		if player:
+			_lock_player_position = true
+			_last_player_pos = player.get_parent().to_local(target_checkpoint.player_position_marker.global_position)
+			update_player_position()
+		target_checkpoint.get_parent().remove_child(target_checkpoint)
+		target_checkpoint.free()
+		save_checkpoint.call_deferred()
 
 ## Resets the player's quest progress. Mainly useful for dev tools.
 func reset_progress() -> void:

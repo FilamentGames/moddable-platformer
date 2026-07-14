@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://1r6h0ihjbc77"]
+
+[ext_resource type="Script" uid="uid://b532d25pht7ub" path="res://components/babygodot/checkpoint/checkpoint.gd" id="1_5m4dx"]
+[ext_resource type="SpriteFrames" uid="uid://cjk17opqqvmqh" path="res://components/babygodot/checkpoint/blue/knitwitch_blue.tres" id="2_4w45e"]
+[ext_resource type="PackedScene" uid="uid://il08cnnaosyi" path="res://components/babygodot/checkpoint/checkpoint_npc.tscn" id="2_6j73a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hmpfs"]
+size = Vector2(192, 384)
+
+[node name="Checkpoint" type="Node2D" unique_id=182555001 node_paths=PackedStringArray("player_position_marker", "placeholder_sprite")]
+script = ExtResource("1_5m4dx")
+npc_prefab = ExtResource("2_6j73a")
+player_position_marker = NodePath("PlayerSpawn")
+placeholder_sprite = NodePath("PlaceholderSprite")
+
+[node name="PlaceholderSprite" type="AnimatedSprite2D" parent="." unique_id=1692190070]
+sprite_frames = ExtResource("2_4w45e")
+animation = &"idle"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1468073719]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1648103203]
+position = Vector2(-1, 4)
+shape = SubResource("RectangleShape2D_hmpfs")
+
+[node name="PlayerSpawn" type="Node2D" parent="." unique_id=1525324501]
+editor_description = "This is where the player sprite's position is saved when the checkpoint is captured. This lets us offset the player from the checkpoint a bit so that they can be spawned in a more convenient location."
+position = Vector2(150, 0)
+
+[node name="Marker2D" type="Marker2D" parent="PlayerSpawn" unique_id=1402276668]
+metadata/_edit_lock_ = true
+
+[connection signal="save_checkpoint" from="." to="." method="send_checkpoint_message"]
+[connection signal="body_entered" from="Area2D" to="." method="player_entered" unbinds=1]

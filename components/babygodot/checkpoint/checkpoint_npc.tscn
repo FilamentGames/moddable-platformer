@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://il08cnnaosyi"]
+
+[ext_resource type="PackedScene" uid="uid://d0v802hnw7unk" path="res://components/babygodot/npc/npc.tscn" id="1_athl7"]
+[ext_resource type="SpriteFrames" uid="uid://cjk17opqqvmqh" path="res://components/babygodot/checkpoint/blue/knitwitch_blue.tres" id="2_kb3d2"]
+[ext_resource type="Script" uid="uid://b4mljwrmh44x0" path="res://components/babygodot/checkpoint/knit_witch_sprite_controller.gd" id="3_fx8po"]
+[ext_resource type="SpriteFrames" uid="uid://carkf55jac78u" path="res://components/babygodot/checkpoint/brown/knitwitch_brown.tres" id="4_bfscx"]
+[ext_resource type="SpriteFrames" uid="uid://c12b5piwrk4tk" path="res://components/babygodot/checkpoint/green/knitwitch_green.tres" id="5_cqtpr"]
+[ext_resource type="SpriteFrames" uid="uid://dtqbx085kjq5q" path="res://components/babygodot/checkpoint/pink/knitwitch_pink.tres" id="6_2eiju"]
+[ext_resource type="SpriteFrames" uid="uid://dmh83b13tgiph" path="res://components/babygodot/checkpoint/purple/knitwitch_purple.tres" id="7_403hs"]
+
+[node name="CheckpointNpc" type="Node2D" unique_id=2087593707]
+
+[node name="Npc" parent="." unique_id=688628462 instance=ExtResource("1_athl7")]
+dialogue_lines = Array[String](["I have knitted your progress so far, Storyweaver."])
+
+[node name="AnimatedSprite2D" parent="Npc" index="0" unique_id=1376270546]
+sprite_frames = ExtResource("2_kb3d2")
+animation = &"idle"
+autoplay = ""
+frame_progress = 0.6779916
+
+[node name="KnitWitchSpriteController" type="Node" parent="." unique_id=1496352171 node_paths=PackedStringArray("sprite")]
+script = ExtResource("3_fx8po")
+spriteframe_sets = Array[SpriteFrames]([ExtResource("2_kb3d2"), ExtResource("4_bfscx"), ExtResource("5_cqtpr"), ExtResource("6_2eiju"), ExtResource("7_403hs")])
+sprite = NodePath("../Npc/AnimatedSprite2D")
+
+[editable path="Npc"]

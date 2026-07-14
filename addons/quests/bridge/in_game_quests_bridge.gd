@@ -67,3 +67,6 @@ static func register_mode_switch(mode: BabyGodotQuests.EditorMode = BabyGodotQue
 
 static func set_current_edited_scene(path: String) -> void:
 	_send_message_static("set_current_edited_scene", [-1, path])
+
+static func activate_level_checkpoint(checkpoint_id: String) -> void:
+	_send_message_static("activate_level_checkpoint", [-1, checkpoint_id])
