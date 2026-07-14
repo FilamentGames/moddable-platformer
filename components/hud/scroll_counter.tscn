@@ -24,7 +24,7 @@ offset_bottom = 40.0
 
 [node name="Label" type="Label" parent="HBoxContainer" unique_id=162405083]
 layout_mode = 2
-text = "Scrolls Collected:"
+text = "Scrolls:"
 label_settings = SubResource("LabelSettings_w8p4w")
 
 [node name="Spacer" type="Control" parent="HBoxContainer" unique_id=1039331370]

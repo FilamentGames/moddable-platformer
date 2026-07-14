@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://c60ojnq6qsft5" path="res://assets/input-prompts/keyboard-and-mouse_sheet_default/keyboard_enter.tres" id="11_gh5fi"]
 [ext_resource type="Texture2D" uid="uid://cxjxjkth3jat5" path="res://assets/input-prompts/keyboard-and-mouse_sheet_default/keyboard_backspace.tres" id="12_nx880"]
 [ext_resource type="PackedScene" uid="uid://tgqcl8qnq2dg" path="res://components/hud/scroll_counter.tscn" id="13_5kc73"]
+[ext_resource type="Texture2D" uid="uid://0awxt4dn7lvh" path="res://assets/input-prompts/keyboard-and-mouse_sheet_default/keyboard_space.tres" id="13_bp16l"]
 
 [sub_resource type="Theme" id="Theme_0yvta"]
 default_font_size = 64
@@ -47,6 +48,7 @@ text = "Controls"
 horizontal_alignment = 1
 
 [node name="GridContainer" type="GridContainer" parent="Start" unique_id=1586887850]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/h_separation = 24
@@ -141,7 +143,51 @@ layout_mode = 2
 texture = ExtResource("12_nx880")
 stretch_mode = 5
 
+[node name="GridContainer2" type="GridContainer" parent="Start" unique_id=315949902]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 24
+columns = 2
+
+[node name="MoveCaption" type="Label" parent="Start/GridContainer2" unique_id=1950919366]
+layout_mode = 2
+text = "Move:"
+horizontal_alignment = 2
+
+[node name="MoveKeys" type="HBoxContainer" parent="Start/GridContainer2" unique_id=1514491466]
+layout_mode = 2
+
+[node name="Left" type="TextureRect" parent="Start/GridContainer2/MoveKeys" unique_id=566117220]
+layout_mode = 2
+texture = ExtResource("5_615i1")
+stretch_mode = 5
+
+[node name="Up" type="TextureRect" parent="Start/GridContainer2/MoveKeys" unique_id=1042869058]
+layout_mode = 2
+texture = ExtResource("5_pw7dr")
+stretch_mode = 5
+
+[node name="Right" type="TextureRect" parent="Start/GridContainer2/MoveKeys" unique_id=1632227265]
+layout_mode = 2
+texture = ExtResource("6_ap7yk")
+stretch_mode = 5
+
+[node name="TalkCaption" type="Label" parent="Start/GridContainer2" unique_id=759714535]
+layout_mode = 2
+text = "Talk:"
+horizontal_alignment = 2
+
+[node name="TalkKey" type="HBoxContainer" parent="Start/GridContainer2" unique_id=110041005]
+layout_mode = 2
+
+[node name="Space" type="TextureRect" parent="Start/GridContainer2/TalkKey" unique_id=1035783982]
+layout_mode = 2
+texture = ExtResource("13_bp16l")
+expand_mode = 2
+stretch_mode = 5
+
 [node name="Label2" type="Label" parent="Start" unique_id=317213943]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Press any key to start"
