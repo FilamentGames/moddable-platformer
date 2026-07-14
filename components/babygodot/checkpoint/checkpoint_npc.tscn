@@ -12,12 +12,13 @@
 
 [node name="Npc" parent="." unique_id=688628462 instance=ExtResource("1_athl7")]
 dialogue_lines = Array[String](["I have knitted your progress so far, Storyweaver."])
+flip_to_face_player = true
 
 [node name="AnimatedSprite2D" parent="Npc" index="0" unique_id=1376270546]
-sprite_frames = ExtResource("2_kb3d2")
+sprite_frames = ExtResource("6_2eiju")
 animation = &"idle"
 autoplay = ""
-frame_progress = 0.6779916
+frame_progress = 0.13342547
 
 [node name="KnitWitchSpriteController" type="Node" parent="." unique_id=1496352171 node_paths=PackedStringArray("sprite")]
 script = ExtResource("3_fx8po")

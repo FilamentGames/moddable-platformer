@@ -6,8 +6,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0ff8d"]
 size = Vector2(300, 137)
 
-[node name="Npc" type="Node2D" unique_id=688628462 node_paths=PackedStringArray("player_detector", "dialogue_container")]
+[node name="Npc" type="Node2D" unique_id=688628462 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container")]
 script = ExtResource("1_0ff8d")
+sprite = NodePath("AnimatedSprite2D")
 player_detector = NodePath("Area2D")
 dialogue_container = NodePath("DialogueMount")
 

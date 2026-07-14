@@ -8,7 +8,13 @@ class_name Npc
 ## If enabled, bypass the `dialogue_lines` field and show the current Quest dialogue line instead.
 @export var use_global_quest_dialogue := false
 
+## Flips the NPC to face the player when they are to the right of the NPC.
+@export var flip_to_face_player := false
+
 @export_group("Internal Refs")
+## The NPC's sprite.
+@export var sprite: AnimatedSprite2D
+
 ## The triggerable area for the NPC.
 @export var player_detector: Area2D
 
@@ -60,6 +66,8 @@ func _player_exited(player: CharacterBody2D):
 
 ## Spawns a dialogue box for this NPC's dialogue
 func spawn_dialogue_box(player_component: PlayerDialogueComponent) -> void:
+	if flip_to_face_player:
+		sprite.flip_h = player_component.player.global_position.x > global_position.x
 	var dialogue_box: DialogueBox = dialogue_box_prefab.instantiate()
 	dialogue_box.dialogue_lines = dialogue_lines.duplicate()
 	dialogue_box.finished.connect(func():
