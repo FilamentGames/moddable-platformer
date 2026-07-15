@@ -75,6 +75,10 @@ static func _lock_uneditable_nodes(scene: PackedScene) -> PackedScene:
 			## Unlock the editable nodes. Their parents do not need to be unlocked.
 			for node in editable_node_list.nodes:
 				node.remove_meta("_edit_lock_")
+				var editable_object_indicator := EditableObjectIndicator.new()
+				editable_object_indicator.name = "EditableObjectIndicator"
+				node.add_child(editable_object_indicator)
+				editable_object_indicator.owner = root
 	)
 
 ## Helper method to edit a packed scene and return a new packed scene with any changes made from the callable.
