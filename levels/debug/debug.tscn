@@ -14,8 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://67eoedabcb3s" path="res://components/babygodot/scroll/condition_types/inspector_checkbox_scroll_condition.tscn" id="12_i0e58"]
 [ext_resource type="PackedScene" uid="uid://8st4scqt06l8" path="res://components/player/player.tscn" id="13_cr345"]
 [ext_resource type="PackedScene" uid="uid://cbr3k8b1gooxm" path="res://components/babygodot/scroll/condition_types/object_property_equality_scroll_condition.tscn" id="13_v5uir"]
-[ext_resource type="SpriteFrames" uid="uid://c2wpvtw1stuyq" path="res://components/player/spriteframes-inkdrinker-red.tres" id="14_bkobo"]
 [ext_resource type="PackedScene" uid="uid://jt80gv02u4f2" path="res://hud.tscn" id="15_eiexu"]
+[ext_resource type="SpriteFrames" uid="uid://de74lrhqf0xoa" path="res://components/player/spriteframes-storyweaver.tres" id="15_g3n11"]
 [ext_resource type="PackedScene" uid="uid://dbaal2g7b8ub0" path="res://components/enemy/storyvore_enemy.tscn" id="16_ousmv"]
 [ext_resource type="Script" uid="uid://boqbxvbja884q" path="res://scripts/multiplayer_camera.gd" id="17_416k2"]
 [ext_resource type="PackedScene" uid="uid://busbh1kipldyq" path="res://components/babygodot/test_display_quest_text.tscn" id="18_pgoko"]
@@ -318,9 +318,9 @@ property_name = &"gravity"
 value = "2000.0"
 
 [node name="Player" parent="." unique_id=1469322580 instance=ExtResource("13_cr345")]
-position = Vector2(104, 469)
+position = Vector2(3155.8884, -192.06644)
 collision_mask = 7
-sprite_frames = ExtResource("14_bkobo")
+sprite_frames = ExtResource("15_g3n11")
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1155688518]
 position = Vector2(0, 15)
