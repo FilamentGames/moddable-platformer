@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://dtpi52rrdblc1"]
+[gd_scene format=4 uid="uid://bkymsk4lx2yxb"]
 
 [ext_resource type="Script" uid="uid://cwvs5uqu4hx5e" path="res://addons/quests_devtools/tool_objects/editable_node_list.gd" id="1_uer5k"]
 [ext_resource type="PackedScene" uid="uid://cswheshouik14" path="res://rules_goals/game_logic.tscn" id="2_fl11t"]
@@ -129,6 +129,15 @@ metadata/_edit_lock_ = true
 
 [node name="Npc_TilePuzzle" type="Node2D" parent="." unique_id=178439633 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container") instance=ExtResource("15_hxlax")]
 position = Vector2(7363, 976)
+script = ExtResource("16_0lwt2")
+use_global_quest_dialogue = true
+sprite = NodePath("AnimatedSprite2D")
+player_detector = NodePath("Area2D")
+dialogue_container = NodePath("DialogueMount")
+metadata/_edit_lock_ = true
+
+[node name="Npc_Congrats" type="Node2D" parent="." unique_id=2029695227 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container") instance=ExtResource("15_hxlax")]
+position = Vector2(8358, -186)
 script = ExtResource("16_0lwt2")
 use_global_quest_dialogue = true
 sprite = NodePath("AnimatedSprite2D")
@@ -556,7 +565,7 @@ script = ExtResource("33_w0y58")
 metadata/_edit_lock_ = true
 
 [node name="Flag" type="Area2D" parent="." unique_id=1243516226 instance=ExtResource("34_emyl0")]
-position = Vector2(8413, -192)
+position = Vector2(8294, -192)
 collision_layer = 2
 script = ExtResource("35_6xbxu")
 sprite_frames = ExtResource("36_1wn7a")

@@ -39,7 +39,7 @@ metadata/_custom_type_script = "uid://wcqap044q4nm"
 
 [sub_resource type="Resource" id="Resource_leoq5"]
 script = ExtResource("2_fdhqc")
-dialogue_line = "You show great promise! Proceed to the checkpoint flag."
+dialogue_line = "You show great promise! Proceed to the Knitwitch."
 progress_method = 4
 metadata/_custom_type_script = "uid://wcqap044q4nm"
 
@@ -57,7 +57,13 @@ metadata/_custom_type_script = "uid://wcqap044q4nm"
 
 [sub_resource type="Resource" id="Resource_goto6"]
 script = ExtResource("2_fdhqc")
-dialogue_line = "Paint the world to ascend higher."
+dialogue_line = "Paint a path to ascend higher."
+progress_method = 3
+metadata/_custom_type_script = "uid://wcqap044q4nm"
+
+[sub_resource type="Resource" id="Resource_jo8x4"]
+script = ExtResource("2_fdhqc")
+dialogue_line = "Paths are made of tiles."
 progress_method = 4
 metadata/_custom_type_script = "uid://wcqap044q4nm"
 
@@ -69,4 +75,4 @@ metadata/_custom_type_script = "uid://wcqap044q4nm"
 
 [node name="Quests" type="Node" unique_id=1908096250]
 script = ExtResource("1_vulhk")
-text_data = Array[ExtResource("2_fdhqc")]([SubResource("Resource_nbcr1"), SubResource("Resource_4jxrl"), SubResource("Resource_nilgx"), SubResource("Resource_x3eip"), SubResource("Resource_u38ty"), SubResource("Resource_fdhqc"), SubResource("Resource_leoq5"), SubResource("Resource_dt6hy"), SubResource("Resource_m7dqe"), SubResource("Resource_goto6"), SubResource("Resource_58r63")])
+text_data = Array[ExtResource("2_fdhqc")]([SubResource("Resource_nbcr1"), SubResource("Resource_4jxrl"), SubResource("Resource_nilgx"), SubResource("Resource_x3eip"), SubResource("Resource_u38ty"), SubResource("Resource_fdhqc"), SubResource("Resource_leoq5"), SubResource("Resource_dt6hy"), SubResource("Resource_m7dqe"), SubResource("Resource_goto6"), SubResource("Resource_jo8x4"), SubResource("Resource_58r63")])

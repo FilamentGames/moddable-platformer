@@ -136,6 +136,15 @@ player_detector = NodePath("Area2D")
 dialogue_container = NodePath("DialogueMount")
 metadata/_edit_lock_ = true
 
+[node name="Npc_Congrats" type="Node2D" parent="." unique_id=2029695227 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container") instance=ExtResource("14_bywdy")]
+position = Vector2(8358, -186)
+script = ExtResource("16_75jbi")
+use_global_quest_dialogue = true
+sprite = NodePath("AnimatedSprite2D")
+player_detector = NodePath("Area2D")
+dialogue_container = NodePath("DialogueMount")
+metadata/_edit_lock_ = true
+
 [node name="Coins" type="Node2D" parent="." unique_id=1860713878]
 metadata/_edit_lock_ = true
 
@@ -556,7 +565,7 @@ script = ExtResource("33_rvxi4")
 metadata/_edit_lock_ = true
 
 [node name="Flag" type="Area2D" parent="." unique_id=1243516226 instance=ExtResource("33_m8hul")]
-position = Vector2(8413, -192)
+position = Vector2(8294, -192)
 collision_layer = 2
 script = ExtResource("35_px0r7")
 sprite_frames = ExtResource("36_fcmqh")

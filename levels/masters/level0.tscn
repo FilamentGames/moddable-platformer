@@ -130,6 +130,14 @@ sprite = NodePath("AnimatedSprite2D")
 player_detector = NodePath("Area2D")
 dialogue_container = NodePath("DialogueMount")
 
+[node name="Npc_Congrats" type="Node2D" parent="." unique_id=2029695227 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container") instance=ExtResource("3_27os8")]
+position = Vector2(8358, -186)
+script = ExtResource("16_8knqs")
+use_global_quest_dialogue = true
+sprite = NodePath("AnimatedSprite2D")
+player_detector = NodePath("Area2D")
+dialogue_container = NodePath("DialogueMount")
+
 [node name="Coins" type="Node2D" parent="." unique_id=1860713878]
 
 [node name="Coin" type="Area2D" parent="Coins" unique_id=469589313 groups=["coins"] instance=ExtResource("6_qy02x")]
@@ -496,7 +504,7 @@ floor_snap_length = 32.0
 script = ExtResource("33_7cn4d")
 
 [node name="Flag" type="Area2D" parent="." unique_id=1243516226 instance=ExtResource("18_crtlj")]
-position = Vector2(8413, -192)
+position = Vector2(8294, -192)
 collision_layer = 2
 script = ExtResource("35_fnu5h")
 sprite_frames = ExtResource("36_jf12t")
