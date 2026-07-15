@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://w1o7xdo6gt67"]
+
+[ext_resource type="Script" uid="uid://xaqip7htvoim" path="res://components/babygodot/editable_object_indicator/editable_object_indicator.gd" id="1_7effw"]
+
+[node name="EditableObjectIndicator" type="Node2D" unique_id=1495589661]
+script = ExtResource("1_7effw")
