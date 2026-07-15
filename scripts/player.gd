@@ -307,7 +307,8 @@ func _physics_process(delta):
 				_sprite.play("jump_up")
 		else:
 			_sprite.play("walk")
-		_sprite.flip_h = velocity.x < 0
+		if velocity.x != 0:
+			_sprite.flip_h = velocity.x < 0
 
 	move_and_slide()
 
