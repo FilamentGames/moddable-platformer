@@ -27,7 +27,7 @@ metadata/_custom_type_script = "uid://wcqap044q4nm"
 
 [sub_resource type="Resource" id="Resource_u38ty"]
 script = ExtResource("2_fdhqc")
-dialogue_line = "Concentrate! Pause the flow of time!"
+dialogue_line = "Concentrate! Stop the flow of time!"
 progress_method = 3
 metadata/_custom_type_script = "uid://wcqap044q4nm"
 

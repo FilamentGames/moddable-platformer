@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dr8km2gn8aenv"]
+
+[ext_resource type="Texture2D" uid="uid://d2uesk6kurr2a" path="res://assets/tiles-threadbare.png" id="1_c6sx7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lwt5q"]
+
+[node name="RockPile" type="StaticBody2D" unique_id=2056135097]
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=21856612]
+position = Vector2(-36, -1.5258789e-05)
+texture = ExtResource("1_c6sx7")
+region_enabled = true
+region_rect = Rect2(1408, 256, 128, 128)
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1745067381]
+position = Vector2(24, 1.9999847)
+texture = ExtResource("1_c6sx7")
+region_enabled = true
+region_rect = Rect2(1408, 256, 128, 128)
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=996470445]
+position = Vector2(-1, -48.000015)
+texture = ExtResource("1_c6sx7")
+region_enabled = true
+region_rect = Rect2(1408, 256, 128, 128)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=230899617]
+scale = Vector2(6.160001, 6.0799994)
+shape = SubResource("RectangleShape2D_lwt5q")
