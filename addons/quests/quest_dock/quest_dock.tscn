@@ -14,7 +14,7 @@ script = ExtResource("1_qqxpi")
 text = NodePath("Container/QuestText")
 next_button = NodePath("Container/NextButton")
 save_checkpoint_button = NodePath("Container/HBoxContainer/SaveButton")
-load_checkpoint_button = NodePath("Container/HBoxContainer/Button2")
+load_checkpoint_button = NodePath("Container/HBoxContainer/ResetWorldButton")
 
 [node name="Container" type="VBoxContainer" parent="." unique_id=1210857552]
 layout_mode = 1
@@ -41,13 +41,14 @@ custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
-text = "test quest line that can be progressed with next button"
+text = "Find me in the world of Threadbare! Press Play!"
 autowrap_mode = 2
 
 [node name="NextButton" type="Button" parent="Container" unique_id=1692289482]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 10
+disabled = true
 text = "Next"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Container" unique_id=1213718530]
@@ -55,12 +56,13 @@ layout_mode = 2
 alignment = 1
 
 [node name="SaveButton" type="Button" parent="Container/HBoxContainer" unique_id=694438811]
+visible = false
 layout_mode = 2
 text = "Save"
 
-[node name="Button2" type="Button" parent="Container/HBoxContainer" unique_id=1849041134]
+[node name="ResetWorldButton" type="Button" parent="Container/HBoxContainer" unique_id=1849041134]
 layout_mode = 2
-text = "Load"
+text = "Reset the World"
 
 [node name="Spacer" type="Control" parent="Container" unique_id=1644551487]
 custom_minimum_size = Vector2(0, 32)

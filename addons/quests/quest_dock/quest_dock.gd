@@ -43,4 +43,14 @@ func save_checkpoint():
 	quests_provider.save_checkpoint()
 
 func load_checkpoint():
-	quests_provider.load_checkpoint()
+	var dialog := ConfirmationDialog.new()
+	dialog.title = "Reset World"
+	dialog.dialog_text = "Are you sure you want to reset the world? You will lose any edits you have made since the last checkpoint."
+
+	dialog.confirmed.connect(func():
+		quests_provider.load_checkpoint()
+	)
+
+	add_child(dialog)
+	dialog.popup_centered()
+	dialog.show()
