@@ -54,8 +54,9 @@ size = Vector2(14.781952, 6.386901)
 
 [node name="Main2" type="Node2D" unique_id=1511591426]
 
-[node name="EditableNodeList" type="Node" parent="." unique_id=280926474]
+[node name="EditableNodeList" type="Node" parent="." unique_id=280926474 node_paths=PackedStringArray("nodes")]
 script = ExtResource("1_vnrdr")
+nodes = [NodePath("../RockPile"), NodePath("../Scroll/InspectorCheckboxScrollCondition"), NodePath("../TileMapLayer")]
 
 [node name="MasterLevelLock" type="Node" parent="." unique_id=678410586]
 script = ExtResource("1_p5pw3")

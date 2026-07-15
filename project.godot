@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Moddable Platformer"
 config/version="$Format:%(describe:tags)$"
-run/main_scene="uid://bkymsk4lx2yxb"
+run/main_scene="uid://dtpi52rrdblc1"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
