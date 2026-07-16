@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bwpj01b3g2as6"]
+
+[ext_resource type="PackedScene" uid="uid://deurro1x5gm85" path="res://components/babygodot/editor_powerup/common/editor_powerup.tscn" id="1_aol57"]
+[ext_resource type="Texture2D" uid="uid://c44ws8a8yogrr" path="res://components/babygodot/editor_powerup/icons/PackedScene.svg" id="2_rrj74"]
+
+[node name="SceneTreePowerup" unique_id=857147533 instance=ExtResource("1_aol57")]
+editor_unlock = 1
+
+[node name="Sprite2D" parent="Root" parent_id_path=PackedInt32Array(210044367) index="1" unique_id=1171952676]
+texture = ExtResource("2_rrj74")

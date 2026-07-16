@@ -49,6 +49,9 @@ func _capture(message, data, session_id):
 		"set_inspector_dock_visible":
 			GlobalQuests.quests.set_inspector_dock_visible(data[1])
 			return true
+		"set_scene_tree_dock_visible":
+			GlobalQuests.quests.set_scene_tree_dock_visible(data[1])
+			return true
 		"register_mode_switch":
 			GlobalQuests.quests.register_mode_switch(data[1])
 			return true
@@ -57,6 +60,9 @@ func _capture(message, data, session_id):
 			return true
 		"activate_level_checkpoint":
 			GlobalQuests.quests.activate_level_checkpoint(data[1])
+			return true
+		"delete_node_in_editor":
+			GlobalQuests.quests.delete_node_in_editor(data[1])
 			return true
 	return false
 

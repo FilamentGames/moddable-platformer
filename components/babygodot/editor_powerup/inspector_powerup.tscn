@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://caob0y51xxmf0"]
+
+[ext_resource type="PackedScene" uid="uid://deurro1x5gm85" path="res://components/babygodot/editor_powerup/common/editor_powerup.tscn" id="1_tu4py"]
+
+[node name="InspectorPowerup" unique_id=857147533 instance=ExtResource("1_tu4py")]

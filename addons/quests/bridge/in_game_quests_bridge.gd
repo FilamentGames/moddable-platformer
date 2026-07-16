@@ -61,6 +61,9 @@ static func save_player_position(position: Vector2) -> void:
 static func set_inspector_dock_visible(visible: bool) -> void:
 	_send_message_static("set_inspector_dock_visible", [-1, visible])
 
+static func set_scene_tree_dock_visible(visible: bool) -> void:
+	_send_message_static("set_scene_tree_dock_visible", [-1, visible])
+
 ## Signal to the quests system that the player has switched between play/edit mode
 static func register_mode_switch(mode: BabyGodotQuests.EditorMode = BabyGodotQuests.EditorMode.PLAY) -> void:
 	_send_message_static("register_mode_switch", [-1, mode])
@@ -70,3 +73,6 @@ static func set_current_edited_scene(path: String) -> void:
 
 static func activate_level_checkpoint(checkpoint_id: String) -> void:
 	_send_message_static("activate_level_checkpoint", [-1, checkpoint_id])
+
+static func delete_node_in_editor(node: Node) -> void:
+	_send_message_static("delete_node_in_editor", [-1, UniqueSceneId.get_id(node)])

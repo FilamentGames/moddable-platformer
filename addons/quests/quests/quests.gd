@@ -85,6 +85,9 @@ func load_checkpoint() -> void:
 func set_inspector_dock_visible(visible: bool) -> void:
 	editor_scene_provider.set_inspector_dock_visible(visible)
 
+func set_scene_tree_dock_visible(visible: bool) -> void:
+	editor_scene_provider.set_scene_tree_dock_visible(visible)
+
 func register_player_position(pos: Vector2) -> void:
 	if _lock_player_position:
 		return
@@ -131,6 +134,16 @@ func activate_level_checkpoint(checkpoint_id: String) -> void:
 		target_checkpoint.get_parent().remove_child(target_checkpoint)
 		target_checkpoint.free()
 		save_checkpoint.call_deferred()
+
+func delete_node_in_editor(node_id: String) -> void:
+	var scene: Node2D = editor_scene_provider.get_editor_scene()
+	var node: Node = UniqueSceneId.find_by_id(scene, node_id)
+	if node:
+		node.get_parent().remove_child(node)
+		node.free()
+		editor_scene_provider.update_and_save_node(scene)
+	else:
+		print("Couldn't find node with id ", node_id)
 
 ## Resets the player's quest progress. Mainly useful for dev tools.
 func reset_progress() -> void:
