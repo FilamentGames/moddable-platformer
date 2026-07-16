@@ -1,12 +1,22 @@
 [gd_scene format=3 uid="uid://d2shfam8t0war"]
 
-[ext_resource type="PackedScene" uid="uid://nqjfw1ib51ut" path="res://components/babygodot/trigger/common/quest_trigger.tscn" id="1_v8cfe"]
+[ext_resource type="Script" uid="uid://bvs6l44borf1h" path="res://components/babygodot/trigger/common/quest_trigger.gd" id="1_v8cfe"]
 [ext_resource type="Script" uid="uid://mok7euh4l1ht" path="res://components/babygodot/trigger/quest_script_trigger/quest_script_trigger_behavior.gd" id="2_0pbfu"]
 
-[node name="QuestScriptTrigger" type="Node2D" unique_id=363506212]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hmpfs"]
+size = Vector2(40, 160)
 
-[node name="QuestTrigger" parent="." unique_id=1750362101 node_paths=PackedStringArray("behavior") instance=ExtResource("1_v8cfe")]
+[node name="QuestScriptTrigger" type="Area2D" unique_id=1651920811 node_paths=PackedStringArray("behavior")]
+script = ExtResource("1_v8cfe")
 behavior = NodePath("Behavior")
+delete_from_scene = true
+metadata/_custom_type_script = "uid://bvs6l44borf1h"
 
-[node name="Behavior" type="Node" parent="QuestTrigger" unique_id=85908824]
+[node name="Behavior" type="Node" parent="." unique_id=85908824]
 script = ExtResource("2_0pbfu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1108871414]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_hmpfs")
+
+[connection signal="body_entered" from="." to="." method="_player_entered" unbinds=1]

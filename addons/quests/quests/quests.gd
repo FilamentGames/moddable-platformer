@@ -37,6 +37,9 @@ var _last_player_pos: Vector2
 ## Whether to ignore the player's position while we're forcing it to a specific position.
 var _lock_player_position := false
 
+## The quest progress at the last saved checkpoint
+var _checkpoint_text_line := 0
+
 ## Get the current line of text of the quest
 func get_current_text() -> String:
 	return text_data[_current_text_line].dialogue_line
@@ -76,11 +79,12 @@ func register_mode_switch(mode: EditorMode = EditorMode.PLAY) -> void:
 func save_checkpoint() -> void:
 	editor_scene_provider.save_editor_scene_as_checkpoint()
 	_lock_player_position = false
-	print("Saved checkpoint")
+	_checkpoint_text_line = _current_text_line
 
 func load_checkpoint() -> void:
 	editor_scene_provider.set_editor_scene()
-	print("Tried to load checkpoint")
+	_current_text_line = _checkpoint_text_line
+	text_updated.emit()
 
 func set_inspector_dock_visible(visible: bool) -> void:
 	editor_scene_provider.set_inspector_dock_visible(visible)
