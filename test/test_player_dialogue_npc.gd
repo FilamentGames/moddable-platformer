@@ -50,6 +50,9 @@ func before_each():
 	player.add_child(player_dialogue)
 	player_dialogue.player = player
 	player_dialogue.owner = player
+	player_dialogue.dialogue_mount = autofree(Node2D.new())
+	player_dialogue.add_child(player_dialogue.dialogue_mount)
+	player_dialogue.dialogue_box_prefab = autofree(make_dialogue_box_stub_prefab())
 
 	npc = autofree(NpcTesting.new())
 	npc.dialogue_lines = ["Lorem", "Ipsum"]
@@ -172,3 +175,18 @@ func test_npc_can_get_the_current_quest_line():
 
 	npc.current_dialogue_box.next.emit()
 	assert_eq(npc.trigger_type_used, QuestLine.ProgressMethod.NextButton, "Npc uses NextButton instead of script trigger")
+
+func test_player_can_be_in_forced_cutscene_dialogue():
+	player_dialogue.force_dialogue(["Lorem.", "Ipsum."])
+
+	assert_true(player_dialogue.movement_locked)
+	assert_eq(player_dialogue.current_cutscene_box.label.text, "Lorem.")
+
+	player_dialogue.current_cutscene_box._on_next_button_click()
+
+	assert_eq(player_dialogue.current_cutscene_box.label.text, "Ipsum.")
+
+	player_dialogue.current_cutscene_box._on_next_button_click()
+
+	await wait_frames(1)
+	assert_false(player_dialogue.movement_locked)

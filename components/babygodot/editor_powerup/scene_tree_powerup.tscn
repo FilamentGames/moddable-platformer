@@ -5,6 +5,7 @@
 
 [node name="SceneTreePowerup" unique_id=857147533 instance=ExtResource("1_aol57")]
 editor_unlock = 1
+unlock_dialogue = Array[String](["You unlocked the Scene Tree Dock!", "This allows you to see the list of objects in the current game scene.", "Stop the flow of time and see which objects you can edit!"])
 
 [node name="Sprite2D" parent="Root" parent_id_path=PackedInt32Array(210044367) index="1" unique_id=1171952676]
 texture = ExtResource("2_rrj74")

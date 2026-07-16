@@ -3,3 +3,4 @@
 [ext_resource type="PackedScene" uid="uid://deurro1x5gm85" path="res://components/babygodot/editor_powerup/common/editor_powerup.tscn" id="1_tu4py"]
 
 [node name="InspectorPowerup" unique_id=857147533 instance=ExtResource("1_tu4py")]
+unlock_dialogue = Array[String](["You unlocked the Inspector Dock!", "This allows you to view and edit properties of individual objects in the game world.", "Try it out! Stop the flow of time and click on an object in the editor to view its properties."])

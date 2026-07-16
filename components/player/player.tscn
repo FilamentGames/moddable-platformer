@@ -5,6 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://dmx2rtf2vy1" path="res://assets/sounds/244654__dsg__pop-2.ogg" id="3_ph1f6"]
 [ext_resource type="Script" uid="uid://de8gy7evmnev5" path="res://components/babygodot/npc/player_dialogue_component.gd" id="3_pvtfm"]
 [ext_resource type="AudioStream" uid="uid://bx1joarpc14j5" path="res://assets/sounds/538066__stevielematt__boing.ogg" id="3_wa6cj"]
+[ext_resource type="PackedScene" uid="uid://cyhp2s5q1v3mg" path="res://components/babygodot/dialogue_box/dialogue_box.tscn" id="4_02tnr"]
 [ext_resource type="AudioStream" uid="uid://p0b3e0t7h8j3" path="res://assets/sounds/596541__tothrec2__large-wings-flapping-foley.ogg" id="4_mpawu"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7x5a4"]
@@ -27,6 +28,9 @@ collision_mask = 5
 floor_constant_speed = true
 floor_snap_length = 32.0
 script = ExtResource("1_w3ms2")
+
+[node name="DialogueMount" type="Node2D" parent="." unique_id=35473669]
+position = Vector2(0, -150)
 
 [node name="DoubleJumpParticles" type="CPUParticles2D" parent="." unique_id=1486600990]
 unique_name_in_owner = true
@@ -55,10 +59,12 @@ position = Vector2(0, -46)
 shape = SubResource("CapsuleShape2D_7x5a4")
 one_way_collision = true
 
-[node name="PlayerDialogueComponent" type="Node" parent="." unique_id=1376200695 node_paths=PackedStringArray("player")]
+[node name="PlayerDialogueComponent" type="Node" parent="." unique_id=1376200695 node_paths=PackedStringArray("player", "dialogue_mount")]
 editor_description = "This node controls logic for dialogue interactions. It exists as its own node so we don't have to mess with the base Player class too much"
 script = ExtResource("3_pvtfm")
+dialogue_box_prefab = ExtResource("4_02tnr")
 player = NodePath("..")
+dialogue_mount = NodePath("../DialogueMount")
 metadata/_custom_type_script = "uid://de8gy7evmnev5"
 
 [node name="SoundEffects" type="Node" parent="." unique_id=971926404]
