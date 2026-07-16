@@ -24,6 +24,10 @@ WebSceneSelector="uid://cag3i6auntfwn"
 GlobalMessagingService="*uid://c6du7tqdd0g8g"
 GlobalContinuityManager="*uid://bx3b7hampbvmm"
 
+[babygodot]
+
+auto_play_on_start=false
+
 [display]
 
 window/size/viewport_width=1920

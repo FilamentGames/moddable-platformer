@@ -14,10 +14,12 @@ var checkpoints := CheckpointHelper.new()
 
 const global_message_service_name = "GlobalMessagingService"
 const game_continuity_service_name = "GlobalContinuityManager"
+const auto_play_on_start_setting_name = "babygodot/auto_play_on_start"
 
 func _enable_plugin() -> void:
 	add_autoload_singleton(global_message_service_name, "res://addons/quests/bridge/editor_game_messaging_service.gd")
 	add_autoload_singleton(game_continuity_service_name, "res://addons/quests/continuity/game_continuity_manager.gd")
+
 
 func _disable_plugin() -> void:
 	remove_autoload_singleton(global_message_service_name)
@@ -82,6 +84,17 @@ func _enter_tree() -> void:
 
 	BabyGodotUtils.toggle_streamlined_exclusive_dock("get_inspector_dock", false)
 	BabyGodotUtils.toggle_streamlined_exclusive_dock("get_scene_tree_dock", false)
+
+	if not ProjectSettings.has_setting(auto_play_on_start_setting_name):
+		ProjectSettings.set_setting(auto_play_on_start_setting_name, true)
+		var property_info := {
+			"name": auto_play_on_start_setting_name,
+			"type": TYPE_BOOL,
+		}
+		ProjectSettings.add_property_info(property_info)
+	ProjectSettings.set_initial_value(auto_play_on_start_setting_name, true)
+	if ProjectSettings.get_setting(auto_play_on_start_setting_name):
+		EditorInterface.play_main_scene()
 
 func _connect_scene_edit_signal() -> void:
 	scene_changed.connect(func(_arg: Variant):
