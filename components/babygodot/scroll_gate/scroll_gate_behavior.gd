@@ -9,6 +9,8 @@ class_name ScrollGateBehavior
 
 var bridge: InGameQuestsBridge
 
+var _scroll_quantity: int = 0
+
 func _ready() -> void:
 	if Engine.is_editor_hint():
 		# Access the global var directly in editor
@@ -21,7 +23,10 @@ func _ready() -> void:
 	
 
 func _on_scroll_collected(quantity: int) -> void:
-	if quantity >= required_scrolls:
+	_scroll_quantity = quantity
+
+func player_entered() -> void:
+	if _scroll_quantity >= required_scrolls:
 		target_object.get_parent().remove_child(target_object)
 		target_object.queue_free()
 		queue_free()

@@ -10,6 +10,9 @@ size = Vector2(128, 128)
 atlas = ExtResource("2_qc8qj")
 region = Rect2(1280, 128, 128, 128)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hmpfs"]
+size = Vector2(500, 150)
+
 [node name="ScrollGate" type="StaticBody2D" unique_id=68402488]
 collision_layer = 4
 collision_mask = 0
@@ -32,3 +35,10 @@ offset_bottom = 11.0
 text = "You need to collect
 1 scroll to move on!"
 horizontal_alignment = 2
+
+[node name="TriggerArea" type="Area2D" parent="." unique_id=1096462271]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerArea" unique_id=233322335]
+shape = SubResource("RectangleShape2D_hmpfs")
+
+[connection signal="body_entered" from="TriggerArea" to="ScrollGateBehavior" method="player_entered" unbinds=1]

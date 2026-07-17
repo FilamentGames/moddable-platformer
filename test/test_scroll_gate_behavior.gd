@@ -15,10 +15,15 @@ func before_each():
 	gate_behavior.target_object = gate
 	gate.add_child(gate_behavior)
 
-func test_it_disappears_after_collecting_a_scroll():
+func test_it_disappears_after_collecting_a_scroll_and_the_player_enters_the_trigger_zone():
 	add_child(gate)
 
 	gate_behavior.bridge.scroll_quantity.emit(1)
+
+	assert_false(gate.is_queued_for_deletion())
+	assert_not_null(gate.get_parent())
+
+	gate_behavior.player_entered()
 
 	assert_true(gate.is_queued_for_deletion())
 	assert_null(gate.get_parent())
@@ -28,6 +33,7 @@ func test_it_does_nothing_if_scroll_quantity_not_reached():
 	add_child(gate)
 
 	gate_behavior.bridge.scroll_quantity.emit(1)
+	gate_behavior.player_entered()
 
 	assert_false(gate.is_queued_for_deletion())
 	assert_not_null(gate.get_parent())
