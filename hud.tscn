@@ -21,6 +21,14 @@
 [ext_resource type="Texture2D" uid="uid://cxjxjkth3jat5" path="res://assets/input-prompts/keyboard-and-mouse_sheet_default/keyboard_backspace.tres" id="12_nx880"]
 [ext_resource type="PackedScene" uid="uid://tgqcl8qnq2dg" path="res://components/hud/scroll_counter.tscn" id="13_5kc73"]
 [ext_resource type="Texture2D" uid="uid://0awxt4dn7lvh" path="res://assets/input-prompts/keyboard-and-mouse_sheet_default/keyboard_space.tres" id="13_bp16l"]
+[ext_resource type="Texture2D" uid="uid://g6tdq8sy82um" path="res://assets/input-prompts/keyboard-and-mouse_sheet_default/keyboard_a.tres" id="13_nx880"]
+[ext_resource type="Texture2D" uid="uid://hnw2o470wxpa" path="res://assets/input-prompts/keyboard-and-mouse_sheet_default/keyboard_w.tres" id="14_drihh"]
+[ext_resource type="Texture2D" uid="uid://dvd7n0vf4mkq7" path="res://assets/input-prompts/keyboard-and-mouse_sheet_default/keyboard_d.tres" id="15_d5hpo"]
+[ext_resource type="Texture2D" uid="uid://3v30eavl8hwg" path="res://assets/input-prompts/keyboard-and-mouse_sheet_default/keyboard_z.tres" id="16_y8web"]
+[ext_resource type="Texture2D" uid="uid://pteo05srjyob" path="res://assets/input-prompts/keyboard-and-mouse_sheet_default/keyboard_x.tres" id="18_cj3fo"]
+[ext_resource type="Texture2D" uid="uid://dmbiwxorfb4yn" path="res://assets/input-prompts/keyboard-and-mouse_sheet_default/mouse_left.tres" id="19_tcfrd"]
+[ext_resource type="Texture2D" uid="uid://wfff10c8t28p" path="res://assets/input-prompts/keyboard-and-mouse_sheet_default/keyboard_c.tres" id="20_qb75m"]
+[ext_resource type="Texture2D" uid="uid://f8qnyabq4s4e" path="res://assets/input-prompts/keyboard-and-mouse_sheet_default/keyboard_e.tres" id="21_x1wfm"]
 
 [sub_resource type="Theme" id="Theme_0yvta"]
 default_font_size = 64
@@ -163,6 +171,7 @@ texture = ExtResource("5_615i1")
 stretch_mode = 5
 
 [node name="Up" type="TextureRect" parent="Start/GridContainer2/MoveKeys" unique_id=1042869058]
+visible = false
 layout_mode = 2
 texture = ExtResource("5_pw7dr")
 stretch_mode = 5
@@ -172,18 +181,98 @@ layout_mode = 2
 texture = ExtResource("6_ap7yk")
 stretch_mode = 5
 
-[node name="TalkCaption" type="Label" parent="Start/GridContainer2" unique_id=759714535]
+[node name="OrCaption" type="Label" parent="Start/GridContainer2/MoveKeys" unique_id=487692456]
+layout_mode = 2
+text = " or "
+horizontal_alignment = 2
+
+[node name="MoveKeys2" type="HBoxContainer" parent="Start/GridContainer2/MoveKeys" unique_id=154531750]
+layout_mode = 2
+
+[node name="A" type="TextureRect" parent="Start/GridContainer2/MoveKeys/MoveKeys2" unique_id=908400231]
+layout_mode = 2
+texture = ExtResource("13_nx880")
+stretch_mode = 5
+
+[node name="W" type="TextureRect" parent="Start/GridContainer2/MoveKeys/MoveKeys2" unique_id=896407282]
+visible = false
+layout_mode = 2
+texture = ExtResource("14_drihh")
+stretch_mode = 5
+
+[node name="D" type="TextureRect" parent="Start/GridContainer2/MoveKeys/MoveKeys2" unique_id=2027076177]
+layout_mode = 2
+texture = ExtResource("15_d5hpo")
+stretch_mode = 5
+
+[node name="JumpCaption" type="Label" parent="Start/GridContainer2" unique_id=759714535]
+layout_mode = 2
+text = "Jump:"
+horizontal_alignment = 2
+
+[node name="JumpKeys" type="HBoxContainer" parent="Start/GridContainer2" unique_id=110041005]
+layout_mode = 2
+
+[node name="Z" type="TextureRect" parent="Start/GridContainer2/JumpKeys" unique_id=1120647680]
+layout_mode = 2
+texture = ExtResource("16_y8web")
+stretch_mode = 5
+
+[node name="OrCaption2" type="Label" parent="Start/GridContainer2/JumpKeys" unique_id=307047215]
+layout_mode = 2
+text = " or "
+horizontal_alignment = 2
+
+[node name="Space" type="TextureRect" parent="Start/GridContainer2/JumpKeys" unique_id=1035783982]
+layout_mode = 2
+texture = ExtResource("13_bp16l")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="AttackCaption" type="Label" parent="Start/GridContainer2" unique_id=779055306]
+layout_mode = 2
+text = "Attack:"
+horizontal_alignment = 2
+
+[node name="AttackKey" type="HBoxContainer" parent="Start/GridContainer2" unique_id=620953987]
+layout_mode = 2
+
+[node name="X" type="TextureRect" parent="Start/GridContainer2/AttackKey" unique_id=750872072]
+layout_mode = 2
+texture = ExtResource("18_cj3fo")
+stretch_mode = 5
+
+[node name="OrCaption3" type="Label" parent="Start/GridContainer2/AttackKey" unique_id=1966075056]
+layout_mode = 2
+text = " or "
+horizontal_alignment = 2
+
+[node name="LeftMouseButton" type="TextureRect" parent="Start/GridContainer2/AttackKey" unique_id=271267591]
+layout_mode = 2
+texture = ExtResource("19_tcfrd")
+stretch_mode = 5
+
+[node name="TalkCaption" type="Label" parent="Start/GridContainer2" unique_id=1866938434]
 layout_mode = 2
 text = "Talk:"
 horizontal_alignment = 2
 
-[node name="TalkKey" type="HBoxContainer" parent="Start/GridContainer2" unique_id=110041005]
+[node name="TalkKey" type="HBoxContainer" parent="Start/GridContainer2" unique_id=357036627]
 layout_mode = 2
 
-[node name="Space" type="TextureRect" parent="Start/GridContainer2/TalkKey" unique_id=1035783982]
+[node name="C" type="TextureRect" parent="Start/GridContainer2/TalkKey" unique_id=1350408859]
 layout_mode = 2
-texture = ExtResource("13_bp16l")
-expand_mode = 2
+texture = ExtResource("20_qb75m")
+stretch_mode = 5
+
+[node name="OrCaption4" type="Label" parent="Start/GridContainer2/TalkKey" unique_id=1447771167]
+layout_mode = 2
+text = " or "
+horizontal_alignment = 2
+
+[node name="C2" type="TextureRect" parent="Start/GridContainer2/TalkKey" unique_id=712091315]
+layout_mode = 2
+texture = ExtResource("21_x1wfm")
 stretch_mode = 5
 
 [node name="Label2" type="Label" parent="Start" unique_id=317213943]

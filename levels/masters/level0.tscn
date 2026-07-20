@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://coq6d3u6wnvs2" path="res://components/platform/platform.tscn" id="10_cs3j8"]
 [ext_resource type="PackedScene" uid="uid://cugv3o2f6ug6e" path="res://components/sign/sign.tscn" id="11_q0xf2"]
 [ext_resource type="Script" uid="uid://odpmnclrocgd" path="res://components/babygodot/scroll/scroll.gd" id="12_1tk8l"]
+[ext_resource type="SpriteFrames" uid="uid://dj4io3kb4d2uc" path="res://assets/npcs/monk.tres" id="12_m7dqe"]
 [ext_resource type="PackedScene" uid="uid://dpk1jwflxtjbn" path="res://components/babygodot/scroll/scroll.tscn" id="12_ycdye"]
 [ext_resource type="PackedScene" uid="uid://67eoedabcb3s" path="res://components/babygodot/scroll/condition_types/inspector_checkbox_scroll_condition.tscn" id="13_x1pys"]
 [ext_resource type="Script" uid="uid://bv4utu2r7ll2v" path="res://components/babygodot/scroll/condition_types/inspector_checkbox_scroll_condition.gd" id="14_2d4sf"]
@@ -48,6 +49,9 @@
 [ext_resource type="PackedScene" uid="uid://il08cnnaosyi" path="res://components/babygodot/checkpoint/checkpoint_npc.tscn" id="46_8knqs"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rpdqf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ff8d"]
+size = Vector2(300, 137)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ruf8e"]
 size = Vector2(14.781952, 6.386901)
@@ -138,11 +142,34 @@ sprite = NodePath("AnimatedSprite2D")
 player_detector = NodePath("Area2D")
 dialogue_container = NodePath("DialogueMount")
 
+[node name="Npc_MonkFlavor" parent="." unique_id=1327020053 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container") instance=ExtResource("3_27os8")]
+position = Vector2(1760, 613)
+script = ExtResource("16_8knqs")
+dialogue_lines = Array[String](["The void has come to Threadbare. Are you the one to save us?"])
+sprite = NodePath("AnimatedSprite2D")
+player_detector = NodePath("Area2D")
+dialogue_container = NodePath("DialogueMount")
+
+[node name="AnimatedSprite2D" parent="Npc_MonkFlavor" index="0" unique_id=1376270546]
+sprite_frames = ExtResource("12_m7dqe")
+autoplay = "default"
+
+[node name="DialogueMount" parent="Npc_MonkFlavor" index="1" unique_id=1542232851]
+position = Vector2(0, -250)
+
+[node name="Area2D" parent="Npc_MonkFlavor" index="2" unique_id=18542653]
+collision_layer = 0
+
+[node name="CollisionShape2D" parent="Npc_MonkFlavor/Area2D" index="0" unique_id=226621961]
+visible = false
+position = Vector2(0, -6.5)
+shape = SubResource("RectangleShape2D_0ff8d")
+
 [node name="Coins" type="Node2D" parent="." unique_id=1860713878]
 
 [node name="Coin" type="Area2D" parent="Coins" unique_id=469589313 groups=["coins"] instance=ExtResource("6_qy02x")]
 modulate = Color(1, 1, 0, 1)
-position = Vector2(931, 454)
+position = Vector2(1045, 528)
 collision_layer = 2
 script = ExtResource("18_65vxu")
 texture = ExtResource("7_y3jo1")
@@ -589,6 +616,8 @@ placeholder_sprite = NodePath("PlaceholderSprite")
 [connection signal="body_entered" from="Dangerzone" to="Dangerzone" method="_on_body_entered"]
 [connection signal="collected" from="Scroll" to="Scroll/ScrollContinuity" method="_on_collect"]
 [connection signal="condition_updated" from="Scroll" to="Scroll/SpriteContainer/Sprite2D/ScrollAnimator" method="_trigger_animation"]
+[connection signal="body_entered" from="Npc_MonkFlavor/Area2D" to="Npc_MonkFlavor" method="_player_entered"]
+[connection signal="body_exited" from="Npc_MonkFlavor/Area2D" to="Npc_MonkFlavor" method="_player_exited"]
 [connection signal="body_entered" from="Coins/Coin" to="Coins/Coin" method="_on_body_entered"]
 [connection signal="body_entered" from="Coins/Coin_ReachedRockPuzzle" to="Coins/Coin_ReachedRockPuzzle" method="_on_body_entered"]
 [connection signal="body_entered" from="Coins/Coin_SolvedRockPuzzle" to="Coins/Coin_SolvedRockPuzzle" method="_on_body_entered"]
@@ -619,3 +648,5 @@ placeholder_sprite = NodePath("PlaceholderSprite")
 [connection signal="save_checkpoint" from="Checkpoint" to="Checkpoint" method="send_checkpoint_message"]
 [connection signal="save_checkpoint" from="Checkpoint2" to="Checkpoint2" method="send_checkpoint_message"]
 [connection signal="save_checkpoint" from="Checkpoint3" to="Checkpoint3" method="send_checkpoint_message"]
+
+[editable path="Npc_MonkFlavor"]
