@@ -477,14 +477,11 @@ script = ExtResource("24_twxhk")
 width = 2
 
 [node name="Signs" type="Node2D" parent="." unique_id=567327781]
-visible = false
 
 [node name="Sign" type="Node2D" parent="Signs" unique_id=279814009 instance=ExtResource("11_q0xf2")]
-position = Vector2(4283, 387)
+position = Vector2(3265, 1029)
 script = ExtResource("26_ht26h")
-text = "How can I
-get past
-this wall?"
+text = "Jump twice for extra height"
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=1041196418 groups=["players"] instance=ExtResource("14_su4jx")]
 position = Vector2(238, 639)
