@@ -24,7 +24,6 @@
 [ext_resource type="PackedScene" uid="uid://67eoedabcb3s" path="res://components/babygodot/scroll/condition_types/inspector_checkbox_scroll_condition.tscn" id="13_x1pys"]
 [ext_resource type="Script" uid="uid://bv4utu2r7ll2v" path="res://components/babygodot/scroll/condition_types/inspector_checkbox_scroll_condition.gd" id="14_2d4sf"]
 [ext_resource type="PackedScene" uid="uid://8st4scqt06l8" path="res://components/player/player.tscn" id="14_su4jx"]
-[ext_resource type="SpriteFrames" uid="uid://c2wpvtw1stuyq" path="res://components/player/spriteframes-inkdrinker-red.tres" id="15_7totk"]
 [ext_resource type="Script" uid="uid://n1rnbm4rnt0t" path="res://components/babygodot/npc/npc.gd" id="16_8knqs"]
 [ext_resource type="PackedScene" uid="uid://jt80gv02u4f2" path="res://hud.tscn" id="16_gqw0f"]
 [ext_resource type="PackedScene" uid="uid://dbaal2g7b8ub0" path="res://components/enemy/storyvore_enemy.tscn" id="17_d6rl2"]
@@ -32,6 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://beuisy5yrw0bq" path="res://components/flag/flag.tscn" id="18_crtlj"]
 [ext_resource type="Script" uid="uid://boqbxvbja884q" path="res://scripts/multiplayer_camera.gd" id="19_oe8g1"]
 [ext_resource type="PackedScene" uid="uid://busbh1kipldyq" path="res://components/babygodot/test_display_quest_text.tscn" id="20_hwrq4"]
+[ext_resource type="SpriteFrames" uid="uid://de74lrhqf0xoa" path="res://components/player/spriteframes-storyweaver.tres" id="20_m7dqe"]
 [ext_resource type="Script" uid="uid://c15g2mnaubofd" path="res://components/babygodot/test_progress_quest.gd" id="21_0bbcg"]
 [ext_resource type="PackedScene" uid="uid://478o42c7ut27" path="res://components/babygodot/inspector_visibility_trigger/inspector_visibility_trigger.tscn" id="23_uo3or"]
 [ext_resource type="PackedScene" uid="uid://bk3nplruhw7kp" path="res://components/babygodot/scroll_gate/scroll_gate.tscn" id="24_obko3"]
@@ -486,16 +486,16 @@ text = "How can I
 get past
 this wall?"
 
-[node name="Player" type="CharacterBody2D" parent="." unique_id=1469322580 groups=["players"] instance=ExtResource("14_su4jx")]
-position = Vector2(239, 623)
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1041196418 groups=["players"] instance=ExtResource("14_su4jx")]
+position = Vector2(238, 639)
 collision_layer = 3
 collision_mask = 7
 floor_constant_speed = true
 floor_snap_length = 32.0
 script = ExtResource("28_kexs0")
-sprite_frames = ExtResource("15_7totk")
+sprite_frames = ExtResource("20_m7dqe")
 
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1155688518]
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1408260423]
 position = Vector2(0, 15)
 limit_left = 0
 limit_bottom = 1080
