@@ -28,6 +28,8 @@ collision_mask = 5
 floor_constant_speed = true
 floor_snap_length = 32.0
 script = ExtResource("1_w3ms2")
+jump_velocity = 650.0
+double_jump = true
 
 [node name="DialogueMount" type="Node2D" parent="." unique_id=35473669]
 position = Vector2(0, -150)
