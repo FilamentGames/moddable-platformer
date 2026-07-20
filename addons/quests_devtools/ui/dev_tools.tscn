@@ -42,10 +42,6 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "Reset Baby Godot Quest Progress"
 
-[node name="Spacer2" type="Control" parent="VBoxContainer" unique_id=1618953348]
-custom_minimum_size = Vector2(0, 32)
-layout_mode = 2
-
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer" unique_id=1775416488]
 layout_mode = 2
 
@@ -93,8 +89,18 @@ layout_mode = 2
 text = "Show
 "
 
+[node name="Spacer2" type="Control" parent="VBoxContainer/VBoxContainer" unique_id=1618953348]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="VBoxContainer/VBoxContainer" unique_id=568910751]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Open Level0 Clone"
+
 [connection signal="pressed" from="VBoxContainer/QuestResetButton" to="." method="_click_button"]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/InspectorDockControls/HideButton" to="." method="_toggle_streamlined_exclusive_dock" binds= [&"get_inspector_dock", false]]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/InspectorDockControls/ShowButton" to="." method="_toggle_streamlined_exclusive_dock" binds= [&"get_inspector_dock", true]]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/SceneTreeDockControls/HideButton" to="." method="_toggle_streamlined_exclusive_dock" binds= [&"get_scene_tree_dock", false]]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/SceneTreeDockControls/ShowButton" to="." method="_toggle_streamlined_exclusive_dock" binds= [&"get_scene_tree_dock", true]]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/Button" to="." method="_open_level0_clone"]

@@ -11,3 +11,7 @@ func _click_button() -> void:
 
 func _toggle_streamlined_exclusive_dock(name: StringName, visible: bool) -> void:
 	BabyGodotUtils.toggle_streamlined_exclusive_dock(name, visible)
+
+
+func _open_level0_clone() -> void:
+	EditorInterface.open_scene_from_path("res://levels/clones/level0.tscn")
