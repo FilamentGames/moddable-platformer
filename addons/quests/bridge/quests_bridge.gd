@@ -64,6 +64,9 @@ func _capture(message, data, session_id):
 		"delete_node_in_editor":
 			GlobalQuests.quests.delete_node_in_editor(data[1])
 			return true
+		"update_editable_objects":
+			GlobalQuests.quests.update_editable_objects(data[1], data[2])
+			return true
 	return false
 
 func _setup_session(session_id):

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d2shfam8t0war"]
 
-[ext_resource type="Script" uid="uid://bvs6l44borf1h" path="res://components/babygodot/trigger/common/quest_trigger.gd" id="1_v8cfe"]
+[ext_resource type="Script" uid="uid://bvs6l44borf1h" path="res://components/babygodot/trigger/_common/quest_trigger.gd" id="1_v8cfe"]
 [ext_resource type="Script" uid="uid://mok7euh4l1ht" path="res://components/babygodot/trigger/quest_script_trigger/quest_script_trigger_behavior.gd" id="2_0pbfu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hmpfs"]

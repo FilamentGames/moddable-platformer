@@ -76,3 +76,6 @@ static func activate_level_checkpoint(checkpoint_id: String) -> void:
 
 static func delete_node_in_editor(node: Node) -> void:
 	_send_message_static("delete_node_in_editor", [-1, UniqueSceneId.get_id(node)])
+
+static func update_editable_objects(to_add: Array, to_remove: Array) -> void:
+	_send_message_static("update_editable_objects", [-1, to_add, to_remove])

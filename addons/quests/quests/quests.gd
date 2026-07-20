@@ -155,3 +155,33 @@ func reset_progress() -> void:
 	scrolls_collected = []
 	text_updated.emit()
 	scroll_collected.emit()
+
+func update_editable_objects(to_add: Array, to_remove: Array) -> void:
+	var scene: Node2D = editor_scene_provider.get_editor_scene()
+	var editable_node_list: EditableNodeList = BabyGodotUtils.get_first_child_of_type(scene, EditableNodeList)
+	if not editable_node_list:
+		return
+	for object_id in to_add:
+		var object: Node = UniqueSceneId.find_by_id(scene, object_id)
+		object.remove_meta("_edit_lock_")
+		print(object.get_meta("_edit_lock_"))
+		if editable_node_list.nodes.find(object) == -1:
+			editable_node_list.nodes.push_back(object)
+	for object_id in to_remove:
+		var object: Node = UniqueSceneId.find_by_id(scene, object_id)
+		object.set_meta("_edit_lock_", true)
+		print(object.get_meta("_edit_lock_"))
+		if editable_node_list.nodes.find(object) != -1:
+			editable_node_list.nodes.erase(object)
+	var editable_object_indicators := BabyGodotUtils.get_all_children_of_type(scene, EditableObjectIndicator)
+	for indicator in editable_object_indicators:
+		indicator.get_parent().remove_child(indicator)
+		indicator.queue_free()
+	for object in editable_node_list.nodes:
+		var indicator: EditableObjectIndicator = EditableObjectIndicator.new()
+		indicator.set_meta("_edit_lock_", true)
+		indicator.name = "EditableObjectIndicator"
+		object.add_child(indicator)
+		indicator.owner = scene
+	editor_scene_provider.update_and_save_node(scene)
+

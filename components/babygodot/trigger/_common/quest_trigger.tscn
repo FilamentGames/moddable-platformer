@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://nqjfw1ib51ut"]
 
-[ext_resource type="Script" uid="uid://bvs6l44borf1h" path="res://components/babygodot/trigger/common/quest_trigger.gd" id="1_y38bq"]
+[ext_resource type="Script" uid="uid://bvs6l44borf1h" path="res://components/babygodot/trigger/_common/quest_trigger.gd" id="1_y38bq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hmpfs"]
 resource_local_to_scene = true

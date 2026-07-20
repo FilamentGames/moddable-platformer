@@ -12,6 +12,14 @@ static func get_first_child_of_type(parent: Node, type):
 		return flat_children[index]
 	return null
 
+static func get_all_children_of_type(parent: Node, type) -> Array[Node]:
+	var flat_children = parent.find_children("*")
+	var children: Array[Node] = []
+	for child in flat_children:
+		if is_instance_of(child, type):
+			children.push_back(child)
+	return children
+
 ## Obtain a reference to a dock object exclusive to the Streamlined editor
 static func _get_streamlined_exclusive_dock(name: StringName):
 	var interface = EditorInterface
