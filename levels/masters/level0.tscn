@@ -499,7 +499,7 @@ scale = Vector2(0.5599989, 1)
 shape = SubResource("RectangleShape2D_0ff8d")
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=1041196418 groups=["players"] instance=ExtResource("14_su4jx")]
-position = Vector2(238, 639)
+position = Vector2(195, 639)
 collision_layer = 3
 collision_mask = 7
 floor_constant_speed = true
