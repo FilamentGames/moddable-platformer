@@ -30,7 +30,6 @@
 [ext_resource type="PackedScene" uid="uid://dbaal2g7b8ub0" path="res://components/enemy/storyvore_enemy.tscn" id="17_d6rl2"]
 [ext_resource type="Script" uid="uid://b4j8f10agdcvu" path="res://scripts/coin.gd" id="18_65vxu"]
 [ext_resource type="PackedScene" uid="uid://beuisy5yrw0bq" path="res://components/flag/flag.tscn" id="18_crtlj"]
-[ext_resource type="Script" uid="uid://boqbxvbja884q" path="res://scripts/multiplayer_camera.gd" id="19_oe8g1"]
 [ext_resource type="SpriteFrames" uid="uid://de74lrhqf0xoa" path="res://components/player/spriteframes-storyweaver.tres" id="20_m7dqe"]
 [ext_resource type="PackedScene" uid="uid://478o42c7ut27" path="res://components/babygodot/inspector_visibility_trigger/inspector_visibility_trigger.tscn" id="23_uo3or"]
 [ext_resource type="PackedScene" uid="uid://bk3nplruhw7kp" path="res://components/babygodot/scroll_gate/scroll_gate.tscn" id="24_obko3"]
@@ -543,14 +542,6 @@ collision_mask = 4
 floor_constant_speed = true
 floor_snap_length = 32.0
 script = ExtResource("33_7cn4d")
-
-[node name="MultiplayerCamera" type="Camera2D" parent="." unique_id=1020979191]
-position = Vector2(0, 15)
-enabled = false
-limit_left = 0
-limit_bottom = 1080
-position_smoothing_enabled = true
-script = ExtResource("19_oe8g1")
 
 [connection signal="body_entered" from="Dangerzone" to="Dangerzone" method="_on_body_entered"]
 [connection signal="collected" from="Scroll" to="Scroll/ScrollContinuity" method="_on_collect"]
