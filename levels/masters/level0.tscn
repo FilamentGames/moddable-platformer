@@ -479,7 +479,7 @@ width = 2
 [node name="Signs" type="Node2D" parent="." unique_id=567327781]
 
 [node name="Sign" type="Node2D" parent="Signs" unique_id=279814009 instance=ExtResource("11_q0xf2")]
-position = Vector2(3265, 1029)
+position = Vector2(5121, 1028)
 script = ExtResource("26_ht26h")
 text = "Jump twice for extra height"
 
@@ -491,6 +491,7 @@ floor_constant_speed = true
 floor_snap_length = 32.0
 script = ExtResource("28_kexs0")
 sprite_frames = ExtResource("20_m7dqe")
+double_jump = true
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1408260423]
 position = Vector2(0, 15)
