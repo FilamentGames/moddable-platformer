@@ -25,15 +25,17 @@
 [ext_resource type="Script" uid="uid://bvs6l44borf1h" path="res://components/babygodot/trigger/_common/quest_trigger.gd" id="14_0bbcg"]
 [ext_resource type="Script" uid="uid://bv4utu2r7ll2v" path="res://components/babygodot/scroll/condition_types/inspector_checkbox_scroll_condition.gd" id="14_2d4sf"]
 [ext_resource type="PackedScene" uid="uid://8st4scqt06l8" path="res://components/player/player.tscn" id="14_su4jx"]
+[ext_resource type="PackedScene" uid="uid://bwpj01b3g2as6" path="res://components/babygodot/editor_powerup/scene_tree_powerup.tscn" id="15_dt6hy"]
 [ext_resource type="Script" uid="uid://n1rnbm4rnt0t" path="res://components/babygodot/npc/npc.gd" id="16_8knqs"]
 [ext_resource type="PackedScene" uid="uid://jt80gv02u4f2" path="res://hud.tscn" id="16_gqw0f"]
+[ext_resource type="PackedScene" uid="uid://caob0y51xxmf0" path="res://components/babygodot/editor_powerup/inspector_powerup.tscn" id="16_m7dqe"]
 [ext_resource type="PackedScene" uid="uid://dbaal2g7b8ub0" path="res://components/enemy/storyvore_enemy.tscn" id="17_d6rl2"]
 [ext_resource type="Script" uid="uid://b4j8f10agdcvu" path="res://scripts/coin.gd" id="18_65vxu"]
 [ext_resource type="PackedScene" uid="uid://beuisy5yrw0bq" path="res://components/flag/flag.tscn" id="18_crtlj"]
 [ext_resource type="SpriteFrames" uid="uid://de74lrhqf0xoa" path="res://components/player/spriteframes-storyweaver.tres" id="20_m7dqe"]
-[ext_resource type="PackedScene" uid="uid://478o42c7ut27" path="res://components/babygodot/inspector_visibility_trigger/inspector_visibility_trigger.tscn" id="23_uo3or"]
 [ext_resource type="PackedScene" uid="uid://bk3nplruhw7kp" path="res://components/babygodot/scroll_gate/scroll_gate.tscn" id="24_obko3"]
 [ext_resource type="Script" uid="uid://dilh5jyuklov6" path="res://components/platform/platform.gd" id="24_twxhk"]
+[ext_resource type="Script" uid="uid://bknjyyvfw422p" path="res://components/babygodot/editor_powerup/common/editor_powerup.gd" id="26_1tk8l"]
 [ext_resource type="Script" uid="uid://cvs42517jpxhh" path="res://components/sign/sign.gd" id="26_ht26h"]
 [ext_resource type="PackedScene" uid="uid://1r6h0ihjbc77" path="res://components/babygodot/checkpoint/checkpoint.tscn" id="27_dt6hy"]
 [ext_resource type="Script" uid="uid://umb21eb2y1oj" path="res://scripts/player.gd" id="28_kexs0"]
@@ -41,7 +43,6 @@
 [ext_resource type="Script" uid="uid://d003tgo4vrak8" path="res://components/enemy/enemy.gd" id="33_7cn4d"]
 [ext_resource type="Script" uid="uid://ctlotfccvl4jn" path="res://scripts/flag.gd" id="35_fnu5h"]
 [ext_resource type="SpriteFrames" uid="uid://b3orjhfv6eeud" path="res://components/flag/flag-spriteframes-green.tres" id="36_jf12t"]
-[ext_resource type="Script" uid="uid://c21p0obgodnhd" path="res://components/babygodot/inspector_visibility_trigger/inspector_visibility_trigger.gd" id="41_efl58"]
 [ext_resource type="Script" uid="uid://b532d25pht7ub" path="res://components/babygodot/checkpoint/checkpoint.gd" id="45_2d4sf"]
 [ext_resource type="PackedScene" uid="uid://il08cnnaosyi" path="res://components/babygodot/checkpoint/checkpoint_npc.tscn" id="46_8knqs"]
 
@@ -113,17 +114,6 @@ sprite_frames = ExtResource("36_jf12t")
 
 [node name="Triggers" type="Node2D" parent="." unique_id=1993564345]
 
-[node name="InspectorVisibilityTrigger" type="Area2D" parent="Triggers" unique_id=964568534 instance=ExtResource("23_uo3or")]
-position = Vector2(246, 510)
-collision_layer = 0
-script = ExtResource("41_efl58")
-
-[node name="InspectorVisibilityTrigger2" type="Area2D" parent="Triggers" unique_id=1583390062 instance=ExtResource("23_uo3or")]
-position = Vector2(4419, 255)
-collision_layer = 0
-script = ExtResource("41_efl58")
-set_inspector_to = 1
-
 [node name="QuestScriptTrigger_ReachedRockPuzzle" type="Area2D" parent="Triggers" unique_id=1651920811 node_paths=PackedStringArray("behavior") instance=ExtResource("9_58r63")]
 position = Vector2(4025, 304)
 script = ExtResource("14_0bbcg")
@@ -193,6 +183,19 @@ script = ExtResource("45_2d4sf")
 npc_prefab = ExtResource("46_8knqs")
 player_position_marker = NodePath("PlayerSpawn")
 placeholder_sprite = NodePath("PlaceholderSprite")
+
+[node name="EditorPowerUps" type="Node2D" parent="." unique_id=721056742]
+
+[node name="SceneTreePowerup" type="Node2D" parent="EditorPowerUps" unique_id=857147533 instance=ExtResource("15_dt6hy")]
+position = Vector2(4323, 316)
+script = ExtResource("26_1tk8l")
+editor_unlock = 1
+unlock_dialogue = Array[String](["You unlocked the Scene Tree Dock!", "This allows you to see the list of objects in the current game scene.", "Stop the flow of time and see which objects you can edit!"])
+
+[node name="InspectorPowerup" type="Node2D" parent="EditorPowerUps" unique_id=459242062 instance=ExtResource("16_m7dqe")]
+position = Vector2(5255, -800)
+script = ExtResource("26_1tk8l")
+unlock_dialogue = Array[String](["You unlocked the Inspector Dock!", "This allows you to view and edit properties of individual objects in the game world.", "Try it out! Stop the flow of time and click on an object in the editor to view its properties."])
 
 [node name="Coins" type="Node2D" parent="." unique_id=1860713878]
 
@@ -547,8 +550,6 @@ script = ExtResource("33_7cn4d")
 [connection signal="collected" from="Scroll" to="Scroll/ScrollContinuity" method="_on_collect"]
 [connection signal="condition_updated" from="Scroll" to="Scroll/SpriteContainer/Sprite2D/ScrollAnimator" method="_trigger_animation"]
 [connection signal="body_entered" from="Flag" to="Flag" method="_on_body_entered"]
-[connection signal="body_entered" from="Triggers/InspectorVisibilityTrigger" to="Triggers/InspectorVisibilityTrigger" method="_on_player_enter" unbinds=1]
-[connection signal="body_entered" from="Triggers/InspectorVisibilityTrigger2" to="Triggers/InspectorVisibilityTrigger2" method="_on_player_enter" unbinds=1]
 [connection signal="body_entered" from="Triggers/QuestScriptTrigger_ReachedRockPuzzle" to="Triggers/QuestScriptTrigger_ReachedRockPuzzle" method="_player_entered" unbinds=1]
 [connection signal="body_entered" from="Triggers/QuestScriptTrigger_SolvedRockPuzzle" to="Triggers/QuestScriptTrigger_SolvedRockPuzzle" method="_player_entered" unbinds=1]
 [connection signal="body_entered" from="Triggers/QuestScriptTrigger_SolvedScrollPuzzle" to="Triggers/QuestScriptTrigger_SolvedScrollPuzzle" method="_player_entered" unbinds=1]

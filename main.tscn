@@ -1,49 +1,50 @@
-[gd_scene format=4 uid="uid://dtpi52rrdblc1"]
+[gd_scene format=4 uid="uid://bkymsk4lx2yxb"]
 
-[ext_resource type="Script" uid="uid://cwvs5uqu4hx5e" path="res://addons/quests_devtools/tool_objects/editable_node_list.gd" id="1_b3hyy"]
-[ext_resource type="PackedScene" uid="uid://cswheshouik14" path="res://rules_goals/game_logic.tscn" id="2_uer5k"]
-[ext_resource type="Script" uid="uid://c4ap5hlwp57r0" path="res://scripts/rules_goals/game_logic.gd" id="3_fl11t"]
-[ext_resource type="PackedScene" uid="uid://jnrusvm3gric" path="res://spaces/background.tscn" id="4_6qjp1"]
-[ext_resource type="PackedScene" uid="uid://dthyncc3spfks" path="res://spaces/dangerzone.tscn" id="5_xhiku"]
-[ext_resource type="Script" uid="uid://d000x4b6xlry" path="res://scripts/dangerzone.gd" id="6_imfxu"]
-[ext_resource type="PackedScene" uid="uid://danlrmsfmsros" path="res://spaces/tilemap.tscn" id="7_wbri1"]
-[ext_resource type="TileSet" uid="uid://321ocrwkcyye" path="res://spaces/tileset-threadbare.tres" id="8_md2hq"]
-[ext_resource type="TileSet" uid="uid://caywyu82cccr" path="res://terrain_samples/tileset_full.tres" id="9_v6x6p"]
-[ext_resource type="Script" uid="uid://xaqip7htvoim" path="res://components/babygodot/editable_object_indicator/editable_object_indicator.gd" id="10_18i05"]
-[ext_resource type="PackedScene" uid="uid://dr8km2gn8aenv" path="res://components/props/rock_pile.tscn" id="11_qtrjv"]
-[ext_resource type="PackedScene" uid="uid://dpk1jwflxtjbn" path="res://components/babygodot/scroll/scroll.tscn" id="12_6r8bg"]
-[ext_resource type="Script" uid="uid://odpmnclrocgd" path="res://components/babygodot/scroll/scroll.gd" id="13_nqmne"]
-[ext_resource type="PackedScene" uid="uid://67eoedabcb3s" path="res://components/babygodot/scroll/condition_types/inspector_checkbox_scroll_condition.tscn" id="14_ljgbs"]
-[ext_resource type="Script" uid="uid://bv4utu2r7ll2v" path="res://components/babygodot/scroll/condition_types/inspector_checkbox_scroll_condition.gd" id="15_pc53w"]
-[ext_resource type="PackedScene" uid="uid://bk3nplruhw7kp" path="res://components/babygodot/scroll_gate/scroll_gate.tscn" id="16_hxlax"]
-[ext_resource type="PackedScene" uid="uid://beuisy5yrw0bq" path="res://components/flag/flag.tscn" id="17_0lwt2"]
-[ext_resource type="Script" uid="uid://ctlotfccvl4jn" path="res://scripts/flag.gd" id="18_5wab2"]
-[ext_resource type="SpriteFrames" uid="uid://b3orjhfv6eeud" path="res://components/flag/flag-spriteframes-green.tres" id="19_hgkxt"]
-[ext_resource type="PackedScene" uid="uid://478o42c7ut27" path="res://components/babygodot/inspector_visibility_trigger/inspector_visibility_trigger.tscn" id="20_0c1qs"]
-[ext_resource type="Script" uid="uid://c21p0obgodnhd" path="res://components/babygodot/inspector_visibility_trigger/inspector_visibility_trigger.gd" id="21_c073q"]
-[ext_resource type="PackedScene" uid="uid://d2shfam8t0war" path="res://components/babygodot/trigger/quest_script_trigger/quest_script_trigger.tscn" id="22_f5b6r"]
-[ext_resource type="Script" uid="uid://bvs6l44borf1h" path="res://components/babygodot/trigger/_common/quest_trigger.gd" id="23_umia2"]
-[ext_resource type="PackedScene" uid="uid://1r6h0ihjbc77" path="res://components/babygodot/checkpoint/checkpoint.tscn" id="24_6iytc"]
-[ext_resource type="Script" uid="uid://b532d25pht7ub" path="res://components/babygodot/checkpoint/checkpoint.gd" id="25_opwm8"]
-[ext_resource type="PackedScene" uid="uid://il08cnnaosyi" path="res://components/babygodot/checkpoint/checkpoint_npc.tscn" id="26_4dvc7"]
-[ext_resource type="PackedScene" uid="uid://daf24t18h3n5e" path="res://components/coin/coin.tscn" id="27_xvpjv"]
-[ext_resource type="Script" uid="uid://b4j8f10agdcvu" path="res://scripts/coin.gd" id="28_107o5"]
-[ext_resource type="Texture2D" uid="uid://84t7yee808cn" path="res://assets/items/button.png" id="29_xc0mi"]
-[ext_resource type="PackedScene" uid="uid://4tnolf5qjb55" path="res://components/coin/special_coin.tscn" id="30_igh8c"]
-[ext_resource type="PackedScene" uid="uid://coq6d3u6wnvs2" path="res://components/platform/platform.tscn" id="31_7j8mp"]
-[ext_resource type="Script" uid="uid://dilh5jyuklov6" path="res://components/platform/platform.gd" id="32_kof45"]
-[ext_resource type="PackedScene" uid="uid://cugv3o2f6ug6e" path="res://components/sign/sign.tscn" id="33_rolpe"]
-[ext_resource type="Script" uid="uid://cvs42517jpxhh" path="res://components/sign/sign.gd" id="34_w0y58"]
-[ext_resource type="PackedScene" uid="uid://d0v802hnw7unk" path="res://components/babygodot/npc/npc.tscn" id="35_emyl0"]
-[ext_resource type="Script" uid="uid://n1rnbm4rnt0t" path="res://components/babygodot/npc/npc.gd" id="36_6xbxu"]
-[ext_resource type="SpriteFrames" uid="uid://dj4io3kb4d2uc" path="res://assets/npcs/monk.tres" id="37_1wn7a"]
-[ext_resource type="PackedScene" uid="uid://8st4scqt06l8" path="res://components/player/player.tscn" id="38_5lp6o"]
-[ext_resource type="Script" uid="uid://umb21eb2y1oj" path="res://scripts/player.gd" id="39_3khsu"]
-[ext_resource type="SpriteFrames" uid="uid://de74lrhqf0xoa" path="res://components/player/spriteframes-storyweaver.tres" id="40_u70dk"]
-[ext_resource type="PackedScene" uid="uid://jt80gv02u4f2" path="res://hud.tscn" id="41_wpfw3"]
-[ext_resource type="Script" uid="uid://bi5370kgl6xcs" path="res://scripts/hud.gd" id="42_s1wny"]
-[ext_resource type="PackedScene" uid="uid://dbaal2g7b8ub0" path="res://components/enemy/storyvore_enemy.tscn" id="43_bdmb5"]
-[ext_resource type="Script" uid="uid://d003tgo4vrak8" path="res://components/enemy/enemy.gd" id="44_tvqa7"]
+[ext_resource type="Script" uid="uid://cwvs5uqu4hx5e" path="res://addons/quests_devtools/tool_objects/editable_node_list.gd" id="1_uer5k"]
+[ext_resource type="PackedScene" uid="uid://cswheshouik14" path="res://rules_goals/game_logic.tscn" id="2_fl11t"]
+[ext_resource type="Script" uid="uid://c4ap5hlwp57r0" path="res://scripts/rules_goals/game_logic.gd" id="3_6qjp1"]
+[ext_resource type="PackedScene" uid="uid://jnrusvm3gric" path="res://spaces/background.tscn" id="4_xhiku"]
+[ext_resource type="PackedScene" uid="uid://dthyncc3spfks" path="res://spaces/dangerzone.tscn" id="5_imfxu"]
+[ext_resource type="Script" uid="uid://d000x4b6xlry" path="res://scripts/dangerzone.gd" id="6_wbri1"]
+[ext_resource type="PackedScene" uid="uid://danlrmsfmsros" path="res://spaces/tilemap.tscn" id="7_md2hq"]
+[ext_resource type="TileSet" uid="uid://321ocrwkcyye" path="res://spaces/tileset-threadbare.tres" id="8_v6x6p"]
+[ext_resource type="TileSet" uid="uid://caywyu82cccr" path="res://terrain_samples/tileset_full.tres" id="9_18i05"]
+[ext_resource type="Script" uid="uid://xaqip7htvoim" path="res://components/babygodot/editable_object_indicator/editable_object_indicator.gd" id="10_qtrjv"]
+[ext_resource type="PackedScene" uid="uid://dr8km2gn8aenv" path="res://components/props/rock_pile.tscn" id="11_6r8bg"]
+[ext_resource type="PackedScene" uid="uid://dpk1jwflxtjbn" path="res://components/babygodot/scroll/scroll.tscn" id="12_nqmne"]
+[ext_resource type="Script" uid="uid://odpmnclrocgd" path="res://components/babygodot/scroll/scroll.gd" id="13_ljgbs"]
+[ext_resource type="PackedScene" uid="uid://67eoedabcb3s" path="res://components/babygodot/scroll/condition_types/inspector_checkbox_scroll_condition.tscn" id="14_pc53w"]
+[ext_resource type="Script" uid="uid://bv4utu2r7ll2v" path="res://components/babygodot/scroll/condition_types/inspector_checkbox_scroll_condition.gd" id="15_hxlax"]
+[ext_resource type="PackedScene" uid="uid://bk3nplruhw7kp" path="res://components/babygodot/scroll_gate/scroll_gate.tscn" id="16_0lwt2"]
+[ext_resource type="PackedScene" uid="uid://beuisy5yrw0bq" path="res://components/flag/flag.tscn" id="17_5wab2"]
+[ext_resource type="Script" uid="uid://ctlotfccvl4jn" path="res://scripts/flag.gd" id="18_hgkxt"]
+[ext_resource type="SpriteFrames" uid="uid://b3orjhfv6eeud" path="res://components/flag/flag-spriteframes-green.tres" id="19_0c1qs"]
+[ext_resource type="PackedScene" uid="uid://d2shfam8t0war" path="res://components/babygodot/trigger/quest_script_trigger/quest_script_trigger.tscn" id="20_c073q"]
+[ext_resource type="Script" uid="uid://bvs6l44borf1h" path="res://components/babygodot/trigger/_common/quest_trigger.gd" id="21_f5b6r"]
+[ext_resource type="PackedScene" uid="uid://1r6h0ihjbc77" path="res://components/babygodot/checkpoint/checkpoint.tscn" id="22_umia2"]
+[ext_resource type="Script" uid="uid://b532d25pht7ub" path="res://components/babygodot/checkpoint/checkpoint.gd" id="23_6iytc"]
+[ext_resource type="PackedScene" uid="uid://il08cnnaosyi" path="res://components/babygodot/checkpoint/checkpoint_npc.tscn" id="24_opwm8"]
+[ext_resource type="PackedScene" uid="uid://bwpj01b3g2as6" path="res://components/babygodot/editor_powerup/scene_tree_powerup.tscn" id="25_4dvc7"]
+[ext_resource type="Script" uid="uid://bknjyyvfw422p" path="res://components/babygodot/editor_powerup/common/editor_powerup.gd" id="26_xvpjv"]
+[ext_resource type="PackedScene" uid="uid://caob0y51xxmf0" path="res://components/babygodot/editor_powerup/inspector_powerup.tscn" id="27_107o5"]
+[ext_resource type="PackedScene" uid="uid://daf24t18h3n5e" path="res://components/coin/coin.tscn" id="28_xc0mi"]
+[ext_resource type="Script" uid="uid://b4j8f10agdcvu" path="res://scripts/coin.gd" id="29_igh8c"]
+[ext_resource type="Texture2D" uid="uid://84t7yee808cn" path="res://assets/items/button.png" id="30_7j8mp"]
+[ext_resource type="PackedScene" uid="uid://4tnolf5qjb55" path="res://components/coin/special_coin.tscn" id="31_kof45"]
+[ext_resource type="PackedScene" uid="uid://coq6d3u6wnvs2" path="res://components/platform/platform.tscn" id="32_rolpe"]
+[ext_resource type="Script" uid="uid://dilh5jyuklov6" path="res://components/platform/platform.gd" id="33_w0y58"]
+[ext_resource type="PackedScene" uid="uid://cugv3o2f6ug6e" path="res://components/sign/sign.tscn" id="34_emyl0"]
+[ext_resource type="Script" uid="uid://cvs42517jpxhh" path="res://components/sign/sign.gd" id="35_6xbxu"]
+[ext_resource type="PackedScene" uid="uid://d0v802hnw7unk" path="res://components/babygodot/npc/npc.tscn" id="36_1wn7a"]
+[ext_resource type="Script" uid="uid://n1rnbm4rnt0t" path="res://components/babygodot/npc/npc.gd" id="37_5lp6o"]
+[ext_resource type="SpriteFrames" uid="uid://dj4io3kb4d2uc" path="res://assets/npcs/monk.tres" id="38_3khsu"]
+[ext_resource type="PackedScene" uid="uid://8st4scqt06l8" path="res://components/player/player.tscn" id="39_u70dk"]
+[ext_resource type="Script" uid="uid://umb21eb2y1oj" path="res://scripts/player.gd" id="40_wpfw3"]
+[ext_resource type="SpriteFrames" uid="uid://de74lrhqf0xoa" path="res://components/player/spriteframes-storyweaver.tres" id="41_s1wny"]
+[ext_resource type="PackedScene" uid="uid://jt80gv02u4f2" path="res://hud.tscn" id="42_bdmb5"]
+[ext_resource type="Script" uid="uid://bi5370kgl6xcs" path="res://scripts/hud.gd" id="43_tvqa7"]
+[ext_resource type="PackedScene" uid="uid://dbaal2g7b8ub0" path="res://components/enemy/storyvore_enemy.tscn" id="44_4i2o7"]
+[ext_resource type="Script" uid="uid://d003tgo4vrak8" path="res://components/enemy/enemy.gd" id="45_hhmei"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rpdqf"]
 
@@ -56,118 +57,105 @@ size = Vector2(300, 137)
 [node name="Main2" type="Node2D" unique_id=1511591426]
 
 [node name="EditableNodeList" type="Node" parent="." unique_id=280926474 node_paths=PackedStringArray("nodes")]
-script = ExtResource("1_b3hyy")
+script = ExtResource("1_uer5k")
 nodes = [NodePath("../RockPile"), NodePath("../Scroll/InspectorCheckboxScrollCondition"), NodePath("../TileMapLayer")]
 metadata/_edit_lock_ = true
 
-[node name="GameLogic" type="Node" parent="." unique_id=1461208797 instance=ExtResource("2_uer5k")]
-script = ExtResource("3_fl11t")
+[node name="GameLogic" type="Node" parent="." unique_id=1461208797 instance=ExtResource("2_fl11t")]
+script = ExtResource("3_6qjp1")
 win_by_collecting_coins = true
 win_by_reaching_flag = true
 metadata/_edit_lock_ = true
 
-[node name="Background" type="Node2D" parent="." unique_id=474635500 instance=ExtResource("4_6qjp1")]
+[node name="Background" type="Node2D" parent="." unique_id=474635500 instance=ExtResource("4_xhiku")]
 editor_description = "This scene uses a Parallax2D node to repeat a background image endlessly in all directions, and make it appear to be a long way away from the camera by having it scroll more slowly than the level in the foreground."
 metadata/_edit_lock_ = true
 
-[node name="Dangerzone" type="Area2D" parent="." unique_id=761224350 instance=ExtResource("5_xhiku")]
+[node name="Dangerzone" type="Area2D" parent="." unique_id=761224350 instance=ExtResource("5_imfxu")]
 position = Vector2(3072, 1216)
-script = ExtResource("6_imfxu")
+script = ExtResource("6_wbri1")
 shape = SubResource("WorldBoundaryShape2D_rpdqf")
 metadata/_edit_lock_ = true
 
-[node name="TileMapOLD" type="TileMapLayer" parent="." unique_id=1560732386 instance=ExtResource("7_wbri1")]
+[node name="TileMapOLD" type="TileMapLayer" parent="." unique_id=1560732386 instance=ExtResource("7_md2hq")]
 process_mode = 4
 visible = false
 tile_map_data = PackedByteArray("AAAAAAUAAAACAAAAAAABAAUAAAACAAAAAAACAAUAAAACAAAAAAADAAUAAAACAAAAAAAEAAUAAAACAAAAAAAFAAUAAAADAAAAAAAKAAUAAAABAAAAAAAKAAYAAAAAAAAAAAAJAAYAAAACAAAAAAAIAAYAAAACAAAAAAAHAAYAAAACAAAAAAAGAAYAAAACAAAAAAAFAAYAAAAAAAAAAAAEAAYAAAAAAAAAAAADAAYAAAAAAAAAAAACAAYAAAAAAAAAAAABAAYAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAAcAAAAAAAAAAAABAAcAAAAAAAAAAAACAAcAAAAAAAAAAAADAAcAAAAAAAAAAAAEAAcAAAAAAAAAAAAFAAcAAAAAAAAAAAAGAAcAAAAAAAAAAAAHAAcAAAAAAAAAAAAIAAcAAAAAAAAAAAAJAAcAAAAAAAAAAAAKAAcAAAAAAAAAAAAIAAgAAAAKAAEAAAAHAAgAAAAKAAEAAAAGAAgAAAAKAAEAAAAFAAgAAAAKAAEAAAAEAAgAAAAKAAEAAAABAAgAAAAAAAAAAAAAAAgAAAAKAAEAAAACAAQAAAAAAAAAAAACAAMAAAAAAAAAAAABAAIAAAAHAAIAAAADAAIAAAAIAAIAAAACAAIAAAACAAAAAAALAAcAAAAAAAAAAAAMAAcAAAAAAAAAAAANAAcAAAAAAAAAAAAOAAcAAAAAAAAAAAAOAAYAAAAAAAAAAAAOAAUAAAACAAAAAAAPAAUAAAACAAAAAAAQAAUAAAACAAAAAAARAAUAAAACAAAAAAASAAUAAAACAAAAAAATAAUAAAACAAAAAAAUAAUAAAADAAAAAAAPAAYAAAAAAAAAAAAQAAYAAAAAAAAAAAARAAYAAAAAAAAAAAASAAYAAAAAAAAAAAATAAYAAAAAAAAAAAAUAAYAAAAAAAAAAAAUAAcAAAAAAAAAAAATAAcAAAAAAAAAAAASAAcAAAAAAAAAAAARAAcAAAAAAAAAAAAQAAcAAAAAAAAAAAAPAAcAAAAAAAAAAAAQAAgAAAAKAAEAAAARAAgAAAAKAAEAAAASAAgAAAAKAAEAAAATAAgAAAAKAAEAAAAUAAgAAAAKAAEAAAAFAAQAAAAJAAAAAAAKAAQAAAAJAAAAAAAOAAQAAAAJAAAAAAD//wgAAAAKAAEAAAD//wcAAAAKAAEAAAD//wYAAAAKAAEAAAD//wUAAAAKAAEAAAD//wAAAAAKAAEAAAD//wEAAAAKAAEAAAD//wIAAAAKAAEAAAD//wMAAAAKAAEAAAD//wQAAAAKAAEAAAD/////AAAKAAEAAAD///7/AAAKAAEAAAD///3/AAAKAAEAAAAcAAgAAAAKAAEAAAAdAAgAAAAKAAEAAAAeAAgAAAAKAAEAAAAfAAgAAAAKAAEAAAAgAAgAAAAKAAEAAAAhAAgAAAAKAAEAAAAiAAgAAAAKAAEAAAAJAAgAAAAKAAEAAAAKAAgAAAAKAAEAAAALAAgAAAAKAAEAAAAMAAgAAAAKAAEAAAANAAgAAAAKAAEAAAAOAAgAAAAKAAEAAAAPAAgAAAAKAAEAAAAVAAgAAAAKAAEAAAAbAAgAAAAKAAEAAAAaAAgAAAAKAAEAAAAZAAgAAAAKAAEAAAAYAAgAAAAKAAEAAAAXAAgAAAAKAAEAAAAWAAgAAAAKAAEAAAALAAYAAAAAAAAAAAAMAAYAAAAAAAAAAAANAAYAAAAAAAAAAAAeAAMAAAADAAEAAAAdAAQAAAADAAEAAAAdAAUAAAADAAIAAAAeAAQAAAADAAIAAAAfAAMAAAACAAAAAAAgAAMAAAACAAAAAAAhAAMAAAACAAAAAAAcAAUAAAADAAEAAAAbAAYAAAAHAAEAAAAcAAYAAAADAAIAAAAeAAUAAAAAAAAAAAAeAAcAAAAAAAAAAAAdAAYAAAAAAAAAAAAeAAYAAAAAAAAAAAAfAAQAAAAAAAAAAAAgAAQAAAAAAAAAAAAhAAQAAAAAAAAAAAAhAAUAAAAAAAAAAAAgAAUAAAAAAAAAAAAfAAUAAAAAAAAAAAAfAAYAAAAAAAAAAAAgAAYAAAAAAAAAAAAhAAYAAAAAAAAAAAAhAAcAAAAAAAAAAAAgAAcAAAAAAAAAAAAfAAcAAAAAAAAAAAAkAAgAAAAKAAEAAAAjAAgAAAAKAAEAAAAlAAgAAAAKAAEAAAAmAAgAAAAKAAEAAAAnAAgAAAAKAAEAAAD///v/AAAKAAEAAAD///z/AAAKAAEAAAAoAAgAAAAKAAEAAAApAAgAAAAKAAEAAAAcAAcAAAAAAAAAAAAdAAcAAAAAAAAAAAAbAAUAAAAJAAIAAAAXAAcAAAALAAEAAAAWAAcAAAAJAAAAAAAZAAcAAAALAAAAAAATAAQAAAAKAAIAAAABAAEAAAALAAIAAAACAAgAAAAAAAAAAAADAAgAAAAAAAAAAAAqAAgAAAAKAAEAAAArAAgAAAAKAAEAAAAsAAgAAAAKAAEAAAAtAAgAAAAKAAEAAAAuAAgAAAAKAAEAAAAvAAgAAAAKAAEAAAAwAAgAAAAKAAEAAAAxAAgAAAAKAAEAAAAyAAgAAAAKAAEAAAA1AAgAAAAKAAEAAAA2AAgAAAAKAAEAAAA5AAgAAAAKAAEAAAA6AAgAAAAKAAEAAAA7AAgAAAAKAAEAAAA8AAgAAAAKAAEAAAA9AAgAAAAKAAEAAAA+AAgAAAAKAAEAAAA/AAgAAAAKAAEAAABAAAgAAAAKAAEAAABAAPX/AAAAAAAAAABAAPb/AAAAAAAAAABAAPf/AAAAAAAAAABAAPj/AAAAAAAAAABAAPn/AAAAAAAAAABAAPr/AAAAAAAAAABAAPv/AAAAAAAAAABAAPz/AAAAAAAAAABAAP3/AAAAAAAAAABAAP7/AAAAAAAAAABAAP//AAAAAAAAAABAAAAAAAAAAAAAAABAAAEAAAAAAAAAAABAAAIAAAAAAAAAAABAAAMAAAAAAAAAAABAAAQAAAAAAAAAAABAAAUAAAAKAAEAAABAAAYAAAAKAAEAAABAAAcAAAAKAAEAAAAiAP3/AAAKAAEAAAAiAP7/AAAKAAEAAAAiAP//AAAKAAEAAAAiAAAAAAAKAAEAAAAiAAEAAAAKAAEAAAAiAAIAAAAKAAEAAAAiAAMAAAAKAAEAAAAiAAQAAAAKAAEAAAAiAAUAAAAKAAEAAAAiAAYAAAAKAAEAAAAiAAcAAAAKAAEAAAAjAP3/AAAKAAEAAAAjAP7/AAAKAAEAAAAjAP//AAAKAAEAAAAjAAAAAAAKAAEAAAAjAAEAAAAKAAEAAAAjAAIAAAAKAAEAAAAjAAMAAAAKAAEAAAAjAAQAAAAKAAEAAAAjAAUAAAAKAAEAAAAjAAYAAAAKAAEAAAAjAAcAAAAKAAEAAAAiAPX/AAAKAAEAAAAiAPb/AAAKAAEAAAAiAPf/AAAKAAEAAAAiAPj/AAAKAAEAAAAiAPn/AAAKAAEAAAAiAPr/AAAKAAEAAAAiAPv/AAAKAAEAAAAiAPz/AAAKAAEAAAAjAPX/AAAKAAEAAAAjAPb/AAAKAAEAAAAjAPf/AAAKAAEAAAAjAPj/AAAKAAEAAAAjAPn/AAAKAAEAAAAjAPr/AAAKAAEAAAAjAPv/AAAKAAEAAAAjAPz/AAAKAAEAAAAkAAMAAAACAAAAAAAlAAMAAAACAAAAAAAmAAMAAAAEAAEAAAAmAAQAAAAEAAIAAAAnAAQAAAAIAAEAAAAnAAUAAAAKAAEAAAAkAAQAAAAAAAAAAAAlAAUAAAAKAAEAAAAlAAQAAAAAAAAAAAAkAAUAAAAKAAEAAAAkAAYAAAAKAAEAAAAkAAcAAAAKAAEAAAAlAAcAAAAKAAEAAAAlAAYAAAAKAAEAAAAmAAUAAAAKAAEAAAAnAAYAAAAKAAEAAAAmAAYAAAAKAAEAAAA7AAcAAAAKAAEAAAA8AAcAAAAKAAEAAAA9AAcAAAAKAAEAAAA+AAcAAAAKAAEAAAA/AAcAAAAKAAEAAAAxAAYAAAAKAAEAAAAyAAYAAAAKAAEAAAApAAYAAAAKAAEAAAAoAAYAAAAKAAEAAAAzAAgAAAAKAAEAAAA0AAgAAAAKAAEAAAA4AAgAAAAKAAEAAAA3AAgAAAAKAAEAAAAoAAUAAAAKAAEAAAApAAUAAAAKAAEAAAAqAAYAAAAKAAEAAAArAAYAAAAKAAEAAAAsAAYAAAAKAAEAAAAtAAYAAAAKAAEAAAAuAAYAAAAKAAEAAAAwAAYAAAAKAAEAAAAvAAYAAAAKAAEAAAAyAAUAAAAKAAEAAAAxAAUAAAAKAAEAAAA4AAUAAAAKAAEAAAA5AAUAAAAKAAEAAAA6AAUAAAAKAAEAAAA7AAUAAAAKAAEAAAA5AAcAAAAKAAEAAAA6AAcAAAAKAAEAAAA8AAUAAAAKAAEAAAA9AAUAAAAKAAEAAAA+AAUAAAAKAAEAAAA/AAUAAAAKAAEAAAA/AAYAAAAKAAEAAAA+AAYAAAAKAAEAAAA9AAYAAAAKAAEAAAA8AAYAAAAKAAEAAAA5APX/AAAKAAEAAAA5APb/AAAKAAEAAAA5APf/AAAKAAEAAAA5APj/AAAKAAEAAAA5APn/AAAKAAEAAAA5APr/AAAKAAEAAAA5APv/AAAKAAEAAAA5APz/AAAKAAEAAAA5AP3/AAAKAAEAAAA5AP7/AAAKAAEAAAA5AP//AAAKAAEAAAA5AAAAAAAKAAEAAAA5AAEAAAAKAAEAAAA5AAIAAAAKAAEAAAA5AAMAAAAKAAEAAAA5AAQAAAAKAAEAAAA6APX/AAAKAAEAAAA6APb/AAAKAAEAAAA6APf/AAAKAAEAAAA6APj/AAAKAAEAAAA6APn/AAAKAAEAAAA6APr/AAAKAAEAAAA6APv/AAAKAAEAAAA6APz/AAAKAAEAAAA6AP3/AAAKAAEAAAA6AP7/AAAKAAEAAAA6AP//AAAKAAEAAAA6AAAAAAAKAAEAAAA6AAEAAAAKAAEAAAA6AAIAAAAKAAEAAAA6AAMAAAAKAAEAAAA6AAQAAAAKAAEAAAA7APX/AAAKAAEAAAA7APb/AAAKAAEAAAA7APf/AAAKAAEAAAA7APj/AAAKAAEAAAA7APn/AAAKAAEAAAA7APr/AAAKAAEAAAA7APv/AAAKAAEAAAA7APz/AAAKAAEAAAA7AP3/AAAKAAEAAAA7AP7/AAAKAAEAAAA7AP//AAAKAAEAAAA7AAAAAAAKAAEAAAA7AAEAAAAKAAEAAAA7AAIAAAAKAAEAAAA7AAMAAAAKAAEAAAA7AAQAAAAKAAEAAAA8APX/AAAAAAAAAAA8APb/AAAAAAAAAAA8APf/AAAAAAAAAAA8APj/AAAAAAAAAAA8APn/AAAAAAAAAAA8APr/AAAAAAAAAAA8APv/AAAAAAAAAAA8APz/AAAAAAAAAAA8AP3/AAAAAAAAAAA8AP7/AAAAAAAAAAA8AP//AAAAAAAAAAA8AAAAAAAAAAAAAAA8AAEAAAAAAAAAAAA8AAIAAAAAAAAAAAA8AAMAAAAAAAAAAAA8AAQAAAAAAAAAAAA9APX/AAAAAAAAAAA9APb/AAAAAAAAAAA9APf/AAAAAAAAAAA9APj/AAAAAAAAAAA9APn/AAAAAAAAAAA9APr/AAAAAAAAAAA9APv/AAAAAAAAAAA9APz/AAAAAAAAAAA9AP3/AAAAAAAAAAA9AP7/AAAAAAAAAAA9AP//AAAAAAAAAAA9AAAAAAAAAAAAAAA9AAEAAAAAAAAAAAA9AAIAAAAAAAAAAAA9AAMAAAAAAAAAAAA9AAQAAAAAAAAAAAA+APX/AAAAAAAAAAA+APb/AAAAAAAAAAA+APf/AAAAAAAAAAA+APj/AAAAAAAAAAA+APn/AAAAAAAAAAA+APr/AAAAAAAAAAA+APv/AAAAAAAAAAA+APz/AAAAAAAAAAA+AP3/AAAAAAAAAAA+AP7/AAAAAAAAAAA+AP//AAAAAAAAAAA+AAAAAAAAAAAAAAA+AAEAAAAAAAAAAAA+AAIAAAAAAAAAAAA+AAMAAAAAAAAAAAA+AAQAAAAAAAAAAAA/APX/AAAAAAAAAAA/APb/AAAAAAAAAAA/APf/AAAAAAAAAAA/APj/AAAAAAAAAAA/APn/AAAAAAAAAAA/APr/AAAAAAAAAAA/APv/AAAAAAAAAAA/APz/AAAAAAAAAAA/AP3/AAAAAAAAAAA/AP7/AAAAAAAAAAA/AP//AAAAAAAAAAA/AAAAAAAAAAAAAAA/AAEAAAAAAAAAAAA/AAIAAAAAAAAAAAA/AAMAAAAAAAAAAAA/AAQAAAAAAAAAAAA4AAQAAAAKAAEAAAA4APX/AAAKAAEAAAA4APb/AAAKAAEAAAA4APf/AAAKAAEAAAA4APj/AAAKAAEAAAA4APn/AAAKAAEAAAA4APr/AAAKAAEAAAA4APv/AAAKAAEAAAA4APz/AAAKAAEAAAA4AP3/AAAKAAEAAAA4AP7/AAAKAAEAAAA4AP//AAAKAAEAAAA4AAAAAAAKAAEAAAA4AAEAAAAKAAEAAAA4AAIAAAAKAAEAAAA4AAMAAAAKAAEAAAA3AAUAAAAKAAEAAAAvAAUAAAAKAAEAAAAwAAUAAAAKAAEAAAA3AAYAAAAKAAEAAAA2AAYAAAAKAAEAAAA2AAUAAAAKAAEAAAA1AAUAAAAKAAEAAAA1AAYAAAAKAAEAAAAzAAUAAAAKAAEAAAAzAAYAAAAKAAEAAAAmAAcAAAAKAAEAAAAnAAcAAAAKAAEAAAAoAAcAAAAKAAEAAAApAAcAAAAKAAEAAAAqAAcAAAAKAAEAAAArAAcAAAAKAAEAAAAsAAcAAAAKAAEAAAAtAAcAAAAKAAEAAAAuAAcAAAAKAAEAAAAvAAcAAAAKAAEAAAAwAAcAAAAKAAEAAAAxAAcAAAAKAAEAAAAyAAcAAAAKAAEAAAAzAAcAAAAKAAEAAAA7AAYAAAAKAAEAAAAzAAQAAAAEAAEAAAAyAAMAAAAEAAEAAAAyAAQAAAAEAAIAAAAxAAQAAAAAAAAAAAAwAAQAAAAAAAAAAAAvAAQAAAAAAAAAAAAuAAQAAAAAAAAAAAAtAAQAAAAAAAAAAAAsAAQAAAADAAIAAAAxAAMAAAACAAAAAAAwAAMAAAACAAAAAAAvAAMAAAACAAAAAAAuAAMAAAACAAAAAAAtAAMAAAACAAAAAAArAAQAAAAHAAIAAAAsAAMAAAADAAEAAAAvAAIAAAAJAAAAAAArAAMAAAAKAAAAAAAkAAIAAAALAAEAAAAtAAIAAAAJAAIAAAAwAAIAAAAKAAEAAAAwAAEAAAAKAAEAAAAwAAAAAAAKAAEAAAAwAP//AAAKAAAAAAApAAQAAAAKAAEAAAApAAMAAAAKAAEAAAApAAIAAAAKAAEAAAApAAEAAAAKAAAAAAALAAUAAAACAAAAAAAMAAUAAAACAAAAAAANAAUAAAACAAAAAAAIAAUAAAAKAAAAAAAPAAIAAAAKAAEAAAAPAAEAAAAKAAEAAAAPAAAAAAAKAAEAAAAPAP//AAAKAAEAAAAPAP7/AAAKAAEAAAAPAP3/AAAKAAEAAAAPAPz/AAAKAAEAAAAPAPv/AAAKAAEAAAAPAPr/AAAKAAEAAAAPAPn/AAAKAAEAAAAPAPj/AAAKAAEAAAAPAPb/AAAKAAEAAAAPAPX/AAAKAAEAAAAPAPf/AAAKAAEAAAAQAAIAAAAKAAEAAAAQAAEAAAAKAAEAAAAQAAAAAAAKAAEAAAAQAP//AAAKAAEAAAAQAP7/AAAKAAEAAAAQAP3/AAAKAAEAAAAQAPz/AAAKAAEAAAAQAPv/AAAKAAEAAAAQAPr/AAAKAAEAAAAQAPn/AAAKAAEAAAAQAPf/AAAKAAEAAAAQAPb/AAAKAAEAAAAQAPX/AAAKAAEAAAAQAPj/AAAKAAEAAAA=")
-tile_set = ExtResource("8_md2hq")
+tile_set = ExtResource("8_v6x6p")
 collision_enabled = false
 metadata/_edit_lock_ = true
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1105582793]
 tile_map_data = PackedByteArray("AAD//wgAAQAFAAIAAAD//wcAAQAFAAIAAAD//wYAAQAFAAIAAAD//wUAAQAFAAIAAAD//wQAAQAFAAIAAAD//wMAAQAFAAIAAAD//wIAAQAFAAIAAAD//wEAAQAFAAIAAAD//wAAAQAFAAIAAAD/////AQAFAAIAAAD///7/AQAFAAIAAAD///3/AQAFAAIAAAD///z/AQAFAAIAAAD///v/AQAFAAIAAAAAAAgAAQAFAAIAAAAhAAgAAQAFAAIAAAAgAAgAAQAFAAIAAAAfAAgAAQAFAAIAAAAeAAgAAQAFAAIAAAAdAAgAAQAFAAIAAAAcAAgAAQAFAAIAAAAbAAgAAQAFAAIAAAAaAAgAAQAFAAIAAAAZAAgAAQAFAAIAAAAYAAgAAQAFAAIAAAAXAAgAAQAFAAIAAAAWAAgAAQAFAAIAAAAVAAgAAQAFAAIAAAAUAAgAAQAFAAIAAAATAAgAAQAFAAIAAAASAAgAAQAFAAIAAAARAAgAAQAFAAIAAAAQAAgAAQAFAAIAAAAPAAgAAQAFAAIAAAAOAAgAAQAFAAIAAAANAAgAAQAFAAIAAAAMAAgAAQAFAAIAAAALAAgAAQAFAAIAAAAKAAgAAQAFAAIAAAAJAAgAAQAFAAIAAAAIAAgAAQAFAAIAAAAHAAgAAQAFAAIAAAAGAAgAAQAFAAIAAAAFAAgAAQAFAAIAAAAEAAgAAQAFAAIAAAAQAPr/AQAFAAIAAAAQAPn/AQAFAAIAAAAQAPj/AQAFAAIAAAAQAPf/AQAFAAIAAAAQAPb/AQAFAAIAAAAQAPX/AQAFAAIAAAAFAAcAAQABAAEAAAAFAAYAAQABAAEAAAAFAAUAAQACAAAAAAAEAAcAAQABAAEAAAAEAAYAAQABAAEAAAAEAAUAAQABAAAAAAADAAcAAQABAAEAAAADAAYAAQABAAEAAAADAAUAAQABAAAAAAACAAcAAQABAAEAAAACAAYAAQABAAEAAAACAAUAAQABAAAAAAABAAcAAQABAAEAAAABAAYAAQABAAEAAAABAAUAAQABAAAAAAAAAAcAAQABAAEAAAAAAAYAAQABAAEAAAAAAAUAAQAAAAAAAAAJAAcAAQABAAEAAAAJAAYAAQABAAAAAAAIAAcAAQABAAEAAAAIAAYAAQABAAAAAAAHAAcAAQABAAEAAAAHAAYAAQABAAAAAAAGAAcAAQABAAEAAAAGAAYAAQABAAAAAAAUAAcAAQABAAEAAAAUAAYAAQABAAEAAAAUAAUAAQACAAAAAAATAAcAAQABAAEAAAATAAYAAQABAAEAAAATAAUAAQABAAAAAAASAAcAAQABAAEAAAASAAYAAQABAAEAAAASAAUAAQABAAAAAAARAAcAAQABAAEAAAARAAYAAQABAAEAAAARAAUAAQABAAAAAAAQAAcAAQABAAEAAAAQAAYAAQABAAEAAAAQAAUAAQABAAAAAAAPAAcAAQABAAEAAAAPAAYAAQABAAEAAAAPAAUAAQABAAAAAAAOAAcAAQABAAEAAAAOAAYAAQABAAEAAAAOAAUAAQABAAAAAAANAAcAAQABAAEAAAANAAYAAQABAAEAAAANAAUAAQABAAAAAAAMAAcAAQABAAEAAAAMAAYAAQABAAEAAAAMAAUAAQABAAAAAAALAAcAAQABAAEAAAALAAYAAQABAAEAAAALAAUAAQABAAAAAAAKAAcAAQABAAEAAAAKAAYAAQABAAEAAAAKAAUAAQAAAAAAAAAfAAMAAQABAAAAAAAgAAMAAQAKAAEAAAAhAAMAAQAFAAIAAAAfAAQAAQABAAEAAAAfAAUAAQABAAEAAAAfAAYAAQABAAEAAAAgAAYAAQABAAEAAAAgAAcAAQABAAEAAAAhAAcAAQAFAAIAAAAfAAcAAQABAAEAAAAhAAYAAQAFAAIAAAAgAAUAAQABAAEAAAAhAAUAAQAFAAIAAAAgAAQAAQAKAAIAAAAhAAQAAQAFAAIAAAAcAAUAAQAJAAEAAAAdAAQAAQAJAAEAAAAeAAMAAQAJAAEAAAAeAAQAAQAJAAIAAAAdAAUAAQAJAAIAAAAcAAYAAQAJAAIAAAAeAAUAAQAKAAIAAAAeAAYAAQAKAAIAAAAdAAYAAQAKAAIAAAAcAAcAAQAKAAIAAAAdAAcAAQAKAAIAAAAeAAcAAQAKAAIAAAAbAAYAAQAEAAEAAAACAAQAAQABAAEAAAACAAMAAQABAAEAAAABAAIAAQAHAAEAAAADAAIAAQAIAAEAAAACAAIAAQABAAAAAAABAAgAAQABAAEAAAACAAgAAQABAAEAAAADAAgAAQABAAEAAAAPAPH/AQAFAAIAAAAQAPT/AQAFAAIAAAAQAPP/AQAFAAIAAAAQAPL/AQAFAAIA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")
-tile_set = ExtResource("9_v6x6p")
+tile_set = ExtResource("9_18i05")
 
-[node name="EditableObjectIndicator" type="Node2D" parent="TileMapLayer" unique_id=249308979]
-script = ExtResource("10_18i05")
+[node name="EditableObjectIndicator" type="Node2D" parent="TileMapLayer" unique_id=1040418075]
+script = ExtResource("10_qtrjv")
 
-[node name="RockPile" type="StaticBody2D" parent="." unique_id=2056135097 instance=ExtResource("11_qtrjv")]
+[node name="RockPile" type="StaticBody2D" parent="." unique_id=2056135097 instance=ExtResource("11_6r8bg")]
 position = Vector2(4217, 318)
 collision_layer = 4
 collision_mask = 0
 
-[node name="EditableObjectIndicator" type="Node2D" parent="RockPile" unique_id=723691871]
-script = ExtResource("10_18i05")
+[node name="EditableObjectIndicator" type="Node2D" parent="RockPile" unique_id=1228302287]
+script = ExtResource("10_qtrjv")
 
-[node name="Scroll" type="Node2D" parent="." unique_id=2086611064 node_paths=PackedStringArray("label") instance=ExtResource("12_6r8bg")]
+[node name="Scroll" type="Node2D" parent="." unique_id=2086611064 node_paths=PackedStringArray("label") instance=ExtResource("12_nqmne")]
 position = Vector2(5900, -834)
-script = ExtResource("13_nqmne")
+script = ExtResource("13_ljgbs")
 label = NodePath("ConditionTextContainer/Label")
 metadata/_edit_lock_ = true
 
-[node name="InspectorCheckboxScrollCondition" type="Node" parent="Scroll" unique_id=75788105 instance=ExtResource("14_ljgbs")]
-script = ExtResource("15_pc53w")
+[node name="InspectorCheckboxScrollCondition" type="Node" parent="Scroll" unique_id=75788105 instance=ExtResource("14_pc53w")]
+script = ExtResource("15_hxlax")
 
-[node name="EditableObjectIndicator" type="Node2D" parent="Scroll/InspectorCheckboxScrollCondition" unique_id=2090079551]
-script = ExtResource("10_18i05")
+[node name="EditableObjectIndicator" type="Node2D" parent="Scroll/InspectorCheckboxScrollCondition" unique_id=1340323403]
+script = ExtResource("10_qtrjv")
 
-[node name="ScrollGate" type="StaticBody2D" parent="." unique_id=68402488 instance=ExtResource("16_hxlax")]
+[node name="ScrollGate" type="StaticBody2D" parent="." unique_id=68402488 instance=ExtResource("16_0lwt2")]
 modulate = Color(1, 0, 0, 1)
 position = Vector2(6373, 449)
 collision_layer = 4
 collision_mask = 0
 metadata/_edit_lock_ = true
 
-[node name="Flag" type="Area2D" parent="." unique_id=1243516226 instance=ExtResource("17_0lwt2")]
+[node name="Flag" type="Area2D" parent="." unique_id=1243516226 instance=ExtResource("17_5wab2")]
 position = Vector2(8294, -192)
 collision_layer = 2
-script = ExtResource("18_5wab2")
-sprite_frames = ExtResource("19_hgkxt")
+script = ExtResource("18_hgkxt")
+sprite_frames = ExtResource("19_0c1qs")
 metadata/_edit_lock_ = true
 
 [node name="Triggers" type="Node2D" parent="." unique_id=1993564345]
 metadata/_edit_lock_ = true
 
-[node name="InspectorVisibilityTrigger" type="Area2D" parent="Triggers" unique_id=964568534 instance=ExtResource("20_0c1qs")]
-position = Vector2(246, 510)
-collision_layer = 0
-script = ExtResource("21_c073q")
-metadata/_edit_lock_ = true
-
-[node name="InspectorVisibilityTrigger2" type="Area2D" parent="Triggers" unique_id=1583390062 instance=ExtResource("20_0c1qs")]
-position = Vector2(4419, 255)
-collision_layer = 0
-script = ExtResource("21_c073q")
-set_inspector_to = 1
-metadata/_edit_lock_ = true
-
-[node name="QuestScriptTrigger_ReachedRockPuzzle" type="Area2D" parent="Triggers" unique_id=1651920811 node_paths=PackedStringArray("behavior") instance=ExtResource("22_f5b6r")]
+[node name="QuestScriptTrigger_ReachedRockPuzzle" type="Area2D" parent="Triggers" unique_id=1651920811 node_paths=PackedStringArray("behavior") instance=ExtResource("20_c073q")]
 position = Vector2(4025, 304)
-script = ExtResource("23_umia2")
+script = ExtResource("21_f5b6r")
 behavior = NodePath("Behavior")
 delete_from_scene = true
 metadata/_custom_type_script = "uid://bvs6l44borf1h"
 metadata/_edit_lock_ = true
 
-[node name="QuestScriptTrigger_SolvedRockPuzzle" type="Area2D" parent="Triggers" unique_id=528764778 node_paths=PackedStringArray("behavior") instance=ExtResource("22_f5b6r")]
+[node name="QuestScriptTrigger_SolvedRockPuzzle" type="Area2D" parent="Triggers" unique_id=528764778 node_paths=PackedStringArray("behavior") instance=ExtResource("20_c073q")]
 position = Vector2(4392, 304)
-script = ExtResource("23_umia2")
+script = ExtResource("21_f5b6r")
 behavior = NodePath("Behavior")
 delete_from_scene = true
 metadata/_custom_type_script = "uid://bvs6l44borf1h"
 metadata/_edit_lock_ = true
 
-[node name="QuestScriptTrigger_SolvedScrollPuzzle" type="Area2D" parent="Triggers" unique_id=1927004304 node_paths=PackedStringArray("behavior") instance=ExtResource("22_f5b6r")]
+[node name="QuestScriptTrigger_SolvedScrollPuzzle" type="Area2D" parent="Triggers" unique_id=1927004304 node_paths=PackedStringArray("behavior") instance=ExtResource("20_c073q")]
 position = Vector2(6571, 435)
-script = ExtResource("23_umia2")
+script = ExtResource("21_f5b6r")
 behavior = NodePath("Behavior")
 delete_from_scene = true
 metadata/_custom_type_script = "uid://bvs6l44borf1h"
 metadata/_edit_lock_ = true
 
-[node name="QuestScriptTrigger_SolvedTilePuzzle" type="Area2D" parent="Triggers" unique_id=794312811 node_paths=PackedStringArray("behavior") instance=ExtResource("22_f5b6r")]
+[node name="QuestScriptTrigger_SolvedTilePuzzle" type="Area2D" parent="Triggers" unique_id=794312811 node_paths=PackedStringArray("behavior") instance=ExtResource("20_c073q")]
 position = Vector2(8381, -204)
-script = ExtResource("23_umia2")
+script = ExtResource("21_f5b6r")
 behavior = NodePath("Behavior")
 delete_from_scene = true
 metadata/_custom_type_script = "uid://bvs6l44borf1h"
@@ -198,201 +186,217 @@ one_way_collision = true
 one_way_collision_direction = Vector2(-1, 0)
 metadata/_edit_lock_ = true
 
-[node name="Checkpoint" type="Node2D" parent="Checkpoints" unique_id=951106919 node_paths=PackedStringArray("player_position_marker", "placeholder_sprite") instance=ExtResource("24_6iytc")]
+[node name="Checkpoint" type="Node2D" parent="Checkpoints" unique_id=951106919 node_paths=PackedStringArray("player_position_marker", "placeholder_sprite") instance=ExtResource("22_umia2")]
 position = Vector2(99, 455)
-script = ExtResource("25_opwm8")
-npc_prefab = ExtResource("26_4dvc7")
+script = ExtResource("23_6iytc")
+npc_prefab = ExtResource("24_opwm8")
 player_position_marker = NodePath("PlayerSpawn")
 placeholder_sprite = NodePath("PlaceholderSprite")
 metadata/_edit_lock_ = true
 
-[node name="Checkpoint2" type="Node2D" parent="Checkpoints" unique_id=182555001 node_paths=PackedStringArray("player_position_marker", "placeholder_sprite") instance=ExtResource("24_6iytc")]
+[node name="Checkpoint2" type="Node2D" parent="Checkpoints" unique_id=182555001 node_paths=PackedStringArray("player_position_marker", "placeholder_sprite") instance=ExtResource("22_umia2")]
 position = Vector2(4469, 188)
-script = ExtResource("25_opwm8")
-npc_prefab = ExtResource("26_4dvc7")
+script = ExtResource("23_6iytc")
+npc_prefab = ExtResource("24_opwm8")
 player_position_marker = NodePath("PlayerSpawn")
 placeholder_sprite = NodePath("PlaceholderSprite")
 metadata/_edit_lock_ = true
 
-[node name="Checkpoint3" type="Node2D" parent="Checkpoints" unique_id=1077397314 node_paths=PackedStringArray("player_position_marker", "placeholder_sprite") instance=ExtResource("24_6iytc")]
+[node name="Checkpoint3" type="Node2D" parent="Checkpoints" unique_id=1077397314 node_paths=PackedStringArray("player_position_marker", "placeholder_sprite") instance=ExtResource("22_umia2")]
 position = Vector2(6645, 319)
-script = ExtResource("25_opwm8")
-npc_prefab = ExtResource("26_4dvc7")
+script = ExtResource("23_6iytc")
+npc_prefab = ExtResource("24_opwm8")
 player_position_marker = NodePath("PlayerSpawn")
 placeholder_sprite = NodePath("PlaceholderSprite")
+metadata/_edit_lock_ = true
+
+[node name="EditorPowerUps" type="Node2D" parent="." unique_id=721056742]
+metadata/_edit_lock_ = true
+
+[node name="SceneTreePowerup" type="Node2D" parent="EditorPowerUps" unique_id=857147533 instance=ExtResource("25_4dvc7")]
+position = Vector2(4323, 316)
+script = ExtResource("26_xvpjv")
+editor_unlock = 1
+unlock_dialogue = Array[String](["You unlocked the Scene Tree Dock!", "This allows you to see the list of objects in the current game scene.", "Stop the flow of time and see which objects you can edit!"])
+metadata/_edit_lock_ = true
+
+[node name="InspectorPowerup" type="Node2D" parent="EditorPowerUps" unique_id=459242062 instance=ExtResource("27_107o5")]
+position = Vector2(5255, -800)
+script = ExtResource("26_xvpjv")
+unlock_dialogue = Array[String](["You unlocked the Inspector Dock!", "This allows you to view and edit properties of individual objects in the game world.", "Try it out! Stop the flow of time and click on an object in the editor to view its properties."])
 metadata/_edit_lock_ = true
 
 [node name="Coins" type="Node2D" parent="." unique_id=1860713878]
 metadata/_edit_lock_ = true
 
-[node name="Coin" type="Area2D" parent="Coins" unique_id=469589313 groups=["coins"] instance=ExtResource("27_xvpjv")]
+[node name="Coin" type="Area2D" parent="Coins" unique_id=469589313 groups=["coins"] instance=ExtResource("28_xc0mi")]
 modulate = Color(1, 1, 0, 1)
 position = Vector2(1045, 528)
 collision_layer = 2
-script = ExtResource("28_107o5")
-texture = ExtResource("29_xc0mi")
+script = ExtResource("29_igh8c")
+texture = ExtResource("30_7j8mp")
 tint = Color(1, 1, 0, 1)
 metadata/_edit_lock_ = true
 
-[node name="Coin4" type="Area2D" parent="Coins" unique_id=1137508267 groups=["coins"] instance=ExtResource("27_xvpjv")]
+[node name="Coin4" type="Area2D" parent="Coins" unique_id=1137508267 groups=["coins"] instance=ExtResource("28_xc0mi")]
 modulate = Color(1, 1, 0, 1)
 position = Vector2(4658, -478)
 collision_layer = 2
-script = ExtResource("28_107o5")
-texture = ExtResource("29_xc0mi")
+script = ExtResource("29_igh8c")
+texture = ExtResource("30_7j8mp")
 tint = Color(1, 1, 0, 1)
 metadata/_edit_lock_ = true
 
-[node name="Coin8" type="Area2D" parent="Coins" unique_id=1399238642 groups=["coins"] instance=ExtResource("27_xvpjv")]
+[node name="Coin8" type="Area2D" parent="Coins" unique_id=1399238642 groups=["coins"] instance=ExtResource("28_xc0mi")]
 modulate = Color(1, 1, 0, 1)
 position = Vector2(3109, 315)
 collision_layer = 2
-script = ExtResource("28_107o5")
-texture = ExtResource("29_xc0mi")
+script = ExtResource("29_igh8c")
+texture = ExtResource("30_7j8mp")
 tint = Color(1, 1, 0, 1)
 metadata/_edit_lock_ = true
 
-[node name="Coin5" type="Area2D" parent="Coins" unique_id=1885911067 groups=["coins"] instance=ExtResource("27_xvpjv")]
+[node name="Coin5" type="Area2D" parent="Coins" unique_id=1885911067 groups=["coins"] instance=ExtResource("28_xc0mi")]
 modulate = Color(1, 1, 0, 1)
 position = Vector2(4980, 128)
 collision_layer = 2
-script = ExtResource("28_107o5")
-texture = ExtResource("29_xc0mi")
+script = ExtResource("29_igh8c")
+texture = ExtResource("30_7j8mp")
 tint = Color(1, 1, 0, 1)
 metadata/_edit_lock_ = true
 
-[node name="Coin6" type="Area2D" parent="Coins" unique_id=1933861692 groups=["coins"] instance=ExtResource("27_xvpjv")]
+[node name="Coin6" type="Area2D" parent="Coins" unique_id=1933861692 groups=["coins"] instance=ExtResource("28_xc0mi")]
 modulate = Color(1, 1, 0, 1)
 position = Vector2(5236, -364)
 collision_layer = 2
-script = ExtResource("28_107o5")
-texture = ExtResource("29_xc0mi")
+script = ExtResource("29_igh8c")
+texture = ExtResource("30_7j8mp")
 tint = Color(1, 1, 0, 1)
 metadata/_edit_lock_ = true
 
-[node name="Coin14" type="Area2D" parent="Coins" unique_id=626819192 groups=["coins"] instance=ExtResource("27_xvpjv")]
+[node name="Coin14" type="Area2D" parent="Coins" unique_id=626819192 groups=["coins"] instance=ExtResource("28_xc0mi")]
 modulate = Color(1, 1, 0, 1)
 position = Vector2(5108, 128)
 collision_layer = 2
-script = ExtResource("28_107o5")
-texture = ExtResource("29_xc0mi")
+script = ExtResource("29_igh8c")
+texture = ExtResource("30_7j8mp")
 tint = Color(1, 1, 0, 1)
 metadata/_edit_lock_ = true
 
-[node name="Coin15" type="Area2D" parent="Coins" unique_id=1171510110 groups=["coins"] instance=ExtResource("27_xvpjv")]
+[node name="Coin15" type="Area2D" parent="Coins" unique_id=1171510110 groups=["coins"] instance=ExtResource("28_xc0mi")]
 modulate = Color(1, 1, 0, 1)
 position = Vector2(4852, 128)
 collision_layer = 2
-script = ExtResource("28_107o5")
-texture = ExtResource("29_xc0mi")
+script = ExtResource("29_igh8c")
+texture = ExtResource("30_7j8mp")
 tint = Color(1, 1, 0, 1)
 metadata/_edit_lock_ = true
 
-[node name="Coin25" type="Area2D" parent="Coins" unique_id=2141970909 groups=["coins"] instance=ExtResource("27_xvpjv")]
+[node name="Coin25" type="Area2D" parent="Coins" unique_id=2141970909 groups=["coins"] instance=ExtResource("28_xc0mi")]
 modulate = Color(1, 1, 0, 1)
 position = Vector2(7239, 167)
 collision_layer = 2
-script = ExtResource("28_107o5")
-texture = ExtResource("29_xc0mi")
+script = ExtResource("29_igh8c")
+texture = ExtResource("30_7j8mp")
 tint = Color(1, 1, 0, 1)
 metadata/_edit_lock_ = true
 
-[node name="Coin26" type="Area2D" parent="Coins" unique_id=339068610 groups=["coins"] instance=ExtResource("27_xvpjv")]
+[node name="Coin26" type="Area2D" parent="Coins" unique_id=339068610 groups=["coins"] instance=ExtResource("28_xc0mi")]
 modulate = Color(1, 1, 0, 1)
 position = Vector2(7367, 167)
 collision_layer = 2
-script = ExtResource("28_107o5")
-texture = ExtResource("29_xc0mi")
+script = ExtResource("29_igh8c")
+texture = ExtResource("30_7j8mp")
 tint = Color(1, 1, 0, 1)
 metadata/_edit_lock_ = true
 
-[node name="Coin27" type="Area2D" parent="Coins" unique_id=255646174 groups=["coins"] instance=ExtResource("27_xvpjv")]
+[node name="Coin27" type="Area2D" parent="Coins" unique_id=255646174 groups=["coins"] instance=ExtResource("28_xc0mi")]
 modulate = Color(1, 1, 0, 1)
 position = Vector2(7111, 167)
 collision_layer = 2
-script = ExtResource("28_107o5")
-texture = ExtResource("29_xc0mi")
+script = ExtResource("29_igh8c")
+texture = ExtResource("30_7j8mp")
 tint = Color(1, 1, 0, 1)
 metadata/_edit_lock_ = true
 
-[node name="Coin28" type="Area2D" parent="Coins" unique_id=1070127638 groups=["coins"] instance=ExtResource("27_xvpjv")]
+[node name="Coin28" type="Area2D" parent="Coins" unique_id=1070127638 groups=["coins"] instance=ExtResource("28_xc0mi")]
 modulate = Color(1, 1, 0, 1)
 position = Vector2(7746, -108)
 collision_layer = 2
-script = ExtResource("28_107o5")
-texture = ExtResource("29_xc0mi")
+script = ExtResource("29_igh8c")
+texture = ExtResource("30_7j8mp")
 tint = Color(1, 1, 0, 1)
 metadata/_edit_lock_ = true
 
-[node name="Coin29" type="Area2D" parent="Coins" unique_id=1367226272 groups=["coins"] instance=ExtResource("27_xvpjv")]
+[node name="Coin29" type="Area2D" parent="Coins" unique_id=1367226272 groups=["coins"] instance=ExtResource("28_xc0mi")]
 modulate = Color(1, 1, 0, 1)
 position = Vector2(7874, -108)
 collision_layer = 2
-script = ExtResource("28_107o5")
-texture = ExtResource("29_xc0mi")
+script = ExtResource("29_igh8c")
+texture = ExtResource("30_7j8mp")
 tint = Color(1, 1, 0, 1)
 metadata/_edit_lock_ = true
 
-[node name="Coin30" type="Area2D" parent="Coins" unique_id=326576021 groups=["coins"] instance=ExtResource("27_xvpjv")]
+[node name="Coin30" type="Area2D" parent="Coins" unique_id=326576021 groups=["coins"] instance=ExtResource("28_xc0mi")]
 modulate = Color(1, 1, 0, 1)
 position = Vector2(7618, -108)
 collision_layer = 2
-script = ExtResource("28_107o5")
-texture = ExtResource("29_xc0mi")
+script = ExtResource("29_igh8c")
+texture = ExtResource("30_7j8mp")
 tint = Color(1, 1, 0, 1)
 metadata/_edit_lock_ = true
 
-[node name="Coin22" type="Area2D" parent="Coins" unique_id=91508137 groups=["coins"] instance=ExtResource("27_xvpjv")]
+[node name="Coin22" type="Area2D" parent="Coins" unique_id=91508137 groups=["coins"] instance=ExtResource("28_xc0mi")]
 modulate = Color(1, 1, 0, 1)
 position = Vector2(2084, 558)
 collision_layer = 2
-script = ExtResource("28_107o5")
-texture = ExtResource("29_xc0mi")
+script = ExtResource("29_igh8c")
+texture = ExtResource("30_7j8mp")
 tint = Color(1, 1, 0, 1)
 metadata/_edit_lock_ = true
 
-[node name="Coin23" type="Area2D" parent="Coins" unique_id=1012298579 groups=["coins"] instance=ExtResource("27_xvpjv")]
+[node name="Coin23" type="Area2D" parent="Coins" unique_id=1012298579 groups=["coins"] instance=ExtResource("28_xc0mi")]
 modulate = Color(1, 1, 0, 1)
 position = Vector2(2212, 558)
 collision_layer = 2
-script = ExtResource("28_107o5")
-texture = ExtResource("29_xc0mi")
+script = ExtResource("29_igh8c")
+texture = ExtResource("30_7j8mp")
 tint = Color(1, 1, 0, 1)
 metadata/_edit_lock_ = true
 
-[node name="Coin24" type="Area2D" parent="Coins" unique_id=334811006 groups=["coins"] instance=ExtResource("27_xvpjv")]
+[node name="Coin24" type="Area2D" parent="Coins" unique_id=334811006 groups=["coins"] instance=ExtResource("28_xc0mi")]
 modulate = Color(1, 1, 0, 1)
 position = Vector2(1956, 558)
 collision_layer = 2
-script = ExtResource("28_107o5")
-texture = ExtResource("29_xc0mi")
+script = ExtResource("29_igh8c")
+texture = ExtResource("30_7j8mp")
 tint = Color(1, 1, 0, 1)
 metadata/_edit_lock_ = true
 
-[node name="Coin9" type="Area2D" parent="Coins" unique_id=2052277588 groups=["coins"] instance=ExtResource("27_xvpjv")]
+[node name="Coin9" type="Area2D" parent="Coins" unique_id=2052277588 groups=["coins"] instance=ExtResource("28_xc0mi")]
 modulate = Color(1, 1, 0, 1)
 position = Vector2(5358, -1104)
 collision_layer = 2
-script = ExtResource("28_107o5")
-texture = ExtResource("29_xc0mi")
+script = ExtResource("29_igh8c")
+texture = ExtResource("30_7j8mp")
 tint = Color(1, 1, 0, 1)
 metadata/_edit_lock_ = true
 
-[node name="Coin10" type="Area2D" parent="Coins" unique_id=2073649153 groups=["coins"] instance=ExtResource("27_xvpjv")]
+[node name="Coin10" type="Area2D" parent="Coins" unique_id=2073649153 groups=["coins"] instance=ExtResource("28_xc0mi")]
 modulate = Color(1, 1, 0, 1)
 position = Vector2(5108, -300)
 collision_layer = 2
-script = ExtResource("28_107o5")
-texture = ExtResource("29_xc0mi")
+script = ExtResource("29_igh8c")
+texture = ExtResource("30_7j8mp")
 tint = Color(1, 1, 0, 1)
 metadata/_edit_lock_ = true
 
-[node name="Coin11" type="Area2D" parent="Coins" unique_id=1756350612 groups=["coins"] instance=ExtResource("27_xvpjv")]
+[node name="Coin11" type="Area2D" parent="Coins" unique_id=1756350612 groups=["coins"] instance=ExtResource("28_xc0mi")]
 modulate = Color(1, 1, 0, 1)
 position = Vector2(5364, -300)
 collision_layer = 2
-script = ExtResource("28_107o5")
-texture = ExtResource("29_xc0mi")
+script = ExtResource("29_igh8c")
+texture = ExtResource("30_7j8mp")
 tint = Color(1, 1, 0, 1)
 metadata/_edit_lock_ = true
 
@@ -400,7 +404,7 @@ metadata/_edit_lock_ = true
 visible = false
 metadata/_edit_lock_ = true
 
-[node name="SpecialCoin" type="Area2D" parent="SpecialCoins" unique_id=585640772 instance=ExtResource("30_igh8c")]
+[node name="SpecialCoin" type="Area2D" parent="SpecialCoins" unique_id=585640772 instance=ExtResource("31_kof45")]
 editor_description = "Special coins are ignored when calculating the total number of coins that must be collected to win, though collecting one still counts towards that goal.
 
 The only difference compared to coin.tscn is that special_coin.tscn is not in the \"coins\" group.
@@ -409,8 +413,8 @@ Use this scene for optional coins to the level, such as coins which can only be 
 modulate = Color(1, 0.560065, 0.377408, 1)
 position = Vector2(4149, -1711)
 collision_layer = 2
-script = ExtResource("28_107o5")
-texture = ExtResource("29_xc0mi")
+script = ExtResource("29_igh8c")
+texture = ExtResource("30_7j8mp")
 tint = Color(1, 0.560065, 0.377408, 1)
 metadata/_edit_lock_ = true
 
@@ -418,134 +422,134 @@ metadata/_edit_lock_ = true
 position = Vector2(1920, -64)
 metadata/_edit_lock_ = true
 
-[node name="Platform" type="Node2D" parent="Platforms" unique_id=349244858 instance=ExtResource("31_7j8mp")]
+[node name="Platform" type="Node2D" parent="Platforms" unique_id=349244858 instance=ExtResource("32_rolpe")]
 position = Vector2(3060, 320)
-script = ExtResource("32_kof45")
+script = ExtResource("33_w0y58")
 width = 2
 metadata/_edit_lock_ = true
 
-[node name="Platform4" type="Node2D" parent="Platforms" unique_id=1105171937 instance=ExtResource("31_7j8mp")]
+[node name="Platform4" type="Node2D" parent="Platforms" unique_id=1105171937 instance=ExtResource("32_rolpe")]
 position = Vector2(3442, -912)
-script = ExtResource("32_kof45")
+script = ExtResource("33_w0y58")
 width = 2
 one_way = true
 fall = true
 metadata/_edit_lock_ = true
 
-[node name="Platform5" type="Node2D" parent="Platforms" unique_id=783386559 instance=ExtResource("31_7j8mp")]
+[node name="Platform5" type="Node2D" parent="Platforms" unique_id=783386559 instance=ExtResource("32_rolpe")]
 position = Vector2(3026, -601)
-script = ExtResource("32_kof45")
+script = ExtResource("33_w0y58")
 width = 2
 one_way = true
 fall = true
 metadata/_edit_lock_ = true
 
-[node name="Platform7" type="Node2D" parent="Platforms" unique_id=1586665119 instance=ExtResource("31_7j8mp")]
+[node name="Platform7" type="Node2D" parent="Platforms" unique_id=1586665119 instance=ExtResource("32_rolpe")]
 position = Vector2(3666, -601)
-script = ExtResource("32_kof45")
+script = ExtResource("33_w0y58")
 width = 2
 one_way = true
 fall = true
 metadata/_edit_lock_ = true
 
-[node name="Platform10" type="Node2D" parent="Platforms" unique_id=1645718994 instance=ExtResource("31_7j8mp")]
+[node name="Platform10" type="Node2D" parent="Platforms" unique_id=1645718994 instance=ExtResource("32_rolpe")]
 position = Vector2(1193, 525)
-script = ExtResource("32_kof45")
+script = ExtResource("33_w0y58")
 width = 2
 one_way = true
 fall = true
 metadata/_edit_lock_ = true
 
-[node name="Platform2" type="Node2D" parent="Platforms" unique_id=16930057 instance=ExtResource("31_7j8mp")]
+[node name="Platform2" type="Node2D" parent="Platforms" unique_id=16930057 instance=ExtResource("32_rolpe")]
 position = Vector2(3316, -44)
-script = ExtResource("32_kof45")
+script = ExtResource("33_w0y58")
 width = 2
 metadata/_edit_lock_ = true
 
-[node name="Platform8" type="Node2D" parent="Platforms" unique_id=2111595433 instance=ExtResource("31_7j8mp")]
+[node name="Platform8" type="Node2D" parent="Platforms" unique_id=2111595433 instance=ExtResource("32_rolpe")]
 position = Vector2(3980, -603)
-script = ExtResource("32_kof45")
+script = ExtResource("33_w0y58")
 width = 2
 metadata/_edit_lock_ = true
 
-[node name="Platform11" type="Node2D" parent="Platforms" unique_id=1439632278 instance=ExtResource("31_7j8mp")]
+[node name="Platform11" type="Node2D" parent="Platforms" unique_id=1439632278 instance=ExtResource("32_rolpe")]
 position = Vector2(3341, -603)
-script = ExtResource("32_kof45")
+script = ExtResource("33_w0y58")
 width = 2
 metadata/_edit_lock_ = true
 
-[node name="Platform3" type="Node2D" parent="Platforms" unique_id=1437689298 instance=ExtResource("31_7j8mp")]
+[node name="Platform3" type="Node2D" parent="Platforms" unique_id=1437689298 instance=ExtResource("32_rolpe")]
 position = Vector2(3572, 320)
-script = ExtResource("32_kof45")
+script = ExtResource("33_w0y58")
 width = 2
 metadata/_edit_lock_ = true
 
-[node name="Platform9" type="Node2D" parent="Platforms" unique_id=566932184 instance=ExtResource("31_7j8mp")]
+[node name="Platform9" type="Node2D" parent="Platforms" unique_id=566932184 instance=ExtResource("32_rolpe")]
 position = Vector2(2736, -258)
-script = ExtResource("32_kof45")
+script = ExtResource("33_w0y58")
 width = 2
 metadata/_edit_lock_ = true
 
 [node name="Signs" type="Node2D" parent="." unique_id=567327781]
 metadata/_edit_lock_ = true
 
-[node name="Sign" type="Node2D" parent="Signs" unique_id=279814009 instance=ExtResource("33_rolpe")]
+[node name="Sign" type="Node2D" parent="Signs" unique_id=279814009 instance=ExtResource("34_emyl0")]
 position = Vector2(5121, 1028)
-script = ExtResource("34_w0y58")
+script = ExtResource("35_6xbxu")
 text = "Jump twice for extra height"
 metadata/_edit_lock_ = true
 
 [node name="NPCs" type="Node2D" parent="." unique_id=147049230]
 metadata/_edit_lock_ = true
 
-[node name="Npc_Premise" type="Node2D" parent="NPCs" unique_id=688628462 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container") instance=ExtResource("35_emyl0")]
+[node name="Npc_Premise" type="Node2D" parent="NPCs" unique_id=688628462 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container") instance=ExtResource("36_1wn7a")]
 position = Vector2(551, 582)
-script = ExtResource("36_6xbxu")
+script = ExtResource("37_5lp6o")
 use_global_quest_dialogue = true
 sprite = NodePath("AnimatedSprite2D")
 player_detector = NodePath("Area2D")
 dialogue_container = NodePath("DialogueMount")
 metadata/_edit_lock_ = true
 
-[node name="Npc_RockPuzzle" type="Node2D" parent="NPCs" unique_id=1439020895 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container") instance=ExtResource("35_emyl0")]
+[node name="Npc_RockPuzzle" type="Node2D" parent="NPCs" unique_id=1439020895 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container") instance=ExtResource("36_1wn7a")]
 position = Vector2(4057, 321)
-script = ExtResource("36_6xbxu")
+script = ExtResource("37_5lp6o")
 use_global_quest_dialogue = true
 sprite = NodePath("AnimatedSprite2D")
 player_detector = NodePath("Area2D")
 dialogue_container = NodePath("DialogueMount")
 metadata/_edit_lock_ = true
 
-[node name="Npc_ScrollPuzzle" type="Node2D" parent="NPCs" unique_id=1405109528 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container") instance=ExtResource("35_emyl0")]
+[node name="Npc_ScrollPuzzle" type="Node2D" parent="NPCs" unique_id=1405109528 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container") instance=ExtResource("36_1wn7a")]
 position = Vector2(5812, 449)
-script = ExtResource("36_6xbxu")
+script = ExtResource("37_5lp6o")
 use_global_quest_dialogue = true
 sprite = NodePath("AnimatedSprite2D")
 player_detector = NodePath("Area2D")
 dialogue_container = NodePath("DialogueMount")
 metadata/_edit_lock_ = true
 
-[node name="Npc_TilePuzzle" type="Node2D" parent="NPCs" unique_id=178439633 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container") instance=ExtResource("35_emyl0")]
+[node name="Npc_TilePuzzle" type="Node2D" parent="NPCs" unique_id=178439633 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container") instance=ExtResource("36_1wn7a")]
 position = Vector2(7363, 976)
-script = ExtResource("36_6xbxu")
+script = ExtResource("37_5lp6o")
 use_global_quest_dialogue = true
 sprite = NodePath("AnimatedSprite2D")
 player_detector = NodePath("Area2D")
 dialogue_container = NodePath("DialogueMount")
 metadata/_edit_lock_ = true
 
-[node name="Npc_Congrats" type="Node2D" parent="NPCs" unique_id=2029695227 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container") instance=ExtResource("35_emyl0")]
+[node name="Npc_Congrats" type="Node2D" parent="NPCs" unique_id=2029695227 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container") instance=ExtResource("36_1wn7a")]
 position = Vector2(8358, -186)
-script = ExtResource("36_6xbxu")
+script = ExtResource("37_5lp6o")
 use_global_quest_dialogue = true
 sprite = NodePath("AnimatedSprite2D")
 player_detector = NodePath("Area2D")
 dialogue_container = NodePath("DialogueMount")
 metadata/_edit_lock_ = true
 
-[node name="Npc_MonkFlavor" parent="NPCs" unique_id=1327020053 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container") instance=ExtResource("35_emyl0")]
+[node name="Npc_MonkFlavor" parent="NPCs" unique_id=1327020053 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container") instance=ExtResource("36_1wn7a")]
 position = Vector2(1760, 613)
-script = ExtResource("36_6xbxu")
+script = ExtResource("37_5lp6o")
 dialogue_lines = Array[String](["The void has come to Threadbare. Are you the one to save us?"])
 sprite = NodePath("AnimatedSprite2D")
 player_detector = NodePath("Area2D")
@@ -553,7 +557,7 @@ dialogue_container = NodePath("DialogueMount")
 metadata/_edit_lock_ = true
 
 [node name="AnimatedSprite2D" parent="NPCs/Npc_MonkFlavor" index="0" unique_id=1376270546]
-sprite_frames = ExtResource("37_1wn7a")
+sprite_frames = ExtResource("38_3khsu")
 autoplay = "default"
 metadata/_edit_lock_ = true
 
@@ -572,14 +576,14 @@ scale = Vector2(0.5599989, 1)
 shape = SubResource("RectangleShape2D_0ff8d")
 metadata/_edit_lock_ = true
 
-[node name="Player" type="CharacterBody2D" parent="." unique_id=1041196418 groups=["players"] instance=ExtResource("38_5lp6o")]
-position = Vector2(238, 639)
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1041196418 groups=["players"] instance=ExtResource("39_u70dk")]
+position = Vector2(195, 639)
 collision_layer = 3
 collision_mask = 7
 floor_constant_speed = true
 floor_snap_length = 32.0
-script = ExtResource("39_3khsu")
-sprite_frames = ExtResource("40_u70dk")
+script = ExtResource("40_wpfw3")
+sprite_frames = ExtResource("41_s1wny")
 double_jump = true
 metadata/_edit_lock_ = true
 
@@ -590,46 +594,44 @@ limit_bottom = 1080
 position_smoothing_enabled = true
 metadata/_edit_lock_ = true
 
-[node name="HUD" type="CanvasLayer" parent="." unique_id=207528560 instance=ExtResource("41_wpfw3")]
-script = ExtResource("42_s1wny")
+[node name="HUD" type="CanvasLayer" parent="." unique_id=207528560 instance=ExtResource("42_bdmb5")]
+script = ExtResource("43_tvqa7")
 metadata/_edit_lock_ = true
 
 [node name="Enemies" type="Node2D" parent="." unique_id=1698421393]
 metadata/_edit_lock_ = true
 
-[node name="Enemy" type="CharacterBody2D" parent="Enemies" unique_id=947503997 instance=ExtResource("43_bdmb5")]
+[node name="Enemy" type="CharacterBody2D" parent="Enemies" unique_id=947503997 instance=ExtResource("44_4i2o7")]
 position = Vector2(928, 765)
 collision_layer = 8
 collision_mask = 4
 floor_constant_speed = true
 floor_snap_length = 32.0
-script = ExtResource("44_tvqa7")
+script = ExtResource("45_hhmei")
 metadata/_edit_lock_ = true
 
-[node name="Enemy2" type="CharacterBody2D" parent="Enemies" unique_id=628973578 instance=ExtResource("43_bdmb5")]
+[node name="Enemy2" type="CharacterBody2D" parent="Enemies" unique_id=628973578 instance=ExtResource("44_4i2o7")]
 position = Vector2(3028, 395)
 collision_layer = 8
 collision_mask = 4
 floor_constant_speed = true
 floor_snap_length = 32.0
-script = ExtResource("44_tvqa7")
+script = ExtResource("45_hhmei")
 metadata/_edit_lock_ = true
 
-[node name="Enemy3" type="CharacterBody2D" parent="Enemies" unique_id=1452245350 instance=ExtResource("43_bdmb5")]
+[node name="Enemy3" type="CharacterBody2D" parent="Enemies" unique_id=1452245350 instance=ExtResource("44_4i2o7")]
 position = Vector2(6196, 960)
 collision_layer = 8
 collision_mask = 4
 floor_constant_speed = true
 floor_snap_length = 32.0
-script = ExtResource("44_tvqa7")
+script = ExtResource("45_hhmei")
 metadata/_edit_lock_ = true
 
 [connection signal="body_entered" from="Dangerzone" to="Dangerzone" method="_on_body_entered"]
 [connection signal="collected" from="Scroll" to="Scroll/ScrollContinuity" method="_on_collect"]
 [connection signal="condition_updated" from="Scroll" to="Scroll/SpriteContainer/Sprite2D/ScrollAnimator" method="_trigger_animation"]
 [connection signal="body_entered" from="Flag" to="Flag" method="_on_body_entered"]
-[connection signal="body_entered" from="Triggers/InspectorVisibilityTrigger" to="Triggers/InspectorVisibilityTrigger" method="_on_player_enter" unbinds=1]
-[connection signal="body_entered" from="Triggers/InspectorVisibilityTrigger2" to="Triggers/InspectorVisibilityTrigger2" method="_on_player_enter" unbinds=1]
 [connection signal="body_entered" from="Triggers/QuestScriptTrigger_ReachedRockPuzzle" to="Triggers/QuestScriptTrigger_ReachedRockPuzzle" method="_player_entered" unbinds=1]
 [connection signal="body_entered" from="Triggers/QuestScriptTrigger_SolvedRockPuzzle" to="Triggers/QuestScriptTrigger_SolvedRockPuzzle" method="_player_entered" unbinds=1]
 [connection signal="body_entered" from="Triggers/QuestScriptTrigger_SolvedScrollPuzzle" to="Triggers/QuestScriptTrigger_SolvedScrollPuzzle" method="_player_entered" unbinds=1]
