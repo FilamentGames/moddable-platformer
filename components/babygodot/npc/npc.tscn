@@ -25,6 +25,7 @@ collision_layer = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=226621961]
 visible = false
 position = Vector2(0, -6.5)
+scale = Vector2(0.5599989, 1)
 shape = SubResource("RectangleShape2D_0ff8d")
 
 [connection signal="body_entered" from="Area2D" to="." method="_player_entered"]
