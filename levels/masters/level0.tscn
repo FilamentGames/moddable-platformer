@@ -12,16 +12,17 @@
 [ext_resource type="Script" uid="uid://d000x4b6xlry" path="res://scripts/dangerzone.gd" id="6_vnrdr"]
 [ext_resource type="TileSet" uid="uid://caywyu82cccr" path="res://terrain_samples/tileset_full.tres" id="6_y5lv3"]
 [ext_resource type="Texture2D" uid="uid://84t7yee808cn" path="res://assets/items/button.png" id="7_y3jo1"]
-[ext_resource type="PackedScene" uid="uid://bvh17w5gcc28n" path="res://components/babygodot/test_progress_quest.tscn" id="8_jo8x4"]
 [ext_resource type="PackedScene" uid="uid://dr8km2gn8aenv" path="res://components/props/rock_pile.tscn" id="8_sftbg"]
 [ext_resource type="TileSet" uid="uid://321ocrwkcyye" path="res://spaces/tileset-threadbare.tres" id="8_w6d5o"]
 [ext_resource type="PackedScene" uid="uid://4tnolf5qjb55" path="res://components/coin/special_coin.tscn" id="9_16axh"]
+[ext_resource type="PackedScene" uid="uid://d2shfam8t0war" path="res://components/babygodot/trigger/quest_script_trigger/quest_script_trigger.tscn" id="9_58r63"]
 [ext_resource type="PackedScene" uid="uid://coq6d3u6wnvs2" path="res://components/platform/platform.tscn" id="10_cs3j8"]
 [ext_resource type="PackedScene" uid="uid://cugv3o2f6ug6e" path="res://components/sign/sign.tscn" id="11_q0xf2"]
 [ext_resource type="Script" uid="uid://odpmnclrocgd" path="res://components/babygodot/scroll/scroll.gd" id="12_1tk8l"]
 [ext_resource type="SpriteFrames" uid="uid://dj4io3kb4d2uc" path="res://assets/npcs/monk.tres" id="12_m7dqe"]
 [ext_resource type="PackedScene" uid="uid://dpk1jwflxtjbn" path="res://components/babygodot/scroll/scroll.tscn" id="12_ycdye"]
 [ext_resource type="PackedScene" uid="uid://67eoedabcb3s" path="res://components/babygodot/scroll/condition_types/inspector_checkbox_scroll_condition.tscn" id="13_x1pys"]
+[ext_resource type="Script" uid="uid://bvs6l44borf1h" path="res://components/babygodot/trigger/_common/quest_trigger.gd" id="14_0bbcg"]
 [ext_resource type="Script" uid="uid://bv4utu2r7ll2v" path="res://components/babygodot/scroll/condition_types/inspector_checkbox_scroll_condition.gd" id="14_2d4sf"]
 [ext_resource type="PackedScene" uid="uid://8st4scqt06l8" path="res://components/player/player.tscn" id="14_su4jx"]
 [ext_resource type="Script" uid="uid://n1rnbm4rnt0t" path="res://components/babygodot/npc/npc.gd" id="16_8knqs"]
@@ -30,9 +31,7 @@
 [ext_resource type="Script" uid="uid://b4j8f10agdcvu" path="res://scripts/coin.gd" id="18_65vxu"]
 [ext_resource type="PackedScene" uid="uid://beuisy5yrw0bq" path="res://components/flag/flag.tscn" id="18_crtlj"]
 [ext_resource type="Script" uid="uid://boqbxvbja884q" path="res://scripts/multiplayer_camera.gd" id="19_oe8g1"]
-[ext_resource type="PackedScene" uid="uid://busbh1kipldyq" path="res://components/babygodot/test_display_quest_text.tscn" id="20_hwrq4"]
 [ext_resource type="SpriteFrames" uid="uid://de74lrhqf0xoa" path="res://components/player/spriteframes-storyweaver.tres" id="20_m7dqe"]
-[ext_resource type="Script" uid="uid://c15g2mnaubofd" path="res://components/babygodot/test_progress_quest.gd" id="21_0bbcg"]
 [ext_resource type="PackedScene" uid="uid://478o42c7ut27" path="res://components/babygodot/inspector_visibility_trigger/inspector_visibility_trigger.tscn" id="23_uo3or"]
 [ext_resource type="PackedScene" uid="uid://bk3nplruhw7kp" path="res://components/babygodot/scroll_gate/scroll_gate.tscn" id="24_obko3"]
 [ext_resource type="Script" uid="uid://dilh5jyuklov6" path="res://components/platform/platform.gd" id="24_twxhk"]
@@ -43,18 +42,17 @@
 [ext_resource type="Script" uid="uid://d003tgo4vrak8" path="res://components/enemy/enemy.gd" id="33_7cn4d"]
 [ext_resource type="Script" uid="uid://ctlotfccvl4jn" path="res://scripts/flag.gd" id="35_fnu5h"]
 [ext_resource type="SpriteFrames" uid="uid://b3orjhfv6eeud" path="res://components/flag/flag-spriteframes-green.tres" id="36_jf12t"]
-[ext_resource type="Script" uid="uid://4asgq4xx1fwv" path="res://components/babygodot/test_display_quest_text.gd" id="39_mitit"]
 [ext_resource type="Script" uid="uid://c21p0obgodnhd" path="res://components/babygodot/inspector_visibility_trigger/inspector_visibility_trigger.gd" id="41_efl58"]
 [ext_resource type="Script" uid="uid://b532d25pht7ub" path="res://components/babygodot/checkpoint/checkpoint.gd" id="45_2d4sf"]
 [ext_resource type="PackedScene" uid="uid://il08cnnaosyi" path="res://components/babygodot/checkpoint/checkpoint_npc.tscn" id="46_8knqs"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rpdqf"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ff8d"]
-size = Vector2(300, 137)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ruf8e"]
 size = Vector2(14.781952, 6.386901)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ff8d"]
+size = Vector2(300, 137)
 
 [node name="Main2" type="Node2D" unique_id=1511591426]
 
@@ -102,68 +100,100 @@ label = NodePath("ConditionTextContainer/Label")
 [node name="InspectorCheckboxScrollCondition" type="Node" parent="Scroll" unique_id=75788105 instance=ExtResource("13_x1pys")]
 script = ExtResource("14_2d4sf")
 
-[node name="Npc_Premise" type="Node2D" parent="." unique_id=688628462 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container") instance=ExtResource("3_27os8")]
-position = Vector2(551, 582)
-script = ExtResource("16_8knqs")
-use_global_quest_dialogue = true
-sprite = NodePath("AnimatedSprite2D")
-player_detector = NodePath("Area2D")
-dialogue_container = NodePath("DialogueMount")
+[node name="ScrollGate" type="StaticBody2D" parent="." unique_id=68402488 instance=ExtResource("24_obko3")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(6373, 449)
+collision_layer = 4
+collision_mask = 0
 
-[node name="Npc_RockPuzzle" type="Node2D" parent="." unique_id=1439020895 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container") instance=ExtResource("3_27os8")]
-position = Vector2(4057, 321)
-script = ExtResource("16_8knqs")
-use_global_quest_dialogue = true
-sprite = NodePath("AnimatedSprite2D")
-player_detector = NodePath("Area2D")
-dialogue_container = NodePath("DialogueMount")
+[node name="Flag" type="Area2D" parent="." unique_id=1243516226 instance=ExtResource("18_crtlj")]
+position = Vector2(8294, -192)
+collision_layer = 2
+script = ExtResource("35_fnu5h")
+sprite_frames = ExtResource("36_jf12t")
 
-[node name="Npc_ScrollPuzzle" type="Node2D" parent="." unique_id=1405109528 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container") instance=ExtResource("3_27os8")]
-position = Vector2(5812, 449)
-script = ExtResource("16_8knqs")
-use_global_quest_dialogue = true
-sprite = NodePath("AnimatedSprite2D")
-player_detector = NodePath("Area2D")
-dialogue_container = NodePath("DialogueMount")
+[node name="Triggers" type="Node2D" parent="." unique_id=1993564345]
 
-[node name="Npc_TilePuzzle" type="Node2D" parent="." unique_id=178439633 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container") instance=ExtResource("3_27os8")]
-position = Vector2(7363, 976)
-script = ExtResource("16_8knqs")
-use_global_quest_dialogue = true
-sprite = NodePath("AnimatedSprite2D")
-player_detector = NodePath("Area2D")
-dialogue_container = NodePath("DialogueMount")
-
-[node name="Npc_Congrats" type="Node2D" parent="." unique_id=2029695227 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container") instance=ExtResource("3_27os8")]
-position = Vector2(8358, -186)
-script = ExtResource("16_8knqs")
-use_global_quest_dialogue = true
-sprite = NodePath("AnimatedSprite2D")
-player_detector = NodePath("Area2D")
-dialogue_container = NodePath("DialogueMount")
-
-[node name="Npc_MonkFlavor" parent="." unique_id=1327020053 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container") instance=ExtResource("3_27os8")]
-position = Vector2(1760, 613)
-script = ExtResource("16_8knqs")
-dialogue_lines = Array[String](["The void has come to Threadbare. Are you the one to save us?"])
-sprite = NodePath("AnimatedSprite2D")
-player_detector = NodePath("Area2D")
-dialogue_container = NodePath("DialogueMount")
-
-[node name="AnimatedSprite2D" parent="Npc_MonkFlavor" index="0" unique_id=1376270546]
-sprite_frames = ExtResource("12_m7dqe")
-autoplay = "default"
-
-[node name="DialogueMount" parent="Npc_MonkFlavor" index="1" unique_id=1542232851]
-position = Vector2(0, -250)
-
-[node name="Area2D" parent="Npc_MonkFlavor" index="2" unique_id=18542653]
+[node name="InspectorVisibilityTrigger" type="Area2D" parent="Triggers" unique_id=964568534 instance=ExtResource("23_uo3or")]
+position = Vector2(246, 510)
 collision_layer = 0
+script = ExtResource("41_efl58")
 
-[node name="CollisionShape2D" parent="Npc_MonkFlavor/Area2D" index="0" unique_id=226621961]
+[node name="InspectorVisibilityTrigger2" type="Area2D" parent="Triggers" unique_id=1583390062 instance=ExtResource("23_uo3or")]
+position = Vector2(4419, 255)
+collision_layer = 0
+script = ExtResource("41_efl58")
+set_inspector_to = 1
+
+[node name="QuestScriptTrigger_ReachedRockPuzzle" type="Area2D" parent="Triggers" unique_id=1651920811 node_paths=PackedStringArray("behavior") instance=ExtResource("9_58r63")]
+position = Vector2(4025, 304)
+script = ExtResource("14_0bbcg")
+behavior = NodePath("Behavior")
+delete_from_scene = true
+metadata/_custom_type_script = "uid://bvs6l44borf1h"
+
+[node name="QuestScriptTrigger_SolvedRockPuzzle" type="Area2D" parent="Triggers" unique_id=528764778 node_paths=PackedStringArray("behavior") instance=ExtResource("9_58r63")]
+position = Vector2(4392, 304)
+script = ExtResource("14_0bbcg")
+behavior = NodePath("Behavior")
+delete_from_scene = true
+metadata/_custom_type_script = "uid://bvs6l44borf1h"
+
+[node name="QuestScriptTrigger_SolvedScrollPuzzle" type="Area2D" parent="Triggers" unique_id=1927004304 node_paths=PackedStringArray("behavior") instance=ExtResource("9_58r63")]
+position = Vector2(6571, 435)
+script = ExtResource("14_0bbcg")
+behavior = NodePath("Behavior")
+delete_from_scene = true
+metadata/_custom_type_script = "uid://bvs6l44borf1h"
+
+[node name="QuestScriptTrigger_SolvedTilePuzzle" type="Area2D" parent="Triggers" unique_id=794312811 node_paths=PackedStringArray("behavior") instance=ExtResource("9_58r63")]
+position = Vector2(8381, -204)
+script = ExtResource("14_0bbcg")
+behavior = NodePath("Behavior")
+delete_from_scene = true
+metadata/_custom_type_script = "uid://bvs6l44borf1h"
+
+[node name="Checkpoints" type="Node2D" parent="." unique_id=1977743448]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Checkpoints" unique_id=246575283]
 visible = false
-position = Vector2(0, -6.5)
-shape = SubResource("RectangleShape2D_0ff8d")
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoints/StaticBody2D" unique_id=1114676747]
+position = Vector2(4317, 319.5)
+scale = Vector2(4.19429, -18.005604)
+shape = SubResource("RectangleShape2D_ruf8e")
+one_way_collision = true
+one_way_collision_direction = Vector2(-1, 0)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Checkpoints/StaticBody2D" unique_id=159644524]
+position = Vector2(6366, 449)
+scale = Vector2(4.19429, -18.005604)
+shape = SubResource("RectangleShape2D_ruf8e")
+one_way_collision = true
+one_way_collision_direction = Vector2(-1, 0)
+
+[node name="Checkpoint" type="Node2D" parent="Checkpoints" unique_id=951106919 node_paths=PackedStringArray("player_position_marker", "placeholder_sprite") instance=ExtResource("27_dt6hy")]
+position = Vector2(99, 455)
+script = ExtResource("45_2d4sf")
+npc_prefab = ExtResource("46_8knqs")
+player_position_marker = NodePath("PlayerSpawn")
+placeholder_sprite = NodePath("PlaceholderSprite")
+
+[node name="Checkpoint2" type="Node2D" parent="Checkpoints" unique_id=182555001 node_paths=PackedStringArray("player_position_marker", "placeholder_sprite") instance=ExtResource("27_dt6hy")]
+position = Vector2(4469, 188)
+script = ExtResource("45_2d4sf")
+npc_prefab = ExtResource("46_8knqs")
+player_position_marker = NodePath("PlayerSpawn")
+placeholder_sprite = NodePath("PlaceholderSprite")
+
+[node name="Checkpoint3" type="Node2D" parent="Checkpoints" unique_id=1077397314 node_paths=PackedStringArray("player_position_marker", "placeholder_sprite") instance=ExtResource("27_dt6hy")]
+position = Vector2(6645, 319)
+script = ExtResource("45_2d4sf")
+npc_prefab = ExtResource("46_8knqs")
+player_position_marker = NodePath("PlayerSpawn")
+placeholder_sprite = NodePath("PlaceholderSprite")
 
 [node name="Coins" type="Node2D" parent="." unique_id=1860713878]
 
@@ -174,86 +204,6 @@ collision_layer = 2
 script = ExtResource("18_65vxu")
 texture = ExtResource("7_y3jo1")
 tint = Color(1, 1, 0, 1)
-
-[node name="Coin_ReachedRockPuzzle" type="Area2D" parent="Coins" unique_id=900612708 groups=["coins"] instance=ExtResource("6_qy02x")]
-visible = false
-modulate = Color(1, 0, 0, 1)
-position = Vector2(4044, 328)
-collision_layer = 2
-script = ExtResource("18_65vxu")
-texture = ExtResource("7_y3jo1")
-tint = Color(1, 0, 0, 1)
-
-[node name="TestProgressQuest" type="Node" parent="Coins/Coin_ReachedRockPuzzle" unique_id=1692964634 instance=ExtResource("8_jo8x4")]
-script = ExtResource("21_0bbcg")
-
-[node name="Label" type="Label" parent="Coins/Coin_ReachedRockPuzzle" unique_id=1505039228]
-offset_left = -53.0
-offset_top = -104.0
-offset_right = 372.0
-offset_bottom = -55.0
-text = "Reached
-rocks"
-
-[node name="Coin_SolvedRockPuzzle" type="Area2D" parent="Coins" unique_id=1095254317 groups=["coins"] instance=ExtResource("6_qy02x")]
-visible = false
-modulate = Color(1, 0, 0, 1)
-position = Vector2(4437, 313)
-collision_layer = 2
-script = ExtResource("18_65vxu")
-texture = ExtResource("7_y3jo1")
-tint = Color(1, 0, 0, 1)
-
-[node name="TestProgressQuest" type="Node" parent="Coins/Coin_SolvedRockPuzzle" unique_id=1601536788 instance=ExtResource("8_jo8x4")]
-script = ExtResource("21_0bbcg")
-
-[node name="Label" type="Label" parent="Coins/Coin_SolvedRockPuzzle" unique_id=352849225]
-offset_left = -53.0
-offset_top = -104.0
-offset_right = 372.0
-offset_bottom = -55.0
-text = "Solved
-puzzle"
-
-[node name="Coin_SolvedScrollPuzzle" type="Area2D" parent="Coins" unique_id=718853691 groups=["coins"] instance=ExtResource("6_qy02x")]
-visible = false
-modulate = Color(1, 0, 0, 1)
-position = Vector2(6531, 457)
-collision_layer = 2
-script = ExtResource("18_65vxu")
-texture = ExtResource("7_y3jo1")
-tint = Color(1, 0, 0, 1)
-
-[node name="TestProgressQuest" type="Node" parent="Coins/Coin_SolvedScrollPuzzle" unique_id=1339656874 instance=ExtResource("8_jo8x4")]
-script = ExtResource("21_0bbcg")
-
-[node name="Label" type="Label" parent="Coins/Coin_SolvedScrollPuzzle" unique_id=1677402355]
-offset_left = -53.0
-offset_top = -104.0
-offset_right = 372.0
-offset_bottom = -55.0
-text = "Solved
-puzzle"
-
-[node name="Coin_SolvedTilePuzzle" type="Area2D" parent="Coins" unique_id=1253600743 groups=["coins"] instance=ExtResource("6_qy02x")]
-visible = false
-modulate = Color(1, 0, 0, 1)
-position = Vector2(8370, -189)
-collision_layer = 2
-script = ExtResource("18_65vxu")
-texture = ExtResource("7_y3jo1")
-tint = Color(1, 0, 0, 1)
-
-[node name="TestProgressQuest" type="Node" parent="Coins/Coin_SolvedTilePuzzle" unique_id=197261604 instance=ExtResource("8_jo8x4")]
-script = ExtResource("21_0bbcg")
-
-[node name="Label" type="Label" parent="Coins/Coin_SolvedTilePuzzle" unique_id=1715276721]
-offset_left = -53.0
-offset_top = -104.0
-offset_right = 372.0
-offset_bottom = -55.0
-text = "Solved
-puzzle"
 
 [node name="Coin4" type="Area2D" parent="Coins" unique_id=1137508267 groups=["coins"] instance=ExtResource("6_qy02x")]
 modulate = Color(1, 1, 0, 1)
@@ -483,6 +433,72 @@ position = Vector2(5121, 1028)
 script = ExtResource("26_ht26h")
 text = "Jump twice for extra height"
 
+[node name="NPCs" type="Node2D" parent="." unique_id=147049230]
+
+[node name="Npc_Premise" type="Node2D" parent="NPCs" unique_id=688628462 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container") instance=ExtResource("3_27os8")]
+position = Vector2(551, 582)
+script = ExtResource("16_8knqs")
+use_global_quest_dialogue = true
+sprite = NodePath("AnimatedSprite2D")
+player_detector = NodePath("Area2D")
+dialogue_container = NodePath("DialogueMount")
+
+[node name="Npc_RockPuzzle" type="Node2D" parent="NPCs" unique_id=1439020895 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container") instance=ExtResource("3_27os8")]
+position = Vector2(4057, 321)
+script = ExtResource("16_8knqs")
+use_global_quest_dialogue = true
+sprite = NodePath("AnimatedSprite2D")
+player_detector = NodePath("Area2D")
+dialogue_container = NodePath("DialogueMount")
+
+[node name="Npc_ScrollPuzzle" type="Node2D" parent="NPCs" unique_id=1405109528 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container") instance=ExtResource("3_27os8")]
+position = Vector2(5812, 449)
+script = ExtResource("16_8knqs")
+use_global_quest_dialogue = true
+sprite = NodePath("AnimatedSprite2D")
+player_detector = NodePath("Area2D")
+dialogue_container = NodePath("DialogueMount")
+
+[node name="Npc_TilePuzzle" type="Node2D" parent="NPCs" unique_id=178439633 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container") instance=ExtResource("3_27os8")]
+position = Vector2(7363, 976)
+script = ExtResource("16_8knqs")
+use_global_quest_dialogue = true
+sprite = NodePath("AnimatedSprite2D")
+player_detector = NodePath("Area2D")
+dialogue_container = NodePath("DialogueMount")
+
+[node name="Npc_Congrats" type="Node2D" parent="NPCs" unique_id=2029695227 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container") instance=ExtResource("3_27os8")]
+position = Vector2(8358, -186)
+script = ExtResource("16_8knqs")
+use_global_quest_dialogue = true
+sprite = NodePath("AnimatedSprite2D")
+player_detector = NodePath("Area2D")
+dialogue_container = NodePath("DialogueMount")
+
+[node name="Npc_MonkFlavor" parent="NPCs" unique_id=1327020053 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container") instance=ExtResource("3_27os8")]
+position = Vector2(1760, 613)
+script = ExtResource("16_8knqs")
+dialogue_lines = Array[String](["The void has come to Threadbare. Are you the one to save us?"])
+sprite = NodePath("AnimatedSprite2D")
+player_detector = NodePath("Area2D")
+dialogue_container = NodePath("DialogueMount")
+
+[node name="AnimatedSprite2D" parent="NPCs/Npc_MonkFlavor" index="0" unique_id=1376270546]
+sprite_frames = ExtResource("12_m7dqe")
+autoplay = "default"
+
+[node name="DialogueMount" parent="NPCs/Npc_MonkFlavor" index="1" unique_id=1542232851]
+position = Vector2(0, -250)
+
+[node name="Area2D" parent="NPCs/Npc_MonkFlavor" index="2" unique_id=18542653]
+collision_layer = 0
+
+[node name="CollisionShape2D" parent="NPCs/Npc_MonkFlavor/Area2D" index="0" unique_id=226621961]
+visible = false
+position = Vector2(0, -6.5)
+scale = Vector2(0.5599989, 1)
+shape = SubResource("RectangleShape2D_0ff8d")
+
 [node name="Player" type="CharacterBody2D" parent="." unique_id=1041196418 groups=["players"] instance=ExtResource("14_su4jx")]
 position = Vector2(238, 639)
 collision_layer = 3
@@ -528,12 +544,6 @@ floor_constant_speed = true
 floor_snap_length = 32.0
 script = ExtResource("33_7cn4d")
 
-[node name="Flag" type="Area2D" parent="." unique_id=1243516226 instance=ExtResource("18_crtlj")]
-position = Vector2(8294, -192)
-collision_layer = 2
-script = ExtResource("35_fnu5h")
-sprite_frames = ExtResource("36_jf12t")
-
 [node name="MultiplayerCamera" type="Camera2D" parent="." unique_id=1020979191]
 position = Vector2(0, 15)
 enabled = false
@@ -542,85 +552,20 @@ limit_bottom = 1080
 position_smoothing_enabled = true
 script = ExtResource("19_oe8g1")
 
-[node name="TestDisplayQuestText" type="Node2D" parent="." unique_id=2107395699 node_paths=PackedStringArray("label") instance=ExtResource("20_hwrq4")]
-visible = false
-position = Vector2(3681, -1405)
-script = ExtResource("39_mitit")
-label = NodePath("Label")
-
-[node name="TestDisplayQuestText2" type="Node2D" parent="." unique_id=1467953204 node_paths=PackedStringArray("label") instance=ExtResource("20_hwrq4")]
-visible = false
-position = Vector2(3700, -1252)
-script = ExtResource("39_mitit")
-label = NodePath("Label")
-
-[node name="InspectorVisibilityTrigger" type="Area2D" parent="." unique_id=964568534 instance=ExtResource("23_uo3or")]
-position = Vector2(246, 510)
-collision_layer = 0
-script = ExtResource("41_efl58")
-
-[node name="InspectorVisibilityTrigger2" type="Area2D" parent="." unique_id=1583390062 instance=ExtResource("23_uo3or")]
-position = Vector2(4419, 255)
-collision_layer = 0
-script = ExtResource("41_efl58")
-set_inspector_to = 1
-
-[node name="ScrollGate" type="StaticBody2D" parent="." unique_id=68402488 instance=ExtResource("24_obko3")]
-modulate = Color(1, 0, 0, 1)
-position = Vector2(6373, 449)
-collision_layer = 4
-collision_mask = 0
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=246575283]
-visible = false
-collision_layer = 4
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1114676747]
-position = Vector2(4317, 319.5)
-scale = Vector2(4.19429, -18.005604)
-shape = SubResource("RectangleShape2D_ruf8e")
-one_way_collision = true
-one_way_collision_direction = Vector2(-1, 0)
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=159644524]
-position = Vector2(6366, 449)
-scale = Vector2(4.19429, -18.005604)
-shape = SubResource("RectangleShape2D_ruf8e")
-one_way_collision = true
-one_way_collision_direction = Vector2(-1, 0)
-
-[node name="Checkpoint" type="Node2D" parent="." unique_id=182555001 node_paths=PackedStringArray("player_position_marker", "placeholder_sprite") instance=ExtResource("27_dt6hy")]
-position = Vector2(4469, 188)
-script = ExtResource("45_2d4sf")
-npc_prefab = ExtResource("46_8knqs")
-player_position_marker = NodePath("PlayerSpawn")
-placeholder_sprite = NodePath("PlaceholderSprite")
-
-[node name="Checkpoint2" type="Node2D" parent="." unique_id=1077397314 node_paths=PackedStringArray("player_position_marker", "placeholder_sprite") instance=ExtResource("27_dt6hy")]
-position = Vector2(6547, 319)
-script = ExtResource("45_2d4sf")
-npc_prefab = ExtResource("46_8knqs")
-player_position_marker = NodePath("PlayerSpawn")
-placeholder_sprite = NodePath("PlaceholderSprite")
-
-[node name="Checkpoint3" type="Node2D" parent="." unique_id=951106919 node_paths=PackedStringArray("player_position_marker", "placeholder_sprite") instance=ExtResource("27_dt6hy")]
-position = Vector2(127, 455)
-script = ExtResource("45_2d4sf")
-npc_prefab = ExtResource("46_8knqs")
-player_position_marker = NodePath("PlayerSpawn")
-placeholder_sprite = NodePath("PlaceholderSprite")
-
 [connection signal="body_entered" from="Dangerzone" to="Dangerzone" method="_on_body_entered"]
 [connection signal="collected" from="Scroll" to="Scroll/ScrollContinuity" method="_on_collect"]
 [connection signal="condition_updated" from="Scroll" to="Scroll/SpriteContainer/Sprite2D/ScrollAnimator" method="_trigger_animation"]
-[connection signal="body_entered" from="Npc_MonkFlavor/Area2D" to="Npc_MonkFlavor" method="_player_entered"]
-[connection signal="body_exited" from="Npc_MonkFlavor/Area2D" to="Npc_MonkFlavor" method="_player_exited"]
+[connection signal="body_entered" from="Flag" to="Flag" method="_on_body_entered"]
+[connection signal="body_entered" from="Triggers/InspectorVisibilityTrigger" to="Triggers/InspectorVisibilityTrigger" method="_on_player_enter" unbinds=1]
+[connection signal="body_entered" from="Triggers/InspectorVisibilityTrigger2" to="Triggers/InspectorVisibilityTrigger2" method="_on_player_enter" unbinds=1]
+[connection signal="body_entered" from="Triggers/QuestScriptTrigger_ReachedRockPuzzle" to="Triggers/QuestScriptTrigger_ReachedRockPuzzle" method="_player_entered" unbinds=1]
+[connection signal="body_entered" from="Triggers/QuestScriptTrigger_SolvedRockPuzzle" to="Triggers/QuestScriptTrigger_SolvedRockPuzzle" method="_player_entered" unbinds=1]
+[connection signal="body_entered" from="Triggers/QuestScriptTrigger_SolvedScrollPuzzle" to="Triggers/QuestScriptTrigger_SolvedScrollPuzzle" method="_player_entered" unbinds=1]
+[connection signal="body_entered" from="Triggers/QuestScriptTrigger_SolvedTilePuzzle" to="Triggers/QuestScriptTrigger_SolvedTilePuzzle" method="_player_entered" unbinds=1]
+[connection signal="save_checkpoint" from="Checkpoints/Checkpoint" to="Checkpoints/Checkpoint" method="send_checkpoint_message"]
+[connection signal="save_checkpoint" from="Checkpoints/Checkpoint2" to="Checkpoints/Checkpoint2" method="send_checkpoint_message"]
+[connection signal="save_checkpoint" from="Checkpoints/Checkpoint3" to="Checkpoints/Checkpoint3" method="send_checkpoint_message"]
 [connection signal="body_entered" from="Coins/Coin" to="Coins/Coin" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/Coin_ReachedRockPuzzle" to="Coins/Coin_ReachedRockPuzzle" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/Coin_SolvedRockPuzzle" to="Coins/Coin_SolvedRockPuzzle" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/Coin_SolvedScrollPuzzle" to="Coins/Coin_SolvedScrollPuzzle" method="_on_body_entered"]
-[connection signal="body_entered" from="Coins/Coin_SolvedTilePuzzle" to="Coins/Coin_SolvedTilePuzzle" method="_on_body_entered"]
 [connection signal="body_entered" from="Coins/Coin4" to="Coins/Coin4" method="_on_body_entered"]
 [connection signal="body_entered" from="Coins/Coin8" to="Coins/Coin8" method="_on_body_entered"]
 [connection signal="body_entered" from="Coins/Coin5" to="Coins/Coin5" method="_on_body_entered"]
@@ -640,11 +585,7 @@ placeholder_sprite = NodePath("PlaceholderSprite")
 [connection signal="body_entered" from="Coins/Coin10" to="Coins/Coin10" method="_on_body_entered"]
 [connection signal="body_entered" from="Coins/Coin11" to="Coins/Coin11" method="_on_body_entered"]
 [connection signal="body_entered" from="SpecialCoins/SpecialCoin" to="SpecialCoins/SpecialCoin" method="_on_body_entered"]
-[connection signal="body_entered" from="Flag" to="Flag" method="_on_body_entered"]
-[connection signal="body_entered" from="InspectorVisibilityTrigger" to="InspectorVisibilityTrigger" method="_on_player_enter" unbinds=1]
-[connection signal="body_entered" from="InspectorVisibilityTrigger2" to="InspectorVisibilityTrigger2" method="_on_player_enter" unbinds=1]
-[connection signal="save_checkpoint" from="Checkpoint" to="Checkpoint" method="send_checkpoint_message"]
-[connection signal="save_checkpoint" from="Checkpoint2" to="Checkpoint2" method="send_checkpoint_message"]
-[connection signal="save_checkpoint" from="Checkpoint3" to="Checkpoint3" method="send_checkpoint_message"]
+[connection signal="body_entered" from="NPCs/Npc_MonkFlavor/Area2D" to="NPCs/Npc_MonkFlavor" method="_player_entered"]
+[connection signal="body_exited" from="NPCs/Npc_MonkFlavor/Area2D" to="NPCs/Npc_MonkFlavor" method="_player_exited"]
 
-[editable path="Npc_MonkFlavor"]
+[editable path="NPCs/Npc_MonkFlavor"]
