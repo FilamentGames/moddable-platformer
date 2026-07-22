@@ -1,0 +1,60 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://m8cs3hs65s7t"]
+
+[ext_resource type="Texture2D" uid="uid://b64fx1petjgcx" path="res://assets/npcs/mothsache_idle.png" id="1_54ksa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pvv10"]
+atlas = ExtResource("1_54ksa")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7hrkl"]
+atlas = ExtResource("1_54ksa")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ff7a0"]
+atlas = ExtResource("1_54ksa")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2elq3"]
+atlas = ExtResource("1_54ksa")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aehtb"]
+atlas = ExtResource("1_54ksa")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nbn5h"]
+atlas = ExtResource("1_54ksa")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bb0fh"]
+atlas = ExtResource("1_54ksa")
+region = Rect2(1152, 0, 192, 192)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pvv10")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7hrkl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ff7a0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2elq3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aehtb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nbn5h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bb0fh")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 10.0
+}]
