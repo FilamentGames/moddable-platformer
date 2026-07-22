@@ -25,7 +25,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5r7qd")
 }],
-"loop": true,
+"loop": 1,
 "name": &"hit",
 "speed": 5.0
 }, {
@@ -39,7 +39,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ltgan")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk",
 "speed": 5.0
 }]
@@ -80,9 +80,11 @@ shape = SubResource("RectangleShape2D_kii40")
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=72985585]
 position = Vector2(0, -106)
+collision_mask = 17
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=349674681]
 position = Vector2(0, 58.5)
 shape = SubResource("RectangleShape2D_cepcq")
 
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

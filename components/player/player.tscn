@@ -12,6 +12,9 @@
 radius = 31.0
 height = 92.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ddthk"]
+radius = 106.01887
+
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_mpawu"]
 random_pitch = 1.1
 streams_count = 1
@@ -50,15 +53,27 @@ color = Color(1, 1, 0, 1)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=16241589]
 unique_name_in_owner = true
-position = Vector2(0, -64)
+position = Vector2(0, -21)
 sprite_frames = ExtResource("2_pvtfm")
-animation = &"idle"
+animation = &"attack"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1239802489]
 position = Vector2(0, -46)
 shape = SubResource("CapsuleShape2D_7x5a4")
 one_way_collision = true
+
+[node name="AttackHitbox" type="Area2D" parent="." unique_id=2027340937]
+unique_name_in_owner = true
+collision_layer = 16
+collision_mask = 8
+input_pickable = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackHitbox" unique_id=1203943948]
+position = Vector2(58, -46)
+shape = SubResource("CircleShape2D_ddthk")
+debug_color = Color(0.9889129, 0, 0.30188364, 0.41960785)
 
 [node name="PlayerDialogueComponent" type="Node" parent="." unique_id=1376200695 node_paths=PackedStringArray("player", "dialogue_mount")]
 editor_description = "This node controls logic for dialogue interactions. It exists as its own node so we don't have to mess with the base Player class too much"
@@ -82,3 +97,6 @@ stream = ExtResource("4_mpawu")
 unique_name_in_owner = true
 stream = SubResource("AudioStreamRandomizer_ph1f6")
 volume_db = -10.0
+
+[connection signal="body_entered" from="AttackHitbox" to="." method="_on_attack_hitbox_body_entered"]
+[connection signal="body_exited" from="AttackHitbox" to="." method="_on_attack_hitbox_body_exited"]

@@ -1,7 +1,24 @@
 [gd_resource type="SpriteFrames" format=3 uid="uid://de74lrhqf0xoa"]
 
+[ext_resource type="Texture2D" uid="uid://ddarc4vfbldeg" path="res://assets/storyweaver_yellow_attack_01.png" id="1_akjco"]
 [ext_resource type="Texture2D" uid="uid://bny6dyj2wvtfg" path="res://assets/storyweaver_yellow_idle.png" id="1_evmv3"]
 [ext_resource type="Texture2D" uid="uid://dxdfmdgjmxl4t" path="res://assets/storyweaver_yellow_walk.png" id="2_20dhc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uffou"]
+atlas = ExtResource("1_akjco")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gaw7i"]
+atlas = ExtResource("1_akjco")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f5sdr"]
+atlas = ExtResource("1_akjco")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_25563"]
+atlas = ExtResource("1_akjco")
+region = Rect2(576, 0, 192, 192)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_20dhc"]
 atlas = ExtResource("1_evmv3")
@@ -69,6 +86,23 @@ region = Rect2(960, 0, 192, 192)
 
 [resource]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uffou")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gaw7i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f5sdr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_25563")
+}],
+"loop": 0,
+"name": &"attack",
+"speed": 10.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_20dhc")

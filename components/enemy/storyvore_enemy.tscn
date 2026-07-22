@@ -48,7 +48,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3igal")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk",
 "speed": 10.0
 }]
@@ -65,6 +65,7 @@ collision_mask = 4
 floor_constant_speed = true
 floor_snap_length = 32.0
 script = ExtResource("1_6mw0c")
+squashable = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=135039845]
 unique_name_in_owner = true
@@ -90,9 +91,11 @@ shape = SubResource("RectangleShape2D_kii40")
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=1154744414]
 position = Vector2(0, -106)
+collision_mask = 17
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1302236694]
 position = Vector2(0, 58.5)
 shape = SubResource("RectangleShape2D_cepcq")
 
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

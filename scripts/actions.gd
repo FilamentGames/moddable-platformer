@@ -15,6 +15,7 @@ const ACTIONS = [
 	&"teleport",
 	&"phase",
 	&"shrink",
+	&"attack",
 ]
 
 # Dictionary[Global.Player, Dictionary[StringName, StringName]]
@@ -32,18 +33,18 @@ func _setup_both_actions() -> Dictionary[Global.Player, Dictionary]:
 
 	for action: StringName in ACTIONS:
 		var p1: StringName = "player_1_" + action
-		var p2: StringName = "player_2_" + action
-		var both: StringName = "player_both_" + action
+		# var p2: StringName = "player_2_" + action
+		# var both: StringName = "player_both_" + action
 
 		player_actions[Global.Player.ONE][action] = p1
-		player_actions[Global.Player.TWO][action] = p2
-		player_actions[Global.Player.BOTH][action] = both
+		# player_actions[Global.Player.TWO][action] = p2
+		# player_actions[Global.Player.BOTH][action] = both
 
-		var deadzone := maxf(InputMap.action_get_deadzone(p1), InputMap.action_get_deadzone(p2))
-		InputMap.add_action(both, deadzone)
+		# var deadzone := maxf(InputMap.action_get_deadzone(p1), -100)
+		# InputMap.add_action(both, deadzone)
 
-		for event: InputEvent in InputMap.action_get_events(p1) + InputMap.action_get_events(p2):
-			InputMap.action_add_event(both, event)
+		# for event: InputEvent in InputMap.action_get_events(p1):
+			# InputMap.action_add_event(both, event)
 
 	return player_actions
 

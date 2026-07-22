@@ -68,6 +68,15 @@ func _on_hitbox_body_entered(body):
 	if body.is_in_group("players"):
 		if squashable and body.velocity.y > 0 and body.position.y < position.y:
 			body.stomp()
-			queue_free()
+			defeat()
 		elif player_loses_life:
 			Global.lives -= 1
+
+
+func _on_hitbox_area_entered(area: Area2D) -> void:
+	if area.get_collision_layer_value(5):
+		player_loses_life = false
+		queue_free()
+
+func defeat() -> void:
+	queue_free()

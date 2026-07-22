@@ -58,8 +58,15 @@ const JUMP_VELOCITY_SCALE_WHEN_SMALL = 0.85
 ## a small positive number to allow the player a little margin for error.
 @export_range(0, 0.5, 1 / 60.0, "suffix:s") var jump_buffer: float = 5.0 / 60.0
 
+## If the character can't attack (e.g. in the air or currently attacking)
+## how long after the attack action is pressed can the character attack again?
+@export_range(0, 0.5, 1 / 60.0, "suffix:s") var attack_buffer: float = 5.0 / 60.0
+
 ## Can your character jump a second time while still in the air?
 @export var double_jump: bool = false
+
+## Can your character attack?
+@export var can_attack: bool = true
 #endregion
 
 #region Internal variables
@@ -86,6 +93,15 @@ var _is_shrunk := false
 
 ## If the player's movement is locked (e.g. they are in a dialogue conversation)
 var movement_locked: bool = false
+
+## If the player is currently attacking.
+var is_attacking: bool = false
+
+## Amount of time the attack action is buffered.
+var attack_buffer_timer: float = 0
+
+## List of enemies that the player would currently hit with their attack.
+var attack_hitbox_targets: Array[Node2D] = []
 #endregion
 
 #region References to other nodes and resources in the Player scene
@@ -96,6 +112,8 @@ var movement_locked: bool = false
 @onready var _jump_sfx: AudioStreamPlayer = %JumpSFX
 @onready var _glide_sfx: AudioStreamPlayer = %GlideSFX
 @onready var _teleport_sfx: AudioStreamPlayer = %TeleportSFX
+
+@onready var _attack_hitbox: Area2D = %AttackHitbox
 #endregion
 
 
@@ -242,7 +260,21 @@ func _shrink() -> void:
 	# TODO: should there be other consequences to being small? Could we make the player somehow more
 	# vulnerable to enemies?
 
-
+func _attack():
+	if can_attack:
+		is_attacking = true
+		# TODO: Play attack sfx?
+		_sprite.play("attack")
+		_attack_hitbox.visible = true # Only actually visible when debugging enabled
+		_attack_hitbox.monitorable = true
+		for target in attack_hitbox_targets:
+			## Defeat all enemies immediately on the start of the attack so it feels responsive.
+			target.defeat()
+		attack_hitbox_targets.clear()
+		await _sprite.animation_finished
+		_attack_hitbox.visible = false
+		_attack_hitbox.monitorable = false
+		is_attacking = false
 #endregion
 
 
@@ -254,14 +286,21 @@ func _physics_process(delta):
 		return
 	
 	# Don't move if in some kind of cutscene, dialogue, etc.
-	if movement_locked:
+	if movement_locked or is_attacking:
 		return
 
 	# Remove the '#' below to enable the phase special ability
 	#_phase()
 
+	if Input.is_action_just_pressed(Actions.lookup(player, "attack")):
+		attack_buffer_timer = (attack_buffer + delta)
+
 	# Handle jump
 	if is_on_floor():
+		if attack_buffer_timer > 0:
+			_attack()
+			attack_buffer_timer = 0
+			return
 		coyote_timer = (coyote_time + delta)
 		double_jump_armed = false
 
@@ -310,6 +349,7 @@ func _physics_process(delta):
 		if velocity.x != 0:
 			_sprite.flip_h = velocity.x < 0
 
+	_attack_hitbox.scale.x = -1 if _sprite.flip_h else 1
 	move_and_slide()
 
 	# Remove the '#' below to enable the teleport special ability
@@ -317,7 +357,7 @@ func _physics_process(delta):
 
 	coyote_timer -= delta
 	jump_buffer_timer -= delta
-
+	attack_buffer_timer -= delta
 
 ## Restore the player to their initial position in the level. Called by _on_lives_changed.
 func reset():
@@ -326,3 +366,12 @@ func reset():
 	coyote_timer = 0
 	jump_buffer_timer = 0
 	double_jump_armed = false
+
+
+func _on_attack_hitbox_body_entered(body: Node2D) -> void:
+	if body is Enemy:
+		attack_hitbox_targets.append(body)
+
+
+func _on_attack_hitbox_body_exited(body: Node2D) -> void:
+	attack_hitbox_targets.erase(body)
