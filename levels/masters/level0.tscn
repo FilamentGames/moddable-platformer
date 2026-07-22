@@ -38,6 +38,7 @@
 [ext_resource type="PackedScene" uid="uid://bk3nplruhw7kp" path="res://components/babygodot/scroll_gate/scroll_gate.tscn" id="24_obko3"]
 [ext_resource type="Script" uid="uid://dilh5jyuklov6" path="res://components/platform/platform.gd" id="24_twxhk"]
 [ext_resource type="SpriteFrames" uid="uid://m8cs3hs65s7t" path="res://assets/npcs/mothsache.tres" id="25_58r63"]
+[ext_resource type="SpriteFrames" uid="uid://dqgithrm1ikyn" path="res://assets/npcs/sheep.tres" id="25_pj073"]
 [ext_resource type="Script" uid="uid://bknjyyvfw422p" path="res://components/babygodot/editor_powerup/common/editor_powerup.gd" id="26_1tk8l"]
 [ext_resource type="Script" uid="uid://cvs42517jpxhh" path="res://components/sign/sign.gd" id="26_ht26h"]
 [ext_resource type="PackedScene" uid="uid://1r6h0ihjbc77" path="res://components/babygodot/checkpoint/checkpoint.tscn" id="27_dt6hy"]
@@ -51,15 +52,15 @@
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rpdqf"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_65vxu"]
-resource_local_to_scene = true
-size = Vector2(94, 258)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0bbcg"]
 resource_local_to_scene = true
 size = Vector2(94, 258)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_twxhk"]
+resource_local_to_scene = true
+size = Vector2(94, 258)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ht26h"]
 resource_local_to_scene = true
 size = Vector2(94, 258)
 
@@ -165,7 +166,7 @@ behavior = NodePath("Behavior")
 delete_from_scene = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_65vxu")
+shape = SubResource("RectangleShape2D_0bbcg")
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
 script = ExtResource("23_8knqs")
@@ -179,7 +180,7 @@ behavior = NodePath("Behavior")
 delete_from_scene = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_0bbcg")
+shape = SubResource("RectangleShape2D_twxhk")
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
 script = ExtResource("23_8knqs")
@@ -193,7 +194,7 @@ behavior = NodePath("Behavior")
 delete_from_scene = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_twxhk")
+shape = SubResource("RectangleShape2D_ht26h")
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
 script = ExtResource("23_8knqs")
@@ -593,6 +594,31 @@ position = Vector2(0, -6.5)
 scale = Vector2(0.5599989, 1)
 shape = SubResource("RectangleShape2D_0ff8d")
 
+[node name="Npc_Sheep" parent="NPCs" unique_id=949624559 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container") instance=ExtResource("3_27os8")]
+position = Vector2(5775, 113)
+script = ExtResource("16_8knqs")
+dialogue_lines = Array[String](["Baaaaa!"])
+flip_to_face_player = true
+sprite = NodePath("AnimatedSprite2D")
+player_detector = NodePath("Area2D")
+dialogue_container = NodePath("DialogueMount")
+
+[node name="AnimatedSprite2D" parent="NPCs/Npc_Sheep" index="0" unique_id=1376270546]
+sprite_frames = ExtResource("25_pj073")
+autoplay = "default"
+
+[node name="DialogueMount" parent="NPCs/Npc_Sheep" index="1" unique_id=1542232851]
+position = Vector2(0, -250)
+
+[node name="Area2D" parent="NPCs/Npc_Sheep" index="2" unique_id=18542653]
+collision_layer = 0
+
+[node name="CollisionShape2D" parent="NPCs/Npc_Sheep/Area2D" index="0" unique_id=226621961]
+visible = false
+position = Vector2(0, -6.5)
+scale = Vector2(0.5599989, 1)
+shape = SubResource("RectangleShape2D_0ff8d")
+
 [node name="Npc_Mothsache" parent="NPCs" unique_id=751537281 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container") instance=ExtResource("3_27os8")]
 position = Vector2(12540, -487)
 scale = Vector2(-4, 4)
@@ -706,6 +732,8 @@ squashable = false
 [connection signal="body_entered" from="SpecialCoins/SpecialCoin" to="SpecialCoins/SpecialCoin" method="_on_body_entered"]
 [connection signal="body_entered" from="NPCs/Npc_MonkFlavor/Area2D" to="NPCs/Npc_MonkFlavor" method="_player_entered"]
 [connection signal="body_exited" from="NPCs/Npc_MonkFlavor/Area2D" to="NPCs/Npc_MonkFlavor" method="_player_exited"]
+[connection signal="body_entered" from="NPCs/Npc_Sheep/Area2D" to="NPCs/Npc_Sheep" method="_player_entered"]
+[connection signal="body_exited" from="NPCs/Npc_Sheep/Area2D" to="NPCs/Npc_Sheep" method="_player_exited"]
 [connection signal="body_entered" from="NPCs/Npc_Mothsache/Area2D" to="NPCs/Npc_Mothsache" method="_player_entered"]
 [connection signal="body_exited" from="NPCs/Npc_Mothsache/Area2D" to="NPCs/Npc_Mothsache" method="_player_exited"]
 
@@ -713,4 +741,5 @@ squashable = false
 [editable path="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle"]
 [editable path="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle"]
 [editable path="NPCs/Npc_MonkFlavor"]
+[editable path="NPCs/Npc_Sheep"]
 [editable path="NPCs/Npc_Mothsache"]
