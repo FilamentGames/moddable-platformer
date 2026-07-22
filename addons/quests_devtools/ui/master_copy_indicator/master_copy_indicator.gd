@@ -77,6 +77,7 @@ static func _lock_uneditable_nodes(scene: PackedScene) -> PackedScene:
 				node.remove_meta("_edit_lock_")
 				var editable_object_indicator := EditableObjectIndicator.new()
 				editable_object_indicator.name = "EditableObjectIndicator"
+				editable_object_indicator.set_meta("_edit_lock_", true)
 				node.add_child(editable_object_indicator)
 				editable_object_indicator.owner = root
 	)
