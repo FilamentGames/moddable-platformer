@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://67eoedabcb3s" path="res://components/babygodot/scroll/condition_types/inspector_checkbox_scroll_condition.tscn" id="13_x1pys"]
 [ext_resource type="Script" uid="uid://bvs6l44borf1h" path="res://components/babygodot/trigger/_common/quest_trigger.gd" id="14_0bbcg"]
 [ext_resource type="Script" uid="uid://bv4utu2r7ll2v" path="res://components/babygodot/scroll/condition_types/inspector_checkbox_scroll_condition.gd" id="14_2d4sf"]
+[ext_resource type="PackedScene" uid="uid://bmpmfwhrjxgeh" path="res://components/babygodot/trigger/change_editable_objects_trigger/change_editable_objects_trigger.tscn" id="14_m7dqe"]
 [ext_resource type="PackedScene" uid="uid://8st4scqt06l8" path="res://components/player/player.tscn" id="14_su4jx"]
 [ext_resource type="PackedScene" uid="uid://bwpj01b3g2as6" path="res://components/babygodot/editor_powerup/scene_tree_powerup.tscn" id="15_dt6hy"]
 [ext_resource type="Script" uid="uid://n1rnbm4rnt0t" path="res://components/babygodot/npc/npc.gd" id="16_8knqs"]
@@ -33,6 +34,7 @@
 [ext_resource type="Script" uid="uid://b4j8f10agdcvu" path="res://scripts/coin.gd" id="18_65vxu"]
 [ext_resource type="PackedScene" uid="uid://beuisy5yrw0bq" path="res://components/flag/flag.tscn" id="18_crtlj"]
 [ext_resource type="SpriteFrames" uid="uid://de74lrhqf0xoa" path="res://components/player/spriteframes-storyweaver.tres" id="20_m7dqe"]
+[ext_resource type="Script" uid="uid://xvbi04ffe5e1" path="res://components/babygodot/trigger/change_editable_objects_trigger/change_editable_objects_trigger_behavior.gd" id="23_8knqs"]
 [ext_resource type="PackedScene" uid="uid://bk3nplruhw7kp" path="res://components/babygodot/scroll_gate/scroll_gate.tscn" id="24_obko3"]
 [ext_resource type="Script" uid="uid://dilh5jyuklov6" path="res://components/platform/platform.gd" id="24_twxhk"]
 [ext_resource type="Script" uid="uid://bknjyyvfw422p" path="res://components/babygodot/editor_powerup/common/editor_powerup.gd" id="26_1tk8l"]
@@ -48,6 +50,14 @@
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rpdqf"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8knqs"]
+resource_local_to_scene = true
+size = Vector2(94, 258)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_65vxu"]
+resource_local_to_scene = true
+size = Vector2(94, 258)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ruf8e"]
 size = Vector2(14.781952, 6.386901)
 
@@ -58,7 +68,7 @@ size = Vector2(300, 137)
 
 [node name="EditableNodeList" type="Node" parent="." unique_id=280926474 node_paths=PackedStringArray("nodes")]
 script = ExtResource("1_vnrdr")
-nodes = [NodePath("../RockPile"), NodePath("../Scroll/InspectorCheckboxScrollCondition"), NodePath("../TileMapLayer")]
+nodes = [NodePath("../RockPile")]
 
 [node name="MasterLevelLock" type="Node" parent="." unique_id=678410586]
 script = ExtResource("1_p5pw3")
@@ -141,6 +151,34 @@ script = ExtResource("14_0bbcg")
 behavior = NodePath("Behavior")
 delete_from_scene = true
 metadata/_custom_type_script = "uid://bvs6l44borf1h"
+
+[node name="ChangeEditableObjectsTrigger_StartScrollPuzzle" parent="Triggers" unique_id=1750362101 node_paths=PackedStringArray("behavior") instance=ExtResource("14_m7dqe")]
+position = Vector2(4417, 256)
+collision_layer = 0
+script = ExtResource("14_0bbcg")
+behavior = NodePath("Behavior")
+delete_from_scene = true
+
+[node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle" index="0" unique_id=490838596]
+shape = SubResource("RectangleShape2D_8knqs")
+
+[node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
+script = ExtResource("23_8knqs")
+add_objects = [NodePath("../../../Scroll/InspectorCheckboxScrollCondition")]
+
+[node name="ChangeEditableObjectsTrigger_StartTilePuzzle" parent="Triggers" unique_id=2100137793 node_paths=PackedStringArray("behavior") instance=ExtResource("14_m7dqe")]
+position = Vector2(6596, 387)
+collision_layer = 0
+script = ExtResource("14_0bbcg")
+behavior = NodePath("Behavior")
+delete_from_scene = true
+
+[node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" index="0" unique_id=490838596]
+shape = SubResource("RectangleShape2D_65vxu")
+
+[node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
+script = ExtResource("23_8knqs")
+add_objects = [NodePath("../../../TileMapLayer")]
 
 [node name="Checkpoints" type="Node2D" parent="." unique_id=1977743448]
 
@@ -554,6 +592,8 @@ script = ExtResource("33_7cn4d")
 [connection signal="body_entered" from="Triggers/QuestScriptTrigger_SolvedRockPuzzle" to="Triggers/QuestScriptTrigger_SolvedRockPuzzle" method="_player_entered" unbinds=1]
 [connection signal="body_entered" from="Triggers/QuestScriptTrigger_SolvedScrollPuzzle" to="Triggers/QuestScriptTrigger_SolvedScrollPuzzle" method="_player_entered" unbinds=1]
 [connection signal="body_entered" from="Triggers/QuestScriptTrigger_SolvedTilePuzzle" to="Triggers/QuestScriptTrigger_SolvedTilePuzzle" method="_player_entered" unbinds=1]
+[connection signal="body_entered" from="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle" to="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle" method="_player_entered" unbinds=1]
+[connection signal="body_entered" from="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" to="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" method="_player_entered" unbinds=1]
 [connection signal="save_checkpoint" from="Checkpoints/Checkpoint" to="Checkpoints/Checkpoint" method="send_checkpoint_message"]
 [connection signal="save_checkpoint" from="Checkpoints/Checkpoint2" to="Checkpoints/Checkpoint2" method="send_checkpoint_message"]
 [connection signal="save_checkpoint" from="Checkpoints/Checkpoint3" to="Checkpoints/Checkpoint3" method="send_checkpoint_message"]
@@ -580,4 +620,6 @@ script = ExtResource("33_7cn4d")
 [connection signal="body_entered" from="NPCs/Npc_MonkFlavor/Area2D" to="NPCs/Npc_MonkFlavor" method="_player_entered"]
 [connection signal="body_exited" from="NPCs/Npc_MonkFlavor/Area2D" to="NPCs/Npc_MonkFlavor" method="_player_exited"]
 
+[editable path="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle"]
+[editable path="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle"]
 [editable path="NPCs/Npc_MonkFlavor"]
