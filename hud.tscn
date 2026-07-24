@@ -41,6 +41,7 @@ script = ExtResource("1_8msyy")
 
 [node name="Start" type="VBoxContainer" parent="." unique_id=1349138452]
 unique_name_in_owner = true
+visible = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5

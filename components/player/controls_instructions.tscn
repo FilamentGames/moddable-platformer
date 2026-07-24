@@ -1,0 +1,157 @@
+[gd_scene format=3 uid="uid://b61bdl6mlg5jn"]
+
+[ext_resource type="Texture2D" uid="uid://bqwhe8sr3v3io" path="res://assets/input-prompts/keyboard-and-mouse_sheet_default/keyboard_arrow_left.tres" id="6_l85mt"]
+[ext_resource type="Texture2D" uid="uid://cc5h4erdbccwm" path="res://assets/input-prompts/keyboard-and-mouse_sheet_default/keyboard_arrow_up.tres" id="7_0w1g3"]
+[ext_resource type="Texture2D" uid="uid://dj51dx4uw5e5u" path="res://assets/input-prompts/keyboard-and-mouse_sheet_default/keyboard_arrow_right.tres" id="8_kaggf"]
+[ext_resource type="Texture2D" uid="uid://g6tdq8sy82um" path="res://assets/input-prompts/keyboard-and-mouse_sheet_default/keyboard_a.tres" id="12_30na5"]
+[ext_resource type="Texture2D" uid="uid://hnw2o470wxpa" path="res://assets/input-prompts/keyboard-and-mouse_sheet_default/keyboard_w.tres" id="13_mrlk8"]
+[ext_resource type="Texture2D" uid="uid://dvd7n0vf4mkq7" path="res://assets/input-prompts/keyboard-and-mouse_sheet_default/keyboard_d.tres" id="14_f3b0j"]
+[ext_resource type="Texture2D" uid="uid://3v30eavl8hwg" path="res://assets/input-prompts/keyboard-and-mouse_sheet_default/keyboard_z.tres" id="15_bcg71"]
+[ext_resource type="Texture2D" uid="uid://0awxt4dn7lvh" path="res://assets/input-prompts/keyboard-and-mouse_sheet_default/keyboard_space.tres" id="16_aa6fp"]
+[ext_resource type="Texture2D" uid="uid://pteo05srjyob" path="res://assets/input-prompts/keyboard-and-mouse_sheet_default/keyboard_x.tres" id="17_4lvvm"]
+[ext_resource type="Texture2D" uid="uid://dmbiwxorfb4yn" path="res://assets/input-prompts/keyboard-and-mouse_sheet_default/mouse_left.tres" id="18_m81gu"]
+[ext_resource type="Texture2D" uid="uid://wfff10c8t28p" path="res://assets/input-prompts/keyboard-and-mouse_sheet_default/keyboard_c.tres" id="19_3nj6r"]
+[ext_resource type="Texture2D" uid="uid://f8qnyabq4s4e" path="res://assets/input-prompts/keyboard-and-mouse_sheet_default/keyboard_e.tres" id="20_37fuc"]
+
+[sub_resource type="Theme" id="Theme_ncwqi"]
+default_font_size = 64
+
+[node name="ControlsInstructions" type="VBoxContainer" unique_id=153286537]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 689.0
+offset_right = 1352.0
+offset_bottom = 484.0
+grow_horizontal = 2
+theme = SubResource("Theme_ncwqi")
+theme_override_constants/separation = 32
+
+[node name="Label" type="Label" parent="." unique_id=390879174]
+layout_mode = 2
+text = "Controls"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="." unique_id=2053019060]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 24
+columns = 2
+
+[node name="MoveCaption" type="Label" parent="GridContainer" unique_id=2022369729]
+layout_mode = 2
+text = "Move:"
+horizontal_alignment = 2
+
+[node name="MoveKeys" type="HBoxContainer" parent="GridContainer" unique_id=693066595]
+layout_mode = 2
+
+[node name="Left" type="TextureRect" parent="GridContainer/MoveKeys" unique_id=2141824047]
+layout_mode = 2
+texture = ExtResource("6_l85mt")
+stretch_mode = 5
+
+[node name="Up" type="TextureRect" parent="GridContainer/MoveKeys" unique_id=1993540734]
+visible = false
+layout_mode = 2
+texture = ExtResource("7_0w1g3")
+stretch_mode = 5
+
+[node name="Right" type="TextureRect" parent="GridContainer/MoveKeys" unique_id=1048100878]
+layout_mode = 2
+texture = ExtResource("8_kaggf")
+stretch_mode = 5
+
+[node name="OrCaption" type="Label" parent="GridContainer/MoveKeys" unique_id=591213230]
+layout_mode = 2
+text = " or "
+horizontal_alignment = 2
+
+[node name="MoveKeys2" type="HBoxContainer" parent="GridContainer/MoveKeys" unique_id=176922927]
+layout_mode = 2
+
+[node name="A" type="TextureRect" parent="GridContainer/MoveKeys/MoveKeys2" unique_id=1332777590]
+layout_mode = 2
+texture = ExtResource("12_30na5")
+stretch_mode = 5
+
+[node name="W" type="TextureRect" parent="GridContainer/MoveKeys/MoveKeys2" unique_id=1084053907]
+visible = false
+layout_mode = 2
+texture = ExtResource("13_mrlk8")
+stretch_mode = 5
+
+[node name="D" type="TextureRect" parent="GridContainer/MoveKeys/MoveKeys2" unique_id=1406759907]
+layout_mode = 2
+texture = ExtResource("14_f3b0j")
+stretch_mode = 5
+
+[node name="JumpCaption" type="Label" parent="GridContainer" unique_id=2002146315]
+layout_mode = 2
+text = "Jump:"
+horizontal_alignment = 2
+
+[node name="JumpKeys" type="HBoxContainer" parent="GridContainer" unique_id=1598693759]
+layout_mode = 2
+
+[node name="Z" type="TextureRect" parent="GridContainer/JumpKeys" unique_id=2025297864]
+layout_mode = 2
+texture = ExtResource("15_bcg71")
+stretch_mode = 5
+
+[node name="OrCaption2" type="Label" parent="GridContainer/JumpKeys" unique_id=33245653]
+layout_mode = 2
+text = " or "
+horizontal_alignment = 2
+
+[node name="Space" type="TextureRect" parent="GridContainer/JumpKeys" unique_id=1754543027]
+layout_mode = 2
+texture = ExtResource("16_aa6fp")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="AttackCaption" type="Label" parent="GridContainer" unique_id=139722602]
+layout_mode = 2
+text = "Attack:"
+horizontal_alignment = 2
+
+[node name="AttackKey" type="HBoxContainer" parent="GridContainer" unique_id=998455297]
+layout_mode = 2
+
+[node name="X" type="TextureRect" parent="GridContainer/AttackKey" unique_id=125516576]
+layout_mode = 2
+texture = ExtResource("17_4lvvm")
+stretch_mode = 5
+
+[node name="OrCaption3" type="Label" parent="GridContainer/AttackKey" unique_id=1509984465]
+layout_mode = 2
+text = " or "
+horizontal_alignment = 2
+
+[node name="LeftMouseButton" type="TextureRect" parent="GridContainer/AttackKey" unique_id=884872866]
+layout_mode = 2
+texture = ExtResource("18_m81gu")
+stretch_mode = 5
+
+[node name="TalkCaption" type="Label" parent="GridContainer" unique_id=1083677130]
+layout_mode = 2
+text = "Talk:"
+horizontal_alignment = 2
+
+[node name="TalkKey" type="HBoxContainer" parent="GridContainer" unique_id=385618029]
+layout_mode = 2
+
+[node name="C" type="TextureRect" parent="GridContainer/TalkKey" unique_id=1453852293]
+layout_mode = 2
+texture = ExtResource("19_3nj6r")
+stretch_mode = 5
+
+[node name="OrCaption4" type="Label" parent="GridContainer/TalkKey" unique_id=611251756]
+layout_mode = 2
+text = " or "
+horizontal_alignment = 2
+
+[node name="C2" type="TextureRect" parent="GridContainer/TalkKey" unique_id=805173410]
+layout_mode = 2
+texture = ExtResource("20_37fuc")
+stretch_mode = 5

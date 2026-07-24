@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://d0v802hnw7unk" path="res://components/babygodot/npc/npc.tscn" id="3_27os8"]
 [ext_resource type="PackedScene" uid="uid://dthyncc3spfks" path="res://spaces/dangerzone.tscn" id="4_2gokk"]
 [ext_resource type="PackedScene" uid="uid://danlrmsfmsros" path="res://spaces/tilemap.tscn" id="5_4yxw5"]
+[ext_resource type="PackedScene" uid="uid://b61bdl6mlg5jn" path="res://components/player/controls_instructions.tscn" id="5_x2f4c"]
 [ext_resource type="PackedScene" uid="uid://daf24t18h3n5e" path="res://components/coin/coin.tscn" id="6_qy02x"]
 [ext_resource type="Script" uid="uid://d000x4b6xlry" path="res://scripts/dangerzone.gd" id="6_vnrdr"]
 [ext_resource type="TileSet" uid="uid://caywyu82cccr" path="res://terrain_samples/tileset_full.tres" id="6_y5lv3"]
@@ -50,17 +51,20 @@
 [ext_resource type="Script" uid="uid://b532d25pht7ub" path="res://components/babygodot/checkpoint/checkpoint.gd" id="45_2d4sf"]
 [ext_resource type="PackedScene" uid="uid://il08cnnaosyi" path="res://components/babygodot/checkpoint/checkpoint_npc.tscn" id="46_8knqs"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rpdqf"]
+[sub_resource type="Theme" id="Theme_ncwqi"]
+default_font_size = 64
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0bbcg"]
-resource_local_to_scene = true
-size = Vector2(94, 258)
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rpdqf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_twxhk"]
 resource_local_to_scene = true
 size = Vector2(94, 258)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ht26h"]
+resource_local_to_scene = true
+size = Vector2(94, 258)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kexs0"]
 resource_local_to_scene = true
 size = Vector2(94, 258)
 
@@ -86,6 +90,18 @@ win_by_reaching_flag = true
 
 [node name="Background" type="Node2D" parent="." unique_id=474635500 instance=ExtResource("2_evrqp")]
 editor_description = "This scene uses a Parallax2D node to repeat a background image endlessly in all directions, and make it appear to be a long way away from the camera by having it scroll more slowly than the level in the foreground."
+
+[node name="ControlsInstructions" type="VBoxContainer" parent="." unique_id=153286537 instance=ExtResource("5_x2f4c")]
+unique_name_in_owner = true
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 689.0
+offset_right = 1352.0
+offset_bottom = 484.0
+grow_horizontal = 2
+theme = SubResource("Theme_ncwqi")
+theme_override_constants/separation = 32
 
 [node name="Dangerzone" type="Area2D" parent="." unique_id=761224350 instance=ExtResource("4_2gokk")]
 position = Vector2(3072, 1216)
@@ -166,7 +182,7 @@ behavior = NodePath("Behavior")
 delete_from_scene = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_0bbcg")
+shape = SubResource("RectangleShape2D_twxhk")
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
 script = ExtResource("23_8knqs")
@@ -180,7 +196,7 @@ behavior = NodePath("Behavior")
 delete_from_scene = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_twxhk")
+shape = SubResource("RectangleShape2D_ht26h")
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
 script = ExtResource("23_8knqs")
@@ -194,7 +210,7 @@ behavior = NodePath("Behavior")
 delete_from_scene = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_ht26h")
+shape = SubResource("RectangleShape2D_kexs0")
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
 script = ExtResource("23_8knqs")
@@ -259,7 +275,7 @@ unlock_dialogue = Array[String](["You unlocked the Inspector Dock!", "This allow
 
 [node name="Coin" type="Area2D" parent="Coins" unique_id=469589313 groups=["coins"] instance=ExtResource("6_qy02x")]
 modulate = Color(1, 1, 0, 1)
-position = Vector2(1045, 528)
+position = Vector2(1434, 563)
 collision_layer = 2
 script = ExtResource("18_65vxu")
 texture = ExtResource("7_y3jo1")
@@ -313,7 +329,7 @@ script = ExtResource("18_65vxu")
 texture = ExtResource("7_y3jo1")
 tint = Color(1, 1, 0, 1)
 
-[node name="Coin7" type="Area2D" parent="Coins" unique_id=1095254317 groups=["coins"] instance=ExtResource("6_qy02x")]
+[node name="Coin7" type="Area2D" parent="Coins" unique_id=1112119096 groups=["coins"] instance=ExtResource("6_qy02x")]
 modulate = Color(1, 1, 0, 1)
 position = Vector2(5971, -301)
 collision_layer = 2
@@ -530,53 +546,59 @@ text = "Jump twice for extra height"
 
 [node name="NPCs" type="Node2D" parent="." unique_id=147049230]
 
-[node name="Npc_Premise" type="Node2D" parent="NPCs" unique_id=688628462 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container") instance=ExtResource("3_27os8")]
+[node name="Npc_Premise" type="Node2D" parent="NPCs" unique_id=688628462 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container", "control_display") instance=ExtResource("3_27os8")]
 position = Vector2(551, 582)
 script = ExtResource("16_8knqs")
 use_global_quest_dialogue = true
 sprite = NodePath("AnimatedSprite2D")
 player_detector = NodePath("Area2D")
 dialogue_container = NodePath("DialogueMount")
+control_display = NodePath("ControlDisplay")
 
-[node name="Npc_RockPuzzle" type="Node2D" parent="NPCs" unique_id=1439020895 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container") instance=ExtResource("3_27os8")]
+[node name="Npc_RockPuzzle" type="Node2D" parent="NPCs" unique_id=1439020895 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container", "control_display") instance=ExtResource("3_27os8")]
 position = Vector2(4057, 321)
 script = ExtResource("16_8knqs")
 use_global_quest_dialogue = true
 sprite = NodePath("AnimatedSprite2D")
 player_detector = NodePath("Area2D")
 dialogue_container = NodePath("DialogueMount")
+control_display = NodePath("ControlDisplay")
 
-[node name="Npc_ScrollPuzzle" type="Node2D" parent="NPCs" unique_id=1405109528 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container") instance=ExtResource("3_27os8")]
+[node name="Npc_ScrollPuzzle" type="Node2D" parent="NPCs" unique_id=1405109528 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container", "control_display") instance=ExtResource("3_27os8")]
 position = Vector2(7984, 449)
 script = ExtResource("16_8knqs")
 use_global_quest_dialogue = true
 sprite = NodePath("AnimatedSprite2D")
 player_detector = NodePath("Area2D")
 dialogue_container = NodePath("DialogueMount")
+control_display = NodePath("ControlDisplay")
 
-[node name="Npc_TilePuzzle" type="Node2D" parent="NPCs" unique_id=178439633 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container") instance=ExtResource("3_27os8")]
+[node name="Npc_TilePuzzle" type="Node2D" parent="NPCs" unique_id=178439633 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container", "control_display") instance=ExtResource("3_27os8")]
 position = Vector2(9534, 976)
 script = ExtResource("16_8knqs")
 use_global_quest_dialogue = true
 sprite = NodePath("AnimatedSprite2D")
 player_detector = NodePath("Area2D")
 dialogue_container = NodePath("DialogueMount")
+control_display = NodePath("ControlDisplay")
 
-[node name="Npc_Congrats" type="Node2D" parent="NPCs" unique_id=2029695227 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container") instance=ExtResource("3_27os8")]
+[node name="Npc_Congrats" type="Node2D" parent="NPCs" unique_id=2029695227 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container", "control_display") instance=ExtResource("3_27os8")]
 position = Vector2(10529, -186)
 script = ExtResource("16_8knqs")
 use_global_quest_dialogue = true
 sprite = NodePath("AnimatedSprite2D")
 player_detector = NodePath("Area2D")
 dialogue_container = NodePath("DialogueMount")
+control_display = NodePath("ControlDisplay")
 
-[node name="Npc_MonkFlavor" parent="NPCs" unique_id=1327020053 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container") instance=ExtResource("3_27os8")]
+[node name="Npc_MonkFlavor" parent="NPCs" unique_id=1327020053 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container", "control_display") instance=ExtResource("3_27os8")]
 position = Vector2(1760, 613)
 script = ExtResource("16_8knqs")
 dialogue_lines = Array[String](["The void has come to Threadbare. Are you the one to save us?"])
 sprite = NodePath("AnimatedSprite2D")
 player_detector = NodePath("Area2D")
 dialogue_container = NodePath("DialogueMount")
+control_display = NodePath("ControlDisplay")
 
 [node name="AnimatedSprite2D" parent="NPCs/Npc_MonkFlavor" index="0" unique_id=1376270546]
 sprite_frames = ExtResource("12_m7dqe")
@@ -594,7 +616,11 @@ position = Vector2(0, -6.5)
 scale = Vector2(0.5599989, 1)
 shape = SubResource("RectangleShape2D_0ff8d")
 
-[node name="Npc_Sheep" parent="NPCs" unique_id=949624559 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container") instance=ExtResource("3_27os8")]
+[node name="ControlDisplay" parent="NPCs/Npc_MonkFlavor" index="3" unique_id=1300373774]
+visible = false
+position = Vector2(0, -75)
+
+[node name="Npc_Sheep" parent="NPCs" unique_id=949624559 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container", "control_display") instance=ExtResource("3_27os8")]
 position = Vector2(5775, 113)
 script = ExtResource("16_8knqs")
 dialogue_lines = Array[String](["Baaaaa!"])
@@ -602,6 +628,7 @@ flip_to_face_player = true
 sprite = NodePath("AnimatedSprite2D")
 player_detector = NodePath("Area2D")
 dialogue_container = NodePath("DialogueMount")
+control_display = NodePath("ControlDisplay")
 
 [node name="AnimatedSprite2D" parent="NPCs/Npc_Sheep" index="0" unique_id=1376270546]
 sprite_frames = ExtResource("25_pj073")
@@ -619,7 +646,11 @@ position = Vector2(0, -6.5)
 scale = Vector2(0.5599989, 1)
 shape = SubResource("RectangleShape2D_0ff8d")
 
-[node name="Npc_Mothsache" parent="NPCs" unique_id=751537281 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container") instance=ExtResource("3_27os8")]
+[node name="ControlDisplay" parent="NPCs/Npc_Sheep" index="3" unique_id=1300373774]
+visible = false
+position = Vector2(0, -75)
+
+[node name="Npc_Mothsache" parent="NPCs" unique_id=751537281 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container", "control_display") instance=ExtResource("3_27os8")]
 position = Vector2(12540, -487)
 scale = Vector2(-4, 4)
 script = ExtResource("16_8knqs")
@@ -628,6 +659,7 @@ flip_to_face_player = true
 sprite = NodePath("AnimatedSprite2D")
 player_detector = NodePath("Area2D")
 dialogue_container = NodePath("DialogueMount")
+control_display = NodePath("ControlDisplay")
 
 [node name="AnimatedSprite2D" parent="NPCs/Npc_Mothsache" index="0" unique_id=1376270546]
 sprite_frames = ExtResource("25_58r63")
@@ -645,6 +677,10 @@ position = Vector2(0, -6.5)
 scale = Vector2(0.5599989, 1)
 shape = SubResource("RectangleShape2D_0ff8d")
 
+[node name="ControlDisplay" parent="NPCs/Npc_Mothsache" index="3" unique_id=1300373774]
+visible = false
+position = Vector2(0, -75)
+
 [node name="Player" type="CharacterBody2D" parent="." unique_id=1041196418 groups=["players"] instance=ExtResource("14_su4jx")]
 position = Vector2(192, 633)
 collision_layer = 3
@@ -660,9 +696,6 @@ position = Vector2(0, 15)
 limit_left = 0
 limit_bottom = 1080
 position_smoothing_enabled = true
-
-[node name="HUD" type="CanvasLayer" parent="." unique_id=207528560 instance=ExtResource("16_gqw0f")]
-script = ExtResource("31_weabp")
 
 [node name="Enemies" type="Node2D" parent="." unique_id=1698421393]
 
@@ -692,6 +725,9 @@ floor_constant_speed = true
 floor_snap_length = 32.0
 script = ExtResource("33_7cn4d")
 squashable = false
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=207528560 instance=ExtResource("16_gqw0f")]
+script = ExtResource("31_weabp")
 
 [connection signal="body_entered" from="Dangerzone" to="Dangerzone" method="_on_body_entered"]
 [connection signal="collected" from="Scroll" to="Scroll/ScrollContinuity" method="_on_collect"]
