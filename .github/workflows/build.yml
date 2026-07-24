@@ -1,0 +1,29 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+    
+      - name: Remove and disable GUT tests
+        run: ./.github/workflows/scripts/disable_gut.sh
+      
+      - name: Disable Baby Godot Dev Tools
+        run: ./.github/workflows/scripts/disable_dev_tools.sh
+      
+      - name: Enable autorun in editor
+        run: ./.github/workflows/scripts/enable_autorun.sh
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: project.zip
+          retention-days: 14
+          path: .
