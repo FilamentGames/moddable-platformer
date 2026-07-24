@@ -2,15 +2,17 @@
 
 [ext_resource type="Script" uid="uid://n1rnbm4rnt0t" path="res://components/babygodot/npc/npc.gd" id="1_0ff8d"]
 [ext_resource type="SpriteFrames" uid="uid://e65igl5tjet" path="res://components/babygodot/npc/elder.tres" id="2_0ff8d"]
+[ext_resource type="PackedScene" uid="uid://dptupmho8ynb6" path="res://components/babygodot/npc/npc_control_display.tscn" id="3_3vgxj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0ff8d"]
 size = Vector2(300, 137)
 
-[node name="Npc" type="Node2D" unique_id=688628462 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container")]
+[node name="Npc" type="Node2D" unique_id=688628462 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container", "control_display")]
 script = ExtResource("1_0ff8d")
 sprite = NodePath("AnimatedSprite2D")
 player_detector = NodePath("Area2D")
 dialogue_container = NodePath("DialogueMount")
+control_display = NodePath("ControlDisplay")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1376270546]
 sprite_frames = ExtResource("2_0ff8d")
@@ -27,6 +29,10 @@ visible = false
 position = Vector2(0, -6.5)
 scale = Vector2(0.5599989, 1)
 shape = SubResource("RectangleShape2D_0ff8d")
+
+[node name="ControlDisplay" parent="." unique_id=1300373774 instance=ExtResource("3_3vgxj")]
+visible = false
+position = Vector2(0, -75)
 
 [connection signal="body_entered" from="Area2D" to="." method="_player_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_player_exited"]

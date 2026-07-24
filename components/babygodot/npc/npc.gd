@@ -21,6 +21,9 @@ class_name Npc
 ## The node in which the dialogue box is appended as a child to.
 @export var dialogue_container: Node2D
 
+## A reference to the node that displays controls when the player gets near.
+@export var control_display: Node2D
+
 ## The dialogue box prefab to instantiate
 var dialogue_box_prefab: PackedScene = preload("res://components/babygodot/dialogue_box/dialogue_box.tscn")
 
@@ -56,6 +59,7 @@ func _player_entered(player: CharacterBody2D):
 	_get_player_dialogue_component_and(player, func(component: PlayerDialogueComponent):
 		component.dialogue_zones.push_back(self)
 	)
+	_set_control_display_visible(true)
 
 ## This is run when a body exits the player detector
 func _player_exited(player: CharacterBody2D):
@@ -63,15 +67,18 @@ func _player_exited(player: CharacterBody2D):
 		var index := component.dialogue_zones.rfind(self)
 		component.dialogue_zones.remove_at(index)
 	)
+	_set_control_display_visible(false)
 
 ## Spawns a dialogue box for this NPC's dialogue
 func spawn_dialogue_box(player_component: PlayerDialogueComponent) -> void:
+	_set_control_display_visible(false)
 	if flip_to_face_player:
 		sprite.flip_h = player_component.player.global_position.x > global_position.x
 	var dialogue_box: DialogueBox = dialogue_box_prefab.instantiate()
 	dialogue_box.dialogue_lines = dialogue_lines.duplicate()
 	dialogue_box.finished.connect(func():
 		player_component.finished_dialogue.call_deferred()
+		_set_control_display_visible(true)
 	)
 	if bridge:
 		dialogue_box.next.connect(_progress_quest.bind(QuestLine.ProgressMethod.NextButton))
@@ -81,3 +88,7 @@ func spawn_dialogue_box(player_component: PlayerDialogueComponent) -> void:
 
 func _progress_quest(trigger_type: QuestLine.ProgressMethod) -> void:
 	InGameQuestsBridge.progress_quest(trigger_type)
+
+func _set_control_display_visible(visible: bool) -> void:
+	if control_display:
+		control_display.visible = visible

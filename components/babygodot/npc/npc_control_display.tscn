@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://dptupmho8ynb6"]
+
+[ext_resource type="Texture2D" uid="uid://wfff10c8t28p" path="res://assets/input-prompts/keyboard-and-mouse_sheet_default/keyboard_c.tres" id="1_uv8wr"]
+[ext_resource type="Texture2D" uid="uid://f8qnyabq4s4e" path="res://assets/input-prompts/keyboard-and-mouse_sheet_default/keyboard_e.tres" id="2_553qi"]
+[ext_resource type="Texture2D" uid="uid://pua070y0fmgp" path="res://assets/placeholder_npc_control_arrow.png" id="3_08q1f"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hmpfs"]
+atlas = ExtResource("1_uv8wr")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ddthk"]
+atlas = ExtResource("2_553qi")
+
+[sub_resource type="Animation" id="Animation_uv8wr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Root:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_553qi"]
+resource_name = "control_display_hover"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Root:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -5.0, 0.0, 5.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_08q1f"]
+_data = {
+&"RESET": SubResource("Animation_uv8wr"),
+&"control_display_hover": SubResource("Animation_553qi")
+}
+
+[node name="ControlDisplay" type="Node2D" unique_id=1300373774]
+
+[node name="Root" type="Node2D" parent="." unique_id=1841764736]
+
+[node name="CKeySprite" type="Sprite2D" parent="Root" unique_id=93214158]
+position = Vector2(-20, 0)
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_hmpfs")
+
+[node name="Slash" type="Label" parent="Root" unique_id=311392016]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -19.0
+offset_top = -11.0
+offset_right = 21.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "/"
+horizontal_alignment = 1
+
+[node name="EKeySprite" type="Sprite2D" parent="Root" unique_id=725128372]
+position = Vector2(20, 0)
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_ddthk")
+
+[node name="Caret" type="Sprite2D" parent="Root" unique_id=358113100]
+position = Vector2(0, 18)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_08q1f")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1518607125]
+libraries/ = SubResource("AnimationLibrary_08q1f")
+autoplay = &"control_display_hover"

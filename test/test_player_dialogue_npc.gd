@@ -190,3 +190,16 @@ func test_player_can_be_in_forced_cutscene_dialogue():
 
 	await wait_frames(1)
 	assert_false(player_dialogue.movement_locked)
+
+func test_npc_control_display_is_visible_when_player_enters_dialogue_zone():
+	npc.control_display = autofree(Node2D.new())
+	npc._player_entered(player)
+
+	assert_true(npc.control_display.visible)
+
+func test_npc_control_display_is_not_visible_when_player_exits_dialogue_zone():
+	npc.control_display = autofree(Node2D.new())
+	npc._player_entered(player)
+	npc._player_exited(player)
+
+	assert_false(npc.control_display.visible)
