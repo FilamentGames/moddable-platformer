@@ -70,7 +70,7 @@ func _on_hitbox_body_entered(body):
 			body.stomp()
 			defeat()
 		elif player_loses_life:
-			Global.lives -= 1
+			Global.lives += 1 # This is a hack to "get rid" of the lives/game over system without ripping everything out of the global game system.
 
 
 func _on_hitbox_area_entered(area: Area2D) -> void:

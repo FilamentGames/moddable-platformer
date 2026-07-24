@@ -12,6 +12,8 @@ static var _enabled := true
 var _service: EditorGameMessagingService
 
 func _init(service: EditorGameMessagingService = GlobalMessagingService):
+	if not service:
+		return
 	id = _next_id
 	_next_id += 1
 	service.connect_game_object(id, self)

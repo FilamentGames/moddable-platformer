@@ -357,6 +357,7 @@ offset_bottom = -944.0
 
 [node name="Lives" type="TextureRect" parent="." unique_id=703846510]
 unique_name_in_owner = true
+visible = false
 offset_left = 60.0
 offset_top = 220.0
 offset_right = 252.0
