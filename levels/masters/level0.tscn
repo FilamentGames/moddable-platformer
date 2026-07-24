@@ -78,7 +78,7 @@ size = Vector2(300, 137)
 
 [node name="EditableNodeList" type="Node" parent="." unique_id=280926474 node_paths=PackedStringArray("nodes")]
 script = ExtResource("1_vnrdr")
-nodes = [NodePath("../RockPile"), NodePath("../Player")]
+nodes = [NodePath("../RockPile")]
 
 [node name="MasterLevelLock" type="Node" parent="." unique_id=678410586]
 script = ExtResource("1_p5pw3")
