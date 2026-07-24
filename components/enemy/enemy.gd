@@ -14,6 +14,12 @@ extends CharacterBody2D
 ## Can the enemy be squashed by the player?
 @export var squashable: bool = true
 
+## How much is the enemy flung horizontally when defeated? This value is multiplied by the enemy's standard speed.
+@export_range(1.0, 10.0, 0.1, "suffix:x") var defeated_x_velocity_multiplier: float = 2.0
+
+## How much is the enemy flung into the air when defeated? (Note: This value is multiplied by -1 to actually produce the proper upward velocity.)
+@export_range(100, 1000, 10, "suffix:px") var defeated_y_velocity: float = 400.0
+
 ## The direction the enemy will start moving in.
 @export_enum("Left:0", "Right:1") var start_direction: int = 0
 
@@ -22,9 +28,15 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 var direction: int
 
+var defeated := false
+
+var on_screen := false
+
 @onready var _sprite := %AnimatedSprite2D
 @onready var _left_ray := %LeftRay
 @onready var _right_ray := %RightRay
+@onready var _body_collision: CollisionShape2D = %CollisionShape2D
+@onready var _hitbox: Area2D = %Hitbox
 
 
 func _set_speed(new_speed):
@@ -40,6 +52,14 @@ func _ready():
 
 
 func _physics_process(delta):
+	print(velocity)
+	if defeated:
+		velocity.y += gravity * delta
+		move_and_slide()
+		if not on_screen:
+			queue_free()
+		return
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -78,5 +98,21 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 		player_loses_life = false
 		queue_free()
 
-func defeat() -> void:
-	queue_free()
+func defeat(sign: int = 0) -> void:
+	_hitbox.monitorable = false
+	_hitbox.monitoring = false
+	_hitbox.queue_free()
+	_body_collision.disabled = true
+	_sprite.stop()
+	_sprite.flip_v = true
+	if sign != 0:
+		velocity.x = abs(velocity.x) * sign
+	velocity.x *= defeated_x_velocity_multiplier
+	velocity.y = -defeated_y_velocity
+	defeated = true
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	on_screen = false
+
+func _on_visible_on_screen_notifier_2d_screen_entered() -> void:
+	on_screen = true

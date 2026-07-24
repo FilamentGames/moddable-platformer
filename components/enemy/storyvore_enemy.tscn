@@ -86,10 +86,12 @@ position = Vector2(37, -3)
 collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=345687420]
+unique_name_in_owner = true
 position = Vector2(0, -39)
 shape = SubResource("RectangleShape2D_kii40")
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=1154744414]
+unique_name_in_owner = true
 position = Vector2(0, -106)
 collision_mask = 17
 
@@ -97,5 +99,11 @@ collision_mask = 17
 position = Vector2(0, 58.5)
 shape = SubResource("RectangleShape2D_cepcq")
 
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1645128820]
+position = Vector2(0, -108)
+rect = Rect2(-50, 10, 100, 110)
+
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

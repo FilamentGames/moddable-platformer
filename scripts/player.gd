@@ -286,7 +286,7 @@ func _attack():
 		_attack_hitbox.monitorable = true
 		for target in attack_hitbox_targets:
 			## Defeat all enemies immediately on the start of the attack so it feels responsive.
-			target.defeat()
+			target.defeat(sign(target.position.x - position.x))
 		attack_hitbox_targets.clear()
 		await _sprite.animation_finished
 		_attack_hitbox.visible = false
