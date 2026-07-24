@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://tmaf5o7nhdpv"]
+
+[ext_resource type="Script" uid="uid://i044gnc0bp00" path="res://components/hud/coin_counter.gd" id="1_l7dye"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ndr5k"]
+font_size = 64
+
+[node name="CoinCounter" type="Control" unique_id=1965422703 node_paths=PackedStringArray("coin_count_label")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1651.0
+offset_bottom = -976.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+script = ExtResource("1_l7dye")
+coin_count_label = NodePath("HBoxContainer/CoinAmountLabel")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=397092347]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="HBoxContainer" unique_id=209224941]
+layout_mode = 2
+text = "Coins:"
+label_settings = SubResource("LabelSettings_ndr5k")
+
+[node name="Spacer" type="Control" parent="HBoxContainer" unique_id=1303647354]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="CoinAmountLabel" type="Label" parent="HBoxContainer" unique_id=364726709]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_ndr5k")

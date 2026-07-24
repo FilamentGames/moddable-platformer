@@ -41,6 +41,9 @@ func _capture(message: String, data: Array) -> bool:
 			"reply_get_number_of_scrolls":
 				recipient.scroll_quantity.emit(data[0])
 				return true
+			"reply_get_global_coins":
+				recipient.global_coins.emit(data[0])
+				return true
 	return false
 
 func _handle_global_messages(message: String, data: Array) -> bool:

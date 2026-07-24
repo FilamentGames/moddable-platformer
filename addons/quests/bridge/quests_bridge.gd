@@ -6,6 +6,9 @@ class_name BabyGodotQuestsBridge
 
 const prefix = "baby_godot"
 
+## Contains a list of object IDs that have been collected, to remove at the end of the session to avoid making a lot of editor changes all at once.
+var _collected_objects: Array[String] = []
+
 func _has_capture(capture):
 	return capture == prefix
 
@@ -67,14 +70,27 @@ func _capture(message, data, session_id):
 		"update_editable_objects":
 			GlobalQuests.quests.update_editable_objects(data[1], data[2])
 			return true
+		"collect_coin":
+			GlobalQuests.quests.collect_coin()
+			_collected_objects.append(data[1])
+			return true
+		"get_global_coins":
+			_send_message(session_id, sender_id, "reply_get_global_coins", [GlobalQuests.quests.global_coins])
+			return true
 	return false
 
 func _setup_session(session_id):
 	var session = get_session(session_id)
 	session.started.connect(func (): print("Quest bridge started"))
 	session.stopped.connect(_on_session_stop)
+	GlobalQuests.quests.scroll_collected.connect(_on_scroll_collected.bind(session_id))
+
+func _on_scroll_collected(session_id: int) -> void:
+	_send_message(session_id, -1, "scrolls_updated", [GlobalQuests.quests.scrolls_collected.size()])
 
 func _on_session_stop() -> void:
 	print("Quest bridge stopped")
+	GlobalQuests.quests.delete_nodes_in_editor(_collected_objects, false)
+	_collected_objects.clear()
 	GlobalQuests.quests.update_player_position()
 	GlobalQuests.quests.register_mode_switch(BabyGodotQuests.EditorMode.EDIT)

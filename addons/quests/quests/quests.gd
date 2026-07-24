@@ -28,7 +28,9 @@ signal scroll_collected()
 var editor_scene_provider
 
 ## The scrolls the player has collected in the game.
-var scrolls_collected: Array[String]
+var scrolls_collected: Array = []
+
+var global_coins: int = 0
 
 var _current_text_line := 0
 
@@ -39,6 +41,12 @@ var _lock_player_position := false
 
 ## The quest progress at the last saved checkpoint
 var _checkpoint_text_line := 0
+
+var _checkpoint_quest_progress: Dictionary = {
+	"text_line": 0,
+	"global_coins": 0,
+	"scrolls_collected": []
+}
 
 ## Get the current line of text of the quest
 func get_current_text() -> String:
@@ -79,11 +87,19 @@ func register_mode_switch(mode: EditorMode = EditorMode.PLAY) -> void:
 func save_checkpoint() -> void:
 	editor_scene_provider.save_editor_scene_as_checkpoint()
 	_lock_player_position = false
-	_checkpoint_text_line = _current_text_line
+	_checkpoint_quest_progress = {
+		"text_line": _current_text_line,
+		"global_coins": global_coins,
+		"scrolls_collected": scrolls_collected.duplicate()
+	}
 
 func load_checkpoint() -> void:
 	editor_scene_provider.set_editor_scene()
-	_current_text_line = _checkpoint_text_line
+	_current_text_line = _checkpoint_quest_progress["text_line"]
+	global_coins = _checkpoint_quest_progress["global_coins"]
+	scrolls_collected = _checkpoint_quest_progress["scrolls_collected"].duplicate()
+	print(scrolls_collected)
+	scroll_collected.emit()
 	text_updated.emit()
 
 func set_inspector_dock_visible(visible: bool) -> void:
@@ -129,7 +145,6 @@ func activate_level_checkpoint(checkpoint_id: String) -> void:
 		target_checkpoint.get_parent().add_child(npc)
 		npc.owner = scene
 		npc.position = target_checkpoint.position
-		editor_scene_provider.update_and_save_node(scene)
 		var player: Player = BabyGodotUtils.get_first_child_of_type(scene, Player)
 		if player:
 			_lock_player_position = true
@@ -139,20 +154,28 @@ func activate_level_checkpoint(checkpoint_id: String) -> void:
 		target_checkpoint.free()
 		save_checkpoint.call_deferred()
 
-func delete_node_in_editor(node_id: String) -> void:
+func delete_nodes_in_editor(node_ids: Array, save: bool = true) -> void:
 	var scene: Node2D = editor_scene_provider.get_editor_scene()
-	var node: Node = UniqueSceneId.find_by_id(scene, node_id)
-	if node:
-		node.get_parent().remove_child(node)
-		node.free()
+	for node_id in node_ids:
+		var node: Node = UniqueSceneId.find_by_id(scene, node_id)
+		if node:
+			node.get_parent().remove_child(node)
+			node.free()
+	if save:
+		print("Saving scene", node_ids)
 		editor_scene_provider.update_and_save_node(scene)
-	else:
-		print("Couldn't find node with id ", node_id)
+
+func delete_node_in_editor(node_id: String) -> void:
+	delete_nodes_in_editor([node_id])
+
+func collect_coin() -> void:
+	global_coins += 1
 
 ## Resets the player's quest progress. Mainly useful for dev tools.
 func reset_progress() -> void:
 	_current_text_line = 0
-	scrolls_collected = []
+	global_coins = 0
+	scrolls_collected.clear()
 	text_updated.emit()
 	scroll_collected.emit()
 

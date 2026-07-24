@@ -29,6 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://dmbiwxorfb4yn" path="res://assets/input-prompts/keyboard-and-mouse_sheet_default/mouse_left.tres" id="19_tcfrd"]
 [ext_resource type="Texture2D" uid="uid://wfff10c8t28p" path="res://assets/input-prompts/keyboard-and-mouse_sheet_default/keyboard_c.tres" id="20_qb75m"]
 [ext_resource type="Texture2D" uid="uid://f8qnyabq4s4e" path="res://assets/input-prompts/keyboard-and-mouse_sheet_default/keyboard_e.tres" id="21_x1wfm"]
+[ext_resource type="PackedScene" uid="uid://tmaf5o7nhdpv" path="res://components/hud/coin_counter.tscn" id="22_drihh"]
 
 [sub_resource type="Theme" id="Theme_0yvta"]
 default_font_size = 64
@@ -323,12 +324,20 @@ horizontal_alignment = 1
 
 [node name="CollectedCoins" type="Label" parent="." unique_id=1917130466]
 unique_name_in_owner = true
+visible = false
 offset_left = 64.0
 offset_top = 126.0
 offset_right = 306.0
 offset_bottom = 214.0
 theme_override_font_sizes/font_size = 64
 text = "Coins: 0"
+
+[node name="CoinCounter" parent="." unique_id=1965422703 instance=ExtResource("22_drihh")]
+offset_left = 64.0
+offset_top = 125.0
+offset_right = -1587.0
+offset_bottom = -851.0
+size_flags_vertical = 0
 
 [node name="TimeLeft" type="Label" parent="." unique_id=1539614223]
 unique_name_in_owner = true
@@ -350,7 +359,7 @@ offset_bottom = -944.0
 unique_name_in_owner = true
 offset_left = 60.0
 offset_top = 220.0
-offset_right = 124.0
+offset_right = 252.0
 offset_bottom = 284.0
 texture = ExtResource("2_yyptq")
 expand_mode = 1

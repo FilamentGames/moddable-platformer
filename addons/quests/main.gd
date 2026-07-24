@@ -10,6 +10,10 @@ var dock_scene: BabyGodotQuestDock
 ## Holds the instance of the quests bridge debugger plugin
 var bridge: BabyGodotQuestsBridge
 
+var save_timer: Timer
+
+var _save_queue: int = 0
+
 var checkpoints := CheckpointHelper.new()
 
 const global_message_service_name = "GlobalMessagingService"
@@ -38,8 +42,17 @@ func set_editor_scene() -> void:
 	checkpoints.set_editor_scene()
 
 func update_and_save_node(node: Node) -> void:
+	if not save_timer.is_stopped():
+		_save_queue += 1
+		return
+	save_timer.start()
 	EditorInterface.set_object_edited(node, true)
 	EditorInterface.save_scene()
+	while _save_queue > 0:
+		_save_queue -= 1
+		await save_timer.timeout
+		EditorInterface.save_scene()
+
 
 func set_inspector_dock_visible(visible: bool) -> void:
 	BabyGodotUtils.toggle_streamlined_exclusive_dock("get_inspector_dock", visible)
@@ -62,6 +75,11 @@ func set_current_edited_scene(path: String) -> void:
 	EditorInterface.open_scene_from_path(path)
 
 func _enter_tree() -> void:
+	save_timer = Timer.new()
+	save_timer.wait_time = 2
+	save_timer.one_shot = true
+	add_child(save_timer)
+
 	checkpoints.plugin = self
 
 	var quests: BabyGodotQuests = preload("res://addons/quests/quests/quests.tscn").instantiate()

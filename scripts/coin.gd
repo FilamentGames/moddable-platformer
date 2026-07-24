@@ -49,6 +49,9 @@ func _on_body_entered(_body):
 	# TODO: Add a "collected" animation that plays alongside the sound?
 	visible = false
 
+	# Baby Godot: Collect this coin permanently in the editor.
+	InGameQuestsBridge.collect_coin(self)
+
 	if _collect_sound_player:
 		_collect_sound_player.play()
 		await _collect_sound_player.finished

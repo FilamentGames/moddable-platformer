@@ -40,7 +40,6 @@ func _ready():
 	if Engine.is_editor_hint():
 		return
 
-	Global.coin_collected.connect(_on_coin_collected)
 	Global.game_ended.connect(_on_game_ended)
 	Global.timer_added.connect(_on_timer_added)
 
@@ -71,13 +70,6 @@ func _unhandled_input(event):
 		%Start.hide()
 		Global.game_started.emit()
 
-
-func _on_coin_collected():
-	set_collected_coins(Global.coins)
-
-
-func set_collected_coins(coins: int):
-	%CollectedCoins.text = "Coins: " + str(coins)
 
 
 func _on_timer_added():

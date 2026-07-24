@@ -49,6 +49,9 @@ func collect_scroll(scroll_id: String) -> void:
 func get_number_of_scrolls() -> void:
 	_send_message("get_number_of_scrolls")
 
+func get_global_coins() -> void:
+	_send_message("get_global_coins")
+
 ## Move text forward in the current quest.
 static func progress_quest(trigger_type: QuestLine.ProgressMethod = QuestLine.ProgressMethod.ScriptTrigger) -> void:
 	_send_message_static("progress_quest", [-1, trigger_type])
@@ -79,3 +82,6 @@ static func delete_node_in_editor(node: Node) -> void:
 
 static func update_editable_objects(to_add: Array, to_remove: Array) -> void:
 	_send_message_static("update_editable_objects", [-1, to_add, to_remove])
+
+static func collect_coin(coin: Node) -> void:
+	_send_message_static("collect_coin", [-1, UniqueSceneId.get_id(coin)])

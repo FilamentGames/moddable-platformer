@@ -14,3 +14,6 @@ signal all_nextbutton_quest_text(text: Array[String])
 
 ## Emitted when the debugger responds with the current number of scrolls
 signal scroll_quantity(quantity: int)
+
+## Emitted when the debugger responds with the current number of global coins
+signal global_coins(quantity: int)
