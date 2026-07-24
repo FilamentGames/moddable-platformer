@@ -55,7 +55,7 @@ color = Color(1, 1, 0, 1)
 unique_name_in_owner = true
 position = Vector2(0, -21)
 sprite_frames = ExtResource("2_pvtfm")
-animation = &"attack"
+animation = &"defeated"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1239802489]
@@ -98,6 +98,11 @@ stream = ExtResource("4_mpawu")
 unique_name_in_owner = true
 stream = SubResource("AudioStreamRandomizer_ph1f6")
 volume_db = -10.0
+
+[node name="DefeatedTimer" type="Timer" parent="." unique_id=1926521605]
+unique_name_in_owner = true
+wait_time = 1.5
+one_shot = true
 
 [connection signal="body_entered" from="AttackHitbox" to="." method="_on_attack_hitbox_body_entered"]
 [connection signal="body_exited" from="AttackHitbox" to="." method="_on_attack_hitbox_body_exited"]

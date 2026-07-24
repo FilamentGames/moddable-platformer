@@ -102,6 +102,12 @@ var attack_buffer_timer: float = 0
 
 ## List of enemies that the player would currently hit with their attack.
 var attack_hitbox_targets: Array[Node2D] = []
+
+## If the player has been defeated and we are watching their lifeless corpse. Er, I mean whimsical thread full of imagination.
+var defeated := false
+
+## If the global lives variable has been initialized. Since the game is programmed to "reset" the player whenever lives are adjusted, the code that initially sets the global lives to its default value (3) needs to not immediately kill the player.
+var global_lives_initialized := false
 #endregion
 
 #region References to other nodes and resources in the Player scene
@@ -114,6 +120,7 @@ var attack_hitbox_targets: Array[Node2D] = []
 @onready var _teleport_sfx: AudioStreamPlayer = %TeleportSFX
 
 @onready var _attack_hitbox: Area2D = %AttackHitbox
+@onready var _defeated_timer: Timer = %DefeatedTimer
 #endregion
 
 
@@ -141,6 +148,7 @@ func _ready():
 	else:
 		Global.gravity_changed.connect(_on_gravity_changed)
 		Global.lives_changed.connect(_on_lives_changed)
+		Global.checkpoint_activated.connect(_on_checkpoint_reached)
 		GlobalContinuityManager.register_player_object(self)
 
 	original_position = position
@@ -286,7 +294,7 @@ func _physics_process(delta):
 		return
 	
 	# Don't move if in some kind of cutscene, dialogue, etc.
-	if movement_locked or is_attacking:
+	if movement_locked or is_attacking or defeated:
 		return
 
 	# Remove the '#' below to enable the phase special ability
@@ -361,11 +369,21 @@ func _physics_process(delta):
 
 ## Restore the player to their initial position in the level. Called by _on_lives_changed.
 func reset():
+	if not global_lives_initialized:
+		global_lives_initialized = true
+		return
+	if _sprite.sprite_frames.has_animation("defeated"):
+		_sprite.play("defeated")
+		defeated = true
+		await _sprite.animation_finished
+		_defeated_timer.start()
+		await _defeated_timer.timeout
 	position = original_position
 	velocity = Vector2.ZERO
 	coyote_timer = 0
 	jump_buffer_timer = 0
 	double_jump_armed = false
+	defeated = false
 
 
 func _on_attack_hitbox_body_entered(body: Node2D) -> void:
@@ -375,3 +393,6 @@ func _on_attack_hitbox_body_entered(body: Node2D) -> void:
 
 func _on_attack_hitbox_body_exited(body: Node2D) -> void:
 	attack_hitbox_targets.erase(body)
+
+func _on_checkpoint_reached(pos: Vector2) -> void:
+	original_position = pos

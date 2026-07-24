@@ -24,6 +24,7 @@ func player_entered() -> void:
 	if not npc_prefab:
 		return
 	save_checkpoint.emit()
+	_trigger_global_checkpoint_activated_signal()
 	_spawn_npc()
 
 func _spawn_npc() -> void:
@@ -33,3 +34,9 @@ func _spawn_npc() -> void:
 
 func send_checkpoint_message() -> void:
 	InGameQuestsBridge.activate_level_checkpoint(UniqueSceneId.get_id(self))
+
+func _trigger_global_checkpoint_activated_signal() -> void:
+	var pos := position
+	if player_position_marker:
+		pos = player_position_marker.global_position
+	Global.checkpoint_activated.emit(pos)

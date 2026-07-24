@@ -13,6 +13,8 @@ signal gravity_changed(gravity: float)
 
 signal timer_added
 
+signal checkpoint_activated(position: Vector2)
+
 enum Endings { WIN, LOSE }
 enum Player { ONE, TWO, BOTH }
 

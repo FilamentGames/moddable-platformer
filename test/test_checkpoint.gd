@@ -36,3 +36,11 @@ func test_does_not_spawn_npc_if_npc_prefab_is_null() -> void:
 	assert_eq(spy.get_number_of_calls(), 0)
 	assert_true(checkpoint.is_queued_for_deletion())
 	assert_null(get_node_or_null("KnitWitch"))
+
+func test_fires_global_checkpoint_activated_signal_when_player_enters() -> void:
+	var spy: CallableSpy = autofree(CallableSpy.new())
+	Global.checkpoint_activated.connect(spy.callable)
+
+	checkpoint.player_entered()
+
+	assert_eq(spy.get_number_of_calls(), 1)
