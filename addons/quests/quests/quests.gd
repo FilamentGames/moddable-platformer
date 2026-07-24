@@ -98,7 +98,6 @@ func load_checkpoint() -> void:
 	_current_text_line = _checkpoint_quest_progress["text_line"]
 	global_coins = _checkpoint_quest_progress["global_coins"]
 	scrolls_collected = _checkpoint_quest_progress["scrolls_collected"].duplicate()
-	print(scrolls_collected)
 	scroll_collected.emit()
 	text_updated.emit()
 
@@ -162,7 +161,6 @@ func delete_nodes_in_editor(node_ids: Array, save: bool = true) -> void:
 			node.get_parent().remove_child(node)
 			node.free()
 	if save:
-		print("Saving scene", node_ids)
 		editor_scene_provider.update_and_save_node(scene)
 
 func delete_node_in_editor(node_id: String) -> void:
