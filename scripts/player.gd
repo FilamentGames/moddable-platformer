@@ -110,6 +110,8 @@ var defeated := false
 var global_lives_initialized := false
 #endregion
 
+static var last_checkpoint_position: Vector2 = Vector2.ZERO
+
 #region References to other nodes and resources in the Player scene
 @onready var _sprite: AnimatedSprite2D = %AnimatedSprite2D
 @onready var _initial_sprite_frames: SpriteFrames = %AnimatedSprite2D.sprite_frames
@@ -139,6 +141,7 @@ func _set_speed(new_speed):
 
 #endregion
 
+var bridge := InGameQuestsBridge.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -150,8 +153,14 @@ func _ready():
 		Global.lives_changed.connect(_on_lives_changed)
 		Global.checkpoint_activated.connect(_on_checkpoint_reached)
 		GlobalContinuityManager.register_player_object(self)
+		bridge.checkpoint_position.connect(_on_checkpoint_reached)
+		bridge.get_last_checkpoint_position()
+	
+	if last_checkpoint_position != Vector2.ZERO:
+		original_position = last_checkpoint_position
+	else:
+		original_position = position
 
-	original_position = position
 	_set_speed(speed)
 	_set_sprite_frames(sprite_frames)
 
@@ -390,9 +399,9 @@ func _on_attack_hitbox_body_entered(body: Node2D) -> void:
 	if body is Enemy:
 		attack_hitbox_targets.append(body)
 
-
 func _on_attack_hitbox_body_exited(body: Node2D) -> void:
 	attack_hitbox_targets.erase(body)
 
 func _on_checkpoint_reached(pos: Vector2) -> void:
 	original_position = pos
+	last_checkpoint_position = pos

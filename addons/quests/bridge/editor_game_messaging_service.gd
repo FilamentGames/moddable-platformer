@@ -44,6 +44,9 @@ func _capture(message: String, data: Array) -> bool:
 			"reply_get_global_coins":
 				recipient.global_coins.emit(data[0])
 				return true
+			"reply_get_last_checkpoint_position":
+				recipient.checkpoint_position.emit(data[0])
+				return true
 	return false
 
 func _handle_global_messages(message: String, data: Array) -> bool:

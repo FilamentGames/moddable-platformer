@@ -83,6 +83,9 @@ func _capture(message, data, session_id):
 		"get_global_coins":
 			_send_message(session_id, sender_id, "reply_get_global_coins", [GlobalQuests.quests.global_coins])
 			return true
+		"get_last_checkpoint_position":
+			_send_message(session_id, sender_id, "reply_get_last_checkpoint_position", [GlobalQuests.quests.get_last_checkpoint_position()])
+			return true
 	return false
 
 func _setup_session(session_id):

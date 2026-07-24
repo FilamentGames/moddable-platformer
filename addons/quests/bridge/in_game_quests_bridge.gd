@@ -52,6 +52,9 @@ func get_number_of_scrolls() -> void:
 func get_global_coins() -> void:
 	_send_message("get_global_coins")
 
+func get_last_checkpoint_position() -> void:
+	_send_message("get_last_checkpoint_position")
+
 ## Move text forward in the current quest.
 static func progress_quest(trigger_type: QuestLine.ProgressMethod = QuestLine.ProgressMethod.ScriptTrigger) -> void:
 	_send_message_static("progress_quest", [-1, trigger_type])

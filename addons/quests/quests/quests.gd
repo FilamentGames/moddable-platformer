@@ -45,7 +45,8 @@ var _checkpoint_text_line := 0
 var _checkpoint_quest_progress: Dictionary = {
 	"text_line": 0,
 	"global_coins": 0,
-	"scrolls_collected": []
+	"scrolls_collected": [],
+	"last_position": Vector2.ZERO
 }
 
 ## Get the current line of text of the quest
@@ -90,7 +91,8 @@ func save_checkpoint() -> void:
 	_checkpoint_quest_progress = {
 		"text_line": _current_text_line,
 		"global_coins": global_coins,
-		"scrolls_collected": scrolls_collected.duplicate()
+		"scrolls_collected": scrolls_collected.duplicate(),
+		"last_position": _checkpoint_quest_progress["last_position"]
 	}
 
 func load_checkpoint() -> void:
@@ -149,6 +151,7 @@ func activate_level_checkpoint(checkpoint_id: String) -> void:
 			_lock_player_position = true
 			_last_player_pos = player.get_parent().to_local(target_checkpoint.player_position_marker.global_position)
 			update_player_position()
+		_checkpoint_quest_progress["last_position"] = _last_player_pos
 		target_checkpoint.get_parent().remove_child(target_checkpoint)
 		target_checkpoint.free()
 		save_checkpoint.call_deferred()
@@ -206,3 +209,6 @@ func update_editable_objects(to_add: Array, to_remove: Array) -> void:
 		indicator.owner = scene
 	editor_scene_provider.update_and_save_node(scene)
 
+
+func get_last_checkpoint_position() -> Vector2:
+	return _checkpoint_quest_progress["last_position"]
