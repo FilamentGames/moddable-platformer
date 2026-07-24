@@ -98,9 +98,25 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "Open Level0 Clone"
 
+[node name="Spacer3" type="Control" parent="VBoxContainer/VBoxContainer" unique_id=984337318]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/VBoxContainer" unique_id=8806997]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer" unique_id=1747812078]
+layout_mode = 2
+text = "Auto-add player to clone's editable nodes: "
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/VBoxContainer/HBoxContainer" unique_id=423273325]
+layout_mode = 2
+
 [connection signal="pressed" from="VBoxContainer/QuestResetButton" to="." method="_click_button"]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/InspectorDockControls/HideButton" to="." method="_toggle_streamlined_exclusive_dock" binds= [&"get_inspector_dock", false]]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/InspectorDockControls/ShowButton" to="." method="_toggle_streamlined_exclusive_dock" binds= [&"get_inspector_dock", true]]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/SceneTreeDockControls/HideButton" to="." method="_toggle_streamlined_exclusive_dock" binds= [&"get_scene_tree_dock", false]]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/SceneTreeDockControls/ShowButton" to="." method="_toggle_streamlined_exclusive_dock" binds= [&"get_scene_tree_dock", true]]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/Button" to="." method="_open_level0_clone"]
+[connection signal="toggled" from="VBoxContainer/VBoxContainer/HBoxContainer/CheckBox" to="." method="_on_check_box_toggled"]

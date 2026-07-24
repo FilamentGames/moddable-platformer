@@ -3,6 +3,9 @@ extends Label
 class_name MasterCopyIndicator
 ## A control displayed in the editor UI
 
+## A dev tools setting that adds the Player to the editable nodes list on clones automatically. This is useful for quickly testing changes to the player, while not actually saving the changes to the master copy.
+static var add_player_to_editable_nodes := false
+
 ## Used for not getting stuck in an endless loop when re-saving the master copy.
 var _locked := false
 
@@ -66,6 +69,10 @@ static func _add_editable_node_list_to_scene(scene: PackedScene) -> PackedScene:
 static func _lock_uneditable_nodes(scene: PackedScene) -> PackedScene:
 	return _edit_scene(scene, func(root: Node):
 		var editable_node_list := root.get_node_or_null("EditableNodeList")
+		if MasterCopyIndicator.add_player_to_editable_nodes:
+			var player: Node = BabyGodotUtils.get_first_child_of_type(root, Player)
+			if player:
+				editable_node_list.nodes.push_back(player)
 		if editable_node_list and not editable_node_list.nodes.is_empty():
 			## Lock all children by default
 			var flat_children := root.find_children("*", "", true, false)

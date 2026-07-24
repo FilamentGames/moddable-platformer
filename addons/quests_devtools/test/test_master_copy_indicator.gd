@@ -150,3 +150,29 @@ func test_it_adds_editable_object_indicator_to_nodes_in_editable_node_list():
 	assert_not_null(clone_copy.get_node_or_null("Node2D").get_node_or_null("EditableObjectIndicator"))
 
 	clone_copy.free()
+
+func test_it_adds_player_to_editable_nodes_if_add_player_to_editable_nodes_is_true():
+	MasterCopyIndicator.add_player_to_editable_nodes = true
+
+	var scene: Node = autofree(Node.new())
+	var child1: Node2D = autofree(Node2D.new())
+	child1.name = "Node2D"
+	scene.add_child(child1)
+	child1.owner = scene
+	var editable_node_list: EditableNodeList = autofree(EditableNodeList.new())
+	editable_node_list.name = "EditableNodeList"
+	editable_node_list.nodes = [child1]
+	scene.add_child(editable_node_list)
+	editable_node_list.owner = scene
+	var player: Player = autofree(Player.new())
+	player.name = "Player"
+	scene.add_child(player)
+	player.owner = scene
+
+	var packed_scene: PackedScene = autofree(PackedScene.new())
+	packed_scene.pack(scene)
+	var clone_copy: Node = autofree(MasterCopyIndicator._lock_uneditable_nodes(packed_scene).instantiate())
+
+	assert_not_null(clone_copy.get_node_or_null("Player"))
+
+	clone_copy.free()
