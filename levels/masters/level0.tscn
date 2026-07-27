@@ -661,9 +661,10 @@ position = Vector2(0, -75)
 [node name="Boss" type="Node2D" parent="." unique_id=2087395625]
 
 [node name="Moth" type="Node2D" parent="Boss" unique_id=1891005358 node_paths=PackedStringArray("sprite") instance=ExtResource("27_x2f4c")]
-position = Vector2(12359, -393)
+position = Vector2(12342, -474)
+scale = Vector2(2, 2)
 script = ExtResource("44_ht26h")
-radius = 250.0
+radius = 125.0
 rotation_speed = 0.9
 sprite = NodePath("AnimatedSprite2D")
 

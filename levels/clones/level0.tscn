@@ -130,7 +130,7 @@ position = Vector2(4217, 318)
 collision_layer = 4
 collision_mask = 0
 
-[node name="EditableObjectIndicator" type="Node2D" parent="RockPile" unique_id=629827920]
+[node name="EditableObjectIndicator" type="Node2D" parent="RockPile" unique_id=312269149]
 script = ExtResource("12_hol33")
 metadata/_edit_lock_ = true
 
@@ -757,9 +757,10 @@ metadata/_edit_lock_ = true
 metadata/_edit_lock_ = true
 
 [node name="Moth" type="Node2D" parent="Boss" unique_id=1891005358 node_paths=PackedStringArray("sprite") instance=ExtResource("43_idhmd")]
-position = Vector2(12359, -393)
+position = Vector2(12342, -474)
+scale = Vector2(2, 2)
 script = ExtResource("44_j702k")
-radius = 250.0
+radius = 125.0
 rotation_speed = 0.9
 sprite = NodePath("AnimatedSprite2D")
 metadata/_edit_lock_ = true
