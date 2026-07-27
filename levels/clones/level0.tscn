@@ -130,7 +130,7 @@ position = Vector2(4217, 318)
 collision_layer = 4
 collision_mask = 0
 
-[node name="EditableObjectIndicator" type="Node2D" parent="RockPile" unique_id=312269149]
+[node name="EditableObjectIndicator" type="Node2D" parent="RockPile" unique_id=1223365522]
 script = ExtResource("12_hol33")
 metadata/_edit_lock_ = true
 
@@ -245,7 +245,7 @@ add_objects = [NodePath("../../../TileMapLayer")]
 metadata/_edit_lock_ = true
 
 [node name="DemoEndTrigger" type="Area2D" parent="Triggers" unique_id=1681964514 node_paths=PackedStringArray("behavior") instance=ExtResource("52_j702k")]
-position = Vector2(12406, -623)
+position = Vector2(12306, -623)
 collision_layer = 0
 script = ExtResource("22_2d8dw")
 behavior = NodePath("DemoEndBehavior")
@@ -552,7 +552,24 @@ script = ExtResource("36_4p881")
 width = 2
 metadata/_edit_lock_ = true
 
-[node name="Platform6" type="Node2D" parent="Platforms" unique_id=1439632278 instance=ExtResource("35_235oo")]
+[node name="Platform13" type="Node2D" parent="Platforms" unique_id=1439632278 instance=ExtResource("35_235oo")]
+position = Vector2(9940, -418)
+script = ExtResource("36_4p881")
+metadata/_edit_lock_ = true
+
+[node name="Platform14" type="Node2D" parent="Platforms" unique_id=280812879 instance=ExtResource("35_235oo")]
+position = Vector2(9558, -741)
+script = ExtResource("36_4p881")
+width = 2
+metadata/_edit_lock_ = true
+
+[node name="Platform15" type="Node2D" parent="Platforms" unique_id=33328334 instance=ExtResource("35_235oo")]
+position = Vector2(10160, -913)
+script = ExtResource("36_4p881")
+width = 2
+metadata/_edit_lock_ = true
+
+[node name="Platform6" type="Node2D" parent="Platforms" unique_id=2037173473 instance=ExtResource("35_235oo")]
 position = Vector2(4051, -109)
 script = ExtResource("36_4p881")
 width = 2
@@ -808,6 +825,36 @@ metadata/_edit_lock_ = true
 
 [node name="Enemy3" type="CharacterBody2D" parent="Enemies" unique_id=1452245350 instance=ExtResource("47_57xpr")]
 position = Vector2(8368, 960)
+collision_layer = 8
+collision_mask = 4
+floor_constant_speed = true
+floor_snap_length = 32.0
+script = ExtResource("48_v371g")
+squashable = false
+metadata/_edit_lock_ = true
+
+[node name="Enemy4" type="CharacterBody2D" parent="Enemies" unique_id=834529607 instance=ExtResource("47_57xpr")]
+position = Vector2(11861, -574)
+collision_layer = 8
+collision_mask = 4
+floor_constant_speed = true
+floor_snap_length = 32.0
+script = ExtResource("48_v371g")
+squashable = false
+metadata/_edit_lock_ = true
+
+[node name="Enemy5" type="CharacterBody2D" parent="Enemies" unique_id=1307871349 instance=ExtResource("47_57xpr")]
+position = Vector2(11475, -902)
+collision_layer = 8
+collision_mask = 4
+floor_constant_speed = true
+floor_snap_length = 32.0
+script = ExtResource("48_v371g")
+squashable = false
+metadata/_edit_lock_ = true
+
+[node name="Enemy6" type="CharacterBody2D" parent="Enemies" unique_id=2135558886 instance=ExtResource("47_57xpr")]
+position = Vector2(12703, -147)
 collision_layer = 8
 collision_mask = 4
 floor_constant_speed = true

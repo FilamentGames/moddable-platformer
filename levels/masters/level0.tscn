@@ -219,7 +219,7 @@ script = ExtResource("23_8knqs")
 add_objects = [NodePath("../../../TileMapLayer")]
 
 [node name="DemoEndTrigger" type="Area2D" parent="Triggers" unique_id=1681964514 node_paths=PackedStringArray("behavior") instance=ExtResource("32_t64e8")]
-position = Vector2(12406, -623)
+position = Vector2(12306, -623)
 collision_layer = 0
 script = ExtResource("14_0bbcg")
 behavior = NodePath("DemoEndBehavior")
@@ -487,7 +487,21 @@ position = Vector2(5232, 320)
 script = ExtResource("24_twxhk")
 width = 2
 
-[node name="Platform6" type="Node2D" parent="Platforms" unique_id=1439632278 instance=ExtResource("10_cs3j8")]
+[node name="Platform13" type="Node2D" parent="Platforms" unique_id=1439632278 instance=ExtResource("10_cs3j8")]
+position = Vector2(9940, -418)
+script = ExtResource("24_twxhk")
+
+[node name="Platform14" type="Node2D" parent="Platforms" unique_id=280812879 instance=ExtResource("10_cs3j8")]
+position = Vector2(9558, -741)
+script = ExtResource("24_twxhk")
+width = 2
+
+[node name="Platform15" type="Node2D" parent="Platforms" unique_id=33328334 instance=ExtResource("10_cs3j8")]
+position = Vector2(10160, -913)
+script = ExtResource("24_twxhk")
+width = 2
+
+[node name="Platform6" type="Node2D" parent="Platforms" unique_id=2037173473 instance=ExtResource("10_cs3j8")]
 position = Vector2(4051, -109)
 script = ExtResource("24_twxhk")
 width = 2
@@ -706,6 +720,33 @@ squashable = false
 
 [node name="Enemy3" type="CharacterBody2D" parent="Enemies" unique_id=1452245350 instance=ExtResource("17_d6rl2")]
 position = Vector2(8368, 960)
+collision_layer = 8
+collision_mask = 4
+floor_constant_speed = true
+floor_snap_length = 32.0
+script = ExtResource("33_7cn4d")
+squashable = false
+
+[node name="Enemy4" type="CharacterBody2D" parent="Enemies" unique_id=834529607 instance=ExtResource("17_d6rl2")]
+position = Vector2(11861, -574)
+collision_layer = 8
+collision_mask = 4
+floor_constant_speed = true
+floor_snap_length = 32.0
+script = ExtResource("33_7cn4d")
+squashable = false
+
+[node name="Enemy5" type="CharacterBody2D" parent="Enemies" unique_id=1307871349 instance=ExtResource("17_d6rl2")]
+position = Vector2(11475, -902)
+collision_layer = 8
+collision_mask = 4
+floor_constant_speed = true
+floor_snap_length = 32.0
+script = ExtResource("33_7cn4d")
+squashable = false
+
+[node name="Enemy6" type="CharacterBody2D" parent="Enemies" unique_id=2135558886 instance=ExtResource("17_d6rl2")]
+position = Vector2(12703, -147)
 collision_layer = 8
 collision_mask = 4
 floor_constant_speed = true
