@@ -38,16 +38,17 @@
 [ext_resource type="Script" uid="uid://xvbi04ffe5e1" path="res://components/babygodot/trigger/change_editable_objects_trigger/change_editable_objects_trigger_behavior.gd" id="23_8knqs"]
 [ext_resource type="PackedScene" uid="uid://bk3nplruhw7kp" path="res://components/babygodot/scroll_gate/scroll_gate.tscn" id="24_obko3"]
 [ext_resource type="Script" uid="uid://dilh5jyuklov6" path="res://components/platform/platform.gd" id="24_twxhk"]
-[ext_resource type="SpriteFrames" uid="uid://m8cs3hs65s7t" path="res://assets/npcs/mothsache.tres" id="25_58r63"]
 [ext_resource type="SpriteFrames" uid="uid://dqgithrm1ikyn" path="res://assets/npcs/sheep.tres" id="25_pj073"]
 [ext_resource type="Script" uid="uid://bknjyyvfw422p" path="res://components/babygodot/editor_powerup/common/editor_powerup.gd" id="26_1tk8l"]
 [ext_resource type="Script" uid="uid://cvs42517jpxhh" path="res://components/sign/sign.gd" id="26_ht26h"]
 [ext_resource type="PackedScene" uid="uid://1r6h0ihjbc77" path="res://components/babygodot/checkpoint/checkpoint.tscn" id="27_dt6hy"]
+[ext_resource type="PackedScene" uid="uid://10andtcysmr4" path="res://components/babygodot/demo/boss/boss.tscn" id="27_x2f4c"]
 [ext_resource type="Script" uid="uid://umb21eb2y1oj" path="res://scripts/player.gd" id="28_kexs0"]
 [ext_resource type="Script" uid="uid://bi5370kgl6xcs" path="res://scripts/hud.gd" id="31_weabp"]
 [ext_resource type="Script" uid="uid://d003tgo4vrak8" path="res://components/enemy/enemy.gd" id="33_7cn4d"]
 [ext_resource type="Script" uid="uid://ctlotfccvl4jn" path="res://scripts/flag.gd" id="35_fnu5h"]
 [ext_resource type="SpriteFrames" uid="uid://b3orjhfv6eeud" path="res://components/flag/flag-spriteframes-green.tres" id="36_jf12t"]
+[ext_resource type="Script" uid="uid://cuiy5ce0t0uf2" path="res://components/babygodot/demo/boss/boss.gd" id="44_ht26h"]
 [ext_resource type="Script" uid="uid://b532d25pht7ub" path="res://components/babygodot/checkpoint/checkpoint.gd" id="45_2d4sf"]
 [ext_resource type="PackedScene" uid="uid://il08cnnaosyi" path="res://components/babygodot/checkpoint/checkpoint_npc.tscn" id="46_8knqs"]
 
@@ -56,15 +57,15 @@ default_font_size = 64
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rpdqf"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_twxhk"]
-resource_local_to_scene = true
-size = Vector2(94, 258)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ht26h"]
 resource_local_to_scene = true
 size = Vector2(94, 258)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kexs0"]
+resource_local_to_scene = true
+size = Vector2(94, 258)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_weabp"]
 resource_local_to_scene = true
 size = Vector2(94, 258)
 
@@ -182,7 +183,7 @@ behavior = NodePath("Behavior")
 delete_from_scene = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_twxhk")
+shape = SubResource("RectangleShape2D_ht26h")
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
 script = ExtResource("23_8knqs")
@@ -196,7 +197,7 @@ behavior = NodePath("Behavior")
 delete_from_scene = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_ht26h")
+shape = SubResource("RectangleShape2D_kexs0")
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
 script = ExtResource("23_8knqs")
@@ -210,7 +211,7 @@ behavior = NodePath("Behavior")
 delete_from_scene = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_kexs0")
+shape = SubResource("RectangleShape2D_weabp")
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
 script = ExtResource("23_8knqs")
@@ -650,36 +651,14 @@ shape = SubResource("RectangleShape2D_0ff8d")
 visible = false
 position = Vector2(0, -75)
 
-[node name="Npc_Mothsache" parent="NPCs" unique_id=751537281 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container", "control_display") instance=ExtResource("3_27os8")]
-position = Vector2(12540, -487)
-scale = Vector2(-4, 4)
-script = ExtResource("16_8knqs")
-dialogue_lines = Array[String](["The void has come to Threadbare. Are you the one to save us?"])
-flip_to_face_player = true
+[node name="Boss" type="Node2D" parent="." unique_id=2087395625]
+
+[node name="Moth" type="Node2D" parent="Boss" unique_id=1891005358 node_paths=PackedStringArray("sprite") instance=ExtResource("27_x2f4c")]
+position = Vector2(12359, -393)
+script = ExtResource("44_ht26h")
+radius = 250.0
+rotation_speed = 0.9
 sprite = NodePath("AnimatedSprite2D")
-player_detector = NodePath("Area2D")
-dialogue_container = NodePath("DialogueMount")
-control_display = NodePath("ControlDisplay")
-
-[node name="AnimatedSprite2D" parent="NPCs/Npc_Mothsache" index="0" unique_id=1376270546]
-sprite_frames = ExtResource("25_58r63")
-autoplay = "default"
-
-[node name="DialogueMount" parent="NPCs/Npc_Mothsache" index="1" unique_id=1542232851]
-position = Vector2(0, -250)
-
-[node name="Area2D" parent="NPCs/Npc_Mothsache" index="2" unique_id=18542653]
-collision_layer = 0
-
-[node name="CollisionShape2D" parent="NPCs/Npc_Mothsache/Area2D" index="0" unique_id=226621961]
-visible = false
-position = Vector2(0, -6.5)
-scale = Vector2(0.5599989, 1)
-shape = SubResource("RectangleShape2D_0ff8d")
-
-[node name="ControlDisplay" parent="NPCs/Npc_Mothsache" index="3" unique_id=1300373774]
-visible = false
-position = Vector2(0, -75)
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=1041196418 groups=["players"] instance=ExtResource("14_su4jx")]
 position = Vector2(192, 633)
@@ -770,12 +749,9 @@ script = ExtResource("31_weabp")
 [connection signal="body_exited" from="NPCs/Npc_MonkFlavor/Area2D" to="NPCs/Npc_MonkFlavor" method="_player_exited"]
 [connection signal="body_entered" from="NPCs/Npc_Sheep/Area2D" to="NPCs/Npc_Sheep" method="_player_entered"]
 [connection signal="body_exited" from="NPCs/Npc_Sheep/Area2D" to="NPCs/Npc_Sheep" method="_player_exited"]
-[connection signal="body_entered" from="NPCs/Npc_Mothsache/Area2D" to="NPCs/Npc_Mothsache" method="_player_entered"]
-[connection signal="body_exited" from="NPCs/Npc_Mothsache/Area2D" to="NPCs/Npc_Mothsache" method="_player_exited"]
 
 [editable path="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle"]
 [editable path="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle"]
 [editable path="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle"]
 [editable path="NPCs/Npc_MonkFlavor"]
 [editable path="NPCs/Npc_Sheep"]
-[editable path="NPCs/Npc_Mothsache"]

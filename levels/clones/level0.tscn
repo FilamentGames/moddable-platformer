@@ -42,8 +42,9 @@
 [ext_resource type="Script" uid="uid://n1rnbm4rnt0t" path="res://components/babygodot/npc/npc.gd" id="40_c5fri"]
 [ext_resource type="SpriteFrames" uid="uid://dj4io3kb4d2uc" path="res://assets/npcs/monk.tres" id="41_sj77e"]
 [ext_resource type="SpriteFrames" uid="uid://dqgithrm1ikyn" path="res://assets/npcs/sheep.tres" id="42_0v71i"]
-[ext_resource type="SpriteFrames" uid="uid://m8cs3hs65s7t" path="res://assets/npcs/mothsache.tres" id="43_tkbxy"]
+[ext_resource type="PackedScene" uid="uid://10andtcysmr4" path="res://components/babygodot/demo/boss/boss.tscn" id="43_idhmd"]
 [ext_resource type="PackedScene" uid="uid://8st4scqt06l8" path="res://components/player/player.tscn" id="44_fw5q1"]
+[ext_resource type="Script" uid="uid://cuiy5ce0t0uf2" path="res://components/babygodot/demo/boss/boss.gd" id="44_j702k"]
 [ext_resource type="Script" uid="uid://umb21eb2y1oj" path="res://scripts/player.gd" id="45_ucnsv"]
 [ext_resource type="SpriteFrames" uid="uid://de74lrhqf0xoa" path="res://components/player/spriteframes-storyweaver.tres" id="46_qyp0h"]
 [ext_resource type="PackedScene" uid="uid://dbaal2g7b8ub0" path="res://components/enemy/storyvore_enemy.tscn" id="47_57xpr"]
@@ -56,15 +57,15 @@ default_font_size = 64
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rpdqf"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_spn1q"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_idhmd"]
 resource_local_to_scene = true
 size = Vector2(94, 258)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pf0lh"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j702k"]
 resource_local_to_scene = true
 size = Vector2(94, 258)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uq3f1"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sh2wx"]
 resource_local_to_scene = true
 size = Vector2(94, 258)
 
@@ -128,7 +129,7 @@ position = Vector2(4217, 318)
 collision_layer = 4
 collision_mask = 0
 
-[node name="EditableObjectIndicator" type="Node2D" parent="RockPile" unique_id=1081660601]
+[node name="EditableObjectIndicator" type="Node2D" parent="RockPile" unique_id=1196868096]
 script = ExtResource("12_hol33")
 metadata/_edit_lock_ = true
 
@@ -200,7 +201,7 @@ delete_from_scene = true
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_spn1q")
+shape = SubResource("RectangleShape2D_idhmd")
 metadata/_edit_lock_ = true
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
@@ -217,7 +218,7 @@ delete_from_scene = true
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_pf0lh")
+shape = SubResource("RectangleShape2D_j702k")
 metadata/_edit_lock_ = true
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
@@ -234,7 +235,7 @@ delete_from_scene = true
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_uq3f1")
+shape = SubResource("RectangleShape2D_sh2wx")
 metadata/_edit_lock_ = true
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
@@ -744,41 +745,15 @@ visible = false
 position = Vector2(0, -75)
 metadata/_edit_lock_ = true
 
-[node name="Npc_Mothsache" parent="NPCs" unique_id=751537281 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container", "control_display") instance=ExtResource("39_10g7q")]
-position = Vector2(12540, -487)
-scale = Vector2(-4, 4)
-script = ExtResource("40_c5fri")
-dialogue_lines = Array[String](["The void has come to Threadbare. Are you the one to save us?"])
-flip_to_face_player = true
+[node name="Boss" type="Node2D" parent="." unique_id=2087395625]
+metadata/_edit_lock_ = true
+
+[node name="Moth" type="Node2D" parent="Boss" unique_id=1891005358 node_paths=PackedStringArray("sprite") instance=ExtResource("43_idhmd")]
+position = Vector2(12359, -393)
+script = ExtResource("44_j702k")
+radius = 250.0
+rotation_speed = 0.9
 sprite = NodePath("AnimatedSprite2D")
-player_detector = NodePath("Area2D")
-dialogue_container = NodePath("DialogueMount")
-control_display = NodePath("ControlDisplay")
-metadata/_edit_lock_ = true
-
-[node name="AnimatedSprite2D" parent="NPCs/Npc_Mothsache" index="0" unique_id=1376270546]
-sprite_frames = ExtResource("43_tkbxy")
-autoplay = "default"
-metadata/_edit_lock_ = true
-
-[node name="DialogueMount" parent="NPCs/Npc_Mothsache" index="1" unique_id=1542232851]
-position = Vector2(0, -250)
-metadata/_edit_lock_ = true
-
-[node name="Area2D" parent="NPCs/Npc_Mothsache" index="2" unique_id=18542653]
-collision_layer = 0
-metadata/_edit_lock_ = true
-
-[node name="CollisionShape2D" parent="NPCs/Npc_Mothsache/Area2D" index="0" unique_id=226621961]
-visible = false
-position = Vector2(0, -6.5)
-scale = Vector2(0.5599989, 1)
-shape = SubResource("RectangleShape2D_0ff8d")
-metadata/_edit_lock_ = true
-
-[node name="ControlDisplay" parent="NPCs/Npc_Mothsache" index="3" unique_id=1300373774]
-visible = false
-position = Vector2(0, -75)
 metadata/_edit_lock_ = true
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=1041196418 groups=["players"] instance=ExtResource("44_fw5q1")]
@@ -877,12 +852,9 @@ metadata/_edit_lock_ = true
 [connection signal="body_exited" from="NPCs/Npc_MonkFlavor/Area2D" to="NPCs/Npc_MonkFlavor" method="_player_exited"]
 [connection signal="body_entered" from="NPCs/Npc_Sheep/Area2D" to="NPCs/Npc_Sheep" method="_player_entered"]
 [connection signal="body_exited" from="NPCs/Npc_Sheep/Area2D" to="NPCs/Npc_Sheep" method="_player_exited"]
-[connection signal="body_entered" from="NPCs/Npc_Mothsache/Area2D" to="NPCs/Npc_Mothsache" method="_player_entered"]
-[connection signal="body_exited" from="NPCs/Npc_Mothsache/Area2D" to="NPCs/Npc_Mothsache" method="_player_exited"]
 
 [editable path="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle"]
 [editable path="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle"]
 [editable path="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle"]
 [editable path="NPCs/Npc_MonkFlavor"]
 [editable path="NPCs/Npc_Sheep"]
-[editable path="NPCs/Npc_Mothsache"]

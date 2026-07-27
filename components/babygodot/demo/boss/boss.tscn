@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://10andtcysmr4"]
+
+[ext_resource type="Script" uid="uid://cuiy5ce0t0uf2" path="res://components/babygodot/demo/boss/boss.gd" id="1_avqro"]
+[ext_resource type="SpriteFrames" uid="uid://m8cs3hs65s7t" path="res://assets/npcs/mothsache.tres" id="1_n8vhm"]
+
+[node name="Boss" type="Node2D" unique_id=1891005358 node_paths=PackedStringArray("sprite")]
+script = ExtResource("1_avqro")
+sprite = NodePath("AnimatedSprite2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=419272532]
+texture_filter = 1
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("1_n8vhm")
+autoplay = "default"
+flip_h = true
