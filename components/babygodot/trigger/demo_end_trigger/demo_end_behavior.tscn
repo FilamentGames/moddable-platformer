@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://8vlw35v0dnpd"]
+
+[ext_resource type="Script" uid="uid://ct58m2yks7kgr" path="res://components/babygodot/trigger/demo_end_trigger/demo_end_behavior.gd" id="1_w3kb6"]
+[ext_resource type="PackedScene" uid="uid://b0fpy8ifin13q" path="res://components/babygodot/demo/endscreen/endscreen.tscn" id="2_duakp"]
+
+[node name="DemoEndBehavior" type="Node" unique_id=1425905677]
+script = ExtResource("1_w3kb6")
+end_screen = ExtResource("2_duakp")

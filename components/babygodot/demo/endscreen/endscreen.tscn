@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://b0fpy8ifin13q"]
+
+[ext_resource type="Script" uid="uid://cfrdtmxhkgv68" path="res://components/babygodot/demo/endscreen/endscreen.gd" id="1_pp150"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hmpfs"]
+font_size = 48
+
+[node name="Endscreen" type="CanvasLayer" unique_id=1140046617 node_paths=PackedStringArray("panel")]
+layer = 10
+script = ExtResource("1_pp150")
+panel = NodePath("Panel")
+
+[node name="Panel" type="ColorRect" parent="." unique_id=1363818002]
+z_index = 50
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="Panel" unique_id=1498853265]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.5
+offset_top = -11.5
+offset_right = 70.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "To Be Continued..."
+label_settings = SubResource("LabelSettings_hmpfs")

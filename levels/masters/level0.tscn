@@ -45,6 +45,7 @@
 [ext_resource type="PackedScene" uid="uid://10andtcysmr4" path="res://components/babygodot/demo/boss/boss.tscn" id="27_x2f4c"]
 [ext_resource type="Script" uid="uid://umb21eb2y1oj" path="res://scripts/player.gd" id="28_kexs0"]
 [ext_resource type="Script" uid="uid://bi5370kgl6xcs" path="res://scripts/hud.gd" id="31_weabp"]
+[ext_resource type="PackedScene" uid="uid://che3aoxmyk8m7" path="res://components/babygodot/trigger/demo_end_trigger/demo_end_trigger.tscn" id="32_t64e8"]
 [ext_resource type="Script" uid="uid://d003tgo4vrak8" path="res://components/enemy/enemy.gd" id="33_7cn4d"]
 [ext_resource type="Script" uid="uid://ctlotfccvl4jn" path="res://scripts/flag.gd" id="35_fnu5h"]
 [ext_resource type="SpriteFrames" uid="uid://b3orjhfv6eeud" path="res://components/flag/flag-spriteframes-green.tres" id="36_jf12t"]
@@ -57,15 +58,15 @@ default_font_size = 64
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rpdqf"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ht26h"]
-resource_local_to_scene = true
-size = Vector2(94, 258)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kexs0"]
 resource_local_to_scene = true
 size = Vector2(94, 258)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_weabp"]
+resource_local_to_scene = true
+size = Vector2(94, 258)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7cn4d"]
 resource_local_to_scene = true
 size = Vector2(94, 258)
 
@@ -183,7 +184,7 @@ behavior = NodePath("Behavior")
 delete_from_scene = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_ht26h")
+shape = SubResource("RectangleShape2D_kexs0")
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
 script = ExtResource("23_8knqs")
@@ -197,7 +198,7 @@ behavior = NodePath("Behavior")
 delete_from_scene = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_kexs0")
+shape = SubResource("RectangleShape2D_weabp")
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
 script = ExtResource("23_8knqs")
@@ -211,11 +212,17 @@ behavior = NodePath("Behavior")
 delete_from_scene = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_weabp")
+shape = SubResource("RectangleShape2D_7cn4d")
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
 script = ExtResource("23_8knqs")
 add_objects = [NodePath("../../../TileMapLayer")]
+
+[node name="DemoEndTrigger" type="Area2D" parent="Triggers" unique_id=1681964514 node_paths=PackedStringArray("behavior") instance=ExtResource("32_t64e8")]
+position = Vector2(12406, -623)
+collision_layer = 0
+script = ExtResource("14_0bbcg")
+behavior = NodePath("DemoEndBehavior")
 
 [node name="Checkpoints" type="Node2D" parent="." unique_id=1977743448]
 
@@ -719,6 +726,7 @@ script = ExtResource("31_weabp")
 [connection signal="body_entered" from="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle" to="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle" method="_player_entered" unbinds=1]
 [connection signal="body_entered" from="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle" to="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle" method="_player_entered" unbinds=1]
 [connection signal="body_entered" from="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" to="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" method="_player_entered" unbinds=1]
+[connection signal="body_entered" from="Triggers/DemoEndTrigger" to="Triggers/DemoEndTrigger" method="_player_entered" unbinds=1]
 [connection signal="save_checkpoint" from="Checkpoints/Checkpoint" to="Checkpoints/Checkpoint" method="send_checkpoint_message"]
 [connection signal="save_checkpoint" from="Checkpoints/Checkpoint2" to="Checkpoints/Checkpoint2" method="send_checkpoint_message"]
 [connection signal="save_checkpoint" from="Checkpoints/Checkpoint3" to="Checkpoints/Checkpoint3" method="send_checkpoint_message"]

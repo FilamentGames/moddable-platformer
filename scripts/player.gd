@@ -108,6 +108,9 @@ var defeated := false
 
 ## If the global lives variable has been initialized. Since the game is programmed to "reset" the player whenever lives are adjusted, the code that initially sets the global lives to its default value (3) needs to not immediately kill the player.
 var global_lives_initialized := false
+
+## Similar to movement_locked, but still allows the player to be affected by gravity and other physics.
+var control_locked := false
 #endregion
 
 static var last_checkpoint_position: Vector2 = Vector2.ZERO
@@ -309,7 +312,7 @@ func _physics_process(delta):
 	# Remove the '#' below to enable the phase special ability
 	#_phase()
 
-	if Input.is_action_just_pressed(Actions.lookup(player, "attack")):
+	if Input.is_action_just_pressed(Actions.lookup(player, "attack")) and not control_locked:
 		attack_buffer_timer = (attack_buffer + delta)
 
 	# Handle jump
@@ -321,7 +324,7 @@ func _physics_process(delta):
 		coyote_timer = (coyote_time + delta)
 		double_jump_armed = false
 
-	if Input.is_action_just_pressed(Actions.lookup(player, "jump")):
+	if Input.is_action_just_pressed(Actions.lookup(player, "jump")) and not control_locked:
 		jump_buffer_timer = (jump_buffer + delta)
 
 	if jump_buffer_timer > 0 and (double_jump_armed or coyote_timer > 0):
@@ -341,7 +344,7 @@ func _physics_process(delta):
 
 	# Get the input direction and handle the movement/deceleration.
 	var direction = Input.get_axis(Actions.lookup(player, "left"), Actions.lookup(player, "right"))
-	if direction:
+	if direction and not control_locked:
 		velocity.x = move_toward(
 			velocity.x,
 			sign(direction) * speed,

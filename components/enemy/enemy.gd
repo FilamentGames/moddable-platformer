@@ -52,7 +52,6 @@ func _ready():
 
 
 func _physics_process(delta):
-	print(velocity)
 	if defeated:
 		velocity.y += gravity * delta
 		move_and_slide()

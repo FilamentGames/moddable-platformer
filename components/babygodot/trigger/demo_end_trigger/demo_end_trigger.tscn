@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://che3aoxmyk8m7"]
+
+[ext_resource type="PackedScene" uid="uid://nqjfw1ib51ut" path="res://components/babygodot/trigger/_common/quest_trigger.tscn" id="1_lmd4b"]
+[ext_resource type="PackedScene" uid="uid://8vlw35v0dnpd" path="res://components/babygodot/trigger/demo_end_trigger/demo_end_behavior.tscn" id="2_y47kc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y47kc"]
+resource_local_to_scene = true
+size = Vector2(1000, 1000)
+
+[node name="QuestTrigger" unique_id=1750362101 node_paths=PackedStringArray("behavior") instance=ExtResource("1_lmd4b")]
+behavior = NodePath("DemoEndBehavior")
+
+[node name="DemoEndBehavior" parent="." index="0" unique_id=1425905677 instance=ExtResource("2_y47kc")]
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=490838596]
+shape = SubResource("RectangleShape2D_y47kc")
