@@ -77,8 +77,25 @@ func get_all_nextbutton_quest_text() -> Array[String]:
 func next(method := QuestLine.ProgressMethod.NextButton) -> void:
 	if text_data[_current_text_line].progress_method != QuestLine.ProgressMethod.NextButton and text_data[_current_text_line].progress_method != method:
 		return
-	_current_text_line += 1
+	if method == QuestLine.ProgressMethod.ScriptTrigger:
+		_current_text_line = text_data.find_custom(func(line: QuestLine): return line.progress_method == QuestLine.ProgressMethod.ScriptTrigger, _current_text_line) + 1
+	else:
+		_current_text_line += 1
 	_current_text_line = min(_current_text_line, text_data.size() - 1)
+	_current_hint_index = -1
+	text_updated.emit()
+
+func skip_to_text_line(line: Variant) -> void:
+	var target := -1
+	if line is int:
+		target = line
+	elif line is String:
+		target = text_data.find_custom(func(quest_line):
+			return quest_line.identifier == line
+		)
+	if target < 0 or target >= text_data.size():
+		return
+	_current_text_line = target
 	_current_hint_index = -1
 	text_updated.emit()
 

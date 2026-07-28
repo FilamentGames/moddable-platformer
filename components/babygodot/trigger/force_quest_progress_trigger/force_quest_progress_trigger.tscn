@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://2wfdv8cvm7lm"]
+
+[ext_resource type="PackedScene" uid="uid://nqjfw1ib51ut" path="res://components/babygodot/trigger/_common/quest_trigger.tscn" id="1_ubjym"]
+[ext_resource type="PackedScene" uid="uid://smbvcx7adkih" path="res://components/babygodot/trigger/force_quest_progress_trigger/skip_quest_trigger_behavior.tscn" id="2_as46j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_as46j"]
+resource_local_to_scene = true
+size = Vector2(94, 258)
+
+[node name="QuestTrigger" unique_id=1750362101 node_paths=PackedStringArray("behavior") instance=ExtResource("1_ubjym")]
+behavior = NodePath("SkipQuestTriggerBehavior")
+delete_from_scene = true
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=490838596]
+shape = SubResource("RectangleShape2D_as46j")
+
+[node name="SkipQuestTriggerBehavior" parent="." index="1" unique_id=1238036962 instance=ExtResource("2_as46j")]

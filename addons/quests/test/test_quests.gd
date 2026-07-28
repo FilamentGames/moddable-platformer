@@ -222,3 +222,40 @@ func test_does_not_buy_a_hint_if_there_is_no_hint_available():
 
 	assert_eq(quests.global_coins, 1000)
 	assert_null(text)
+
+func test_it_skips_to_the_next_script_trigger_text_line_with_a_script_trigger_progress_method():
+	quests.text_data = [
+		make_quest_line("Lorem", QuestLine.ProgressMethod.NextButton),
+		make_quest_line("Ipsum", QuestLine.ProgressMethod.NextButton),
+		make_quest_line("Test", QuestLine.ProgressMethod.ScriptTrigger),
+		make_quest_line("Test2", QuestLine.ProgressMethod.ScriptTrigger),
+	]
+
+	quests.next(QuestLine.ProgressMethod.ScriptTrigger)
+
+	assert_eq(quests.get_current_text(), "Test2")
+
+func test_it_can_skip_to_a_specific_text_line():
+	quests.text_data = [make_quest_line("Lorem"), make_quest_line("Ipsum"), make_quest_line("Test")]
+	quests.text_data[0].identifier = "lorem"
+	quests.text_data[1].identifier = "ipsum"
+	quests.text_data[2].identifier = "test"
+
+	quests.skip_to_text_line(2)
+
+	assert_eq(quests.get_current_text(), "Test")
+
+	quests.skip_to_text_line("ipsum")
+
+	assert_eq(quests.get_current_text(), "Ipsum")
+
+func test_it_does_nothing_if_skipping_to_a_text_line_that_does_not_exist():
+	quests.text_data = [make_quest_line("Lorem"), make_quest_line("Ipsum"), make_quest_line("Test")]
+
+	quests.skip_to_text_line(10)
+
+	assert_eq(quests.get_current_text(), "Lorem")
+
+	quests.skip_to_text_line("not_a_valid_identifier")
+
+	assert_eq(quests.get_current_text(), "Lorem")

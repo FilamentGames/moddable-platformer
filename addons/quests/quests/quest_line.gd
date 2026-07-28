@@ -17,3 +17,6 @@ enum ProgressMethod {
 
 ## Hints to display if the player buys a hint on this line of text.
 @export var hints: Array[String] = []
+
+## A unique identifier for this text line that can be used to skip to it. That way we don't have to use the index of the text line OR the text itself, which may be subject to change.
+@export var identifier: String = ""

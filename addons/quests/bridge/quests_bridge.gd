@@ -86,6 +86,9 @@ func _capture(message, data, session_id):
 		"get_last_checkpoint_position":
 			_send_message(session_id, sender_id, "reply_get_last_checkpoint_position", [GlobalQuests.quests.get_last_checkpoint_position()])
 			return true
+		"skip_to_text_line":
+			GlobalQuests.quests.skip_to_text_line(data[1])
+			return true
 	return false
 
 func _setup_session(session_id):

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://smbvcx7adkih"]
+
+[ext_resource type="Script" uid="uid://brblg35gugk3w" path="res://components/babygodot/trigger/force_quest_progress_trigger/skip_quest_trigger_behavior.gd" id="1_ervo4"]
+
+[node name="SkipQuestTriggerBehavior" type="Node" unique_id=1238036962]
+script = ExtResource("1_ervo4")

@@ -90,3 +90,6 @@ static func update_editable_objects(to_add: Array, to_remove: Array) -> void:
 
 static func collect_coin(coin: Node) -> void:
 	_send_message_static("collect_coin", [-1, UniqueSceneId.get_id(coin)])
+
+static func skip_to_text_line(line: Variant) -> void:
+	_send_message_static("skip_to_text_line", [-1, line])
