@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://se5fyfgofqps" path="res://addons/quests/quest_dock/quest_dock.gd" id="1_qqxpi"]
 [ext_resource type="SpriteFrames" uid="uid://e65igl5tjet" path="res://components/babygodot/npc/elder.tres" id="2_qqxpi"]
+[ext_resource type="PackedScene" uid="uid://b6lcoiafomyme" path="res://addons/quests/quest_dock/components/animated_label.tscn" id="3_jgiii"]
 [ext_resource type="PackedScene" uid="uid://ckiwoklhwq8fy" path="res://addons/quests/quest_dock/components/hint_display.tscn" id="3_u0560"]
 
 [node name="QuestDock" type="Control" unique_id=827491016 node_paths=PackedStringArray("text", "next_button", "save_checkpoint_button", "load_checkpoint_button", "hint_button", "hint_display")]
@@ -39,12 +40,9 @@ autoplay = "default"
 frame_progress = 0.90277296
 centered = false
 
-[node name="QuestText" type="Label" parent="Container" unique_id=1955315214]
+[node name="QuestText" parent="Container" unique_id=1035288938 instance=ExtResource("3_jgiii")]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 1
-text = "Threadbare is unstable. You must get to the loom."
 autowrap_mode = 2
 
 [node name="HintDisplay" parent="Container" unique_id=1175709613 instance=ExtResource("3_u0560")]

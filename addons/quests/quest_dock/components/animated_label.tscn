@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://b6lcoiafomyme"]
+
+[ext_resource type="Script" uid="uid://dewvg666m6712" path="res://addons/quests/quest_dock/components/animated_label.gd" id="1_mpvh3"]
+
+[node name="AnimatedLabel" type="Label" unique_id=1035288938]
+text = "Lorem ipsum dolor sit amet"
+script = ExtResource("1_mpvh3")
