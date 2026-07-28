@@ -79,7 +79,6 @@ func test_can_register_a_switch_to_play_mode():
 
 	assert_eq(quests.get_current_text(), "Test")
 
-
 func test_can_get_next_lines_progressable_with_just_next_button():
 	quests.text_data = [make_quest_line("Lorem"), make_quest_line("Ipsum", QuestLine.ProgressMethod.ScriptTrigger), make_quest_line("Test")]
 
@@ -89,7 +88,6 @@ func test_can_get_next_lines_progressable_with_just_next_button():
 	quests.next(QuestLine.ProgressMethod.ScriptTrigger)
 
 	assert_eq(quests.get_all_nextbutton_quest_text(), ["Test"])
-
 
 class MockSceneProvider:
 	var _scene: Node2D
@@ -145,7 +143,6 @@ class MockScrollSceneProvider extends MockSceneProvider:
 		_scroll = scroll
 		return scene
 
-
 func test_it_can_register_a_scroll_as_collected():
 	var spy: CallableSpy = autofree(CallableSpy.new())
 	quests.scroll_collected.connect(spy.callable)
@@ -160,3 +157,68 @@ func test_it_can_register_a_scroll_as_collected():
 	assert_eq(spy.get_number_of_calls(), 1)
 
 	provider._scene.free()
+
+func test_can_check_if_a_hint_is_available_for_the_current_text():
+	quests.text_data = [make_quest_line("Lorem")]
+	quests.text_data[0].hints = []
+
+	assert_false(quests.can_buy_hint())
+
+	quests.text_data[0].hints = ["Test"]
+	quests.global_coins = 0
+
+	assert_false(quests.can_buy_hint())
+
+	quests.hint_cost = 5
+	quests.global_coins = 10
+
+	assert_true(quests.can_buy_hint())
+
+func test_can_buy_a_hint():
+	quests.text_data = [make_quest_line("Lorem")]
+	quests.text_data[0].hints = ["Test"]
+	quests.global_coins = 10
+	quests.hint_cost = 5
+
+	var text = quests.buy_hint()
+
+	assert_eq(quests.global_coins, 5)
+	assert_eq(quests.text_data[0].hints.size(), 1)
+	assert_eq(text, "Test")
+
+func test_it_resets_the_current_hint_index_when_moving_to_the_next_text_line():
+	quests.text_data = [make_quest_line("Lorem"), make_quest_line("Ipsum")]
+	quests.text_data[0].hints = ["Test"]
+	quests.text_data[1].hints = ["Test2", "Test3"]
+	quests.global_coins = 10
+	quests.hint_cost = 5
+
+	quests.buy_hint()
+	quests.next()
+	var text = quests.buy_hint()
+
+	assert_eq(text, "Test2")
+
+
+func test_does_not_buy_a_hint_if_the_player_does_not_have_enough_coins():
+	quests.text_data = [make_quest_line("Lorem")]
+	quests.text_data[0].hints = ["Test"]
+	quests.global_coins = 4
+	quests.hint_cost = 5
+
+	var text = quests.buy_hint()
+
+	assert_eq(quests.global_coins, 4)
+	assert_eq(quests.text_data[0].hints.size(), 1)
+	assert_null(text)
+
+func test_does_not_buy_a_hint_if_there_is_no_hint_available():
+	quests.text_data = [make_quest_line("Lorem")]
+	quests.text_data[0].hints = []
+	quests.global_coins = 1000
+	quests.hint_cost = 5
+
+	var text = quests.buy_hint()
+
+	assert_eq(quests.global_coins, 1000)
+	assert_null(text)

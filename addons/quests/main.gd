@@ -64,9 +64,8 @@ func set_2d_viewport_focus(position: Vector2, zoom: float) -> void:
 	# EditorInterface.get_canvas_item_editor only exists in our customized version of
 	# Godot, so avoid an error by checking for the method ahead of time.
 	var interface = EditorInterface
-	if interface.has_method("get_canvas_item_editor"):
-		var canvas_item_editor = interface.get_canvas_item_editor()
-		canvas_item_editor.set_viewport_focus(position, zoom)
+	if interface.has_method("set_editor_viewport_2d_focus"):
+		interface.set_editor_viewport_2d_focus(position, zoom)
 	else:
 		print("Tried to center camera in viewport, but can't!")
 		pass # Do nothing
