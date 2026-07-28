@@ -9,6 +9,11 @@ enum ProgressMethod {
 	ScriptTrigger, ## An in-game trigger object can move to the next line of text.
 }
 
+## The text to display in the dialogue box
 @export var dialogue_line: String
 
+## How to progress to the next line of of the quest
 @export var progress_method: ProgressMethod = ProgressMethod.NextButton
+
+## Hints to display if the player buys a hint on this line of text.
+@export var hints: Array[String] = []

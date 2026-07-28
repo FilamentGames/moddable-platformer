@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://ckiwoklhwq8fy"]
+
+[ext_resource type="Script" uid="uid://b11217vaungb1" path="res://addons/quests/quest_dock/components/hint_display.gd" id="1_4mhxf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4mhxf"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="LabelSettings" id="LabelSettings_hmpfs"]
+font_size = 24
+
+[node name="HintDisplay" type="Control" unique_id=1175709613 node_paths=PackedStringArray("label")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4mhxf")
+label = NodePath("PanelContainer/MarginContainer/VBoxContainer/Label")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=814909853]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4mhxf")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=40588345]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=194556927]
+layout_mode = 2
+
+[node name="HintHeader" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=808575570]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Hint"
+label_settings = SubResource("LabelSettings_hmpfs")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1793855135]
+layout_mode = 2
+size_flags_vertical = 3
+text = "\"Lorem Ipsum\" can be used as dummy text on prefabs."
+vertical_alignment = 1
+autowrap_mode = 3

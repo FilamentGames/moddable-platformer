@@ -15,6 +15,9 @@ enum EditorMode {
 ## The zoom level to reset to when the player jumps from game mode back to editor mode.
 @export var default_editor_zoom := 0.5
 
+## The cost of a hint in coins.
+@export var hint_cost := 5
+
 ## Dispatched when the current scene has changed
 signal current_scene_updated()
 
@@ -23,6 +26,9 @@ signal text_updated()
 
 ## Dispatched when a new scroll is collected
 signal scroll_collected()
+
+## Dispatched when the player's coins have changed
+signal coins_changed()
 
 ## An object with methods `get_editor_scene`/`set_editor_scene` that provides access to the current editor scene. This should be the main plugin.
 var editor_scene_provider
@@ -33,6 +39,9 @@ var scrolls_collected: Array = []
 var global_coins: int = 0
 
 var _current_text_line := 0
+
+## The index of the current hint in the list of hints for the current text line. -1 means no hint is currently being shown.
+var _current_hint_index := -1
 
 var _last_player_pos: Vector2
 
@@ -70,6 +79,7 @@ func next(method := QuestLine.ProgressMethod.NextButton) -> void:
 		return
 	_current_text_line += 1
 	_current_text_line = min(_current_text_line, text_data.size() - 1)
+	_current_hint_index = -1
 	text_updated.emit()
 
 ## If the UI can manually proceed to the next line of text
@@ -171,6 +181,7 @@ func delete_node_in_editor(node_id: String) -> void:
 
 func collect_coin() -> void:
 	global_coins += 1
+	coins_changed.emit()
 
 ## Resets the player's quest progress. Mainly useful for dev tools.
 func reset_progress() -> void:
@@ -212,3 +223,14 @@ func update_editable_objects(to_add: Array, to_remove: Array) -> void:
 
 func get_last_checkpoint_position() -> Vector2:
 	return _checkpoint_quest_progress["last_position"]
+
+func can_buy_hint() -> bool:
+	return global_coins >= hint_cost and text_data[_current_text_line].hints.size() - 2 >= _current_hint_index
+
+func buy_hint() -> Variant:
+	if not can_buy_hint():
+		return null
+	global_coins -= hint_cost
+	coins_changed.emit()
+	_current_hint_index += 1
+	return text_data[_current_text_line].hints[_current_hint_index]

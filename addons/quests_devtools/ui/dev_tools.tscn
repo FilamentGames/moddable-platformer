@@ -113,6 +113,15 @@ text = "Auto-add player to clone's editable nodes: "
 [node name="CheckBox" type="CheckBox" parent="VBoxContainer/VBoxContainer/HBoxContainer" unique_id=423273325]
 layout_mode = 2
 
+[node name="Spacer4" type="Control" parent="VBoxContainer/VBoxContainer" unique_id=937543535]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="CoinButton" type="Button" parent="VBoxContainer/VBoxContainer" unique_id=938176066]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "+1 Coin"
+
 [connection signal="pressed" from="VBoxContainer/QuestResetButton" to="." method="_click_button"]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/InspectorDockControls/HideButton" to="." method="_toggle_streamlined_exclusive_dock" binds= [&"get_inspector_dock", false]]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/InspectorDockControls/ShowButton" to="." method="_toggle_streamlined_exclusive_dock" binds= [&"get_inspector_dock", true]]
@@ -120,3 +129,4 @@ layout_mode = 2
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/SceneTreeDockControls/ShowButton" to="." method="_toggle_streamlined_exclusive_dock" binds= [&"get_scene_tree_dock", true]]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/Button" to="." method="_open_level0_clone"]
 [connection signal="toggled" from="VBoxContainer/VBoxContainer/HBoxContainer/CheckBox" to="." method="_on_check_box_toggled"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/CoinButton" to="." method="_on_coin_button_pressed"]

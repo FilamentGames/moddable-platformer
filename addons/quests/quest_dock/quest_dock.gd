@@ -8,9 +8,17 @@ class_name BabyGodotQuestDock
 ## The Button control that moves to the next step. This might end up being a debug-only control?
 @export var next_button: Button
 
+## This button saves the current checkpoint, only used for debugging purposes.
 @export var save_checkpoint_button: Button
 
+## This button loads the last checkpoint.
 @export var load_checkpoint_button: Button
+
+## This button buys a hint for the current text.
+@export var hint_button: Button
+
+## This control displays the hint for the current text.
+@export var hint_display: HintDisplay
 
 ## The instance of BabyGodotQuests object we're getting data from.
 var quests_provider: BabyGodotQuests
@@ -21,7 +29,9 @@ func _enter_tree() -> void:
 	if !text || !quests_provider:
 		return
 	update_text()
+	_update_hint_button_state()
 	quests_provider.text_updated.connect(update_text)
+	quests_provider.coins_changed.connect(_update_hint_button_state)
 	next_button.pressed.connect(next)
 	if save_checkpoint_button:
 		save_checkpoint_button.pressed.connect(save_checkpoint)
@@ -31,10 +41,16 @@ func _enter_tree() -> void:
 func update_text():
 	text.text = quests_provider.get_current_text()
 	_update_next_button_state()
+	hint_display.hide()
+	_update_hint_button_state()
 
 func next():
 	quests_provider.next()
 	_update_next_button_state()
+
+func _update_hint_button_state():
+	if hint_button:
+		hint_button.disabled = not quests_provider.can_buy_hint()
 
 func _update_next_button_state():
 	next_button.disabled = !quests_provider.can_proceed()
@@ -54,3 +70,12 @@ func load_checkpoint():
 	add_child(dialog)
 	dialog.popup_centered()
 	dialog.show()
+
+func buy_hint():
+	var hint = quests_provider.buy_hint()
+	if hint:
+		hint_display.set_hint(hint)
+		hint_display.show()
+	else:
+		hint_display.hide()
+	_update_hint_button_state()

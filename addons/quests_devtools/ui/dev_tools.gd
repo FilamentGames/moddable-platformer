@@ -21,3 +21,7 @@ func _open_level0_clone() -> void:
 
 func _on_check_box_toggled(toggled_on: bool) -> void:
 	MasterCopyIndicator.add_player_to_editable_nodes = toggled_on
+
+
+func _on_coin_button_pressed() -> void:
+	GlobalQuests.quests.collect_coin()
