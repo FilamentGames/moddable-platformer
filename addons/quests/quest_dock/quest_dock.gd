@@ -5,6 +5,14 @@ class_name BabyGodotQuestDock
 ## The Label control that displays the current quest text
 @export var text: Label
 
+@export_group("Sprite Refs")
+## An animated sprite to animate while the text is animating
+@export var animated_sprite: AnimatedSprite2D
+
+## The animation to play on the animated sprite
+@export var sprite_animation_name: StringName = &"default"
+
+@export_group("Progress + Checkpoint Refs")
 ## The Button control that moves to the next step. This might end up being a debug-only control?
 @export var next_button: Button
 
@@ -14,6 +22,7 @@ class_name BabyGodotQuestDock
 ## This button loads the last checkpoint.
 @export var load_checkpoint_button: Button
 
+@export_group("Hint Refs")
 ## This button buys a hint for the current text.
 @export var hint_button: Button
 
@@ -79,3 +88,11 @@ func buy_hint():
 	else:
 		hint_display.hide()
 	_update_hint_button_state()
+
+func _on_quest_text_start_animating() -> void:
+	if animated_sprite:
+		animated_sprite.play(sprite_animation_name)
+
+func _on_quest_text_end_animating() -> void:
+	if animated_sprite:
+		animated_sprite.stop()

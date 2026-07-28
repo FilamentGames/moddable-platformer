@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b6lcoiafomyme" path="res://addons/quests/quest_dock/components/animated_label.tscn" id="3_jgiii"]
 [ext_resource type="PackedScene" uid="uid://ckiwoklhwq8fy" path="res://addons/quests/quest_dock/components/hint_display.tscn" id="3_u0560"]
 
-[node name="QuestDock" type="Control" unique_id=827491016 node_paths=PackedStringArray("text", "next_button", "save_checkpoint_button", "load_checkpoint_button", "hint_button", "hint_display")]
+[node name="QuestDock" type="Control" unique_id=827491016 node_paths=PackedStringArray("text", "animated_sprite", "next_button", "save_checkpoint_button", "load_checkpoint_button", "hint_button", "hint_display")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,6 +14,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qqxpi")
 text = NodePath("Container/QuestText")
+animated_sprite = NodePath("Container/Control/Clippy")
 next_button = NodePath("Container/NextButton")
 save_checkpoint_button = NodePath("Container/HBoxContainer/SaveButton")
 load_checkpoint_button = NodePath("Container/HBoxContainer/ResetWorldButton")
@@ -43,7 +44,9 @@ centered = false
 [node name="QuestText" parent="Container" unique_id=1035288938 instance=ExtResource("3_jgiii")]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
+text = "Find me in the world of Threadbare! Press Play!"
 autowrap_mode = 2
+visible_characters = 47
 
 [node name="HintDisplay" parent="Container" unique_id=1175709613 instance=ExtResource("3_u0560")]
 visible = false
@@ -85,4 +88,6 @@ text = "Reset the World"
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 
+[connection signal="end_animating" from="Container/QuestText" to="." method="_on_quest_text_end_animating"]
+[connection signal="start_animating" from="Container/QuestText" to="." method="_on_quest_text_start_animating"]
 [connection signal="pressed" from="Container/HintButton" to="." method="buy_hint"]
