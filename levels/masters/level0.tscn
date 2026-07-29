@@ -172,6 +172,12 @@ value = "true"
 
 [node name="ScrollGates" type="Node2D" parent="." unique_id=1903180490]
 
+[node name="ScrollGate" type="StaticBody2D" parent="ScrollGates" unique_id=68402488 instance=ExtResource("24_obko3")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(8487, 449)
+collision_layer = 4
+collision_mask = 0
+
 [node name="ScrollGate2" parent="ScrollGates" unique_id=858876441 instance=ExtResource("24_obko3")]
 modulate = Color(1, 0, 0, 1)
 position = Vector2(10671, 449)
@@ -196,17 +202,11 @@ offset_top = -12.0
 offset_right = -91.0
 offset_bottom = 11.0
 text = "You need to collect
-1 scroll to move on!"
+3 scrolls to move on!"
 horizontal_alignment = 2
 
 [node name="CollisionShape2D" parent="ScrollGates/ScrollGate2/TriggerArea" parent_id_path=PackedInt32Array(858876441, 1096462271) index="0" unique_id=233322335]
 shape = SubResource("RectangleShape2D_hmpfs")
-
-[node name="ScrollGate" type="StaticBody2D" parent="ScrollGates" unique_id=68402488 instance=ExtResource("24_obko3")]
-modulate = Color(1, 0, 0, 1)
-position = Vector2(8487, 449)
-collision_layer = 4
-collision_mask = 0
 
 [node name="Flag" type="Area2D" parent="." unique_id=1243516226 instance=ExtResource("18_crtlj")]
 position = Vector2(12637, -192)
