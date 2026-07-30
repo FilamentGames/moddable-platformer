@@ -12,6 +12,7 @@ func before_each() -> void:
 	add_child(checkpoint)
 
 func after_each() -> void:
+	await wait_physics_frames(1)
 	var npc = get_node_or_null("KnitWitch")
 	if npc:
 		npc.free()
@@ -25,7 +26,7 @@ func test_fires_save_checkpoint_event_when_player_enters() -> void:
 	assert_eq(spy.get_number_of_calls(), 1)
 	assert_true(checkpoint.is_queued_for_deletion())
 
-	await wait_frames(1) # Knit Witch is now spawned by `call_deferred`
+	await wait_physics_frames(1) # Knit Witch is now spawned by `call_deferred`
 	assert_not_null(get_node_or_null("KnitWitch"))
 
 func test_does_not_spawn_npc_if_npc_prefab_is_null() -> void:

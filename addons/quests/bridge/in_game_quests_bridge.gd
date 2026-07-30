@@ -8,8 +8,21 @@ static var _next_id := 0
 ## Allows messaging to be disabled. This should always be true unless you're running in tests!
 static var _enabled := true
 
+## This is kept empty in production, but in tests it is used to log all messages sent to the bridge.
+static var _log: Array[Array] = []
+
 ## A link to the current EditorGameMessagingService
 var _service: EditorGameMessagingService
+
+## Used to clear the log in tests.
+static func _clear_log() -> void:
+	_log.clear()
+
+static func _find_first_message_in_log(name: String) -> Array:
+	var index := _log.find_custom(func(l: Array): return l[0] == name)
+	if index == -1:
+		return []
+	return _log[index]
 
 func _init(service: EditorGameMessagingService = GlobalMessagingService):
 	if not service:
@@ -34,6 +47,8 @@ func _send_message(name: String, args: Array = []) -> void:
 static func _send_message_static(name: String, args: Array = []) -> void:
 	if _enabled:
 		EngineDebugger.send_message("baby_godot:" + name, args)
+	else:
+		_log.append([name, args])
 
 ## Requests the current quest text. Will be emitted from the `quest_text` signal once it is received.
 func request_quest_text() -> void:
@@ -93,3 +108,6 @@ static func collect_coin(coin: Node) -> void:
 
 static func skip_to_text_line(line: Variant) -> void:
 	_send_message_static("skip_to_text_line", [-1, line])
+
+static func deplete_scrolls(quantity: int) -> void:
+	_send_message_static("deplete_scrolls", [-1, quantity])

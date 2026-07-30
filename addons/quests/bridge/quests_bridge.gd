@@ -90,6 +90,9 @@ func _capture(message, data, session_id):
 		"skip_to_text_line":
 			GlobalQuests.quests.skip_to_text_line(data[1])
 			return true
+		"deplete_scrolls":
+			GlobalQuests.quests.deplete_scrolls(data[1])
+			return true
 	return false
 
 func _setup_session(session_id):

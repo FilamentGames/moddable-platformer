@@ -36,3 +36,9 @@ func test_it_can_get_all_coin_objects_in_scene():
 
 	for child in coins:
 		assert_eq(UniqueSceneId.find_by_id(scene, UniqueSceneId.get_id(child)), child)
+
+func test_it_tries_its_best_on_objects_not_in_a_scene():
+	var node = autofree(Node2D.new())
+	node.name = "NotInScene"
+
+	assert_eq(UniqueSceneId.get_id(node), "NotInScene")

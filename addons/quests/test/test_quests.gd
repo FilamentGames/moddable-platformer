@@ -259,3 +259,15 @@ func test_it_does_nothing_if_skipping_to_a_text_line_that_does_not_exist():
 	quests.skip_to_text_line("not_a_valid_identifier")
 
 	assert_eq(quests.get_current_text(), "Lorem")
+
+func test_it_can_deplete_scrolls():
+	quests.scrolls_collected = ["scroll1", "scroll2", "scroll3"]
+	quests.deplete_scrolls(2)
+
+	assert_eq(quests.scrolls_collected.size(), 1)
+
+func test_if_it_depletes_more_scrolls_than_available_it_depletes_all_scrolls():
+	quests.scrolls_collected = ["scroll1", "scroll2", "scroll3"]
+	quests.deplete_scrolls(4)
+
+	assert_eq(quests.scrolls_collected.size(), 0)

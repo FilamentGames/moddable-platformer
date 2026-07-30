@@ -259,3 +259,8 @@ func buy_hint() -> Variant:
 	coins_changed.emit()
 	_current_hint_index += 1
 	return text_data[_current_text_line].hints[_current_hint_index]
+
+func deplete_scrolls(quantity: int) -> void:
+	for i in quantity:
+		scrolls_collected.pop_front()
+	scroll_collected.emit()

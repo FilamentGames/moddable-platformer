@@ -188,7 +188,7 @@ func test_player_can_be_in_forced_cutscene_dialogue():
 
 	player_dialogue.current_cutscene_box._on_next_button_click()
 
-	await wait_frames(1)
+	await wait_physics_frames(1)
 	assert_false(player_dialogue.movement_locked)
 
 func test_npc_control_display_is_visible_when_player_enters_dialogue_zone():

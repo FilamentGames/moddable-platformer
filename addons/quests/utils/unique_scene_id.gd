@@ -6,6 +6,8 @@ class_name UniqueSceneId
 const delimeter := "%"
 
 static func get_id(node: Node) -> String:
+	if not node.owner or not node.owner.scene_file_path:
+		return node.name
 	var scene_path := node.owner.scene_file_path
 	var node_path := str(node.owner.get_path_to(node))
 	return scene_path + delimeter + node_path

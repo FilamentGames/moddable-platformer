@@ -27,6 +27,8 @@ func _on_scroll_collected(quantity: int) -> void:
 
 func player_entered() -> void:
 	if _scroll_quantity >= required_scrolls:
+		InGameQuestsBridge.delete_node_in_editor(target_object)
+		InGameQuestsBridge.deplete_scrolls(required_scrolls)
 		target_object.get_parent().remove_child(target_object)
 		target_object.queue_free()
 		queue_free.call_deferred()
