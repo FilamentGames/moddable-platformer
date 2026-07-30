@@ -49,6 +49,7 @@ metadata/_custom_type_script = "uid://wcqap044q4nm"
 script = ExtResource("2_fdhqc")
 dialogue_line = "The scroll is the key."
 progress_method = 3
+identifier = "ScrollIsTheKey"
 metadata/_custom_type_script = "uid://wcqap044q4nm"
 
 [sub_resource type="Resource" id="Resource_m7dqe"]

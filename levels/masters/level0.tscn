@@ -34,6 +34,7 @@
 [ext_resource type="PackedScene" uid="uid://jt80gv02u4f2" path="res://hud.tscn" id="16_gqw0f"]
 [ext_resource type="PackedScene" uid="uid://caob0y51xxmf0" path="res://components/babygodot/editor_powerup/inspector_powerup.tscn" id="16_m7dqe"]
 [ext_resource type="PackedScene" uid="uid://dbaal2g7b8ub0" path="res://components/enemy/storyvore_enemy.tscn" id="17_d6rl2"]
+[ext_resource type="PackedScene" uid="uid://2wfdv8cvm7lm" path="res://components/babygodot/trigger/force_quest_progress_trigger/force_quest_progress_trigger.tscn" id="17_foth1"]
 [ext_resource type="Script" uid="uid://ynmusiscbscn" path="res://components/babygodot/scroll/condition_types/object_property_equality_scroll_condition.gd" id="18_7cn4d"]
 [ext_resource type="Script" uid="uid://b4j8f10agdcvu" path="res://scripts/coin.gd" id="18_65vxu"]
 [ext_resource type="PackedScene" uid="uid://beuisy5yrw0bq" path="res://components/flag/flag.tscn" id="18_crtlj"]
@@ -49,6 +50,7 @@
 [ext_resource type="PackedScene" uid="uid://1r6h0ihjbc77" path="res://components/babygodot/checkpoint/checkpoint.tscn" id="27_dt6hy"]
 [ext_resource type="PackedScene" uid="uid://10andtcysmr4" path="res://components/babygodot/demo/boss/boss.tscn" id="27_x2f4c"]
 [ext_resource type="Script" uid="uid://umb21eb2y1oj" path="res://scripts/player.gd" id="28_kexs0"]
+[ext_resource type="Script" uid="uid://brblg35gugk3w" path="res://components/babygodot/trigger/force_quest_progress_trigger/skip_quest_trigger_behavior.gd" id="29_poyld"]
 [ext_resource type="Script" uid="uid://bi5370kgl6xcs" path="res://scripts/hud.gd" id="31_weabp"]
 [ext_resource type="PackedScene" uid="uid://che3aoxmyk8m7" path="res://components/babygodot/trigger/demo_end_trigger/demo_end_trigger.tscn" id="32_t64e8"]
 [ext_resource type="Script" uid="uid://d003tgo4vrak8" path="res://components/enemy/enemy.gd" id="33_7cn4d"]
@@ -75,15 +77,19 @@ size = Vector2(128, 128)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mitit"]
 size = Vector2(252, 255)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_efl58"]
-resource_local_to_scene = true
-size = Vector2(94, 258)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kdyhj"]
 resource_local_to_scene = true
 size = Vector2(94, 258)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_poyld"]
+resource_local_to_scene = true
+size = Vector2(94, 258)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2yf5f"]
+resource_local_to_scene = true
+size = Vector2(94, 258)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vm00m"]
 resource_local_to_scene = true
 size = Vector2(94, 258)
 
@@ -275,7 +281,7 @@ script = ExtResource("14_0bbcg")
 behavior = NodePath("ScreenShakeTriggerBehavior")
 
 [node name="ScreenShakeTrigger3" type="Area2D" parent="Triggers" unique_id=1434990298 node_paths=PackedStringArray("behavior") instance=ExtResource("15_0aei4")]
-position = Vector2(4688, 101)
+position = Vector2(4673, 184)
 collision_layer = 0
 script = ExtResource("14_0bbcg")
 behavior = NodePath("ScreenShakeTriggerBehavior")
@@ -293,7 +299,7 @@ script = ExtResource("14_0bbcg")
 behavior = NodePath("ScreenShakeTriggerBehavior")
 
 [node name="ScreenShakeTrigger6" type="Area2D" parent="Triggers" unique_id=55876667 node_paths=PackedStringArray("behavior") instance=ExtResource("15_0aei4")]
-position = Vector2(13684, -341)
+position = Vector2(13666, -323)
 collision_layer = 0
 script = ExtResource("14_0bbcg")
 behavior = NodePath("ScreenShakeTriggerBehavior")
@@ -305,12 +311,20 @@ behavior = NodePath("Behavior")
 delete_from_scene = true
 metadata/_custom_type_script = "uid://bvs6l44borf1h"
 
-[node name="QuestScriptTrigger_SolvedRockPuzzle" type="Area2D" parent="Triggers" unique_id=528764778 node_paths=PackedStringArray("behavior") instance=ExtResource("9_58r63")]
-position = Vector2(6564, 304)
+[node name="ForceQuestProgressTrigger_StartScrollPuzzle" parent="Triggers" unique_id=1344870635 node_paths=PackedStringArray("behavior") instance=ExtResource("17_foth1")]
+position = Vector2(6460, 242)
+collision_layer = 0
 script = ExtResource("14_0bbcg")
-behavior = NodePath("Behavior")
+behavior = NodePath("SkipQuestTriggerBehavior")
 delete_from_scene = true
-metadata/_custom_type_script = "uid://bvs6l44borf1h"
+
+[node name="CollisionShape2D" parent="Triggers/ForceQuestProgressTrigger_StartScrollPuzzle" index="0" unique_id=490838596]
+position = Vector2(-14, 13)
+shape = SubResource("RectangleShape2D_kdyhj")
+
+[node name="SkipQuestTriggerBehavior" parent="Triggers/ForceQuestProgressTrigger_StartScrollPuzzle" index="1" unique_id=1238036962]
+script = ExtResource("29_poyld")
+quest_line_identifier = "ScrollIsTheKey"
 
 [node name="QuestScriptTrigger_SolvedScrollPuzzle" type="Area2D" parent="Triggers" unique_id=1927004304 node_paths=PackedStringArray("behavior") instance=ExtResource("9_58r63")]
 position = Vector2(10913, 435)
@@ -334,7 +348,7 @@ behavior = NodePath("Behavior")
 delete_from_scene = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_efl58")
+shape = SubResource("RectangleShape2D_poyld")
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
 script = ExtResource("23_8knqs")
@@ -348,7 +362,7 @@ behavior = NodePath("Behavior")
 delete_from_scene = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_kdyhj")
+shape = SubResource("RectangleShape2D_2yf5f")
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
 script = ExtResource("23_8knqs")
@@ -362,7 +376,7 @@ behavior = NodePath("Behavior")
 delete_from_scene = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_poyld")
+shape = SubResource("RectangleShape2D_vm00m")
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
 script = ExtResource("23_8knqs")
@@ -699,10 +713,10 @@ tint = Color(1, 0.560065, 0.377408, 1)
 position = Vector2(1920, -64)
 
 [node name="Platform" type="Node2D" parent="Platforms" unique_id=1808482927 instance=ExtResource("10_cs3j8")]
-position = Vector2(3008, 244)
+position = Vector2(3008, 192)
 rotation = -1.5707964
 script = ExtResource("24_twxhk")
-width = 5
+width = 6
 
 [node name="Platform12" type="Node2D" parent="Platforms" unique_id=349244858 instance=ExtResource("10_cs3j8")]
 position = Vector2(7367, 320)
@@ -792,6 +806,11 @@ width = 2
 position = Vector2(7293, 1028)
 script = ExtResource("26_ht26h")
 text = "Jump twice for extra height"
+
+[node name="Sign2" type="Node2D" parent="Signs" unique_id=1037848522 instance=ExtResource("11_q0xf2")]
+position = Vector2(4724, 385)
+script = ExtResource("26_ht26h")
+text = "Bridge closed for repair"
 
 [node name="NPCs" type="Node2D" parent="." unique_id=147049230]
 
@@ -1030,7 +1049,7 @@ script = ExtResource("31_weabp")
 [connection signal="body_entered" from="Triggers/ScreenShakeTrigger5" to="Triggers/ScreenShakeTrigger5" method="_player_entered" unbinds=1]
 [connection signal="body_entered" from="Triggers/ScreenShakeTrigger6" to="Triggers/ScreenShakeTrigger6" method="_player_entered" unbinds=1]
 [connection signal="body_entered" from="Triggers/QuestScriptTrigger_ReachedRockPuzzle" to="Triggers/QuestScriptTrigger_ReachedRockPuzzle" method="_player_entered" unbinds=1]
-[connection signal="body_entered" from="Triggers/QuestScriptTrigger_SolvedRockPuzzle" to="Triggers/QuestScriptTrigger_SolvedRockPuzzle" method="_player_entered" unbinds=1]
+[connection signal="body_entered" from="Triggers/ForceQuestProgressTrigger_StartScrollPuzzle" to="Triggers/ForceQuestProgressTrigger_StartScrollPuzzle" method="_player_entered" unbinds=1]
 [connection signal="body_entered" from="Triggers/QuestScriptTrigger_SolvedScrollPuzzle" to="Triggers/QuestScriptTrigger_SolvedScrollPuzzle" method="_player_entered" unbinds=1]
 [connection signal="body_entered" from="Triggers/QuestScriptTrigger_SolvedTilePuzzle" to="Triggers/QuestScriptTrigger_SolvedTilePuzzle" method="_player_entered" unbinds=1]
 [connection signal="body_entered" from="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle" to="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle" method="_player_entered" unbinds=1]
@@ -1079,6 +1098,7 @@ script = ExtResource("31_weabp")
 
 [editable path="ScrollGates/ScrollGate2"]
 [editable path="ScrollGates/ScrollGate3"]
+[editable path="Triggers/ForceQuestProgressTrigger_StartScrollPuzzle"]
 [editable path="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle"]
 [editable path="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle"]
 [editable path="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle"]
