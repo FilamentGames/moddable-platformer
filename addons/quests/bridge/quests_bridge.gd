@@ -103,8 +103,8 @@ func _on_scroll_collected(session_id: int) -> void:
 
 func _on_session_start() -> void:
 	print("Quest bridge started")
-	GlobalQuests.quests.set_inspector_dock_visible(_editor_unlock_state["inspector"])
-	GlobalQuests.quests.set_scene_tree_dock_visible(_editor_unlock_state["scene_tree"])
+	GlobalQuests.quests.set_inspector_dock_visible(false)
+	GlobalQuests.quests.set_scene_tree_dock_visible(false)
 
 func _on_session_stop() -> void:
 	print("Quest bridge stopped")
