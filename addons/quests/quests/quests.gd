@@ -192,7 +192,11 @@ func delete_nodes_in_editor(node_ids: Array, save: bool = true) -> void:
 			node.free()
 	if editable_node_list:
 		## Remove freed nodes from the editable node list, lest we trigger a segfault as it tries to save a freed node reference in the scene.
-		var new_editable_nodes := editable_node_list.nodes.filter(func(node: Node): return node.is_inside_tree())
+		var new_editable_nodes := editable_node_list.nodes.filter(func(node): 
+			if not node is Node:
+				return false
+			return node.is_inside_tree()
+		)
 		editable_node_list.nodes.assign(new_editable_nodes)
 	if save:
 		editor_scene_provider.update_and_save_node(scene)
