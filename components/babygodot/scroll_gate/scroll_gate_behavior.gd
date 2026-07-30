@@ -29,4 +29,4 @@ func player_entered() -> void:
 	if _scroll_quantity >= required_scrolls:
 		target_object.get_parent().remove_child(target_object)
 		target_object.queue_free()
-		queue_free()
+		queue_free.call_deferred()

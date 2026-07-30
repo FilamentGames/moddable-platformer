@@ -29,7 +29,7 @@ func player_entered() -> void:
 
 func _spawn_npc() -> void:
 	var npc: Node2D = npc_prefab.instantiate()
-	get_parent().add_child(npc)
+	get_parent().add_child.bind(npc).call_deferred()
 	npc.position = position
 
 func send_checkpoint_message() -> void:
