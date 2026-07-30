@@ -151,7 +151,7 @@ func test_it_can_register_a_scroll_as_collected():
 
 	quests.collect_scroll("res://testing_file.tscn%UnitTestScroll")
 
-	assert_null(provider._scroll)
+	assert_not_null(provider._scroll, "The scroll is now deleted as part of the quests bridge being cleared")
 	assert_not_null(provider._scene)
 	assert_eq(quests.scrolls_collected.size(), 1)
 	assert_eq(spy.get_number_of_calls(), 1)
