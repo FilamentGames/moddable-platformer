@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b61aexqklqbhv"]
+
+[ext_resource type="PackedScene" uid="uid://nqjfw1ib51ut" path="res://components/babygodot/trigger/_common/quest_trigger.tscn" id="1_a6ynu"]
+[ext_resource type="PackedScene" uid="uid://bu4xb0k7htuo8" path="res://components/babygodot/trigger/screenshake_event_trigger/screen_shake_trigger_behavior.tscn" id="2_behavior"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e4064"]
+resource_local_to_scene = true
+size = Vector2(94, 258)
+
+[node name="ScreenShakeTrigger" unique_id=1750362101 node_paths=PackedStringArray("behavior") instance=ExtResource("1_a6ynu")]
+behavior = NodePath("ScreenShakeTriggerBehavior")
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=490838596]
+shape = SubResource("RectangleShape2D_e4064")
+
+[node name="ScreenShakeTriggerBehavior" parent="." index="1" unique_id=1093773376 instance=ExtResource("2_behavior")]

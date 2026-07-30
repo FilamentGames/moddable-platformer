@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bu4xb0k7htuo8"]
+
+[ext_resource type="Script" uid="uid://dss8a5648h7lf" path="res://components/babygodot/trigger/screenshake_event_trigger/screen_shake_trigger_behavior.gd" id="1_16vr4"]
+[ext_resource type="PackedScene" uid="uid://bf5m0axxtobba" path="res://components/babygodot/trigger/screenshake_event_trigger/falling_decoration/falling_decoration.tscn" id="2_80b3j"]
+
+[node name="ScreenShakeTriggerBehavior" type="Node" unique_id=1093773376]
+script = ExtResource("1_16vr4")
+prefab = ExtResource("2_80b3j")

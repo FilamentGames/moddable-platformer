@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bf5m0axxtobba"]
+
+[ext_resource type="Script" uid="uid://3xfws5hibocd" path="res://components/babygodot/trigger/screenshake_event_trigger/falling_decoration/falling_decoration.gd" id="1_hsl54"]
+[ext_resource type="Texture2D" uid="uid://d2uesk6kurr2a" path="res://assets/tiles-threadbare.png" id="2_bt3vs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hmpfs"]
+atlas = ExtResource("2_bt3vs")
+region = Rect2(1455, 86, 46, 43)
+
+[node name="FallingDecoration" type="Node2D" unique_id=1763310550]
+z_index = 1
+z_as_relative = false
+script = ExtResource("1_hsl54")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1953548933]
+texture = SubResource("AtlasTexture_hmpfs")
