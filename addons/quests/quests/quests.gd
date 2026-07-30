@@ -182,11 +182,18 @@ func activate_level_checkpoint(checkpoint_id: String) -> void:
 
 func delete_nodes_in_editor(node_ids: Array, save: bool = true) -> void:
 	var scene: Node2D = editor_scene_provider.get_editor_scene()
+	var editable_node_list: EditableNodeList = BabyGodotUtils.get_first_child_of_type(scene, EditableNodeList)
 	for node_id in node_ids:
 		var node: Node = UniqueSceneId.find_by_id(scene, node_id)
 		if node:
+			if editable_node_list:
+				editable_node_list.nodes.erase(node)
 			node.get_parent().remove_child(node)
 			node.free()
+	if editable_node_list:
+		## Remove freed nodes from the editable node list, lest we trigger a segfault as it tries to save a freed node reference in the scene.
+		var new_editable_nodes := editable_node_list.nodes.filter(func(node: Node): return node.is_inside_tree())
+		editable_node_list.nodes.assign(new_editable_nodes)
 	if save:
 		editor_scene_provider.update_and_save_node(scene)
 
