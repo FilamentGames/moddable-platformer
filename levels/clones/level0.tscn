@@ -157,7 +157,7 @@ position = Vector2(4217, 318)
 collision_layer = 4
 collision_mask = 0
 
-[node name="EditableObjectIndicator" type="Node2D" parent="RockPile" unique_id=1277632405]
+[node name="EditableObjectIndicator" type="Node2D" parent="RockPile" unique_id=1738382061]
 script = ExtResource("12_vjwix")
 metadata/_edit_lock_ = true
 
@@ -207,7 +207,7 @@ metadata/_edit_lock_ = true
 script = ExtResource("18_m8hul")
 target = NodePath("../../Enemies/Enemy3")
 property_name = &"defeated_y_velocity"
-value = "1200"
+value = "1000"
 metadata/_edit_lock_ = true
 
 [node name="ScrollGates" type="Node2D" parent="." unique_id=1903180490]
@@ -1146,7 +1146,7 @@ limit_bottom = 1080
 position_smoothing_enabled = true
 metadata/_edit_lock_ = true
 
-[node name="EditableObjectIndicator" type="Node2D" parent="Player" unique_id=1209763190]
+[node name="EditableObjectIndicator" type="Node2D" parent="Player" unique_id=1518444751]
 script = ExtResource("12_vjwix")
 metadata/_edit_lock_ = true
 

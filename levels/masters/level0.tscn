@@ -192,7 +192,7 @@ label = NodePath("ConditionTextContainer/Label")
 script = ExtResource("18_7cn4d")
 target = NodePath("../../Enemies/Enemy3")
 property_name = &"defeated_y_velocity"
-value = "1200"
+value = "1000"
 
 [node name="ScrollGates" type="Node2D" parent="." unique_id=1903180490]
 
