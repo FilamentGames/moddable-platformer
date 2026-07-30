@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://dpk1jwflxtjbn" path="res://components/babygodot/scroll/scroll.tscn" id="13_n2vjn"]
 [ext_resource type="Script" uid="uid://odpmnclrocgd" path="res://components/babygodot/scroll/scroll.gd" id="14_ovnls"]
 [ext_resource type="PackedScene" uid="uid://67eoedabcb3s" path="res://components/babygodot/scroll/condition_types/inspector_checkbox_scroll_condition.tscn" id="15_4bour"]
+[ext_resource type="PackedScene" uid="uid://b61aexqklqbhv" path="res://components/babygodot/trigger/screenshake_event_trigger/screen_shake_trigger.tscn" id="15_7totk"]
 [ext_resource type="Script" uid="uid://bv4utu2r7ll2v" path="res://components/babygodot/scroll/condition_types/inspector_checkbox_scroll_condition.gd" id="16_2d8dw"]
 [ext_resource type="PackedScene" uid="uid://cbr3k8b1gooxm" path="res://components/babygodot/scroll/condition_types/object_property_equality_scroll_condition.tscn" id="17_2h05j"]
 [ext_resource type="Script" uid="uid://ynmusiscbscn" path="res://components/babygodot/scroll/condition_types/object_property_equality_scroll_condition.gd" id="18_m8hul"]
@@ -74,15 +75,15 @@ size = Vector2(128, 128)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mitit"]
 size = Vector2(252, 255)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cveeh"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rvxi4"]
 resource_local_to_scene = true
 size = Vector2(94, 258)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tsdxu"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_px0r7"]
 resource_local_to_scene = true
 size = Vector2(94, 258)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_c2m1k"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fcmqh"]
 resource_local_to_scene = true
 size = Vector2(94, 258)
 
@@ -146,7 +147,7 @@ position = Vector2(4217, 318)
 collision_layer = 4
 collision_mask = 0
 
-[node name="EditableObjectIndicator" type="Node2D" parent="RockPile" unique_id=93565440]
+[node name="EditableObjectIndicator" type="Node2D" parent="RockPile" unique_id=806918783]
 script = ExtResource("12_vjwix")
 metadata/_edit_lock_ = true
 
@@ -299,6 +300,48 @@ metadata/_edit_lock_ = true
 [node name="Triggers" type="Node2D" parent="." unique_id=1993564345]
 metadata/_edit_lock_ = true
 
+[node name="ScreenShakeTrigger" type="Area2D" parent="Triggers" unique_id=1750362101 node_paths=PackedStringArray("behavior") instance=ExtResource("15_7totk")]
+position = Vector2(460, 515)
+collision_layer = 0
+script = ExtResource("26_ibf5t")
+behavior = NodePath("ScreenShakeTriggerBehavior")
+metadata/_edit_lock_ = true
+
+[node name="ScreenShakeTrigger2" type="Area2D" parent="Triggers" unique_id=1943245400 node_paths=PackedStringArray("behavior") instance=ExtResource("15_7totk")]
+position = Vector2(2019, 518)
+collision_layer = 0
+script = ExtResource("26_ibf5t")
+behavior = NodePath("ScreenShakeTriggerBehavior")
+metadata/_edit_lock_ = true
+
+[node name="ScreenShakeTrigger3" type="Area2D" parent="Triggers" unique_id=1434990298 node_paths=PackedStringArray("behavior") instance=ExtResource("15_7totk")]
+position = Vector2(4688, 101)
+collision_layer = 0
+script = ExtResource("26_ibf5t")
+behavior = NodePath("ScreenShakeTriggerBehavior")
+metadata/_edit_lock_ = true
+
+[node name="ScreenShakeTrigger4" type="Area2D" parent="Triggers" unique_id=1041071259 node_paths=PackedStringArray("behavior") instance=ExtResource("15_7totk")]
+position = Vector2(9049, -511)
+collision_layer = 0
+script = ExtResource("26_ibf5t")
+behavior = NodePath("ScreenShakeTriggerBehavior")
+metadata/_edit_lock_ = true
+
+[node name="ScreenShakeTrigger5" type="Area2D" parent="Triggers" unique_id=440247938 node_paths=PackedStringArray("behavior") instance=ExtResource("15_7totk")]
+position = Vector2(12474, -254)
+collision_layer = 0
+script = ExtResource("26_ibf5t")
+behavior = NodePath("ScreenShakeTriggerBehavior")
+metadata/_edit_lock_ = true
+
+[node name="ScreenShakeTrigger6" type="Area2D" parent="Triggers" unique_id=55876667 node_paths=PackedStringArray("behavior") instance=ExtResource("15_7totk")]
+position = Vector2(13684, -341)
+collision_layer = 0
+script = ExtResource("26_ibf5t")
+behavior = NodePath("ScreenShakeTriggerBehavior")
+metadata/_edit_lock_ = true
+
 [node name="QuestScriptTrigger_ReachedRockPuzzle" type="Area2D" parent="Triggers" unique_id=1651920811 node_paths=PackedStringArray("behavior") instance=ExtResource("25_gefjw")]
 position = Vector2(4025, 304)
 script = ExtResource("26_ibf5t")
@@ -331,7 +374,7 @@ delete_from_scene = true
 metadata/_custom_type_script = "uid://bvs6l44borf1h"
 metadata/_edit_lock_ = true
 
-[node name="ChangeEditableObjectsTrigger_StartRotatePuzzle" parent="Triggers" unique_id=1750362101 node_paths=PackedStringArray("behavior") instance=ExtResource("27_rnh1a")]
+[node name="ChangeEditableObjectsTrigger_StartRotatePuzzle" parent="Triggers" unique_id=419466133 node_paths=PackedStringArray("behavior") instance=ExtResource("27_rnh1a")]
 position = Vector2(4432, 247)
 collision_layer = 0
 script = ExtResource("26_ibf5t")
@@ -340,7 +383,7 @@ delete_from_scene = true
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_cveeh")
+shape = SubResource("RectangleShape2D_rvxi4")
 metadata/_edit_lock_ = true
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
@@ -357,7 +400,7 @@ delete_from_scene = true
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_tsdxu")
+shape = SubResource("RectangleShape2D_px0r7")
 metadata/_edit_lock_ = true
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
@@ -374,7 +417,7 @@ delete_from_scene = true
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_c2m1k")
+shape = SubResource("RectangleShape2D_fcmqh")
 metadata/_edit_lock_ = true
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
@@ -1024,7 +1067,7 @@ limit_bottom = 1080
 position_smoothing_enabled = true
 metadata/_edit_lock_ = true
 
-[node name="EditableObjectIndicator" type="Node2D" parent="Player" unique_id=1865077172]
+[node name="EditableObjectIndicator" type="Node2D" parent="Player" unique_id=694477885]
 script = ExtResource("12_vjwix")
 metadata/_edit_lock_ = true
 
@@ -1137,6 +1180,12 @@ metadata/_edit_lock_ = true
 [connection signal="body_entered" from="ScrollGates/ScrollGate2/TriggerArea" to="ScrollGates/ScrollGate2/ScrollGateBehavior" method="player_entered" unbinds=1]
 [connection signal="body_entered" from="ScrollGates/ScrollGate3/TriggerArea" to="ScrollGates/ScrollGate3/ScrollGateBehavior" method="player_entered" unbinds=1]
 [connection signal="body_entered" from="Flag" to="Flag" method="_on_body_entered"]
+[connection signal="body_entered" from="Triggers/ScreenShakeTrigger" to="Triggers/ScreenShakeTrigger" method="_player_entered" unbinds=1]
+[connection signal="body_entered" from="Triggers/ScreenShakeTrigger2" to="Triggers/ScreenShakeTrigger2" method="_player_entered" unbinds=1]
+[connection signal="body_entered" from="Triggers/ScreenShakeTrigger3" to="Triggers/ScreenShakeTrigger3" method="_player_entered" unbinds=1]
+[connection signal="body_entered" from="Triggers/ScreenShakeTrigger4" to="Triggers/ScreenShakeTrigger4" method="_player_entered" unbinds=1]
+[connection signal="body_entered" from="Triggers/ScreenShakeTrigger5" to="Triggers/ScreenShakeTrigger5" method="_player_entered" unbinds=1]
+[connection signal="body_entered" from="Triggers/ScreenShakeTrigger6" to="Triggers/ScreenShakeTrigger6" method="_player_entered" unbinds=1]
 [connection signal="body_entered" from="Triggers/QuestScriptTrigger_ReachedRockPuzzle" to="Triggers/QuestScriptTrigger_ReachedRockPuzzle" method="_player_entered" unbinds=1]
 [connection signal="body_entered" from="Triggers/QuestScriptTrigger_SolvedRockPuzzle" to="Triggers/QuestScriptTrigger_SolvedRockPuzzle" method="_player_entered" unbinds=1]
 [connection signal="body_entered" from="Triggers/QuestScriptTrigger_SolvedScrollPuzzle" to="Triggers/QuestScriptTrigger_SolvedScrollPuzzle" method="_player_entered" unbinds=1]
