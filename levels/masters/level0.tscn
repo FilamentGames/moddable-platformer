@@ -93,6 +93,10 @@ size = Vector2(94, 258)
 resource_local_to_scene = true
 size = Vector2(94, 258)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v4g46"]
+resource_local_to_scene = true
+size = Vector2(94, 258)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ruf8e"]
 size = Vector2(14.781952, 6.386901)
 
@@ -384,7 +388,21 @@ shape = SubResource("RectangleShape2D_2yf5f")
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
 script = ExtResource("23_8knqs")
-add_objects = [NodePath("../../../Scroll/InspectorCheckboxScrollCondition"), NodePath("../../../Enemies/Enemy"), NodePath("../../../Enemies/Enemy2")]
+add_objects = [NodePath("../../../Scroll/InspectorCheckboxScrollCondition")]
+
+[node name="ChangeEditableObjectsTrigger_StartScrollPuzzle2" parent="Triggers" unique_id=457228071 node_paths=PackedStringArray("behavior") instance=ExtResource("14_m7dqe")]
+position = Vector2(8621, 385)
+collision_layer = 0
+script = ExtResource("14_0bbcg")
+behavior = NodePath("Behavior")
+delete_from_scene = true
+
+[node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle2" index="0" unique_id=490838596]
+shape = SubResource("RectangleShape2D_vm00m")
+
+[node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle2" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
+script = ExtResource("23_8knqs")
+add_objects = [NodePath("../../../Enemies/Enemy"), NodePath("../../../Enemies/Enemy2")]
 
 [node name="ChangeEditableObjectsTrigger_StartTilePuzzle" parent="Triggers" unique_id=2100137793 node_paths=PackedStringArray("behavior") instance=ExtResource("14_m7dqe")]
 position = Vector2(10799, 379)
@@ -394,11 +412,11 @@ behavior = NodePath("Behavior")
 delete_from_scene = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_vm00m")
+shape = SubResource("RectangleShape2D_v4g46")
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
 script = ExtResource("23_8knqs")
-add_objects = [NodePath("../../../TileMapLayer")]
+add_objects = [NodePath("../../../TileMapLayer"), NodePath("../../../Scroll4/ObjectPropertyEqualityScrollCondition")]
 
 [node name="DemoEndTrigger" type="Area2D" parent="Triggers" unique_id=1681964514 node_paths=PackedStringArray("behavior") instance=ExtResource("32_t64e8")]
 position = Vector2(14478, -623)
@@ -1088,6 +1106,7 @@ script = ExtResource("31_weabp")
 [connection signal="body_entered" from="Triggers/QuestScriptTrigger_SolvedTilePuzzle" to="Triggers/QuestScriptTrigger_SolvedTilePuzzle" method="_player_entered" unbinds=1]
 [connection signal="body_entered" from="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle" to="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle" method="_player_entered" unbinds=1]
 [connection signal="body_entered" from="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle" to="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle" method="_player_entered" unbinds=1]
+[connection signal="body_entered" from="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle2" to="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle2" method="_player_entered" unbinds=1]
 [connection signal="body_entered" from="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" to="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" method="_player_entered" unbinds=1]
 [connection signal="body_entered" from="Triggers/DemoEndTrigger" to="Triggers/DemoEndTrigger" method="_player_entered" unbinds=1]
 [connection signal="save_checkpoint" from="Checkpoints/Checkpoint" to="Checkpoints/Checkpoint" method="send_checkpoint_message"]
@@ -1137,6 +1156,7 @@ script = ExtResource("31_weabp")
 [editable path="Triggers/ForceQuestProgressTrigger_SolvedRockPuzzle"]
 [editable path="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle"]
 [editable path="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle"]
+[editable path="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle2"]
 [editable path="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle"]
 [editable path="NPCs/Npc_MonkFlavor"]
 [editable path="NPCs/Npc_Sheep"]
