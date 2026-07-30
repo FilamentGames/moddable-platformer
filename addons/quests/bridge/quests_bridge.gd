@@ -50,6 +50,7 @@ func _capture(message, data, session_id):
 			return true
 		"collect_scroll":
 			GlobalQuests.quests.collect_scroll(data[1])
+			_collected_objects.append(data[1])
 			_send_message(session_id, -1, "scrolls_updated", [GlobalQuests.quests.scrolls_collected.size()])
 			return true
 		"get_number_of_scrolls":
@@ -71,7 +72,7 @@ func _capture(message, data, session_id):
 			GlobalQuests.quests.activate_level_checkpoint(data[1])
 			return true
 		"delete_node_in_editor":
-			GlobalQuests.quests.delete_node_in_editor(data[1])
+			_collected_objects.append(data[1])
 			return true
 		"update_editable_objects":
 			GlobalQuests.quests.update_editable_objects(data[1], data[2])

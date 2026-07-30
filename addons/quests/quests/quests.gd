@@ -158,9 +158,6 @@ func collect_scroll(scroll_id: String) -> void:
 	var scene: Node2D = editor_scene_provider.get_editor_scene()
 	var target_scroll := UniqueSceneId.find_by_id(scene, scroll_id)
 	if target_scroll:
-		target_scroll.get_parent().remove_child(target_scroll)
-		target_scroll.free()
-		editor_scene_provider.update_and_save_node(scene)
 		scrolls_collected.push_back(scroll_id)
 		scroll_collected.emit()
 
