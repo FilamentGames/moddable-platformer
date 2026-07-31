@@ -37,4 +37,17 @@ func _set(property: StringName, value: Variant) -> bool:
 		visible_characters = 0
 		_scroll_time = 0
 		start_animating.emit()
+		print(text, ",", value)
 	return false
+
+## Show all characters in the label immediately.
+func show_all() -> void:
+	visible_characters = text.length()
+	end_animating.emit()
+
+## If the label is still animating.
+func is_animating() -> bool:
+	return visible_characters < text.length()
+
+func get_text() -> String:
+	return text

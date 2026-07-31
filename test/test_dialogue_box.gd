@@ -52,3 +52,28 @@ func test_it_emits_a_signal_when_next_button_is_clicked():
 	dialogue._on_next_button_click()
 
 	assert_eq(spy.get_number_of_calls(), 1)
+
+func test_it_stops_animation_when_next_button_is_clicked_if_enabled():
+	dialogue.next_button_stops_animation_first = true
+	dialogue.dialogue_lines = ["Lorem", "Ipsum"]
+	dialogue.label = autofree(AnimatedLabel.new())
+	var animated_label: AnimatedLabel = dialogue.label as AnimatedLabel
+	add_child(dialogue.label)
+	add_child(dialogue)
+
+	dialogue._on_next_button_click()
+
+	assert_eq(animated_label.get_text(), "Lorem")
+
+	dialogue._on_next_button_click()
+	dialogue._on_next_button_click()
+
+	assert_eq(animated_label.get_text(), "Ipsum")
+
+func test_it_sets_the_canvas_layer_offset_to_the_global_position():
+	dialogue.canvas_layer = autofree(CanvasLayer.new())
+	dialogue.global_position = Vector2(100, 100)
+	add_child(dialogue.canvas_layer)
+	add_child(dialogue)
+
+	assert_eq(dialogue.canvas_layer.offset, Vector2(100, 100))
