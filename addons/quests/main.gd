@@ -119,7 +119,7 @@ func _auto_play_when_ready() -> void:
 	var main_scene: String = ProjectSettings.get_setting("application/run/main_scene")
 	var deadline_msec = Time.get_ticks_msec() + int(auto_play_ready_timeout_sec * 1000.0)
 
-	var web_timeout = 10.0
+	var web_timeout = 3.0
 	var desktop_timeout = 0.5
 
 	while Time.get_ticks_msec() < deadline_msec:
