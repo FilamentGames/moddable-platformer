@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://do0lxo8lxw312"]
+
+[ext_resource type="Texture2D" uid="uid://d26h3h4ng7r4u" path="res://components/hud/assets/HUDBackground.png" id="1_cahnb"]
+[ext_resource type="Script" uid="uid://c2kjbgjhjvkqm" path="res://components/hud/hud_2.gd" id="1_wkbij"]
+[ext_resource type="Texture2D" uid="uid://ch50tac7jkcjt" path="res://components/hud/assets/Icon_Yarnspark.png" id="2_ub3xi"]
+[ext_resource type="Texture2D" uid="uid://eh3dptn8alnl" path="res://components/hud/assets/Icon_Coin.png" id="3_i4s6h"]
+[ext_resource type="FontFile" uid="uid://dmkpr8vqyye7s" path="res://components/hud/assets/BubbleBoop-Regular.ttf" id="3_ub3xi"]
+[ext_resource type="Script" uid="uid://i044gnc0bp00" path="res://components/hud/coin_counter.gd" id="5_i4s6h"]
+[ext_resource type="Script" uid="uid://dhavvm41hheph" path="res://components/hud/scroll_counter.gd" id="6_23juc"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hmpfs"]
+content_margin_left = 26.0
+content_margin_right = 8.0
+texture = ExtResource("1_cahnb")
+
+[sub_resource type="LabelSettings" id="LabelSettings_hmpfs"]
+font = ExtResource("3_ub3xi")
+font_size = 48
+font_color = Color(1, 1, 0.8862745, 1)
+shadow_color = Color(0, 0, 0, 0.8)
+shadow_offset = Vector2(2, 2)
+
+[node name="Hud2" type="CanvasLayer" unique_id=1514961890]
+script = ExtResource("1_wkbij")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1163598090]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -261.0
+offset_bottom = 80.0
+grow_horizontal = 0
+pivot_offset = Vector2(261, 0)
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer" unique_id=602012568]
+texture_filter = 1
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_hmpfs")
+
+[node name="Coins" type="HBoxContainer" parent="MarginContainer/PanelContainer" unique_id=429967963]
+layout_mode = 2
+size_flags_horizontal = 8
+offset_transform_enabled = true
+offset_transform_visual_only = false
+theme_override_constants/separation = 10
+
+[node name="CoinIcon" type="TextureRect" parent="MarginContainer/PanelContainer/Coins" unique_id=768910098]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.95
+texture = ExtResource("3_i4s6h")
+stretch_mode = 3
+
+[node name="CoinCount" type="Label" parent="MarginContainer/PanelContainer/Coins" unique_id=1576324505]
+oversampling_with_scale = 2
+custom_minimum_size = Vector2(50, 0)
+custom_maximum_size = Vector2(50, -1)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.32
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 4)
+text = "0"
+label_settings = SubResource("LabelSettings_hmpfs")
+vertical_alignment = 1
+
+[node name="YarnSpark" type="HBoxContainer" parent="MarginContainer/PanelContainer" unique_id=313359977]
+layout_mode = 2
+size_flags_horizontal = 0
+offset_transform_enabled = true
+offset_transform_visual_only = false
+theme_override_constants/separation = 10
+
+[node name="YarnsparkIcon" type="TextureRect" parent="MarginContainer/PanelContainer/YarnSpark" unique_id=2007240739]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_ub3xi")
+stretch_mode = 3
+
+[node name="YarnsparkCount" type="Label" parent="MarginContainer/PanelContainer/YarnSpark" unique_id=417108734]
+oversampling_with_scale = 2
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 4)
+text = "0"
+label_settings = SubResource("LabelSettings_hmpfs")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Scriptz" type="Node" parent="." unique_id=473924390]
+
+[node name="CoinCounter" type="Control" parent="Scriptz" unique_id=257240976 node_paths=PackedStringArray("coin_count_label")]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("5_i4s6h")
+coin_count_label = NodePath("../../MarginContainer/PanelContainer/Coins/CoinCount")
+
+[node name="YarnSparkCounter" type="Control" parent="Scriptz" unique_id=1279058602 node_paths=PackedStringArray("scroll_count_label")]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("6_23juc")
+scroll_count_label = NodePath("../../MarginContainer/PanelContainer/YarnSpark/YarnsparkCount")

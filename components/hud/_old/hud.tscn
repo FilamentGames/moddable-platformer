@@ -19,7 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://d14f7bk6v4d2y" path="res://assets/input-prompts/keyboard-and-mouse_sheet_default/keyboard_arrow_down.tres" id="10_o2hcl"]
 [ext_resource type="Texture2D" uid="uid://c60ojnq6qsft5" path="res://assets/input-prompts/keyboard-and-mouse_sheet_default/keyboard_enter.tres" id="11_gh5fi"]
 [ext_resource type="Texture2D" uid="uid://cxjxjkth3jat5" path="res://assets/input-prompts/keyboard-and-mouse_sheet_default/keyboard_backspace.tres" id="12_nx880"]
-[ext_resource type="PackedScene" uid="uid://tgqcl8qnq2dg" path="res://components/hud/scroll_counter.tscn" id="13_5kc73"]
+[ext_resource type="PackedScene" uid="uid://tgqcl8qnq2dg" path="res://components/hud/_old/scroll_counter.tscn" id="13_5kc73"]
 [ext_resource type="Texture2D" uid="uid://0awxt4dn7lvh" path="res://assets/input-prompts/keyboard-and-mouse_sheet_default/keyboard_space.tres" id="13_bp16l"]
 [ext_resource type="Texture2D" uid="uid://g6tdq8sy82um" path="res://assets/input-prompts/keyboard-and-mouse_sheet_default/keyboard_a.tres" id="13_nx880"]
 [ext_resource type="Texture2D" uid="uid://hnw2o470wxpa" path="res://assets/input-prompts/keyboard-and-mouse_sheet_default/keyboard_w.tres" id="14_drihh"]
@@ -29,7 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://dmbiwxorfb4yn" path="res://assets/input-prompts/keyboard-and-mouse_sheet_default/mouse_left.tres" id="19_tcfrd"]
 [ext_resource type="Texture2D" uid="uid://wfff10c8t28p" path="res://assets/input-prompts/keyboard-and-mouse_sheet_default/keyboard_c.tres" id="20_qb75m"]
 [ext_resource type="Texture2D" uid="uid://f8qnyabq4s4e" path="res://assets/input-prompts/keyboard-and-mouse_sheet_default/keyboard_e.tres" id="21_x1wfm"]
-[ext_resource type="PackedScene" uid="uid://tmaf5o7nhdpv" path="res://components/hud/coin_counter.tscn" id="22_drihh"]
+[ext_resource type="PackedScene" uid="uid://tmaf5o7nhdpv" path="res://components/hud/_old/coin_counter.tscn" id="22_drihh"]
 
 [sub_resource type="Theme" id="Theme_0yvta"]
 default_font_size = 64

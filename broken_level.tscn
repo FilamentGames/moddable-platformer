@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cugv3o2f6ug6e" path="res://components/sign/sign.tscn" id="9_flc0k"]
 [ext_resource type="PackedScene" uid="uid://8st4scqt06l8" path="res://components/player/player.tscn" id="10_tb02s"]
 [ext_resource type="SpriteFrames" uid="uid://c2wpvtw1stuyq" path="res://components/player/spriteframes-inkdrinker-red.tres" id="11_lh1sx"]
-[ext_resource type="PackedScene" uid="uid://jt80gv02u4f2" path="res://hud.tscn" id="12_ixmx3"]
+[ext_resource type="PackedScene" uid="uid://jt80gv02u4f2" path="res://components/hud/_old/hud.tscn" id="12_ixmx3"]
 [ext_resource type="PackedScene" uid="uid://dbaal2g7b8ub0" path="res://components/enemy/storyvore_enemy.tscn" id="13_3rps0"]
 [ext_resource type="PackedScene" uid="uid://beuisy5yrw0bq" path="res://components/flag/flag.tscn" id="14_dw26e"]
 [ext_resource type="Script" uid="uid://boqbxvbja884q" path="res://scripts/multiplayer_camera.gd" id="15_ek0ox"]

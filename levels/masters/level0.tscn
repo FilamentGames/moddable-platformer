@@ -34,7 +34,6 @@
 [ext_resource type="PackedScene" uid="uid://b61aexqklqbhv" path="res://components/babygodot/trigger/screenshake_event_trigger/screen_shake_trigger.tscn" id="15_0aei4"]
 [ext_resource type="PackedScene" uid="uid://bwpj01b3g2as6" path="res://components/babygodot/editor_powerup/scene_tree_powerup.tscn" id="15_dt6hy"]
 [ext_resource type="Script" uid="uid://n1rnbm4rnt0t" path="res://components/babygodot/npc/npc.gd" id="16_8knqs"]
-[ext_resource type="PackedScene" uid="uid://jt80gv02u4f2" path="res://hud.tscn" id="16_gqw0f"]
 [ext_resource type="PackedScene" uid="uid://caob0y51xxmf0" path="res://components/babygodot/editor_powerup/inspector_powerup.tscn" id="16_m7dqe"]
 [ext_resource type="PackedScene" uid="uid://dbaal2g7b8ub0" path="res://components/enemy/storyvore_enemy.tscn" id="17_d6rl2"]
 [ext_resource type="PackedScene" uid="uid://2wfdv8cvm7lm" path="res://components/babygodot/trigger/force_quest_progress_trigger/force_quest_progress_trigger.tscn" id="17_foth1"]
@@ -54,15 +53,16 @@
 [ext_resource type="PackedScene" uid="uid://10andtcysmr4" path="res://components/babygodot/demo/boss/boss.tscn" id="27_x2f4c"]
 [ext_resource type="Script" uid="uid://umb21eb2y1oj" path="res://scripts/player.gd" id="28_kexs0"]
 [ext_resource type="Script" uid="uid://brblg35gugk3w" path="res://components/babygodot/trigger/force_quest_progress_trigger/skip_quest_trigger_behavior.gd" id="29_poyld"]
-[ext_resource type="Script" uid="uid://bi5370kgl6xcs" path="res://scripts/hud.gd" id="31_weabp"]
 [ext_resource type="PackedScene" uid="uid://che3aoxmyk8m7" path="res://components/babygodot/trigger/demo_end_trigger/demo_end_trigger.tscn" id="32_t64e8"]
 [ext_resource type="Script" uid="uid://d003tgo4vrak8" path="res://components/enemy/enemy.gd" id="33_7cn4d"]
 [ext_resource type="Script" uid="uid://ctlotfccvl4jn" path="res://scripts/flag.gd" id="35_fnu5h"]
 [ext_resource type="SpriteFrames" uid="uid://b3orjhfv6eeud" path="res://components/flag/flag-spriteframes-green.tres" id="36_jf12t"]
 [ext_resource type="PackedScene" uid="uid://bob4es2sd13aa" path="res://assets/decorations/barley_crops.tscn" id="37_xvuht"]
+[ext_resource type="PackedScene" uid="uid://do0lxo8lxw312" path="res://components/hud/hud2.tscn" id="39_v78as"]
 [ext_resource type="Script" uid="uid://cuiy5ce0t0uf2" path="res://components/babygodot/demo/boss/boss.gd" id="44_ht26h"]
 [ext_resource type="Script" uid="uid://b532d25pht7ub" path="res://components/babygodot/checkpoint/checkpoint.gd" id="45_2d4sf"]
 [ext_resource type="PackedScene" uid="uid://il08cnnaosyi" path="res://components/babygodot/checkpoint/checkpoint_npc.tscn" id="46_8knqs"]
+[ext_resource type="Script" uid="uid://c2kjbgjhjvkqm" path="res://components/hud/hud_2.gd" id="64_y8cc3"]
 
 [sub_resource type="Theme" id="Theme_ncwqi"]
 default_font_size = 64
@@ -1099,8 +1099,8 @@ squashable = false
 [node name="BarleyCrops" type="Node2D" parent="DecorativeProps" unique_id=530531959 instance=ExtResource("37_xvuht")]
 position = Vector2(2459, 653)
 
-[node name="HUD" type="CanvasLayer" parent="." unique_id=207528560 instance=ExtResource("16_gqw0f")]
-script = ExtResource("31_weabp")
+[node name="Hud2" type="CanvasLayer" parent="." unique_id=1514961890 instance=ExtResource("39_v78as")]
+script = ExtResource("64_y8cc3")
 
 [connection signal="body_entered" from="Dangerzone" to="Dangerzone" method="_on_body_entered"]
 [connection signal="collected" from="Scroll" to="Scroll/ScrollContinuity" method="_on_collect"]
