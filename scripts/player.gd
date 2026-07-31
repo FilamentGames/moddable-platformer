@@ -111,6 +111,9 @@ var global_lives_initialized := false
 
 ## Similar to movement_locked, but still allows the player to be affected by gravity and other physics.
 var control_locked := false
+
+## The position the camera was at when the player was defeated.
+var _defeated_camera_position: Vector2 = Vector2.ZERO
 #endregion
 
 static var last_checkpoint_position: Vector2 = Vector2.ZERO
@@ -306,7 +309,7 @@ func _physics_process(delta):
 		return
 	
 	# Don't move if in some kind of cutscene, dialogue, etc.
-	if movement_locked or is_attacking or defeated:
+	if movement_locked or is_attacking:
 		return
 
 	# Remove the '#' below to enable the phase special ability
@@ -324,7 +327,7 @@ func _physics_process(delta):
 		coyote_timer = (coyote_time + delta)
 		double_jump_armed = false
 
-	if Input.is_action_just_pressed(Actions.lookup(player, "jump")) and not control_locked:
+	if Input.is_action_just_pressed(Actions.lookup(player, "jump")) and not control_locked and not defeated:
 		jump_buffer_timer = (jump_buffer + delta)
 
 	if jump_buffer_timer > 0 and (double_jump_armed or coyote_timer > 0):
@@ -338,6 +341,14 @@ func _physics_process(delta):
 	# Add the gravity.
 	if coyote_timer <= 0:
 		velocity.y += gravity * delta
+	
+	if defeated:
+		get_viewport().get_camera_2d().global_position = _defeated_camera_position
+		if velocity.y < 0:
+			velocity.y = 0
+		velocity.x /= 2.0
+		move_and_slide()
+		return
 
 	# Remove the '#' below to enable the shrink special ability
 	#_shrink()
@@ -381,15 +392,21 @@ func _physics_process(delta):
 
 ## Restore the player to their initial position in the level. Called by _on_lives_changed.
 func reset():
+	if defeated:
+		return
 	if not global_lives_initialized:
 		global_lives_initialized = true
 		return
 	if _sprite.sprite_frames.has_animation("defeated"):
 		_sprite.play("defeated")
 		defeated = true
+		var camera: Camera2D = get_viewport().get_camera_2d()
+		_defeated_camera_position = camera.global_position
 		await _sprite.animation_finished
 		_defeated_timer.start()
 		await _defeated_timer.timeout
+		camera.position = Vector2.ZERO
+	
 	position = original_position
 	velocity = Vector2.ZERO
 	coyote_timer = 0
