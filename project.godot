@@ -117,3 +117,4 @@ player_1_attack={
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.28235295, 0.67058825, 0.65882355, 1)
