@@ -1,11 +1,21 @@
 [gd_scene format=3 uid="uid://bwpj01b3g2as6"]
 
 [ext_resource type="PackedScene" uid="uid://deurro1x5gm85" path="res://components/babygodot/editor_powerup/common/editor_powerup.tscn" id="1_aol57"]
-[ext_resource type="Texture2D" uid="uid://c44ws8a8yogrr" path="res://components/babygodot/editor_powerup/icons/PackedScene.svg" id="2_rrj74"]
+[ext_resource type="Texture2D" uid="uid://dnpkpd50bkwvd" path="res://components/babygodot/editor_powerup/icons/Powerup_SceneTree.png" id="2_aol57"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aol57"]
+resource_local_to_scene = true
+radius = 30.0
 
 [node name="SceneTreePowerup" unique_id=857147533 instance=ExtResource("1_aol57")]
 editor_unlock = 1
 unlock_dialogue = Array[String](["You unlocked the Scene Tree Dock!", "This allows you to see the list of objects in the current game scene.", "Stop the flow of time and see which objects you can edit!"])
 
 [node name="Sprite2D" parent="Root" parent_id_path=PackedInt32Array(210044367) index="1" unique_id=1171952676]
-texture = ExtResource("2_rrj74")
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("2_aol57")
+
+[node name="CollisionShape2D" parent="Root/Sprite2D/Area2D" parent_id_path=PackedInt32Array(303259003) index="0" unique_id=666134858]
+visible = true
+shape = SubResource("CircleShape2D_aol57")
