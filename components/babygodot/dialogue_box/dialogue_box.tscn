@@ -3,82 +3,159 @@
 [ext_resource type="Script" uid="uid://deltjlxf6ctfu" path="res://components/babygodot/dialogue_box/dialogue_box.gd" id="1_j2sh0"]
 [ext_resource type="Script" uid="uid://1ifd6uq30ui5" path="res://components/babygodot/dialogue_box/components/just_pressed_button_shortcut.gd" id="2_62bfi"]
 [ext_resource type="Script" uid="uid://dewvg666m6712" path="res://addons/quests/quest_dock/components/animated_label.gd" id="2_rqjea"]
+[ext_resource type="Texture2D" uid="uid://e1vos3sffoiq" path="res://components/babygodot/dialogue_box/assets/PanelNPC_BookBackground.png" id="2_wh6ei"]
+[ext_resource type="Texture2D" uid="uid://cfwfae8hcgci1" path="res://components/babygodot/dialogue_box/assets/PanelNPC_Page.png" id="3_u6c1r"]
+[ext_resource type="FontFile" uid="uid://huadpmbapadr" path="res://components/babygodot/info_indicator/Info Story.ttf" id="4_umonf"]
+[ext_resource type="Texture2D" uid="uid://cd3kiw0i383ek" path="res://components/babygodot/dialogue_box/assets/PanelNPC_PageCorner.png" id="7_umonf"]
+[ext_resource type="AnimationLibrary" uid="uid://de84gy7ed28mn" path="res://components/babygodot/dialogue_box/page_turn.tres" id="8_ll2xx"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j2sh0"]
-bg_color = Color(0.16070803, 0.16070803, 0.16070803, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0.38, 0.38, 0.38, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hmpfs"]
+texture = ExtResource("2_wh6ei")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_acawv"]
+texture = ExtResource("3_u6c1r")
 
 [sub_resource type="LabelSettings" id="LabelSettings_j2sh0"]
-font_size = 24
+font = ExtResource("4_umonf")
+font_size = 36
+font_color = Color(0, 0, 0, 1)
 
-[node name="DialogueBox" type="Node2D" unique_id=718634705 node_paths=PackedStringArray("label", "next_button", "canvas_layer")]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ll2xx"]
+atlas = ExtResource("7_umonf")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r10le"]
+atlas = ExtResource("7_umonf")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tildi"]
+atlas = ExtResource("7_umonf")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hmpfs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ll2xx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r10le")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tildi")
+}],
+"loop": 2,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="DialogueBox" type="Node2D" unique_id=718634705 node_paths=PackedStringArray("label", "next_button", "canvas_layer", "corner_idle_sprite", "animation_player")]
 z_index = 1000
 script = ExtResource("1_j2sh0")
-label = NodePath("CanvasLayer/Panel/MarginContainer/VBoxContainer/DialogueText")
-next_button = NodePath("CanvasLayer/Panel/MarginContainer/VBoxContainer/NextButton")
+label = NodePath("CanvasLayer/Container/Panel/MarginContainer/VBoxContainer/DialogueText")
+next_button = NodePath("CanvasLayer/Container/Panel/MarginContainer/VBoxContainer/NextButton")
 canvas_layer = NodePath("CanvasLayer")
+corner_idle_sprite = NodePath("CanvasLayer/Container/Panel/PageTurn/CornerIdle")
+animation_player = NodePath("AnimationPlayer")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1031154575]
 layer = 2
 follow_viewport_enabled = true
 
-[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=377623138]
+[node name="Container" type="Control" parent="CanvasLayer" unique_id=931187152]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BookBackground" type="PanelContainer" parent="CanvasLayer/Container" unique_id=561333977]
+texture_filter = 1
+custom_minimum_size = Vector2(293, 185)
+layout_mode = 0
+offset_left = -292.0
+offset_top = -190.0
+offset_right = 294.0
+offset_bottom = 180.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_hmpfs")
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Container" unique_id=377623138]
 z_index = 100
+texture_filter = 1
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -1264.0
-offset_top = -699.0
-offset_right = -656.0
-offset_bottom = -381.0
+offset_left = -282.0
+offset_top = -206.0
+offset_right = 230.0
+offset_bottom = 122.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_j2sh0")
+pivot_offset = Vector2(20.89, 164)
+theme_override_styles/panel = SubResource("StyleBoxTexture_acawv")
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Panel" unique_id=1674483679]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Container/Panel" unique_id=1674483679]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 16
-theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 16
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 64
 theme_override_constants/margin_bottom = 16
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel/MarginContainer" unique_id=1069544845]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Container/Panel/MarginContainer" unique_id=1069544845]
 layout_mode = 2
 
-[node name="DialogueText" type="Label" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer" unique_id=1968753694]
+[node name="DialogueText" type="Label" parent="CanvasLayer/Container/Panel/MarginContainer/VBoxContainer" unique_id=1968753694]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_vertical = 3
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean feugiat elit ut quam ullamcorper dictum. Vivamus iaculis dignissim eleifend. Sed blandit risus at consectetur accumsan."
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
 label_settings = SubResource("LabelSettings_j2sh0")
+horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 2
-visible_characters = 183
+visible_characters = 80
+visible_ratio = 1.0256411
 script = ExtResource("2_rqjea")
 metadata/_custom_type_script = "uid://dewvg666m6712"
 
-[node name="NextButton" type="Button" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer" unique_id=2044829538]
+[node name="NextButton" type="Button" parent="CanvasLayer/Container/Panel/MarginContainer/VBoxContainer" unique_id=2044829538]
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Next"
 
-[node name="JustPressedButtonShortcut" type="Node" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer/NextButton" unique_id=377620363 node_paths=PackedStringArray("button")]
+[node name="JustPressedButtonShortcut" type="Node" parent="CanvasLayer/Container/Panel/MarginContainer/VBoxContainer/NextButton" unique_id=377620363 node_paths=PackedStringArray("button")]
 script = ExtResource("2_62bfi")
 button = NodePath("..")
 metadata/_custom_type_script = "uid://1ifd6uq30ui5"
 
-[connection signal="pressed" from="CanvasLayer/Panel/MarginContainer/VBoxContainer/NextButton" to="." method="_on_next_button_click"]
+[node name="PageTurn" type="Control" parent="CanvasLayer/Container/Panel" unique_id=1896728547]
+anchors_preset = 0
+offset_right = 512.0
+offset_bottom = 328.0
+
+[node name="CornerIdle" type="AnimatedSprite2D" parent="CanvasLayer/Container/Panel/PageTurn" unique_id=1865161711]
+texture_filter = 1
+position = Vector2(456, 292)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_hmpfs")
+autoplay = "default"
+frame_progress = 0.97573537
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=795356536]
+libraries/ = ExtResource("8_ll2xx")
+autoplay = &"appear"
+
+[connection signal="end_animating" from="CanvasLayer/Container/Panel/MarginContainer/VBoxContainer/DialogueText" to="." method="_on_dialogue_text_end_animating"]
+[connection signal="start_animating" from="CanvasLayer/Container/Panel/MarginContainer/VBoxContainer/DialogueText" to="." method="_on_dialogue_text_start_animating"]
+[connection signal="pressed" from="CanvasLayer/Container/Panel/MarginContainer/VBoxContainer/NextButton" to="." method="_on_next_button_click"]
