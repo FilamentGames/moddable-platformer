@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://cqguk6cy3mt15"]
+
+[ext_resource type="Script" uid="uid://cf1o67bfqt8o" path="res://components/babygodot/info_indicator/info_indicator.gd" id="1_0hblt"]
+[ext_resource type="Texture2D" uid="uid://ddg0nes34xe5l" path="res://components/babygodot/info_indicator/InfoPanelIndicator.png" id="1_ew7ss"]
+[ext_resource type="Texture2D" uid="uid://8j30hcey6goj" path="res://components/babygodot/info_indicator/InfoPanel.png" id="3_gwc1r"]
+[ext_resource type="AnimationLibrary" uid="uid://cnk8wahv52oh8" path="res://components/babygodot/info_indicator/info_indicator.tres" id="4_gwc1r"]
+[ext_resource type="FontFile" uid="uid://huadpmbapadr" path="res://components/babygodot/info_indicator/Info Story.ttf" id="4_sxi6j"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hmpfs"]
+content_margin_left = 24.0
+content_margin_top = 16.0
+content_margin_right = 24.0
+content_margin_bottom = 16.0
+texture = ExtResource("3_gwc1r")
+
+[node name="InfoIndicator" type="Node2D" unique_id=1774361635 node_paths=PackedStringArray("indicator", "info_panel", "info_panel_canvas_layer", "animation")]
+script = ExtResource("1_0hblt")
+indicator = NodePath("IndicatorTree/IndicatorSprite")
+info_panel = NodePath("InfoTree")
+info_panel_canvas_layer = NodePath("InfoTree/CanvasLayer")
+animation = NodePath("AnimationPlayer")
+
+[node name="IndicatorTree" type="Node2D" parent="." unique_id=845117311]
+
+[node name="IndicatorSprite" type="Sprite2D" parent="IndicatorTree" unique_id=1521255860]
+texture = ExtResource("1_ew7ss")
+
+[node name="InfoTree" type="Node2D" parent="." unique_id=233706681]
+visible = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="InfoTree" unique_id=240023699]
+visible = false
+follow_viewport_enabled = true
+
+[node name="UIContainer" type="Control" parent="InfoTree/CanvasLayer" unique_id=536485302]
+editor_description = "Lets us animate the position of the PanelContainer while also allowing it to have its own transform position. (And CanvasLayer offset needs to be used to set the global position of the panel so it can't be animated either)"
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PanelContainer" type="PanelContainer" parent="InfoTree/CanvasLayer/UIContainer" unique_id=2042454767]
+custom_minimum_size = Vector2(192, 192)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -116.0
+offset_top = -116.0
+offset_right = 76.0
+offset_bottom = 76.00018
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_hmpfs")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="InfoTree/CanvasLayer/UIContainer/PanelContainer" unique_id=91660906]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_sxi6j")
+theme_override_fonts/bold_font = ExtResource("4_sxi6j")
+theme_override_fonts/bold_italics_font = ExtResource("4_sxi6j")
+theme_override_fonts/italics_font = ExtResource("4_sxi6j")
+theme_override_fonts/mono_font = ExtResource("4_sxi6j")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "Lorem ipsum dolor sit amet"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=80899768]
+libraries/ = ExtResource("4_gwc1r")

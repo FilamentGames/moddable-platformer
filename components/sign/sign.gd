@@ -19,9 +19,11 @@ extends Node2D
 # Number of players currently standing in front of the sign.
 var _players_detected := 0
 
-@onready var player_detector: Area2D = $PlayerDetector
-@onready var label: RichTextLabel = $Label
+@export_group("Internal Refs")
+@export var label: RichTextLabel
+@export var info_indicator: InfoIndicator
 
+@onready var player_detector: Area2D = $PlayerDetector
 
 func _ready() -> void:
 	# Set the initial text on the label now that the 'label' variable is available.
@@ -30,6 +32,7 @@ func _ready() -> void:
 	# This is a @tool script so that we can preview the text on the sign in the editor. But we do
 	# not want to detect the player while running in the editor.
 	if Engine.is_editor_hint():
+		info_indicator._on_activate()
 		return
 
 	# Connect to signals that tell us when the player moves in front of the sign or moves away.
@@ -65,6 +68,6 @@ func _on_player_exited(_body: Node2D) -> void:
 
 func _update_visibility() -> void:
 	if _players_detected > 0:
-		label.visible = true
+		info_indicator._on_activate()
 	else:
-		label.visible = false
+		info_indicator._on_deactivate()
