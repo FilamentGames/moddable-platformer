@@ -36,6 +36,7 @@ var current_dialogue_box: DialogueBox
 var bridge: InGameQuestsBridge
 
 func _ready() -> void:
+	_set_control_display_fully_visible(show_talk_icon)
 	if not use_global_quest_dialogue:
 		return
 	if not bridge:
