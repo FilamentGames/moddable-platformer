@@ -31,8 +31,7 @@ scale = Vector2(0.5599989, 1)
 shape = SubResource("RectangleShape2D_0ff8d")
 
 [node name="ControlDisplay" parent="." unique_id=1300373774 instance=ExtResource("3_3vgxj")]
-visible = false
-position = Vector2(0, -75)
+position = Vector2(0, -89)
 
 [connection signal="body_entered" from="Area2D" to="." method="_player_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_player_exited"]

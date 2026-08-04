@@ -11,6 +11,9 @@ class_name Npc
 ## Flips the NPC to face the player when they are to the right of the NPC.
 @export var flip_to_face_player := false
 
+## If enabled, show the talk icon/control display.
+@export var show_talk_icon := true
+
 @export_group("Internal Refs")
 ## The NPC's sprite.
 @export var sprite: AnimatedSprite2D
@@ -22,7 +25,7 @@ class_name Npc
 @export var dialogue_container: Node2D
 
 ## A reference to the node that displays controls when the player gets near.
-@export var control_display: Node2D
+@export var control_display: ControlDisplay
 
 ## The dialogue box prefab to instantiate
 var dialogue_box_prefab: PackedScene = preload("res://components/babygodot/dialogue_box/dialogue_box.tscn")
@@ -71,14 +74,14 @@ func _player_exited(player: CharacterBody2D):
 
 ## Spawns a dialogue box for this NPC's dialogue
 func spawn_dialogue_box(player_component: PlayerDialogueComponent) -> void:
-	_set_control_display_visible(false)
+	_set_control_display_fully_visible(false)
 	if flip_to_face_player:
 		sprite.flip_h = player_component.player.global_position.x > global_position.x
 	var dialogue_box: DialogueBox = dialogue_box_prefab.instantiate()
 	dialogue_box.dialogue_lines = dialogue_lines.duplicate()
 	dialogue_box.finished.connect(func():
 		player_component.finished_dialogue.call_deferred()
-		_set_control_display_visible(true)
+		_set_control_display_fully_visible(true)
 	)
 	if bridge:
 		dialogue_box.next.connect(_progress_quest.bind(QuestLine.ProgressMethod.NextButton))
@@ -89,6 +92,13 @@ func spawn_dialogue_box(player_component: PlayerDialogueComponent) -> void:
 func _progress_quest(trigger_type: QuestLine.ProgressMethod) -> void:
 	InGameQuestsBridge.progress_quest(trigger_type)
 
-func _set_control_display_visible(visible: bool) -> void:
-	if control_display:
-		control_display.visible = visible
+func _set_control_display_visible(vis: bool) -> void:
+	if control_display and show_talk_icon:
+		if vis:
+			control_display.show_control_display()
+		else:
+			control_display.hide_control_display()
+
+func _set_control_display_fully_visible(vis: bool) -> void:
+	if control_display and show_talk_icon:
+		control_display.visible = vis
