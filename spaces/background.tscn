@@ -204,7 +204,7 @@ region_rect = Rect2(0, 0, 3840, 740)
 
 [node name="Parallax2D_HillsNear" type="Parallax2D" parent="." unique_id=395140219]
 scroll_scale = Vector2(0.65, 0.65)
-scroll_offset = Vector2(0, 250)
+scroll_offset = Vector2(0, 260)
 repeat_size = Vector2(3840, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D_HillsNear" unique_id=163192507]

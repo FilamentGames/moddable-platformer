@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://6xuod5sofp8c"]
+
+[ext_resource type="PackedScene" uid="uid://coq6d3u6wnvs2" path="res://components/platform/platform.tscn" id="1_6gxfr"]
+[ext_resource type="TileSet" uid="uid://cxchgr0dgfcak" path="res://terrain_samples/tileset_basket.tres" id="2_bgcic"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_os0vl"]
+resource_local_to_scene = true
+size = Vector2(384, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uo3pg"]
+resource_local_to_scene = true
+size = Vector2(384, 128)
+
+[node name="Platform" unique_id=1439632278 instance=ExtResource("1_6gxfr")]
+one_way = true
+tile_set = ExtResource("2_bgcic")
+tile_set_index = 1
+tile_set_left_frame = Vector2i(4, 1)
+tile_set_middle_frame = Vector2i(5, 1)
+tile_set_right_frame = Vector2i(6, 1)
+
+[node name="AreaCollisionShape2D" parent="RigidBody2D/Area2D" parent_id_path=PackedInt32Array(1585628033) index="0" unique_id=2132855283]
+shape = SubResource("RectangleShape2D_os0vl")
+
+[node name="CollisionShape2D" parent="RigidBody2D" parent_id_path=PackedInt32Array(1856058631) index="1" unique_id=587124361]
+shape = SubResource("RectangleShape2D_uo3pg")
+one_way_collision = true
