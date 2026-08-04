@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://ckrtnm2fqjeuo"]
+
+[ext_resource type="Texture2D" uid="uid://btrsy5eefepiw" path="res://components/coin/button-yellow.png" id="1_j8o05"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8cnj"]
+atlas = ExtResource("1_j8o05")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x4px0"]
+atlas = ExtResource("1_j8o05")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a1l1l"]
+atlas = ExtResource("1_j8o05")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qwv57"]
+atlas = ExtResource("1_j8o05")
+region = Rect2(192, 0, 64, 64)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c8cnj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x4px0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a1l1l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qwv57")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 10.0
+}]
