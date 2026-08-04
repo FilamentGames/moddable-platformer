@@ -97,6 +97,7 @@ _data = {
 
 [node name="Background" type="Node2D" unique_id=474635500]
 editor_description = "This scene uses a Parallax2D node to repeat a background image endlessly in all directions, and make it appear to be a long way away from the camera by having it scroll more slowly than the level in the foreground."
+texture_filter = 1
 
 [node name="Parallax2D_Void" type="Parallax2D" parent="." unique_id=541509410]
 scroll_scale = Vector2(0.05, 0.05)
