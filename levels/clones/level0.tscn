@@ -15,6 +15,7 @@
 [ext_resource type="TileSet" uid="uid://c135ryrbljtjg" path="res://terrain_samples/tileset_decorations.tres" id="13_xuycu"]
 [ext_resource type="PackedScene" uid="uid://dr8km2gn8aenv" path="res://components/props/rock_pile.tscn" id="14_ypkbb"]
 [ext_resource type="Script" uid="uid://xaqip7htvoim" path="res://components/babygodot/editable_object_indicator/editable_object_indicator.gd" id="15_1nw5v"]
+[ext_resource type="PackedScene" uid="uid://w1o7xdo6gt67" path="res://components/babygodot/editable_object_indicator/editable_object_indicator.tscn" id="15_lad0l"]
 [ext_resource type="PackedScene" uid="uid://dpk1jwflxtjbn" path="res://components/babygodot/scroll/scroll.tscn" id="16_8s37o"]
 [ext_resource type="Script" uid="uid://odpmnclrocgd" path="res://components/babygodot/scroll/scroll.gd" id="17_yfohq"]
 [ext_resource type="PackedScene" uid="uid://67eoedabcb3s" path="res://components/babygodot/scroll/condition_types/inspector_checkbox_scroll_condition.tscn" id="18_gefjw"]
@@ -52,6 +53,7 @@
 [ext_resource type="PackedScene" uid="uid://d0v802hnw7unk" path="res://components/babygodot/npc/npc.tscn" id="50_cveeh"]
 [ext_resource type="Script" uid="uid://n1rnbm4rnt0t" path="res://components/babygodot/npc/npc.gd" id="51_tsdxu"]
 [ext_resource type="SpriteFrames" uid="uid://dj4io3kb4d2uc" path="res://assets/npcs/monk.tres" id="52_c2m1k"]
+[ext_resource type="Script" uid="uid://drnqixy2jausj" path="res://components/babygodot/npc/npc_control_display.gd" id="53_00rwh"]
 [ext_resource type="SpriteFrames" uid="uid://dqgithrm1ikyn" path="res://assets/npcs/sheep.tres" id="53_lvsiw"]
 [ext_resource type="PackedScene" uid="uid://10andtcysmr4" path="res://components/babygodot/demo/boss/boss.tscn" id="54_c5j5x"]
 [ext_resource type="Script" uid="uid://cuiy5ce0t0uf2" path="res://components/babygodot/demo/boss/boss.gd" id="55_c81hp"]
@@ -81,14 +83,6 @@ size = Vector2(128, 128)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mitit"]
 size = Vector2(252, 255)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tsmje"]
-resource_local_to_scene = true
-size = Vector2(94, 258)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_00rwh"]
-resource_local_to_scene = true
-size = Vector2(94, 258)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lad0l"]
 resource_local_to_scene = true
 size = Vector2(94, 258)
@@ -98,6 +92,14 @@ resource_local_to_scene = true
 size = Vector2(94, 258)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vjwix"]
+resource_local_to_scene = true
+size = Vector2(94, 258)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n2vjn"]
+resource_local_to_scene = true
+size = Vector2(94, 258)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ovnls"]
 resource_local_to_scene = true
 size = Vector2(94, 258)
 
@@ -122,6 +124,7 @@ metadata/_edit_lock_ = true
 
 [node name="Background" type="Node2D" parent="." unique_id=474635500 instance=ExtResource("4_mp48n")]
 editor_description = "This scene uses a Parallax2D node to repeat a background image endlessly in all directions, and make it appear to be a long way away from the camera by having it scroll more slowly than the level in the foreground."
+texture_filter = 1
 metadata/_edit_lock_ = true
 
 [node name="ControlsInstructions" type="VBoxContainer" parent="." unique_id=153286537 instance=ExtResource("5_vjwix")]
@@ -179,8 +182,13 @@ position = Vector2(4217, 318)
 collision_layer = 4
 collision_mask = 0
 
-[node name="EditableObjectIndicator" type="Node2D" parent="RockPile" unique_id=1937106078]
+[node name="EditableObjectIndicator" type="Node2D" parent="RockPile" unique_id=1495589661 node_paths=PackedStringArray("edit_icon", "pencil_sprite", "arrow_rotation_pivot", "box") instance=ExtResource("15_lad0l")]
 script = ExtResource("15_1nw5v")
+margins = Vector2(43, 37)
+edit_icon = NodePath("EditIcon")
+pencil_sprite = NodePath("EditIcon/Pencil")
+arrow_rotation_pivot = NodePath("EditIcon/Pencil/RotationPivot")
+box = NodePath("Box")
 metadata/_edit_lock_ = true
 
 [node name="Scroll" type="Node2D" parent="." unique_id=2086611064 node_paths=PackedStringArray("label") instance=ExtResource("16_8s37o")]
@@ -392,7 +400,7 @@ delete_from_scene = true
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" parent="Triggers/ForceQuestProgressTrigger_SolvedRockPuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_tsmje")
+shape = SubResource("RectangleShape2D_lad0l")
 metadata/_edit_lock_ = true
 
 [node name="SkipQuestTriggerBehavior" parent="Triggers/ForceQuestProgressTrigger_SolvedRockPuzzle" index="1" unique_id=1238036962]
@@ -444,7 +452,7 @@ delete_from_scene = true
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_00rwh")
+shape = SubResource("RectangleShape2D_mp48n")
 metadata/_edit_lock_ = true
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
@@ -461,7 +469,7 @@ delete_from_scene = true
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_lad0l")
+shape = SubResource("RectangleShape2D_vjwix")
 metadata/_edit_lock_ = true
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
@@ -478,7 +486,7 @@ delete_from_scene = true
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle2" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_mp48n")
+shape = SubResource("RectangleShape2D_n2vjn")
 metadata/_edit_lock_ = true
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle2" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
@@ -495,7 +503,7 @@ delete_from_scene = true
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_vjwix")
+shape = SubResource("RectangleShape2D_ovnls")
 metadata/_edit_lock_ = true
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
@@ -1100,9 +1108,12 @@ scale = Vector2(0.5599989, 1)
 shape = SubResource("RectangleShape2D_0ff8d")
 metadata/_edit_lock_ = true
 
-[node name="ControlDisplay" parent="NPCs/Npc_MonkFlavor" index="3" unique_id=1300373774]
+[node name="ControlDisplay" parent="NPCs/Npc_MonkFlavor" index="3" unique_id=1300373774 node_paths=PackedStringArray("talk_display", "control_display")]
 visible = false
 position = Vector2(0, -75)
+script = ExtResource("53_00rwh")
+talk_display = NodePath("TalkDisplay")
+control_display = NodePath("ControlDisplay")
 metadata/_edit_lock_ = true
 
 [node name="Npc_Sheep" parent="NPCs" unique_id=949624559 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container", "control_display") instance=ExtResource("50_cveeh")]
@@ -1136,9 +1147,12 @@ scale = Vector2(0.5599989, 1)
 shape = SubResource("RectangleShape2D_0ff8d")
 metadata/_edit_lock_ = true
 
-[node name="ControlDisplay" parent="NPCs/Npc_Sheep" index="3" unique_id=1300373774]
+[node name="ControlDisplay" parent="NPCs/Npc_Sheep" index="3" unique_id=1300373774 node_paths=PackedStringArray("talk_display", "control_display")]
 visible = false
 position = Vector2(0, -75)
+script = ExtResource("53_00rwh")
+talk_display = NodePath("TalkDisplay")
+control_display = NodePath("ControlDisplay")
 metadata/_edit_lock_ = true
 
 [node name="Boss" type="Node2D" parent="." unique_id=2087395625]
@@ -1170,8 +1184,13 @@ limit_bottom = 1080
 position_smoothing_enabled = true
 metadata/_edit_lock_ = true
 
-[node name="EditableObjectIndicator" type="Node2D" parent="Player" unique_id=1501513183]
+[node name="EditableObjectIndicator" type="Node2D" parent="Player" unique_id=1665788171 node_paths=PackedStringArray("edit_icon", "pencil_sprite", "arrow_rotation_pivot", "box") instance=ExtResource("15_lad0l")]
 script = ExtResource("15_1nw5v")
+margins = Vector2(43, 37)
+edit_icon = NodePath("EditIcon")
+pencil_sprite = NodePath("EditIcon/Pencil")
+arrow_rotation_pivot = NodePath("EditIcon/Pencil/RotationPivot")
+box = NodePath("Box")
 metadata/_edit_lock_ = true
 
 [node name="Enemies" type="Node2D" parent="." unique_id=1698421393]

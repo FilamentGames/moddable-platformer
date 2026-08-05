@@ -62,6 +62,7 @@
 [ext_resource type="Script" uid="uid://cuiy5ce0t0uf2" path="res://components/babygodot/demo/boss/boss.gd" id="44_ht26h"]
 [ext_resource type="Script" uid="uid://b532d25pht7ub" path="res://components/babygodot/checkpoint/checkpoint.gd" id="45_2d4sf"]
 [ext_resource type="PackedScene" uid="uid://il08cnnaosyi" path="res://components/babygodot/checkpoint/checkpoint_npc.tscn" id="46_8knqs"]
+[ext_resource type="Script" uid="uid://drnqixy2jausj" path="res://components/babygodot/npc/npc_control_display.gd" id="53_y8cc3"]
 [ext_resource type="Script" uid="uid://c2kjbgjhjvkqm" path="res://components/hud/hud_2.gd" id="64_y8cc3"]
 
 [sub_resource type="Theme" id="Theme_ncwqi"]
@@ -81,10 +82,6 @@ size = Vector2(128, 128)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mitit"]
 size = Vector2(252, 255)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_v4g46"]
-resource_local_to_scene = true
-size = Vector2(94, 258)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y8cc3"]
 resource_local_to_scene = true
 size = Vector2(94, 258)
@@ -98,6 +95,10 @@ resource_local_to_scene = true
 size = Vector2(94, 258)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_33ble"]
+resource_local_to_scene = true
+size = Vector2(94, 258)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xns2c"]
 resource_local_to_scene = true
 size = Vector2(94, 258)
 
@@ -123,6 +124,7 @@ win_by_reaching_flag = true
 
 [node name="Background" type="Node2D" parent="." unique_id=474635500 instance=ExtResource("2_evrqp")]
 editor_description = "This scene uses a Parallax2D node to repeat a background image endlessly in all directions, and make it appear to be a long way away from the camera by having it scroll more slowly than the level in the foreground."
+texture_filter = 1
 
 [node name="ControlsInstructions" type="VBoxContainer" parent="." unique_id=153286537 instance=ExtResource("5_x2f4c")]
 unique_name_in_owner = true
@@ -343,7 +345,7 @@ behavior = NodePath("SkipQuestTriggerBehavior")
 delete_from_scene = true
 
 [node name="CollisionShape2D" parent="Triggers/ForceQuestProgressTrigger_SolvedRockPuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_v4g46")
+shape = SubResource("RectangleShape2D_y8cc3")
 
 [node name="SkipQuestTriggerBehavior" parent="Triggers/ForceQuestProgressTrigger_SolvedRockPuzzle" index="1" unique_id=1238036962]
 script = ExtResource("29_poyld")
@@ -388,7 +390,7 @@ behavior = NodePath("Behavior")
 delete_from_scene = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_y8cc3")
+shape = SubResource("RectangleShape2D_6lr5j")
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
 script = ExtResource("23_8knqs")
@@ -402,7 +404,7 @@ behavior = NodePath("Behavior")
 delete_from_scene = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_6lr5j")
+shape = SubResource("RectangleShape2D_ioj4p")
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
 script = ExtResource("23_8knqs")
@@ -416,7 +418,7 @@ behavior = NodePath("Behavior")
 delete_from_scene = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle2" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_ioj4p")
+shape = SubResource("RectangleShape2D_33ble")
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle2" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
 script = ExtResource("23_8knqs")
@@ -430,7 +432,7 @@ behavior = NodePath("Behavior")
 delete_from_scene = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_33ble")
+shape = SubResource("RectangleShape2D_xns2c")
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
 script = ExtResource("23_8knqs")
@@ -955,9 +957,12 @@ position = Vector2(0, -6.5)
 scale = Vector2(0.5599989, 1)
 shape = SubResource("RectangleShape2D_0ff8d")
 
-[node name="ControlDisplay" parent="NPCs/Npc_MonkFlavor" index="3" unique_id=1300373774]
+[node name="ControlDisplay" parent="NPCs/Npc_MonkFlavor" index="3" unique_id=1300373774 node_paths=PackedStringArray("talk_display", "control_display")]
 visible = false
 position = Vector2(0, -75)
+script = ExtResource("53_y8cc3")
+talk_display = NodePath("TalkDisplay")
+control_display = NodePath("ControlDisplay")
 
 [node name="Npc_Sheep" parent="NPCs" unique_id=949624559 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container", "control_display") instance=ExtResource("3_27os8")]
 position = Vector2(5775, 113)
@@ -985,9 +990,12 @@ position = Vector2(0, -6.5)
 scale = Vector2(0.5599989, 1)
 shape = SubResource("RectangleShape2D_0ff8d")
 
-[node name="ControlDisplay" parent="NPCs/Npc_Sheep" index="3" unique_id=1300373774]
+[node name="ControlDisplay" parent="NPCs/Npc_Sheep" index="3" unique_id=1300373774 node_paths=PackedStringArray("talk_display", "control_display")]
 visible = false
 position = Vector2(0, -75)
+script = ExtResource("53_y8cc3")
+talk_display = NodePath("TalkDisplay")
+control_display = NodePath("ControlDisplay")
 
 [node name="Boss" type="Node2D" parent="." unique_id=2087395625]
 

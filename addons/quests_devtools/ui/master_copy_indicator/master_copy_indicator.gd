@@ -6,6 +6,9 @@ class_name MasterCopyIndicator
 ## A dev tools setting that adds the Player to the editable nodes list on clones automatically. This is useful for quickly testing changes to the player, while not actually saving the changes to the master copy.
 static var add_player_to_editable_nodes := false
 
+## The prefab to use for editable object indicators.
+static var editable_object_indicator_prefab: PackedScene = preload("res://components/babygodot/editable_object_indicator/editable_object_indicator.tscn")
+
 ## Used for not getting stuck in an endless loop when re-saving the master copy.
 var _locked := false
 
@@ -82,7 +85,7 @@ static func _lock_uneditable_nodes(scene: PackedScene) -> PackedScene:
 			## Unlock the editable nodes. Their parents do not need to be unlocked.
 			for node in editable_node_list.nodes:
 				node.remove_meta("_edit_lock_")
-				var editable_object_indicator := EditableObjectIndicator.new()
+				var editable_object_indicator: EditableObjectIndicator = editable_object_indicator_prefab.instantiate()
 				editable_object_indicator.name = "EditableObjectIndicator"
 				editable_object_indicator.set_meta("_edit_lock_", true)
 				node.add_child(editable_object_indicator)

@@ -18,6 +18,9 @@ enum EditorMode {
 ## The cost of a hint in coins.
 @export var hint_cost := 5
 
+## The prefab to use for editable object indicators.
+@export var editable_object_indicator_prefab: PackedScene = preload("res://components/babygodot/editable_object_indicator/editable_object_indicator.tscn")
+
 ## Dispatched when the current scene has changed
 signal current_scene_updated()
 
@@ -238,7 +241,7 @@ func update_editable_objects(to_add: Array, to_remove: Array) -> void:
 		indicator.get_parent().remove_child(indicator)
 		indicator.queue_free()
 	for object in editable_node_list.nodes:
-		var indicator: EditableObjectIndicator = EditableObjectIndicator.new()
+		var indicator: EditableObjectIndicator = editable_object_indicator_prefab.instantiate()
 		indicator.set_meta("_edit_lock_", true)
 		indicator.name = "EditableObjectIndicator"
 		object.add_child(indicator)

@@ -1,6 +1,47 @@
 [gd_scene format=3 uid="uid://w1o7xdo6gt67"]
 
 [ext_resource type="Script" uid="uid://xaqip7htvoim" path="res://components/babygodot/editable_object_indicator/editable_object_indicator.gd" id="1_7effw"]
+[ext_resource type="Texture2D" uid="uid://c6axrn8mb66iv" path="res://components/babygodot/editable_object_indicator/EditableObjectIndicator_IconEdit.png" id="2_p74b1"]
+[ext_resource type="Texture2D" uid="uid://be4jd6j7ui3no" path="res://components/babygodot/editable_object_indicator/EditableObjectIndicator_Arrow.png" id="3_6qfxu"]
+[ext_resource type="Texture2D" uid="uid://c03jtjpsht06q" path="res://components/babygodot/editable_object_indicator/EditableObjectIndicator_Corners.png" id="4_yvrwr"]
 
-[node name="EditableObjectIndicator" type="Node2D" unique_id=1495589661]
+[node name="EditableObjectIndicator" type="Node2D" unique_id=1495589661 node_paths=PackedStringArray("edit_icon", "pencil_sprite", "arrow_rotation_pivot", "box")]
 script = ExtResource("1_7effw")
+margin = 36
+margins = Vector2(43, 37)
+edit_icon = NodePath("EditIcon")
+pencil_sprite = NodePath("EditIcon/Pencil")
+arrow_rotation_pivot = NodePath("EditIcon/Pencil/RotationPivot")
+box = NodePath("Box")
+
+[node name="EditIcon" type="Node2D" parent="." unique_id=757299074]
+position = Vector2(0, -37)
+
+[node name="Pencil" type="Sprite2D" parent="EditIcon" unique_id=303871381]
+texture_filter = 1
+position = Vector2(0, -50)
+texture = ExtResource("2_p74b1")
+
+[node name="RotationPivot" type="Node2D" parent="EditIcon/Pencil" unique_id=1714229599]
+
+[node name="Arrow" type="Sprite2D" parent="EditIcon/Pencil/RotationPivot" unique_id=373505719]
+texture_filter = 1
+position = Vector2(0, 47)
+texture = ExtResource("3_6qfxu")
+
+[node name="Box" type="NinePatchRect" parent="." unique_id=494688318]
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -43.0
+offset_top = -37.0
+offset_right = 43.0
+offset_bottom = 37.0
+grow_horizontal = 2
+texture = ExtResource("4_yvrwr")
+region_rect = Rect2(0, 0, 88, 77)
+patch_margin_left = 43
+patch_margin_top = 37
+patch_margin_right = 43
+patch_margin_bottom = 37
