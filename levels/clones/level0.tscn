@@ -117,7 +117,7 @@ size = Vector2(300, 137)
 
 [node name="EditableNodeList" type="Node" parent="." unique_id=280926474 node_paths=PackedStringArray("nodes")]
 script = ExtResource("1_ovnls")
-nodes = [NodePath("../RockPile")]
+nodes = [NodePath("../RockPile"), NodePath("../Player")]
 metadata/_edit_lock_ = true
 
 [node name="GameLogic" type="Node" parent="." unique_id=1461208797 instance=ExtResource("2_4bour")]
@@ -334,6 +334,7 @@ shape = SubResource("RectangleShape2D_mitit")
 metadata/_edit_lock_ = true
 
 [node name="Flag" type="Area2D" parent="." unique_id=1243516226 instance=ExtResource("26_ucnsv")]
+visible = false
 position = Vector2(12637, -192)
 collision_layer = 2
 script = ExtResource("27_qyp0h")
@@ -512,7 +513,7 @@ metadata/_edit_lock_ = true
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
 script = ExtResource("35_mv2w6")
-add_objects = [NodePath("../../../TileMapLayer"), NodePath("../../../Enemies/Enemy3")]
+add_objects = [NodePath("../../../TileMapLayer_Stone"), NodePath("../../../Enemies/Enemy3")]
 metadata/_edit_lock_ = true
 
 [node name="DemoEndTrigger" type="Area2D" parent="Triggers" unique_id=1681964514 node_paths=PackedStringArray("behavior") instance=ExtResource("36_dtivg")]
@@ -1245,13 +1246,21 @@ script = ExtResource("63_ebggu")
 sprite_frames = ExtResource("64_yrokd")
 jump_velocity = 850.0
 double_jump = true
-metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1408260423]
 position = Vector2(0, 15)
 limit_left = 0
 limit_bottom = 1080
 position_smoothing_enabled = true
+metadata/_edit_lock_ = true
+
+[node name="EditableObjectIndicator" type="Node2D" parent="Player" unique_id=1076497954 node_paths=PackedStringArray("edit_icon", "pencil_sprite", "arrow_rotation_pivot", "box") instance=ExtResource("15_k710v")]
+script = ExtResource("16_235oo")
+margins = Vector2(43, 37)
+edit_icon = NodePath("EditIcon")
+pencil_sprite = NodePath("EditIcon/Pencil")
+arrow_rotation_pivot = NodePath("EditIcon/Pencil/RotationPivot")
+box = NodePath("Box")
 metadata/_edit_lock_ = true
 
 [node name="Enemies" type="Node2D" parent="." unique_id=1698421393]

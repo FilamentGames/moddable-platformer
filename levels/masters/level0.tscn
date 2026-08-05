@@ -289,6 +289,7 @@ position = Vector2(-124, 0.5)
 shape = SubResource("RectangleShape2D_mitit")
 
 [node name="Flag" type="Area2D" parent="." unique_id=1243516226 instance=ExtResource("18_crtlj")]
+visible = false
 position = Vector2(12637, -192)
 collision_layer = 2
 script = ExtResource("35_fnu5h")
@@ -440,7 +441,7 @@ shape = SubResource("RectangleShape2D_x6hj3")
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
 script = ExtResource("23_8knqs")
-add_objects = [NodePath("../../../TileMapLayer"), NodePath("../../../Enemies/Enemy3")]
+add_objects = [NodePath("../../../TileMapLayer_Stone"), NodePath("../../../Enemies/Enemy3")]
 
 [node name="DemoEndTrigger" type="Area2D" parent="Triggers" unique_id=1681964514 node_paths=PackedStringArray("behavior") instance=ExtResource("32_t64e8")]
 position = Vector2(14531, -623)
