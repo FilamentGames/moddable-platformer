@@ -27,3 +27,6 @@ func _on_deactivate() -> void:
 	animation.play(&"info_disappear")
 	await animation.animation_finished
 	animation.play(&"idle")
+
+func _disable() -> void:
+	visible = false

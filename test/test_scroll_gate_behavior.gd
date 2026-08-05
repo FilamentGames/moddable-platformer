@@ -56,3 +56,39 @@ func test_it_marks_the_gate_for_deletion_and_depletes_scrolls():
 
 	assert_eq(InGameQuestsBridge._find_first_message_in_log("delete_node_in_editor")[1], [-1, "Gate"], "Gate should be marked for deletion")
 	assert_eq(InGameQuestsBridge._find_first_message_in_log("deplete_scrolls")[1], [-1, 67], "Scrolls should be depleted")
+
+func test_it_emits_an_event_when_the_player_enters_the_trigger_zone_and_doesnt_have_enough_collectibles():
+	add_child(gate)
+
+	gate_behavior.required_scrolls = 2
+	gate_behavior.bridge.scroll_quantity.emit(1)
+
+	var spy: CallableSpy = autofree(CallableSpy.new())
+	gate_behavior.show_info_message.connect(spy.callable)
+
+	gate_behavior.player_entered()
+
+	assert_eq(spy._calls.size(), 1)
+
+func test_it_has_a_player_exited_event():
+	add_child(gate)
+
+	var spy: CallableSpy = autofree(CallableSpy.new())
+	gate_behavior.hide_info_message.connect(spy.callable)
+
+	gate_behavior.player_exited()
+
+	assert_eq(spy._calls.size(), 1)
+
+func test_it_emits_an_event_when_the_target_object_is_deleted():
+	add_child(gate)
+
+	gate_behavior.required_scrolls = 1
+	gate_behavior.bridge.scroll_quantity.emit(1)
+
+	var spy: CallableSpy = autofree(CallableSpy.new())
+	gate_behavior.target_object_deleted.connect(spy.callable)
+
+	gate_behavior.player_entered()
+
+	assert_eq(spy._calls.size(), 1)
