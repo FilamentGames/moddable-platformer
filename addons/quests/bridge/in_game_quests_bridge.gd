@@ -111,3 +111,6 @@ static func skip_to_text_line(line: Variant) -> void:
 
 static func deplete_scrolls(quantity: int) -> void:
 	_send_message_static("deplete_scrolls", [-1, quantity])
+
+static func swap_node_with_prefab(node: Node, prefab_path: String) -> void:
+	_send_message_static("swap_node_with_prefab", [-1, UniqueSceneId.get_id(node), prefab_path])

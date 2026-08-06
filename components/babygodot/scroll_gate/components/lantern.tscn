@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://btsrp73a83f83"]
+
+[ext_resource type="Script" uid="uid://bf2ji2jr4bk5p" path="res://components/babygodot/scroll_gate/components/lantern.gd" id="1_ekq2f"]
+[ext_resource type="Texture2D" uid="uid://64pgkmiayedd" path="res://components/babygodot/scroll_gate/assets/LanternLeft_Front.png" id="1_rjm42"]
+[ext_resource type="Texture2D" uid="uid://cv1nsdrxyeikr" path="res://components/babygodot/scroll_gate/assets/Lantern_Back.png" id="2_ekq2f"]
+[ext_resource type="Texture2D" uid="uid://di1dyemps3sj7" path="res://components/babygodot/scroll_gate/assets/Lantern_YarnSpark.png" id="3_rvq8p"]
+
+[sub_resource type="Animation" id="Animation_ekq2f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LanternYarnSpark:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LanternYarnSpark:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_rvq8p"]
+resource_name = "lighting"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LanternYarnSpark:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LanternYarnSpark:modulate:a")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_duo58"]
+_data = {
+&"RESET": SubResource("Animation_ekq2f"),
+&"lighting": SubResource("Animation_rvq8p")
+}
+
+[node name="Lantern" type="Node2D" unique_id=890313050 node_paths=PackedStringArray("lantern_front", "animator")]
+z_index = 1
+script = ExtResource("1_ekq2f")
+lantern_front = NodePath("LanternFront")
+animator = NodePath("AnimationPlayer")
+
+[node name="LanternBack" type="Sprite2D" parent="." unique_id=1550067254]
+position = Vector2(-0.6666667, 9.333334)
+texture = ExtResource("2_ekq2f")
+
+[node name="LanternYarnSpark" type="Sprite2D" parent="." unique_id=1610970071]
+visible = false
+position = Vector2(8.666667, 12.666667)
+texture = ExtResource("3_rvq8p")
+
+[node name="LanternFront" type="Sprite2D" parent="." unique_id=1707531124]
+texture = ExtResource("1_rjm42")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1621170643]
+libraries/ = SubResource("AnimationLibrary_duo58")

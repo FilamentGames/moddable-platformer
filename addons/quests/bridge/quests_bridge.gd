@@ -9,6 +9,10 @@ const prefix = "baby_godot"
 ## Contains a list of object IDs that have been collected, to remove at the end of the session to avoid making a lot of editor changes all at once.
 var _collected_objects: Array[String] = []
 
+## Contains a list of objects that have been swapped, to remove at the end of the session to avoid making a lot of editor changes all at once.
+## Each dictionary contains the object to swap and the prefab path of the new object.
+var _swapped_objects: Array[Dictionary] = []
+
 ## Contains the state of the editor's docks, so that they can be restored at the end of the session.
 var _editor_unlock_state: Dictionary = {
 	"inspector": false,
@@ -93,6 +97,12 @@ func _capture(message, data, session_id):
 		"deplete_scrolls":
 			GlobalQuests.quests.deplete_scrolls(data[1])
 			return true
+		"swap_node_with_prefab":
+			_swapped_objects.append({
+				"parent": data[1],
+				"prefab": data[2],
+			})
+			return true
 	return false
 
 func _setup_session(session_id):
@@ -111,6 +121,8 @@ func _on_session_start() -> void:
 
 func _on_session_stop() -> void:
 	print("Quest bridge stopped")
+	GlobalQuests.quests.swap_nodes_with_prefabs(_swapped_objects)
+	_swapped_objects.clear()
 	GlobalQuests.quests.delete_nodes_in_editor(_collected_objects, false)
 	_collected_objects.clear()
 	GlobalQuests.quests.update_player_position()

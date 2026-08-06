@@ -1,16 +1,20 @@
 [gd_scene format=3 uid="uid://bk3nplruhw7kp"]
 
-[ext_resource type="PackedScene" uid="uid://nnn7cxawnw5f" path="res://components/babygodot/scroll_gate/scroll_gate_behavior.tscn" id="1_j4oyk"]
 [ext_resource type="Script" uid="uid://clreg3c5ajgsr" path="res://components/babygodot/scroll_gate/scroll_gate.gd" id="1_nph78"]
+[ext_resource type="PackedScene" uid="uid://d2htlfm78igtc" path="res://components/babygodot/scroll_gate/open_gate.tscn" id="2_83ym3"]
 [ext_resource type="Texture2D" uid="uid://bagiqu7srq5j0" path="res://components/babygodot/scroll_gate/assets/Door.png" id="3_dt3ue"]
 [ext_resource type="Texture2D" uid="uid://b7cqh35t583ol" path="res://components/babygodot/scroll_gate/assets/LockedGate_PillarTop_Grey.png" id="3_pdx6j"]
 [ext_resource type="Texture2D" uid="uid://dqf4nrmw0eoo0" path="res://components/babygodot/scroll_gate/assets/LockedGate_PillarBottom_Grey.png" id="4_nph78"]
 [ext_resource type="Texture2D" uid="uid://4n1ihuhcbax2" path="res://components/babygodot/scroll_gate/assets/LockedGate_Left.png" id="6_bg4bk"]
 [ext_resource type="PackedScene" uid="uid://cqguk6cy3mt15" path="res://components/babygodot/info_indicator/info_indicator.tscn" id="7_pdx6j"]
 [ext_resource type="Texture2D" uid="uid://o1vxw6uuw380" path="res://components/babygodot/scroll_gate/assets/LockedGate_Right.png" id="7_t4cqe"]
+[ext_resource type="PackedScene" uid="uid://btsrp73a83f83" path="res://components/babygodot/scroll_gate/components/lantern.tscn" id="8_bg4bk"]
+[ext_resource type="Texture2D" uid="uid://b8k3kxtymkdd4" path="res://components/babygodot/scroll_gate/assets/LanternRight_Front.png" id="9_t4cqe"]
+[ext_resource type="Script" uid="uid://bu2pxl3f0yrsx" path="res://components/babygodot/scroll_gate/components/gate_animation_controller.gd" id="11_83ym3"]
+[ext_resource type="Script" uid="uid://bk8b688teqih7" path="res://components/babygodot/scroll_gate/components/gate_bridge_behavior.gd" id="11_cn82r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hmpfs"]
-size = Vector2(273, 270)
+size = Vector2(273, 341)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ddthk"]
 size = Vector2(86, 131)
@@ -21,20 +25,111 @@ size = Vector2(86, 171)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dt3ue"]
 size = Vector2(51.351402, 70.31256)
 
-[node name="ScrollGate" type="Node2D" unique_id=1083236780 node_paths=PackedStringArray("scroll_gate_behavior", "info_indicator", "info_indicator_label")]
+[sub_resource type="Animation" id="Animation_t4cqe"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NewGate/GateCollision/Door:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("NewGate/GateCollision/Door:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [13.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("NewGate/GateCollision/Door:modulate:a")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_cn82r"]
+resource_name = "not_enough_scrolls"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NewGate/GateCollision/Door:position:x")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666, 0.1334, 0.2, 0.2667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -5.0, 0.0, -5.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_83ym3"]
+resource_name = "open"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NewGate/GateCollision/Door:position:y")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.46666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [13.0, -100.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("NewGate/GateCollision/Door:modulate:a")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2, 0.46666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_83ym3"]
+_data = {
+&"RESET": SubResource("Animation_t4cqe"),
+&"not_enough_scrolls": SubResource("Animation_cn82r"),
+&"open": SubResource("Animation_83ym3")
+}
+
+[node name="ScrollGate" type="Node2D" unique_id=1083236780 node_paths=PackedStringArray("lanterns", "bridge_behavior", "to_delete_on_open", "info_indicator", "info_indicator_label")]
 script = ExtResource("1_nph78")
-scroll_gate_behavior = NodePath("ScrollGateBehavior")
+open_gate_prefab = ExtResource("2_83ym3")
+lanterns = [NodePath("NewGate/LanternLeft"), NodePath("NewGate/LanternRight")]
+bridge_behavior = NodePath("ControllerObjects/GateBridgeBehavior")
+to_delete_on_open = [NodePath("TriggerArea"), NodePath("NewGate/GateCollision"), NodePath("ControllerObjects"), NodePath("AnimationPlayer"), NodePath("InfoIndicator")]
 info_indicator = NodePath("InfoIndicator")
 info_indicator_label = NodePath("InfoIndicator/InfoTree/CanvasLayer/UIContainer/PanelContainer/RichTextLabel")
-
-[node name="ScrollGateBehavior" parent="." unique_id=20029680 node_paths=PackedStringArray("target_object") instance=ExtResource("1_j4oyk")]
-target_object = NodePath("../NewGate/GateCollision")
 
 [node name="TriggerArea" type="Area2D" parent="." unique_id=1096462271]
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerArea" unique_id=233322335]
-position = Vector2(-134.5, 0)
+visible = false
+position = Vector2(-134.5, -35.5)
 shape = SubResource("RectangleShape2D_hmpfs")
 
 [node name="NewGate" type="Node2D" parent="." unique_id=409550080]
@@ -43,6 +138,7 @@ position = Vector2(0, 35)
 scale = Vector2(1.5, 1.5)
 
 [node name="TopColumns" type="StaticBody2D" parent="NewGate" unique_id=1881226027]
+z_index = 1
 position = Vector2(0, -128)
 collision_layer = 4
 collision_mask = 0
@@ -51,9 +147,11 @@ collision_mask = 0
 texture = ExtResource("3_pdx6j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NewGate/TopColumns" unique_id=1798812344]
+visible = false
 shape = SubResource("RectangleShape2D_ddthk")
 
 [node name="BottomColumns" type="StaticBody2D" parent="NewGate" unique_id=1360310001]
+z_index = 1
 position = Vector2(0, 151)
 collision_layer = 4
 collision_mask = 0
@@ -62,6 +160,7 @@ collision_mask = 0
 texture = ExtResource("4_nph78")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NewGate/BottomColumns" unique_id=139504450]
+visible = false
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_kk0ge")
 
@@ -70,6 +169,7 @@ collision_layer = 4
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NewGate/GateCollision" unique_id=1034297921]
+visible = false
 z_index = 12
 position = Vector2(-3, 1)
 scale = Vector2(2.959997, 1.9199982)
@@ -89,6 +189,14 @@ z_index = 10
 position = Vector2(67, 0)
 texture = ExtResource("7_t4cqe")
 
+[node name="LanternLeft" parent="NewGate" unique_id=890313050 instance=ExtResource("8_bg4bk")]
+position = Vector2(-94, 14.000001)
+
+[node name="LanternRight" parent="NewGate" unique_id=1119542889 instance=ExtResource("8_bg4bk")]
+z_index = 10
+position = Vector2(95, 9)
+lantern_front_texture = ExtResource("9_t4cqe")
+
 [node name="InfoIndicator" parent="." unique_id=1774361635 instance=ExtResource("7_pdx6j")]
 position = Vector2(-146, -56)
 
@@ -96,10 +204,34 @@ position = Vector2(-146, -56)
 offset = Vector2(-146, -56)
 transform = Transform2D(1, 0, 0, 1, -146, -56)
 
-[connection signal="hide_info_message" from="ScrollGateBehavior" to="InfoIndicator" method="_on_deactivate"]
-[connection signal="show_info_message" from="ScrollGateBehavior" to="InfoIndicator" method="_on_activate"]
-[connection signal="target_object_deleted" from="ScrollGateBehavior" to="InfoIndicator" method="_disable"]
-[connection signal="body_entered" from="TriggerArea" to="ScrollGateBehavior" method="player_entered" unbinds=1]
-[connection signal="body_exited" from="TriggerArea" to="ScrollGateBehavior" method="player_exited" unbinds=1]
+[node name="UIContainer" parent="InfoIndicator/InfoTree/CanvasLayer" index="0" unique_id=536485302]
+offset_top = -10.0
+offset_bottom = 30.0
+
+[node name="RichTextLabel" parent="InfoIndicator/InfoTree/CanvasLayer/UIContainer/PanelContainer" parent_id_path=PackedInt32Array(1774361635, 2042454767) index="0" unique_id=91660906]
+text = "Bring 1 Yarnspark"
+
+[node name="ControllerObjects" type="Node" parent="." unique_id=1016011116]
+
+[node name="GateBridgeBehavior" type="Node" parent="ControllerObjects" unique_id=1987604082 node_paths=PackedStringArray("gate")]
+script = ExtResource("11_cn82r")
+gate = NodePath("../..")
+
+[node name="GateAnimationController" type="Node" parent="ControllerObjects" unique_id=1766842794 node_paths=PackedStringArray("gate", "animator")]
+script = ExtResource("11_83ym3")
+gate = NodePath("../..")
+animator = NodePath("../../AnimationPlayer")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=70195527]
+libraries/ = SubResource("AnimationLibrary_83ym3")
+autoplay = &"RESET"
+
+[connection signal="gate_opening" from="." to="InfoIndicator" method="_disable"]
+[connection signal="gate_opening" from="." to="ControllerObjects/GateAnimationController" method="begin_opening_gate"]
+[connection signal="hide_info_message" from="." to="InfoIndicator" method="_on_deactivate"]
+[connection signal="not_enough_scrolls" from="." to="InfoIndicator" method="_on_activate"]
+[connection signal="not_enough_scrolls" from="." to="ControllerObjects/GateAnimationController" method="shake_door"]
+[connection signal="body_entered" from="TriggerArea" to="." method="player_entered" unbinds=1]
+[connection signal="body_exited" from="TriggerArea" to="." method="player_exited" unbinds=1]
 
 [editable path="InfoIndicator"]

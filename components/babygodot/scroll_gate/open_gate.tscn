@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://d2htlfm78igtc"]
+
+[ext_resource type="Texture2D" uid="uid://b7cqh35t583ol" path="res://components/babygodot/scroll_gate/assets/LockedGate_PillarTop_Grey.png" id="2_pw1e3"]
+[ext_resource type="Texture2D" uid="uid://dqf4nrmw0eoo0" path="res://components/babygodot/scroll_gate/assets/LockedGate_PillarBottom_Grey.png" id="3_4a5ga"]
+[ext_resource type="Texture2D" uid="uid://4n1ihuhcbax2" path="res://components/babygodot/scroll_gate/assets/LockedGate_Left.png" id="5_imqwa"]
+[ext_resource type="Texture2D" uid="uid://o1vxw6uuw380" path="res://components/babygodot/scroll_gate/assets/LockedGate_Right.png" id="6_x4gta"]
+[ext_resource type="PackedScene" uid="uid://btsrp73a83f83" path="res://components/babygodot/scroll_gate/components/lantern.tscn" id="7_c46n4"]
+[ext_resource type="Texture2D" uid="uid://b8k3kxtymkdd4" path="res://components/babygodot/scroll_gate/assets/LanternRight_Front.png" id="8_di7bo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ddthk"]
+size = Vector2(86, 131)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kk0ge"]
+size = Vector2(86, 171)
+
+[node name="OpenScrollGate" type="Node2D" unique_id=1083236780]
+
+[node name="NewGate" type="Node2D" parent="." unique_id=409550080]
+texture_filter = 1
+position = Vector2(0, 35)
+scale = Vector2(1.5, 1.5)
+
+[node name="TopColumns" type="StaticBody2D" parent="NewGate" unique_id=1881226027]
+position = Vector2(0, -128)
+collision_layer = 4
+collision_mask = 0
+
+[node name="TopColumns" type="Sprite2D" parent="NewGate/TopColumns" unique_id=432464164]
+texture = ExtResource("2_pw1e3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NewGate/TopColumns" unique_id=1798812344]
+visible = false
+shape = SubResource("RectangleShape2D_ddthk")
+
+[node name="BottomColumns" type="StaticBody2D" parent="NewGate" unique_id=1360310001]
+position = Vector2(0, 151)
+collision_layer = 4
+collision_mask = 0
+
+[node name="BottomColumn" type="Sprite2D" parent="NewGate/BottomColumns" unique_id=1634066432]
+texture = ExtResource("3_4a5ga")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NewGate/BottomColumns" unique_id=139504450]
+visible = false
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_kk0ge")
+
+[node name="LockedGateLeft" type="Sprite2D" parent="NewGate" unique_id=275836650]
+position = Vector2(-14, 0)
+texture = ExtResource("5_imqwa")
+
+[node name="LockedGateRight" type="Sprite2D" parent="NewGate" unique_id=2039266892]
+z_index = 10
+position = Vector2(67, 0)
+texture = ExtResource("6_x4gta")
+
+[node name="LanternLeft" parent="NewGate" unique_id=890313050 instance=ExtResource("7_c46n4")]
+position = Vector2(-94, 14.000001)
+
+[node name="LanternRight" parent="NewGate" unique_id=1119542889 instance=ExtResource("7_c46n4")]
+z_index = 10
+position = Vector2(95, 9)
+lantern_front_texture = ExtResource("8_di7bo")
+
+[node name="LanternFront" parent="NewGate/LanternRight" index="2" unique_id=1707531124]
+texture = ExtResource("8_di7bo")
+
+[editable path="NewGate/LanternRight"]

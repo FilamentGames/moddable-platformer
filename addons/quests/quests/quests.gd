@@ -204,6 +204,18 @@ func delete_nodes_in_editor(node_ids: Array, save: bool = true) -> void:
 	if save:
 		editor_scene_provider.update_and_save_node(scene)
 
+func swap_nodes_with_prefabs(swapped_objects: Array[Dictionary]) -> void:
+	var scene: Node2D = editor_scene_provider.get_editor_scene()
+	for swapped_object in swapped_objects:
+		var parent: Node = UniqueSceneId.find_by_id(scene, swapped_object["parent"])
+		var prefab: PackedScene = ResourceLoader.load(swapped_object["prefab"])
+		var new_object: Node = prefab.instantiate()
+		parent.get_parent().add_child(new_object)
+		new_object.owner = scene
+		new_object.position = parent.position
+		parent.get_parent().remove_child(parent)
+		parent.queue_free()
+
 func delete_node_in_editor(node_id: String) -> void:
 	delete_nodes_in_editor([node_id])
 
