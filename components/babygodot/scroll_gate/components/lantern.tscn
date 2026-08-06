@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bf2ji2jr4bk5p" path="res://components/babygodot/scroll_gate/components/lantern.gd" id="1_ekq2f"]
 [ext_resource type="Texture2D" uid="uid://64pgkmiayedd" path="res://components/babygodot/scroll_gate/assets/LanternLeft_Front.png" id="1_rjm42"]
 [ext_resource type="Texture2D" uid="uid://cv1nsdrxyeikr" path="res://components/babygodot/scroll_gate/assets/Lantern_Back.png" id="2_ekq2f"]
-[ext_resource type="Texture2D" uid="uid://di1dyemps3sj7" path="res://components/babygodot/scroll_gate/assets/Lantern_YarnSpark.png" id="3_rvq8p"]
+[ext_resource type="Texture2D" uid="uid://bci7xfv40l6q5" path="res://components/babygodot/scroll_gate/assets/Lantern_YarnsparkAnim.png" id="3_rvq8p"]
 
 [sub_resource type="Animation" id="Animation_ekq2f"]
 length = 0.001
@@ -31,10 +31,23 @@ tracks/1/keys = {
 "update": 1,
 "values": [1.0]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("LanternYarnSpark:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="Animation" id="Animation_rvq8p"]
 resource_name = "lighting"
-length = 0.25
+length = 0.8
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -54,10 +67,22 @@ tracks/1/path = NodePath("LanternYarnSpark:modulate:a")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [0.0, 1.0]
+"values": [1.0, 0.8, 1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("LanternYarnSpark:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_duo58"]
@@ -78,8 +103,9 @@ texture = ExtResource("2_ekq2f")
 
 [node name="LanternYarnSpark" type="Sprite2D" parent="." unique_id=1610970071]
 visible = false
-position = Vector2(8.666667, 12.666667)
+position = Vector2(8, 15)
 texture = ExtResource("3_rvq8p")
+hframes = 4
 
 [node name="LanternFront" type="Sprite2D" parent="." unique_id=1707531124]
 texture = ExtResource("1_rjm42")
