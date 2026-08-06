@@ -30,8 +30,8 @@ class_name CollectibleGate
 
 @export var info_indicator_label: RichTextLabel
 
-## Emitted when the player enters the trigger area and does not have enough scrolls.
-signal not_enough_scrolls()
+## Emitted when the player enters the trigger area and does not have enough collectibles.
+signal not_enough_collectibles()
 
 ## Emitted when the gate opening process has started.
 signal gate_opening()
@@ -65,7 +65,7 @@ func player_entered() -> void:
 		player_entered()
 		return
 	if bridge_behavior.current_collectible_count < required_collectibles:
-		not_enough_scrolls.emit()
+		not_enough_collectibles.emit()
 	else:
 		bridge_behavior.mark_gate_opened(self)
 		bridge_behavior.deplete_collectible()

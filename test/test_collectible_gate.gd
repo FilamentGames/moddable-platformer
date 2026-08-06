@@ -55,7 +55,7 @@ func test_it_emits_an_event_when_the_player_enters_the_trigger_area_and_does_not
 	gate.bridge_behavior.is_ready = true
 
 	var spy: CallableSpy = autofree(CallableSpy.new())
-	gate.not_enough_scrolls.connect(spy.callable)
+	gate.not_enough_collectibles.connect(spy.callable)
 
 	gate.player_entered()
 

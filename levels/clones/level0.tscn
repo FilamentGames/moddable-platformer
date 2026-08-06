@@ -22,8 +22,9 @@
 [ext_resource type="Script" uid="uid://bv4utu2r7ll2v" path="res://components/babygodot/scroll/condition_types/inspector_checkbox_scroll_condition.gd" id="20_2h05j"]
 [ext_resource type="PackedScene" uid="uid://cbr3k8b1gooxm" path="res://components/babygodot/scroll/condition_types/object_property_equality_scroll_condition.tscn" id="21_c5fri"]
 [ext_resource type="Script" uid="uid://ynmusiscbscn" path="res://components/babygodot/scroll/condition_types/object_property_equality_scroll_condition.gd" id="22_m8hul"]
-[ext_resource type="PackedScene" uid="uid://bk3nplruhw7kp" path="res://components/babygodot/scroll_gate/scroll_gate.tscn" id="23_0v71i"]
-[ext_resource type="Script" uid="uid://clreg3c5ajgsr" path="res://components/babygodot/scroll_gate/scroll_gate.gd" id="24_mlbs2"]
+[ext_resource type="PackedScene" uid="uid://bk3nplruhw7kp" path="res://components/babygodot/scroll_gate/collectible_gate.tscn" id="23_0v71i"]
+[ext_resource type="Script" uid="uid://clreg3c5ajgsr" path="res://components/babygodot/scroll_gate/collectible_gate.gd" id="24_n2vjn"]
+[ext_resource type="PackedScene" uid="uid://d2htlfm78igtc" path="res://components/babygodot/scroll_gate/opened_gate.tscn" id="25_ovnls"]
 [ext_resource type="PackedScene" uid="uid://beuisy5yrw0bq" path="res://components/flag/flag.tscn" id="26_ucnsv"]
 [ext_resource type="Script" uid="uid://ctlotfccvl4jn" path="res://scripts/flag.gd" id="26_xuycu"]
 [ext_resource type="SpriteFrames" uid="uid://b3orjhfv6eeud" path="res://components/flag/flag-spriteframes-green.tres" id="27_ypkbb"]
@@ -73,10 +74,6 @@ default_font_size = 64
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rpdqf"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vjwix"]
-resource_local_to_scene = true
-size = Vector2(94, 258)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n2vjn"]
 resource_local_to_scene = true
 size = Vector2(94, 258)
@@ -90,6 +87,10 @@ resource_local_to_scene = true
 size = Vector2(94, 258)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2d8dw"]
+resource_local_to_scene = true
+size = Vector2(94, 258)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2h05j"]
 resource_local_to_scene = true
 size = Vector2(94, 258)
 
@@ -233,28 +234,37 @@ metadata/_edit_lock_ = true
 [node name="ScrollGates" type="Node2D" parent="." unique_id=1903180490]
 metadata/_edit_lock_ = true
 
-[node name="ScrollGate" type="Node2D" parent="ScrollGates" unique_id=68402488 node_paths=PackedStringArray("scroll_gate_behavior", "info_indicator", "info_indicator_label") instance=ExtResource("23_0v71i")]
+[node name="ScrollGate" type="Node2D" parent="ScrollGates" unique_id=68402488 node_paths=PackedStringArray("lanterns", "bridge_behavior", "to_delete_on_open", "info_indicator", "info_indicator_label") instance=ExtResource("23_0v71i")]
 position = Vector2(8512, 382)
-script = ExtResource("24_mlbs2")
-scroll_gate_behavior = NodePath("ScrollGateBehavior")
+script = ExtResource("24_n2vjn")
+open_gate_prefab = ExtResource("25_ovnls")
+lanterns = [NodePath("NewGate/LanternLeft"), NodePath("NewGate/LanternRight")]
+bridge_behavior = NodePath("ControllerObjects/GateBridgeBehavior")
+to_delete_on_open = [NodePath("TriggerArea"), NodePath("NewGate/GateCollision"), NodePath("ControllerObjects"), NodePath("AnimationPlayer"), NodePath("InfoIndicator")]
 info_indicator = NodePath("InfoIndicator")
 info_indicator_label = NodePath("InfoIndicator/InfoTree/CanvasLayer/UIContainer/PanelContainer/RichTextLabel")
 metadata/_edit_lock_ = true
 
-[node name="ScrollGate2" type="Node2D" parent="ScrollGates" unique_id=735731128 node_paths=PackedStringArray("scroll_gate_behavior", "info_indicator", "info_indicator_label") instance=ExtResource("23_0v71i")]
+[node name="ScrollGate2" type="Node2D" parent="ScrollGates" unique_id=735731128 node_paths=PackedStringArray("lanterns", "bridge_behavior", "to_delete_on_open", "info_indicator", "info_indicator_label") instance=ExtResource("23_0v71i")]
 position = Vector2(10688, 384)
-script = ExtResource("24_mlbs2")
-required_scrolls = 2
-scroll_gate_behavior = NodePath("ScrollGateBehavior")
+script = ExtResource("24_n2vjn")
+required_collectibles = 2
+open_gate_prefab = ExtResource("25_ovnls")
+lanterns = [NodePath("NewGate/LanternLeft"), NodePath("NewGate/LanternRight")]
+bridge_behavior = NodePath("ControllerObjects/GateBridgeBehavior")
+to_delete_on_open = [NodePath("TriggerArea"), NodePath("NewGate/GateCollision"), NodePath("ControllerObjects"), NodePath("AnimationPlayer"), NodePath("InfoIndicator")]
 info_indicator = NodePath("InfoIndicator")
 info_indicator_label = NodePath("InfoIndicator/InfoTree/CanvasLayer/UIContainer/PanelContainer/RichTextLabel")
 metadata/_edit_lock_ = true
 
-[node name="ScrollGate3" type="Node2D" parent="ScrollGates" unique_id=710705362 node_paths=PackedStringArray("scroll_gate_behavior", "info_indicator", "info_indicator_label") instance=ExtResource("23_0v71i")]
+[node name="ScrollGate3" type="Node2D" parent="ScrollGates" unique_id=710705362 node_paths=PackedStringArray("lanterns", "bridge_behavior", "to_delete_on_open", "info_indicator", "info_indicator_label") instance=ExtResource("23_0v71i")]
 position = Vector2(11327, -384)
 scale = Vector2(-1, 1)
-script = ExtResource("24_mlbs2")
-scroll_gate_behavior = NodePath("ScrollGateBehavior")
+script = ExtResource("24_n2vjn")
+open_gate_prefab = ExtResource("25_ovnls")
+lanterns = [NodePath("NewGate/LanternLeft"), NodePath("NewGate/LanternRight")]
+bridge_behavior = NodePath("ControllerObjects/GateBridgeBehavior")
+to_delete_on_open = [NodePath("TriggerArea"), NodePath("NewGate/GateCollision"), NodePath("ControllerObjects"), NodePath("AnimationPlayer"), NodePath("InfoIndicator")]
 info_indicator = NodePath("InfoIndicator")
 info_indicator_label = NodePath("InfoIndicator/InfoTree/CanvasLayer/UIContainer/PanelContainer/RichTextLabel")
 metadata/_edit_lock_ = true
@@ -331,7 +341,7 @@ delete_from_scene = true
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" parent="Triggers/ForceQuestProgressTrigger_SolvedRockPuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_vjwix")
+shape = SubResource("RectangleShape2D_n2vjn")
 metadata/_edit_lock_ = true
 
 [node name="SkipQuestTriggerBehavior" parent="Triggers/ForceQuestProgressTrigger_SolvedRockPuzzle" index="1" unique_id=1238036962]
@@ -383,7 +393,7 @@ delete_from_scene = true
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_n2vjn")
+shape = SubResource("RectangleShape2D_ovnls")
 metadata/_edit_lock_ = true
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
@@ -400,7 +410,7 @@ delete_from_scene = true
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_ovnls")
+shape = SubResource("RectangleShape2D_4bour")
 metadata/_edit_lock_ = true
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
@@ -417,7 +427,7 @@ delete_from_scene = true
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle2" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_4bour")
+shape = SubResource("RectangleShape2D_2d8dw")
 metadata/_edit_lock_ = true
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle2" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
@@ -434,7 +444,7 @@ delete_from_scene = true
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_2d8dw")
+shape = SubResource("RectangleShape2D_2h05j")
 metadata/_edit_lock_ = true
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
@@ -1213,7 +1223,7 @@ limit_bottom = 1080
 position_smoothing_enabled = true
 metadata/_edit_lock_ = true
 
-[node name="EditableObjectIndicator" type="Node2D" parent="Player" unique_id=1776580201 node_paths=PackedStringArray("edit_icon", "pencil_sprite", "arrow_rotation_pivot", "box") instance=ExtResource("15_k710v")]
+[node name="EditableObjectIndicator" type="Node2D" parent="Player" unique_id=752888157 node_paths=PackedStringArray("edit_icon", "pencil_sprite", "arrow_rotation_pivot", "box") instance=ExtResource("15_k710v")]
 script = ExtResource("16_4bour")
 margins = Vector2(43, 37)
 edit_icon = NodePath("EditIcon")
@@ -1355,6 +1365,21 @@ metadata/_edit_lock_ = true
 [connection signal="condition_updated" from="Scroll3" to="Scroll3/SpriteContainer/Sprite2D/ScrollAnimator" method="_trigger_animation"]
 [connection signal="collected" from="Scroll4" to="Scroll4/ScrollContinuity" method="_on_collect"]
 [connection signal="condition_updated" from="Scroll4" to="Scroll4/SpriteContainer/Sprite2D/ScrollAnimator" method="_trigger_animation"]
+[connection signal="gate_opening" from="ScrollGates/ScrollGate" to="ScrollGates/ScrollGate/InfoIndicator" method="_disable"]
+[connection signal="gate_opening" from="ScrollGates/ScrollGate" to="ScrollGates/ScrollGate/ControllerObjects/GateAnimationController" method="begin_opening_gate"]
+[connection signal="hide_info_message" from="ScrollGates/ScrollGate" to="ScrollGates/ScrollGate/InfoIndicator" method="_on_deactivate"]
+[connection signal="not_enough_collectibles" from="ScrollGates/ScrollGate" to="ScrollGates/ScrollGate/InfoIndicator" method="_on_activate"]
+[connection signal="not_enough_collectibles" from="ScrollGates/ScrollGate" to="ScrollGates/ScrollGate/ControllerObjects/GateAnimationController" method="shake_door"]
+[connection signal="gate_opening" from="ScrollGates/ScrollGate2" to="ScrollGates/ScrollGate2/InfoIndicator" method="_disable"]
+[connection signal="gate_opening" from="ScrollGates/ScrollGate2" to="ScrollGates/ScrollGate2/ControllerObjects/GateAnimationController" method="begin_opening_gate"]
+[connection signal="hide_info_message" from="ScrollGates/ScrollGate2" to="ScrollGates/ScrollGate2/InfoIndicator" method="_on_deactivate"]
+[connection signal="not_enough_collectibles" from="ScrollGates/ScrollGate2" to="ScrollGates/ScrollGate2/InfoIndicator" method="_on_activate"]
+[connection signal="not_enough_collectibles" from="ScrollGates/ScrollGate2" to="ScrollGates/ScrollGate2/ControllerObjects/GateAnimationController" method="shake_door"]
+[connection signal="gate_opening" from="ScrollGates/ScrollGate3" to="ScrollGates/ScrollGate3/InfoIndicator" method="_disable"]
+[connection signal="gate_opening" from="ScrollGates/ScrollGate3" to="ScrollGates/ScrollGate3/ControllerObjects/GateAnimationController" method="begin_opening_gate"]
+[connection signal="hide_info_message" from="ScrollGates/ScrollGate3" to="ScrollGates/ScrollGate3/InfoIndicator" method="_on_deactivate"]
+[connection signal="not_enough_collectibles" from="ScrollGates/ScrollGate3" to="ScrollGates/ScrollGate3/InfoIndicator" method="_on_activate"]
+[connection signal="not_enough_collectibles" from="ScrollGates/ScrollGate3" to="ScrollGates/ScrollGate3/ControllerObjects/GateAnimationController" method="shake_door"]
 [connection signal="body_entered" from="Flag" to="Flag" method="_on_body_entered"]
 [connection signal="body_entered" from="Triggers/ScreenShakeTrigger" to="Triggers/ScreenShakeTrigger" method="_player_entered" unbinds=1]
 [connection signal="body_entered" from="Triggers/ScreenShakeTrigger2" to="Triggers/ScreenShakeTrigger2" method="_player_entered" unbinds=1]
