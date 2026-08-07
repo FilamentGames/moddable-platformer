@@ -74,3 +74,14 @@ func test_it_emits_a_signal_when_it_is_collected_by_the_player():
 	scroll._player_collect()
 
 	assert_eq(spy.get_number_of_calls(), 1)
+
+func test_it_does_not_emit_a_signal_when_the_condition_state_does_not_change():
+	add_child(scroll)
+	var spy: CallableSpy = autofree(CallableSpy.new())
+	scroll.condition_updated.connect(spy.callable)
+
+	for i in 10:
+		condition.condition_met = true
+		condition.condition_updated.emit(true)
+
+	assert_eq(spy.get_number_of_calls(), 1)

@@ -105,7 +105,7 @@ size = Vector2(300, 137)
 
 [node name="EditableNodeList" type="Node" parent="." unique_id=280926474 node_paths=PackedStringArray("nodes")]
 script = ExtResource("1_n2vjn")
-nodes = [NodePath("../RockPile"), NodePath("../Player")]
+nodes = [NodePath("../RockPile")]
 metadata/_edit_lock_ = true
 
 [node name="GameLogic" type="Node" parent="." unique_id=1461208797 instance=ExtResource("2_ovnls")]
@@ -188,20 +188,22 @@ arrow_rotation_pivot = NodePath("EditIcon/Pencil/RotationPivot")
 box = NodePath("Box")
 metadata/_edit_lock_ = true
 
-[node name="Scroll" type="Node2D" parent="." unique_id=2086611064 node_paths=PackedStringArray("label") instance=ExtResource("17_235oo")]
-position = Vector2(6881, 931)
+[node name="Scroll" type="Node2D" parent="." unique_id=2086611064 node_paths=PackedStringArray("label", "info_indicator") instance=ExtResource("17_235oo")]
+position = Vector2(6873, 980)
 script = ExtResource("18_4p881")
-label = NodePath("ConditionTextContainer/Label")
+label = NodePath("InfoIndicator/InfoTree/CanvasLayer/UIContainer/PanelContainer/RichTextLabel")
+info_indicator = NodePath("InfoIndicator")
 metadata/_edit_lock_ = true
 
-[node name="InspectorCheckboxScrollCondition" type="Node" parent="Scroll" unique_id=75788105 instance=ExtResource("19_5bsex")]
+[node name="Yarnspark" type="Node" parent="Scroll" unique_id=75788105 instance=ExtResource("19_5bsex")]
 script = ExtResource("20_o0rts")
 metadata/_edit_lock_ = true
 
-[node name="Scroll2" type="Node2D" parent="." unique_id=593369878 node_paths=PackedStringArray("label") instance=ExtResource("17_235oo")]
-position = Vector2(8960, -384)
+[node name="Scroll2" type="Node2D" parent="." unique_id=593369878 node_paths=PackedStringArray("label", "info_indicator") instance=ExtResource("17_235oo")]
+position = Vector2(8960, -333)
 script = ExtResource("18_4p881")
-label = NodePath("ConditionTextContainer/Label")
+label = NodePath("InfoIndicator/InfoTree/CanvasLayer/UIContainer/PanelContainer/RichTextLabel")
+info_indicator = NodePath("InfoIndicator")
 metadata/_edit_lock_ = true
 
 [node name="ObjectPropertyEqualityScrollCondition" type="Node" parent="Scroll2" unique_id=2071037534 node_paths=PackedStringArray("target") instance=ExtResource("21_10g7q")]
@@ -211,10 +213,11 @@ property_name = &"fall_off_edge"
 value = "true"
 metadata/_edit_lock_ = true
 
-[node name="Scroll3" type="Node2D" parent="." unique_id=1488490395 node_paths=PackedStringArray("label") instance=ExtResource("17_235oo")]
-position = Vector2(10233, -624)
+[node name="Scroll3" type="Node2D" parent="." unique_id=1488490395 node_paths=PackedStringArray("label", "info_indicator") instance=ExtResource("17_235oo")]
+position = Vector2(10231, -573)
 script = ExtResource("18_4p881")
-label = NodePath("ConditionTextContainer/Label")
+label = NodePath("InfoIndicator/InfoTree/CanvasLayer/UIContainer/PanelContainer/RichTextLabel")
+info_indicator = NodePath("InfoIndicator")
 metadata/_edit_lock_ = true
 
 [node name="ObjectPropertyEqualityScrollCondition" type="Node" parent="Scroll3" unique_id=125528445 node_paths=PackedStringArray("target") instance=ExtResource("21_10g7q")]
@@ -224,10 +227,11 @@ property_name = &"fall_off_edge"
 value = "true"
 metadata/_edit_lock_ = true
 
-[node name="Scroll4" type="Node2D" parent="." unique_id=826339784 node_paths=PackedStringArray("label") instance=ExtResource("17_235oo")]
-position = Vector2(11907, -676)
+[node name="Scroll4" type="Node2D" parent="." unique_id=826339784 node_paths=PackedStringArray("label", "info_indicator") instance=ExtResource("17_235oo")]
+position = Vector2(11903, -625)
 script = ExtResource("18_4p881")
-label = NodePath("ConditionTextContainer/Label")
+label = NodePath("InfoIndicator/InfoTree/CanvasLayer/UIContainer/PanelContainer/RichTextLabel")
+info_indicator = NodePath("InfoIndicator")
 metadata/_edit_lock_ = true
 
 [node name="ObjectPropertyEqualityScrollCondition" type="Node" parent="Scroll4" unique_id=672431096 node_paths=PackedStringArray("target") instance=ExtResource("21_10g7q")]
@@ -421,7 +425,7 @@ metadata/_edit_lock_ = true
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
 script = ExtResource("35_uq3f1")
-add_objects = [NodePath("../../../Scroll/InspectorCheckboxScrollCondition")]
+add_objects = [NodePath("../../../Scroll/Yarnspark")]
 metadata/_edit_lock_ = true
 
 [node name="ChangeEditableObjectsTrigger_StartScrollPuzzle2" parent="Triggers" unique_id=457228071 node_paths=PackedStringArray("behavior") instance=ExtResource("34_pf0lh")]
@@ -1221,21 +1225,13 @@ script = ExtResource("62_k477d")
 sprite_frames = ExtResource("63_n0gy7")
 jump_velocity = 850.0
 double_jump = true
+metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1408260423]
 position = Vector2(0, 15)
 limit_left = 0
 limit_bottom = 1080
 position_smoothing_enabled = true
-metadata/_edit_lock_ = true
-
-[node name="EditableObjectIndicator" type="Node2D" parent="Player" unique_id=1267800830 node_paths=PackedStringArray("edit_icon", "pencil_sprite", "arrow_rotation_pivot", "box") instance=ExtResource("15_rnh1a")]
-script = ExtResource("16_k710v")
-margins = Vector2(43, 37)
-edit_icon = NodePath("EditIcon")
-pencil_sprite = NodePath("EditIcon/Pencil")
-arrow_rotation_pivot = NodePath("EditIcon/Pencil/RotationPivot")
-box = NodePath("Box")
 metadata/_edit_lock_ = true
 
 [node name="Enemies" type="Node2D" parent="." unique_id=1698421393]
@@ -1363,14 +1359,14 @@ script = ExtResource("68_f8q53")
 metadata/_edit_lock_ = true
 
 [connection signal="body_entered" from="Dangerzone" to="Dangerzone" method="_on_body_entered"]
-[connection signal="collected" from="Scroll" to="Scroll/ScrollContinuity" method="_on_collect"]
-[connection signal="condition_updated" from="Scroll" to="Scroll/SpriteContainer/Sprite2D/ScrollAnimator" method="_trigger_animation"]
-[connection signal="collected" from="Scroll2" to="Scroll2/ScrollContinuity" method="_on_collect"]
-[connection signal="condition_updated" from="Scroll2" to="Scroll2/SpriteContainer/Sprite2D/ScrollAnimator" method="_trigger_animation"]
-[connection signal="collected" from="Scroll3" to="Scroll3/ScrollContinuity" method="_on_collect"]
-[connection signal="condition_updated" from="Scroll3" to="Scroll3/SpriteContainer/Sprite2D/ScrollAnimator" method="_trigger_animation"]
-[connection signal="collected" from="Scroll4" to="Scroll4/ScrollContinuity" method="_on_collect"]
-[connection signal="condition_updated" from="Scroll4" to="Scroll4/SpriteContainer/Sprite2D/ScrollAnimator" method="_trigger_animation"]
+[connection signal="collected" from="Scroll" to="Scroll/Controllers/ScrollContinuity" method="_on_collect"]
+[connection signal="condition_updated" from="Scroll" to="Scroll/Controllers/ScrollAnimator" method="_trigger_animation"]
+[connection signal="collected" from="Scroll2" to="Scroll2/Controllers/ScrollContinuity" method="_on_collect"]
+[connection signal="condition_updated" from="Scroll2" to="Scroll2/Controllers/ScrollAnimator" method="_trigger_animation"]
+[connection signal="collected" from="Scroll3" to="Scroll3/Controllers/ScrollContinuity" method="_on_collect"]
+[connection signal="condition_updated" from="Scroll3" to="Scroll3/Controllers/ScrollAnimator" method="_trigger_animation"]
+[connection signal="collected" from="Scroll4" to="Scroll4/Controllers/ScrollContinuity" method="_on_collect"]
+[connection signal="condition_updated" from="Scroll4" to="Scroll4/Controllers/ScrollAnimator" method="_trigger_animation"]
 [connection signal="gate_opening" from="ScrollGates/ScrollGate" to="ScrollGates/ScrollGate/InfoIndicator" method="_disable"]
 [connection signal="gate_opening" from="ScrollGates/ScrollGate" to="ScrollGates/ScrollGate/ControllerObjects/GateAnimationController" method="begin_opening_gate"]
 [connection signal="hide_info_message" from="ScrollGates/ScrollGate" to="ScrollGates/ScrollGate/InfoIndicator" method="_on_deactivate"]

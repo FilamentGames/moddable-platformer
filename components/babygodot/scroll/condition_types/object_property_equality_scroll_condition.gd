@@ -13,13 +13,13 @@ class_name ObjectPropertyEqualityScrollCondition
 @export var value: String
 
 func _get_label_ending() -> String:
-	var ending := "must be equal to [code]" + value + "[/code]."
+	var ending := "must be equal to " + highlight_text(value) + "."
 	if value == "true" or value == "false":
 		ending = "must be enabled." if value == "true" else "must be disabled."
 	return ending
 
 func get_label_text() -> String:
-	return "The [code]" + _get_display_property_name() + "[/code] property of the [code]" + target.name + "[/code] node " + _get_label_ending()
+	return "The " + highlight_text(_get_display_property_name()) + " property of the " + highlight_text(target.name) + " node " + _get_label_ending()
 
 func _get_display_property_name() -> String:
 	var pieces := Array(property_name.split("_"))

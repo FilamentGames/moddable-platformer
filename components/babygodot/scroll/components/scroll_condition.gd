@@ -30,3 +30,6 @@ func _exit_tree() -> void:
 
 func _on_editor_update(_arg: Variant) -> void:
 	condition_updated.emit(is_condition_met())
+
+func highlight_text(text: String) -> String:
+	return "[color=#a663b5]" + text + "[/color]"

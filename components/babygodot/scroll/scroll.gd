@@ -12,6 +12,9 @@ signal collected
 ## The label that shows the scroll's current unlock condition
 @export var label: RichTextLabel
 
+## The info indicator that is used to show the scroll's information.
+@export var info_indicator: InfoIndicator
+
 ## This is set to true if the Scroll is in an invalid state
 var error_state := false:
 	get:
@@ -24,6 +27,8 @@ var error_state := false:
 		_internal_err_state = val
 
 var _internal_err_state := false
+
+var _last_condition_state := false
 
 ## A reference to the child `ScrollCondition` object
 var condition: ScrollCondition
@@ -45,6 +50,8 @@ func print_all_properties():
 		print(prop_name, ": ", prop_value)
 
 func _ready() -> void:
+	if Engine.is_editor_hint():
+		info_indicator._on_activate()
 	if is_instance_of(get_parent(), Viewport):
 		print("Ignoring error state check since we're opening the scroll prefab directly")
 		return
@@ -56,6 +63,9 @@ func _ready() -> void:
 		error_state = true
 	)
 	condition.condition_updated.connect(func(val: bool):
+		if _last_condition_state == val:
+			return
+		_last_condition_state = val
 		condition_updated.emit(val)
 	)
 	condition_updated.emit(condition.is_condition_met())

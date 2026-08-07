@@ -170,18 +170,20 @@ position = Vector2(4217, 318)
 collision_layer = 4
 collision_mask = 0
 
-[node name="Scroll" type="Node2D" parent="." unique_id=2086611064 node_paths=PackedStringArray("label") instance=ExtResource("12_ycdye")]
-position = Vector2(6881, 931)
+[node name="Scroll" type="Node2D" parent="." unique_id=2086611064 node_paths=PackedStringArray("label", "info_indicator") instance=ExtResource("12_ycdye")]
+position = Vector2(6873, 980)
 script = ExtResource("12_1tk8l")
-label = NodePath("ConditionTextContainer/Label")
+label = NodePath("InfoIndicator/InfoTree/CanvasLayer/UIContainer/PanelContainer/RichTextLabel")
+info_indicator = NodePath("InfoIndicator")
 
-[node name="InspectorCheckboxScrollCondition" type="Node" parent="Scroll" unique_id=75788105 instance=ExtResource("13_x1pys")]
+[node name="Yarnspark" type="Node" parent="Scroll" unique_id=75788105 instance=ExtResource("13_x1pys")]
 script = ExtResource("14_2d4sf")
 
-[node name="Scroll2" type="Node2D" parent="." unique_id=593369878 node_paths=PackedStringArray("label") instance=ExtResource("12_ycdye")]
-position = Vector2(8960, -384)
+[node name="Scroll2" type="Node2D" parent="." unique_id=593369878 node_paths=PackedStringArray("label", "info_indicator") instance=ExtResource("12_ycdye")]
+position = Vector2(8960, -333)
 script = ExtResource("12_1tk8l")
-label = NodePath("ConditionTextContainer/Label")
+label = NodePath("InfoIndicator/InfoTree/CanvasLayer/UIContainer/PanelContainer/RichTextLabel")
+info_indicator = NodePath("InfoIndicator")
 
 [node name="ObjectPropertyEqualityScrollCondition" type="Node" parent="Scroll2" unique_id=2071037534 node_paths=PackedStringArray("target") instance=ExtResource("12_bs6b0")]
 script = ExtResource("18_7cn4d")
@@ -189,10 +191,11 @@ target = NodePath("../../Enemies/Enemy2")
 property_name = &"fall_off_edge"
 value = "true"
 
-[node name="Scroll3" type="Node2D" parent="." unique_id=1488490395 node_paths=PackedStringArray("label") instance=ExtResource("12_ycdye")]
-position = Vector2(10233, -624)
+[node name="Scroll3" type="Node2D" parent="." unique_id=1488490395 node_paths=PackedStringArray("label", "info_indicator") instance=ExtResource("12_ycdye")]
+position = Vector2(10231, -573)
 script = ExtResource("12_1tk8l")
-label = NodePath("ConditionTextContainer/Label")
+label = NodePath("InfoIndicator/InfoTree/CanvasLayer/UIContainer/PanelContainer/RichTextLabel")
+info_indicator = NodePath("InfoIndicator")
 
 [node name="ObjectPropertyEqualityScrollCondition" type="Node" parent="Scroll3" unique_id=125528445 node_paths=PackedStringArray("target") instance=ExtResource("12_bs6b0")]
 script = ExtResource("18_7cn4d")
@@ -200,10 +203,11 @@ target = NodePath("../../Enemies/Enemy")
 property_name = &"fall_off_edge"
 value = "true"
 
-[node name="Scroll4" type="Node2D" parent="." unique_id=826339784 node_paths=PackedStringArray("label") instance=ExtResource("12_ycdye")]
-position = Vector2(11907, -676)
+[node name="Scroll4" type="Node2D" parent="." unique_id=826339784 node_paths=PackedStringArray("label", "info_indicator") instance=ExtResource("12_ycdye")]
+position = Vector2(11903, -625)
 script = ExtResource("12_1tk8l")
-label = NodePath("ConditionTextContainer/Label")
+label = NodePath("InfoIndicator/InfoTree/CanvasLayer/UIContainer/PanelContainer/RichTextLabel")
+info_indicator = NodePath("InfoIndicator")
 
 [node name="ObjectPropertyEqualityScrollCondition" type="Node" parent="Scroll4" unique_id=672431096 node_paths=PackedStringArray("target") instance=ExtResource("12_bs6b0")]
 script = ExtResource("18_7cn4d")
@@ -370,7 +374,7 @@ shape = SubResource("RectangleShape2D_8m0yn")
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
 script = ExtResource("23_8knqs")
-add_objects = [NodePath("../../../Scroll/InspectorCheckboxScrollCondition")]
+add_objects = [NodePath("../../../Scroll/Yarnspark")]
 
 [node name="ChangeEditableObjectsTrigger_StartScrollPuzzle2" parent="Triggers" unique_id=457228071 node_paths=PackedStringArray("behavior") instance=ExtResource("14_m7dqe")]
 position = Vector2(8621, 385)
@@ -1190,14 +1194,14 @@ position = Vector2(1728, 1047)
 script = ExtResource("64_y8cc3")
 
 [connection signal="body_entered" from="Dangerzone" to="Dangerzone" method="_on_body_entered"]
-[connection signal="collected" from="Scroll" to="Scroll/ScrollContinuity" method="_on_collect"]
-[connection signal="condition_updated" from="Scroll" to="Scroll/SpriteContainer/Sprite2D/ScrollAnimator" method="_trigger_animation"]
-[connection signal="collected" from="Scroll2" to="Scroll2/ScrollContinuity" method="_on_collect"]
-[connection signal="condition_updated" from="Scroll2" to="Scroll2/SpriteContainer/Sprite2D/ScrollAnimator" method="_trigger_animation"]
-[connection signal="collected" from="Scroll3" to="Scroll3/ScrollContinuity" method="_on_collect"]
-[connection signal="condition_updated" from="Scroll3" to="Scroll3/SpriteContainer/Sprite2D/ScrollAnimator" method="_trigger_animation"]
-[connection signal="collected" from="Scroll4" to="Scroll4/ScrollContinuity" method="_on_collect"]
-[connection signal="condition_updated" from="Scroll4" to="Scroll4/SpriteContainer/Sprite2D/ScrollAnimator" method="_trigger_animation"]
+[connection signal="collected" from="Scroll" to="Scroll/Controllers/ScrollContinuity" method="_on_collect"]
+[connection signal="condition_updated" from="Scroll" to="Scroll/Controllers/ScrollAnimator" method="_trigger_animation"]
+[connection signal="collected" from="Scroll2" to="Scroll2/Controllers/ScrollContinuity" method="_on_collect"]
+[connection signal="condition_updated" from="Scroll2" to="Scroll2/Controllers/ScrollAnimator" method="_trigger_animation"]
+[connection signal="collected" from="Scroll3" to="Scroll3/Controllers/ScrollContinuity" method="_on_collect"]
+[connection signal="condition_updated" from="Scroll3" to="Scroll3/Controllers/ScrollAnimator" method="_trigger_animation"]
+[connection signal="collected" from="Scroll4" to="Scroll4/Controllers/ScrollContinuity" method="_on_collect"]
+[connection signal="condition_updated" from="Scroll4" to="Scroll4/Controllers/ScrollAnimator" method="_trigger_animation"]
 [connection signal="gate_opening" from="ScrollGates/ScrollGate" to="ScrollGates/ScrollGate/InfoIndicator" method="_disable"]
 [connection signal="gate_opening" from="ScrollGates/ScrollGate" to="ScrollGates/ScrollGate/ControllerObjects/GateAnimationController" method="begin_opening_gate"]
 [connection signal="hide_info_message" from="ScrollGates/ScrollGate" to="ScrollGates/ScrollGate/InfoIndicator" method="_on_deactivate"]
