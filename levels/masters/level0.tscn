@@ -1112,7 +1112,7 @@ script = ExtResource("33_7cn4d")
 squashable = false
 
 [node name="Enemy6" type="CharacterBody2D" parent="Enemies" unique_id=1452245350 instance=ExtResource("17_d6rl2")]
-position = Vector2(8368, 960)
+position = Vector2(8071, 1010)
 collision_layer = 8
 collision_mask = 4
 floor_constant_speed = true
