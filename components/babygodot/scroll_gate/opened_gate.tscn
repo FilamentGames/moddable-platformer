@@ -63,6 +63,9 @@ z_index = 10
 position = Vector2(95, 9)
 lantern_front_texture = ExtResource("8_di7bo")
 
+[node name="Yarnspark" parent="NewGate/LanternRight" index="1" unique_id=1086757485]
+frame_progress = 0.32145077
+
 [node name="LanternFront" parent="NewGate/LanternRight" index="2" unique_id=1707531124]
 texture = ExtResource("8_di7bo")
 
