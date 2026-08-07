@@ -393,14 +393,15 @@ z_index = 10
 position = Vector2(2, -97)
 
 [node name="CanvasLayer" parent="InfoIndicator/InfoTree" parent_id_path=PackedInt32Array(1774361635, 233706681) index="0" unique_id=240023699]
-offset = Vector2(2, -170)
-transform = Transform2D(1, 0, 0, 1, 2, -170)
+offset = Vector2(2, -97)
+transform = Transform2D(1, 0, 0, 1, 2, -97)
 metadata/_edit_pinned_properties_ = [&"offset"]
 
-[node name="UIContainer" parent="InfoIndicator/InfoTree/CanvasLayer" index="0" unique_id=536485302]
-modulate = Color(1, 1, 1, 0)
+[node name="PanelContainer" parent="InfoIndicator/InfoTree/CanvasLayer/UIContainer" parent_id_path=PackedInt32Array(1774361635, 536485302) index="0" unique_id=2042454767]
+offset_top = -190.0
+offset_bottom = 2.000183
 
-[node name="RichTextLabel" parent="InfoIndicator/InfoTree/CanvasLayer/UIContainer/PanelContainer" parent_id_path=PackedInt32Array(1774361635, 2042454767) index="0" unique_id=91660906]
+[node name="RichTextLabel" parent="InfoIndicator/InfoTree/CanvasLayer/UIContainer/PanelContainer" index="0" unique_id=91660906]
 text = "Bring 1 Yarnspark"
 
 [node name="ControllerObjects" type="Node" parent="." unique_id=1016011116]
