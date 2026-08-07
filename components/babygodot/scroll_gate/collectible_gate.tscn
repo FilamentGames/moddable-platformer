@@ -15,7 +15,7 @@
 [ext_resource type="Script" uid="uid://bk8b688teqih7" path="res://components/babygodot/scroll_gate/components/gate_bridge_behavior.gd" id="11_cn82r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hmpfs"]
-size = Vector2(273, 341)
+size = Vector2(208.5, 260)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ddthk"]
 size = Vector2(86, 131)
@@ -273,7 +273,7 @@ info_indicator_label = NodePath("InfoIndicator/InfoTree/CanvasLayer/UIContainer/
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerArea" unique_id=233322335]
-position = Vector2(-134.5, -35.5)
+position = Vector2(-43.75, 5)
 shape = SubResource("RectangleShape2D_hmpfs")
 
 [node name="NewGate" type="Node2D" parent="." unique_id=409550080]
@@ -389,11 +389,16 @@ position = Vector2(95, 9)
 lantern_front_texture = ExtResource("9_t4cqe")
 
 [node name="InfoIndicator" parent="." unique_id=1774361635 instance=ExtResource("7_pdx6j")]
-position = Vector2(-146, -56)
+z_index = 10
+position = Vector2(2, -97)
 
 [node name="CanvasLayer" parent="InfoIndicator/InfoTree" parent_id_path=PackedInt32Array(1774361635, 233706681) index="0" unique_id=240023699]
-offset = Vector2(-146, -56)
-transform = Transform2D(1, 0, 0, 1, -146, -56)
+offset = Vector2(2, -170)
+transform = Transform2D(1, 0, 0, 1, 2, -170)
+metadata/_edit_pinned_properties_ = [&"offset"]
+
+[node name="UIContainer" parent="InfoIndicator/InfoTree/CanvasLayer" index="0" unique_id=536485302]
+modulate = Color(1, 1, 1, 0)
 
 [node name="RichTextLabel" parent="InfoIndicator/InfoTree/CanvasLayer/UIContainer/PanelContainer" parent_id_path=PackedInt32Array(1774361635, 2042454767) index="0" unique_id=91660906]
 text = "Bring 1 Yarnspark"
