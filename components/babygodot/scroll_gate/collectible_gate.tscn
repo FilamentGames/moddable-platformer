@@ -23,7 +23,7 @@ size = Vector2(86, 131)
 size = Vector2(86, 171)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dt3ue"]
-size = Vector2(51.351402, 70.31256)
+size = Vector2(24.662186, 70.31256)
 
 [sub_resource type="Animation" id="Animation_t4cqe"]
 length = 0.001
@@ -63,37 +63,60 @@ tracks/2/keys = {
 "update": 1,
 "values": [1.0]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("NewGate/GateCollision/Door:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_cn82r"]
 resource_name = "not_enough_scrolls"
-length = 0.3
+length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
-tracks/0/enabled = true
+tracks/0/enabled = false
 tracks/0/path = NodePath("NewGate/GateCollision/Door:position:x")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0666, 0.1334, 0.2, 0.2667),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("NewGate/GateCollision/Door:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.16666667, 0.23333335, 0.33333334),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.0, -5.0, 0.0, -5.0, 0.0]
+"values": [Vector2(-2, 13), Vector2(-2, 6), Vector2(-2, 13), Vector2(-2, 8), Vector2(-2, 13)]
 }
 
 [sub_resource type="Animation" id="Animation_83ym3"]
 resource_name = "open"
-length = 0.6
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath("NewGate/GateCollision/Door:position:y")
-tracks/0/interp = 2
+tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.46666667),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.06666667, 0.16666667, 0.23333335, 0.33333334, 0.40000004, 0.46666667, 0.5333334, 0.6, 0.76666665, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [13.0, -100.0]
+"values": [13.0, 5.0, 13.0, 8.0, 13.0, 10.0, 13.0, 10.000001, 13.0, -29.375013, -100.0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -102,7 +125,7 @@ tracks/1/path = NodePath("NewGate/GateCollision/Door:modulate:a")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.2, 0.46666667),
+"times": PackedFloat32Array(0.8333334, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [1.0, 0.0]
@@ -128,7 +151,6 @@ info_indicator_label = NodePath("InfoIndicator/InfoTree/CanvasLayer/UIContainer/
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerArea" unique_id=233322335]
-visible = false
 position = Vector2(-134.5, -35.5)
 shape = SubResource("RectangleShape2D_hmpfs")
 
@@ -169,15 +191,13 @@ collision_layer = 4
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NewGate/GateCollision" unique_id=1034297921]
-visible = false
 z_index = 12
-position = Vector2(-3, 1)
+position = Vector2(36.5, 1)
 scale = Vector2(2.959997, 1.9199982)
 shape = SubResource("RectangleShape2D_dt3ue")
 debug_color = Color(0.96, 0, 0.51199996, 0.03137255)
 
 [node name="Door" type="Sprite2D" parent="NewGate/GateCollision" unique_id=2147255556]
-position = Vector2(0, 13)
 texture = ExtResource("3_dt3ue")
 
 [node name="LockedGateLeft" type="Sprite2D" parent="NewGate" unique_id=275836650]
@@ -190,6 +210,7 @@ position = Vector2(67, 0)
 texture = ExtResource("7_t4cqe")
 
 [node name="LanternLeft" parent="NewGate" unique_id=890313050 instance=ExtResource("8_bg4bk")]
+z_index = 0
 position = Vector2(-94, 14.000001)
 
 [node name="LanternRight" parent="NewGate" unique_id=1119542889 instance=ExtResource("8_bg4bk")]
