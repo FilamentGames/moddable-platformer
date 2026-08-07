@@ -12,7 +12,6 @@ extends Area2D
 
 @onready var _sprite: Sprite2D = %Sprite2D
 @onready var _initial_texture: Texture2D = %Sprite2D.texture
-@onready var _collect_sound_player: AudioStreamPlayer2D = %CollectSoundPlayer
 
 
 func _set_texture(new_texture: Texture2D):
@@ -51,9 +50,5 @@ func _on_body_entered(_body):
 
 	# Baby Godot: Collect this coin permanently in the editor.
 	InGameQuestsBridge.collect_coin(self)
-
-	if _collect_sound_player:
-		_collect_sound_player.play()
-		await _collect_sound_player.finished
 
 	queue_free()

@@ -123,10 +123,6 @@ static var last_checkpoint_position: Vector2 = Vector2.ZERO
 @onready var _initial_sprite_frames: SpriteFrames = %AnimatedSprite2D.sprite_frames
 @onready var _double_jump_particles: CPUParticles2D = %DoubleJumpParticles
 
-@onready var _jump_sfx: AudioStreamPlayer = %JumpSFX
-@onready var _glide_sfx: AudioStreamPlayer = %GlideSFX
-@onready var _teleport_sfx: AudioStreamPlayer = %TeleportSFX
-
 @onready var _attack_hitbox: Area2D = %AttackHitbox
 @onready var _defeated_timer: Timer = %DefeatedTimer
 #endregion
@@ -197,8 +193,6 @@ func _jump():
 		_double_jump_particles.emitting = true
 	elif double_jump:
 		double_jump_armed = true
-	_jump_sfx.play()
-
 
 ## Called from [class Enemy] when the player-character stomps on an enemy.
 func stomp():
@@ -215,13 +209,6 @@ func _glide() -> void:
 		if velocity.y > GLIDE_TERMINAL_VELOCITY:
 			velocity.y = GLIDE_TERMINAL_VELOCITY
 
-		# Only play the sound effect when the player-character is moving downwards, not while
-		# jumping upwards
-		if velocity.y > 0 and not _glide_sfx.playing:
-			_glide_sfx.play()
-	elif _glide_sfx.playing:
-		_glide_sfx.stop()
-
 
 ## If the "teleport" action is pressed, and the player is moving the character horizontally,
 ## teleport the character in that horizontal direction.
@@ -233,7 +220,6 @@ func _teleport(input_direction: float) -> void:
 		# TODO: Check if we are teleporting into a wall (in which case the player should lose a
 		# life) or an enemy (in which case maybe the enemy should be telefragged/defeated?)
 		global_position.x += TELEPORT_DISTANCE * input_direction
-		_teleport_sfx.play()
 
 
 ## If the "phase" action is pressed, make the player-character invulnerable, but also unable to
