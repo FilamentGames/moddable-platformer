@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://s7td1yo8mpag"]
+
+[ext_resource type="Texture2D" uid="uid://drhx0qfx25srs" path="res://components/babygodot/vfx/VFX_BokehLarge.png" id="1_oqd0u"]
+[ext_resource type="Texture2D" uid="uid://hxgi3itfqb2m" path="res://components/babygodot/vfx/VFX_BokehMedium.png" id="2_0t4gq"]
+[ext_resource type="Texture2D" uid="uid://cuqj0qpkcjhs2" path="res://components/babygodot/vfx/VFX_BokehSmall.png" id="3_jamu3"]
+[ext_resource type="Texture2D" uid="uid://04sufcnbdb77" path="res://components/babygodot/vfx/VFX_Sparkle_Dot2.png" id="4_222nc"]
+
+[node name="Dust" type="Node2D" unique_id=862439618]
+
+[node name="PuffLarge" type="CPUParticles2D" parent="." unique_id=1486140620]
+amount = 2
+texture = ExtResource("1_oqd0u")
+emission_shape = 3
+emission_rect_extents = Vector2(30, 0)
+direction = Vector2(1, -2)
+spread = 10.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 19.11
+initial_velocity_max = 31.85
+color = Color(0.5055022, 0.46783447, 0.546875, 0.3372549)
+
+[node name="PuffMedium" type="CPUParticles2D" parent="." unique_id=2078759417]
+texture = ExtResource("2_0t4gq")
+speed_scale = 1.25
+emission_shape = 3
+emission_rect_extents = Vector2(30, 0)
+direction = Vector2(1, -2)
+spread = 10.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 19.11
+initial_velocity_max = 31.85
+color = Color(0.5058824, 0.46666667, 0.54509807, 0.5058824)
+
+[node name="PuffSmall" type="CPUParticles2D" parent="." unique_id=562714475]
+amount = 2
+texture = ExtResource("3_jamu3")
+emission_shape = 3
+emission_rect_extents = Vector2(30, 0)
+direction = Vector2(1, -2)
+spread = 10.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 19.11
+initial_velocity_max = 31.85
+color = Color(0.5058824, 0.46666667, 0.54509807, 0.5058824)
+
+[node name="Dust" type="CPUParticles2D" parent="." unique_id=635845090]
+position = Vector2(0, -6)
+amount = 4
+texture = ExtResource("4_222nc")
+speed_scale = 0.7
+emission_shape = 3
+emission_rect_extents = Vector2(20, 0)
+spread = 10.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 19.11
+initial_velocity_max = 31.85
+color = Color(0.38253784, 0.31585693, 0.44921875, 1)
