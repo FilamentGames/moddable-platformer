@@ -81,7 +81,7 @@ visible = false
 position = Vector2(9, 14)
 sprite_frames = ExtResource("4_rvq8p")
 autoplay = "default"
-frame_progress = 0.9591968
+frame_progress = 0.3030502
 
 [node name="LanternFront" type="Sprite2D" parent="." unique_id=1707531124]
 texture = ExtResource("1_rjm42")

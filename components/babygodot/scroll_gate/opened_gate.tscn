@@ -55,6 +55,7 @@ position = Vector2(67, 0)
 texture = ExtResource("6_x4gta")
 
 [node name="LanternLeft" parent="NewGate" unique_id=890313050 instance=ExtResource("7_c46n4")]
+z_index = 0
 position = Vector2(-94, 14.000001)
 
 [node name="LanternRight" parent="NewGate" unique_id=1119542889 instance=ExtResource("7_c46n4")]
