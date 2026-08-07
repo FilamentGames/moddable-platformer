@@ -1,7 +1,7 @@
 @tool
 extends GutTest
 
-class MockScrollCondition extends ScrollCondition:
+class MockScrollCondition extends CollectibleCondition:
 	var condition_met := false
 
 	func get_label_text() -> String:
@@ -10,11 +10,11 @@ class MockScrollCondition extends ScrollCondition:
 	func is_condition_met() -> bool:
 		return condition_met
 
-var scroll: Scroll
+var scroll: Collectible
 var condition: MockScrollCondition
 
 func before_each():
-	scroll = autofree(Scroll.new())
+	scroll = autofree(Collectible.new())
 	scroll.label = autofree(RichTextLabel.new())
 	condition = autofree(MockScrollCondition.new())
 	scroll.add_child(condition)

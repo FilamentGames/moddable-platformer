@@ -39,7 +39,7 @@ func _ready():
 	_get_rect_size()
 
 func _process(_delta: float) -> void:
-	if get_parent() is ScrollCondition:
+	if get_parent() is CollectibleCondition:
 		global_rotation = PI / 2
 	if pencil_sprite:
 		pencil_sprite.global_rotation = 0

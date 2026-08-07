@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfiq6r0hyed15"
-path="res://.godot/imported/temp_scroll_sprite.png-edc64ad63ea2d4db88f6ff6ec5843ce8.ctex"
+uid="uid://diaycckdbs082"
+path="res://.godot/imported/Collectible_Yarnspark.png-21ed21ce7640345160c40010ac13e458.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://components/babygodot/scroll/temp_scroll_sprite.png"
-dest_files=["res://.godot/imported/temp_scroll_sprite.png-edc64ad63ea2d4db88f6ff6ec5843ce8.ctex"]
+source_file="res://components/babygodot/yarnspark/assets/Collectible_Yarnspark.png"
+dest_files=["res://.godot/imported/Collectible_Yarnspark.png-21ed21ce7640345160c40010ac13e458.ctex"]
 
 [params]
 

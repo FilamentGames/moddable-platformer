@@ -1,7 +1,7 @@
 extends Node
 class_name ScrollContinuity
 
-@export var collectible: Scroll
+@export var collectible: Collectible
 
 var bridge: InGameQuestsBridge
 

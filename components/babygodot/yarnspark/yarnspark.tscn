@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://dpk1jwflxtjbn"]
 
-[ext_resource type="Script" uid="uid://odpmnclrocgd" path="res://components/babygodot/scroll/scroll.gd" id="1_6emoc"]
-[ext_resource type="PackedScene" uid="uid://f2mqtjb5kfo8" path="res://components/babygodot/scroll/components/scroll_continuity.tscn" id="2_3i822"]
-[ext_resource type="Texture2D" uid="uid://diaycckdbs082" path="res://components/babygodot/scroll/assets/Collectible_Yarnspark.png" id="5_4y73o"]
-[ext_resource type="Texture2D" uid="uid://cnfpol8lt50q5" path="res://components/babygodot/scroll/assets/Collectible_Yarnspark_Glow.png" id="6_uqd5c"]
-[ext_resource type="Texture2D" uid="uid://bcu1x3cydngth" path="res://components/babygodot/scroll/assets/Collectible_YarnsparkDisabled.png" id="7_nooyy"]
-[ext_resource type="PackedScene" uid="uid://bxwbigtvw3dh4" path="res://components/babygodot/scroll/components/scroll_animator.tscn" id="7_tqbn7"]
+[ext_resource type="Script" uid="uid://odpmnclrocgd" path="res://components/babygodot/yarnspark/yarnspark.gd" id="1_6emoc"]
+[ext_resource type="PackedScene" uid="uid://f2mqtjb5kfo8" path="res://components/babygodot/yarnspark/components/collectible_continuity.tscn" id="2_3i822"]
+[ext_resource type="Texture2D" uid="uid://diaycckdbs082" path="res://components/babygodot/yarnspark/assets/Collectible_Yarnspark.png" id="5_4y73o"]
+[ext_resource type="Texture2D" uid="uid://cnfpol8lt50q5" path="res://components/babygodot/yarnspark/assets/Collectible_Yarnspark_Glow.png" id="6_uqd5c"]
+[ext_resource type="Texture2D" uid="uid://bcu1x3cydngth" path="res://components/babygodot/yarnspark/assets/Collectible_YarnsparkDisabled.png" id="7_nooyy"]
+[ext_resource type="PackedScene" uid="uid://bxwbigtvw3dh4" path="res://components/babygodot/yarnspark/components/collectible_animator.tscn" id="7_tqbn7"]
 [ext_resource type="PackedScene" uid="uid://cqguk6cy3mt15" path="res://components/babygodot/info_indicator/info_indicator.tscn" id="8_pu5ue"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hmpfs"]
@@ -166,7 +166,7 @@ _data = {
 &"deactivate_scroll": SubResource("Animation_4y73o")
 }
 
-[node name="Scroll" type="Node2D" unique_id=2086611064 node_paths=PackedStringArray("label", "info_indicator")]
+[node name="Yarnspark" type="Node2D" unique_id=2086611064 node_paths=PackedStringArray("label", "info_indicator")]
 script = ExtResource("1_6emoc")
 label = NodePath("InfoIndicator/InfoTree/CanvasLayer/UIContainer/PanelContainer/RichTextLabel")
 info_indicator = NodePath("InfoIndicator")
@@ -218,10 +218,10 @@ offset_bottom = -23.999817
 
 [node name="Controllers" type="Node" parent="." unique_id=290377819]
 
-[node name="ScrollContinuity" parent="Controllers" unique_id=1035343625 node_paths=PackedStringArray("collectible") instance=ExtResource("2_3i822")]
+[node name="CollectibleContinuity" parent="Controllers" unique_id=1035343625 node_paths=PackedStringArray("collectible") instance=ExtResource("2_3i822")]
 collectible = NodePath("../..")
 
-[node name="ScrollAnimator" parent="Controllers" unique_id=1438532908 node_paths=PackedStringArray("animator") instance=ExtResource("7_tqbn7")]
+[node name="CollectibleAnimator" parent="Controllers" unique_id=1438532908 node_paths=PackedStringArray("animator") instance=ExtResource("7_tqbn7")]
 animator = NodePath("../UnlockAnimation")
 
 [node name="HoverAnimation" type="AnimationPlayer" parent="Controllers" unique_id=552900981]
@@ -232,10 +232,9 @@ autoplay = &"scroll_hover"
 [node name="UnlockAnimation" type="AnimationPlayer" parent="Controllers" unique_id=1842395322]
 libraries/ = SubResource("AnimationLibrary_6na1a")
 
-[connection signal="collected" from="." to="Controllers/ScrollContinuity" method="_on_collect"]
-[connection signal="condition_updated" from="." to="Controllers/ScrollAnimator" method="_trigger_animation"]
+[connection signal="collected" from="." to="Controllers/CollectibleContinuity" method="_on_collect"]
+[connection signal="condition_updated" from="." to="Controllers/CollectibleAnimator" method="_trigger_animation"]
 [connection signal="body_entered" from="InfoArea" to="InfoIndicator" method="_on_activate" unbinds=1]
 [connection signal="body_exited" from="InfoArea" to="InfoIndicator" method="_on_deactivate" unbinds=1]
-[connection signal="body_entered" from="CollectionArea" to="." method="_player_collect" unbinds=1]
 
 [editable path="InfoIndicator"]

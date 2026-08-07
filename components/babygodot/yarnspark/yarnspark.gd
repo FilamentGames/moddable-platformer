@@ -1,6 +1,7 @@
 @tool
 extends Node2D
-class_name Scroll
+class_name Collectible
+## The collectibles needed to open gates.
 
 ## Emitted when the child condition has been updated. Mainly used to hook up UI/animation changes
 signal condition_updated(val: bool)
@@ -15,7 +16,7 @@ signal collected
 ## The info indicator that is used to show the scroll's information.
 @export var info_indicator: InfoIndicator
 
-## This is set to true if the Scroll is in an invalid state
+## This is set to true if the Collectible is in an invalid state
 var error_state := false:
 	get:
 		return _internal_err_state
@@ -30,13 +31,13 @@ var _internal_err_state := false
 
 var _last_condition_state := false
 
-## A reference to the child `ScrollCondition` object
-var condition: ScrollCondition
+## A reference to the child `CollectibleCondition` object
+var condition: CollectibleCondition
 
 func _set_error_state() -> void:
 	modulate = Color(200.0/255, 0, 0, 200.0/255)
 	if label:
-		label.text = "ERROR!\n\nScroll object needs [code]ScrollCondition[/code] child to work properly."
+		label.text = "ERROR!\n\nObject needs [code]CollectibleCondition[/code] child to work properly."
 
 func _clear_error_state() -> void:
 	modulate = Color.WHITE
@@ -53,9 +54,9 @@ func _ready() -> void:
 	if Engine.is_editor_hint():
 		info_indicator._on_activate()
 	if is_instance_of(get_parent(), Viewport):
-		print("Ignoring error state check since we're opening the scroll prefab directly")
+		print("Ignoring error state check since we're opening the prefab directly")
 		return
-	condition = BabyGodotUtils.get_first_child_of_type(self, ScrollCondition)
+	condition = BabyGodotUtils.get_first_child_of_type(self, CollectibleCondition)
 	if not condition:
 		error_state = true
 		return

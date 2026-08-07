@@ -1,5 +1,5 @@
 @tool
-extends ScrollCondition
+extends CollectibleCondition
 ## A basic proof-of-concept scroll condition, you just have to check a box in the inspector to get it to pass!
 
 ## Check this box to get the scroll!

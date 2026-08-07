@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cnfpol8lt50q5"
-path="res://.godot/imported/Collectible_Yarnspark_Glow.png-29665bcfcf5320255ce138a296424f9a.ctex"
+path="res://.godot/imported/Collectible_Yarnspark_Glow.png-77a6da24cb90e3d7a7d2881812da9678.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://components/babygodot/scroll/assets/Collectible_Yarnspark_Glow.png"
-dest_files=["res://.godot/imported/Collectible_Yarnspark_Glow.png-29665bcfcf5320255ce138a296424f9a.ctex"]
+source_file="res://components/babygodot/yarnspark/assets/Collectible_Yarnspark_Glow.png"
+dest_files=["res://.godot/imported/Collectible_Yarnspark_Glow.png-77a6da24cb90e3d7a7d2881812da9678.ctex"]
 
 [params]
 

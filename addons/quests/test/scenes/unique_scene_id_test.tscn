@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dl34j7hmvhjl7"]
 
 [ext_resource type="PackedScene" uid="uid://daf24t18h3n5e" path="res://components/coin/coin.tscn" id="1_d0u87"]
-[ext_resource type="PackedScene" uid="uid://dpk1jwflxtjbn" path="res://components/babygodot/scroll/scroll.tscn" id="2_ee6cg"]
+[ext_resource type="PackedScene" uid="uid://dpk1jwflxtjbn" path="res://components/babygodot/yarnspark/yarnspark.tscn" id="2_ee6cg"]
 
 [node name="UniqueSceneIdTest" type="Node2D" unique_id=973336570]
 

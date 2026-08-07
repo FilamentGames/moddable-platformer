@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bxwbigtvw3dh4"]
+
+[ext_resource type="Script" uid="uid://cmjoxjruwj1sh" path="res://components/babygodot/yarnspark/components/collectible_animator.gd" id="1_f4bxu"]
+
+[node name="CollectibleAnimator" type="Node" unique_id=1438532908]
+script = ExtResource("1_f4bxu")

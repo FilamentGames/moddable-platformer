@@ -1,5 +1,5 @@
 @tool
-extends ScrollCondition
+extends CollectibleCondition
 class_name ObjectPropertyEqualityScrollCondition
 ## Checks if an arbitrary property of a node is equal to a specific value.
 

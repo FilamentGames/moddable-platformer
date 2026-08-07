@@ -130,12 +130,12 @@ func test_it_can_update_the_players_position_in_editor():
 	provider._scene.free()
 
 class MockScrollSceneProvider extends MockSceneProvider:
-	var _scroll: Scroll
+	var _scroll: Collectible
 
 	func get_editor_scene() -> Node2D:
 		var scene = Node2D.new()
 		scene.scene_file_path = "res://testing_file.tscn"
-		var scroll = Scroll.new()
+		var scroll = Collectible.new()
 		scroll.name = "UnitTestScroll"
 		scene.add_child(scroll)
 		scroll.owner = scene
