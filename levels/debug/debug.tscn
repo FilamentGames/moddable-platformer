@@ -7,18 +7,15 @@
 [ext_resource type="PackedScene" uid="uid://danlrmsfmsros" path="res://spaces/tilemap.tscn" id="5_co6ku"]
 [ext_resource type="PackedScene" uid="uid://daf24t18h3n5e" path="res://components/coin/coin.tscn" id="6_r8i1m"]
 [ext_resource type="Texture2D" uid="uid://84t7yee808cn" path="res://assets/items/button.png" id="7_2sl0t"]
-[ext_resource type="PackedScene" uid="uid://bvh17w5gcc28n" path="res://components/babygodot/test_progress_quest.tscn" id="8_yd46b"]
 [ext_resource type="PackedScene" uid="uid://4tnolf5qjb55" path="res://components/coin/special_coin.tscn" id="9_8kcpm"]
 [ext_resource type="PackedScene" uid="uid://coq6d3u6wnvs2" path="res://components/platform/platform.tscn" id="10_q2ef7"]
 [ext_resource type="PackedScene" uid="uid://dpk1jwflxtjbn" path="res://components/babygodot/yarnspark/yarnspark.tscn" id="11_5xka1"]
 [ext_resource type="PackedScene" uid="uid://67eoedabcb3s" path="res://components/babygodot/yarnspark/condition_types/inspector_checkbox_scroll_condition.tscn" id="12_i0e58"]
 [ext_resource type="PackedScene" uid="uid://8st4scqt06l8" path="res://components/player/player.tscn" id="13_cr345"]
 [ext_resource type="PackedScene" uid="uid://cbr3k8b1gooxm" path="res://components/babygodot/yarnspark/condition_types/object_property_equality_scroll_condition.tscn" id="13_v5uir"]
-[ext_resource type="PackedScene" uid="uid://jt80gv02u4f2" path="res://components/hud/_old/hud.tscn" id="15_eiexu"]
 [ext_resource type="SpriteFrames" uid="uid://de74lrhqf0xoa" path="res://components/player/spriteframes-storyweaver.tres" id="15_g3n11"]
 [ext_resource type="PackedScene" uid="uid://dbaal2g7b8ub0" path="res://components/enemy/storyvore_enemy.tscn" id="16_ousmv"]
 [ext_resource type="Script" uid="uid://boqbxvbja884q" path="res://scripts/multiplayer_camera.gd" id="17_416k2"]
-[ext_resource type="PackedScene" uid="uid://busbh1kipldyq" path="res://components/babygodot/test_display_quest_text.tscn" id="18_pgoko"]
 [ext_resource type="PackedScene" uid="uid://478o42c7ut27" path="res://components/babygodot/inspector_visibility_trigger/inspector_visibility_trigger.tscn" id="20_thedq"]
 
 [node name="Main" type="Node2D" unique_id=1511591426]
@@ -46,21 +43,6 @@ modulate = Color(1, 1, 0, 1)
 position = Vector2(1472, 320)
 texture = ExtResource("7_2sl0t")
 tint = Color(1, 1, 0, 1)
-
-[node name="Coin3" parent="Coins" unique_id=900612708 instance=ExtResource("6_r8i1m")]
-modulate = Color(1, 0, 0, 1)
-position = Vector2(1600, 256)
-texture = ExtResource("7_2sl0t")
-tint = Color(1, 0, 0, 1)
-
-[node name="TestProgressQuest" parent="Coins/Coin3" unique_id=1692964634 instance=ExtResource("8_yd46b")]
-
-[node name="Label" type="Label" parent="Coins/Coin3" unique_id=1505039228]
-offset_left = -181.0
-offset_top = -70.0
-offset_right = 244.0
-offset_bottom = -47.0
-text = "Collect this red coin to advance the quest text IN GAME"
 
 [node name="Coin4" parent="Coins" unique_id=1137508267 instance=ExtResource("6_r8i1m")]
 modulate = Color(1, 1, 0, 1)
@@ -328,8 +310,6 @@ limit_left = 0
 limit_bottom = 1080
 position_smoothing_enabled = true
 
-[node name="HUD" parent="." unique_id=207528560 instance=ExtResource("15_eiexu")]
-
 [node name="Enemies" type="Node2D" parent="." unique_id=1698421393]
 
 [node name="Enemy" parent="Enemies" unique_id=947503997 instance=ExtResource("16_ousmv")]
@@ -343,7 +323,6 @@ position = Vector2(4096, 960)
 
 [node name="Enemy4" parent="Enemies" unique_id=1255273089 instance=ExtResource("16_ousmv")]
 position = Vector2(7367, 870)
-squashable = false
 
 [node name="MultiplayerCamera" type="Camera2D" parent="." unique_id=1020979191]
 position = Vector2(0, 15)
@@ -352,12 +331,6 @@ limit_left = 0
 limit_bottom = 1080
 position_smoothing_enabled = true
 script = ExtResource("17_416k2")
-
-[node name="TestDisplayQuestText" parent="." unique_id=2107395699 instance=ExtResource("18_pgoko")]
-position = Vector2(604, 497)
-
-[node name="TestDisplayQuestText2" parent="." unique_id=1467953204 instance=ExtResource("18_pgoko")]
-position = Vector2(465, 424)
 
 [node name="InspectorVisibilityTrigger2" parent="." unique_id=964568534 instance=ExtResource("20_thedq")]
 position = Vector2(1236, 525)
