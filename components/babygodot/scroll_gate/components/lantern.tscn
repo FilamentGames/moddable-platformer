@@ -73,17 +73,18 @@ lantern_front = NodePath("LanternFront")
 animator = NodePath("AnimationPlayer")
 
 [node name="LanternBack" type="Sprite2D" parent="." unique_id=1550067254]
-position = Vector2(-0.6666667, 9.333334)
+position = Vector2(-2.1666667, 32.833336)
 texture = ExtResource("2_ekq2f")
 
 [node name="Yarnspark" type="AnimatedSprite2D" parent="." unique_id=1086757485]
 visible = false
-position = Vector2(9, 14)
+position = Vector2(8, 40)
 sprite_frames = ExtResource("4_rvq8p")
 autoplay = "default"
-frame_progress = 0.3030502
+frame_progress = 0.9550155
 
 [node name="LanternFront" type="Sprite2D" parent="." unique_id=1707531124]
+position = Vector2(-1.5, 23.5)
 texture = ExtResource("1_rjm42")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1621170643]
