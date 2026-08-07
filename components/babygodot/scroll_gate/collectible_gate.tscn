@@ -73,7 +73,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 0)]
+"values": [Vector2(0, 12)]
 }
 
 [sub_resource type="Animation" id="Animation_cn82r"]
@@ -198,6 +198,7 @@ shape = SubResource("RectangleShape2D_dt3ue")
 debug_color = Color(0.96, 0, 0.51199996, 0.03137255)
 
 [node name="Door" type="Sprite2D" parent="NewGate/GateCollision" unique_id=2147255556]
+position = Vector2(0, 12)
 texture = ExtResource("3_dt3ue")
 
 [node name="LockedGateLeft" type="Sprite2D" parent="NewGate" unique_id=275836650]
