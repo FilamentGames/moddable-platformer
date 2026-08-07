@@ -26,6 +26,44 @@ size = Vector2(86, 171)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dt3ue"]
 size = Vector2(24.662186, 70.31256)
 
+[sub_resource type="Animation" id="Animation_q4jkb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_nc1iy"]
+resource_name = "idle_sway"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-0.08726646259971647, 0.08726646259971647, -0.08726646259971647]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r8prq"]
+_data = {
+&"RESET": SubResource("Animation_q4jkb"),
+&"idle_sway": SubResource("Animation_nc1iy")
+}
+
 [sub_resource type="Animation" id="Animation_t4cqe"]
 length = 0.001
 tracks/0/type = "value"
@@ -381,12 +419,22 @@ texture = ExtResource("7_t4cqe")
 
 [node name="LanternLeft" parent="NewGate" unique_id=890313050 instance=ExtResource("8_bg4bk")]
 z_index = 0
-position = Vector2(-94, 14.000001)
+position = Vector2(-90, -10)
+
+[node name="IdleSway" type="AnimationPlayer" parent="NewGate/LanternLeft" unique_id=1291916171]
+libraries/ = SubResource("AnimationLibrary_r8prq")
+autoplay = &"idle_sway"
+speed_scale = 0.97
 
 [node name="LanternRight" parent="NewGate" unique_id=1119542889 instance=ExtResource("8_bg4bk")]
 z_index = 10
-position = Vector2(95, 9)
+position = Vector2(86, -15)
 lantern_front_texture = ExtResource("9_t4cqe")
+
+[node name="IdleSway" type="AnimationPlayer" parent="NewGate/LanternRight" unique_id=449541373]
+libraries/ = SubResource("AnimationLibrary_r8prq")
+autoplay = &"idle_sway"
+speed_scale = 0.95
 
 [node name="InfoIndicator" parent="." unique_id=1774361635 instance=ExtResource("7_pdx6j")]
 z_index = 10
