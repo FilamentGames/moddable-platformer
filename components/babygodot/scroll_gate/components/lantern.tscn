@@ -3,14 +3,14 @@
 [ext_resource type="Script" uid="uid://bf2ji2jr4bk5p" path="res://components/babygodot/scroll_gate/components/lantern.gd" id="1_ekq2f"]
 [ext_resource type="Texture2D" uid="uid://64pgkmiayedd" path="res://components/babygodot/scroll_gate/assets/LanternLeft_Front.png" id="1_rjm42"]
 [ext_resource type="Texture2D" uid="uid://cv1nsdrxyeikr" path="res://components/babygodot/scroll_gate/assets/Lantern_Back.png" id="2_ekq2f"]
-[ext_resource type="Texture2D" uid="uid://bci7xfv40l6q5" path="res://components/babygodot/scroll_gate/assets/Lantern_YarnsparkAnim.png" id="3_rvq8p"]
+[ext_resource type="SpriteFrames" uid="uid://cvr7k0rmm1hkx" path="res://components/babygodot/scroll_gate/assets/lantern_yarkspark.tres" id="4_rvq8p"]
 
 [sub_resource type="Animation" id="Animation_ekq2f"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("LanternYarnSpark:visible")
+tracks/0/path = NodePath("Yarnspark:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -22,36 +22,23 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("LanternYarnSpark:modulate:a")
+tracks/1/path = NodePath("Yarnspark:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("LanternYarnSpark:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_rvq8p"]
-resource_name = "lighting"
+resource_name = "Lantern_Enter"
 length = 0.8
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("LanternYarnSpark:visible")
+tracks/0/path = NodePath("Yarnspark:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -63,26 +50,14 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("LanternYarnSpark:modulate:a")
-tracks/1/interp = 2
+tracks/1/path = NodePath("Yarnspark:modulate")
+tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(-0.033333335, 0, 0.20000002, 0.23333335, 0.43333337, 0.4666667, 0.66666675),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [1.0, 0.8, 1.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("LanternYarnSpark:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3]
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_duo58"]
@@ -101,11 +76,12 @@ animator = NodePath("AnimationPlayer")
 position = Vector2(-0.6666667, 9.333334)
 texture = ExtResource("2_ekq2f")
 
-[node name="LanternYarnSpark" type="Sprite2D" parent="." unique_id=1610970071]
+[node name="Yarnspark" type="AnimatedSprite2D" parent="." unique_id=1086757485]
 visible = false
-position = Vector2(8, 15)
-texture = ExtResource("3_rvq8p")
-hframes = 4
+position = Vector2(9, 14)
+sprite_frames = ExtResource("4_rvq8p")
+autoplay = "default"
+frame_progress = 0.9591968
 
 [node name="LanternFront" type="Sprite2D" parent="." unique_id=1707531124]
 texture = ExtResource("1_rjm42")
