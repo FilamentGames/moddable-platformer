@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://cvr7k0rmm1hkx"]
+
+[ext_resource type="Texture2D" uid="uid://bci7xfv40l6q5" path="res://components/babygodot/scroll_gate/assets/Lantern_YarnsparkAnim.png" id="1_du6c7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gan5s"]
+atlas = ExtResource("1_du6c7")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aves4"]
+atlas = ExtResource("1_du6c7")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m8oss"]
+atlas = ExtResource("1_du6c7")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lw3o3"]
+atlas = ExtResource("1_du6c7")
+region = Rect2(384, 0, 128, 128)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gan5s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aves4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m8oss")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lw3o3")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]

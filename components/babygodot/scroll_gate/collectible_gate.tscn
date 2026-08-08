@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b7cqh35t583ol" path="res://components/babygodot/scroll_gate/assets/LockedGate_PillarTop_Grey.png" id="3_pdx6j"]
 [ext_resource type="Texture2D" uid="uid://dqf4nrmw0eoo0" path="res://components/babygodot/scroll_gate/assets/LockedGate_PillarBottom_Grey.png" id="4_nph78"]
 [ext_resource type="Texture2D" uid="uid://4n1ihuhcbax2" path="res://components/babygodot/scroll_gate/assets/LockedGate_Left.png" id="6_bg4bk"]
+[ext_resource type="PackedScene" uid="uid://s7td1yo8mpag" path="res://components/babygodot/vfx/vfx_Dust.tscn" id="6_q4jkb"]
 [ext_resource type="PackedScene" uid="uid://cqguk6cy3mt15" path="res://components/babygodot/info_indicator/info_indicator.tscn" id="7_pdx6j"]
 [ext_resource type="Texture2D" uid="uid://o1vxw6uuw380" path="res://components/babygodot/scroll_gate/assets/LockedGate_Right.png" id="7_t4cqe"]
 [ext_resource type="PackedScene" uid="uid://btsrp73a83f83" path="res://components/babygodot/scroll_gate/components/lantern.tscn" id="8_bg4bk"]
@@ -14,7 +15,7 @@
 [ext_resource type="Script" uid="uid://bk8b688teqih7" path="res://components/babygodot/scroll_gate/components/gate_bridge_behavior.gd" id="11_cn82r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hmpfs"]
-size = Vector2(273, 341)
+size = Vector2(208.5, 260)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ddthk"]
 size = Vector2(86, 131)
@@ -23,7 +24,45 @@ size = Vector2(86, 131)
 size = Vector2(86, 171)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dt3ue"]
-size = Vector2(51.351402, 70.31256)
+size = Vector2(24.662186, 70.31256)
+
+[sub_resource type="Animation" id="Animation_q4jkb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_nc1iy"]
+resource_name = "idle_sway"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-0.08726646259971647, 0.08726646259971647, -0.08726646259971647]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r8prq"]
+_data = {
+&"RESET": SubResource("Animation_q4jkb"),
+&"idle_sway": SubResource("Animation_nc1iy")
+}
 
 [sub_resource type="Animation" id="Animation_t4cqe"]
 length = 0.001
@@ -63,37 +102,133 @@ tracks/2/keys = {
 "update": 1,
 "values": [1.0]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("NewGate/GateCollision/Door:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 12)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("NewGate/GateCollision/DustBottom:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("NewGate/GateCollision/DustBottom:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("NewGate/GateCollision/DoorOpenDust:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("NewGate/GateCollision/DoorOpenDust:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_cn82r"]
 resource_name = "not_enough_scrolls"
-length = 0.3
+length = 0.73333335
 tracks/0/type = "value"
 tracks/0/imported = false
-tracks/0/enabled = true
+tracks/0/enabled = false
 tracks/0/path = NodePath("NewGate/GateCollision/Door:position:x")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0666, 0.1334, 0.2, 0.2667),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("NewGate/GateCollision/Door:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.16666667, 0.23333335, 0.33333334),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.0, -5.0, 0.0, -5.0, 0.0]
+"values": [Vector2(-2, 13), Vector2(-2, 6), Vector2(-2, 13), Vector2(-2, 8), Vector2(-2, 13)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("NewGate/GateCollision/DustBottom:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("NewGate/GateCollision/DustBottom:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.33333334, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_83ym3"]
 resource_name = "open"
-length = 0.6
+length = 1.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath("NewGate/GateCollision/Door:position:y")
-tracks/0/interp = 2
+tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.46666667),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.06666667, 0.16666667, 0.23333335, 0.33333334, 0.40000004, 0.46666667, 0.5333334, 0.6, 0.8, 1, 1.1666666, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [13.0, -100.0]
+"values": [13.0, 5.0, 13.0, 8.0, 13.0, 10.0, 13.0, 10.000001, 13.0, 13.0, 1.4431716, -29.375013, -100.0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -102,10 +237,58 @@ tracks/1/path = NodePath("NewGate/GateCollision/Door:modulate:a")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.2, 0.46666667),
+"times": PackedFloat32Array(1.2333333, 1.4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [1.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("NewGate/GateCollision/DustBottom:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("NewGate/GateCollision/DustBottom:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.058333315, 0.29166666, 0.53333336, 0.7666667, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0.4392157), Color(1, 1, 1, 1), Color(1, 1, 1, 0.4392157), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("NewGate/GateCollision/DoorOpenDust:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.6666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("NewGate/GateCollision/DoorOpenDust:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.6666667, 1, 1.1666666, 1.3333334, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0.5294118), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_83ym3"]
@@ -128,8 +311,7 @@ info_indicator_label = NodePath("InfoIndicator/InfoTree/CanvasLayer/UIContainer/
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerArea" unique_id=233322335]
-visible = false
-position = Vector2(-134.5, -35.5)
+position = Vector2(-43.75, 5)
 shape = SubResource("RectangleShape2D_hmpfs")
 
 [node name="NewGate" type="Node2D" parent="." unique_id=409550080]
@@ -169,16 +351,62 @@ collision_layer = 4
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NewGate/GateCollision" unique_id=1034297921]
-visible = false
 z_index = 12
-position = Vector2(-3, 1)
+position = Vector2(36.5, 1)
 scale = Vector2(2.959997, 1.9199982)
 shape = SubResource("RectangleShape2D_dt3ue")
 debug_color = Color(0.96, 0, 0.51199996, 0.03137255)
 
 [node name="Door" type="Sprite2D" parent="NewGate/GateCollision" unique_id=2147255556]
-position = Vector2(0, 13)
+position = Vector2(0, 12)
 texture = ExtResource("3_dt3ue")
+
+[node name="DoorOpenDust" type="Node2D" parent="NewGate/GateCollision" unique_id=1669095133]
+visible = false
+
+[node name="DustLeft" parent="NewGate/GateCollision/DoorOpenDust" unique_id=862439618 instance=ExtResource("6_q4jkb")]
+z_index = 15
+position = Vector2(-43.333336, 49.999992)
+
+[node name="PuffSmall" parent="NewGate/GateCollision/DoorOpenDust/DustLeft" index="0" unique_id=562714475]
+position = Vector2(0, 11.333339)
+emission_shape = 1
+emission_sphere_radius = 25.0
+
+[node name="PuffMedium" parent="NewGate/GateCollision/DoorOpenDust/DustLeft" index="1" unique_id=2078759417]
+position = Vector2(0, 11.333339)
+emission_shape = 1
+emission_sphere_radius = 25.0
+
+[node name="PuffLarge" parent="NewGate/GateCollision/DoorOpenDust/DustLeft" index="2" unique_id=1486140620]
+position = Vector2(0, 11.333339)
+emission_shape = 1
+emission_sphere_radius = 25.0
+
+[node name="DustRight" parent="NewGate/GateCollision/DoorOpenDust" unique_id=2058770872 instance=ExtResource("6_q4jkb")]
+z_index = 15
+position = Vector2(36.666664, 49.33333)
+
+[node name="PuffSmall" parent="NewGate/GateCollision/DoorOpenDust/DustRight" index="0" unique_id=562714475]
+position = Vector2(0, 11.333339)
+emission_shape = 1
+emission_sphere_radius = 25.0
+
+[node name="PuffMedium" parent="NewGate/GateCollision/DoorOpenDust/DustRight" index="1" unique_id=2078759417]
+position = Vector2(0, 11.333339)
+emission_shape = 1
+emission_sphere_radius = 25.0
+
+[node name="PuffLarge" parent="NewGate/GateCollision/DoorOpenDust/DustRight" index="2" unique_id=1486140620]
+position = Vector2(0, 11.333339)
+emission_shape = 1
+emission_sphere_radius = 25.0
+
+[node name="DustBottom" parent="NewGate/GateCollision" unique_id=998444751 instance=ExtResource("6_q4jkb")]
+visible = false
+modulate = Color(1, 1, 1, 0)
+z_index = 15
+position = Vector2(-8.666667, 71.33333)
 
 [node name="LockedGateLeft" type="Sprite2D" parent="NewGate" unique_id=275836650]
 position = Vector2(-14, 0)
@@ -190,21 +418,38 @@ position = Vector2(67, 0)
 texture = ExtResource("7_t4cqe")
 
 [node name="LanternLeft" parent="NewGate" unique_id=890313050 instance=ExtResource("8_bg4bk")]
-position = Vector2(-94, 14.000001)
+z_index = 0
+position = Vector2(-90, -10)
+
+[node name="IdleSway" type="AnimationPlayer" parent="NewGate/LanternLeft" unique_id=1291916171]
+libraries/ = SubResource("AnimationLibrary_r8prq")
+autoplay = &"idle_sway"
+speed_scale = 0.97
 
 [node name="LanternRight" parent="NewGate" unique_id=1119542889 instance=ExtResource("8_bg4bk")]
 z_index = 10
-position = Vector2(95, 9)
+position = Vector2(86, -15)
 lantern_front_texture = ExtResource("9_t4cqe")
 
+[node name="IdleSway" type="AnimationPlayer" parent="NewGate/LanternRight" unique_id=449541373]
+libraries/ = SubResource("AnimationLibrary_r8prq")
+autoplay = &"idle_sway"
+speed_scale = 0.95
+
 [node name="InfoIndicator" parent="." unique_id=1774361635 instance=ExtResource("7_pdx6j")]
-position = Vector2(-146, -56)
+z_index = 10
+position = Vector2(2, -97)
 
 [node name="CanvasLayer" parent="InfoIndicator/InfoTree" parent_id_path=PackedInt32Array(1774361635, 233706681) index="0" unique_id=240023699]
-offset = Vector2(-146, -56)
-transform = Transform2D(1, 0, 0, 1, -146, -56)
+offset = Vector2(2, -97)
+transform = Transform2D(1, 0, 0, 1, 2, -97)
+metadata/_edit_pinned_properties_ = [&"offset"]
 
-[node name="RichTextLabel" parent="InfoIndicator/InfoTree/CanvasLayer/UIContainer/PanelContainer" parent_id_path=PackedInt32Array(1774361635, 2042454767) index="0" unique_id=91660906]
+[node name="PanelContainer" parent="InfoIndicator/InfoTree/CanvasLayer/UIContainer" parent_id_path=PackedInt32Array(1774361635, 536485302) index="0" unique_id=2042454767]
+offset_top = -190.0
+offset_bottom = 2.000183
+
+[node name="RichTextLabel" parent="InfoIndicator/InfoTree/CanvasLayer/UIContainer/PanelContainer" index="0" unique_id=91660906]
 text = "Bring 1 Yarnspark"
 
 [node name="ControllerObjects" type="Node" parent="." unique_id=1016011116]
@@ -230,4 +475,6 @@ autoplay = &"RESET"
 [connection signal="body_entered" from="TriggerArea" to="." method="player_entered" unbinds=1]
 [connection signal="body_exited" from="TriggerArea" to="." method="player_exited" unbinds=1]
 
+[editable path="NewGate/GateCollision/DoorOpenDust/DustLeft"]
+[editable path="NewGate/GateCollision/DoorOpenDust/DustRight"]
 [editable path="InfoIndicator"]
