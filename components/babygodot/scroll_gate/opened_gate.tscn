@@ -54,15 +54,19 @@ z_index = 10
 position = Vector2(67, 0)
 texture = ExtResource("6_x4gta")
 
-[node name="LanternLeft" parent="NewGate" unique_id=890313050 instance=ExtResource("7_c46n4")]
-position = Vector2(-94, 14.000001)
-
-[node name="LanternRight" parent="NewGate" unique_id=1119542889 instance=ExtResource("7_c46n4")]
-z_index = 10
-position = Vector2(95, 9)
+[node name="LanternLeft" parent="NewGate" unique_id=1119542889 instance=ExtResource("7_c46n4")]
+z_index = 0
+position = Vector2(-90, -10)
 lantern_front_texture = ExtResource("8_di7bo")
 
-[node name="LanternFront" parent="NewGate/LanternRight" index="2" unique_id=1707531124]
+[node name="Yarnspark" parent="NewGate/LanternLeft" index="1" unique_id=1086757485]
+frame_progress = 0.32145077
+
+[node name="LanternFront" parent="NewGate/LanternLeft" index="2" unique_id=1707531124]
 texture = ExtResource("8_di7bo")
 
-[editable path="NewGate/LanternRight"]
+[node name="LanternRight" parent="NewGate" unique_id=890313050 instance=ExtResource("7_c46n4")]
+z_index = 10
+position = Vector2(85, -15)
+
+[editable path="NewGate/LanternLeft"]
