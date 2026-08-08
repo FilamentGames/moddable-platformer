@@ -5,9 +5,9 @@
 
 [sub_resource type="Resource" id="Resource_nbcr1"]
 script = ExtResource("2_fdhqc")
-dialogue_line = "Find me in the world of Threadbare! Press Play!"
+dialogue_line = "Find me in the world of Threadbare! Press Play! (▶)"
 progress_method = 2
-hints = Array[String](["Press the Play button in the top right corner to begin."])
+hints = Array[String](["Press the Play button (▶) in the top right corner to begin."])
 metadata/_custom_type_script = "uid://wcqap044q4nm"
 
 [sub_resource type="Resource" id="Resource_4jxrl"]
@@ -29,16 +29,16 @@ metadata/_custom_type_script = "uid://wcqap044q4nm"
 
 [sub_resource type="Resource" id="Resource_u38ty"]
 script = ExtResource("2_fdhqc")
-dialogue_line = "Concentrate! Stop the flow of time!"
+dialogue_line = "Concentrate! Stop the flow of time! (■)"
 progress_method = 3
-hints = Array[String](["Press the Stop button in the top right corner to make edits to the world."])
+hints = Array[String](["Press the Stop button (■) in the top right corner to make edits to the world."])
 metadata/_custom_type_script = "uid://wcqap044q4nm"
 
 [sub_resource type="Resource" id="Resource_fdhqc"]
 script = ExtResource("2_fdhqc")
-dialogue_line = "Yes, Storyweaver! Select the pile of rocks and clear them from your path. When you're done, hit Play and let time flow through Threadbare again!"
+dialogue_line = "Yes, Storyweaver! Select the pile of rocks and clear them from your path. When you're done, hit Play (▶) and let time flow through Threadbare again!"
 progress_method = 4
-hints = Array[String](["You could move the rocks or delete them entirely...", "Select the RockPile and press the Delete key on your keyboard. If you ever delete something you regret, Reset the World."])
+hints = Array[String](["You could move the rocks or delete them entirely...", "Select the RockPile and press the Delete key (DEL) on your keyboard. If you ever delete something you regret, Reset the World."])
 metadata/_custom_type_script = "uid://wcqap044q4nm"
 
 [sub_resource type="Resource" id="Resource_leoq5"]
@@ -57,15 +57,15 @@ metadata/_custom_type_script = "uid://wcqap044q4nm"
 
 [sub_resource type="Resource" id="Resource_dt6hy"]
 script = ExtResource("2_fdhqc")
-dialogue_line = "The scroll is the key."
+dialogue_line = "The yarnspark is the key."
 progress_method = 3
 metadata/_custom_type_script = "uid://wcqap044q4nm"
 
 [sub_resource type="Resource" id="Resource_m7dqe"]
 script = ExtResource("2_fdhqc")
-dialogue_line = "Change the property the scroll demands..."
+dialogue_line = "Change the property the yarnspark demands..."
 progress_method = 4
-hints = Array[String](["Look for a checkbox on the scroll somewhere...", "Select the child object called Inspector Checkbox Scroll Condition. In the Inspector, check the \"Can I get the scroll?\" checkbox."])
+hints = Array[String](["Look for a checkbox on the scroll somewhere...", "In the Scene Tree, select the node called Yarnspark. In the Inspector, check the \"Can I get the yarnspark\" checkbox."])
 metadata/_custom_type_script = "uid://wcqap044q4nm"
 
 [sub_resource type="Resource" id="Resource_goto6"]
