@@ -180,11 +180,14 @@ func test_can_buy_a_hint():
 	quests.global_coins = 10
 	quests.hint_cost = 5
 
+	var spy: CallableSpy = autofree(CallableSpy.new())
+	quests.hint_purchased.connect(spy.callable)
 	var text = quests.buy_hint()
 
 	assert_eq(quests.global_coins, 5)
 	assert_eq(quests.text_data[0].hints.size(), 1)
 	assert_eq(text, "Test")
+	assert_eq(spy.get_number_of_calls(), 1)
 
 func test_it_resets_the_current_hint_index_when_moving_to_the_next_text_line():
 	quests.text_data = [make_quest_line("Lorem"), make_quest_line("Ipsum")]

@@ -30,8 +30,11 @@ signal text_updated()
 ## Dispatched when a new scroll is collected
 signal scroll_collected()
 
-## Dispatched when the player's coins have changed
+## Dispatched when the player's coins have changed at all
 signal coins_changed()
+
+## Dispatched when the player purchases a hint
+signal hint_purchased()
 
 ## An object with methods `get_editor_scene`/`set_editor_scene` that provides access to the current editor scene. This should be the main plugin.
 var editor_scene_provider
@@ -272,6 +275,7 @@ func buy_hint() -> Variant:
 		return null
 	global_coins -= hint_cost
 	coins_changed.emit()
+	hint_purchased.emit()
 	_current_hint_index += 1
 	return text_data[_current_text_line].hints[_current_hint_index]
 

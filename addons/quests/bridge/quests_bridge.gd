@@ -110,9 +110,13 @@ func _setup_session(session_id):
 	session.started.connect(_on_session_start)
 	session.stopped.connect(_on_session_stop)
 	GlobalQuests.quests.scroll_collected.connect(_on_scroll_collected.bind(session_id))
+	GlobalQuests.quests.hint_purchased.connect(_on_hint_purchased.bind(session_id))
 
 func _on_scroll_collected(session_id: int) -> void:
 	_send_message(session_id, -1, "scrolls_updated", [GlobalQuests.quests.scrolls_collected.size()])
+
+func _on_hint_purchased(session_id: int) -> void:
+	_send_message(session_id, -1, "coins_updated", [GlobalQuests.quests.global_coins])
 
 func _on_session_start() -> void:
 	print("Quest bridge started")
