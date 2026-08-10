@@ -26,6 +26,8 @@ class_name BabyGodotQuestDock
 ## This button buys a hint for the current text.
 @export var hint_button: Button
 
+@export var hint_button_text_template: String = "Get a Hint (-%d Coins)"
+
 ## This control displays the hint for the current text.
 @export var hint_display: HintDisplay
 
@@ -58,6 +60,7 @@ func next():
 	_update_next_button_state()
 
 func _update_hint_button_state():
+	hint_button.text = hint_button_text_template % quests_provider.hint_cost
 	if hint_button:
 		hint_button.disabled = not quests_provider.can_buy_hint()
 

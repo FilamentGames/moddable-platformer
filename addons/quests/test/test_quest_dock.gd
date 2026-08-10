@@ -86,3 +86,12 @@ func test_it_reacts_to_quest_provider_coin_changes():
 	dock.quests_provider.coins_changed.emit()
 
 	assert_false(dock.hint_button.disabled)
+
+func test_it_shows_the_proper_price_on_the_buy_hint_button():
+	assert_false(dock.hint_button.text.contains("67"), "Dock shouldn't be preloaded with a price that hasn't been set yet.")
+
+	dock.hint_button_text_template = "buy hint %d coins"
+	dock.quests_provider.hint_cost = 67
+	dock.update_text()
+
+	assert_string_contains(dock.hint_button.text, "67 coins")
