@@ -18,9 +18,9 @@
 [ext_resource type="PackedScene" uid="uid://w1o7xdo6gt67" path="res://components/babygodot/editable_object_indicator/editable_object_indicator.tscn" id="16_k710v"]
 [ext_resource type="Script" uid="uid://xaqip7htvoim" path="res://components/babygodot/editable_object_indicator/editable_object_indicator.gd" id="17_2d8dw"]
 [ext_resource type="PackedScene" uid="uid://dpk1jwflxtjbn" path="res://components/babygodot/yarnspark/yarnspark.tscn" id="18_4p881"]
+[ext_resource type="PackedScene" uid="uid://bbyqlrx2w6ir2" path="res://components/babygodot/yarnspark/subtypes/intro_yarnspark.tscn" id="18_n2vjn"]
 [ext_resource type="Script" uid="uid://odpmnclrocgd" path="res://components/babygodot/yarnspark/yarnspark.gd" id="19_2h05j"]
-[ext_resource type="PackedScene" uid="uid://67eoedabcb3s" path="res://components/babygodot/yarnspark/condition_types/inspector_checkbox_scroll_condition.tscn" id="20_o0rts"]
-[ext_resource type="Script" uid="uid://bv4utu2r7ll2v" path="res://components/babygodot/yarnspark/condition_types/inspector_checkbox_scroll_condition.gd" id="21_m8hul"]
+[ext_resource type="Script" uid="uid://cy7jyqmo2dl2b" path="res://components/babygodot/yarnspark/subtypes/intro_yarnspark.gd" id="19_ovnls"]
 [ext_resource type="PackedScene" uid="uid://cbr3k8b1gooxm" path="res://components/babygodot/yarnspark/condition_types/object_property_equality_scroll_condition.tscn" id="22_c5fri"]
 [ext_resource type="Script" uid="uid://ynmusiscbscn" path="res://components/babygodot/yarnspark/condition_types/object_property_equality_scroll_condition.gd" id="23_mlbs2"]
 [ext_resource type="PackedScene" uid="uid://bk3nplruhw7kp" path="res://components/babygodot/scroll_gate/collectible_gate.tscn" id="24_0v71i"]
@@ -74,23 +74,23 @@ default_font_size = 64
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rpdqf"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fw5q1"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n2vjn"]
 resource_local_to_scene = true
 size = Vector2(94, 258)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ucnsv"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ovnls"]
 resource_local_to_scene = true
 size = Vector2(94, 258)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qyp0h"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4bour"]
 resource_local_to_scene = true
 size = Vector2(94, 258)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_57xpr"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2d8dw"]
 resource_local_to_scene = true
 size = Vector2(94, 258)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_v371g"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2h05j"]
 resource_local_to_scene = true
 size = Vector2(94, 258)
 
@@ -101,7 +101,7 @@ size = Vector2(300, 137)
 
 [node name="EditableNodeList" type="Node" parent="." unique_id=280926474 node_paths=PackedStringArray("nodes")]
 script = ExtResource("1_n2vjn")
-nodes = [NodePath("../RockPile"), NodePath("../Player")]
+nodes = [NodePath("../RockPile")]
 metadata/_edit_lock_ = true
 
 [node name="GameLogic" type="Node" parent="." unique_id=1461208797 instance=ExtResource("2_ovnls")]
@@ -184,15 +184,11 @@ arrow_rotation_pivot = NodePath("EditIcon/Pencil/RotationPivot")
 box = NodePath("Box")
 metadata/_edit_lock_ = true
 
-[node name="Scroll" type="Node2D" parent="." unique_id=2086611064 node_paths=PackedStringArray("label", "info_indicator") instance=ExtResource("18_4p881")]
-position = Vector2(6873, 980)
-script = ExtResource("19_2h05j")
+[node name="Yarnspark" type="Node2D" parent="." unique_id=2086611064 node_paths=PackedStringArray("label", "info_indicator") instance=ExtResource("18_n2vjn")]
+position = Vector2(6878, 981)
+script = ExtResource("19_ovnls")
 label = NodePath("InfoIndicator/InfoTree/CanvasLayer/UIContainer/PanelContainer/RichTextLabel")
 info_indicator = NodePath("InfoIndicator")
-metadata/_edit_lock_ = true
-
-[node name="Yarnspark" type="Node" parent="Scroll" unique_id=75788105 instance=ExtResource("20_o0rts")]
-script = ExtResource("21_m8hul")
 metadata/_edit_lock_ = true
 
 [node name="Scroll2" type="Node2D" parent="." unique_id=593369878 node_paths=PackedStringArray("label", "info_indicator") instance=ExtResource("18_4p881")]
@@ -347,7 +343,7 @@ delete_from_scene = true
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" parent="Triggers/ForceQuestProgressTrigger_SolvedRockPuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_fw5q1")
+shape = SubResource("RectangleShape2D_n2vjn")
 metadata/_edit_lock_ = true
 
 [node name="SkipQuestTriggerBehavior" parent="Triggers/ForceQuestProgressTrigger_SolvedRockPuzzle" index="1" unique_id=1238036962]
@@ -399,7 +395,7 @@ delete_from_scene = true
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_ucnsv")
+shape = SubResource("RectangleShape2D_ovnls")
 metadata/_edit_lock_ = true
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
@@ -416,12 +412,12 @@ delete_from_scene = true
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_qyp0h")
+shape = SubResource("RectangleShape2D_4bour")
 metadata/_edit_lock_ = true
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
 script = ExtResource("36_ibf5t")
-add_objects = [NodePath("../../../Scroll/Yarnspark")]
+add_objects = [NodePath("../../../Yarnspark")]
 metadata/_edit_lock_ = true
 
 [node name="ChangeEditableObjectsTrigger_StartScrollPuzzle2" parent="Triggers" unique_id=457228071 node_paths=PackedStringArray("behavior") instance=ExtResource("35_uq3f1")]
@@ -433,7 +429,7 @@ delete_from_scene = true
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle2" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_57xpr")
+shape = SubResource("RectangleShape2D_2d8dw")
 metadata/_edit_lock_ = true
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle2" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
@@ -450,7 +446,7 @@ delete_from_scene = true
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_v371g")
+shape = SubResource("RectangleShape2D_2h05j")
 metadata/_edit_lock_ = true
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
@@ -1175,21 +1171,13 @@ script = ExtResource("62_sj77e")
 sprite_frames = ExtResource("63_n0gy7")
 jump_velocity = 850.0
 double_jump = true
+metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1408260423]
 position = Vector2(0, 15)
 limit_left = 0
 limit_bottom = 1080
 position_smoothing_enabled = true
-metadata/_edit_lock_ = true
-
-[node name="EditableObjectIndicator" type="Node2D" parent="Player" unique_id=1412501508 node_paths=PackedStringArray("edit_icon", "pencil_sprite", "arrow_rotation_pivot", "box") instance=ExtResource("16_k710v")]
-script = ExtResource("17_2d8dw")
-margins = Vector2(43, 37)
-edit_icon = NodePath("EditIcon")
-pencil_sprite = NodePath("EditIcon/Pencil")
-arrow_rotation_pivot = NodePath("EditIcon/Pencil/RotationPivot")
-box = NodePath("Box")
 metadata/_edit_lock_ = true
 
 [node name="Enemies" type="Node2D" parent="." unique_id=1698421393]
@@ -1317,8 +1305,8 @@ script = ExtResource("68_tkbxy")
 metadata/_edit_lock_ = true
 
 [connection signal="body_entered" from="Dangerzone" to="Dangerzone" method="_on_body_entered"]
-[connection signal="collected" from="Scroll" to="Scroll/Controllers/CollectibleContinuity" method="_on_collect"]
-[connection signal="condition_updated" from="Scroll" to="Scroll/Controllers/CollectibleAnimator" method="_trigger_animation"]
+[connection signal="collected" from="Yarnspark" to="Yarnspark/Controllers/CollectibleContinuity" method="_on_collect"]
+[connection signal="condition_updated" from="Yarnspark" to="Yarnspark/Controllers/CollectibleAnimator" method="_trigger_animation"]
 [connection signal="collected" from="Scroll2" to="Scroll2/Controllers/CollectibleContinuity" method="_on_collect"]
 [connection signal="condition_updated" from="Scroll2" to="Scroll2/Controllers/CollectibleAnimator" method="_trigger_animation"]
 [connection signal="collected" from="Scroll3" to="Scroll3/Controllers/CollectibleContinuity" method="_on_collect"]

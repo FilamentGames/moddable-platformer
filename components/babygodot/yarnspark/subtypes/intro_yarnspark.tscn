@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bbyqlrx2w6ir2"]
+
+[ext_resource type="PackedScene" uid="uid://dpk1jwflxtjbn" path="res://components/babygodot/yarnspark/yarnspark.tscn" id="1_ah4y0"]
+[ext_resource type="Script" uid="uid://cy7jyqmo2dl2b" path="res://components/babygodot/yarnspark/subtypes/intro_yarnspark.gd" id="2_yy1lc"]
+[ext_resource type="Script" uid="uid://ynmusiscbscn" path="res://components/babygodot/yarnspark/condition_types/object_property_equality_scroll_condition.gd" id="3_hd602"]
+
+[node name="Yarnspark" unique_id=2086611064 instance=ExtResource("1_ah4y0")]
+script = ExtResource("2_yy1lc")
+can_i_get_the_yarnspark = false
+
+[node name="ObjectPropertyEqualityScrollCondition" type="Node" parent="." index="6" unique_id=202263298 node_paths=PackedStringArray("target")]
+script = ExtResource("3_hd602")
+target = NodePath("..")
+property_name = &"can_i_get_the_yarnspark"
+value = "true"
+metadata/_custom_type_script = "uid://ynmusiscbscn"
+
+[editable path="InfoIndicator"]
