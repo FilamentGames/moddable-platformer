@@ -13,16 +13,16 @@
 [node name="Npc" parent="." unique_id=688628462 instance=ExtResource("1_athl7")]
 dialogue_lines = Array[String](["I have knitted your progress so far, Storyweaver."])
 flip_to_face_player = true
-show_talk_icon = false
 
 [node name="AnimatedSprite2D" parent="Npc" index="0" unique_id=1376270546]
 sprite_frames = ExtResource("6_2eiju")
 animation = &"idle"
 autoplay = ""
-frame_progress = 0.7835323
+frame_progress = 0.92550015
 
-[node name="ControlDisplay" parent="Npc" index="3" unique_id=1300373774]
-visible = false
+[node name="CollisionShape2D" parent="Npc/Area2D" parent_id_path=PackedInt32Array(688628462, 18542653) index="0" unique_id=226621961]
+visible = true
+scale = Vector2(0.56, 2.24)
 
 [node name="KnitWitchSpriteController" type="Node" parent="." unique_id=1496352171 node_paths=PackedStringArray("sprite")]
 script = ExtResource("3_fx8po")
