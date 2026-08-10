@@ -25,3 +25,20 @@ func _on_check_box_toggled(toggled_on: bool) -> void:
 
 func _on_coin_button_pressed() -> void:
 	GlobalQuests.quests.collect_coin()
+
+func _on_open_master_button_pressed() -> void:
+	EditorInterface.open_scene_from_path("res://levels/masters/level0.tscn")
+
+func _on_master_reset_button_pressed() -> void:
+	if GlobalQuests and GlobalQuests.quests:
+		GlobalQuests.quests.reset_progress()
+	EditorInterface.open_scene_from_path("res://levels/masters/level0.tscn")
+	EditorInterface.save_scene()
+	await get_tree().process_frame
+	EditorInterface.close_scene()
+	await get_tree().process_frame
+	EditorInterface.open_scene_from_path("res://levels/clones/level0.tscn")
+	await get_tree().process_frame
+	EditorInterface.close_scene()
+	await get_tree().process_frame
+	EditorInterface.open_scene_from_path("res://levels/clones/level0.tscn")

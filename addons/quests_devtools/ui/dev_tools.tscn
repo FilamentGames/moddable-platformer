@@ -42,6 +42,12 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "Reset Baby Godot Quest Progress"
 
+[node name="MasterResetButton" type="Button" parent="VBoxContainer" unique_id=1847864581]
+layout_mode = 2
+size_flags_horizontal = 4
+tooltip_text = "Resets as much as possible"
+text = "MASTER Reset Button"
+
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer" unique_id=1775416488]
 layout_mode = 2
 
@@ -93,10 +99,18 @@ text = "Show
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 
-[node name="Button" type="Button" parent="VBoxContainer/VBoxContainer" unique_id=568910751]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/VBoxContainer" unique_id=194324554]
+layout_mode = 2
+
+[node name="OpenCloneButton" type="Button" parent="VBoxContainer/VBoxContainer/VBoxContainer" unique_id=568910751]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Open Level0 Clone"
+
+[node name="OpenMasterButton" type="Button" parent="VBoxContainer/VBoxContainer/VBoxContainer" unique_id=190906252]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Open Level0 Master"
 
 [node name="Spacer3" type="Control" parent="VBoxContainer/VBoxContainer" unique_id=984337318]
 custom_minimum_size = Vector2(0, 32)
@@ -123,10 +137,12 @@ size_flags_horizontal = 4
 text = "+1 Coin"
 
 [connection signal="pressed" from="VBoxContainer/QuestResetButton" to="." method="_click_button"]
+[connection signal="pressed" from="VBoxContainer/MasterResetButton" to="." method="_on_master_reset_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/InspectorDockControls/HideButton" to="." method="_toggle_streamlined_exclusive_dock" binds= [&"get_inspector_dock", false]]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/InspectorDockControls/ShowButton" to="." method="_toggle_streamlined_exclusive_dock" binds= [&"get_inspector_dock", true]]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/SceneTreeDockControls/HideButton" to="." method="_toggle_streamlined_exclusive_dock" binds= [&"get_scene_tree_dock", false]]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/SceneTreeDockControls/ShowButton" to="." method="_toggle_streamlined_exclusive_dock" binds= [&"get_scene_tree_dock", true]]
-[connection signal="pressed" from="VBoxContainer/VBoxContainer/Button" to="." method="_open_level0_clone"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/VBoxContainer/OpenCloneButton" to="." method="_open_level0_clone"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/VBoxContainer/OpenMasterButton" to="." method="_on_open_master_button_pressed"]
 [connection signal="toggled" from="VBoxContainer/VBoxContainer/HBoxContainer/CheckBox" to="." method="_on_check_box_toggled"]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/CoinButton" to="." method="_on_coin_button_pressed"]
