@@ -142,6 +142,9 @@ func set_inspector_dock_visible(visible: bool) -> void:
 func set_scene_tree_dock_visible(visible: bool) -> void:
 	editor_scene_provider.set_scene_tree_dock_visible(visible)
 
+func set_quest_dock_visible(visible: bool) -> void:
+	editor_scene_provider.set_quest_dock_visible(visible)
+
 func register_player_position(pos: Vector2) -> void:
 	if _lock_player_position:
 		return

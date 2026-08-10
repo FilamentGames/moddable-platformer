@@ -122,6 +122,7 @@ func _on_session_start() -> void:
 	print("Quest bridge started")
 	GlobalQuests.quests.set_inspector_dock_visible(false)
 	GlobalQuests.quests.set_scene_tree_dock_visible(false)
+	GlobalQuests.quests.set_quest_dock_visible(false)
 
 func _on_session_stop() -> void:
 	print("Quest bridge stopped")
@@ -133,3 +134,4 @@ func _on_session_stop() -> void:
 	GlobalQuests.quests.register_mode_switch(BabyGodotQuests.EditorMode.EDIT)
 	GlobalQuests.quests.set_inspector_dock_visible(_editor_unlock_state["inspector"])
 	GlobalQuests.quests.set_scene_tree_dock_visible(_editor_unlock_state["scene_tree"])
+	GlobalQuests.quests.set_quest_dock_visible(true)

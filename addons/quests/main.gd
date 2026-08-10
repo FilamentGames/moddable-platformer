@@ -61,6 +61,14 @@ func set_inspector_dock_visible(visible: bool) -> void:
 func set_scene_tree_dock_visible(visible: bool) -> void:
 	BabyGodotUtils.toggle_streamlined_exclusive_dock("get_scene_tree_dock", visible)
 
+func set_quest_dock_visible(visible: bool) -> void:
+	if visible:
+		dock_scene.show()
+		add_dock(dock)
+	else:
+		dock_scene.hide()
+		remove_dock(dock)
+
 func set_2d_viewport_focus(position: Vector2, zoom: float) -> void:
 	# EditorInterface.get_canvas_item_editor only exists in our customized version of
 	# Godot, so avoid an error by checking for the method ahead of time.
