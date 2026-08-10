@@ -15,4 +15,6 @@ property_name = &"can_i_get_the_yarnspark"
 value = "true"
 metadata/_custom_type_script = "uid://ynmusiscbscn"
 
+[connection signal="body_entered" from="CollectionArea" to="." method="_player_collect" unbinds=1]
+
 [editable path="InfoIndicator"]

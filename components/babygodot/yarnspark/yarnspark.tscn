@@ -236,5 +236,6 @@ libraries/ = SubResource("AnimationLibrary_6na1a")
 [connection signal="condition_updated" from="." to="Controllers/CollectibleAnimator" method="_trigger_animation"]
 [connection signal="body_entered" from="InfoArea" to="InfoIndicator" method="_on_activate" unbinds=1]
 [connection signal="body_exited" from="InfoArea" to="InfoIndicator" method="_on_deactivate" unbinds=1]
+[connection signal="body_entered" from="CollectionArea" to="." method="_player_collect" unbinds=1]
 
 [editable path="InfoIndicator"]
