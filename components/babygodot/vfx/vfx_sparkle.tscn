@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://ds648tqxmypxm"]
+
+[ext_resource type="Texture2D" uid="uid://j0mk6fbnelxu" path="res://components/babygodot/vfx/VFX_Sparkle_Circle1.png" id="1_ybi5y"]
+[ext_resource type="Texture2D" uid="uid://bn8pgbmn6ib6p" path="res://components/babygodot/vfx/VFX_Sparkle_Circle2.png" id="2_6gmsj"]
+[ext_resource type="Texture2D" uid="uid://bljn6sqcyklmf" path="res://components/babygodot/vfx/VFX_Sparkle_Cross1.png" id="3_gki5w"]
+[ext_resource type="Texture2D" uid="uid://caedusslc6ugc" path="res://components/babygodot/vfx/VFX_Sparkle_Diamond1.png" id="4_6oynv"]
+
+[sub_resource type="Curve" id="Curve_6m5wx"]
+_limits = [-360.0, 360.0, 0.0, 1.0]
+_data = [Vector2(0, -360), 0.0, 719.99994, 0, 1, Vector2(1, 360), 719.99994, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_hv7fa"]
+_data = [Vector2(0, 0), 0.0, 3.205128, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.5164804, 0.0, 0, 0]
+point_count = 3
+metadata/_snap_enabled = true
+
+[sub_resource type="Gradient" id="Gradient_4r5xq"]
+offsets = PackedFloat32Array(0.004464286, 0.48660713, 0.99553573)
+colors = PackedColorArray(0.74509805, 0.9411765, 1, 0.19607843, 0.74509805, 0.9411765, 1, 1, 0.7433311, 0.9420195, 1, 0.47058824)
+
+[node name="SparkleVFX" type="Node2D" unique_id=1416552907]
+scale = Vector2(3, 3)
+
+[node name="Circle1" type="CPUParticles2D" parent="." unique_id=1620489459]
+position = Vector2(-1, -5.5)
+amount = 1
+texture = ExtResource("1_ybi5y")
+lifetime = 2.0
+speed_scale = 1.5
+lifetime_randomness = 0.21
+local_coords = true
+direction = Vector2(0, 0)
+gravity = Vector2(0, 0)
+angle_curve = SubResource("Curve_6m5wx")
+scale_amount_min = 0.0
+scale_amount_curve = SubResource("Curve_hv7fa")
+color_ramp = SubResource("Gradient_4r5xq")
+
+[node name="Circle2" type="CPUParticles2D" parent="." unique_id=241354264]
+position = Vector2(2.5, -1)
+amount = 1
+texture = ExtResource("2_6gmsj")
+lifetime = 2.0
+speed_scale = 1.5
+lifetime_randomness = 0.21
+local_coords = true
+direction = Vector2(0, 0)
+gravity = Vector2(0, 0)
+angle_curve = SubResource("Curve_6m5wx")
+scale_amount_min = 0.0
+scale_amount_curve = SubResource("Curve_hv7fa")
+color_ramp = SubResource("Gradient_4r5xq")
+
+[node name="Diamond1" type="CPUParticles2D" parent="." unique_id=60984824]
+position = Vector2(-2, 1.5)
+amount = 1
+texture = ExtResource("3_gki5w")
+lifetime = 1.5
+speed_scale = 1.5
+local_coords = true
+direction = Vector2(0, 0)
+gravity = Vector2(0, 0)
+angle_max = 0.5
+angle_curve = SubResource("Curve_6m5wx")
+scale_amount_min = 0.0
+scale_amount_curve = SubResource("Curve_hv7fa")
+color_ramp = SubResource("Gradient_4r5xq")
+
+[node name="Diamond2" type="CPUParticles2D" parent="." unique_id=1091533826]
+position = Vector2(2.5, 5.5)
+amount = 1
+texture = ExtResource("4_6oynv")
+lifetime = 1.5
+speed_scale = 1.5
+local_coords = true
+direction = Vector2(0, 0)
+gravity = Vector2(0, 0)
+angle_max = 0.5
+angle_curve = SubResource("Curve_6m5wx")
+scale_amount_min = 0.0
+scale_amount_curve = SubResource("Curve_hv7fa")
+color_ramp = SubResource("Gradient_4r5xq")
