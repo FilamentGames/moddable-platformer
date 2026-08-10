@@ -12,6 +12,8 @@ class_name ObjectPropertyEqualityScrollCondition
 ## The value to compare the object's property value to.
 @export var value: String
 
+var _last_valid_label_text: String = "Error! This condition is not valid."
+
 func _get_label_ending() -> String:
 	var ending := "must be equal to " + highlight_text(value) + "."
 	if value == "true" or value == "false":
@@ -19,7 +21,9 @@ func _get_label_ending() -> String:
 	return ending
 
 func get_label_text() -> String:
-	return "The " + highlight_text(_get_display_property_name()) + " property of the " + highlight_text(target.name) + " node " + _get_label_ending()
+	if target:
+		_last_valid_label_text = "The " + highlight_text(_get_display_property_name()) + " property of the " + highlight_text(target.name) + " node " + _get_label_ending()
+	return _last_valid_label_text
 
 func _get_display_property_name() -> String:
 	var pieces := Array(property_name.split("_"))
@@ -31,6 +35,9 @@ func _evaluate_expression(expression: String, base_object: Node = null) -> Varia
 	return expr.execute([], base_object)
 
 func is_condition_met() -> bool:
+	if not target:
+		return false
+
 	var received = _evaluate_expression(property_name, target)
 
 	if received is String:

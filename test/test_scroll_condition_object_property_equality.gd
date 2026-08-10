@@ -53,3 +53,22 @@ func test_it_says_enabled_or_disabled_in_label_text_for_bool_values():
 	condition.value = "false"
 
 	assert_string_contains(condition.get_label_text(), "must be disabled.")
+
+func test_it_does_nothing_if_the_target_object_is_null():
+	condition.target = null
+	condition.property_name = "potato"
+	condition.value = "1337"
+
+	assert_false(condition.is_condition_met())
+
+func test_it_caches_the_condition_string_and_reuses_it_if_the_condition_becomes_invalid():
+	condition.property_name = "property_bool"
+	condition.value = "true"
+
+	var text := condition.get_label_text()
+
+	condition.target = null
+	condition.property_name = "potato"
+	condition.value = "1337"
+
+	assert_eq(condition.get_label_text(), text)
