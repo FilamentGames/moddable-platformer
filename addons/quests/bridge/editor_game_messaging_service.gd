@@ -52,14 +52,20 @@ func _capture(message: String, data: Array) -> bool:
 func _handle_global_messages(message: String, data: Array) -> bool:
 	match message:
 		"text_updated":
-			return _trigger_signal_in_abstract_inboxes("quest_text", data)
+			return _trigger_signal_in_abstract_inboxes("quest_text", data[0])
 		"scrolls_updated":
-			return _trigger_signal_in_abstract_inboxes("scroll_quantity", data)
+			return _trigger_signal_in_abstract_inboxes("scroll_quantity", data[0])
 		"coins_updated":
-			return _trigger_signal_in_abstract_inboxes("global_coins", data)
+			return _trigger_signal_in_abstract_inboxes("global_coins", data[0])
+		"celebration_animation":
+			return _trigger_signal_in_abstract_inboxes("celebration_animation")
 	return false
 
-func _trigger_signal_in_abstract_inboxes(signal_name: String, data: Array) -> bool:
+func _trigger_signal_in_abstract_inboxes(signal_name: String, data: Variant = null) -> bool:
+	print("Emitting signal for global message: " + signal_name)
 	for obj: AbstractMessagingInbox in _object_map.values():
-		obj[signal_name].emit(data[0])
+		if data:
+			obj[signal_name].emit(data)
+		else:
+			obj[signal_name].emit()
 	return true

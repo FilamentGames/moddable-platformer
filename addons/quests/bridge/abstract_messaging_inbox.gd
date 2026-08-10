@@ -20,3 +20,6 @@ signal global_coins(quantity: int)
 
 ## Emitted when the debugger responds with the current checkpoint position
 signal checkpoint_position(position: Vector2)
+
+## Emitted when the quest line is marked for a celebration animation
+signal celebration_animation()

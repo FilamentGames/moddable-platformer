@@ -203,3 +203,20 @@ func test_npc_control_display_is_not_visible_when_player_exits_dialogue_zone():
 	npc._player_exited(player)
 
 	assert_false(npc.control_display._visible)
+
+func test_can_do_a_celebration_animation_even_if_it_has_no_global_quest_dialogue():
+	npc = autofree(NpcTesting.new())
+	npc.dialogue_lines = ["yippee"]
+	npc.use_global_quest_dialogue = false
+	npc.dialogue_box_prefab = autofree(make_dialogue_box_stub_prefab())
+	npc.dialogue_container = autofree(Node2D.new())
+	npc.bridge = autofree(InGameQuestsBridge.new(autofree(MockEditorGameMessagingService.new())))
+
+	var spy: CallableSpy = autofree(CallableSpy.new())
+	npc.celebration_animation.connect(spy.callable)
+
+	add_child(npc)
+
+	npc.bridge.celebration_animation.emit()
+
+	assert_eq(spy.get_number_of_calls(), 1)

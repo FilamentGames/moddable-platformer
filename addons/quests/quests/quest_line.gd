@@ -15,6 +15,9 @@ enum ProgressMethod {
 ## How to progress to the next line of of the quest
 @export var progress_method: ProgressMethod = ProgressMethod.NextButton
 
+## Should the elder do a little hip-hip-hooray animation when this quest line is reached?
+@export var show_celebration_animation: bool = false
+
 ## Hints to display if the player buys a hint on this line of text.
 @export var hints: Array[String] = []
 

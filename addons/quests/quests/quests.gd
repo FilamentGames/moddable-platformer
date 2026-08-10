@@ -36,6 +36,9 @@ signal coins_changed()
 ## Dispatched when the player purchases a hint
 signal hint_purchased()
 
+## Dispatched when a celebration animation is to be played
+signal celebration_animation()
+
 ## An object with methods `get_editor_scene`/`set_editor_scene` that provides access to the current editor scene. This should be the main plugin.
 var editor_scene_provider
 
@@ -63,6 +66,12 @@ var _checkpoint_quest_progress: Dictionary = {
 	"scrolls_collected": [],
 	"last_position": Vector2.ZERO
 }
+
+func _init() -> void:
+	text_updated.connect(func():
+		if text_data[_current_text_line].show_celebration_animation:
+			celebration_animation.emit()
+	)
 
 ## Get the current line of text of the quest
 func get_current_text() -> String:

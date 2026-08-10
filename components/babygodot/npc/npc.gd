@@ -35,12 +35,20 @@ var current_dialogue_box: DialogueBox
 
 var bridge: InGameQuestsBridge
 
+## Emitted when the NPC might do a celebration animation if they have it defined.
+signal celebration_animation()
+
 func _ready() -> void:
 	_set_control_display_fully_visible(show_talk_icon)
-	if not use_global_quest_dialogue:
+	if not use_global_quest_dialogue and not celebration_animation.has_connections():
 		return
 	if not bridge:
 		bridge = InGameQuestsBridge.new()
+	bridge.celebration_animation.connect(func():
+		celebration_animation.emit()
+	)
+	if not use_global_quest_dialogue:
+		return
 	bridge.all_nextbutton_quest_text.connect(func(text: Array[String]):
 		dialogue_lines = text.duplicate()
 	)

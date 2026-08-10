@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b635ubfqcnull"
-path="res://.godot/imported/elder_idle.png-1a0562311ae48fe78f2992a710f42146.ctex"
+uid="uid://vkiy76nubdyl"
+path="res://.godot/imported/frame6.png-ff178d966c08e50e4a74de0fe2cbfce5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://components/babygodot/npc/elder_idle.png"
-dest_files=["res://.godot/imported/elder_idle.png-1a0562311ae48fe78f2992a710f42146.ctex"]
+source_file="res://components/babygodot/npc/assets/celebration/frame6.png"
+dest_files=["res://.godot/imported/frame6.png-ff178d966c08e50e4a74de0fe2cbfce5.ctex"]
 
 [params]
 

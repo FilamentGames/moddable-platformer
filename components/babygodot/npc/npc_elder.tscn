@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cq253lfclbbbq"]
+
+[ext_resource type="PackedScene" uid="uid://d0v802hnw7unk" path="res://components/babygodot/npc/npc.tscn" id="1_uabx3"]
+[ext_resource type="Script" uid="uid://c8pkpy477usk5" path="res://components/babygodot/npc/components/elder_animation_controller.gd" id="2_qjsl1"]
+
+[node name="NpcElder" unique_id=688628462 instance=ExtResource("1_uabx3")]
+
+[node name="ElderAnimationController" type="Node" parent="." index="4" unique_id=1323735264 node_paths=PackedStringArray("sprite")]
+script = ExtResource("2_qjsl1")
+sprite = NodePath("../AnimatedSprite2D")
+
+[connection signal="celebration_animation" from="." to="ElderAnimationController" method="trigger_animation"]

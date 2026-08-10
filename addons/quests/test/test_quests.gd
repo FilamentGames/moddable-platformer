@@ -274,3 +274,18 @@ func test_if_it_depletes_more_scrolls_than_available_it_depletes_all_scrolls():
 	quests.deplete_scrolls(4)
 
 	assert_eq(quests.scrolls_collected.size(), 0)
+
+func test_it_emits_an_event_for_celebration_animations():
+	quests.text_data = [make_quest_line("Lorem"), make_quest_line("Ipsum"), make_quest_line("Test")]
+
+	quests.text_data[1].show_celebration_animation = true
+	var spy: CallableSpy = autofree(CallableSpy.new())
+	quests.celebration_animation.connect(spy.callable)
+	
+	quests.next()
+
+	assert_eq(spy.get_number_of_calls(), 1)
+
+	quests.next()
+
+	assert_eq(spy.get_number_of_calls(), 1)

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://r8ub5k4v36fq"]
+
+[ext_resource type="PackedScene" uid="uid://cq253lfclbbbq" path="res://components/babygodot/npc/npc_elder.tscn" id="1_5468k"]
+
+[node name="TestCelebrationAnimation" type="Node2D" unique_id=682190011]
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1347920179]
+scale = Vector2(2, 2)
+
+[node name="NpcElder" parent="Node2D" unique_id=688628462 instance=ExtResource("1_5468k")]
+position = Vector2(474.5, 246.5)
+
+[node name="Button" type="Button" parent="Node2D" unique_id=2135169514]
+offset_left = 412.5
+offset_top = 371.5
+offset_right = 565.5
+offset_bottom = 402.5
+text = "Celebrate Yippee!!!"
+
+[connection signal="pressed" from="Node2D/Button" to="Node2D/NpcElder/ElderAnimationController" method="trigger_animation"]
+
+[editable path="Node2D/NpcElder"]
