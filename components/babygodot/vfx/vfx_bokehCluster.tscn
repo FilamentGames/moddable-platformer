@@ -1,13 +1,8 @@
 [gd_scene format=3 uid="uid://cfouqrodflylp"]
 
-[ext_resource type="Texture2D" uid="uid://hxgi3itfqb2m" path="res://components/babygodot/vfx/VFX_BokehMedium.png" id="1_jpmja"]
-[ext_resource type="Texture2D" uid="uid://drhx0qfx25srs" path="res://components/babygodot/vfx/VFX_BokehLarge.png" id="2_jstpm"]
-[ext_resource type="Texture2D" uid="uid://cuqj0qpkcjhs2" path="res://components/babygodot/vfx/VFX_BokehSmall.png" id="3_gyumk"]
-
-[sub_resource type="Curve" id="Curve_6m5wx"]
-_limits = [-360.0, 360.0, 0.0, 1.0]
-_data = [Vector2(0, -360), 0.0, 719.99994, 0, 1, Vector2(1, 360), 719.99994, 0.0, 1, 0]
-point_count = 2
+[ext_resource type="Texture2D" uid="uid://hxgi3itfqb2m" path="res://components/babygodot/vfx/Textures/VFX_BokehMedium.png" id="1_jpmja"]
+[ext_resource type="Texture2D" uid="uid://drhx0qfx25srs" path="res://components/babygodot/vfx/Textures/VFX_BokehLarge.png" id="2_jstpm"]
+[ext_resource type="Texture2D" uid="uid://cuqj0qpkcjhs2" path="res://components/babygodot/vfx/Textures/VFX_BokehSmall.png" id="3_gyumk"]
 
 [sub_resource type="Gradient" id="Gradient_hi1ih"]
 offsets = PackedFloat32Array(0, 0.45535713, 1)
@@ -32,9 +27,7 @@ lifetime_randomness = 0.21
 local_coords = true
 emission_shape = 2
 emission_sphere_radius = 10.0
-direction = Vector2(0, 0)
 gravity = Vector2(0, 0)
-angle_curve = SubResource("Curve_6m5wx")
 color_ramp = SubResource("Gradient_hi1ih")
 hue_variation_curve = SubResource("Curve_ojihs")
 
@@ -47,9 +40,7 @@ lifetime_randomness = 0.21
 local_coords = true
 emission_shape = 2
 emission_sphere_radius = 20.0
-direction = Vector2(0, 0)
 gravity = Vector2(0, 0)
-angle_curve = SubResource("Curve_6m5wx")
 color_ramp = SubResource("Gradient_hi1ih")
 hue_variation_curve = SubResource("Curve_ojihs")
 
@@ -62,8 +53,6 @@ lifetime_randomness = 0.21
 local_coords = true
 emission_shape = 2
 emission_sphere_radius = 10.0
-direction = Vector2(0, 0)
 gravity = Vector2(0, 0)
-angle_curve = SubResource("Curve_6m5wx")
 color_ramp = SubResource("Gradient_hi1ih")
 hue_variation_curve = SubResource("Curve_ojihs")

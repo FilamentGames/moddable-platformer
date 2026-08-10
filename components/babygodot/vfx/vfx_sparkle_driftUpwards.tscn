@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://di3e1mbco5us6"]
+
+[ext_resource type="PackedScene" uid="uid://ds648tqxmypxm" path="res://components/babygodot/vfx/vfx_sparkle.tscn" id="1_1iigk"]
+
+[node name="SparkleVFX" unique_id=1416552907 instance=ExtResource("1_1iigk")]
+
+[node name="Circle1" parent="." index="0" unique_id=1620489459]
+amount = 4
+emission_shape = 3
+emission_rect_extents = Vector2(7, 0)
+gravity = Vector2(0, -30)
+
+[node name="Circle2" parent="." index="1" unique_id=241354264]
+amount = 4
+emission_shape = 3
+emission_rect_extents = Vector2(7, 0)
+gravity = Vector2(0, -30)
+
+[node name="Diamond1" parent="." index="2" unique_id=60984824]
+amount = 4
+emission_shape = 3
+emission_rect_extents = Vector2(7, 0)
+gravity = Vector2(0, -30)
+
+[node name="Diamond2" parent="." index="3" unique_id=1091533826]
+amount = 4
+emission_shape = 3
+emission_rect_extents = Vector2(7, 0)
+gravity = Vector2(0, -30)

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ddlblfvln0nr8"]
 
-[ext_resource type="Texture2D" uid="uid://hxgi3itfqb2m" path="res://components/babygodot/vfx/VFX_BokehMedium.png" id="1_u16fw"]
+[ext_resource type="Texture2D" uid="uid://hxgi3itfqb2m" path="res://components/babygodot/vfx/Textures/VFX_BokehMedium.png" id="1_u16fw"]
 
 [sub_resource type="Curve" id="Curve_6m5wx"]
 _limits = [-360.0, 360.0, 0.0, 1.0]
