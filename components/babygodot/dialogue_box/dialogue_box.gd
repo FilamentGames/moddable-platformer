@@ -82,3 +82,10 @@ func _play_and_wait_for_animation(animation_name: StringName) -> void:
 	if animation_player:
 		animation_player.play(animation_name)
 		await animation_player.animation_finished
+
+func _on_panel_gui_input(event: InputEvent, panel: NodePath) -> void:
+	if event is InputEventMouseButton:
+		if event.button_index == MouseButton.MOUSE_BUTTON_LEFT and not event.pressed:
+			var control: Control = get_node(panel)
+			control.accept_event()
+			_on_next_button_click()

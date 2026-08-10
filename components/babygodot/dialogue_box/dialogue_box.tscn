@@ -97,6 +97,7 @@ offset_bottom = 122.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(20.89, 164)
+mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxTexture_acawv")
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Container/Panel" unique_id=1674483679]
@@ -106,6 +107,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+mouse_behavior_recursive = 1
 theme_override_constants/margin_left = 64
 theme_override_constants/margin_top = 32
 theme_override_constants/margin_right = 64
@@ -113,24 +116,28 @@ theme_override_constants/margin_bottom = 16
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Container/Panel/MarginContainer" unique_id=1069544845]
 layout_mode = 2
+mouse_filter = 2
+mouse_behavior_recursive = 1
 
 [node name="DialogueText" type="Label" parent="CanvasLayer/Container/Panel/MarginContainer/VBoxContainer" unique_id=1968753694]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_vertical = 3
+mouse_behavior_recursive = 1
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
 label_settings = SubResource("LabelSettings_j2sh0")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
-visible_characters = 80
-visible_ratio = 1.0256411
+visible_characters = 78
 script = ExtResource("2_rqjea")
 metadata/_custom_type_script = "uid://dewvg666m6712"
 
 [node name="NextButton" type="Button" parent="CanvasLayer/Container/Panel/MarginContainer/VBoxContainer" unique_id=2044829538]
 visible = false
 layout_mode = 2
+mouse_filter = 2
+mouse_behavior_recursive = 1
 theme_override_font_sizes/font_size = 24
 text = "Next"
 
@@ -143,6 +150,8 @@ metadata/_custom_type_script = "uid://1ifd6uq30ui5"
 anchors_preset = 0
 offset_right = 512.0
 offset_bottom = 328.0
+mouse_filter = 2
+mouse_behavior_recursive = 1
 
 [node name="CornerIdle" type="AnimatedSprite2D" parent="CanvasLayer/Container/Panel/PageTurn" unique_id=1865161711]
 texture_filter = 1
@@ -156,6 +165,7 @@ frame_progress = 0.97573537
 libraries/ = ExtResource("8_ll2xx")
 autoplay = &"appear"
 
+[connection signal="gui_input" from="CanvasLayer/Container/Panel" to="." method="_on_panel_gui_input" binds= [NodePath("CanvasLayer/Container/Panel")]]
 [connection signal="end_animating" from="CanvasLayer/Container/Panel/MarginContainer/VBoxContainer/DialogueText" to="." method="_on_dialogue_text_end_animating"]
 [connection signal="start_animating" from="CanvasLayer/Container/Panel/MarginContainer/VBoxContainer/DialogueText" to="." method="_on_dialogue_text_start_animating"]
 [connection signal="pressed" from="CanvasLayer/Container/Panel/MarginContainer/VBoxContainer/NextButton" to="." method="_on_next_button_click"]
