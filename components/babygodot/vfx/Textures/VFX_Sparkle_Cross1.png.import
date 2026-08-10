@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://04sufcnbdb77"
-path="res://.godot/imported/VFX_Sparkle_Dot2.png-05c20c8daf9392d3aab19c13f36885cb.ctex"
+uid="uid://bljn6sqcyklmf"
+path="res://.godot/imported/VFX_Sparkle_Cross1.png-87003333bb6ea3c5cae44a707e00bd1d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://components/babygodot/vfx/VFX_Sparkle_Dot2.png"
-dest_files=["res://.godot/imported/VFX_Sparkle_Dot2.png-05c20c8daf9392d3aab19c13f36885cb.ctex"]
+source_file="res://components/babygodot/vfx/Textures/VFX_Sparkle_Cross1.png"
+dest_files=["res://.godot/imported/VFX_Sparkle_Cross1.png-87003333bb6ea3c5cae44a707e00bd1d.ctex"]
 
 [params]
 
