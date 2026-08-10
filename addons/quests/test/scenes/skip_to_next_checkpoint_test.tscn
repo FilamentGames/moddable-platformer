@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://w84uh4hc7oj4"]
+
+[ext_resource type="PackedScene" uid="uid://1r6h0ihjbc77" path="res://components/babygodot/checkpoint/checkpoint.tscn" id="1_e0the"]
+[ext_resource type="PackedScene" uid="uid://8st4scqt06l8" path="res://components/player/player.tscn" id="2_m5bjm"]
+
+[node name="SkipToNextCheckpointTest" type="Node2D" unique_id=525582840]
+
+[node name="Checkpoint" parent="." unique_id=182555001 instance=ExtResource("1_e0the")]
+position = Vector2(118, 228)
+
+[node name="Checkpoint2" parent="." unique_id=533234282 instance=ExtResource("1_e0the")]
+position = Vector2(980, 235)
+
+[node name="Checkpoint3" parent="." unique_id=343657399 instance=ExtResource("1_e0the")]
+position = Vector2(1602, 225)
+
+[node name="Player" parent="." unique_id=1041196418 instance=ExtResource("2_m5bjm")]
+position = Vector2(535, 274)

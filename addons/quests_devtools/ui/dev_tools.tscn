@@ -116,6 +116,15 @@ text = "Open Level0 Master"
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 
+[node name="SkipToNextCheckpointButton" type="Button" parent="VBoxContainer/VBoxContainer" unique_id=1861148811]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Skip to next checkpoint"
+
+[node name="Spacer5" type="Control" parent="VBoxContainer/VBoxContainer" unique_id=687240524]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/VBoxContainer" unique_id=8806997]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -144,5 +153,6 @@ text = "+1 Coin"
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/SceneTreeDockControls/ShowButton" to="." method="_toggle_streamlined_exclusive_dock" binds= [&"get_scene_tree_dock", true]]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/VBoxContainer/OpenCloneButton" to="." method="_open_level0_clone"]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/VBoxContainer/OpenMasterButton" to="." method="_on_open_master_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/SkipToNextCheckpointButton" to="." method="_on_skip_to_next_checkpoint_button_pressed"]
 [connection signal="toggled" from="VBoxContainer/VBoxContainer/HBoxContainer/CheckBox" to="." method="_on_check_box_toggled"]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/CoinButton" to="." method="_on_coin_button_pressed"]

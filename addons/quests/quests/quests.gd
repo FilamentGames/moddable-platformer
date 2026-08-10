@@ -60,6 +60,8 @@ var _lock_player_position := false
 ## The quest progress at the last saved checkpoint
 var _checkpoint_text_line := 0
 
+var _skipped_checkpoints: Array[NodePath] = []
+
 var _checkpoint_quest_progress: Dictionary = {
 	"text_line": 0,
 	"global_coins": 0,
@@ -245,6 +247,7 @@ func reset_progress() -> void:
 	scrolls_collected.clear()
 	text_updated.emit()
 	scroll_collected.emit()
+	_skipped_checkpoints.clear()
 
 func update_editable_objects(to_add: Array, to_remove: Array) -> void:
 	var scene: Node2D = editor_scene_provider.get_editor_scene()
@@ -295,3 +298,23 @@ func deplete_scrolls(quantity: int) -> void:
 	for i in quantity:
 		scrolls_collected.pop_front()
 	scroll_collected.emit()
+
+func skip_to_next_checkpoint() -> void:
+	var scene: Node2D = editor_scene_provider.get_editor_scene()
+	var player: Player = BabyGodotUtils.get_first_child_of_type(scene, Player)
+	if not player:
+		return
+	var next_checkpoints: Array[Node] = BabyGodotUtils.get_all_children_of_type(scene, Checkpoint)
+	if next_checkpoints.is_empty():
+		print("No more checkpoints!")
+		return
+	var next_checkpoint = next_checkpoints[0]
+	while next_checkpoint and _skipped_checkpoints.has(UniqueSceneId.get_id(next_checkpoint)):
+		next_checkpoint = next_checkpoints.pop_front()
+	if not next_checkpoint:
+		print("No more checkpoints!")
+		return
+	player.position = next_checkpoint.position
+	_skipped_checkpoints.push_back(UniqueSceneId.get_id(next_checkpoint))
+	editor_scene_provider.update_and_save_node(player)
+	editor_scene_provider.set_2d_viewport_focus(player.position, default_editor_zoom)

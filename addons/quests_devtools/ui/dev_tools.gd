@@ -42,3 +42,8 @@ func _on_master_reset_button_pressed() -> void:
 	EditorInterface.close_scene()
 	await get_tree().process_frame
 	EditorInterface.open_scene_from_path("res://levels/clones/level0.tscn")
+
+
+func _on_skip_to_next_checkpoint_button_pressed() -> void:
+	if GlobalQuests and GlobalQuests.quests:
+		GlobalQuests.quests.skip_to_next_checkpoint()

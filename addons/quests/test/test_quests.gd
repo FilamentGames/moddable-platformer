@@ -289,3 +289,52 @@ func test_it_emits_an_event_for_celebration_animations():
 	quests.next()
 
 	assert_eq(spy.get_number_of_calls(), 1)
+
+class MockCheckpointSceneProvider extends MockSceneProvider:
+	func _init():
+		_scene = load("res://addons/quests/test/scenes/skip_to_next_checkpoint_test.tscn").instantiate()
+
+	func get_editor_scene() -> Node2D:
+		return _scene
+
+func test_it_can_skip_to_the_next_checkpoint():
+	var provider = autofree(MockCheckpointSceneProvider.new())
+	quests.editor_scene_provider = provider
+
+	quests.skip_to_next_checkpoint()
+
+	assert_eq(provider._scene.get_node("Player").position, provider._scene.get_node("Checkpoint").position)
+
+	quests.skip_to_next_checkpoint()
+
+	assert_eq(provider._scene.get_node("Player").position, provider._scene.get_node("Checkpoint2").position)
+
+	provider._scene.free()
+
+func test_it_does_not_error_if_you_spam_the_skip_to_next_checkpoint_button():
+	var provider = autofree(MockCheckpointSceneProvider.new())
+	quests.editor_scene_provider = provider
+
+	for i in 100:
+		quests.skip_to_next_checkpoint()
+
+	assert_eq(provider._scene.get_node("Player").position, provider._scene.get_node("Checkpoint3").position)
+
+	provider._scene.free()
+
+func test_resetting_progress_resets_skipped_checkpoints():
+	var provider = autofree(MockCheckpointSceneProvider.new())
+	quests.editor_scene_provider = provider
+
+	for i in 100:
+		quests.skip_to_next_checkpoint()
+
+	assert_eq(provider._scene.get_node("Player").position, provider._scene.get_node("Checkpoint3").position)
+
+	quests.reset_progress()
+
+	quests.skip_to_next_checkpoint()
+
+	assert_eq(provider._scene.get_node("Player").position, provider._scene.get_node("Checkpoint").position)
+
+	provider._scene.free()
