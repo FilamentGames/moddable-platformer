@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://ds648tqxmypxm"]
 
-[ext_resource type="Texture2D" uid="uid://j0mk6fbnelxu" path="res://components/babygodot/vfx/VFX_Sparkle_Circle1.png" id="1_ybi5y"]
-[ext_resource type="Texture2D" uid="uid://bn8pgbmn6ib6p" path="res://components/babygodot/vfx/VFX_Sparkle_Circle2.png" id="2_6gmsj"]
-[ext_resource type="Texture2D" uid="uid://bljn6sqcyklmf" path="res://components/babygodot/vfx/VFX_Sparkle_Cross1.png" id="3_gki5w"]
-[ext_resource type="Texture2D" uid="uid://caedusslc6ugc" path="res://components/babygodot/vfx/VFX_Sparkle_Diamond1.png" id="4_6oynv"]
+[ext_resource type="Texture2D" uid="uid://j0mk6fbnelxu" path="res://components/babygodot/vfx/Textures/VFX_Sparkle_Circle1.png" id="1_ybi5y"]
+[ext_resource type="Texture2D" uid="uid://bn8pgbmn6ib6p" path="res://components/babygodot/vfx/Textures/VFX_Sparkle_Circle2.png" id="2_6gmsj"]
+[ext_resource type="Texture2D" uid="uid://bljn6sqcyklmf" path="res://components/babygodot/vfx/Textures/VFX_Sparkle_Cross1.png" id="3_gki5w"]
+[ext_resource type="Texture2D" uid="uid://caedusslc6ugc" path="res://components/babygodot/vfx/Textures/VFX_Sparkle_Diamond1.png" id="4_6oynv"]
 
 [sub_resource type="Curve" id="Curve_6m5wx"]
 _limits = [-360.0, 360.0, 0.0, 1.0]
@@ -16,8 +16,8 @@ point_count = 3
 metadata/_snap_enabled = true
 
 [sub_resource type="Gradient" id="Gradient_4r5xq"]
-offsets = PackedFloat32Array(0.004464286, 0.48660713, 0.99553573)
-colors = PackedColorArray(0.74509805, 0.9411765, 1, 0.19607843, 0.74509805, 0.9411765, 1, 1, 0.7433311, 0.9420195, 1, 0.47058824)
+offsets = PackedFloat32Array(0.004464286, 0.48214287, 0.9910714)
+colors = PackedColorArray(1, 1, 1, 0.19607843, 1, 1, 1, 1, 1, 1, 1, 0.47058824)
 
 [node name="SparkleVFX" type="Node2D" unique_id=1416552907]
 scale = Vector2(3, 3)
