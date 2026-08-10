@@ -31,6 +31,12 @@ class_name BabyGodotQuestDock
 ## This control displays the hint for the current text.
 @export var hint_display: HintDisplay
 
+## Bubbled up from the Quests event
+signal celebration_animation()
+
+## If the celebration animation is playing
+var _play_celebration_animation := false
+
 ## The instance of BabyGodotQuests object we're getting data from.
 var quests_provider: BabyGodotQuests
 
@@ -43,11 +49,22 @@ func _enter_tree() -> void:
 	_update_hint_button_state()
 	quests_provider.text_updated.connect(update_text)
 	quests_provider.coins_changed.connect(_update_hint_button_state)
+	quests_provider.celebration_animation.connect(_activate_celebration)
 	next_button.pressed.connect(next)
 	if save_checkpoint_button:
 		save_checkpoint_button.pressed.connect(save_checkpoint)
 	if load_checkpoint_button:
 		load_checkpoint_button.pressed.connect(load_checkpoint)
+
+func _exit_tree():
+	quests_provider.text_updated.disconnect(update_text)
+	quests_provider.coins_changed.disconnect(_update_hint_button_state)
+	quests_provider.celebration_animation.disconnect(_activate_celebration)
+	next_button.pressed.disconnect(next)
+	if save_checkpoint_button:
+		save_checkpoint_button.pressed.disconnect(save_checkpoint)
+	if load_checkpoint_button:
+		load_checkpoint_button.pressed.disconnect(load_checkpoint)
 
 func update_text():
 	text.text = quests_provider.get_current_text()
@@ -66,6 +83,9 @@ func _update_hint_button_state():
 
 func _update_next_button_state():
 	next_button.disabled = !quests_provider.can_proceed()
+
+func _activate_celebration():
+	_play_celebration_animation = true
 
 func save_checkpoint():
 	quests_provider.save_checkpoint()
@@ -93,9 +113,20 @@ func buy_hint():
 	_update_hint_button_state()
 
 func _on_quest_text_start_animating() -> void:
-	if animated_sprite:
+	await get_tree().process_frame
+	if not animated_sprite:
+		return
+	if _play_celebration_animation:
+		celebration_animation.emit()
+	else:
 		animated_sprite.play(sprite_animation_name)
 
 func _on_quest_text_end_animating() -> void:
-	if animated_sprite:
+	await get_tree().process_frame
+	if animated_sprite and not _play_celebration_animation:
 		animated_sprite.stop()
+
+func _on_celebration_animation_component_done() -> void:
+	_play_celebration_animation = false
+	animated_sprite.play(sprite_animation_name)
+	animated_sprite.stop()

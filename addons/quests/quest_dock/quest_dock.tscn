@@ -4,6 +4,7 @@
 [ext_resource type="SpriteFrames" uid="uid://e65igl5tjet" path="res://components/babygodot/npc/elder.tres" id="2_qqxpi"]
 [ext_resource type="PackedScene" uid="uid://b6lcoiafomyme" path="res://addons/quests/quest_dock/components/animated_label.tscn" id="3_jgiii"]
 [ext_resource type="PackedScene" uid="uid://ckiwoklhwq8fy" path="res://addons/quests/quest_dock/components/hint_display.tscn" id="3_u0560"]
+[ext_resource type="Script" uid="uid://c8pkpy477usk5" path="res://components/babygodot/npc/components/elder_animation_controller.gd" id="3_xmn5d"]
 
 [node name="QuestDock" type="Control" unique_id=827491016 node_paths=PackedStringArray("text", "animated_sprite", "next_button", "save_checkpoint_button", "load_checkpoint_button", "hint_button", "hint_display")]
 layout_mode = 3
@@ -38,15 +39,18 @@ size_flags_vertical = 4
 [node name="Clippy" type="AnimatedSprite2D" parent="Container/Control" unique_id=1918933574]
 sprite_frames = ExtResource("2_qqxpi")
 autoplay = "default"
-frame_progress = 0.90277296
 centered = false
+
+[node name="CelebrationAnimationComponent" type="Node" parent="Container/Control/Clippy" unique_id=627736213 node_paths=PackedStringArray("sprite")]
+script = ExtResource("3_xmn5d")
+sprite = NodePath("..")
 
 [node name="QuestText" parent="Container" unique_id=1035288938 instance=ExtResource("3_jgiii")]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
-text = "Find me in the world of Threadbare! Press Play!"
+text = "Concentrate! Stop the flow of time! (■)"
 autowrap_mode = 2
-visible_characters = 47
+visible_characters = 39
 
 [node name="HintDisplay" parent="Container" unique_id=1175709613 instance=ExtResource("3_u0560")]
 visible = false
@@ -68,8 +72,7 @@ text = "Next"
 [node name="HintButton" type="Button" parent="Container" unique_id=12402239]
 layout_mode = 2
 size_flags_horizontal = 4
-disabled = true
-text = "Get a Hint (-5 Coins)"
+text = "Get a Hint (-3 Coins)"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Container" unique_id=1213718530]
 layout_mode = 2
@@ -88,6 +91,8 @@ text = "Reset the World"
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 
+[connection signal="celebration_animation" from="." to="Container/Control/Clippy/CelebrationAnimationComponent" method="trigger_animation"]
+[connection signal="done" from="Container/Control/Clippy/CelebrationAnimationComponent" to="." method="_on_celebration_animation_component_done"]
 [connection signal="end_animating" from="Container/QuestText" to="." method="_on_quest_text_end_animating"]
 [connection signal="start_animating" from="Container/QuestText" to="." method="_on_quest_text_start_animating"]
 [connection signal="pressed" from="Container/HintButton" to="." method="buy_hint"]
