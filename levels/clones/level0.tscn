@@ -466,7 +466,8 @@ metadata/_edit_lock_ = true
 metadata/_edit_lock_ = true
 
 [node name="Checkpoint" type="Node2D" parent="Checkpoints" unique_id=951106919 node_paths=PackedStringArray("player_position_marker", "placeholder_sprite") instance=ExtResource("38_b0x0o")]
-position = Vector2(99, 455)
+position = Vector2(-560, 455)
+scale = Vector2(8.4, 1)
 script = ExtResource("39_rnh1a")
 npc_prefab = ExtResource("40_qlpu5")
 player_position_marker = NodePath("PlayerSpawn")
@@ -1179,7 +1180,7 @@ limit_bottom = 1080
 position_smoothing_enabled = true
 metadata/_edit_lock_ = true
 
-[node name="EditableObjectIndicator" type="Node2D" parent="Player" unique_id=1242249654 node_paths=PackedStringArray("edit_icon", "pencil_sprite", "arrow_rotation_pivot", "box") instance=ExtResource("16_k710v")]
+[node name="EditableObjectIndicator" type="Node2D" parent="Player" unique_id=1239376049 node_paths=PackedStringArray("edit_icon", "pencil_sprite", "arrow_rotation_pivot", "box") instance=ExtResource("16_k710v")]
 script = ExtResource("17_2d8dw")
 margins = Vector2(43, 37)
 edit_icon = NodePath("EditIcon")

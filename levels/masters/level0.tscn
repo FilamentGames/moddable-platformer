@@ -407,7 +407,8 @@ behavior = NodePath("DemoEndBehavior")
 [node name="Checkpoints" type="Node2D" parent="." unique_id=1977743448]
 
 [node name="Checkpoint" type="Node2D" parent="Checkpoints" unique_id=951106919 node_paths=PackedStringArray("player_position_marker", "placeholder_sprite") instance=ExtResource("27_dt6hy")]
-position = Vector2(99, 455)
+position = Vector2(-560, 455)
+scale = Vector2(8.4, 1)
 script = ExtResource("45_2d4sf")
 npc_prefab = ExtResource("46_8knqs")
 player_position_marker = NodePath("PlayerSpawn")
