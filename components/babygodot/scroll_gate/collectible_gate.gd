@@ -47,7 +47,7 @@ func _ready() -> void:
 
 	if lanterns.size() > 1:
 		for i in lanterns.size() - required_collectibles:
-			lanterns[i].lit = true
+			lanterns[lanterns.size() - 1 - i].lit = true
 
 func _get_info_indicator_text() -> String:
 	return "Bring " + str(required_collectibles) + " " + _get_collectible_name()

@@ -14,7 +14,7 @@ class MockBridgeBehavior extends AbstractBridgeBehavior:
 func before_each():
 	gate = autofree(CollectibleGate.new())
 
-func test_it_lights_up_the_first_lantern_by_default_if_required_scrolls_is_1():
+func test_it_lights_up_the_right_lantern_by_default_if_required_scrolls_is_1():
 	gate.lanterns = [
 		autofree(CollectibleGateLantern.new()),
 		autofree(CollectibleGateLantern.new()),
@@ -23,8 +23,8 @@ func test_it_lights_up_the_first_lantern_by_default_if_required_scrolls_is_1():
 
 	add_child(gate)
 
-	assert_eq(gate.lanterns[0].lit, true)
-	assert_eq(gate.lanterns[1].lit, false)
+	assert_eq(gate.lanterns[1].lit, true)
+	assert_eq(gate.lanterns[0].lit, false)
 
 func test_it_sets_info_indicator_text_based_on_the_required_scrolls():
 	gate.required_collectibles = 1
