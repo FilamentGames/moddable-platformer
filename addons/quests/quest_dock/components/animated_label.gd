@@ -37,7 +37,6 @@ func _set(property: StringName, value: Variant) -> bool:
 		visible_characters = 0
 		_scroll_time = 0
 		start_animating.emit()
-		print(text, ",", value)
 	return false
 
 ## Show all characters in the label immediately.

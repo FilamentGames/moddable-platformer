@@ -17,8 +17,6 @@ func _ready() -> void:
 		var viewport_size = get_viewport_rect().size / camera.zoom
 		var center = camera.get_screen_center_position()
 		var rect := Rect2(center - viewport_size / 2, viewport_size)
-		print(rect)
-		print(rect.position.x - rect.size.x * horizontal_scale / 2, ", ", rect.position.x + rect.size.x * horizontal_scale / 2)
 		global_position.x = randf_range(rect.position.x, rect.position.x + rect.size.x)
 		var buffer_offset = rect.size.x / 2 * horizontal_scale
 		global_position.x += randf_range(-buffer_offset, buffer_offset)

@@ -257,13 +257,11 @@ func update_editable_objects(to_add: Array, to_remove: Array) -> void:
 	for object_id in to_add:
 		var object: Node = UniqueSceneId.find_by_id(scene, object_id)
 		object.remove_meta("_edit_lock_")
-		print(object.get_meta("_edit_lock_"))
 		if editable_node_list.nodes.find(object) == -1:
 			editable_node_list.nodes.push_back(object)
 	for object_id in to_remove:
 		var object: Node = UniqueSceneId.find_by_id(scene, object_id)
 		object.set_meta("_edit_lock_", true)
-		print(object.get_meta("_edit_lock_"))
 		if editable_node_list.nodes.find(object) != -1:
 			editable_node_list.nodes.erase(object)
 	var editable_object_indicators := BabyGodotUtils.get_all_children_of_type(scene, EditableObjectIndicator)
