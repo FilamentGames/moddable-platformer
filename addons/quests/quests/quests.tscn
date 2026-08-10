@@ -38,6 +38,7 @@ metadata/_custom_type_script = "uid://wcqap044q4nm"
 script = ExtResource("2_fdhqc")
 dialogue_line = "Yes, Storyweaver! Select the pile of rocks and clear them from your path. When you're done, hit Play (▶) and let time flow through Threadbare again!"
 progress_method = 4
+show_celebration_animation = true
 hints = Array[String](["You could move the rocks or delete them entirely...", "Select the RockPile and press the Delete key (DEL) on your keyboard. If you ever delete something you regret, Reset the World."])
 metadata/_custom_type_script = "uid://wcqap044q4nm"
 
@@ -45,6 +46,7 @@ metadata/_custom_type_script = "uid://wcqap044q4nm"
 script = ExtResource("2_fdhqc")
 dialogue_line = "You show great promise! Proceed to the Knitwitch."
 progress_method = 4
+show_celebration_animation = true
 identifier = "ProceedToKnitwitch"
 metadata/_custom_type_script = "uid://wcqap044q4nm"
 
@@ -85,6 +87,7 @@ metadata/_custom_type_script = "uid://wcqap044q4nm"
 script = ExtResource("2_fdhqc")
 dialogue_line = "Excellent. Now you are ready for what awaits you."
 progress_method = 4
+show_celebration_animation = true
 metadata/_custom_type_script = "uid://wcqap044q4nm"
 
 [node name="Quests" type="Node" unique_id=1908096250]

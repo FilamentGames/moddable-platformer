@@ -58,6 +58,7 @@
 [ext_resource type="PackedScene" uid="uid://6xuod5sofp8c" path="res://components/platform/platform_basket_thin.tscn" id="32_1tk8l"]
 [ext_resource type="PackedScene" uid="uid://che3aoxmyk8m7" path="res://components/babygodot/trigger/demo_end_trigger/demo_end_trigger.tscn" id="32_t64e8"]
 [ext_resource type="Script" uid="uid://d003tgo4vrak8" path="res://components/enemy/enemy.gd" id="33_7cn4d"]
+[ext_resource type="PackedScene" uid="uid://cq253lfclbbbq" path="res://components/babygodot/npc/npc_elder.tscn" id="34_vnrdr"]
 [ext_resource type="Script" uid="uid://ctlotfccvl4jn" path="res://scripts/flag.gd" id="35_fnu5h"]
 [ext_resource type="SpriteFrames" uid="uid://b3orjhfv6eeud" path="res://components/flag/flag-spriteframes-green.tres" id="36_jf12t"]
 [ext_resource type="PackedScene" uid="uid://bob4es2sd13aa" path="res://assets/decorations/barley_crops.tscn" id="37_xvuht"]
@@ -73,10 +74,6 @@ default_font_size = 64
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rpdqf"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_33ble"]
-resource_local_to_scene = true
-size = Vector2(94, 258)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xns2c"]
 resource_local_to_scene = true
 size = Vector2(94, 258)
@@ -90,6 +87,10 @@ resource_local_to_scene = true
 size = Vector2(94, 258)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ncwqi"]
+resource_local_to_scene = true
+size = Vector2(94, 258)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x6hj3"]
 resource_local_to_scene = true
 size = Vector2(94, 258)
 
@@ -288,8 +289,8 @@ script = ExtResource("14_0bbcg")
 behavior = NodePath("ScreenShakeTriggerBehavior")
 
 [node name="QuestScriptTrigger_ReachedRockPuzzle" type="Area2D" parent="Triggers" unique_id=1651920811 node_paths=PackedStringArray("behavior") instance=ExtResource("9_58r63")]
-position = Vector2(3898, 159)
-scale = Vector2(1, 2.9200006)
+position = Vector2(3943.0002, 159)
+scale = Vector2(5.301431, 2.9200006)
 script = ExtResource("14_0bbcg")
 behavior = NodePath("Behavior")
 delete_from_scene = true
@@ -304,7 +305,7 @@ behavior = NodePath("SkipQuestTriggerBehavior")
 delete_from_scene = true
 
 [node name="CollisionShape2D" parent="Triggers/ForceQuestProgressTrigger_SolvedRockPuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_33ble")
+shape = SubResource("RectangleShape2D_xns2c")
 
 [node name="SkipQuestTriggerBehavior" parent="Triggers/ForceQuestProgressTrigger_SolvedRockPuzzle" index="1" unique_id=1238036962]
 script = ExtResource("29_poyld")
@@ -349,7 +350,7 @@ behavior = NodePath("Behavior")
 delete_from_scene = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_xns2c")
+shape = SubResource("RectangleShape2D_g55af")
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
 script = ExtResource("23_8knqs")
@@ -363,7 +364,7 @@ behavior = NodePath("Behavior")
 delete_from_scene = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_g55af")
+shape = SubResource("RectangleShape2D_8m0yn")
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
 script = ExtResource("23_8knqs")
@@ -377,7 +378,7 @@ behavior = NodePath("Behavior")
 delete_from_scene = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle2" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_8m0yn")
+shape = SubResource("RectangleShape2D_ncwqi")
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle2" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
 script = ExtResource("23_8knqs")
@@ -391,7 +392,7 @@ behavior = NodePath("Behavior")
 delete_from_scene = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_ncwqi")
+shape = SubResource("RectangleShape2D_x6hj3")
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
 script = ExtResource("23_8knqs")
@@ -903,8 +904,8 @@ info_indicator = NodePath("InfoIndicator")
 
 [node name="NPCs" type="Node2D" parent="." unique_id=147049230]
 
-[node name="Npc_Premise" type="Node2D" parent="NPCs" unique_id=688628462 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container", "control_display") instance=ExtResource("3_27os8")]
-position = Vector2(551, 582)
+[node name="NpcElder_Premise" type="Node2D" parent="NPCs" unique_id=688628462 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container", "control_display") instance=ExtResource("34_vnrdr")]
+position = Vector2(550, 583)
 script = ExtResource("16_8knqs")
 use_global_quest_dialogue = true
 sprite = NodePath("AnimatedSprite2D")
@@ -912,8 +913,8 @@ player_detector = NodePath("Area2D")
 dialogue_container = NodePath("DialogueMount")
 control_display = NodePath("ControlDisplay")
 
-[node name="Npc_RockPuzzle" type="Node2D" parent="NPCs" unique_id=1439020895 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container", "control_display") instance=ExtResource("3_27os8")]
-position = Vector2(3930, 323)
+[node name="NpcElder_RockPuzzle" type="Node2D" parent="NPCs" unique_id=342457569 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container", "control_display") instance=ExtResource("34_vnrdr")]
+position = Vector2(3930, 329)
 script = ExtResource("16_8knqs")
 use_global_quest_dialogue = true
 sprite = NodePath("AnimatedSprite2D")
@@ -921,8 +922,8 @@ player_detector = NodePath("Area2D")
 dialogue_container = NodePath("DialogueMount")
 control_display = NodePath("ControlDisplay")
 
-[node name="Npc_ScrollPuzzle" type="Node2D" parent="NPCs" unique_id=1405109528 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container", "control_display") instance=ExtResource("3_27os8")]
-position = Vector2(7984, 449)
+[node name="NpcElder_ScrollPuzzle" type="Node2D" parent="NPCs" unique_id=1152959677 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container", "control_display") instance=ExtResource("34_vnrdr")]
+position = Vector2(7984, 460)
 script = ExtResource("16_8knqs")
 use_global_quest_dialogue = true
 sprite = NodePath("AnimatedSprite2D")
@@ -930,8 +931,8 @@ player_detector = NodePath("Area2D")
 dialogue_container = NodePath("DialogueMount")
 control_display = NodePath("ControlDisplay")
 
-[node name="Npc_TilePuzzle" type="Node2D" parent="NPCs" unique_id=178439633 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container", "control_display") instance=ExtResource("3_27os8")]
-position = Vector2(11705, 976)
+[node name="NpcElder_TilePuzzle" type="Node2D" parent="NPCs" unique_id=3347555 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container", "control_display") instance=ExtResource("34_vnrdr")]
+position = Vector2(11706, 974)
 script = ExtResource("16_8knqs")
 use_global_quest_dialogue = true
 sprite = NodePath("AnimatedSprite2D")
@@ -939,8 +940,8 @@ player_detector = NodePath("Area2D")
 dialogue_container = NodePath("DialogueMount")
 control_display = NodePath("ControlDisplay")
 
-[node name="Npc_Congrats" type="Node2D" parent="NPCs" unique_id=2029695227 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container", "control_display") instance=ExtResource("3_27os8")]
-position = Vector2(12701, -186)
+[node name="NpcElder_Congrats" type="Node2D" parent="NPCs" unique_id=664077588 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container", "control_display") instance=ExtResource("34_vnrdr")]
+position = Vector2(12702, -179)
 script = ExtResource("16_8knqs")
 use_global_quest_dialogue = true
 sprite = NodePath("AnimatedSprite2D")
@@ -1224,6 +1225,11 @@ script = ExtResource("64_y8cc3")
 [connection signal="body_entered" from="Coins/Coin10" to="Coins/Coin10" method="_on_body_entered"]
 [connection signal="body_entered" from="Coins/Coin11" to="Coins/Coin11" method="_on_body_entered"]
 [connection signal="body_entered" from="SpecialCoins/SpecialCoin" to="SpecialCoins/SpecialCoin" method="_on_body_entered"]
+[connection signal="celebration_animation" from="NPCs/NpcElder_Premise" to="NPCs/NpcElder_Premise/ElderAnimationController" method="trigger_animation"]
+[connection signal="celebration_animation" from="NPCs/NpcElder_RockPuzzle" to="NPCs/NpcElder_RockPuzzle/ElderAnimationController" method="trigger_animation"]
+[connection signal="celebration_animation" from="NPCs/NpcElder_ScrollPuzzle" to="NPCs/NpcElder_ScrollPuzzle/ElderAnimationController" method="trigger_animation"]
+[connection signal="celebration_animation" from="NPCs/NpcElder_TilePuzzle" to="NPCs/NpcElder_TilePuzzle/ElderAnimationController" method="trigger_animation"]
+[connection signal="celebration_animation" from="NPCs/NpcElder_Congrats" to="NPCs/NpcElder_Congrats/ElderAnimationController" method="trigger_animation"]
 [connection signal="body_entered" from="NPCs/Npc_MonkFlavor/Area2D" to="NPCs/Npc_MonkFlavor" method="_player_entered"]
 [connection signal="body_exited" from="NPCs/Npc_MonkFlavor/Area2D" to="NPCs/Npc_MonkFlavor" method="_player_exited"]
 [connection signal="body_entered" from="NPCs/Npc_Sheep/Area2D" to="NPCs/Npc_Sheep" method="_player_entered"]
