@@ -16,6 +16,9 @@ signal collected
 ## The info indicator that is used to show the scroll's information.
 @export var info_indicator: InfoIndicator
 
+## If the yarnspark has been collected and is just animating out
+var _is_collected := false
+
 ## This is set to true if the Collectible is in an invalid state
 var error_state := false:
 	get:
@@ -74,11 +77,14 @@ func _ready() -> void:
 
 ## Called when the player collides with the scroll and tries to collect it
 func _player_collect() -> void:
-	if not condition:
+	if not condition or _is_collected:
 		return
 	if condition.is_condition_met():
+		_is_collected = true
 		collected.emit()
-		queue_free()
+
+func _collection_animation_done() -> void:
+	queue_free()
 
 func _exit_tree() -> void:
 	_clear_error_state()

@@ -453,16 +453,18 @@ placeholder_sprite = NodePath("PlaceholderSprite")
 
 [node name="EditorPowerUps" type="Node2D" parent="." unique_id=721056742]
 
-[node name="SceneTreePowerup" type="Node2D" parent="EditorPowerUps" unique_id=857147533 instance=ExtResource("15_dt6hy")]
+[node name="SceneTreePowerup" type="Node2D" parent="EditorPowerUps" unique_id=857147533 node_paths=PackedStringArray("collision_area") instance=ExtResource("15_dt6hy")]
 position = Vector2(4065, 314)
 script = ExtResource("26_1tk8l")
 editor_unlock = 1
 unlock_dialogue = Array[String](["You unlocked the Scene Tree Dock!", "This allows you to see the list of objects in the current game scene.", "Press the Stop button (■) and see which objects you can edit in Godot!"])
+collision_area = NodePath("Root/Sprite2D/Area2D")
 
-[node name="InspectorPowerup" type="Node2D" parent="EditorPowerUps" unique_id=459242062 instance=ExtResource("16_m7dqe")]
+[node name="InspectorPowerup" type="Node2D" parent="EditorPowerUps" unique_id=459242062 node_paths=PackedStringArray("collision_area") instance=ExtResource("16_m7dqe")]
 position = Vector2(7205, 183)
 script = ExtResource("26_1tk8l")
 unlock_dialogue = Array[String](["You unlocked the Inspector Dock!", "This allows you to view and edit properties of individual objects in the game world.", "Try it out! Stop the flow of time (■) and click on an object in the editor to view its properties."])
+collision_area = NodePath("Root/Sprite2D/Area2D")
 
 [node name="Coins" type="Node2D" parent="." unique_id=1860713878]
 
@@ -1166,12 +1168,16 @@ script = ExtResource("64_y8cc3")
 
 [connection signal="body_entered" from="Dangerzone" to="Dangerzone" method="_on_body_entered"]
 [connection signal="collected" from="Yarnspark" to="Yarnspark/Controllers/CollectibleContinuity" method="_on_collect"]
+[connection signal="collected" from="Yarnspark" to="Yarnspark/Controllers/CollectibleAnimator" method="_trigger_collection_animation"]
 [connection signal="condition_updated" from="Yarnspark" to="Yarnspark/Controllers/CollectibleAnimator" method="_trigger_animation"]
 [connection signal="collected" from="Scroll2" to="Scroll2/Controllers/CollectibleContinuity" method="_on_collect"]
+[connection signal="collected" from="Scroll2" to="Scroll2/Controllers/CollectibleAnimator" method="_trigger_collection_animation"]
 [connection signal="condition_updated" from="Scroll2" to="Scroll2/Controllers/CollectibleAnimator" method="_trigger_animation"]
 [connection signal="collected" from="Scroll3" to="Scroll3/Controllers/CollectibleContinuity" method="_on_collect"]
+[connection signal="collected" from="Scroll3" to="Scroll3/Controllers/CollectibleAnimator" method="_trigger_collection_animation"]
 [connection signal="condition_updated" from="Scroll3" to="Scroll3/Controllers/CollectibleAnimator" method="_trigger_animation"]
 [connection signal="collected" from="Scroll4" to="Scroll4/Controllers/CollectibleContinuity" method="_on_collect"]
+[connection signal="collected" from="Scroll4" to="Scroll4/Controllers/CollectibleAnimator" method="_trigger_collection_animation"]
 [connection signal="condition_updated" from="Scroll4" to="Scroll4/Controllers/CollectibleAnimator" method="_trigger_animation"]
 [connection signal="gate_opening" from="ScrollGates/ScrollGate" to="ScrollGates/ScrollGate/InfoIndicator" method="_disable"]
 [connection signal="gate_opening" from="ScrollGates/ScrollGate" to="ScrollGates/ScrollGate/ControllerObjects/GateAnimationController" method="begin_opening_gate"]
@@ -1212,6 +1218,8 @@ script = ExtResource("64_y8cc3")
 [connection signal="save_checkpoint" from="Checkpoints/Checkpoint3" to="Checkpoints/Checkpoint3" method="send_checkpoint_message"]
 [connection signal="save_checkpoint" from="Checkpoints/Checkpoint4" to="Checkpoints/Checkpoint4" method="send_checkpoint_message"]
 [connection signal="save_checkpoint" from="Checkpoints/Checkpoint5" to="Checkpoints/Checkpoint5" method="send_checkpoint_message"]
+[connection signal="collected" from="EditorPowerUps/SceneTreePowerup" to="EditorPowerUps/SceneTreePowerup/Root/AnimationPlayer" method="play" binds= [&"scroll_collect"]]
+[connection signal="collected" from="EditorPowerUps/InspectorPowerup" to="EditorPowerUps/InspectorPowerup/Root/AnimationPlayer" method="play" binds= [&"scroll_collect"]]
 [connection signal="body_entered" from="Coins/Coin" to="Coins/Coin" method="_on_body_entered"]
 [connection signal="body_entered" from="Coins/Coin4" to="Coins/Coin4" method="_on_body_entered"]
 [connection signal="body_entered" from="Coins/Coin8" to="Coins/Coin8" method="_on_body_entered"]

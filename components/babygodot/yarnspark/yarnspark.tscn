@@ -458,10 +458,11 @@ position = Vector2(0, -10)
 [node name="CollectibleContinuity" parent="Controllers" unique_id=1035343625 node_paths=PackedStringArray("collectible") instance=ExtResource("2_3i822")]
 collectible = NodePath("../..")
 
-[node name="CollectibleAnimator" parent="Controllers" unique_id=1438532908 node_paths=PackedStringArray("yarnspark_node", "string_node", "animated_sprite") instance=ExtResource("7_tqbn7")]
+[node name="CollectibleAnimator" parent="Controllers" unique_id=1438532908 node_paths=PackedStringArray("yarnspark_node", "string_node", "animated_sprite", "animator") instance=ExtResource("7_tqbn7")]
 yarnspark_node = NodePath("../../CollectionArea/CollisionShape2D/CollectibleYarnspark")
 string_node = NodePath("../../Yarnpile")
 animated_sprite = NodePath("../../Yarnpile/String")
+animator = NodePath("../HoverAnimation")
 
 [node name="HoverAnimation" type="AnimationPlayer" parent="Controllers" unique_id=552900981]
 root_node = NodePath("../../InfoIndicator")
@@ -469,10 +470,12 @@ libraries/ = SubResource("AnimationLibrary_4y73o")
 autoplay = &"scroll_hover"
 
 [connection signal="collected" from="." to="Controllers/CollectibleContinuity" method="_on_collect"]
+[connection signal="collected" from="." to="Controllers/CollectibleAnimator" method="_trigger_collection_animation"]
 [connection signal="condition_updated" from="." to="Controllers/CollectibleAnimator" method="_trigger_animation"]
 [connection signal="body_entered" from="InfoArea" to="InfoIndicator" method="_on_activate" unbinds=1]
 [connection signal="body_exited" from="InfoArea" to="InfoIndicator" method="_on_deactivate" unbinds=1]
 [connection signal="body_entered" from="CollectionArea" to="." method="_player_collect" unbinds=1]
+[connection signal="collection_animation_finished" from="Controllers/CollectibleAnimator" to="." method="_collection_animation_done"]
 
 [editable path="InfoIndicator"]
 [editable path="IdleVFX/BokehVFX_Cluster"]
