@@ -199,8 +199,9 @@ _data = {
 resource_local_to_scene = true
 radius = 45.0
 
-[node name="EditorPowerup" type="Node2D" unique_id=857147533]
+[node name="EditorPowerup" type="Node2D" unique_id=857147533 node_paths=PackedStringArray("collision_area")]
 script = ExtResource("1_xkekm")
+collision_area = NodePath("Root/Sprite2D/Area2D")
 
 [node name="Root" type="Node2D" parent="." unique_id=210044367]
 position = Vector2(0, -12)
@@ -242,4 +243,6 @@ visible = false
 [node name="SparkleVFX2" parent="Root/SparkleBurstVFX" unique_id=513241947 instance=ExtResource("7_ojihs")]
 position = Vector2(0, -10)
 
+[connection signal="collected" from="." to="Root/AnimationPlayer" method="play" binds= [&"scroll_collect"]]
+[connection signal="animation_finished" from="Root/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="body_entered" from="Root/Sprite2D/Area2D" to="." method="on_collect" unbinds=1]

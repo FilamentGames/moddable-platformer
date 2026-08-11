@@ -6,11 +6,18 @@ enum EditorUnlock {
 	SceneTree ## The scene tree panel
 }
 
+@export_group("Internal Refs")
 ## The component of the editor that is unlocked by the powerup.
 @export var editor_unlock: EditorUnlock = EditorUnlock.Inspector
 
 ## Dialogue to spawn when the player collects the powerup
 @export var unlock_dialogue: Array[String] = []
+
+## The collision area that triggers the collection event
+@export var collision_area: Area2D
+
+## Emitted when the powerup is collected
+signal collected()
 
 func on_collect() -> void:
 	match editor_unlock:
@@ -21,8 +28,16 @@ func on_collect() -> void:
 		_:
 			print("Unknown editor unlock")
 	InGameQuestsBridge.delete_node_in_editor(self)
+	collision_area.queue_free()
+	collected.emit()
 	if not unlock_dialogue.is_empty():
 		var player_dialogue: PlayerDialogueComponent = BabyGodotUtils.get_first_child_of_type(get_tree().current_scene, PlayerDialogueComponent)
 		if player_dialogue:
 			player_dialogue.force_dialogue(unlock_dialogue)
+
+func on_collection_complete() -> void:
 	queue_free()
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name == &"scroll_collect":
+		on_collection_complete()
