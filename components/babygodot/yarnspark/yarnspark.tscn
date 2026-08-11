@@ -2,11 +2,14 @@
 
 [ext_resource type="Script" uid="uid://odpmnclrocgd" path="res://components/babygodot/yarnspark/yarnspark.gd" id="1_6emoc"]
 [ext_resource type="PackedScene" uid="uid://f2mqtjb5kfo8" path="res://components/babygodot/yarnspark/components/collectible_continuity.tscn" id="2_3i822"]
+[ext_resource type="PackedScene" uid="uid://cfouqrodflylp" path="res://components/babygodot/vfx/vfx_bokehCluster.tscn" id="4_csyau"]
 [ext_resource type="Texture2D" uid="uid://diaycckdbs082" path="res://components/babygodot/yarnspark/assets/Collectible_Yarnspark.png" id="5_4y73o"]
+[ext_resource type="PackedScene" uid="uid://ds648tqxmypxm" path="res://components/babygodot/vfx/vfx_sparkle.tscn" id="5_u8hei"]
 [ext_resource type="Texture2D" uid="uid://b4oh8we2fagny" path="res://components/babygodot/yarnspark/assets/disable/yarnspark_disable_1.png" id="5_x4bbt"]
+[ext_resource type="PackedScene" uid="uid://duigd0ecs02ll" path="res://components/babygodot/vfx/vfx_bokehCluster_driftUpwards.tscn" id="6_4p2b6"]
 [ext_resource type="Texture2D" uid="uid://hs0uequv8ow" path="res://components/babygodot/yarnspark/assets/disable/yarnspark_disable_2.png" id="6_gm07j"]
 [ext_resource type="Texture2D" uid="uid://cnfpol8lt50q5" path="res://components/babygodot/yarnspark/assets/Collectible_Yarnspark_Glow.png" id="6_uqd5c"]
-[ext_resource type="Texture2D" uid="uid://bcu1x3cydngth" path="res://components/babygodot/yarnspark/assets/Collectible_YarnsparkDisabled.png" id="7_nooyy"]
+[ext_resource type="PackedScene" uid="uid://di3e1mbco5us6" path="res://components/babygodot/vfx/vfx_sparkle_driftUpwards.tscn" id="7_sdfgs"]
 [ext_resource type="PackedScene" uid="uid://bxwbigtvw3dh4" path="res://components/babygodot/yarnspark/components/collectible_animator.tscn" id="7_tqbn7"]
 [ext_resource type="Texture2D" uid="uid://ehui3mfswuhg" path="res://components/babygodot/yarnspark/assets/disable/yarnspark_disable_3.png" id="7_u6xx5"]
 [ext_resource type="Texture2D" uid="uid://btlchltcy6uyj" path="res://components/babygodot/yarnspark/assets/disable/yarnspark_disable_4.png" id="8_csyau"]
@@ -38,7 +41,7 @@ radius = 34.96
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_nooyy")
+"texture": ExtResource("14_7okmo")
 }],
 "loop": 1,
 "name": &"default",
@@ -120,7 +123,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../CollectibleYarnspark:position:y")
+tracks/0/path = NodePath("../CollectionArea/CollisionShape2D/CollectibleYarnspark:position:y")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -128,6 +131,190 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../CollectionArea/CollisionShape2D/CollectibleYarnspark:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.5, 1.5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../CollectionArea/CollisionShape2D/CollectibleYarnspark:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -6)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../CollectionArea/CollisionShape2D/CollectibleYarnspark:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../SparkleBurstVFX:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../SparkleBurstVFX:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../IdleVFX:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../IdleVFX:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../CollectionArea/CollisionShape2D/CollectibleYarnspark/Yarn/Glow:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_72oni"]
+resource_name = "collect"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../CollectionArea/CollisionShape2D/CollectibleYarnspark:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.2, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1.5, 1.5), Vector2(1.5, 0.75), Vector2(0.7, 1.75), Vector2(1.5, 2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../CollectionArea/CollisionShape2D/CollectibleYarnspark:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -6), Vector2(0, 30), Vector2(0, -80)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../CollectionArea/CollisionShape2D/CollectibleYarnspark:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../SparkleBurstVFX:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../SparkleBurstVFX:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.40000004, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../IdleVFX:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../IdleVFX:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.19999999),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_tqbn7"]
@@ -137,7 +324,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../CollectibleYarnspark:position:y")
+tracks/0/path = NodePath("../CollectionArea/CollisionShape2D/CollectibleYarnspark:position:y")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -146,10 +333,35 @@ tracks/0/keys = {
 "update": 0,
 "values": [-6.0, 6.0, -6.0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("../IdleVFX:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../CollectionArea/CollisionShape2D/CollectibleYarnspark/Yarn/Glow:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.283185307179586]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4y73o"]
 _data = {
 &"RESET": SubResource("Animation_6na1a"),
+&"collect": SubResource("Animation_72oni"),
 &"scroll_hover": SubResource("Animation_tqbn7")
 }
 
@@ -170,27 +382,29 @@ shape = SubResource("RectangleShape2D_hmpfs")
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollectionArea" unique_id=1664803361]
-visible = false
 shape = SubResource("CircleShape2D_3qrth")
 debug_color = Color(0, 0.6, 0.69803923, 0)
 
-[node name="CollectibleYarnspark" type="Node2D" parent="." unique_id=366997958]
-visible = false
+[node name="CollectibleYarnspark" type="Node2D" parent="CollectionArea/CollisionShape2D" unique_id=366997958]
 z_index = 1
+position = Vector2(0, -6)
 scale = Vector2(1.5, 1.5)
 
-[node name="Yarn" type="Sprite2D" parent="CollectibleYarnspark" unique_id=456317835]
+[node name="Yarn" type="Sprite2D" parent="CollectionArea/CollisionShape2D/CollectibleYarnspark" unique_id=456317835]
 texture = ExtResource("5_4y73o")
 
-[node name="Glow" type="Sprite2D" parent="CollectibleYarnspark/Yarn" unique_id=183691432]
+[node name="Glow" type="Sprite2D" parent="CollectionArea/CollisionShape2D/CollectibleYarnspark/Yarn" unique_id=183691432]
+position = Vector2(2, -0.19166668)
 texture = ExtResource("6_uqd5c")
 
 [node name="Yarnpile" type="Node2D" parent="." unique_id=1743907287]
+visible = false
 z_index = 1
 scale = Vector2(1.5, 1.5)
 
 [node name="String" type="AnimatedSprite2D" parent="Yarnpile" unique_id=1654275309]
 sprite_frames = SubResource("SpriteFrames_hmpfs")
+frame_progress = 0.21358314
 
 [node name="InfoIndicator" parent="." unique_id=1774361635 instance=ExtResource("8_pu5ue")]
 position = Vector2(0, -60)
@@ -203,13 +417,49 @@ transform = Transform2D(1, 0, 0, 1, 0, -60)
 offset_top = -216.0
 offset_bottom = -23.999817
 
+[node name="IdleVFX" type="Node2D" parent="." unique_id=310697772]
+z_index = 10
+position = Vector2(6, -8)
+scale = Vector2(1.5, 1.5)
+
+[node name="BokehVFX_Cluster" parent="IdleVFX" unique_id=1245482636 instance=ExtResource("4_csyau")]
+position = Vector2(-20, 20.666668)
+
+[node name="BokehLarge" parent="IdleVFX/BokehVFX_Cluster" index="0" unique_id=922586174]
+emission_sphere_radius = 5.0
+
+[node name="BokehSmall" parent="IdleVFX/BokehVFX_Cluster" index="1" unique_id=1298005454]
+position = Vector2(2, -8)
+emission_sphere_radius = 10.0
+
+[node name="BokehMedium" parent="IdleVFX/BokehVFX_Cluster" index="2" unique_id=1987562892]
+position = Vector2(14, -7.5)
+
+[node name="SparkleVFX" parent="IdleVFX" unique_id=1416552907 instance=ExtResource("5_u8hei")]
+position = Vector2(19, -13)
+
+[node name="SparkleVFX2" parent="IdleVFX" unique_id=128406574 instance=ExtResource("5_u8hei")]
+position = Vector2(-18.666666, 28.66667)
+
+[node name="SparkleBurstVFX" type="Node2D" parent="." unique_id=56384581]
+visible = false
+z_index = 10
+position = Vector2(0, -6)
+scale = Vector2(1.5, 1.5)
+
+[node name="BokehVFX_Cluster" parent="SparkleBurstVFX" unique_id=1173118170 instance=ExtResource("6_4p2b6")]
+position = Vector2(-4.666667, 26.666668)
+
+[node name="SparkleVFX2" parent="SparkleBurstVFX" unique_id=1189101006 instance=ExtResource("7_sdfgs")]
+position = Vector2(0, -10)
+
 [node name="Controllers" type="Node" parent="." unique_id=290377819]
 
 [node name="CollectibleContinuity" parent="Controllers" unique_id=1035343625 node_paths=PackedStringArray("collectible") instance=ExtResource("2_3i822")]
 collectible = NodePath("../..")
 
 [node name="CollectibleAnimator" parent="Controllers" unique_id=1438532908 node_paths=PackedStringArray("yarnspark_node", "string_node", "animated_sprite") instance=ExtResource("7_tqbn7")]
-yarnspark_node = NodePath("../../CollectibleYarnspark")
+yarnspark_node = NodePath("../../CollectionArea/CollisionShape2D/CollectibleYarnspark")
 string_node = NodePath("../../Yarnpile")
 animated_sprite = NodePath("../../Yarnpile/String")
 
@@ -225,3 +475,4 @@ autoplay = &"scroll_hover"
 [connection signal="body_entered" from="CollectionArea" to="." method="_player_collect" unbinds=1]
 
 [editable path="InfoIndicator"]
+[editable path="IdleVFX/BokehVFX_Cluster"]
