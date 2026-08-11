@@ -32,6 +32,7 @@ func test_it_can_be_collected_when_condition_is_true():
 	add_child(scroll)
 
 	scroll._player_collect()
+	scroll._collection_animation_done()
 
 	assert_false(scroll.error_state)
 	assert_true(scroll.is_queued_for_deletion())
