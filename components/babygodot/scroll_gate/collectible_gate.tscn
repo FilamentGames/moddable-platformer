@@ -17,7 +17,7 @@
 [ext_resource type="Script" uid="uid://bk8b688teqih7" path="res://components/babygodot/scroll_gate/components/gate_bridge_behavior.gd" id="11_cn82r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hmpfs"]
-size = Vector2(208.5, 260)
+size = Vector2(294.5, 260)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ddthk"]
 size = Vector2(86, 131)
@@ -361,7 +361,7 @@ info_indicator_label = NodePath("InfoIndicator/InfoTree/CanvasLayer/UIContainer/
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerArea" unique_id=233322335]
-position = Vector2(-43.75, 5)
+position = Vector2(-86.75, 5)
 shape = SubResource("RectangleShape2D_hmpfs")
 
 [node name="NewGate" type="Node2D" parent="." unique_id=409550080]
