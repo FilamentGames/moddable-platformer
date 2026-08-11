@@ -75,23 +75,23 @@ default_font_size = 64
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rpdqf"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_s1r30"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ovnls"]
 resource_local_to_scene = true
 size = Vector2(94, 258)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ht7yq"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4bour"]
 resource_local_to_scene = true
 size = Vector2(94, 258)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_j77se"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2d8dw"]
 resource_local_to_scene = true
 size = Vector2(94, 258)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_11skj"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2h05j"]
 resource_local_to_scene = true
 size = Vector2(94, 258)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_x7fbm"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m8hul"]
 resource_local_to_scene = true
 size = Vector2(94, 258)
 
@@ -344,7 +344,7 @@ delete_from_scene = true
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" parent="Triggers/ForceQuestProgressTrigger_SolvedRockPuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_s1r30")
+shape = SubResource("RectangleShape2D_ovnls")
 metadata/_edit_lock_ = true
 
 [node name="SkipQuestTriggerBehavior" parent="Triggers/ForceQuestProgressTrigger_SolvedRockPuzzle" index="1" unique_id=1238036962]
@@ -363,6 +363,15 @@ metadata/_edit_lock_ = true
 
 [node name="QuestScriptTrigger_ReachedScrollPuzzle" type="Area2D" parent="Triggers" unique_id=286924423 node_paths=PackedStringArray("behavior") instance=ExtResource("32_spn1q")]
 position = Vector2(6420, 312)
+script = ExtResource("31_540av")
+behavior = NodePath("Behavior")
+delete_from_scene = true
+metadata/_custom_type_script = "uid://bvs6l44borf1h"
+metadata/_edit_lock_ = true
+
+[node name="QuestScriptTrigger_ReachedTwoScrollsPuzzle" type="Area2D" parent="Triggers" unique_id=814843015 node_paths=PackedStringArray("behavior") instance=ExtResource("32_spn1q")]
+position = Vector2(8599, 355)
+scale = Vector2(1, 1.8800012)
 script = ExtResource("31_540av")
 behavior = NodePath("Behavior")
 delete_from_scene = true
@@ -396,7 +405,7 @@ delete_from_scene = true
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_ht7yq")
+shape = SubResource("RectangleShape2D_4bour")
 metadata/_edit_lock_ = true
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
@@ -413,7 +422,7 @@ delete_from_scene = true
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_j77se")
+shape = SubResource("RectangleShape2D_2d8dw")
 metadata/_edit_lock_ = true
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
@@ -430,7 +439,7 @@ delete_from_scene = true
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle2" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_11skj")
+shape = SubResource("RectangleShape2D_2h05j")
 metadata/_edit_lock_ = true
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle2" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
@@ -447,7 +456,7 @@ delete_from_scene = true
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_x7fbm")
+shape = SubResource("RectangleShape2D_m8hul")
 metadata/_edit_lock_ = true
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
@@ -514,13 +523,13 @@ metadata/_edit_lock_ = true
 position = Vector2(4065, 314)
 script = ExtResource("42_4nsep")
 editor_unlock = 1
-unlock_dialogue = Array[String](["You unlocked the Scene Tree Dock!", "This allows you to see the list of objects in the current game scene.", "Stop the flow of time and see which objects you can edit!"])
+unlock_dialogue = Array[String](["You unlocked the Scene Tree Dock!", "This allows you to see the list of objects in the current game scene.", "Press the Stop button (■) and see which objects you can edit in Godot!"])
 metadata/_edit_lock_ = true
 
 [node name="InspectorPowerup" type="Node2D" parent="EditorPowerUps" unique_id=459242062 instance=ExtResource("43_sjfxr")]
 position = Vector2(7205, 183)
 script = ExtResource("42_4nsep")
-unlock_dialogue = Array[String](["You unlocked the Inspector Dock!", "This allows you to view and edit properties of individual objects in the game world.", "Try it out! Stop the flow of time and click on an object in the editor to view its properties."])
+unlock_dialogue = Array[String](["You unlocked the Inspector Dock!", "This allows you to view and edit properties of individual objects in the game world.", "Try it out! Stop the flow of time (■) and click on an object in the editor to view its properties."])
 metadata/_edit_lock_ = true
 
 [node name="Coins" type="Node2D" parent="." unique_id=1860713878]
@@ -537,7 +546,7 @@ metadata/_edit_lock_ = true
 
 [node name="Coin4" type="Area2D" parent="Coins" unique_id=1137508267 groups=["coins"] instance=ExtResource("44_cveeh")]
 modulate = Color(1, 1, 0, 1)
-position = Vector2(9644, -580)
+position = Vector2(9374, -592)
 collision_layer = 2
 script = ExtResource("45_tsdxu")
 texture = ExtResource("46_c2m1k")
@@ -1054,6 +1063,16 @@ dialogue_container = NodePath("DialogueMount")
 control_display = NodePath("ControlDisplay")
 metadata/_edit_lock_ = true
 
+[node name="NpcElder_TwoScrollsPuzzle" type="Node2D" parent="NPCs" unique_id=1015220593 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container", "control_display") instance=ExtResource("54_8oae3")]
+position = Vector2(9644, -555)
+script = ExtResource("55_mr88b")
+use_global_quest_dialogue = true
+sprite = NodePath("AnimatedSprite2D")
+player_detector = NodePath("Area2D")
+dialogue_container = NodePath("DialogueMount")
+control_display = NodePath("ControlDisplay")
+metadata/_edit_lock_ = true
+
 [node name="NpcElder_TilePuzzle" type="Node2D" parent="NPCs" unique_id=3347555 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container", "control_display") instance=ExtResource("54_8oae3")]
 position = Vector2(11706, 974)
 script = ExtResource("55_mr88b")
@@ -1181,7 +1200,7 @@ limit_bottom = 1080
 position_smoothing_enabled = true
 metadata/_edit_lock_ = true
 
-[node name="EditableObjectIndicator" type="Node2D" parent="Player" unique_id=1345001541 node_paths=PackedStringArray("edit_icon", "pencil_sprite", "arrow_rotation_pivot", "box") instance=ExtResource("16_235oo")]
+[node name="EditableObjectIndicator" type="Node2D" parent="Player" unique_id=839059185 node_paths=PackedStringArray("edit_icon", "pencil_sprite", "arrow_rotation_pivot", "box") instance=ExtResource("16_235oo")]
 script = ExtResource("17_4p881")
 margins = Vector2(43, 37)
 edit_icon = NodePath("EditIcon")
@@ -1349,6 +1368,7 @@ metadata/_edit_lock_ = true
 [connection signal="body_entered" from="Triggers/ForceQuestProgressTrigger_SolvedRockPuzzle" to="Triggers/ForceQuestProgressTrigger_SolvedRockPuzzle" method="_player_entered" unbinds=1]
 [connection signal="body_entered" from="Triggers/QuestScriptTrigger_ReachedRotatePuzzle" to="Triggers/QuestScriptTrigger_ReachedRotatePuzzle" method="_player_entered" unbinds=1]
 [connection signal="body_entered" from="Triggers/QuestScriptTrigger_ReachedScrollPuzzle" to="Triggers/QuestScriptTrigger_ReachedScrollPuzzle" method="_player_entered" unbinds=1]
+[connection signal="body_entered" from="Triggers/QuestScriptTrigger_ReachedTwoScrollsPuzzle" to="Triggers/QuestScriptTrigger_ReachedTwoScrollsPuzzle" method="_player_entered" unbinds=1]
 [connection signal="body_entered" from="Triggers/QuestScriptTrigger_ReachedTilePuzzle" to="Triggers/QuestScriptTrigger_ReachedTilePuzzle" method="_player_entered" unbinds=1]
 [connection signal="body_entered" from="Triggers/QuestScriptTrigger_SolvedTilePuzzle" to="Triggers/QuestScriptTrigger_SolvedTilePuzzle" method="_player_entered" unbinds=1]
 [connection signal="body_entered" from="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle" to="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle" method="_player_entered" unbinds=1]
@@ -1395,6 +1415,7 @@ metadata/_edit_lock_ = true
 [connection signal="celebration_animation" from="NPCs/NpcElder_Premise" to="NPCs/NpcElder_Premise/ElderAnimationController" method="trigger_animation"]
 [connection signal="celebration_animation" from="NPCs/NpcElder_RockPuzzle" to="NPCs/NpcElder_RockPuzzle/ElderAnimationController" method="trigger_animation"]
 [connection signal="celebration_animation" from="NPCs/NpcElder_ScrollPuzzle" to="NPCs/NpcElder_ScrollPuzzle/ElderAnimationController" method="trigger_animation"]
+[connection signal="celebration_animation" from="NPCs/NpcElder_TwoScrollsPuzzle" to="NPCs/NpcElder_TwoScrollsPuzzle/ElderAnimationController" method="trigger_animation"]
 [connection signal="celebration_animation" from="NPCs/NpcElder_TilePuzzle" to="NPCs/NpcElder_TilePuzzle/ElderAnimationController" method="trigger_animation"]
 [connection signal="celebration_animation" from="NPCs/NpcElder_Congrats" to="NPCs/NpcElder_Congrats/ElderAnimationController" method="trigger_animation"]
 [connection signal="body_entered" from="NPCs/Npc_MonkFlavor/Area2D" to="NPCs/Npc_MonkFlavor" method="_player_entered"]

@@ -326,6 +326,14 @@ behavior = NodePath("Behavior")
 delete_from_scene = true
 metadata/_custom_type_script = "uid://bvs6l44borf1h"
 
+[node name="QuestScriptTrigger_ReachedTwoScrollsPuzzle" type="Area2D" parent="Triggers" unique_id=814843015 node_paths=PackedStringArray("behavior") instance=ExtResource("9_58r63")]
+position = Vector2(8599, 355)
+scale = Vector2(1, 1.8800012)
+script = ExtResource("14_0bbcg")
+behavior = NodePath("Behavior")
+delete_from_scene = true
+metadata/_custom_type_script = "uid://bvs6l44borf1h"
+
 [node name="QuestScriptTrigger_ReachedTilePuzzle" type="Area2D" parent="Triggers" unique_id=1927004304 node_paths=PackedStringArray("behavior") instance=ExtResource("9_58r63")]
 position = Vector2(10772, 112.00005)
 scale = Vector2(1, 1.8800012)
@@ -449,12 +457,12 @@ placeholder_sprite = NodePath("PlaceholderSprite")
 position = Vector2(4065, 314)
 script = ExtResource("26_1tk8l")
 editor_unlock = 1
-unlock_dialogue = Array[String](["You unlocked the Scene Tree Dock!", "This allows you to see the list of objects in the current game scene.", "Stop the flow of time and see which objects you can edit!"])
+unlock_dialogue = Array[String](["You unlocked the Scene Tree Dock!", "This allows you to see the list of objects in the current game scene.", "Press the Stop button (■) and see which objects you can edit in Godot!"])
 
 [node name="InspectorPowerup" type="Node2D" parent="EditorPowerUps" unique_id=459242062 instance=ExtResource("16_m7dqe")]
 position = Vector2(7205, 183)
 script = ExtResource("26_1tk8l")
-unlock_dialogue = Array[String](["You unlocked the Inspector Dock!", "This allows you to view and edit properties of individual objects in the game world.", "Try it out! Stop the flow of time and click on an object in the editor to view its properties."])
+unlock_dialogue = Array[String](["You unlocked the Inspector Dock!", "This allows you to view and edit properties of individual objects in the game world.", "Try it out! Stop the flow of time (■) and click on an object in the editor to view its properties."])
 
 [node name="Coins" type="Node2D" parent="." unique_id=1860713878]
 
@@ -468,7 +476,7 @@ tint = Color(1, 1, 0, 1)
 
 [node name="Coin4" type="Area2D" parent="Coins" unique_id=1137508267 groups=["coins"] instance=ExtResource("6_qy02x")]
 modulate = Color(1, 1, 0, 1)
-position = Vector2(9644, -580)
+position = Vector2(9374, -592)
 collision_layer = 2
 script = ExtResource("18_65vxu")
 texture = ExtResource("7_y3jo1")
@@ -931,6 +939,15 @@ player_detector = NodePath("Area2D")
 dialogue_container = NodePath("DialogueMount")
 control_display = NodePath("ControlDisplay")
 
+[node name="NpcElder_TwoScrollsPuzzle" type="Node2D" parent="NPCs" unique_id=1015220593 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container", "control_display") instance=ExtResource("34_vnrdr")]
+position = Vector2(9644, -555)
+script = ExtResource("16_8knqs")
+use_global_quest_dialogue = true
+sprite = NodePath("AnimatedSprite2D")
+player_detector = NodePath("Area2D")
+dialogue_container = NodePath("DialogueMount")
+control_display = NodePath("ControlDisplay")
+
 [node name="NpcElder_TilePuzzle" type="Node2D" parent="NPCs" unique_id=3347555 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container", "control_display") instance=ExtResource("34_vnrdr")]
 position = Vector2(11706, 974)
 script = ExtResource("16_8knqs")
@@ -1182,6 +1199,7 @@ script = ExtResource("64_y8cc3")
 [connection signal="body_entered" from="Triggers/ForceQuestProgressTrigger_SolvedRockPuzzle" to="Triggers/ForceQuestProgressTrigger_SolvedRockPuzzle" method="_player_entered" unbinds=1]
 [connection signal="body_entered" from="Triggers/QuestScriptTrigger_ReachedRotatePuzzle" to="Triggers/QuestScriptTrigger_ReachedRotatePuzzle" method="_player_entered" unbinds=1]
 [connection signal="body_entered" from="Triggers/QuestScriptTrigger_ReachedScrollPuzzle" to="Triggers/QuestScriptTrigger_ReachedScrollPuzzle" method="_player_entered" unbinds=1]
+[connection signal="body_entered" from="Triggers/QuestScriptTrigger_ReachedTwoScrollsPuzzle" to="Triggers/QuestScriptTrigger_ReachedTwoScrollsPuzzle" method="_player_entered" unbinds=1]
 [connection signal="body_entered" from="Triggers/QuestScriptTrigger_ReachedTilePuzzle" to="Triggers/QuestScriptTrigger_ReachedTilePuzzle" method="_player_entered" unbinds=1]
 [connection signal="body_entered" from="Triggers/QuestScriptTrigger_SolvedTilePuzzle" to="Triggers/QuestScriptTrigger_SolvedTilePuzzle" method="_player_entered" unbinds=1]
 [connection signal="body_entered" from="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle" to="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle" method="_player_entered" unbinds=1]
@@ -1228,6 +1246,7 @@ script = ExtResource("64_y8cc3")
 [connection signal="celebration_animation" from="NPCs/NpcElder_Premise" to="NPCs/NpcElder_Premise/ElderAnimationController" method="trigger_animation"]
 [connection signal="celebration_animation" from="NPCs/NpcElder_RockPuzzle" to="NPCs/NpcElder_RockPuzzle/ElderAnimationController" method="trigger_animation"]
 [connection signal="celebration_animation" from="NPCs/NpcElder_ScrollPuzzle" to="NPCs/NpcElder_ScrollPuzzle/ElderAnimationController" method="trigger_animation"]
+[connection signal="celebration_animation" from="NPCs/NpcElder_TwoScrollsPuzzle" to="NPCs/NpcElder_TwoScrollsPuzzle/ElderAnimationController" method="trigger_animation"]
 [connection signal="celebration_animation" from="NPCs/NpcElder_TilePuzzle" to="NPCs/NpcElder_TilePuzzle/ElderAnimationController" method="trigger_animation"]
 [connection signal="celebration_animation" from="NPCs/NpcElder_Congrats" to="NPCs/NpcElder_Congrats/ElderAnimationController" method="trigger_animation"]
 [connection signal="body_entered" from="NPCs/Npc_MonkFlavor/Area2D" to="NPCs/Npc_MonkFlavor" method="_player_entered"]
