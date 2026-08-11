@@ -163,7 +163,7 @@ tile_map_data = PackedByteArray("AAAhAAMAAAABAAAAAABCAAYAAAABAAAAAABCAAcAAAABAAA
 tile_set = ExtResource("12_vnrdr")
 
 [node name="RockPile" type="StaticBody2D" parent="." unique_id=2056135097 instance=ExtResource("8_sftbg")]
-position = Vector2(4217, 318)
+position = Vector2(4214, 324)
 collision_layer = 4
 collision_mask = 0
 
