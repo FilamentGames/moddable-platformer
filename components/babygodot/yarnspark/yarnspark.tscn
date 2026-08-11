@@ -3,16 +3,117 @@
 [ext_resource type="Script" uid="uid://odpmnclrocgd" path="res://components/babygodot/yarnspark/yarnspark.gd" id="1_6emoc"]
 [ext_resource type="PackedScene" uid="uid://f2mqtjb5kfo8" path="res://components/babygodot/yarnspark/components/collectible_continuity.tscn" id="2_3i822"]
 [ext_resource type="Texture2D" uid="uid://diaycckdbs082" path="res://components/babygodot/yarnspark/assets/Collectible_Yarnspark.png" id="5_4y73o"]
+[ext_resource type="Texture2D" uid="uid://b4oh8we2fagny" path="res://components/babygodot/yarnspark/assets/disable/yarnspark_disable_1.png" id="5_x4bbt"]
+[ext_resource type="Texture2D" uid="uid://hs0uequv8ow" path="res://components/babygodot/yarnspark/assets/disable/yarnspark_disable_2.png" id="6_gm07j"]
 [ext_resource type="Texture2D" uid="uid://cnfpol8lt50q5" path="res://components/babygodot/yarnspark/assets/Collectible_Yarnspark_Glow.png" id="6_uqd5c"]
 [ext_resource type="Texture2D" uid="uid://bcu1x3cydngth" path="res://components/babygodot/yarnspark/assets/Collectible_YarnsparkDisabled.png" id="7_nooyy"]
 [ext_resource type="PackedScene" uid="uid://bxwbigtvw3dh4" path="res://components/babygodot/yarnspark/components/collectible_animator.tscn" id="7_tqbn7"]
+[ext_resource type="Texture2D" uid="uid://ehui3mfswuhg" path="res://components/babygodot/yarnspark/assets/disable/yarnspark_disable_3.png" id="7_u6xx5"]
+[ext_resource type="Texture2D" uid="uid://btlchltcy6uyj" path="res://components/babygodot/yarnspark/assets/disable/yarnspark_disable_4.png" id="8_csyau"]
 [ext_resource type="PackedScene" uid="uid://cqguk6cy3mt15" path="res://components/babygodot/info_indicator/info_indicator.tscn" id="8_pu5ue"]
+[ext_resource type="Texture2D" uid="uid://ddoafdrbbdmah" path="res://components/babygodot/yarnspark/assets/disable/yarnspark_disable_5.png" id="9_u8hei"]
+[ext_resource type="Texture2D" uid="uid://dd52ekmxk02x6" path="res://components/babygodot/yarnspark/assets/disable/yarnspark_disable_6.png" id="10_4p2b6"]
+[ext_resource type="Texture2D" uid="uid://ximlrxrhxeu3" path="res://components/babygodot/yarnspark/assets/disable/yarnspark_disable_7.png" id="11_sdfgs"]
+[ext_resource type="Texture2D" uid="uid://dyv5lccqskklt" path="res://components/babygodot/yarnspark/assets/disable/yarnspark_disable_8.png" id="12_iukko"]
+[ext_resource type="Texture2D" uid="uid://b38f2jby5s1vm" path="res://components/babygodot/yarnspark/assets/disable/yarnspark_disable_9.png" id="13_olqmu"]
+[ext_resource type="Texture2D" uid="uid://ck8i4wv5p7b45" path="res://components/babygodot/yarnspark/assets/disable/yarnspark_disable_10.png" id="14_7okmo"]
+[ext_resource type="Texture2D" uid="uid://dy1y3rpiit1cb" path="res://components/babygodot/yarnspark/assets/enable/yarnspark_enable_1.png" id="15_5to8l"]
+[ext_resource type="Texture2D" uid="uid://dbc03rtqyrps" path="res://components/babygodot/yarnspark/assets/enable/yarnspark_enable_2.png" id="16_m3avp"]
+[ext_resource type="Texture2D" uid="uid://dhfuo5hxcbrgr" path="res://components/babygodot/yarnspark/assets/enable/yarnspark_enable_3.png" id="17_tkme3"]
+[ext_resource type="Texture2D" uid="uid://bj4gapy4ldqqu" path="res://components/babygodot/yarnspark/assets/enable/yarnspark_enable_4.png" id="18_eida6"]
+[ext_resource type="Texture2D" uid="uid://226d2l4jdkg8" path="res://components/babygodot/yarnspark/assets/enable/yarnspark_enable_5.png" id="19_old5n"]
+[ext_resource type="Texture2D" uid="uid://clwrlpd07kcpd" path="res://components/babygodot/yarnspark/assets/enable/yarnspark_enable_6.png" id="20_yea20"]
+[ext_resource type="Texture2D" uid="uid://byrd1dy7scl6b" path="res://components/babygodot/yarnspark/assets/enable/yarnspark_enable_7.png" id="21_fknpf"]
+[ext_resource type="Texture2D" uid="uid://d1imgk43mnchx" path="res://components/babygodot/yarnspark/assets/enable/yarnspark_enable_8.png" id="22_rvjt8"]
+[ext_resource type="Texture2D" uid="uid://bggu5e2phwkqw" path="res://components/babygodot/yarnspark/assets/enable/yarnspark_enable_9.png" id="23_1xdj2"]
+[ext_resource type="Texture2D" uid="uid://cpdaoxteygvmr" path="res://components/babygodot/yarnspark/assets/enable/yarnspark_enable_10.png" id="24_cl5bg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hmpfs"]
 size = Vector2(400, 360)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3qrth"]
 radius = 34.96
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hmpfs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_nooyy")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_x4bbt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_gm07j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_u6xx5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_csyau")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_u8hei")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_4p2b6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_sdfgs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_iukko")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_olqmu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_7okmo")
+}],
+"loop": 0,
+"name": &"disable",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_5to8l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_m3avp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_tkme3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_eida6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_old5n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_yea20")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_fknpf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_rvjt8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_1xdj2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_cl5bg")
+}],
+"loop": 0,
+"name": &"enable",
+"speed": 10.0
+}]
 
 [sub_resource type="Animation" id="Animation_6na1a"]
 length = 0.001
@@ -52,120 +153,6 @@ _data = {
 &"scroll_hover": SubResource("Animation_tqbn7")
 }
 
-[sub_resource type="Animation" id="Animation_3i822"]
-length = 0.001
-
-[sub_resource type="Animation" id="Animation_rkd5d"]
-resource_name = "activate_scroll"
-length = 0.36666667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../CollectibleYarnspark:modulate:a")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.33333334),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../CollectibleYarnspark:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../Yarnpile:modulate:a")
-tracks/2/interp = 2
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.33333334),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [1.0, 0.0]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../Yarnpile:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.33333334),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-
-[sub_resource type="Animation" id="Animation_4y73o"]
-resource_name = "activate_scroll_2"
-length = 0.36666667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../CollectibleYarnspark:modulate:a")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.33333334),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [1.0, 0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../CollectibleYarnspark:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.33333334),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../Yarnpile:modulate:a")
-tracks/2/interp = 2
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.33333334),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../Yarnpile:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.33333334),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, true]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_6na1a"]
-_data = {
-&"RESET": SubResource("Animation_3i822"),
-&"activate_scroll": SubResource("Animation_rkd5d"),
-&"deactivate_scroll": SubResource("Animation_4y73o")
-}
-
 [node name="Yarnspark" type="Node2D" unique_id=2086611064 node_paths=PackedStringArray("label", "info_indicator")]
 script = ExtResource("1_6emoc")
 label = NodePath("InfoIndicator/InfoTree/CanvasLayer/UIContainer/PanelContainer/RichTextLabel")
@@ -188,6 +175,7 @@ shape = SubResource("CircleShape2D_3qrth")
 debug_color = Color(0, 0.6, 0.69803923, 0)
 
 [node name="CollectibleYarnspark" type="Node2D" parent="." unique_id=366997958]
+visible = false
 z_index = 1
 scale = Vector2(1.5, 1.5)
 
@@ -198,12 +186,11 @@ texture = ExtResource("5_4y73o")
 texture = ExtResource("6_uqd5c")
 
 [node name="Yarnpile" type="Node2D" parent="." unique_id=1743907287]
-modulate = Color(1, 1, 1, 0)
 z_index = 1
 scale = Vector2(1.5, 1.5)
 
-[node name="String" type="Sprite2D" parent="Yarnpile" unique_id=848011891]
-texture = ExtResource("7_nooyy")
+[node name="String" type="AnimatedSprite2D" parent="Yarnpile" unique_id=1654275309]
+sprite_frames = SubResource("SpriteFrames_hmpfs")
 
 [node name="InfoIndicator" parent="." unique_id=1774361635 instance=ExtResource("8_pu5ue")]
 position = Vector2(0, -60)
@@ -221,16 +208,16 @@ offset_bottom = -23.999817
 [node name="CollectibleContinuity" parent="Controllers" unique_id=1035343625 node_paths=PackedStringArray("collectible") instance=ExtResource("2_3i822")]
 collectible = NodePath("../..")
 
-[node name="CollectibleAnimator" parent="Controllers" unique_id=1438532908 node_paths=PackedStringArray("animator") instance=ExtResource("7_tqbn7")]
-animator = NodePath("../UnlockAnimation")
+[node name="CollectibleAnimator" parent="Controllers" unique_id=1438532908 node_paths=PackedStringArray("animator", "yarnspark_node", "string_node", "animated_sprite") instance=ExtResource("7_tqbn7")]
+animator = NodePath("")
+yarnspark_node = NodePath("../../CollectibleYarnspark")
+string_node = NodePath("../../Yarnpile")
+animated_sprite = NodePath("../../Yarnpile/String")
 
 [node name="HoverAnimation" type="AnimationPlayer" parent="Controllers" unique_id=552900981]
 root_node = NodePath("../../InfoIndicator")
 libraries/ = SubResource("AnimationLibrary_4y73o")
 autoplay = &"scroll_hover"
-
-[node name="UnlockAnimation" type="AnimationPlayer" parent="Controllers" unique_id=1842395322]
-libraries/ = SubResource("AnimationLibrary_6na1a")
 
 [connection signal="collected" from="." to="Controllers/CollectibleContinuity" method="_on_collect"]
 [connection signal="condition_updated" from="." to="Controllers/CollectibleAnimator" method="_trigger_animation"]
