@@ -9,6 +9,9 @@ extends Area2D
 ## Use this to tint the texture of the coin a different color.
 @export var tint: Color = Color.WHITE:
 	set = _set_tint
+	
+## The animation player for a collect animation
+@export var animator: AnimationPlayer
 
 @onready var _sprite: Sprite2D = %Sprite2D
 @onready var _initial_texture: Texture2D = %Sprite2D.texture
@@ -45,10 +48,10 @@ func _on_body_entered(_body):
 	set_deferred("monitoring", false)
 	set_deferred("monitorable", false)
 
-	# TODO: Add a "collected" animation that plays alongside the sound?
-	visible = false
-
 	# Baby Godot: Collect this coin permanently in the editor.
 	InGameQuestsBridge.collect_coin(self)
-
-	queue_free()
+	
+	if animator:
+		animator.play(&"collect")
+	else:
+		queue_free()

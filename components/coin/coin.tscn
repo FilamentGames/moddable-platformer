@@ -144,9 +144,10 @@ _data = {
 &"collect": SubResource("Animation_2rmi4")
 }
 
-[node name="Coin" type="Area2D" unique_id=1095254317 groups=["coins"]]
+[node name="Coin" type="Area2D" unique_id=1095254317 node_paths=PackedStringArray("animator") groups=["coins"]]
 collision_layer = 2
 script = ExtResource("1_4bks0")
+animator = NodePath("AnimationPlayer")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=636543388]
 texture_filter = 1
@@ -196,3 +197,4 @@ position = Vector2(0, -10)
 libraries/ = SubResource("AnimationLibrary_3x8ja")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="queue_free"]
