@@ -16,11 +16,11 @@ grow_vertical = 2
 script = ExtResource("1_qqxpi")
 text = NodePath("Container/QuestText")
 animated_sprite = NodePath("Container/Control/Clippy")
-next_button = NodePath("Container/NextButton")
-save_checkpoint_button = NodePath("Container/HBoxContainer/SaveButton")
-load_checkpoint_button = NodePath("Container/HBoxContainer/ResetWorldButton")
-hint_button = NodePath("Container/HintButton")
-hint_display = NodePath("Container/HintDisplay")
+next_button = NodePath("Container/EndContainer/NextButton")
+save_checkpoint_button = NodePath("Container/EndContainer/HBoxContainer/SaveButton")
+load_checkpoint_button = NodePath("Container/EndContainer/HBoxContainer/ResetWorldButton")
+hint_button = NodePath("Container/EndContainer/HintButton")
+hint_display = NodePath("Container/EndContainer/HintDisplay")
 
 [node name="Container" type="VBoxContainer" parent="." unique_id=1210857552]
 layout_mode = 1
@@ -48,46 +48,53 @@ sprite = NodePath("..")
 [node name="QuestText" parent="Container" unique_id=1035288938 instance=ExtResource("3_jgiii")]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
-text = "Concentrate! Stop the flow of time! (■)"
+text = "Find me in the world of Threadbare! Press Play! (▶)"
 autowrap_mode = 2
-visible_characters = 39
+visible_characters = 51
 
-[node name="HintDisplay" parent="Container" unique_id=1175709613 instance=ExtResource("3_u0560")]
-visible = false
+[node name="EndContainer" type="VBoxContainer" parent="Container" unique_id=1910787855]
 layout_mode = 2
 size_flags_vertical = 10
-size_flags_stretch_ratio = 6.0
 
-[node name="Spacer2" type="Control" parent="Container" unique_id=1879052227]
+[node name="HintDisplay" parent="Container/EndContainer" unique_id=1175709613 instance=ExtResource("3_u0560")]
+visible = false
+custom_minimum_size = Vector2(0, 250)
+layout_mode = 2
+size_flags_vertical = 4
+size_flags_stretch_ratio = 6.0
+hint = "Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. "
+
+[node name="Spacer2" type="Control" parent="Container/EndContainer" unique_id=1879052227]
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 
-[node name="NextButton" type="Button" parent="Container" unique_id=1692289482]
+[node name="NextButton" type="Button" parent="Container/EndContainer" unique_id=1692289482]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 10
 disabled = true
 text = "Next"
 
-[node name="HintButton" type="Button" parent="Container" unique_id=12402239]
+[node name="HintButton" type="Button" parent="Container/EndContainer" unique_id=12402239]
 layout_mode = 2
 size_flags_horizontal = 4
+disabled = true
 text = "Get a Hint (-3 Coins)"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Container" unique_id=1213718530]
+[node name="HBoxContainer" type="HBoxContainer" parent="Container/EndContainer" unique_id=1213718530]
 layout_mode = 2
 alignment = 1
 
-[node name="SaveButton" type="Button" parent="Container/HBoxContainer" unique_id=694438811]
+[node name="SaveButton" type="Button" parent="Container/EndContainer/HBoxContainer" unique_id=694438811]
 visible = false
 layout_mode = 2
 text = "Save"
 
-[node name="ResetWorldButton" type="Button" parent="Container/HBoxContainer" unique_id=1849041134]
+[node name="ResetWorldButton" type="Button" parent="Container/EndContainer/HBoxContainer" unique_id=1849041134]
 layout_mode = 2
 text = "Reset the World"
 
-[node name="Spacer" type="Control" parent="Container" unique_id=1644551487]
+[node name="Spacer" type="Control" parent="Container/EndContainer" unique_id=1644551487]
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 
@@ -95,4 +102,4 @@ layout_mode = 2
 [connection signal="done" from="Container/Control/Clippy/CelebrationAnimationComponent" to="." method="_on_celebration_animation_component_done"]
 [connection signal="end_animating" from="Container/QuestText" to="." method="_on_quest_text_end_animating"]
 [connection signal="start_animating" from="Container/QuestText" to="." method="_on_quest_text_start_animating"]
-[connection signal="pressed" from="Container/HintButton" to="." method="buy_hint"]
+[connection signal="pressed" from="Container/EndContainer/HintButton" to="." method="buy_hint"]
