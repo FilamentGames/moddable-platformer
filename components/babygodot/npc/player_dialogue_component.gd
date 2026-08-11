@@ -28,7 +28,17 @@ var movement_locked := false:
 			player.movement_locked = val
 		_movement_locked = val
 
+var control_locked := false:
+	get:
+		return _control_locked
+	set(val):
+		if player and "control_locked" in player:
+			player.control_locked = val
+		_control_locked = val
+
 var _movement_locked := false
+
+var _control_locked := false
 
 func _process(_delta: float) -> void:
 	if movement_locked:
@@ -41,6 +51,7 @@ func _process(_delta: float) -> void:
 ## This is called once the dialogue is finished
 func finished_dialogue() -> void:
 	movement_locked = false
+	control_locked = false
 
 func force_dialogue(lines: Array[String]) -> void:
 	movement_locked = true

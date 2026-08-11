@@ -208,8 +208,7 @@ offset_bottom = -23.999817
 [node name="CollectibleContinuity" parent="Controllers" unique_id=1035343625 node_paths=PackedStringArray("collectible") instance=ExtResource("2_3i822")]
 collectible = NodePath("../..")
 
-[node name="CollectibleAnimator" parent="Controllers" unique_id=1438532908 node_paths=PackedStringArray("animator", "yarnspark_node", "string_node", "animated_sprite") instance=ExtResource("7_tqbn7")]
-animator = NodePath("")
+[node name="CollectibleAnimator" parent="Controllers" unique_id=1438532908 node_paths=PackedStringArray("yarnspark_node", "string_node", "animated_sprite") instance=ExtResource("7_tqbn7")]
 yarnspark_node = NodePath("../../CollectibleYarnspark")
 string_node = NodePath("../../Yarnpile")
 animated_sprite = NodePath("../../Yarnpile/String")
