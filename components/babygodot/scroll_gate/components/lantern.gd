@@ -4,7 +4,7 @@ class_name CollectibleGateLantern
 ## Lantern that is lit at collectible gates
 
 ## The texture for the lantern front
-@export var lantern_front_texture: Texture2D = preload("res://components/babygodot/scroll_gate/assets/LanternLeft_Front.png")
+@export var lantern_front_texture: Texture2D = load("res://components/babygodot/scroll_gate/assets/LanternLeft_Front.png")
 
 @export_group("Internal Refs")
 @export var lantern_front: Sprite2D

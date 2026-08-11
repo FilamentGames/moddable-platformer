@@ -28,7 +28,7 @@ class_name Npc
 @export var control_display: ControlDisplay
 
 ## The dialogue box prefab to instantiate
-var dialogue_box_prefab: PackedScene = preload("res://components/babygodot/dialogue_box/dialogue_box.tscn")
+var dialogue_box_prefab: PackedScene = load("res://components/babygodot/dialogue_box/dialogue_box.tscn")
 
 ## A reference to the last spawned dialogue box
 var current_dialogue_box: DialogueBox

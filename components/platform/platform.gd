@@ -2,8 +2,6 @@
 class_name Platform
 extends Node2D
 
-const DEFAULT_TILE_SET = preload("res://spaces/tileset-threadbare.tres")
-
 const FRAME_COORDS_ONE_WAY_LEFT := Vector2i(5, 0)
 const FRAME_COORDS_ONE_WAY_MIDDLE := Vector2i(6, 0)
 const FRAME_COORDS_ONE_WAY_RIGHT := Vector2i(7, 0)
@@ -20,7 +18,7 @@ const FRAME_COORDS_SOLID := Vector2i(10, 1)
 
 @export_group("Tileset")
 ## Which tileset should be used to draw the platform?
-@export var tile_set: TileSet = DEFAULT_TILE_SET:
+@export var tile_set: TileSet = load("res://spaces/tileset-threadbare.tres"):
 	set = _set_tile_set
 
 ## Which index of the tileset should be used to draw the platform?
@@ -77,8 +75,6 @@ var fall_timer: Timer
 func _set_tile_set(new_tile_set):
 	if new_tile_set:
 		tile_set = new_tile_set
-	else:
-		tile_set = DEFAULT_TILE_SET
 	_on_platform_sprite_update()
 
 
