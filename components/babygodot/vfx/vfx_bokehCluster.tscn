@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://cfouqrodflylp"]
+
+[ext_resource type="Texture2D" uid="uid://hxgi3itfqb2m" path="res://components/babygodot/vfx/Textures/VFX_BokehMedium.png" id="1_jpmja"]
+[ext_resource type="Texture2D" uid="uid://drhx0qfx25srs" path="res://components/babygodot/vfx/Textures/VFX_BokehLarge.png" id="2_jstpm"]
+[ext_resource type="Texture2D" uid="uid://cuqj0qpkcjhs2" path="res://components/babygodot/vfx/Textures/VFX_BokehSmall.png" id="3_gyumk"]
+
+[sub_resource type="Gradient" id="Gradient_hi1ih"]
+offsets = PackedFloat32Array(0, 0.45535713, 1)
+colors = PackedColorArray(0.74509805, 0.9411765, 1, 0, 0.74509805, 0.9411765, 1, 0.29411766, 0.74509805, 0.9411765, 1, 0)
+metadata/_snap_count = 2
+
+[sub_resource type="Curve" id="Curve_ojihs"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="BokehVFX_Cluster" type="Node2D" unique_id=1245482636]
+scale = Vector2(2, 2)
+
+[node name="BokehLarge" type="CPUParticles2D" parent="." unique_id=922586174]
+position = Vector2(8, -8.5)
+amount = 1
+texture = ExtResource("2_jstpm")
+lifetime = 3.0
+randomness = 0.5
+lifetime_randomness = 0.21
+local_coords = true
+emission_shape = 2
+emission_sphere_radius = 10.0
+gravity = Vector2(0, 0)
+color_ramp = SubResource("Gradient_hi1ih")
+hue_variation_curve = SubResource("Curve_ojihs")
+
+[node name="BokehSmall" type="CPUParticles2D" parent="." unique_id=1298005454]
+position = Vector2(0, -1)
+amount = 3
+texture = ExtResource("3_gyumk")
+randomness = 0.5
+lifetime_randomness = 0.21
+local_coords = true
+emission_shape = 2
+emission_sphere_radius = 20.0
+gravity = Vector2(0, 0)
+color_ramp = SubResource("Gradient_hi1ih")
+hue_variation_curve = SubResource("Curve_ojihs")
+
+[node name="BokehMedium" type="CPUParticles2D" parent="." unique_id=1987562892]
+position = Vector2(12, -0.5)
+amount = 1
+texture = ExtResource("1_jpmja")
+randomness = 0.5
+lifetime_randomness = 0.21
+local_coords = true
+emission_shape = 2
+emission_sphere_radius = 10.0
+gravity = Vector2(0, 0)
+color_ramp = SubResource("Gradient_hi1ih")
+hue_variation_curve = SubResource("Curve_ojihs")

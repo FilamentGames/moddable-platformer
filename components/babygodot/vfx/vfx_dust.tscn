@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://s7td1yo8mpag"]
 
-[ext_resource type="Texture2D" uid="uid://cuqj0qpkcjhs2" path="res://components/babygodot/vfx/VFX_BokehSmall.png" id="1_sh0ha"]
-[ext_resource type="Texture2D" uid="uid://hxgi3itfqb2m" path="res://components/babygodot/vfx/VFX_BokehMedium.png" id="2_3sqv6"]
-[ext_resource type="Texture2D" uid="uid://drhx0qfx25srs" path="res://components/babygodot/vfx/VFX_BokehLarge.png" id="3_b7hjh"]
+[ext_resource type="Texture2D" uid="uid://cuqj0qpkcjhs2" path="res://components/babygodot/vfx/Textures/VFX_BokehSmall.png" id="1_sh0ha"]
+[ext_resource type="Texture2D" uid="uid://hxgi3itfqb2m" path="res://components/babygodot/vfx/Textures/VFX_BokehMedium.png" id="2_3sqv6"]
+[ext_resource type="Texture2D" uid="uid://drhx0qfx25srs" path="res://components/babygodot/vfx/Textures/VFX_BokehLarge.png" id="3_b7hjh"]
 
 [node name="Dust" type="Node2D" unique_id=862439618]
 

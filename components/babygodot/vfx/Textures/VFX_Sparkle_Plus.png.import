@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://caedusslc6ugc"
-path="res://.godot/imported/VFX_Sparkle_Diamond1.png-b204f8a0b5993356fee6835234f54f29.ctex"
+uid="uid://4hfl7edqpi05"
+path="res://.godot/imported/VFX_Sparkle_Plus.png-799ff2330a554ad71b510610e4450ce5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://components/babygodot/vfx/VFX_Sparkle_Diamond1.png"
-dest_files=["res://.godot/imported/VFX_Sparkle_Diamond1.png-b204f8a0b5993356fee6835234f54f29.ctex"]
+source_file="res://components/babygodot/vfx/Textures/VFX_Sparkle_Plus.png"
+dest_files=["res://.godot/imported/VFX_Sparkle_Plus.png-799ff2330a554ad71b510610e4450ce5.ctex"]
 
 [params]
 
