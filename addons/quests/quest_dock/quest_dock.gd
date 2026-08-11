@@ -67,6 +67,7 @@ func _exit_tree():
 		load_checkpoint_button.pressed.disconnect(load_checkpoint)
 
 func update_text():
+	_play_celebration_animation = quests_provider.is_current_line_celebration()
 	text.text = quests_provider.get_current_text()
 	_update_next_button_state()
 	hint_display.hide()

@@ -79,6 +79,9 @@ func _init() -> void:
 func get_current_text() -> String:
 	return text_data[_current_text_line].dialogue_line
 
+func is_current_line_celebration() -> bool:
+	return text_data[_current_text_line].show_celebration_animation
+
 ## Get all upcoming lines that can be read with just the Next Button
 func get_all_nextbutton_quest_text() -> Array[String]:
 	var array: Array[String] = []
