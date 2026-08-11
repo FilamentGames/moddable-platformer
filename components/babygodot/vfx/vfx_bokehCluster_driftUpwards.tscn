@@ -5,27 +5,21 @@
 [node name="BokehVFX_Cluster" unique_id=1245482636 instance=ExtResource("1_aniv5")]
 
 [node name="BokehLarge" parent="." index="0" unique_id=922586174]
-emitting = false
 amount = 3
 lifetime = 2.0
-one_shot = true
 speed_scale = 1.5
 lifetime_randomness = 0.0
 gravity = Vector2(0, -25)
 
 [node name="BokehSmall" parent="." index="1" unique_id=1298005454]
-emitting = false
 lifetime = 2.0
-one_shot = true
 speed_scale = 1.5
 lifetime_randomness = 0.0
 gravity = Vector2(0, -25)
 
 [node name="BokehMedium" parent="." index="2" unique_id=1987562892]
-emitting = false
 amount = 3
 lifetime = 2.0
-one_shot = true
 speed_scale = 1.5
 lifetime_randomness = 0.0
 gravity = Vector2(0, -25)
