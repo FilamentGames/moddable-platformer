@@ -128,6 +128,7 @@ func _on_session_start() -> void:
 	GlobalQuests.quests.set_inspector_dock_visible(false)
 	GlobalQuests.quests.set_scene_tree_dock_visible(false)
 	GlobalQuests.quests.set_quest_dock_visible(false)
+	GlobalQuests.quests.hide_bottom_panel()
 
 func _on_session_stop() -> void:
 	print("Quest bridge stopped")
