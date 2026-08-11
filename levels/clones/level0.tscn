@@ -102,7 +102,7 @@ size = Vector2(300, 137)
 
 [node name="EditableNodeList" type="Node" parent="." unique_id=280926474 node_paths=PackedStringArray("nodes")]
 script = ExtResource("1_ovnls")
-nodes = [NodePath("../RockPile")]
+nodes = [NodePath("../RockPile"), NodePath("../Player")]
 metadata/_edit_lock_ = true
 
 [node name="GameLogic" type="Node" parent="." unique_id=1461208797 instance=ExtResource("2_4bour")]
@@ -528,7 +528,7 @@ collision_area = NodePath("Root/Sprite2D/Area2D")
 metadata/_edit_lock_ = true
 
 [node name="InspectorPowerup" type="Node2D" parent="EditorPowerUps" unique_id=459242062 node_paths=PackedStringArray("collision_area") instance=ExtResource("43_sjfxr")]
-position = Vector2(7205, 183)
+position = Vector2(7382, 183)
 script = ExtResource("42_4nsep")
 unlock_dialogue = Array[String](["You unlocked the Inspector Dock!", "This allows you to view and edit properties of individual objects in the game world.", "Try it out! Stop the flow of time (■) and click on an object in the editor to view its properties."])
 collision_area = NodePath("Root/Sprite2D/Area2D")
@@ -546,7 +546,15 @@ animator = NodePath("AnimationPlayer")
 metadata/_edit_lock_ = true
 
 [node name="Coin4" type="Area2D" parent="Coins" unique_id=1137508267 node_paths=PackedStringArray("animator") groups=["coins"] instance=ExtResource("44_cveeh")]
-position = Vector2(9374, -592)
+position = Vector2(9317, -592)
+collision_layer = 2
+script = ExtResource("45_tsdxu")
+texture = ExtResource("46_c2m1k")
+animator = NodePath("AnimationPlayer")
+metadata/_edit_lock_ = true
+
+[node name="Coin19" type="Area2D" parent="Coins" unique_id=1095254317 node_paths=PackedStringArray("animator") groups=["coins"] instance=ExtResource("44_cveeh")]
+position = Vector2(9423, -592)
 collision_layer = 2
 script = ExtResource("45_tsdxu")
 texture = ExtResource("46_c2m1k")
@@ -554,7 +562,47 @@ animator = NodePath("AnimationPlayer")
 metadata/_edit_lock_ = true
 
 [node name="Coin8" type="Area2D" parent="Coins" unique_id=1399238642 node_paths=PackedStringArray("animator") groups=["coins"] instance=ExtResource("44_cveeh")]
-position = Vector2(3020, 448)
+position = Vector2(2933, 380)
+collision_layer = 2
+script = ExtResource("45_tsdxu")
+texture = ExtResource("46_c2m1k")
+animator = NodePath("AnimationPlayer")
+metadata/_edit_lock_ = true
+
+[node name="Coin12" type="Area2D" parent="Coins" unique_id=345869264 node_paths=PackedStringArray("animator") groups=["coins"] instance=ExtResource("44_cveeh")]
+position = Vector2(3030, 318)
+collision_layer = 2
+script = ExtResource("45_tsdxu")
+texture = ExtResource("46_c2m1k")
+animator = NodePath("AnimationPlayer")
+metadata/_edit_lock_ = true
+
+[node name="Coin13" type="Area2D" parent="Coins" unique_id=2104738955 node_paths=PackedStringArray("animator") groups=["coins"] instance=ExtResource("44_cveeh")]
+position = Vector2(3123, 380)
+collision_layer = 2
+script = ExtResource("45_tsdxu")
+texture = ExtResource("46_c2m1k")
+animator = NodePath("AnimationPlayer")
+metadata/_edit_lock_ = true
+
+[node name="Coin20" type="Area2D" parent="Coins" unique_id=1594543700 node_paths=PackedStringArray("animator") groups=["coins"] instance=ExtResource("44_cveeh")]
+position = Vector2(5184, 34)
+collision_layer = 2
+script = ExtResource("45_tsdxu")
+texture = ExtResource("46_c2m1k")
+animator = NodePath("AnimationPlayer")
+metadata/_edit_lock_ = true
+
+[node name="Coin21" type="Area2D" parent="Coins" unique_id=1885096095 node_paths=PackedStringArray("animator") groups=["coins"] instance=ExtResource("44_cveeh")]
+position = Vector2(5281, -28)
+collision_layer = 2
+script = ExtResource("45_tsdxu")
+texture = ExtResource("46_c2m1k")
+animator = NodePath("AnimationPlayer")
+metadata/_edit_lock_ = true
+
+[node name="Coin41" type="Area2D" parent="Coins" unique_id=1112483359 node_paths=PackedStringArray("animator") groups=["coins"] instance=ExtResource("44_cveeh")]
+position = Vector2(5374, 34)
 collision_layer = 2
 script = ExtResource("45_tsdxu")
 texture = ExtResource("46_c2m1k")
@@ -665,7 +713,7 @@ texture = ExtResource("46_c2m1k")
 animator = NodePath("AnimationPlayer")
 metadata/_edit_lock_ = true
 
-[node name="Coin31" type="Area2D" parent="Coins" unique_id=1095254317 node_paths=PackedStringArray("animator") groups=["coins"] instance=ExtResource("44_cveeh")]
+[node name="Coin31" type="Area2D" parent="Coins" unique_id=203810966 node_paths=PackedStringArray("animator") groups=["coins"] instance=ExtResource("44_cveeh")]
 position = Vector2(10873, -781)
 collision_layer = 2
 script = ExtResource("45_tsdxu")
@@ -747,6 +795,54 @@ metadata/_edit_lock_ = true
 
 [node name="Coin24" type="Area2D" parent="Coins" unique_id=334811006 node_paths=PackedStringArray("animator") groups=["coins"] instance=ExtResource("44_cveeh")]
 position = Vector2(1569, 558)
+collision_layer = 2
+script = ExtResource("45_tsdxu")
+texture = ExtResource("46_c2m1k")
+animator = NodePath("AnimationPlayer")
+metadata/_edit_lock_ = true
+
+[node name="Coin2" type="Area2D" parent="Coins" unique_id=2004393446 node_paths=PackedStringArray("animator") groups=["coins"] instance=ExtResource("44_cveeh")]
+position = Vector2(3599, 964)
+collision_layer = 2
+script = ExtResource("45_tsdxu")
+texture = ExtResource("46_c2m1k")
+animator = NodePath("AnimationPlayer")
+metadata/_edit_lock_ = true
+
+[node name="Coin23" type="Area2D" parent="Coins" unique_id=966695602 node_paths=PackedStringArray("animator") groups=["coins"] instance=ExtResource("44_cveeh")]
+position = Vector2(3862, 959)
+collision_layer = 2
+script = ExtResource("45_tsdxu")
+texture = ExtResource("46_c2m1k")
+animator = NodePath("AnimationPlayer")
+metadata/_edit_lock_ = true
+
+[node name="Coin40" type="Area2D" parent="Coins" unique_id=1379372883 node_paths=PackedStringArray("animator") groups=["coins"] instance=ExtResource("44_cveeh")]
+position = Vector2(3734, 959)
+collision_layer = 2
+script = ExtResource("45_tsdxu")
+texture = ExtResource("46_c2m1k")
+animator = NodePath("AnimationPlayer")
+metadata/_edit_lock_ = true
+
+[node name="Coin18" type="Area2D" parent="Coins" unique_id=1295739469 node_paths=PackedStringArray("animator") groups=["coins"] instance=ExtResource("44_cveeh")]
+position = Vector2(6980, 176)
+collision_layer = 2
+script = ExtResource("45_tsdxu")
+texture = ExtResource("46_c2m1k")
+animator = NodePath("AnimationPlayer")
+metadata/_edit_lock_ = true
+
+[node name="Coin43" type="Area2D" parent="Coins" unique_id=1119710353 node_paths=PackedStringArray("animator") groups=["coins"] instance=ExtResource("44_cveeh")]
+position = Vector2(7243, 171)
+collision_layer = 2
+script = ExtResource("45_tsdxu")
+texture = ExtResource("46_c2m1k")
+animator = NodePath("AnimationPlayer")
+metadata/_edit_lock_ = true
+
+[node name="Coin44" type="Area2D" parent="Coins" unique_id=217978787 node_paths=PackedStringArray("animator") groups=["coins"] instance=ExtResource("44_cveeh")]
+position = Vector2(7115, 171)
 collision_layer = 2
 script = ExtResource("45_tsdxu")
 texture = ExtResource("46_c2m1k")
@@ -1162,13 +1258,21 @@ script = ExtResource("63_ebggu")
 sprite_frames = ExtResource("64_yrokd")
 jump_velocity = 850.0
 double_jump = true
-metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1408260423]
 position = Vector2(0, 15)
 limit_left = 0
 limit_bottom = 1080
 position_smoothing_enabled = true
+metadata/_edit_lock_ = true
+
+[node name="EditableObjectIndicator" type="Node2D" parent="Player" unique_id=237010309 node_paths=PackedStringArray("edit_icon", "pencil_sprite", "arrow_rotation_pivot", "box") instance=ExtResource("16_235oo")]
+script = ExtResource("17_4p881")
+margins = Vector2(43, 37)
+edit_icon = NodePath("EditIcon")
+pencil_sprite = NodePath("EditIcon/Pencil")
+arrow_rotation_pivot = NodePath("EditIcon/Pencil/RotationPivot")
+box = NodePath("Box")
 metadata/_edit_lock_ = true
 
 [node name="Enemies" type="Node2D" parent="." unique_id=1698421393]
@@ -1351,7 +1455,13 @@ metadata/_edit_lock_ = true
 [connection signal="collected" from="EditorPowerUps/InspectorPowerup" to="EditorPowerUps/InspectorPowerup/Root/AnimationPlayer" method="play" binds= [&"scroll_collect"]]
 [connection signal="body_entered" from="Coins/Coin" to="Coins/Coin" method="_on_body_entered"]
 [connection signal="body_entered" from="Coins/Coin4" to="Coins/Coin4" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/Coin19" to="Coins/Coin19" method="_on_body_entered"]
 [connection signal="body_entered" from="Coins/Coin8" to="Coins/Coin8" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/Coin12" to="Coins/Coin12" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/Coin13" to="Coins/Coin13" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/Coin20" to="Coins/Coin20" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/Coin21" to="Coins/Coin21" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/Coin41" to="Coins/Coin41" method="_on_body_entered"]
 [connection signal="body_entered" from="Coins/Coin5" to="Coins/Coin5" method="_on_body_entered"]
 [connection signal="body_entered" from="Coins/Coin6" to="Coins/Coin6" method="_on_body_entered"]
 [connection signal="body_entered" from="Coins/Coin14" to="Coins/Coin14" method="_on_body_entered"]
@@ -1376,6 +1486,12 @@ metadata/_edit_lock_ = true
 [connection signal="body_entered" from="Coins/Coin39" to="Coins/Coin39" method="_on_body_entered"]
 [connection signal="body_entered" from="Coins/Coin22" to="Coins/Coin22" method="_on_body_entered"]
 [connection signal="body_entered" from="Coins/Coin24" to="Coins/Coin24" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/Coin2" to="Coins/Coin2" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/Coin23" to="Coins/Coin23" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/Coin40" to="Coins/Coin40" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/Coin18" to="Coins/Coin18" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/Coin43" to="Coins/Coin43" method="_on_body_entered"]
+[connection signal="body_entered" from="Coins/Coin44" to="Coins/Coin44" method="_on_body_entered"]
 [connection signal="body_entered" from="Coins/Coin9" to="Coins/Coin9" method="_on_body_entered"]
 [connection signal="body_entered" from="Coins/Coin10" to="Coins/Coin10" method="_on_body_entered"]
 [connection signal="body_entered" from="Coins/Coin11" to="Coins/Coin11" method="_on_body_entered"]
