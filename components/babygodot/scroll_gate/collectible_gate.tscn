@@ -6,9 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://b7cqh35t583ol" path="res://components/babygodot/scroll_gate/assets/LockedGate_PillarTop_Grey.png" id="3_pdx6j"]
 [ext_resource type="Texture2D" uid="uid://dqf4nrmw0eoo0" path="res://components/babygodot/scroll_gate/assets/LockedGate_PillarBottom_Grey.png" id="4_nph78"]
 [ext_resource type="Texture2D" uid="uid://4n1ihuhcbax2" path="res://components/babygodot/scroll_gate/assets/LockedGate_Left.png" id="6_bg4bk"]
-[ext_resource type="PackedScene" uid="uid://s7td1yo8mpag" path="res://components/babygodot/vfx/vfx_Dust.tscn" id="6_q4jkb"]
+[ext_resource type="PackedScene" uid="uid://s7td1yo8mpag" path="res://components/babygodot/vfx/vfx_dust.tscn" id="6_q4jkb"]
 [ext_resource type="PackedScene" uid="uid://cqguk6cy3mt15" path="res://components/babygodot/info_indicator/info_indicator.tscn" id="7_pdx6j"]
+[ext_resource type="PackedScene" uid="uid://duigd0ecs02ll" path="res://components/babygodot/vfx/vfx_bokehCluster_driftUpwards.tscn" id="7_r8prq"]
 [ext_resource type="Texture2D" uid="uid://o1vxw6uuw380" path="res://components/babygodot/scroll_gate/assets/LockedGate_Right.png" id="7_t4cqe"]
+[ext_resource type="PackedScene" uid="uid://di3e1mbco5us6" path="res://components/babygodot/vfx/vfx_sparkle_driftUpwards.tscn" id="8_8gatj"]
 [ext_resource type="PackedScene" uid="uid://btsrp73a83f83" path="res://components/babygodot/scroll_gate/components/lantern.tscn" id="8_bg4bk"]
 [ext_resource type="Texture2D" uid="uid://b8k3kxtymkdd4" path="res://components/babygodot/scroll_gate/assets/LanternRight_Front.png" id="9_t4cqe"]
 [ext_resource type="Script" uid="uid://bu2pxl3f0yrsx" path="res://components/babygodot/scroll_gate/components/gate_animation_controller.gd" id="11_83ym3"]
@@ -162,6 +164,30 @@ tracks/7/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("NewGate/GateCollision/DoorSparkles:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("NewGate/GateCollision/DoorSparkles:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_cn82r"]
 resource_name = "not_enough_scrolls"
@@ -217,7 +243,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_83ym3"]
 resource_name = "open"
-length = 1.5
+length = 1.8
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -289,6 +315,30 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0.5294118), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("NewGate/GateCollision/DoorSparkles:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.8666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("NewGate/GateCollision/DoorSparkles:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.8666667, 1, 1.4, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_83ym3"]
@@ -407,6 +457,16 @@ visible = false
 modulate = Color(1, 1, 1, 0)
 z_index = 15
 position = Vector2(-8.666667, 71.33333)
+
+[node name="DoorSparkles" type="Node2D" parent="NewGate/GateCollision" unique_id=1732104974]
+visible = false
+modulate = Color(1, 1, 1, 0)
+z_index = 15
+position = Vector2(-13.333333, 47.33333)
+
+[node name="BokehVFX_Cluster" parent="NewGate/GateCollision/DoorSparkles" unique_id=1245482636 instance=ExtResource("7_r8prq")]
+
+[node name="SparkleVFX" parent="NewGate/GateCollision/DoorSparkles" unique_id=1416552907 instance=ExtResource("8_8gatj")]
 
 [node name="LockedGateLeft" type="Sprite2D" parent="NewGate" unique_id=275836650]
 position = Vector2(-14, 0)
