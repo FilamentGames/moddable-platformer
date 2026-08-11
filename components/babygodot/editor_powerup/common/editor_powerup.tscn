@@ -1,8 +1,194 @@
 [gd_scene format=3 uid="uid://deurro1x5gm85"]
 
 [ext_resource type="Animation" uid="uid://btkel0krg336y" path="res://components/babygodot/yarnspark/animations/scroll_hover.tres" id="1_7gv2u"]
-[ext_resource type="Texture2D" uid="uid://bfd5dadmuxk3b" path="res://components/babygodot/editor_powerup/icons/FileList.svg" id="1_gpaed"]
 [ext_resource type="Script" uid="uid://bknjyyvfw422p" path="res://components/babygodot/editor_powerup/common/editor_powerup.gd" id="1_xkekm"]
+[ext_resource type="Texture2D" uid="uid://dnpkpd50bkwvd" path="res://components/babygodot/editor_powerup/icons/Powerup_SceneTree.png" id="3_hi1ih"]
+[ext_resource type="PackedScene" uid="uid://cfouqrodflylp" path="res://components/babygodot/vfx/vfx_bokehCluster.tscn" id="4_4r5xq"]
+[ext_resource type="PackedScene" uid="uid://ds648tqxmypxm" path="res://components/babygodot/vfx/vfx_sparkle.tscn" id="4_gtq4h"]
+[ext_resource type="PackedScene" uid="uid://duigd0ecs02ll" path="res://components/babygodot/vfx/vfx_bokehCluster_driftUpwards.tscn" id="6_hi1ih"]
+[ext_resource type="PackedScene" uid="uid://di3e1mbco5us6" path="res://components/babygodot/vfx/vfx_sparkle_driftUpwards.tscn" id="7_ojihs"]
+
+[sub_resource type="Animation" id="Animation_hi1ih"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("IdleVFX:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SparkleBurstVFX:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SparkleBurstVFX:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("IdleVFX:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprite2D:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, 2)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sprite2D:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ojihs"]
+resource_name = "scroll_collect"
+length = 0.5
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SparkleBurstVFX:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SparkleBurstVFX:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("IdleVFX:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("IdleVFX:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D:position")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.1976743),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 30), Vector2(0, -100)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprite2D:scale")
+tracks/5/interp = 2
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.19999999),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(2, 2), Vector2(2, 1), Vector2(2.5, 2.5)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sprite2D:modulate")
+tracks/6/interp = 2
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ojihs"]
+_data = {
+&"RESET": SubResource("Animation_hi1ih"),
+&"scroll_collect": SubResource("Animation_ojihs")
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xkekm"]
 _data = {
@@ -20,12 +206,14 @@ script = ExtResource("1_xkekm")
 position = Vector2(0, -12)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Root" unique_id=1110775477]
+libraries/ = SubResource("AnimationLibrary_ojihs")
 libraries/hover = SubResource("AnimationLibrary_xkekm")
 autoplay = &"hover/scroll_hover"
 speed_scale = 0.5
 
 [node name="Sprite2D" type="Sprite2D" parent="Root" unique_id=1171952676]
-texture = ExtResource("1_gpaed")
+scale = Vector2(2, 2)
+texture = ExtResource("3_hi1ih")
 
 [node name="Area2D" type="Area2D" parent="Root/Sprite2D" unique_id=303259003]
 collision_layer = 0
@@ -34,5 +222,24 @@ collision_layer = 0
 visible = false
 shape = SubResource("CircleShape2D_hmpfs")
 debug_color = Color(0.5038218, 0.42548925, 1, 0.18039216)
+
+[node name="IdleVFX" type="Node2D" parent="Root" unique_id=629330849]
+
+[node name="BokehVFX_Cluster" parent="Root/IdleVFX" unique_id=1245482636 instance=ExtResource("4_4r5xq")]
+position = Vector2(-7, 15)
+
+[node name="SparkleVFX" parent="Root/IdleVFX" unique_id=1416552907 instance=ExtResource("4_gtq4h")]
+position = Vector2(19, -13)
+
+[node name="SparkleVFX2" parent="Root/IdleVFX" unique_id=275842509 instance=ExtResource("4_gtq4h")]
+position = Vector2(-26, 25)
+
+[node name="SparkleBurstVFX" type="Node2D" parent="Root" unique_id=2099035952]
+visible = false
+
+[node name="BokehVFX_Cluster" parent="Root/SparkleBurstVFX" unique_id=1406709939 instance=ExtResource("6_hi1ih")]
+
+[node name="SparkleVFX2" parent="Root/SparkleBurstVFX" unique_id=513241947 instance=ExtResource("7_ojihs")]
+position = Vector2(0, -10)
 
 [connection signal="body_entered" from="Root/Sprite2D/Area2D" to="." method="on_collect" unbinds=1]
