@@ -21,7 +21,7 @@ script = ExtResource("1_w3ms2")
 double_jump = true
 
 [node name="DialogueMount" type="Node2D" parent="." unique_id=35473669]
-position = Vector2(0, -150)
+position = Vector2(0, -225)
 
 [node name="DoubleJumpParticles" type="CPUParticles2D" parent="." unique_id=1486600990]
 unique_name_in_owner = true
