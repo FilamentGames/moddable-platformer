@@ -469,273 +469,213 @@ collision_area = NodePath("Root/Sprite2D/Area2D")
 [node name="Coins" type="Node2D" parent="." unique_id=1860713878]
 
 [node name="Coin" type="Area2D" parent="Coins" unique_id=469589313 node_paths=PackedStringArray("animator") groups=["coins"] instance=ExtResource("6_qy02x")]
-modulate = Color(1, 1, 0, 1)
 position = Vector2(1434, 563)
 collision_layer = 2
 script = ExtResource("18_65vxu")
 texture = ExtResource("7_y3jo1")
-tint = Color(1, 1, 0, 1)
 animator = NodePath("AnimationPlayer")
 
 [node name="Coin4" type="Area2D" parent="Coins" unique_id=1137508267 node_paths=PackedStringArray("animator") groups=["coins"] instance=ExtResource("6_qy02x")]
-modulate = Color(1, 1, 0, 1)
 position = Vector2(9374, -592)
 collision_layer = 2
 script = ExtResource("18_65vxu")
 texture = ExtResource("7_y3jo1")
-tint = Color(1, 1, 0, 1)
 animator = NodePath("AnimationPlayer")
 
 [node name="Coin8" type="Area2D" parent="Coins" unique_id=1399238642 node_paths=PackedStringArray("animator") groups=["coins"] instance=ExtResource("6_qy02x")]
-modulate = Color(1, 1, 0, 1)
 position = Vector2(3020, 448)
 collision_layer = 2
 script = ExtResource("18_65vxu")
 texture = ExtResource("7_y3jo1")
-tint = Color(1, 1, 0, 1)
 animator = NodePath("AnimationPlayer")
 
 [node name="Coin5" type="Area2D" parent="Coins" unique_id=1885911067 node_paths=PackedStringArray("animator") groups=["coins"] instance=ExtResource("6_qy02x")]
-modulate = Color(1, 1, 0, 1)
 position = Vector2(9832, -898)
 collision_layer = 2
 script = ExtResource("18_65vxu")
 texture = ExtResource("7_y3jo1")
-tint = Color(1, 1, 0, 1)
 animator = NodePath("AnimationPlayer")
 
 [node name="Coin6" type="Area2D" parent="Coins" unique_id=1933861692 node_paths=PackedStringArray("animator") groups=["coins"] instance=ExtResource("6_qy02x")]
-modulate = Color(1, 1, 0, 1)
 position = Vector2(8968, -408)
 collision_layer = 2
 script = ExtResource("18_65vxu")
 texture = ExtResource("7_y3jo1")
-tint = Color(1, 1, 0, 1)
 animator = NodePath("AnimationPlayer")
 
 [node name="Coin14" type="Area2D" parent="Coins" unique_id=626819192 node_paths=PackedStringArray("animator") groups=["coins"] instance=ExtResource("6_qy02x")]
-modulate = Color(1, 1, 0, 1)
 position = Vector2(9272, 187)
 collision_layer = 2
 script = ExtResource("18_65vxu")
 texture = ExtResource("7_y3jo1")
-tint = Color(1, 1, 0, 1)
 animator = NodePath("AnimationPlayer")
 
 [node name="Coin15" type="Area2D" parent="Coins" unique_id=1171510110 node_paths=PackedStringArray("animator") groups=["coins"] instance=ExtResource("6_qy02x")]
-modulate = Color(1, 1, 0, 1)
 position = Vector2(9410, 183)
 collision_layer = 2
 script = ExtResource("18_65vxu")
 texture = ExtResource("7_y3jo1")
-tint = Color(1, 1, 0, 1)
 animator = NodePath("AnimationPlayer")
 
 [node name="Coin7" type="Area2D" parent="Coins" unique_id=1112119096 node_paths=PackedStringArray("animator") groups=["coins"] instance=ExtResource("6_qy02x")]
-modulate = Color(1, 1, 0, 1)
 position = Vector2(6024, -210)
 collision_layer = 2
 script = ExtResource("18_65vxu")
 texture = ExtResource("7_y3jo1")
-tint = Color(1, 1, 0, 1)
 animator = NodePath("AnimationPlayer")
 
 [node name="Coin16" type="Area2D" parent="Coins" unique_id=2061226785 node_paths=PackedStringArray("animator") groups=["coins"] instance=ExtResource("6_qy02x")]
-modulate = Color(1, 1, 0, 1)
 position = Vector2(6152, -210)
 collision_layer = 2
 script = ExtResource("18_65vxu")
 texture = ExtResource("7_y3jo1")
-tint = Color(1, 1, 0, 1)
 animator = NodePath("AnimationPlayer")
 
 [node name="Coin17" type="Area2D" parent="Coins" unique_id=813038471 node_paths=PackedStringArray("animator") groups=["coins"] instance=ExtResource("6_qy02x")]
-modulate = Color(1, 1, 0, 1)
 position = Vector2(5896, -210)
 collision_layer = 2
 script = ExtResource("18_65vxu")
 texture = ExtResource("7_y3jo1")
-tint = Color(1, 1, 0, 1)
 animator = NodePath("AnimationPlayer")
 
 [node name="Coin25" type="Area2D" parent="Coins" unique_id=2141970909 node_paths=PackedStringArray("animator") groups=["coins"] instance=ExtResource("6_qy02x")]
-modulate = Color(1, 1, 0, 1)
 position = Vector2(11581, 167)
 collision_layer = 2
 script = ExtResource("18_65vxu")
 texture = ExtResource("7_y3jo1")
-tint = Color(1, 1, 0, 1)
 animator = NodePath("AnimationPlayer")
 
 [node name="Coin26" type="Area2D" parent="Coins" unique_id=339068610 node_paths=PackedStringArray("animator") groups=["coins"] instance=ExtResource("6_qy02x")]
-modulate = Color(1, 1, 0, 1)
 position = Vector2(11709, 167)
 collision_layer = 2
 script = ExtResource("18_65vxu")
 texture = ExtResource("7_y3jo1")
-tint = Color(1, 1, 0, 1)
 animator = NodePath("AnimationPlayer")
 
 [node name="Coin27" type="Area2D" parent="Coins" unique_id=255646174 node_paths=PackedStringArray("animator") groups=["coins"] instance=ExtResource("6_qy02x")]
-modulate = Color(1, 1, 0, 1)
 position = Vector2(11453, 167)
 collision_layer = 2
 script = ExtResource("18_65vxu")
 texture = ExtResource("7_y3jo1")
-tint = Color(1, 1, 0, 1)
 animator = NodePath("AnimationPlayer")
 
 [node name="Coin28" type="Area2D" parent="Coins" unique_id=1070127638 node_paths=PackedStringArray("animator") groups=["coins"] instance=ExtResource("6_qy02x")]
-modulate = Color(1, 1, 0, 1)
 position = Vector2(12088, -108)
 collision_layer = 2
 script = ExtResource("18_65vxu")
 texture = ExtResource("7_y3jo1")
-tint = Color(1, 1, 0, 1)
 animator = NodePath("AnimationPlayer")
 
 [node name="Coin29" type="Area2D" parent="Coins" unique_id=1367226272 node_paths=PackedStringArray("animator") groups=["coins"] instance=ExtResource("6_qy02x")]
-modulate = Color(1, 1, 0, 1)
 position = Vector2(12216, -108)
 collision_layer = 2
 script = ExtResource("18_65vxu")
 texture = ExtResource("7_y3jo1")
-tint = Color(1, 1, 0, 1)
 animator = NodePath("AnimationPlayer")
 
 [node name="Coin30" type="Area2D" parent="Coins" unique_id=326576021 node_paths=PackedStringArray("animator") groups=["coins"] instance=ExtResource("6_qy02x")]
-modulate = Color(1, 1, 0, 1)
 position = Vector2(11960, -108)
 collision_layer = 2
 script = ExtResource("18_65vxu")
 texture = ExtResource("7_y3jo1")
-tint = Color(1, 1, 0, 1)
 animator = NodePath("AnimationPlayer")
 
 [node name="Coin31" type="Area2D" parent="Coins" unique_id=1095254317 node_paths=PackedStringArray("animator") groups=["coins"] instance=ExtResource("6_qy02x")]
-modulate = Color(1, 1, 0, 1)
 position = Vector2(10873, -781)
 collision_layer = 2
 script = ExtResource("18_65vxu")
 texture = ExtResource("7_y3jo1")
-tint = Color(1, 1, 0, 1)
 animator = NodePath("AnimationPlayer")
 
 [node name="Coin32" type="Area2D" parent="Coins" unique_id=474037 node_paths=PackedStringArray("animator") groups=["coins"] instance=ExtResource("6_qy02x")]
-modulate = Color(1, 1, 0, 1)
 position = Vector2(11024, -781)
 collision_layer = 2
 script = ExtResource("18_65vxu")
 texture = ExtResource("7_y3jo1")
-tint = Color(1, 1, 0, 1)
 animator = NodePath("AnimationPlayer")
 
 [node name="Coin33" type="Area2D" parent="Coins" unique_id=2031944195 node_paths=PackedStringArray("animator") groups=["coins"] instance=ExtResource("6_qy02x")]
-modulate = Color(1, 1, 0, 1)
 position = Vector2(11172, -781)
 collision_layer = 2
 script = ExtResource("18_65vxu")
 texture = ExtResource("7_y3jo1")
-tint = Color(1, 1, 0, 1)
 animator = NodePath("AnimationPlayer")
 
 [node name="Coin34" type="Area2D" parent="Coins" unique_id=1663518018 node_paths=PackedStringArray("animator") groups=["coins"] instance=ExtResource("6_qy02x")]
-modulate = Color(1, 1, 0, 1)
 position = Vector2(10870, -655)
 collision_layer = 2
 script = ExtResource("18_65vxu")
 texture = ExtResource("7_y3jo1")
-tint = Color(1, 1, 0, 1)
 animator = NodePath("AnimationPlayer")
 
 [node name="Coin35" type="Area2D" parent="Coins" unique_id=1358032541 node_paths=PackedStringArray("animator") groups=["coins"] instance=ExtResource("6_qy02x")]
-modulate = Color(1, 1, 0, 1)
 position = Vector2(11021, -655)
 collision_layer = 2
 script = ExtResource("18_65vxu")
 texture = ExtResource("7_y3jo1")
-tint = Color(1, 1, 0, 1)
 animator = NodePath("AnimationPlayer")
 
 [node name="Coin36" type="Area2D" parent="Coins" unique_id=1180510130 node_paths=PackedStringArray("animator") groups=["coins"] instance=ExtResource("6_qy02x")]
-modulate = Color(1, 1, 0, 1)
 position = Vector2(11169, -655)
 collision_layer = 2
 script = ExtResource("18_65vxu")
 texture = ExtResource("7_y3jo1")
-tint = Color(1, 1, 0, 1)
 animator = NodePath("AnimationPlayer")
 
 [node name="Coin37" type="Area2D" parent="Coins" unique_id=2023911982 node_paths=PackedStringArray("animator") groups=["coins"] instance=ExtResource("6_qy02x")]
-modulate = Color(1, 1, 0, 1)
 position = Vector2(10870, -522)
 collision_layer = 2
 script = ExtResource("18_65vxu")
 texture = ExtResource("7_y3jo1")
-tint = Color(1, 1, 0, 1)
 animator = NodePath("AnimationPlayer")
 
 [node name="Coin38" type="Area2D" parent="Coins" unique_id=1202771543 node_paths=PackedStringArray("animator") groups=["coins"] instance=ExtResource("6_qy02x")]
-modulate = Color(1, 1, 0, 1)
 position = Vector2(11021, -522)
 collision_layer = 2
 script = ExtResource("18_65vxu")
 texture = ExtResource("7_y3jo1")
-tint = Color(1, 1, 0, 1)
 animator = NodePath("AnimationPlayer")
 
 [node name="Coin39" type="Area2D" parent="Coins" unique_id=1174696577 node_paths=PackedStringArray("animator") groups=["coins"] instance=ExtResource("6_qy02x")]
-modulate = Color(1, 1, 0, 1)
 position = Vector2(11169, -522)
 collision_layer = 2
 script = ExtResource("18_65vxu")
 texture = ExtResource("7_y3jo1")
-tint = Color(1, 1, 0, 1)
 animator = NodePath("AnimationPlayer")
 
 [node name="Coin22" type="Area2D" parent="Coins" unique_id=91508137 node_paths=PackedStringArray("animator") groups=["coins"] instance=ExtResource("6_qy02x")]
-modulate = Color(1, 1, 0, 1)
 position = Vector2(1697, 558)
 collision_layer = 2
 script = ExtResource("18_65vxu")
 texture = ExtResource("7_y3jo1")
-tint = Color(1, 1, 0, 1)
 animator = NodePath("AnimationPlayer")
 
 [node name="Coin24" type="Area2D" parent="Coins" unique_id=334811006 node_paths=PackedStringArray("animator") groups=["coins"] instance=ExtResource("6_qy02x")]
-modulate = Color(1, 1, 0, 1)
 position = Vector2(1569, 558)
 collision_layer = 2
 script = ExtResource("18_65vxu")
 texture = ExtResource("7_y3jo1")
-tint = Color(1, 1, 0, 1)
 animator = NodePath("AnimationPlayer")
 
 [node name="Coin9" type="Area2D" parent="Coins" unique_id=2052277588 node_paths=PackedStringArray("animator") groups=["coins"] instance=ExtResource("6_qy02x")]
-modulate = Color(1, 1, 0, 1)
 position = Vector2(9723, -898)
 collision_layer = 2
 script = ExtResource("18_65vxu")
 texture = ExtResource("7_y3jo1")
-tint = Color(1, 1, 0, 1)
 animator = NodePath("AnimationPlayer")
 
 [node name="Coin10" type="Area2D" parent="Coins" unique_id=2073649153 node_paths=PackedStringArray("animator") groups=["coins"] instance=ExtResource("6_qy02x")]
-modulate = Color(1, 1, 0, 1)
 position = Vector2(8840, -344)
 collision_layer = 2
 script = ExtResource("18_65vxu")
 texture = ExtResource("7_y3jo1")
-tint = Color(1, 1, 0, 1)
 animator = NodePath("AnimationPlayer")
 
 [node name="Coin11" type="Area2D" parent="Coins" unique_id=1756350612 node_paths=PackedStringArray("animator") groups=["coins"] instance=ExtResource("6_qy02x")]
-modulate = Color(1, 1, 0, 1)
 position = Vector2(9096, -344)
 collision_layer = 2
 script = ExtResource("18_65vxu")
 texture = ExtResource("7_y3jo1")
-tint = Color(1, 1, 0, 1)
 animator = NodePath("AnimationPlayer")
 
 [node name="SpecialCoins" type="Node2D" parent="." unique_id=1574538873]
@@ -747,12 +687,10 @@ editor_description = "Special coins are ignored when calculating the total numbe
 The only difference compared to coin.tscn is that special_coin.tscn is not in the \"coins\" group.
 
 Use this scene for optional coins to the level, such as coins which can only be accessed by enabling new player abilitiies."
-modulate = Color(1, 0.560065, 0.377408, 1)
 position = Vector2(4149, -1711)
 collision_layer = 2
 script = ExtResource("18_65vxu")
 texture = ExtResource("7_y3jo1")
-tint = Color(1, 0.560065, 0.377408, 1)
 
 [node name="Platforms" type="Node2D" parent="." unique_id=1115693790]
 position = Vector2(1920, -64)
