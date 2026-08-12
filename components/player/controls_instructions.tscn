@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://b61bdl6mlg5jn"]
 
+[ext_resource type="Texture2D" uid="uid://bsnokgcmdmosg" path="res://components/player/BackgroundHack.png" id="1_hh83k"]
 [ext_resource type="Texture2D" uid="uid://bqwhe8sr3v3io" path="res://assets/input-prompts/keyboard-and-mouse_sheet_default/keyboard_arrow_left.tres" id="6_l85mt"]
 [ext_resource type="Texture2D" uid="uid://cc5h4erdbccwm" path="res://assets/input-prompts/keyboard-and-mouse_sheet_default/keyboard_arrow_up.tres" id="7_0w1g3"]
 [ext_resource type="Texture2D" uid="uid://dj51dx4uw5e5u" path="res://assets/input-prompts/keyboard-and-mouse_sheet_default/keyboard_arrow_right.tres" id="8_kaggf"]
@@ -26,6 +27,15 @@ offset_bottom = 484.0
 grow_horizontal = 2
 theme = SubResource("Theme_ncwqi")
 theme_override_constants/separation = 32
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1734073554]
+position = Vector2(309, 246)
+scale = Vector2(2, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D" unique_id=267250352]
+modulate = Color(0.28235295, 0.67058825, 0.65882355, 1)
+scale = Vector2(2, 2)
+texture = ExtResource("1_hh83k")
 
 [node name="Label" type="Label" parent="." unique_id=390879174]
 layout_mode = 2
