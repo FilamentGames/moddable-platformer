@@ -23,3 +23,6 @@ signal checkpoint_position(position: Vector2)
 
 ## Emitted when the quest line is marked for a celebration animation
 signal celebration_animation()
+
+## Emitted when the game is resumed from edit mode
+signal game_unpaused()
