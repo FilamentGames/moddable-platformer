@@ -431,23 +431,23 @@ _data = {
 &"open": SubResource("Animation_83ym3")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2r2st"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5cdd4"]
 resource_local_to_scene = true
 size = Vector2(94, 258)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mxctc"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i8u1w"]
 resource_local_to_scene = true
 size = Vector2(94, 258)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xbyg8"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_un2y7"]
 resource_local_to_scene = true
 size = Vector2(94, 258)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xfpyq"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aofud"]
 resource_local_to_scene = true
 size = Vector2(94, 258)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cqpv4"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2kvr8"]
 resource_local_to_scene = true
 size = Vector2(94, 258)
 
@@ -936,7 +936,7 @@ behavior = NodePath("SkipQuestTriggerBehavior")
 delete_from_scene = true
 
 [node name="CollisionShape2D" parent="Triggers/ForceQuestProgressTrigger_SolvedRockPuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_2r2st")
+shape = SubResource("RectangleShape2D_5cdd4")
 
 [node name="SkipQuestTriggerBehavior" parent="Triggers/ForceQuestProgressTrigger_SolvedRockPuzzle" index="1" unique_id=1238036962]
 script = ExtResource("29_poyld")
@@ -989,7 +989,7 @@ behavior = NodePath("Behavior")
 delete_from_scene = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_mxctc")
+shape = SubResource("RectangleShape2D_i8u1w")
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
 script = ExtResource("23_8knqs")
@@ -1003,7 +1003,7 @@ behavior = NodePath("Behavior")
 delete_from_scene = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_xbyg8")
+shape = SubResource("RectangleShape2D_un2y7")
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
 script = ExtResource("23_8knqs")
@@ -1017,7 +1017,7 @@ behavior = NodePath("Behavior")
 delete_from_scene = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle2" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_xfpyq")
+shape = SubResource("RectangleShape2D_aofud")
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle2" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
 script = ExtResource("23_8knqs")
@@ -1031,7 +1031,7 @@ behavior = NodePath("Behavior")
 delete_from_scene = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_cqpv4")
+shape = SubResource("RectangleShape2D_2kvr8")
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
 script = ExtResource("23_8knqs")
@@ -1716,6 +1716,73 @@ script = ExtResource("53_y8cc3")
 talk_display = NodePath("TalkDisplay")
 control_display = NodePath("ControlDisplay")
 
+[node name="Npc_Sheep2" parent="NPCs" unique_id=434471359 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container", "control_display") instance=ExtResource("3_27os8")]
+position = Vector2(7176, 242)
+script = ExtResource("16_8knqs")
+dialogue_lines = Array[String](["Baa-a-a-a!"])
+flip_to_face_player = true
+sprite = NodePath("AnimatedSprite2D")
+player_detector = NodePath("Area2D")
+dialogue_container = NodePath("DialogueMount")
+control_display = NodePath("ControlDisplay")
+
+[node name="AnimatedSprite2D" parent="NPCs/Npc_Sheep2" index="0" unique_id=1376270546]
+sprite_frames = ExtResource("25_pj073")
+autoplay = "default"
+flip_h = true
+
+[node name="DialogueMount" parent="NPCs/Npc_Sheep2" index="1" unique_id=1542232851]
+position = Vector2(0, -250)
+
+[node name="Area2D" parent="NPCs/Npc_Sheep2" index="2" unique_id=18542653]
+collision_layer = 0
+
+[node name="CollisionShape2D" parent="NPCs/Npc_Sheep2/Area2D" index="0" unique_id=226621961]
+visible = false
+position = Vector2(0, -6.5)
+scale = Vector2(0.5599989, 1)
+shape = SubResource("RectangleShape2D_0ff8d")
+
+[node name="ControlDisplay" parent="NPCs/Npc_Sheep2" index="3" unique_id=1300373774 node_paths=PackedStringArray("talk_display", "control_display")]
+visible = false
+position = Vector2(0, -75)
+script = ExtResource("53_y8cc3")
+talk_display = NodePath("TalkDisplay")
+control_display = NodePath("ControlDisplay")
+
+[node name="Npc_Sheep3" parent="NPCs" unique_id=1255304457 node_paths=PackedStringArray("sprite", "player_detector", "dialogue_container", "control_display") instance=ExtResource("3_27os8")]
+position = Vector2(7729, 510)
+script = ExtResource("16_8knqs")
+dialogue_lines = Array[String](["Baaaaa!"])
+flip_to_face_player = true
+sprite = NodePath("AnimatedSprite2D")
+player_detector = NodePath("Area2D")
+dialogue_container = NodePath("DialogueMount")
+control_display = NodePath("ControlDisplay")
+
+[node name="AnimatedSprite2D" parent="NPCs/Npc_Sheep3" index="0" unique_id=1376270546]
+sprite_frames = ExtResource("25_pj073")
+autoplay = "default"
+
+[node name="DialogueMount" parent="NPCs/Npc_Sheep3" index="1" unique_id=1542232851]
+position = Vector2(0, -250)
+
+[node name="Area2D" parent="NPCs/Npc_Sheep3" index="2" unique_id=18542653]
+collision_layer = 0
+
+[node name="CollisionShape2D" parent="NPCs/Npc_Sheep3/Area2D" index="0" unique_id=226621961]
+visible = false
+position = Vector2(0, -6.5)
+scale = Vector2(0.5599989, 1)
+shape = SubResource("RectangleShape2D_0ff8d")
+
+[node name="ControlDisplay" parent="NPCs/Npc_Sheep3" index="3" unique_id=1300373774 node_paths=PackedStringArray("talk_display", "control_display")]
+visible = false
+position = Vector2(0, -75)
+script = ExtResource("53_y8cc3")
+talk_display = NodePath("TalkDisplay")
+control_display = NodePath("ControlDisplay")
+
 [node name="Boss" type="Node2D" parent="." unique_id=2087395625]
 
 [node name="Moth" type="Node2D" parent="Boss" unique_id=1891005358 node_paths=PackedStringArray("sprite") instance=ExtResource("27_x2f4c")]
@@ -1958,6 +2025,10 @@ script = ExtResource("64_y8cc3")
 [connection signal="body_exited" from="NPCs/Npc_MonkFlavor/Area2D" to="NPCs/Npc_MonkFlavor" method="_player_exited"]
 [connection signal="body_entered" from="NPCs/Npc_Sheep/Area2D" to="NPCs/Npc_Sheep" method="_player_entered"]
 [connection signal="body_exited" from="NPCs/Npc_Sheep/Area2D" to="NPCs/Npc_Sheep" method="_player_exited"]
+[connection signal="body_entered" from="NPCs/Npc_Sheep2/Area2D" to="NPCs/Npc_Sheep2" method="_player_entered"]
+[connection signal="body_exited" from="NPCs/Npc_Sheep2/Area2D" to="NPCs/Npc_Sheep2" method="_player_exited"]
+[connection signal="body_entered" from="NPCs/Npc_Sheep3/Area2D" to="NPCs/Npc_Sheep3" method="_player_entered"]
+[connection signal="body_exited" from="NPCs/Npc_Sheep3/Area2D" to="NPCs/Npc_Sheep3" method="_player_exited"]
 
 [editable path="ScrollGates/ScrollGate3"]
 [editable path="ScrollGates/ScrollGate3/NewGate/GateCollision/DoorOpenDust/DustLeft"]
@@ -1970,3 +2041,5 @@ script = ExtResource("64_y8cc3")
 [editable path="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle"]
 [editable path="NPCs/Npc_MonkFlavor"]
 [editable path="NPCs/Npc_Sheep"]
+[editable path="NPCs/Npc_Sheep2"]
+[editable path="NPCs/Npc_Sheep3"]
