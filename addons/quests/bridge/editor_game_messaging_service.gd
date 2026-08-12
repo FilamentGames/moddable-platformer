@@ -66,7 +66,7 @@ func _handle_global_messages(message: String, data: Array) -> bool:
 func _trigger_signal_in_abstract_inboxes(signal_name: String, data: Variant = null) -> bool:
 	print("Emitting signal for global message: " + signal_name)
 	for obj: AbstractMessagingInbox in _object_map.values():
-		if data:
+		if data != null:
 			obj[signal_name].emit(data)
 		else:
 			obj[signal_name].emit()

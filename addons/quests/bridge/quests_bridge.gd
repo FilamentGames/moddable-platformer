@@ -96,6 +96,7 @@ func _capture(message, data, session_id):
 			return true
 		"deplete_scrolls":
 			GlobalQuests.quests.deplete_scrolls(data[1])
+			_send_message(session_id, -1, "scrolls_updated", [GlobalQuests.quests.scrolls_collected.size()])
 			return true
 		"swap_node_with_prefab":
 			_swapped_objects.append({
