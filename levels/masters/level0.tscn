@@ -816,8 +816,8 @@ visible = false
 
 [node name="CanvasLayer" parent="ScrollGates/ScrollGate3/InfoIndicator/InfoTree" index="0" unique_id=240023699]
 visible = false
-offset = Vector2(11325, -481)
-transform = Transform2D(1, 0, 0, 1, 11325, -481)
+offset = Vector2(11325, -488)
+transform = Transform2D(1, 0, 0, 1, 11325, -488)
 follow_viewport_enabled = true
 
 [node name="UIContainer" parent="ScrollGates/ScrollGate3/InfoIndicator/InfoTree/CanvasLayer" index="0" unique_id=536485302]
@@ -885,6 +885,7 @@ script = ExtResource("35_fnu5h")
 sprite_frames = ExtResource("36_jf12t")
 
 [node name="Triggers" type="Node2D" parent="." unique_id=1993564345]
+visible = false
 
 [node name="ScreenShakeTrigger" type="Area2D" parent="Triggers" unique_id=1750362101 node_paths=PackedStringArray("behavior") instance=ExtResource("15_0aei4")]
 position = Vector2(460, 515)
