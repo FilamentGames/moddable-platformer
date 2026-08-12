@@ -13,6 +13,9 @@ func _ready() -> void:
 	bridge = InGameQuestsBridge.new()
 	bridge.scroll_quantity.connect(_update_scroll_label)
 	bridge.get_number_of_scrolls()
+	bridge.game_unpaused.connect(func():
+		bridge.get_number_of_scrolls()
+	)
 
 func _update_scroll_label(quantity: int) -> void:
 	scroll_count_label.text = str(quantity)

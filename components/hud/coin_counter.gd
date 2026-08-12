@@ -16,6 +16,9 @@ func _ready() -> void:
 	bridge.global_coins.connect(_update_coins_label)
 	bridge.get_global_coins()
 	Global.coin_collected.connect(_increment_coins_label)
+	bridge.game_unpaused.connect(func():
+		bridge.get_global_coins()
+	)
 
 func _update_coins_label(quantity: int) -> void:
 	internal_coin_count = quantity
