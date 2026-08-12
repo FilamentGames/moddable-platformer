@@ -19,6 +19,8 @@ signal collected
 ## If the yarnspark has been collected and is just animating out
 var _is_collected := false
 
+var _bridge: InGameQuestsBridge
+
 ## This is set to true if the Collectible is in an invalid state
 var error_state := false:
 	get:
@@ -74,6 +76,13 @@ func _ready() -> void:
 	)
 	condition_updated.emit(condition.is_condition_met())
 	_clear_error_state()
+
+	if not _bridge and not Engine.is_editor_hint():
+		_bridge = InGameQuestsBridge.new()
+	
+	_bridge.game_unpaused.connect(func():
+		condition_updated.emit(condition.is_condition_met())
+	)
 
 ## Called when the player collides with the scroll and tries to collect it
 func _player_collect() -> void:
