@@ -59,6 +59,8 @@ func _handle_global_messages(message: String, data: Array) -> bool:
 			return _trigger_signal_in_abstract_inboxes("global_coins", data[0])
 		"celebration_animation":
 			return _trigger_signal_in_abstract_inboxes("celebration_animation")
+		"game_unpaused":
+			return _trigger_signal_in_abstract_inboxes("game_unpaused")
 	return false
 
 func _trigger_signal_in_abstract_inboxes(signal_name: String, data: Variant = null) -> bool:

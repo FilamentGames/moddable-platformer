@@ -109,6 +109,8 @@ func _setup_session(session_id):
 	var session = get_session(session_id)
 	session.started.connect(_on_session_start)
 	session.stopped.connect(_on_session_stop)
+	session.breaked.connect(_on_session_stop.unbind(1))
+	session.continued.connect(_on_session_continue.bind(session_id))
 	GlobalQuests.quests.scroll_collected.connect(_on_scroll_collected.bind(session_id))
 	GlobalQuests.quests.hint_purchased.connect(_on_hint_purchased.bind(session_id))
 	GlobalQuests.quests.celebration_animation.connect(_on_celebration_animation.bind(session_id))
@@ -129,6 +131,9 @@ func _on_session_start() -> void:
 	GlobalQuests.quests.set_scene_tree_dock_visible(false)
 	GlobalQuests.quests.set_quest_dock_visible(false)
 	GlobalQuests.quests.hide_bottom_panel()
+
+func _on_session_continue(session_id: int) -> void:
+	_send_message(session_id, -1, "game_unpaused", [])
 
 func _on_session_stop() -> void:
 	print("Quest bridge stopped")
