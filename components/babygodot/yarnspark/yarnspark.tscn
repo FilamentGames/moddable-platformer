@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://odpmnclrocgd" path="res://components/babygodot/yarnspark/yarnspark.gd" id="1_6emoc"]
 [ext_resource type="PackedScene" uid="uid://f2mqtjb5kfo8" path="res://components/babygodot/yarnspark/components/collectible_continuity.tscn" id="2_3i822"]
+[ext_resource type="Texture2D" uid="uid://dqsdpegfbqav4" path="res://components/babygodot/yarnspark/assets/idle/yarnspark_idle_1.png" id="2_4p2b6"]
 [ext_resource type="PackedScene" uid="uid://cfouqrodflylp" path="res://components/babygodot/vfx/vfx_bokehCluster.tscn" id="4_csyau"]
-[ext_resource type="Texture2D" uid="uid://diaycckdbs082" path="res://components/babygodot/yarnspark/assets/Collectible_Yarnspark.png" id="5_4y73o"]
 [ext_resource type="PackedScene" uid="uid://ds648tqxmypxm" path="res://components/babygodot/vfx/vfx_sparkle.tscn" id="5_u8hei"]
 [ext_resource type="Texture2D" uid="uid://b4oh8we2fagny" path="res://components/babygodot/yarnspark/assets/disable/yarnspark_disable_1.png" id="5_x4bbt"]
 [ext_resource type="PackedScene" uid="uid://duigd0ecs02ll" path="res://components/babygodot/vfx/vfx_bokehCluster_driftUpwards.tscn" id="6_4p2b6"]
@@ -30,6 +30,8 @@
 [ext_resource type="Texture2D" uid="uid://d1imgk43mnchx" path="res://components/babygodot/yarnspark/assets/enable/yarnspark_enable_8.png" id="22_rvjt8"]
 [ext_resource type="Texture2D" uid="uid://bggu5e2phwkqw" path="res://components/babygodot/yarnspark/assets/enable/yarnspark_enable_9.png" id="23_1xdj2"]
 [ext_resource type="Texture2D" uid="uid://cpdaoxteygvmr" path="res://components/babygodot/yarnspark/assets/enable/yarnspark_enable_10.png" id="24_cl5bg"]
+[ext_resource type="Texture2D" uid="uid://cxbm4makdgdph" path="res://components/babygodot/yarnspark/assets/idle/yarnspark_idle_2.png" id="31_sdfgs"]
+[ext_resource type="Texture2D" uid="uid://dppb4r2nglqo5" path="res://components/babygodot/yarnspark/assets/idle/yarnspark_idle_3.png" id="32_iukko"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hmpfs"]
 size = Vector2(400, 360)
@@ -219,26 +221,26 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("../CollectionArea/CollisionShape2D/CollectibleYarnspark/Yarn/Glow:rotation")
+tracks/8/path = NodePath("InfoTree/CanvasLayer/UIContainer:modulate")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.0]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("InfoTree/CanvasLayer/UIContainer:modulate")
+tracks/9/path = NodePath("../CollectionArea/CollisionShape2D/CollectibleYarnspark/Yarn:texture")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
+"update": 1,
+"values": [ExtResource("2_4p2b6")]
 }
 
 [sub_resource type="Animation" id="Animation_72oni"]
@@ -343,7 +345,6 @@ tracks/7/keys = {
 
 [sub_resource type="Animation" id="Animation_tqbn7"]
 resource_name = "scroll_hover"
-length = 2.0
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -352,7 +353,7 @@ tracks/0/path = NodePath("../CollectionArea/CollisionShape2D/CollectibleYarnspar
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 2),
+"times": PackedFloat32Array(0, 0.4, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [-6.0, 6.0, -6.0]
@@ -372,14 +373,14 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../CollectionArea/CollisionShape2D/CollectibleYarnspark/Yarn/Glow:rotation")
+tracks/2/path = NodePath("../CollectionArea/CollisionShape2D/CollectibleYarnspark/Yarn:texture")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 6.283185307179586]
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6666667, 1.0000001),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("31_sdfgs"), ExtResource("32_iukko"), ExtResource("31_sdfgs"), ExtResource("2_4p2b6"), ExtResource("31_sdfgs")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4y73o"]
@@ -414,10 +415,11 @@ z_index = 1
 position = Vector2(0, -6)
 scale = Vector2(1.5, 1.5)
 
-[node name="Yarn" type="Sprite2D" parent="CollectionArea/CollisionShape2D/CollectibleYarnspark" unique_id=456317835]
-texture = ExtResource("5_4y73o")
+[node name="Yarn" type="Sprite2D" parent="CollectionArea/CollisionShape2D/CollectibleYarnspark" unique_id=624399945]
+position = Vector2(0, 4)
+texture = ExtResource("2_4p2b6")
 
-[node name="Glow" type="Sprite2D" parent="CollectionArea/CollisionShape2D/CollectibleYarnspark/Yarn" unique_id=183691432]
+[node name="Glow" type="Sprite2D" parent="CollectionArea/CollisionShape2D/CollectibleYarnspark/Yarn" unique_id=1246818831]
 position = Vector2(2, -0.19166668)
 texture = ExtResource("6_uqd5c")
 
