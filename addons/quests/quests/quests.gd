@@ -310,13 +310,11 @@ func skip_to_next_checkpoint() -> void:
 		return
 	var next_checkpoints: Array[Node] = BabyGodotUtils.get_all_children_of_type(scene, Checkpoint)
 	if next_checkpoints.is_empty():
-		print("No more checkpoints!")
 		return
 	var next_checkpoint = next_checkpoints[0]
 	while next_checkpoint and _skipped_checkpoints.has(UniqueSceneId.get_id(next_checkpoint)):
 		next_checkpoint = next_checkpoints.pop_front()
 	if not next_checkpoint:
-		print("No more checkpoints!")
 		return
 	player.position = next_checkpoint.position
 	_skipped_checkpoints.push_back(UniqueSceneId.get_id(next_checkpoint))
