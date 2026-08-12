@@ -16,6 +16,7 @@ var condition: MockScrollCondition
 func before_each():
 	scroll = autofree(Collectible.new())
 	scroll.label = autofree(RichTextLabel.new())
+	scroll._bridge = autofree(InGameQuestsBridge.new(autofree(MockEditorGameMessagingService.new())))
 	condition = autofree(MockScrollCondition.new())
 	scroll.add_child(condition)
 	condition.owner = scroll
@@ -86,3 +87,16 @@ func test_it_does_not_emit_a_signal_when_the_condition_state_does_not_change():
 		condition.condition_updated.emit(true)
 
 	assert_eq(spy.get_number_of_calls(), 1)
+
+func test_it_rechecks_condition_status_when_game_is_unpaused():
+	condition.condition_met = false
+	add_child(scroll)
+	var spy: CallableSpy = autofree(CallableSpy.new())
+	scroll.condition_updated.connect(spy.callable)
+
+	condition.condition_met = true
+
+	scroll._bridge.game_unpaused.emit()
+
+	assert_eq(spy.get_number_of_calls(), 1)
+	assert_true(spy._calls[0][0])
