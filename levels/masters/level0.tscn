@@ -40,6 +40,7 @@
 [ext_resource type="Script" uid="uid://cy7jyqmo2dl2b" path="res://components/babygodot/yarnspark/subtypes/intro_yarnspark.gd" id="18_33ble"]
 [ext_resource type="Script" uid="uid://b4j8f10agdcvu" path="res://scripts/coin.gd" id="18_65vxu"]
 [ext_resource type="PackedScene" uid="uid://beuisy5yrw0bq" path="res://components/flag/flag.tscn" id="18_crtlj"]
+[ext_resource type="Texture2D" uid="uid://64pgkmiayedd" path="res://components/babygodot/scroll_gate/assets/LanternLeft_Front.png" id="18_w6d5o"]
 [ext_resource type="SpriteFrames" uid="uid://de74lrhqf0xoa" path="res://components/player/spriteframes-storyweaver.tres" id="20_m7dqe"]
 [ext_resource type="Script" uid="uid://xvbi04ffe5e1" path="res://components/babygodot/trigger/change_editable_objects_trigger/change_editable_objects_trigger_behavior.gd" id="23_8knqs"]
 [ext_resource type="Script" uid="uid://clreg3c5ajgsr" path="res://components/babygodot/scroll_gate/collectible_gate.gd" id="23_eq0tf"]
@@ -48,21 +49,38 @@
 [ext_resource type="Script" uid="uid://dilh5jyuklov6" path="res://components/platform/platform.gd" id="24_twxhk"]
 [ext_resource type="SpriteFrames" uid="uid://dqgithrm1ikyn" path="res://assets/npcs/sheep.tres" id="25_pj073"]
 [ext_resource type="Script" uid="uid://bknjyyvfw422p" path="res://components/babygodot/editor_powerup/common/editor_powerup.gd" id="26_1tk8l"]
+[ext_resource type="Texture2D" uid="uid://b7cqh35t583ol" path="res://components/babygodot/scroll_gate/assets/LockedGate_PillarTop_Grey.png" id="26_5cdd4"]
 [ext_resource type="Script" uid="uid://cvs42517jpxhh" path="res://components/sign/sign.gd" id="26_ht26h"]
 [ext_resource type="PackedScene" uid="uid://1r6h0ihjbc77" path="res://components/babygodot/checkpoint/checkpoint.tscn" id="27_dt6hy"]
+[ext_resource type="Texture2D" uid="uid://dqf4nrmw0eoo0" path="res://components/babygodot/scroll_gate/assets/LockedGate_PillarBottom_Grey.png" id="27_i8u1w"]
 [ext_resource type="PackedScene" uid="uid://10andtcysmr4" path="res://components/babygodot/demo/boss/boss.tscn" id="27_x2f4c"]
 [ext_resource type="Script" uid="uid://umb21eb2y1oj" path="res://scripts/player.gd" id="28_kexs0"]
+[ext_resource type="Texture2D" uid="uid://bagiqu7srq5j0" path="res://components/babygodot/scroll_gate/assets/Door.png" id="28_un2y7"]
+[ext_resource type="Texture2D" uid="uid://cuqj0qpkcjhs2" path="res://components/babygodot/vfx/Textures/VFX_BokehSmall.png" id="29_aofud"]
 [ext_resource type="Script" uid="uid://brblg35gugk3w" path="res://components/babygodot/trigger/force_quest_progress_trigger/skip_quest_trigger_behavior.gd" id="29_poyld"]
 [ext_resource type="PackedScene" uid="uid://buefejfd3mb13" path="res://components/platform/platform_stone_thin.tscn" id="29_vnrdr"]
+[ext_resource type="Texture2D" uid="uid://hxgi3itfqb2m" path="res://components/babygodot/vfx/Textures/VFX_BokehMedium.png" id="30_2kvr8"]
+[ext_resource type="Texture2D" uid="uid://drhx0qfx25srs" path="res://components/babygodot/vfx/Textures/VFX_BokehLarge.png" id="31_okfqf"]
 [ext_resource type="PackedScene" uid="uid://dc6sydi7ycv7j" path="res://components/platform/platform_stone.tscn" id="31_w6d5o"]
 [ext_resource type="PackedScene" uid="uid://6xuod5sofp8c" path="res://components/platform/platform_basket_thin.tscn" id="32_1tk8l"]
+[ext_resource type="Texture2D" uid="uid://4n1ihuhcbax2" path="res://components/babygodot/scroll_gate/assets/LockedGate_Left.png" id="32_s5qse"]
 [ext_resource type="PackedScene" uid="uid://che3aoxmyk8m7" path="res://components/babygodot/trigger/demo_end_trigger/demo_end_trigger.tscn" id="32_t64e8"]
 [ext_resource type="Script" uid="uid://d003tgo4vrak8" path="res://components/enemy/enemy.gd" id="33_7cn4d"]
+[ext_resource type="Texture2D" uid="uid://o1vxw6uuw380" path="res://components/babygodot/scroll_gate/assets/LockedGate_Right.png" id="33_tt2is"]
+[ext_resource type="Script" uid="uid://bf2ji2jr4bk5p" path="res://components/babygodot/scroll_gate/components/lantern.gd" id="34_kvdav"]
 [ext_resource type="PackedScene" uid="uid://cq253lfclbbbq" path="res://components/babygodot/npc/npc_elder.tscn" id="34_vnrdr"]
 [ext_resource type="Script" uid="uid://ctlotfccvl4jn" path="res://scripts/flag.gd" id="35_fnu5h"]
+[ext_resource type="Texture2D" uid="uid://b8k3kxtymkdd4" path="res://components/babygodot/scroll_gate/assets/LanternRight_Front.png" id="36_bktpv"]
 [ext_resource type="SpriteFrames" uid="uid://b3orjhfv6eeud" path="res://components/flag/flag-spriteframes-green.tres" id="36_jf12t"]
+[ext_resource type="Script" uid="uid://cf1o67bfqt8o" path="res://components/babygodot/info_indicator/info_indicator.gd" id="37_0yd5m"]
 [ext_resource type="PackedScene" uid="uid://bob4es2sd13aa" path="res://assets/decorations/barley_crops.tscn" id="37_xvuht"]
+[ext_resource type="Texture2D" uid="uid://ddg0nes34xe5l" path="res://components/babygodot/info_indicator/InfoPanelIndicator.png" id="38_41jwn"]
+[ext_resource type="Texture2D" uid="uid://8j30hcey6goj" path="res://components/babygodot/info_indicator/InfoPanel.png" id="39_nspkk"]
 [ext_resource type="PackedScene" uid="uid://do0lxo8lxw312" path="res://components/hud/hud2.tscn" id="39_v78as"]
+[ext_resource type="FontFile" uid="uid://huadpmbapadr" path="res://components/babygodot/info_indicator/Info Story.ttf" id="40_tlhk2"]
+[ext_resource type="AnimationLibrary" uid="uid://cnk8wahv52oh8" path="res://components/babygodot/info_indicator/info_indicator.tres" id="41_gui8l"]
+[ext_resource type="Script" uid="uid://bk8b688teqih7" path="res://components/babygodot/scroll_gate/components/gate_bridge_behavior.gd" id="42_3syb7"]
+[ext_resource type="Script" uid="uid://bu2pxl3f0yrsx" path="res://components/babygodot/scroll_gate/components/gate_animation_controller.gd" id="43_axun6"]
 [ext_resource type="Script" uid="uid://cuiy5ce0t0uf2" path="res://components/babygodot/demo/boss/boss.gd" id="44_ht26h"]
 [ext_resource type="Script" uid="uid://b532d25pht7ub" path="res://components/babygodot/checkpoint/checkpoint.gd" id="45_2d4sf"]
 [ext_resource type="PackedScene" uid="uid://il08cnnaosyi" path="res://components/babygodot/checkpoint/checkpoint_npc.tscn" id="46_8knqs"]
@@ -74,23 +92,362 @@ default_font_size = 64
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rpdqf"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xns2c"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hmpfs"]
+size = Vector2(294.5, 260)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ddthk"]
+size = Vector2(86, 131)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kk0ge"]
+size = Vector2(86, 171)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dt3ue"]
+size = Vector2(24.662186, 70.31256)
+
+[sub_resource type="Animation" id="Animation_q4jkb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_nc1iy"]
+resource_name = "idle_sway"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-0.08726646259971647, 0.08726646259971647, -0.08726646259971647]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r8prq"]
+_data = {
+&"RESET": SubResource("Animation_q4jkb"),
+&"idle_sway": SubResource("Animation_nc1iy")
+}
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hmpfs"]
+content_margin_left = 24.0
+content_margin_top = 16.0
+content_margin_right = 24.0
+content_margin_bottom = 16.0
+texture = ExtResource("39_nspkk")
+
+[sub_resource type="Animation" id="Animation_t4cqe"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NewGate/GateCollision/Door:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("NewGate/GateCollision/Door:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [13.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("NewGate/GateCollision/Door:modulate:a")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("NewGate/GateCollision/Door:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 12)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("NewGate/GateCollision/DustBottom:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("NewGate/GateCollision/DustBottom:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("NewGate/GateCollision/DoorOpenDust:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("NewGate/GateCollision/DoorOpenDust:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("NewGate/GateCollision/DoorSparkles:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("NewGate/GateCollision/DoorSparkles:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_cn82r"]
+resource_name = "not_enough_scrolls"
+length = 0.73333335
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("NewGate/GateCollision/Door:position:x")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("NewGate/GateCollision/Door:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.16666667, 0.23333335, 0.33333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-2, 13), Vector2(-2, 6), Vector2(-2, 13), Vector2(-2, 8), Vector2(-2, 13)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("NewGate/GateCollision/DustBottom:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("NewGate/GateCollision/DustBottom:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.33333334, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_83ym3"]
+resource_name = "open"
+length = 1.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NewGate/GateCollision/Door:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.16666667, 0.23333335, 0.33333334, 0.40000004, 0.46666667, 0.5333334, 0.6, 0.8, 1, 1.1666666, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [13.0, 5.0, 13.0, 8.0, 13.0, 10.0, 13.0, 10.000001, 13.0, 13.0, 1.4431716, -29.375013, -100.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("NewGate/GateCollision/Door:modulate:a")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.2333333, 1.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("NewGate/GateCollision/DustBottom:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("NewGate/GateCollision/DustBottom:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.058333315, 0.29166666, 0.53333336, 0.7666667, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0.4392157), Color(1, 1, 1, 1), Color(1, 1, 1, 0.4392157), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("NewGate/GateCollision/DoorOpenDust:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.6666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("NewGate/GateCollision/DoorOpenDust:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.6666667, 1, 1.1666666, 1.3333334, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0.5294118), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("NewGate/GateCollision/DoorSparkles:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.8666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("NewGate/GateCollision/DoorSparkles:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.8666667, 1, 1.4, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_83ym3"]
+_data = {
+&"RESET": SubResource("Animation_t4cqe"),
+&"not_enough_scrolls": SubResource("Animation_cn82r"),
+&"open": SubResource("Animation_83ym3")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2r2st"]
 resource_local_to_scene = true
 size = Vector2(94, 258)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g55af"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mxctc"]
 resource_local_to_scene = true
 size = Vector2(94, 258)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8m0yn"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xbyg8"]
 resource_local_to_scene = true
 size = Vector2(94, 258)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ncwqi"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xfpyq"]
 resource_local_to_scene = true
 size = Vector2(94, 258)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_x6hj3"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cqpv4"]
 resource_local_to_scene = true
 size = Vector2(94, 258)
 
@@ -232,7 +589,7 @@ to_delete_on_open = [NodePath("TriggerArea"), NodePath("NewGate/GateCollision"),
 info_indicator = NodePath("InfoIndicator")
 info_indicator_label = NodePath("InfoIndicator/InfoTree/CanvasLayer/UIContainer/PanelContainer/RichTextLabel")
 
-[node name="ScrollGate3" type="Node2D" parent="ScrollGates" unique_id=710705362 node_paths=PackedStringArray("lanterns", "bridge_behavior", "to_delete_on_open", "info_indicator", "info_indicator_label") instance=ExtResource("24_obko3")]
+[node name="ScrollGate3" parent="ScrollGates" unique_id=710705362 node_paths=PackedStringArray("lanterns", "bridge_behavior", "to_delete_on_open", "info_indicator", "info_indicator_label") instance=ExtResource("24_obko3")]
 position = Vector2(11327, -384)
 scale = Vector2(-1, 1)
 script = ExtResource("23_eq0tf")
@@ -242,6 +599,280 @@ bridge_behavior = NodePath("ControllerObjects/GateBridgeBehavior")
 to_delete_on_open = [NodePath("TriggerArea"), NodePath("NewGate/GateCollision"), NodePath("ControllerObjects"), NodePath("AnimationPlayer"), NodePath("InfoIndicator")]
 info_indicator = NodePath("InfoIndicator")
 info_indicator_label = NodePath("InfoIndicator/InfoTree/CanvasLayer/UIContainer/PanelContainer/RichTextLabel")
+
+[node name="TriggerArea" parent="ScrollGates/ScrollGate3" index="0" unique_id=1096462271]
+collision_layer = 0
+
+[node name="CollisionShape2D" parent="ScrollGates/ScrollGate3/TriggerArea" index="0" unique_id=233322335]
+position = Vector2(-86.75, 5)
+shape = SubResource("RectangleShape2D_hmpfs")
+
+[node name="NewGate" parent="ScrollGates/ScrollGate3" index="1" unique_id=409550080]
+texture_filter = 1
+position = Vector2(0, 35)
+scale = Vector2(1.5, 1.5)
+
+[node name="TopColumns" parent="ScrollGates/ScrollGate3/NewGate" index="0" unique_id=1881226027]
+z_index = 1
+position = Vector2(0, -128)
+collision_layer = 4
+collision_mask = 0
+
+[node name="TopColumns" parent="ScrollGates/ScrollGate3/NewGate/TopColumns" index="0" unique_id=432464164]
+texture = ExtResource("26_5cdd4")
+
+[node name="CollisionShape2D" parent="ScrollGates/ScrollGate3/NewGate/TopColumns" index="1" unique_id=1798812344]
+visible = false
+shape = SubResource("RectangleShape2D_ddthk")
+
+[node name="BottomColumns" parent="ScrollGates/ScrollGate3/NewGate" index="1" unique_id=1360310001]
+visible = false
+z_index = 1
+position = Vector2(0, 151)
+collision_layer = 4
+collision_mask = 0
+
+[node name="BottomColumn" parent="ScrollGates/ScrollGate3/NewGate/BottomColumns" index="0" unique_id=1634066432]
+texture = ExtResource("27_i8u1w")
+
+[node name="CollisionShape2D" parent="ScrollGates/ScrollGate3/NewGate/BottomColumns" index="1" unique_id=139504450]
+visible = false
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_kk0ge")
+
+[node name="GateCollision" parent="ScrollGates/ScrollGate3/NewGate" index="2" unique_id=1756864930]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" parent="ScrollGates/ScrollGate3/NewGate/GateCollision" index="0" unique_id=1034297921]
+z_index = 12
+position = Vector2(36.5, 1)
+scale = Vector2(2.959997, 1.9199982)
+shape = SubResource("RectangleShape2D_dt3ue")
+debug_color = Color(0.96, 0, 0.51199996, 0.03137255)
+
+[node name="Door" parent="ScrollGates/ScrollGate3/NewGate/GateCollision" index="1" unique_id=2147255556]
+position = Vector2(0, 12)
+texture = ExtResource("28_un2y7")
+
+[node name="DoorOpenDust" parent="ScrollGates/ScrollGate3/NewGate/GateCollision" index="2" unique_id=1669095133]
+visible = false
+
+[node name="DustLeft" parent="ScrollGates/ScrollGate3/NewGate/GateCollision/DoorOpenDust" index="0" unique_id=862439618]
+z_index = 15
+position = Vector2(-43.333336, 49.999992)
+
+[node name="PuffSmall" parent="ScrollGates/ScrollGate3/NewGate/GateCollision/DoorOpenDust/DustLeft" index="0" unique_id=562714475]
+position = Vector2(0, 11.333339)
+amount = 5
+texture = ExtResource("29_aofud")
+emission_shape = 1
+emission_sphere_radius = 25.0
+direction = Vector2(1, -2)
+spread = 10.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 19.11
+initial_velocity_max = 31.85
+color = Color(0.40784314, 0.38039216, 0.43529412, 0.5294118)
+
+[node name="PuffMedium" parent="ScrollGates/ScrollGate3/NewGate/GateCollision/DoorOpenDust/DustLeft" index="1" unique_id=2078759417]
+position = Vector2(0, 11.333339)
+texture = ExtResource("30_2kvr8")
+speed_scale = 1.25
+emission_shape = 1
+emission_sphere_radius = 25.0
+direction = Vector2(1, -2)
+spread = 10.0
+gravity = Vector2(0, -2)
+initial_velocity_min = 19.11
+initial_velocity_max = 31.85
+color = Color(0.5058824, 0.46666667, 0.54509807, 0.654902)
+
+[node name="PuffLarge" parent="ScrollGates/ScrollGate3/NewGate/GateCollision/DoorOpenDust/DustLeft" index="2" unique_id=1486140620]
+position = Vector2(0, 11.333339)
+amount = 2
+texture = ExtResource("31_okfqf")
+emission_shape = 1
+emission_sphere_radius = 25.0
+direction = Vector2(1, -2)
+spread = 10.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 19.11
+initial_velocity_max = 31.85
+color = Color(0.48597822, 0.45661926, 0.51953125, 0.7058824)
+
+[node name="DustRight" parent="ScrollGates/ScrollGate3/NewGate/GateCollision/DoorOpenDust" index="1" unique_id=2058770872]
+z_index = 15
+position = Vector2(36.666664, 49.33333)
+
+[node name="PuffSmall" parent="ScrollGates/ScrollGate3/NewGate/GateCollision/DoorOpenDust/DustRight" index="0" unique_id=562714475]
+position = Vector2(0, 11.333339)
+amount = 5
+texture = ExtResource("29_aofud")
+emission_shape = 1
+emission_sphere_radius = 25.0
+direction = Vector2(1, -2)
+spread = 10.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 19.11
+initial_velocity_max = 31.85
+color = Color(0.40784314, 0.38039216, 0.43529412, 0.5294118)
+
+[node name="PuffMedium" parent="ScrollGates/ScrollGate3/NewGate/GateCollision/DoorOpenDust/DustRight" index="1" unique_id=2078759417]
+position = Vector2(0, 11.333339)
+texture = ExtResource("30_2kvr8")
+speed_scale = 1.25
+emission_shape = 1
+emission_sphere_radius = 25.0
+direction = Vector2(1, -2)
+spread = 10.0
+gravity = Vector2(0, -2)
+initial_velocity_min = 19.11
+initial_velocity_max = 31.85
+color = Color(0.5058824, 0.46666667, 0.54509807, 0.654902)
+
+[node name="PuffLarge" parent="ScrollGates/ScrollGate3/NewGate/GateCollision/DoorOpenDust/DustRight" index="2" unique_id=1486140620]
+position = Vector2(0, 11.333339)
+amount = 2
+texture = ExtResource("31_okfqf")
+emission_shape = 1
+emission_sphere_radius = 25.0
+direction = Vector2(1, -2)
+spread = 10.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 19.11
+initial_velocity_max = 31.85
+color = Color(0.48597822, 0.45661926, 0.51953125, 0.7058824)
+
+[node name="DustBottom" parent="ScrollGates/ScrollGate3/NewGate/GateCollision" index="3" unique_id=998444751]
+visible = false
+modulate = Color(1, 1, 1, 0)
+z_index = 15
+position = Vector2(-8.666667, 71.33333)
+
+[node name="DoorSparkles" parent="ScrollGates/ScrollGate3/NewGate/GateCollision" index="4" unique_id=1732104974]
+visible = false
+modulate = Color(1, 1, 1, 0)
+z_index = 15
+position = Vector2(-13.333333, 47.33333)
+
+[node name="BokehVFX_Cluster" parent="ScrollGates/ScrollGate3/NewGate/GateCollision/DoorSparkles" index="0" unique_id=1245482636]
+scale = Vector2(2, 2)
+
+[node name="SparkleVFX" parent="ScrollGates/ScrollGate3/NewGate/GateCollision/DoorSparkles" index="1" unique_id=1416552907]
+scale = Vector2(3, 3)
+
+[node name="LockedGateLeft" parent="ScrollGates/ScrollGate3/NewGate" index="3" unique_id=275836650]
+position = Vector2(-14, 0)
+texture = ExtResource("32_s5qse")
+
+[node name="LockedGateRight" parent="ScrollGates/ScrollGate3/NewGate" index="4" unique_id=2039266892]
+z_index = 10
+position = Vector2(67, 0)
+texture = ExtResource("33_tt2is")
+
+[node name="LanternLeft" parent="ScrollGates/ScrollGate3/NewGate" index="5" unique_id=890313050 node_paths=PackedStringArray("lantern_front", "animator")]
+position = Vector2(-90, -10)
+script = ExtResource("34_kvdav")
+lantern_front_texture = ExtResource("18_w6d5o")
+lantern_front = NodePath("LanternFront")
+animator = NodePath("AnimationPlayer")
+
+[node name="IdleSway" parent="ScrollGates/ScrollGate3/NewGate/LanternLeft" index="5" unique_id=1291916171]
+libraries/ = SubResource("AnimationLibrary_r8prq")
+autoplay = &"idle_sway"
+speed_scale = 0.97
+
+[node name="LanternRight" parent="ScrollGates/ScrollGate3/NewGate" index="6" unique_id=1119542889 node_paths=PackedStringArray("lantern_front", "animator")]
+z_index = 10
+position = Vector2(86, -15)
+script = ExtResource("34_kvdav")
+lantern_front_texture = ExtResource("36_bktpv")
+lantern_front = NodePath("LanternFront")
+animator = NodePath("AnimationPlayer")
+
+[node name="IdleSway" parent="ScrollGates/ScrollGate3/NewGate/LanternRight" index="5" unique_id=449541373]
+libraries/ = SubResource("AnimationLibrary_r8prq")
+autoplay = &"idle_sway"
+speed_scale = 0.95
+
+[node name="InfoIndicator" parent="ScrollGates/ScrollGate3" index="2" unique_id=1774361635 node_paths=PackedStringArray("indicator", "info_panel", "info_panel_canvas_layer", "animation")]
+z_index = 10
+position = Vector2(2, -97)
+script = ExtResource("37_0yd5m")
+indicator = NodePath("IndicatorTree/IndicatorSprite")
+info_panel = NodePath("InfoTree")
+info_panel_canvas_layer = NodePath("InfoTree/CanvasLayer")
+animation = NodePath("AnimationPlayer")
+
+[node name="IndicatorSprite" parent="ScrollGates/ScrollGate3/InfoIndicator/IndicatorTree" parent_id_path=PackedInt32Array(710705362, 1774361635, 845117311) index="0" unique_id=1521255860]
+texture = ExtResource("38_41jwn")
+
+[node name="InfoTree" parent="ScrollGates/ScrollGate3/InfoIndicator" index="1" unique_id=233706681]
+visible = false
+
+[node name="CanvasLayer" parent="ScrollGates/ScrollGate3/InfoIndicator/InfoTree" index="0" unique_id=240023699]
+visible = false
+offset = Vector2(11325, -481)
+transform = Transform2D(1, 0, 0, 1, 11325, -481)
+follow_viewport_enabled = true
+
+[node name="UIContainer" parent="ScrollGates/ScrollGate3/InfoIndicator/InfoTree/CanvasLayer" index="0" unique_id=536485302]
+editor_description = "Lets us animate the position of the PanelContainer while also allowing it to have its own transform position. (And CanvasLayer offset needs to be used to set the global position of the panel so it can't be animated either)"
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PanelContainer" parent="ScrollGates/ScrollGate3/InfoIndicator/InfoTree/CanvasLayer/UIContainer" index="0" unique_id=2042454767]
+custom_minimum_size = Vector2(192, 192)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -116.0
+offset_top = -190.0
+offset_right = 76.0
+offset_bottom = 2.000183
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_hmpfs")
+
+[node name="RichTextLabel" parent="ScrollGates/ScrollGate3/InfoIndicator/InfoTree/CanvasLayer/UIContainer/PanelContainer" index="0" unique_id=91660906]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("40_tlhk2")
+theme_override_fonts/bold_font = ExtResource("40_tlhk2")
+theme_override_fonts/bold_italics_font = ExtResource("40_tlhk2")
+theme_override_fonts/italics_font = ExtResource("40_tlhk2")
+theme_override_fonts/mono_font = ExtResource("40_tlhk2")
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 24
+theme_override_font_sizes/bold_italics_font_size = 24
+theme_override_font_sizes/italics_font_size = 24
+theme_override_font_sizes/mono_font_size = 24
+bbcode_enabled = true
+text = "Bring 1 Yarnspark"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" parent="ScrollGates/ScrollGate3/InfoIndicator" index="2" unique_id=80899768]
+libraries/ = ExtResource("41_gui8l")
+
+[node name="GateBridgeBehavior" parent="ScrollGates/ScrollGate3/ControllerObjects" parent_id_path=PackedInt32Array(710705362, 1016011116) index="0" unique_id=1987604082 node_paths=PackedStringArray("gate")]
+script = ExtResource("42_3syb7")
+gate = NodePath("../..")
+
+[node name="GateAnimationController" parent="ScrollGates/ScrollGate3/ControllerObjects" parent_id_path=PackedInt32Array(710705362, 1016011116) index="1" unique_id=1766842794 node_paths=PackedStringArray("gate", "animator")]
+script = ExtResource("43_axun6")
+gate = NodePath("../..")
+animator = NodePath("../../AnimationPlayer")
+
+[node name="AnimationPlayer" parent="ScrollGates/ScrollGate3" index="4" unique_id=70195527]
+libraries/ = SubResource("AnimationLibrary_83ym3")
+autoplay = &"RESET"
 
 [node name="Flag" type="Area2D" parent="." unique_id=1243516226 instance=ExtResource("18_crtlj")]
 visible = false
@@ -305,7 +936,7 @@ behavior = NodePath("SkipQuestTriggerBehavior")
 delete_from_scene = true
 
 [node name="CollisionShape2D" parent="Triggers/ForceQuestProgressTrigger_SolvedRockPuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_xns2c")
+shape = SubResource("RectangleShape2D_2r2st")
 
 [node name="SkipQuestTriggerBehavior" parent="Triggers/ForceQuestProgressTrigger_SolvedRockPuzzle" index="1" unique_id=1238036962]
 script = ExtResource("29_poyld")
@@ -358,7 +989,7 @@ behavior = NodePath("Behavior")
 delete_from_scene = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_g55af")
+shape = SubResource("RectangleShape2D_mxctc")
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
 script = ExtResource("23_8knqs")
@@ -372,7 +1003,7 @@ behavior = NodePath("Behavior")
 delete_from_scene = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_8m0yn")
+shape = SubResource("RectangleShape2D_xbyg8")
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
 script = ExtResource("23_8knqs")
@@ -386,7 +1017,7 @@ behavior = NodePath("Behavior")
 delete_from_scene = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle2" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_ncwqi")
+shape = SubResource("RectangleShape2D_xfpyq")
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle2" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
 script = ExtResource("23_8knqs")
@@ -400,7 +1031,7 @@ behavior = NodePath("Behavior")
 delete_from_scene = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_x6hj3")
+shape = SubResource("RectangleShape2D_cqpv4")
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
 script = ExtResource("23_8knqs")
@@ -1246,6 +1877,8 @@ script = ExtResource("64_y8cc3")
 [connection signal="hide_info_message" from="ScrollGates/ScrollGate3" to="ScrollGates/ScrollGate3/InfoIndicator" method="_on_deactivate"]
 [connection signal="not_enough_collectibles" from="ScrollGates/ScrollGate3" to="ScrollGates/ScrollGate3/InfoIndicator" method="_on_activate"]
 [connection signal="not_enough_collectibles" from="ScrollGates/ScrollGate3" to="ScrollGates/ScrollGate3/ControllerObjects/GateAnimationController" method="shake_door"]
+[connection signal="body_entered" from="ScrollGates/ScrollGate3/TriggerArea" to="ScrollGates/ScrollGate3" method="player_entered" unbinds=1]
+[connection signal="body_exited" from="ScrollGates/ScrollGate3/TriggerArea" to="ScrollGates/ScrollGate3" method="player_exited" unbinds=1]
 [connection signal="body_entered" from="Flag" to="Flag" method="_on_body_entered"]
 [connection signal="body_entered" from="Triggers/ScreenShakeTrigger" to="Triggers/ScreenShakeTrigger" method="_player_entered" unbinds=1]
 [connection signal="body_entered" from="Triggers/ScreenShakeTrigger2" to="Triggers/ScreenShakeTrigger2" method="_player_entered" unbinds=1]
@@ -1326,6 +1959,10 @@ script = ExtResource("64_y8cc3")
 [connection signal="body_entered" from="NPCs/Npc_Sheep/Area2D" to="NPCs/Npc_Sheep" method="_player_entered"]
 [connection signal="body_exited" from="NPCs/Npc_Sheep/Area2D" to="NPCs/Npc_Sheep" method="_player_exited"]
 
+[editable path="ScrollGates/ScrollGate3"]
+[editable path="ScrollGates/ScrollGate3/NewGate/GateCollision/DoorOpenDust/DustLeft"]
+[editable path="ScrollGates/ScrollGate3/NewGate/GateCollision/DoorOpenDust/DustRight"]
+[editable path="ScrollGates/ScrollGate3/InfoIndicator"]
 [editable path="Triggers/ForceQuestProgressTrigger_SolvedRockPuzzle"]
 [editable path="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle"]
 [editable path="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle"]
