@@ -38,6 +38,8 @@ var on_screen := false
 @onready var _body_collision: CollisionShape2D = %CollisionShape2D
 @onready var _hitbox: Area2D = %Hitbox
 
+var _reset_on_unpause: ResetOnUnpause
+var _default_anim_name: StringName
 
 func _set_speed(new_speed):
 	speed = new_speed
@@ -46,17 +48,30 @@ func _set_speed(new_speed):
 
 
 func _ready():
+	_default_anim_name = _sprite.animation
+	_reset_on_unpause = ResetOnUnpause.new(self)
+	_reset_on_unpause.on_reset.connect(_reset_after_defeat)
+
 	Global.gravity_changed.connect(_on_gravity_changed)
 
 	direction = -1 if start_direction == 0 else 1
 
+func _reset_after_defeat() -> void:
+	defeated = false
+	velocity.x = 0
+	velocity.y = 0
+	_hitbox.monitorable = true
+	_hitbox.monitoring = true
+	_body_collision.disabled = false
+	_sprite.flip_v = false
+	_sprite.play(_default_anim_name)
 
 func _physics_process(delta):
 	if defeated:
 		velocity.y += gravity * delta
 		move_and_slide()
 		if not on_screen:
-			queue_free()
+			_reset_on_unpause.fake_free()
 		return
 	
 	# Add the gravity.
@@ -97,15 +112,14 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 		player_loses_life = false
 		queue_free()
 
-func defeat(sign: int = 0) -> void:
+func defeat(attack_sign: int = 0) -> void:
 	_hitbox.monitorable = false
 	_hitbox.monitoring = false
-	_hitbox.queue_free()
 	_body_collision.disabled = true
 	_sprite.stop()
 	_sprite.flip_v = true
-	if sign != 0:
-		velocity.x = abs(velocity.x) * sign
+	if attack_sign != 0:
+		velocity.x = abs(velocity.x) * attack_sign
 	velocity.x *= defeated_x_velocity_multiplier
 	velocity.y = -defeated_y_velocity
 	defeated = true
