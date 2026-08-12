@@ -65,12 +65,13 @@ const FRAME_COORDS_SOLID := Vector2i(10, 1)
 
 var fall_timer: Timer
 
-@onready var _rigid_body := %RigidBody2D
+@onready var _rigid_body: RigidBody2D = %RigidBody2D
 @onready var _sprites := %Sprites
 @onready var _collision_shape := %CollisionShape2D
 @onready var _area_collision_shape := %AreaCollisionShape2D
 @onready var _animation_player := %AnimationPlayer
 
+var _reset_on_unpause: ResetOnUnpause
 
 func _set_tile_set(new_tile_set):
 	if new_tile_set:
@@ -159,12 +160,23 @@ func _get_configuration_warnings() -> PackedStringArray:
 
 
 func _ready():
+	_reset_on_unpause = ResetOnUnpause.new(self)
+	_reset_on_unpause.on_reset.connect(_reset.call_deferred)
+
 	_recreate_sprites()
 
 	fall_timer = Timer.new()
 	fall_timer.one_shot = true
 	fall_timer.timeout.connect(_fall)
 	add_child(fall_timer)
+
+func _reset() -> void:
+	if fall:
+		fall_timer.stop()
+		_animation_player.stop()
+		_rigid_body.freeze = true
+		_rigid_body.position = Vector2(0, 0)
+		_rigid_body.linear_velocity = Vector2(0, 0)
 
 
 func _on_area_2d_body_entered(body):
