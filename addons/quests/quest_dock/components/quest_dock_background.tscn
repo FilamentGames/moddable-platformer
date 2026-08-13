@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://gt0683n26go8"]
+
+[ext_resource type="Texture2D" uid="uid://dl6jt2snkljsf" path="res://addons/quests/quest_dock/components/QuestPanel_TextBackground.png" id="1_iashg"]
+
+[node name="QuestDockBackground" type="Control" unique_id=1475866714]
+custom_minimum_size = Vector2(175, 0)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextBackground" type="NinePatchRect" parent="." unique_id=881246291]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 46.0
+offset_bottom = 403.0
+grow_horizontal = 2
+texture = ExtResource("1_iashg")
+patch_margin_left = 75
+patch_margin_top = 35
+patch_margin_right = 75
+patch_margin_bottom = 72
