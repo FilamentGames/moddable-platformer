@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://darbqvupa166w"]
+
+[ext_resource type="PackedScene" uid="uid://buefejfd3mb13" path="res://components/platform/platform_stone_thin.tscn" id="1_yualo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_180kd"]
+resource_local_to_scene = true
+size = Vector2(768, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5m3c2"]
+resource_local_to_scene = true
+size = Vector2(768, 128)
+
+[node name="Platform" unique_id=1439632278 instance=ExtResource("1_yualo")]
+width = 6
+one_way = false
+
+[node name="AreaCollisionShape2D" parent="RigidBody2D/Area2D" parent_id_path=PackedInt32Array(1585628033) index="0" unique_id=2132855283]
+shape = SubResource("RectangleShape2D_180kd")
+
+[node name="CollisionShape2D" parent="RigidBody2D" parent_id_path=PackedInt32Array(1856058631) index="1" unique_id=587124361]
+shape = SubResource("RectangleShape2D_5m3c2")
+one_way_collision = false

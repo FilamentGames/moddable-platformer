@@ -69,10 +69,14 @@
 [ext_resource type="PackedScene" uid="uid://buefejfd3mb13" path="res://components/platform/platform_stone_thin.tscn" id="67_qpjvl"]
 [ext_resource type="Script" uid="uid://dilh5jyuklov6" path="res://components/platform/platform.gd" id="68_teof6"]
 [ext_resource type="PackedScene" uid="uid://dc6sydi7ycv7j" path="res://components/platform/platform_stone.tscn" id="69_n3thj"]
+[ext_resource type="Texture2D" uid="uid://c08ew76efrqum" path="res://components/leveldecoration/Grass_StoneCliff2.png" id="69_tkbxy"]
+[ext_resource type="Texture2D" uid="uid://c6myjham7aqai" path="res://components/leveldecoration/Grass_StoneCliff3.png" id="70_fw5q1"]
 [ext_resource type="PackedScene" uid="uid://6xuod5sofp8c" path="res://components/platform/platform_basket_thin.tscn" id="70_uub67"]
+[ext_resource type="PackedScene" uid="uid://darbqvupa166w" path="res://components/platform/platform_level0_bridge.tscn" id="71_c5fri"]
 [ext_resource type="PackedScene" uid="uid://cugv3o2f6ug6e" path="res://components/sign/sign.tscn" id="71_qme65"]
 [ext_resource type="Script" uid="uid://cvs42517jpxhh" path="res://components/sign/sign.gd" id="72_t07im"]
 [ext_resource type="PackedScene" uid="uid://cq253lfclbbbq" path="res://components/babygodot/npc/npc_elder.tscn" id="73_lb3p4"]
+[ext_resource type="Texture2D" uid="uid://b4l0m4f081ye3" path="res://components/leveldecoration/Grass_StoneCliff1.png" id="73_ucnsv"]
 [ext_resource type="Script" uid="uid://n1rnbm4rnt0t" path="res://components/babygodot/npc/npc.gd" id="74_8e5g4"]
 [ext_resource type="PackedScene" uid="uid://d0v802hnw7unk" path="res://components/babygodot/npc/npc.tscn" id="75_wj3m1"]
 [ext_resource type="SpriteFrames" uid="uid://dj4io3kb4d2uc" path="res://assets/npcs/monk.tres" id="76_4ws4r"]
@@ -433,23 +437,23 @@ _data = {
 &"open": SubResource("Animation_83ym3")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fbfqr"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qyp0h"]
 resource_local_to_scene = true
 size = Vector2(94, 258)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bwp6c"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_57xpr"]
 resource_local_to_scene = true
 size = Vector2(352, 369)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3y2io"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v371g"]
 resource_local_to_scene = true
 size = Vector2(324, 373)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tq44o"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_82kwf"]
 resource_local_to_scene = true
 size = Vector2(413, 367)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xyyth"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_540av"]
 resource_local_to_scene = true
 size = Vector2(401, 356)
 
@@ -524,7 +528,7 @@ tile_map_data = PackedByteArray("AAAFAAcAAQAAAAAAAAAFAAYAAQAAAAEAAAAFAAUAAQACAAA
 tile_set = ExtResource("13_spn1q")
 metadata/_edit_lock_ = true
 
-[node name="DecorationSprites" type="Node2D" parent="TileMapLayer_Decorations" unique_id=1380045975 instance=ExtResource("14_pf0lh")]
+[node name="DecorationSprites" type="Node2D" parent="TileMapLayer_Decorations" unique_id=516248196 instance=ExtResource("14_pf0lh")]
 metadata/_edit_lock_ = true
 
 [node name="TileMapLayer_Barriers" type="TileMapLayer" parent="." unique_id=916319666]
@@ -1028,7 +1032,7 @@ delete_from_scene = true
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" parent="Triggers/ForceQuestProgressTrigger_SolvedRockPuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_fbfqr")
+shape = SubResource("RectangleShape2D_qyp0h")
 metadata/_edit_lock_ = true
 
 [node name="SkipQuestTriggerBehavior" parent="Triggers/ForceQuestProgressTrigger_SolvedRockPuzzle" index="1" unique_id=1238036962]
@@ -1090,7 +1094,7 @@ metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle" index="0" unique_id=490838596]
 position = Vector2(129, -55.5)
-shape = SubResource("RectangleShape2D_bwp6c")
+shape = SubResource("RectangleShape2D_57xpr")
 metadata/_edit_lock_ = true
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
@@ -1108,7 +1112,7 @@ metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle" index="0" unique_id=490838596]
 position = Vector2(115, -57.5)
-shape = SubResource("RectangleShape2D_3y2io")
+shape = SubResource("RectangleShape2D_v371g")
 metadata/_edit_lock_ = true
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
@@ -1126,7 +1130,7 @@ metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle2" index="0" unique_id=490838596]
 position = Vector2(159.5, -54.5)
-shape = SubResource("RectangleShape2D_tq44o")
+shape = SubResource("RectangleShape2D_82kwf")
 metadata/_edit_lock_ = true
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle2" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
@@ -1144,7 +1148,7 @@ metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" index="0" unique_id=490838596]
 position = Vector2(153.5, -49)
-shape = SubResource("RectangleShape2D_xyyth")
+shape = SubResource("RectangleShape2D_540av")
 metadata/_edit_lock_ = true
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
@@ -1645,19 +1649,6 @@ metadata/_edit_lock_ = true
 position = Vector2(1920, -64)
 metadata/_edit_lock_ = true
 
-[node name="Platform" type="Node2D" parent="Platforms" unique_id=1439632278 instance=ExtResource("67_qpjvl")]
-position = Vector2(3011, 182)
-rotation = -1.5707964
-script = ExtResource("68_teof6")
-width = 6
-one_way = true
-tile_set = ExtResource("12_540av")
-tile_set_index = 1
-tile_set_left_frame = Vector2i(4, 1)
-tile_set_middle_frame = Vector2i(5, 1)
-tile_set_right_frame = Vector2i(6, 1)
-metadata/_edit_lock_ = true
-
 [node name="Platform17" type="Node2D" parent="Platforms" unique_id=1889629645 instance=ExtResource("69_n3thj")]
 position = Vector2(5285, 375)
 script = ExtResource("68_teof6")
@@ -1668,6 +1659,32 @@ tile_set_index = 1
 tile_set_left_frame = Vector2i(3, 0)
 tile_set_middle_frame = Vector2i(4, 0)
 tile_set_right_frame = Vector2i(5, 0)
+metadata/_edit_lock_ = true
+
+[node name="Grass104" type="Sprite2D" parent="Platforms/Platform17" unique_id=74230533]
+position = Vector2(-298, -59)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("69_tkbxy")
+metadata/_edit_lock_ = true
+
+[node name="Grass33" type="Sprite2D" parent="Platforms/Platform17" unique_id=651974346]
+position = Vector2(-57, -50)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("70_fw5q1")
+metadata/_edit_lock_ = true
+
+[node name="Grass34" type="Sprite2D" parent="Platforms/Platform17" unique_id=208821012]
+position = Vector2(0, -50.5)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("69_tkbxy")
+flip_h = true
+metadata/_edit_lock_ = true
+
+[node name="Grass35" type="Sprite2D" parent="Platforms/Platform17" unique_id=380642676]
+position = Vector2(288, -61)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("70_fw5q1")
+flip_h = true
 metadata/_edit_lock_ = true
 
 [node name="Platform10" type="Node2D" parent="Platforms" unique_id=1440331607 instance=ExtResource("70_uub67")]
@@ -1733,6 +1750,19 @@ tile_set_middle_frame = Vector2i(5, 1)
 tile_set_right_frame = Vector2i(6, 1)
 metadata/_edit_lock_ = true
 
+[node name="Grass43" type="Sprite2D" parent="Platforms/Platform6" unique_id=1495900487]
+position = Vector2(-91, -65)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("70_fw5q1")
+metadata/_edit_lock_ = true
+
+[node name="Grass44" type="Sprite2D" parent="Platforms/Platform6" unique_id=556388506]
+position = Vector2(94, -65)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("70_fw5q1")
+flip_h = true
+metadata/_edit_lock_ = true
+
 [node name="Platform8" type="Node2D" parent="Platforms" unique_id=434364931 instance=ExtResource("67_qpjvl")]
 position = Vector2(7042, -154)
 script = ExtResource("68_teof6")
@@ -1745,6 +1775,13 @@ tile_set_middle_frame = Vector2i(5, 1)
 tile_set_right_frame = Vector2i(6, 1)
 metadata/_edit_lock_ = true
 
+[node name="Grass45" type="Sprite2D" parent="Platforms/Platform8" unique_id=2077605777]
+position = Vector2(56, -63)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("70_fw5q1")
+flip_h = true
+metadata/_edit_lock_ = true
+
 [node name="Platform9" type="Node2D" parent="Platforms" unique_id=1016935612 instance=ExtResource("67_qpjvl")]
 position = Vector2(7722, -375)
 script = ExtResource("68_teof6")
@@ -1755,6 +1792,19 @@ tile_set_index = 1
 tile_set_left_frame = Vector2i(4, 1)
 tile_set_middle_frame = Vector2i(5, 1)
 tile_set_right_frame = Vector2i(6, 1)
+metadata/_edit_lock_ = true
+
+[node name="Grass46" type="Sprite2D" parent="Platforms/Platform9" unique_id=1349162477]
+position = Vector2(73, -61)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("73_ucnsv")
+flip_h = true
+metadata/_edit_lock_ = true
+
+[node name="Grass49" type="Sprite2D" parent="Platforms/Platform9" unique_id=761655133]
+position = Vector2(-94, -61)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("70_fw5q1")
 metadata/_edit_lock_ = true
 
 [node name="Platform18" type="Node2D" parent="Platforms" unique_id=120942991 instance=ExtResource("67_qpjvl")]
@@ -1781,6 +1831,13 @@ tile_set_middle_frame = Vector2i(5, 1)
 tile_set_right_frame = Vector2i(6, 1)
 metadata/_edit_lock_ = true
 
+[node name="Grass47" type="Sprite2D" parent="Platforms/Platform11" unique_id=965079134]
+position = Vector2(-102, -63.00003)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("69_tkbxy")
+flip_h = true
+metadata/_edit_lock_ = true
+
 [node name="Platform12" type="Node2D" parent="Platforms" unique_id=1402230692 instance=ExtResource("67_qpjvl")]
 position = Vector2(9856, -455)
 script = ExtResource("68_teof6")
@@ -1793,6 +1850,19 @@ tile_set_middle_frame = Vector2i(5, 1)
 tile_set_right_frame = Vector2i(6, 1)
 metadata/_edit_lock_ = true
 
+[node name="Grass91" type="Sprite2D" parent="Platforms/Platform12" unique_id=681321903]
+position = Vector2(104, -63)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("69_tkbxy")
+flip_h = true
+metadata/_edit_lock_ = true
+
+[node name="Grass92" type="Sprite2D" parent="Platforms/Platform12" unique_id=274308996]
+position = Vector2(38, -62)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("70_fw5q1")
+metadata/_edit_lock_ = true
+
 [node name="Platform13" type="Node2D" parent="Platforms" unique_id=891981076 instance=ExtResource("67_qpjvl")]
 position = Vector2(12099, -421)
 script = ExtResource("68_teof6")
@@ -1802,6 +1872,20 @@ tile_set_index = 1
 tile_set_left_frame = Vector2i(4, 1)
 tile_set_middle_frame = Vector2i(5, 1)
 tile_set_right_frame = Vector2i(6, 1)
+metadata/_edit_lock_ = true
+
+[node name="Grass86" type="Sprite2D" parent="Platforms/Platform13" unique_id=1010252466]
+position = Vector2(-163, -64)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("69_tkbxy")
+flip_h = true
+metadata/_edit_lock_ = true
+
+[node name="Grass87" type="Sprite2D" parent="Platforms/Platform13" unique_id=1237179936]
+position = Vector2(145.00098, -63)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("70_fw5q1")
+flip_h = true
 metadata/_edit_lock_ = true
 
 [node name="Platform14" type="Node2D" parent="Platforms" unique_id=653415634 instance=ExtResource("67_qpjvl")]
@@ -1816,11 +1900,43 @@ tile_set_middle_frame = Vector2i(5, 1)
 tile_set_right_frame = Vector2i(6, 1)
 metadata/_edit_lock_ = true
 
+[node name="Grass88" type="Sprite2D" parent="Platforms/Platform14" unique_id=1055631432]
+position = Vector2(-87, -63.00006)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("70_fw5q1")
+metadata/_edit_lock_ = true
+
+[node name="Grass89" type="Sprite2D" parent="Platforms/Platform14" unique_id=1324010631]
+position = Vector2(68, -62.00006)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("73_ucnsv")
+flip_h = true
+metadata/_edit_lock_ = true
+
 [node name="Platform15" type="Node2D" parent="Platforms" unique_id=1426766162 instance=ExtResource("67_qpjvl")]
 position = Vector2(12333, -913)
 script = ExtResource("68_teof6")
 width = 2
 one_way = true
+tile_set = ExtResource("12_540av")
+tile_set_index = 1
+tile_set_left_frame = Vector2i(4, 1)
+tile_set_middle_frame = Vector2i(5, 1)
+tile_set_right_frame = Vector2i(6, 1)
+metadata/_edit_lock_ = true
+
+[node name="Grass90" type="Sprite2D" parent="Platforms/Platform15" unique_id=1881983756]
+position = Vector2(45.000977, -62)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("73_ucnsv")
+flip_h = true
+metadata/_edit_lock_ = true
+
+[node name="Platform" type="Node2D" parent="Platforms" unique_id=1439632278 instance=ExtResource("71_c5fri")]
+position = Vector2(3011, 182)
+rotation = -1.5707964
+script = ExtResource("68_teof6")
+width = 6
 tile_set = ExtResource("12_540av")
 tile_set_index = 1
 tile_set_left_frame = Vector2i(4, 1)
