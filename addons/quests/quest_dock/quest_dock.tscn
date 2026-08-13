@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://bkdtuh1mxbcnw"]
 
 [ext_resource type="Script" uid="uid://se5fyfgofqps" path="res://addons/quests/quest_dock/quest_dock.gd" id="1_qqxpi"]
+[ext_resource type="Texture2D" uid="uid://dl6jt2snkljsf" path="res://addons/quests/quest_dock/components/QuestPanel_TextBackground.png" id="2_6cu73"]
+[ext_resource type="Texture2D" uid="uid://bi3hvdapxk7ku" path="res://addons/quests/quest_dock/components/QuestPanel_Background.png" id="2_7hr3m"]
 [ext_resource type="SpriteFrames" uid="uid://e65igl5tjet" path="res://components/babygodot/npc/elder.tres" id="2_qqxpi"]
 [ext_resource type="PackedScene" uid="uid://b6lcoiafomyme" path="res://addons/quests/quest_dock/components/animated_label.tscn" id="3_jgiii"]
+[ext_resource type="Texture2D" uid="uid://ej0l0fx04v24" path="res://addons/quests/quest_dock/components/QuestPanel_Platform.png" id="3_njr68"]
 [ext_resource type="PackedScene" uid="uid://ckiwoklhwq8fy" path="res://addons/quests/quest_dock/components/hint_display.tscn" id="3_u0560"]
 [ext_resource type="Script" uid="uid://c8pkpy477usk5" path="res://components/babygodot/npc/components/elder_animation_controller.gd" id="3_xmn5d"]
 
@@ -14,15 +17,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qqxpi")
-text = NodePath("Container/QuestText")
-animated_sprite = NodePath("Container/Control/Clippy")
-next_button = NodePath("Container/EndContainer/NextButton")
-save_checkpoint_button = NodePath("Container/EndContainer/HBoxContainer/SaveButton")
-load_checkpoint_button = NodePath("Container/EndContainer/HBoxContainer/ResetWorldButton")
-hint_button = NodePath("Container/EndContainer/HintButton")
-hint_display = NodePath("Container/EndContainer/HintDisplay")
+text = NodePath("UI/QuestText")
+animated_sprite = NodePath("Background/Control/Clippy")
+next_button = NodePath("UI/EndContainer/NextButton")
+save_checkpoint_button = NodePath("UI/EndContainer/HBoxContainer/SaveButton")
+load_checkpoint_button = NodePath("UI/EndContainer/HBoxContainer/ResetWorldButton")
+hint_button = NodePath("UI/EndContainer/HintButton")
+hint_display = NodePath("UI/EndContainer/HintDisplay")
+metadata/_edit_vertical_guides_ = [123.0]
 
-[node name="Container" type="VBoxContainer" parent="." unique_id=1210857552]
+[node name="Control" type="Control" parent="." unique_id=1770504569]
+custom_minimum_size = Vector2(175, 0)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -30,34 +35,81 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Control" type="CenterContainer" parent="Container" unique_id=740562403]
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=1350980941]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1920.0
+offset_bottom = 1080.0
+grow_horizontal = 0
+texture = ExtResource("2_7hr3m")
+
+[node name="Background" type="VBoxContainer" parent="." unique_id=2085007664]
+custom_minimum_size = Vector2(175, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Background" unique_id=881246291]
+custom_minimum_size = Vector2(0, 360)
+layout_mode = 2
+texture = ExtResource("2_6cu73")
+patch_margin_left = 75
+patch_margin_top = 35
+patch_margin_right = 75
+patch_margin_bottom = 72
+
+[node name="Control" type="CenterContainer" parent="Background" unique_id=740562403]
 custom_minimum_size = Vector2(192, 192)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -75)
 
-[node name="Clippy" type="AnimatedSprite2D" parent="Container/Control" unique_id=1918933574]
+[node name="Sprite2D" type="Sprite2D" parent="Background/Control" unique_id=334801434]
+position = Vector2(105, 186)
+texture = ExtResource("3_njr68")
+
+[node name="Clippy" type="AnimatedSprite2D" parent="Background/Control" unique_id=1918933574]
 sprite_frames = ExtResource("2_qqxpi")
 autoplay = "default"
 centered = false
 
-[node name="CelebrationAnimationComponent" type="Node" parent="Container/Control/Clippy" unique_id=627736213 node_paths=PackedStringArray("sprite")]
+[node name="CelebrationAnimationComponent" type="Node" parent="Background/Control/Clippy" unique_id=627736213 node_paths=PackedStringArray("sprite")]
 script = ExtResource("3_xmn5d")
 sprite = NodePath("..")
 
-[node name="QuestText" parent="Container" unique_id=1035288938 instance=ExtResource("3_jgiii")]
-custom_minimum_size = Vector2(32, 32)
+[node name="UI" type="VBoxContainer" parent="." unique_id=1210857552]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="QuestText" parent="UI" unique_id=1035288938 instance=ExtResource("3_jgiii")]
+custom_minimum_size = Vector2(32, 325)
 layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 10)
+theme_override_colors/font_color = Color(0.44738787, 0.37121013, 0.34726858, 1)
+theme_override_font_sizes/font_size = 20
 text = "Find me in the world of Threadbare! Press Play! (▶)"
 horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 2
 visible_characters = 51
 
-[node name="EndContainer" type="VBoxContainer" parent="Container" unique_id=1910787855]
+[node name="EndContainer" type="VBoxContainer" parent="UI" unique_id=1910787855]
 layout_mode = 2
 size_flags_vertical = 10
 
-[node name="HintDisplay" parent="Container/EndContainer" unique_id=1175709613 instance=ExtResource("3_u0560")]
+[node name="HintDisplay" parent="UI/EndContainer" unique_id=1175709613 instance=ExtResource("3_u0560")]
 visible = false
 custom_minimum_size = Vector2(0, 250)
 layout_mode = 2
@@ -65,42 +117,42 @@ size_flags_vertical = 4
 size_flags_stretch_ratio = 6.0
 hint = "Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. "
 
-[node name="Spacer2" type="Control" parent="Container/EndContainer" unique_id=1879052227]
+[node name="Spacer2" type="Control" parent="UI/EndContainer" unique_id=1879052227]
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 
-[node name="NextButton" type="Button" parent="Container/EndContainer" unique_id=1692289482]
+[node name="NextButton" type="Button" parent="UI/EndContainer" unique_id=1692289482]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 10
 disabled = true
 text = "Next"
 
-[node name="HintButton" type="Button" parent="Container/EndContainer" unique_id=12402239]
+[node name="HintButton" type="Button" parent="UI/EndContainer" unique_id=12402239]
 layout_mode = 2
 size_flags_horizontal = 4
 disabled = true
 text = "Get a Hint (-3 Coins)"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Container/EndContainer" unique_id=1213718530]
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/EndContainer" unique_id=1213718530]
 layout_mode = 2
 alignment = 1
 
-[node name="SaveButton" type="Button" parent="Container/EndContainer/HBoxContainer" unique_id=694438811]
+[node name="SaveButton" type="Button" parent="UI/EndContainer/HBoxContainer" unique_id=694438811]
 visible = false
 layout_mode = 2
 text = "Save"
 
-[node name="ResetWorldButton" type="Button" parent="Container/EndContainer/HBoxContainer" unique_id=1849041134]
+[node name="ResetWorldButton" type="Button" parent="UI/EndContainer/HBoxContainer" unique_id=1849041134]
 layout_mode = 2
 text = "Reset the World"
 
-[node name="Spacer" type="Control" parent="Container/EndContainer" unique_id=1644551487]
+[node name="Spacer" type="Control" parent="UI/EndContainer" unique_id=1644551487]
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 
-[connection signal="celebration_animation" from="." to="Container/Control/Clippy/CelebrationAnimationComponent" method="trigger_animation"]
-[connection signal="done" from="Container/Control/Clippy/CelebrationAnimationComponent" to="." method="_on_celebration_animation_component_done"]
-[connection signal="end_animating" from="Container/QuestText" to="." method="_on_quest_text_end_animating"]
-[connection signal="start_animating" from="Container/QuestText" to="." method="_on_quest_text_start_animating"]
-[connection signal="pressed" from="Container/EndContainer/HintButton" to="." method="buy_hint"]
+[connection signal="celebration_animation" from="." to="Background/Control/Clippy/CelebrationAnimationComponent" method="trigger_animation"]
+[connection signal="done" from="Background/Control/Clippy/CelebrationAnimationComponent" to="." method="_on_celebration_animation_component_done"]
+[connection signal="end_animating" from="UI/QuestText" to="." method="_on_quest_text_end_animating"]
+[connection signal="start_animating" from="UI/QuestText" to="." method="_on_quest_text_start_animating"]
+[connection signal="pressed" from="UI/EndContainer/HintButton" to="." method="buy_hint"]
