@@ -31,6 +31,7 @@ func _on_open_master_button_pressed() -> void:
 
 func _on_master_reset_button_pressed() -> void:
 	if GlobalQuests and GlobalQuests.quests:
+		GlobalQuests.quests.stop_game()
 		GlobalQuests.quests.reset_progress()
 	EditorInterface.open_scene_from_path("res://levels/masters/level0.tscn")
 	EditorInterface.save_scene()
@@ -47,3 +48,7 @@ func _on_master_reset_button_pressed() -> void:
 func _on_skip_to_next_checkpoint_button_pressed() -> void:
 	if GlobalQuests and GlobalQuests.quests:
 		GlobalQuests.quests.skip_to_next_checkpoint()
+
+func _on_stop_button_pressed() -> void:
+	if GlobalQuests and GlobalQuests.quests:
+		GlobalQuests.quests.stop_game()

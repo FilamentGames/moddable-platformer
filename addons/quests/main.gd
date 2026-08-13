@@ -82,6 +82,9 @@ func set_2d_viewport_focus(position: Vector2, zoom: float) -> void:
 func set_current_edited_scene(path: String) -> void:
 	EditorInterface.open_scene_from_path(path)
 
+func stop_game() -> void:
+	EditorInterface.stop_playing_scene()
+
 func _enter_tree() -> void:
 	save_timer = Timer.new()
 	save_timer.wait_time = 2

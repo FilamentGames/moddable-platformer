@@ -320,3 +320,7 @@ func skip_to_next_checkpoint() -> void:
 	_skipped_checkpoints.push_back(UniqueSceneId.get_id(next_checkpoint))
 	editor_scene_provider.update_and_save_node(player)
 	editor_scene_provider.set_2d_viewport_focus(player.position, default_editor_zoom)
+
+## An stop feature for dev tools to allow us to do things like reset the whole level. Could be useful for switching levels in a full scope?
+func stop_game() -> void:
+	editor_scene_provider.stop_game()
