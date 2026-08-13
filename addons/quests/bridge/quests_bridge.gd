@@ -97,6 +97,7 @@ func _capture(message, data, session_id):
 			return true
 		"skip_to_text_line":
 			GlobalQuests.quests.skip_to_text_line(data[1])
+			_send_message(session_id, sender_id, "text_updated", [GlobalQuests.quests.get_current_text()])
 			return true
 		"deplete_scrolls":
 			GlobalQuests.quests.deplete_scrolls(data[1])
