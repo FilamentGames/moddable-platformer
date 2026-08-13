@@ -21,8 +21,8 @@
 [ext_resource type="TileSet" uid="uid://c135ryrbljtjg" path="res://terrain_samples/tileset_decorations.tres" id="9_v78as"]
 [ext_resource type="TileSet" uid="uid://cxchgr0dgfcak" path="res://terrain_samples/tileset_basket.tres" id="10_xvuht"]
 [ext_resource type="PackedScene" uid="uid://cugv3o2f6ug6e" path="res://components/sign/sign.tscn" id="11_q0xf2"]
+[ext_resource type="PackedScene" uid="uid://desas3iki3ejj" path="res://components/leveldecoration/decoration_sprites.tscn" id="12_0bbcg"]
 [ext_resource type="Script" uid="uid://odpmnclrocgd" path="res://components/babygodot/yarnspark/yarnspark.gd" id="12_1tk8l"]
-[ext_resource type="PackedScene" uid="uid://desas3iki3ejj" path="res://components/leveldecoration/decoration_sprites.tscn" id="12_2d4sf"]
 [ext_resource type="PackedScene" uid="uid://cbr3k8b1gooxm" path="res://components/babygodot/yarnspark/condition_types/object_property_equality_scroll_condition.tscn" id="12_bs6b0"]
 [ext_resource type="SpriteFrames" uid="uid://dj4io3kb4d2uc" path="res://assets/npcs/monk.tres" id="12_m7dqe"]
 [ext_resource type="TileSet" uid="uid://cpfdbax0jl6ew" path="res://terrain_samples/tileset_barriers.tres" id="12_vnrdr"]
@@ -40,9 +40,12 @@
 [ext_resource type="Script" uid="uid://b4j8f10agdcvu" path="res://scripts/coin.gd" id="18_65vxu"]
 [ext_resource type="PackedScene" uid="uid://beuisy5yrw0bq" path="res://components/flag/flag.tscn" id="18_crtlj"]
 [ext_resource type="Texture2D" uid="uid://64pgkmiayedd" path="res://components/babygodot/scroll_gate/assets/LanternLeft_Front.png" id="18_w6d5o"]
+[ext_resource type="Texture2D" uid="uid://b4l0m4f081ye3" path="res://components/leveldecoration/Grass_StoneCliff1.png" id="19_y8cc3"]
+[ext_resource type="Texture2D" uid="uid://c08ew76efrqum" path="res://components/leveldecoration/Grass_StoneCliff2.png" id="20_6lr5j"]
 [ext_resource type="SpriteFrames" uid="uid://de74lrhqf0xoa" path="res://components/player/spriteframes-storyweaver.tres" id="20_m7dqe"]
 [ext_resource type="Script" uid="uid://xvbi04ffe5e1" path="res://components/babygodot/trigger/change_editable_objects_trigger/change_editable_objects_trigger_behavior.gd" id="23_8knqs"]
 [ext_resource type="Script" uid="uid://clreg3c5ajgsr" path="res://components/babygodot/scroll_gate/collectible_gate.gd" id="23_eq0tf"]
+[ext_resource type="Texture2D" uid="uid://c6myjham7aqai" path="res://components/leveldecoration/Grass_StoneCliff3.png" id="23_xns2c"]
 [ext_resource type="PackedScene" uid="uid://d2htlfm78igtc" path="res://components/babygodot/scroll_gate/opened_gate.tscn" id="24_33ble"]
 [ext_resource type="PackedScene" uid="uid://bk3nplruhw7kp" path="res://components/babygodot/scroll_gate/collectible_gate.tscn" id="24_obko3"]
 [ext_resource type="Script" uid="uid://dilh5jyuklov6" path="res://components/platform/platform.gd" id="24_twxhk"]
@@ -432,23 +435,23 @@ _data = {
 &"open": SubResource("Animation_83ym3")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_i8u1w"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2kvr8"]
 resource_local_to_scene = true
 size = Vector2(94, 258)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_un2y7"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_okfqf"]
 resource_local_to_scene = true
 size = Vector2(352, 369)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_aofud"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s5qse"]
 resource_local_to_scene = true
 size = Vector2(324, 373)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2kvr8"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tt2is"]
 resource_local_to_scene = true
 size = Vector2(413, 367)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_okfqf"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kvdav"]
 resource_local_to_scene = true
 size = Vector2(401, 356)
 
@@ -516,7 +519,7 @@ tile_set = ExtResource("9_pjmyj")
 tile_map_data = PackedByteArray("AAAFAAcAAQAAAAAAAAAFAAYAAQAAAAEAAAAFAAUAAQACAAAAAAAEAAcAAQABAAEAAAAEAAUAAQABAAEAAAADAAYAAQABAAAAAAACAAcAAQACAAAAAAACAAYAAQABAAEAAAAAAAcAAQACAAAAAAAAAAUAAQAAAAAAAAAJAAYAAQAAAAAAAAAHAAcAAQAAAAEAAAAHAAYAAQACAAAAAAAbAAYAAQAJAAIAAAAbAAcAAQACAAAAAAAcAAUAAQABAAEAAAAcAAYAAQAKAAIAAAAcAAcAAQAKAAIAAAAdAAQAAQAJAAIAAAAdAAUAAQAKAAIAAAAdAAYAAQAAAAAAAAAdAAcAAQAKAAIAAAAeAAMAAQABAAAAAAAeAAQAAQAKAAIAAAAeAAUAAQAKAAIAAAAeAAYAAQAKAAIAAAAeAAcAAQAKAAIAAAAgAAQAAQAKAAIAAAAiAAQAAQAKAAIAAAAiAAUAAQAKAAIAAAAiAAcAAQACAAAAAAAsAAEAAQADAAEAAAAtAAEAAQAEAAEAAAAtAAIAAQABAAEAAAAtAAMAAQAKAAIAAAAtAAQAAQAAAAAAAAAtAAUAAQAKAAIAAAAtAAYAAQAKAAIAAAAtAAcAAQAKAAIAAAAuAAIAAQALAAIAAAAuAAMAAQAKAAIAAAAuAAQAAQAKAAIAAAAuAAUAAQAKAAIAAAAuAAYAAQABAAAAAAAyAAQAAQAAAAAAAAAyAAUAAQABAAEAAAAyAAYAAQAKAAIAAAAyAAcAAQAKAAIAAAAzAAQAAQALAAIAAAAzAAUAAQAKAAIAAAAzAAYAAQACAAAAAAAzAAcAAQAKAAIAAAA7AAUAAQAJAAIAAAA7AAYAAQAAAAEAAAA8AAUAAQAKAAIAAAA8AAYAAQAKAAIAAAA8AAcAAQAAAAAAAAA9AAUAAQACAAEAAAA9AAYAAQAKAAIAAAA9AAcAAQAKAAIAAAA+AAYAAQABAAEAAAA/AAYAAQAKAAIAAAA/AAcAAQAKAAIAAABAAAYAAQAKAAIAAABAAAcAAQAKAAIAAABBAAUAAQAKAAIAAABBAAYAAQABAAAAAABBAAcAAQAKAAIAAABDAAUAAQAKAAIAAABDAAYAAQAKAAIAAABDAAcAAQAKAAIAAABEAAUAAQAKAAIAAABEAAYAAQAKAAIAAABEAAcAAQAAAAAAAABUAAYAAQAKAAIAAABUAAcAAQAKAAIAAABVAAUAAQAAAAEAAABVAAYAAQAKAAIAAABVAAcAAQAKAAIAAABWAAUAAQAKAAIAAABWAAYAAQAKAAIAAABWAAcAAQAKAAIAAABXAAYAAQAAAAAAAABXAAcAAQAKAAIAAABYAPv/AQAFAAIAAABYAAcAAQACAAEAAAACAAUAAQAAAAEAAAASAAYAAQABAAAAAAALAAcAAQAAAAAAAAAPAAcAAQACAAEAAAAKAAYAAQABAAEAAAANAAcAAQABAAEAAAAPAAUAAQAEAAEAAAARAAUAAQACAAAAAAAQAAcAAQAAAAEAAAASAAcAAQAAAAEAAAATAAUAAQAAAAEAAAALAAUAAQABAAEAAAASAAUAAQABAAEAAAAMAAUAAQAAAAEAAAAMAAcAAQAAAAEAAAAUAAYAAQABAAEAAAAfAAQAAQAAAAAAAAAfAAcAAQAAAAEAAAAgAAYAAQACAAEAAAAjAAUAAQACAAEAAAAlAAcAAQABAAAAAAAkAAMAAQACAAAAAAAlAAQAAQABAAEAAAAjAAYAAQAAAAEAAAAvAAMAAQACAAAAAAAwAAcAAQACAAAAAAAwAAQAAQAAAAEAAAAvAAUAAQABAAEAAABhAAIAAQAAAAAAAABqAAAAAQAAAAAAAABiAAAAAQACAAAAAABjAAYAAQACAAAAAABiAAQAAQABAAAAAABhAP//AQABAAAAAABlAP//AQABAAAAAABvAAAAAQABAAAAAABnAAAAAQACAAAAAAByAP//AQAAAAEAAAB0AAAAAQABAAEAAABoAP//AQABAAEAAABwAP//AQABAAEAAABmAAUAAQAAAAAAAABlAAMAAQACAAAAAABnAAYAAQABAAAAAABmAAIAAQABAAEAAABlAAcAAQAAAAEAAABpAAQAAQACAAEAAABpAAEAAQACAAEAAABxAAEAAQACAAEAAABoAAMAAQACAAAAAABsAAEAAQABAAEAAABpAAYAAQABAAEAAABtAAIAAQAAAAEAAAByAAIAAQACAAAAAABkAAcAAQAFAAIAAABkAAYAAQAFAAIAAABkAAUAAQAFAAIAAABkAAQAAQAFAAIAAABkAAMAAQAFAAIAAABkAP//AQAFAAIAAABkAAAAAQAFAAIAAABkAAEAAQAFAAIAAABkAAIAAQAFAAIAAAA/AAUAAQAAAAAAAABIAAQAAQAAAAAAAAA8AAQAAQABAAAAAABFAAUAAQABAAAAAABIAAcAAQABAAAAAABJAAYAAQACAAAAAABGAAYAAQACAAEAAABIAAMAAQACAAEAAABBAAQAAQABAAEAAABGAAcAAQABAAEAAABHAAgAAQAAAAEAAABJAAMAAQAAAAEAAABNAAAAAQAAAAEAAABPAAMAAQAAAAEAAABOAAYAAQAAAAEAAABOAAIAAQAAAAAAAABRAAUAAQAAAAAAAABPAAAAAQABAAAAAABNAAQAAQABAAAAAABVAAMAAQABAAAAAABSAAMAAQACAAEAAABPAAUAAQACAAAAAABUAAQAAQACAAAAAABQAAEAAQACAAAAAABOAAgAAQACAAAAAABEAAQAAQACAAAAAABsAAQAAQACAAAAAABvAAUAAQABAAAAAABvAAMAAQAAAAAAAAByAAcAAQAAAAAAAABsAAcAAQABAAEAAAByAAQAAQABAAEAAAB0AAUAAQACAAEAAAAHAAUAAQABAAIAAAASAAQAAQAAAAIAAAAwAAMAAQADAAAAAAAOAAUAAQADAAEAAAAIAAYAAQADAAAAAAAiAAMAAQADAAEAAAAjAAMAAQAEAAEAAAA6AAUAAQADAAAAAABIAAIAAQADAAEAAABJAAIAAQAEAAEAAABOAAAAAQADAAAAAABqAP//AQADAAEAAABrAP//AQAEAAEAAAA=")
 tile_set = ExtResource("9_v78as")
 
-[node name="DecorationSprites" type="Node2D" parent="TileMapLayer_Decorations" unique_id=1380045975 instance=ExtResource("12_2d4sf")]
+[node name="DecorationSprites" type="Node2D" parent="TileMapLayer_Decorations" unique_id=516248196 instance=ExtResource("12_0bbcg")]
 
 [node name="TileMapLayer_Barriers" type="TileMapLayer" parent="." unique_id=916319666]
 tile_map_data = PackedByteArray("AAAhAAMAAAABAAAAAABCAAYAAAABAAAAAABCAAcAAAABAAAAAABDAAYAAAABAAAAAABDAAcAAAABAAAAAABEAAcAAAABAAAAAABBAAcAAAABAAAAAABBAAYAAAABAAAAAABAAAcAAAABAAAAAAAhAAQAAAABAAAAAAAhAAUAAAABAAAAAAAhAAYAAAABAAAAAAAhAAcAAAABAAAAAAAgAAYAAAABAAAAAAAiAAYAAAABAAAAAAAfAAcAAAABAAAAAAAgAAcAAAABAAAAAAAiAAcAAAABAAAAAAAjAAcAAAABAAAAAABjAAcAAAABAAAAAABjAAYAAAABAAAAAABlAAYAAAABAAAAAABlAAcAAAABAAAAAABmAAcAAAABAAAAAABiAAcAAAABAAAAAABCAAUAAAABAAAAAABCAAQAAAABAAAAAABTAAYAAAABAAAAAABTAAcAAAABAAAAAABSAAYAAAABAAAAAABUAAYAAAABAAAAAABSAAcAAAABAAAAAABUAAcAAAABAAAAAABRAAcAAAABAAAAAABVAAcAAAABAAAAAAD//wcAAAABAAAAAAD//wYAAAABAAAAAAD//wUAAAABAAAAAAD//wQAAAABAAAAAAD//wMAAAABAAAAAAD//wIAAAABAAAAAAD//wEAAAABAAAAAAD//wAAAAABAAAAAAD/////AAABAAAAAAD///7/AAABAAAAAAD///3/AAABAAAAAAD///z/AAABAAAAAAD///v/AAABAAAAAAD///r/AAABAAAAAAD///n/AAABAAAAAAD///j/AAABAAAAAAD///f/AAABAAAAAAD///b/AAABAAAAAAD///X/AAABAAAAAAD///T/AAABAAAAAAD///P/AAABAAAAAAD///L/AAABAAAAAAD///H/AAABAAAAAAAAAPH/AAABAAAAAAABAPH/AAABAAAAAAACAPH/AAABAAAAAAADAPH/AAABAAAAAAAEAPH/AAABAAAAAAAFAPH/AAABAAAAAAAGAPH/AAABAAAAAAAHAPH/AAABAAAAAAAIAPH/AAABAAAAAAAJAPH/AAABAAAAAAAKAPH/AAABAAAAAAALAPH/AAABAAAAAAAMAPH/AAABAAAAAAANAPH/AAABAAAAAAAOAPH/AAABAAAAAAAPAPH/AAABAAAAAAAQAPH/AAABAAAAAAARAPH/AAABAAAAAAASAPH/AAABAAAAAAATAPH/AAABAAAAAAAUAPH/AAABAAAAAAAVAPH/AAABAAAAAAAWAPH/AAABAAAAAAAXAPH/AAABAAAAAAAYAPH/AAABAAAAAAAZAPH/AAABAAAAAAAaAPH/AAABAAAAAAAbAPH/AAABAAAAAAAcAPH/AAABAAAAAAAdAPH/AAABAAAAAAAeAPH/AAABAAAAAAAfAPH/AAABAAAAAAAgAPH/AAABAAAAAAAhAPH/AAABAAAAAAAiAPH/AAABAAAAAAAjAPH/AAABAAAAAAAkAPH/AAABAAAAAAAlAPH/AAABAAAAAAAmAPH/AAABAAAAAAAnAPH/AAABAAAAAAAoAPH/AAABAAAAAAApAPH/AAABAAAAAAAqAPH/AAABAAAAAAArAPH/AAABAAAAAAAsAPH/AAABAAAAAAAtAPH/AAABAAAAAAAuAPH/AAABAAAAAAAvAPH/AAABAAAAAAAwAPH/AAABAAAAAAAxAPH/AAABAAAAAAAyAPH/AAABAAAAAAAzAPH/AAABAAAAAAA0APH/AAABAAAAAAA1APH/AAABAAAAAAA2APH/AAABAAAAAAA3APH/AAABAAAAAAA4APH/AAABAAAAAAA5APH/AAABAAAAAAA6APH/AAABAAAAAAA7APH/AAABAAAAAAA8APH/AAABAAAAAAA9APH/AAABAAAAAAA+APH/AAABAAAAAAA/APH/AAABAAAAAABAAPH/AAABAAAAAABBAPH/AAABAAAAAABCAPH/AAABAAAAAABDAPH/AAABAAAAAABEAPH/AAABAAAAAABFAPH/AAABAAAAAABGAPH/AAABAAAAAABHAPH/AAABAAAAAABIAPH/AAABAAAAAABJAPH/AAABAAAAAABKAPH/AAABAAAAAABLAPH/AAABAAAAAABMAPH/AAABAAAAAABNAPH/AAABAAAAAABOAPH/AAABAAAAAABPAPH/AAABAAAAAABQAPH/AAABAAAAAABRAPH/AAABAAAAAABSAPH/AAABAAAAAABTAPH/AAABAAAAAABUAPH/AAABAAAAAABVAPH/AAABAAAAAABWAPH/AAABAAAAAABXAPH/AAABAAAAAABYAPH/AAABAAAAAABZAPH/AAABAAAAAABaAPH/AAABAAAAAABbAPH/AAABAAAAAABcAPH/AAABAAAAAABdAPH/AAABAAAAAABeAPH/AAABAAAAAABfAPH/AAABAAAAAABgAPH/AAABAAAAAABhAPH/AAABAAAAAABiAPH/AAABAAAAAABjAPH/AAABAAAAAABkAPH/AAABAAAAAABlAPH/AAABAAAAAABmAPH/AAABAAAAAABnAPH/AAABAAAAAABoAPH/AAABAAAAAABpAPH/AAABAAAAAABqAPH/AAABAAAAAABrAPH/AAABAAAAAABsAPH/AAABAAAAAABtAPH/AAABAAAAAABuAPH/AAABAAAAAABvAPH/AAABAAAAAABwAPH/AAABAAAAAABxAPH/AAABAAAAAAByAPH/AAABAAAAAABzAPH/AAABAAAAAAB0APH/AAABAAAAAAB1APH/AAABAAAAAAB1APL/AAABAAAAAAB1APP/AAABAAAAAAB1APT/AAABAAAAAAB1APX/AAABAAAAAAB1APb/AAABAAAAAAB1APf/AAABAAAAAAB1APj/AAABAAAAAAB1APn/AAABAAAAAAB1APr/AAABAAAAAAB1APv/AAABAAAAAAB1APz/AAABAAAAAAB1AP3/AAABAAAAAAB1AP7/AAABAAAAAAB1AP//AAABAAAAAAB1AAAAAAABAAAAAAB1AAEAAAABAAAAAAB1AAIAAAABAAAAAAB1AAMAAAABAAAAAAB1AAQAAAABAAAAAAB1AAUAAAABAAAAAAB1AAYAAAABAAAAAAB1AAcAAAABAAAAAAAQAPL/AAABAAAAAAAQAPP/AAABAAAAAAAQAPT/AAABAAAAAAAQAPX/AAABAAAAAAAQAPb/AAABAAAAAAAQAPf/AAABAAAAAAAQAPj/AAABAAAAAAAQAPn/AAABAAAAAAAQAPr/AAABAAAAAAAQAPv/AAABAAAAAAAQAPz/AAABAAAAAAAQAP3/AAABAAAAAAAhAPL/AAABAAAAAAAhAPP/AAABAAAAAAAhAPT/AAABAAAAAAAhAPX/AAABAAAAAAAhAPb/AAABAAAAAAAhAPf/AAABAAAAAAAhAPj/AAABAAAAAAAhAPn/AAABAAAAAAAhAPr/AAABAAAAAAAhAPv/AAABAAAAAAAhAPz/AAABAAAAAAAhAP3/AAABAAAAAAAhAP7/AAABAAAAAAAhAP//AAABAAAAAAAhAAAAAAABAAAAAAAxAPL/AAABAAAAAAAxAPP/AAABAAAAAAAxAPT/AAABAAAAAAAxAPX/AAABAAAAAAAxAPb/AAABAAAAAAAxAPf/AAABAAAAAAAxAPj/AAABAAAAAAAxAPn/AAABAAAAAAAxAPr/AAABAAAAAAAxAPv/AAABAAAAAAAxAPz/AAABAAAAAAAxAP3/AAABAAAAAAAxAP7/AAABAAAAAAAxAP//AAABAAAAAAAxAAAAAAABAAAAAABCAPL/AAABAAAAAABCAPP/AAABAAAAAABCAPT/AAABAAAAAABCAPX/AAABAAAAAABCAPb/AAABAAAAAABCAPf/AAABAAAAAABCAPj/AAABAAAAAABCAPn/AAABAAAAAABCAPr/AAABAAAAAABCAPv/AAABAAAAAABCAPz/AAABAAAAAABCAP3/AAABAAAAAABCAP7/AAABAAAAAABCAP//AAABAAAAAABCAAAAAAABAAAAAABTAPb/AAABAAAAAABTAPf/AAABAAAAAABTAPj/AAABAAAAAABTAPn/AAABAAAAAABTAPr/AAABAAAAAABTAPv/AAABAAAAAABTAPz/AAABAAAAAABTAP3/AAABAAAAAABTAP7/AAABAAAAAABTAP//AAABAAAAAABUAPj/AAABAAAAAABVAPj/AAABAAAAAABWAPj/AAABAAAAAABXAPj/AAABAAAAAABYAPn/AAABAAAAAABYAPr/AAABAAAAAABkAPL/AAABAAAAAABkAPP/AAABAAAAAABkAPT/AAABAAAAAABkAPX/AAABAAAAAABkAPb/AAABAAAAAABkAPf/AAABAAAAAABkAPj/AAABAAAAAABkAPn/AAABAAAAAABkAPr/AAABAAAAAABkAPv/AAABAAAAAABkAPz/AAABAAAAAABkAP3/AAABAAAAAABkAP//AAABAAAAAABkAAAAAAABAAAAAABkAAEAAAABAAAAAABkAAIAAAABAAAAAABkAAMAAAABAAAAAABkAAQAAAABAAAAAABkAAUAAAABAAAAAABkAAYAAAABAAAAAABkAAcAAAABAAAAAAAgAAUAAAABAAAAAAAiAAUAAAABAAAAAABjAAUAAAABAAAAAABlAAUAAAABAAAAAABTAAUAAAABAAAAAABTAAQAAAABAAAAAAAxAAcAAAABAAAAAAAwAAcAAAABAAAAAAAyAAcAAAABAAAAAAAzAAcAAAABAAAAAAAvAAcAAAABAAAAAAAwAAYAAAABAAAAAAAyAAYAAAABAAAAAAAxAAYAAAABAAAAAAAxAAUAAAABAAAAAAAxAAQAAAABAAAAAAAxAAMAAAABAAAAAABUAPf/AAABAAAAAABVAPf/AAABAAAAAABUAPb/AAABAAAAAABWAPf/AAABAAAAAABXAPn/AAABAAAAAAAhAAEAAAABAAAAAAAxAAEAAAABAAAAAAA=")
@@ -940,7 +943,7 @@ behavior = NodePath("SkipQuestTriggerBehavior")
 delete_from_scene = true
 
 [node name="CollisionShape2D" parent="Triggers/ForceQuestProgressTrigger_SolvedRockPuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_i8u1w")
+shape = SubResource("RectangleShape2D_2kvr8")
 
 [node name="SkipQuestTriggerBehavior" parent="Triggers/ForceQuestProgressTrigger_SolvedRockPuzzle" index="1" unique_id=1238036962]
 script = ExtResource("29_poyld")
@@ -994,7 +997,7 @@ delete_from_scene = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle" index="0" unique_id=490838596]
 position = Vector2(129, -55.5)
-shape = SubResource("RectangleShape2D_un2y7")
+shape = SubResource("RectangleShape2D_okfqf")
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
 script = ExtResource("23_8knqs")
@@ -1009,7 +1012,7 @@ delete_from_scene = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle" index="0" unique_id=490838596]
 position = Vector2(115, -57.5)
-shape = SubResource("RectangleShape2D_aofud")
+shape = SubResource("RectangleShape2D_s5qse")
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
 script = ExtResource("23_8knqs")
@@ -1024,7 +1027,7 @@ delete_from_scene = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle2" index="0" unique_id=490838596]
 position = Vector2(159.5, -54.5)
-shape = SubResource("RectangleShape2D_2kvr8")
+shape = SubResource("RectangleShape2D_tt2is")
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle2" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
 script = ExtResource("23_8knqs")
@@ -1039,7 +1042,7 @@ delete_from_scene = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" index="0" unique_id=490838596]
 position = Vector2(153.5, -49)
-shape = SubResource("RectangleShape2D_okfqf")
+shape = SubResource("RectangleShape2D_kvdav")
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
 script = ExtResource("23_8knqs")
@@ -1497,6 +1500,28 @@ tile_set_left_frame = Vector2i(3, 0)
 tile_set_middle_frame = Vector2i(4, 0)
 tile_set_right_frame = Vector2i(5, 0)
 
+[node name="Grass104" type="Sprite2D" parent="Platforms/Platform17" unique_id=74230533]
+position = Vector2(-298, -59)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("20_6lr5j")
+
+[node name="Grass33" type="Sprite2D" parent="Platforms/Platform17" unique_id=651974346]
+position = Vector2(-57, -50)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("23_xns2c")
+
+[node name="Grass34" type="Sprite2D" parent="Platforms/Platform17" unique_id=208821012]
+position = Vector2(0, -50.5)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("20_6lr5j")
+flip_h = true
+
+[node name="Grass35" type="Sprite2D" parent="Platforms/Platform17" unique_id=380642676]
+position = Vector2(288, -61)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("23_xns2c")
+flip_h = true
+
 [node name="Platform10" type="Node2D" parent="Platforms" unique_id=1440331607 instance=ExtResource("32_1tk8l")]
 position = Vector2(4102, -18)
 script = ExtResource("24_twxhk")
@@ -1555,6 +1580,17 @@ tile_set_left_frame = Vector2i(4, 1)
 tile_set_middle_frame = Vector2i(5, 1)
 tile_set_right_frame = Vector2i(6, 1)
 
+[node name="Grass43" type="Sprite2D" parent="Platforms/Platform6" unique_id=1495900487]
+position = Vector2(-91, -65)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("23_xns2c")
+
+[node name="Grass44" type="Sprite2D" parent="Platforms/Platform6" unique_id=556388506]
+position = Vector2(94, -65)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("23_xns2c")
+flip_h = true
+
 [node name="Platform8" type="Node2D" parent="Platforms" unique_id=434364931 instance=ExtResource("29_vnrdr")]
 position = Vector2(7042, -154)
 script = ExtResource("24_twxhk")
@@ -1566,6 +1602,12 @@ tile_set_left_frame = Vector2i(4, 1)
 tile_set_middle_frame = Vector2i(5, 1)
 tile_set_right_frame = Vector2i(6, 1)
 
+[node name="Grass45" type="Sprite2D" parent="Platforms/Platform8" unique_id=2077605777]
+position = Vector2(56, -63)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("23_xns2c")
+flip_h = true
+
 [node name="Platform9" type="Node2D" parent="Platforms" unique_id=1016935612 instance=ExtResource("29_vnrdr")]
 position = Vector2(7722, -375)
 script = ExtResource("24_twxhk")
@@ -1576,6 +1618,17 @@ tile_set_index = 1
 tile_set_left_frame = Vector2i(4, 1)
 tile_set_middle_frame = Vector2i(5, 1)
 tile_set_right_frame = Vector2i(6, 1)
+
+[node name="Grass46" type="Sprite2D" parent="Platforms/Platform9" unique_id=1349162477]
+position = Vector2(73, -61)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("19_y8cc3")
+flip_h = true
+
+[node name="Grass49" type="Sprite2D" parent="Platforms/Platform9" unique_id=761655133]
+position = Vector2(-94, -61)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("23_xns2c")
 
 [node name="Platform18" type="Node2D" parent="Platforms" unique_id=120942991 instance=ExtResource("29_vnrdr")]
 position = Vector2(7856, -702)
@@ -1599,6 +1652,12 @@ tile_set_left_frame = Vector2i(4, 1)
 tile_set_middle_frame = Vector2i(5, 1)
 tile_set_right_frame = Vector2i(6, 1)
 
+[node name="Grass47" type="Sprite2D" parent="Platforms/Platform11" unique_id=965079134]
+position = Vector2(-102, -63.00003)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("20_6lr5j")
+flip_h = true
+
 [node name="Platform12" type="Node2D" parent="Platforms" unique_id=1402230692 instance=ExtResource("29_vnrdr")]
 position = Vector2(9856, -455)
 script = ExtResource("24_twxhk")
@@ -1610,6 +1669,17 @@ tile_set_left_frame = Vector2i(4, 1)
 tile_set_middle_frame = Vector2i(5, 1)
 tile_set_right_frame = Vector2i(6, 1)
 
+[node name="Grass91" type="Sprite2D" parent="Platforms/Platform12" unique_id=681321903]
+position = Vector2(104, -63)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("20_6lr5j")
+flip_h = true
+
+[node name="Grass92" type="Sprite2D" parent="Platforms/Platform12" unique_id=274308996]
+position = Vector2(38, -62)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("23_xns2c")
+
 [node name="Platform13" type="Node2D" parent="Platforms" unique_id=891981076 instance=ExtResource("29_vnrdr")]
 position = Vector2(12099, -421)
 script = ExtResource("24_twxhk")
@@ -1619,6 +1689,18 @@ tile_set_index = 1
 tile_set_left_frame = Vector2i(4, 1)
 tile_set_middle_frame = Vector2i(5, 1)
 tile_set_right_frame = Vector2i(6, 1)
+
+[node name="Grass86" type="Sprite2D" parent="Platforms/Platform13" unique_id=1010252466]
+position = Vector2(-163, -64)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("20_6lr5j")
+flip_h = true
+
+[node name="Grass87" type="Sprite2D" parent="Platforms/Platform13" unique_id=1237179936]
+position = Vector2(145.00098, -63)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("23_xns2c")
+flip_h = true
 
 [node name="Platform14" type="Node2D" parent="Platforms" unique_id=653415634 instance=ExtResource("29_vnrdr")]
 position = Vector2(11730, -740)
@@ -1631,6 +1713,17 @@ tile_set_left_frame = Vector2i(4, 1)
 tile_set_middle_frame = Vector2i(5, 1)
 tile_set_right_frame = Vector2i(6, 1)
 
+[node name="Grass88" type="Sprite2D" parent="Platforms/Platform14" unique_id=1055631432]
+position = Vector2(-87, -63.00006)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("23_xns2c")
+
+[node name="Grass89" type="Sprite2D" parent="Platforms/Platform14" unique_id=1324010631]
+position = Vector2(68, -62.00006)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("19_y8cc3")
+flip_h = true
+
 [node name="Platform15" type="Node2D" parent="Platforms" unique_id=1426766162 instance=ExtResource("29_vnrdr")]
 position = Vector2(12333, -913)
 script = ExtResource("24_twxhk")
@@ -1641,6 +1734,12 @@ tile_set_index = 1
 tile_set_left_frame = Vector2i(4, 1)
 tile_set_middle_frame = Vector2i(5, 1)
 tile_set_right_frame = Vector2i(6, 1)
+
+[node name="Grass90" type="Sprite2D" parent="Platforms/Platform15" unique_id=1881983756]
+position = Vector2(45.000977, -62)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("19_y8cc3")
+flip_h = true
 
 [node name="Signs" type="Node2D" parent="." unique_id=567327781]
 

@@ -9,818 +9,722 @@
 [ext_resource type="Texture2D" uid="uid://codk0dpyhaerk" path="res://components/leveldecoration/Grass_BasketWeave3.png" id="7_j8go6"]
 [ext_resource type="Texture2D" uid="uid://b4l0m4f081ye3" path="res://components/leveldecoration/Grass_StoneCliff1.png" id="8_xkkwq"]
 [ext_resource type="Texture2D" uid="uid://c08ew76efrqum" path="res://components/leveldecoration/Grass_StoneCliff2.png" id="9_x8btf"]
-[ext_resource type="Texture2D" uid="uid://33jdofr25213" path="res://components/leveldecoration/Grass_BasketWeave1.png" id="10_jk4n2"]
-[ext_resource type="Texture2D" uid="uid://37r66j4huscj" path="res://components/leveldecoration/Grass_BasketWeave2.png" id="11_xtcpm"]
+[ext_resource type="Texture2D" uid="uid://37r66j4huscj" path="res://components/leveldecoration/Grass_BasketWeave2.png" id="10_jk4n2"]
+[ext_resource type="Texture2D" uid="uid://33jdofr25213" path="res://components/leveldecoration/Grass_BasketWeave1.png" id="11_xtcpm"]
 [ext_resource type="Texture2D" uid="uid://c6myjham7aqai" path="res://components/leveldecoration/Grass_StoneCliff3.png" id="12_qkr1h"]
 
-[node name="DecorationSprites" type="Node2D" unique_id=1380045975]
+[node name="DecorationSprites" type="Node2D" unique_id=516248196]
 
-[node name="GateBushesBehind" type="Node2D" parent="." unique_id=140715220]
+[node name="GateBushesBehind" type="Node2D" parent="." unique_id=1923072061]
 position = Vector2(0, 1)
 
-[node name="Bush1" type="AnimatedSprite2D" parent="GateBushesBehind" unique_id=773577772]
+[node name="Bush1" type="AnimatedSprite2D" parent="GateBushesBehind" unique_id=431188340]
 position = Vector2(8322, 492)
 sprite_frames = ExtResource("1_fkjwp")
 autoplay = "default"
 
-[node name="Bush2" type="AnimatedSprite2D" parent="GateBushesBehind" unique_id=390907476]
+[node name="Bush2" type="AnimatedSprite2D" parent="GateBushesBehind" unique_id=1499021360]
 position = Vector2(8695, 493)
 sprite_frames = ExtResource("2_d7fam")
 autoplay = "default"
 
-[node name="Bush3" type="AnimatedSprite2D" parent="GateBushesBehind" unique_id=1316994507]
+[node name="Bush3" type="AnimatedSprite2D" parent="GateBushesBehind" unique_id=841817870]
 position = Vector2(8736, 502)
 sprite_frames = ExtResource("3_ko7bd")
 autoplay = "default"
 flip_h = true
 
-[node name="Bush4" type="AnimatedSprite2D" parent="GateBushesBehind" unique_id=1862289528]
+[node name="Bush4" type="AnimatedSprite2D" parent="GateBushesBehind" unique_id=369793870]
 position = Vector2(11168, -275)
 sprite_frames = ExtResource("2_d7fam")
 autoplay = "default"
 
-[node name="Bush5" type="AnimatedSprite2D" parent="GateBushesBehind" unique_id=596321224]
+[node name="Bush5" type="AnimatedSprite2D" parent="GateBushesBehind" unique_id=1225436511]
 position = Vector2(11126, -268)
 sprite_frames = ExtResource("3_ko7bd")
 autoplay = "default"
 
-[node name="Bush9" type="AnimatedSprite2D" parent="GateBushesBehind" unique_id=1357104399]
+[node name="Bush9" type="AnimatedSprite2D" parent="GateBushesBehind" unique_id=1852886208]
 position = Vector2(10790, -280)
 sprite_frames = ExtResource("1_fkjwp")
 autoplay = "default"
 
-[node name="Bush7" type="AnimatedSprite2D" parent="GateBushesBehind" unique_id=1658000495]
+[node name="Bush7" type="AnimatedSprite2D" parent="GateBushesBehind" unique_id=1832628762]
 position = Vector2(11572, -276)
 sprite_frames = ExtResource("4_v5wey")
 autoplay = "default"
 flip_h = true
 
-[node name="Bush8" type="AnimatedSprite2D" parent="GateBushesBehind" unique_id=436838897]
+[node name="Bush8" type="AnimatedSprite2D" parent="GateBushesBehind" unique_id=1109415295]
 position = Vector2(11451, -266)
 sprite_frames = ExtResource("5_0uphx")
 autoplay = "default"
 
-[node name="Bush6" type="AnimatedSprite2D" parent="GateBushesBehind" unique_id=1332403065]
+[node name="Bush6" type="AnimatedSprite2D" parent="GateBushesBehind" unique_id=1165689224]
 position = Vector2(11532, -266)
 sprite_frames = ExtResource("6_5jo55")
 autoplay = "default"
 flip_h = true
 
-[node name="Bush10" type="AnimatedSprite2D" parent="GateBushesBehind" unique_id=342141172]
+[node name="Bush10" type="AnimatedSprite2D" parent="GateBushesBehind" unique_id=1412706784]
 position = Vector2(11748, -266)
 sprite_frames = ExtResource("5_0uphx")
 autoplay = "default"
 flip_h = true
 
-[node name="BushesBehind" type="Node2D" parent="." unique_id=1488767340]
+[node name="BushesBehind" type="Node2D" parent="." unique_id=1327549966]
 position = Vector2(0, 1)
 
-[node name="LargeGreen1" type="AnimatedSprite2D" parent="BushesBehind" unique_id=488840320]
+[node name="LargeGreen1" type="AnimatedSprite2D" parent="BushesBehind" unique_id=612826546]
 position = Vector2(79, 618)
 sprite_frames = ExtResource("1_fkjwp")
 autoplay = "default"
 
-[node name="LargeGreen2" type="AnimatedSprite2D" parent="BushesBehind" unique_id=668781036]
+[node name="LargeGreen2" type="AnimatedSprite2D" parent="BushesBehind" unique_id=1495747342]
 position = Vector2(3134, 1002)
 sprite_frames = ExtResource("1_fkjwp")
 autoplay = "default"
 
-[node name="LargeGreen3" type="AnimatedSprite2D" parent="BushesBehind" unique_id=147728009]
+[node name="LargeGreen3" type="AnimatedSprite2D" parent="BushesBehind" unique_id=586165914]
 position = Vector2(6204, 361)
 sprite_frames = ExtResource("1_fkjwp")
 autoplay = "default"
 
-[node name="LargeGreen4" type="AnimatedSprite2D" parent="BushesBehind" unique_id=1471893912]
+[node name="LargeGreen4" type="AnimatedSprite2D" parent="BushesBehind" unique_id=1862244101]
 position = Vector2(22502, -422)
 sprite_frames = ExtResource("1_fkjwp")
 autoplay = "default"
 offset = Vector2(-8821, 273)
 
-[node name="LargeRed3" type="AnimatedSprite2D" parent="BushesBehind" unique_id=1301582259]
+[node name="LargeRed3" type="AnimatedSprite2D" parent="BushesBehind" unique_id=1355980239]
 position = Vector2(3436, 1006)
 sprite_frames = ExtResource("4_v5wey")
 autoplay = "default"
 flip_h = true
 
-[node name="LargeRed4" type="AnimatedSprite2D" parent="BushesBehind" unique_id=830312871]
+[node name="LargeRed4" type="AnimatedSprite2D" parent="BushesBehind" unique_id=762791000]
 position = Vector2(7474, 1004)
 sprite_frames = ExtResource("4_v5wey")
 autoplay = "default"
 flip_h = true
 
-[node name="SmallPurple3" type="AnimatedSprite2D" parent="BushesBehind" unique_id=1002541808]
+[node name="SmallPurple3" type="AnimatedSprite2D" parent="BushesBehind" unique_id=1713236292]
 position = Vector2(2836, 1013)
 sprite_frames = ExtResource("5_0uphx")
 autoplay = "default"
 
-[node name="SmallPurple4" type="AnimatedSprite2D" parent="BushesBehind" unique_id=1772371734]
+[node name="SmallPurple4" type="AnimatedSprite2D" parent="BushesBehind" unique_id=501048671]
 position = Vector2(7380, 1013)
 sprite_frames = ExtResource("5_0uphx")
 autoplay = "default"
 
-[node name="SmallRed2" type="AnimatedSprite2D" parent="BushesBehind" unique_id=2041889885]
+[node name="SmallRed2" type="AnimatedSprite2D" parent="BushesBehind" unique_id=1409614450]
 position = Vector2(3178, 1014)
 sprite_frames = ExtResource("3_ko7bd")
 autoplay = "default"
 
-[node name="SmallRed1" type="AnimatedSprite2D" parent="BushesBehind" unique_id=486095502]
+[node name="SmallRed1" type="AnimatedSprite2D" parent="BushesBehind" unique_id=1389685861]
 position = Vector2(126, 628)
 sprite_frames = ExtResource("3_ko7bd")
 autoplay = "default"
 
-[node name="SmallRed3" type="AnimatedSprite2D" parent="BushesBehind" unique_id=788778923]
+[node name="SmallRed3" type="AnimatedSprite2D" parent="BushesBehind" unique_id=1671641969]
 position = Vector2(6159, 372)
 sprite_frames = ExtResource("3_ko7bd")
 autoplay = "default"
 
-[node name="LargePurple1" type="AnimatedSprite2D" parent="BushesBehind" unique_id=388415527]
+[node name="LargePurple1" type="AnimatedSprite2D" parent="BushesBehind" unique_id=540480849]
 position = Vector2(2630, 619)
 sprite_frames = ExtResource("2_d7fam")
 autoplay = "default"
 
-[node name="LargePurple2" type="AnimatedSprite2D" parent="BushesBehind" unique_id=127665309]
+[node name="LargePurple2" type="AnimatedSprite2D" parent="BushesBehind" unique_id=945320234]
 position = Vector2(12157, 1007)
 sprite_frames = ExtResource("2_d7fam")
 autoplay = "default"
 
-[node name="LargePurple3" type="AnimatedSprite2D" parent="BushesBehind" unique_id=235614012]
+[node name="LargePurple3" type="AnimatedSprite2D" parent="BushesBehind" unique_id=499480188]
 position = Vector2(14645, -149)
 sprite_frames = ExtResource("2_d7fam")
 autoplay = "default"
 
-[node name="SmallGreen1" type="AnimatedSprite2D" parent="BushesBehind" unique_id=602834273]
+[node name="SmallGreen1" type="AnimatedSprite2D" parent="BushesBehind" unique_id=2100107504]
 position = Vector2(2593, 628)
 sprite_frames = ExtResource("6_5jo55")
 autoplay = "default"
 flip_h = true
 
-[node name="SmallGreen2" type="AnimatedSprite2D" parent="BushesBehind" unique_id=661947201]
+[node name="SmallGreen2" type="AnimatedSprite2D" parent="BushesBehind" unique_id=1283747709]
 position = Vector2(12252, 1012)
 sprite_frames = ExtResource("6_5jo55")
 autoplay = "default"
 
-[node name="SmallGreen3" type="AnimatedSprite2D" parent="BushesBehind" unique_id=212952421]
+[node name="SmallGreen3" type="AnimatedSprite2D" parent="BushesBehind" unique_id=30794238]
 position = Vector2(12112, 1013)
 sprite_frames = ExtResource("6_5jo55")
 autoplay = "default"
 flip_h = true
 
-[node name="SmallGreen4" type="AnimatedSprite2D" parent="BushesBehind" unique_id=1502131823]
+[node name="SmallGreen4" type="AnimatedSprite2D" parent="BushesBehind" unique_id=1219880183]
 position = Vector2(13726, -137)
 sprite_frames = ExtResource("6_5jo55")
 autoplay = "default"
 flip_h = true
 
-[node name="SmallPurple1" type="AnimatedSprite2D" parent="BushesBehind" unique_id=2069295990]
+[node name="SmallPurple1" type="AnimatedSprite2D" parent="BushesBehind" unique_id=1251462910]
 position = Vector2(4375, 370)
 sprite_frames = ExtResource("5_0uphx")
 autoplay = "default"
 
-[node name="SmallPurple2" type="AnimatedSprite2D" parent="BushesBehind" unique_id=221297922]
+[node name="SmallPurple2" type="AnimatedSprite2D" parent="BushesBehind" unique_id=1468366982]
 position = Vector2(11076, 1013)
 sprite_frames = ExtResource("5_0uphx")
 autoplay = "default"
 
-[node name="LargeRed1" type="AnimatedSprite2D" parent="BushesBehind" unique_id=1308845149]
+[node name="LargeRed1" type="AnimatedSprite2D" parent="BushesBehind" unique_id=1731585925]
 position = Vector2(11033, 1002)
 sprite_frames = ExtResource("4_v5wey")
 autoplay = "default"
 flip_h = true
 
-[node name="LargeRed2" type="AnimatedSprite2D" parent="BushesBehind" unique_id=331829082]
+[node name="LargeRed2" type="AnimatedSprite2D" parent="BushesBehind" unique_id=1390649433]
 position = Vector2(12618, -149)
 sprite_frames = ExtResource("4_v5wey")
 autoplay = "default"
 flip_h = true
 
-[node name="GrassBehind" type="Node2D" parent="." unique_id=891299170]
+[node name="GrassBehind" type="Node2D" parent="." unique_id=1298428343]
 
-[node name="Grass1" type="Sprite2D" parent="GrassBehind" unique_id=432295062]
+[node name="Grass1" type="Sprite2D" parent="GrassBehind" unique_id=631909257]
 z_as_relative = false
 position = Vector2(10531, 256.5)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("7_j8go6")
 flip_h = true
 
-[node name="Grass2" type="Sprite2D" parent="GrassBehind" unique_id=956406184]
+[node name="Grass2" type="Sprite2D" parent="GrassBehind" unique_id=647062072]
 z_as_relative = false
 position = Vector2(10847, 256.5)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("7_j8go6")
 flip_h = true
 
-[node name="Grass69" type="Sprite2D" parent="GrassBehind" unique_id=1851419953]
+[node name="Grass69" type="Sprite2D" parent="GrassBehind" unique_id=1971946480]
 position = Vector2(11133, -257)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("8_xkkwq")
 flip_h = true
 
-[node name="Grass70" type="Sprite2D" parent="GrassBehind" unique_id=1910698030]
+[node name="Grass70" type="Sprite2D" parent="GrassBehind" unique_id=746096865]
 position = Vector2(11202, -258)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("9_x8btf")
 flip_h = true
 
-[node name="Grass21" type="Sprite2D" parent="GrassBehind" unique_id=1052411734]
+[node name="Grass21" type="Sprite2D" parent="GrassBehind" unique_id=1648075617]
 position = Vector2(3624.0918, 595.5477)
 rotation = -0.7853982
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("11_xtcpm")
+texture = ExtResource("10_jk4n2")
 
-[node name="Grass22" type="Sprite2D" parent="GrassBehind" unique_id=92691699]
+[node name="Grass22" type="Sprite2D" parent="GrassBehind" unique_id=875997688]
 position = Vector2(3794.0918, 424.54773)
 rotation = -0.7853982
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("10_jk4n2")
+texture = ExtResource("11_xtcpm")
 
-[node name="Grass27" type="Sprite2D" parent="GrassBehind" unique_id=1225628022]
+[node name="Grass27" type="Sprite2D" parent="GrassBehind" unique_id=810676835]
 position = Vector2(5966, 204)
 rotation = 0.7853982
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("10_jk4n2")
+texture = ExtResource("11_xtcpm")
 
-[node name="Grass28" type="Sprite2D" parent="GrassBehind" unique_id=439992718]
+[node name="Grass28" type="Sprite2D" parent="GrassBehind" unique_id=601068066]
 position = Vector2(6016, 253.99979)
 rotation = 0.7853982
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("11_xtcpm")
+texture = ExtResource("10_jk4n2")
 
-[node name="Grass29" type="Sprite2D" parent="GrassBehind" unique_id=656893311]
+[node name="Grass29" type="Sprite2D" parent="GrassBehind" unique_id=671528486]
 position = Vector2(11049.001, 422.99945)
 rotation = 0.7853982
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("11_xtcpm")
+texture = ExtResource("10_jk4n2")
 
-[node name="Grass30" type="Sprite2D" parent="GrassBehind" unique_id=368308745]
+[node name="Grass30" type="Sprite2D" parent="GrassBehind" unique_id=607718062]
 position = Vector2(11000.001, 371.00058)
 rotation = 0.7853982
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("10_jk4n2")
+texture = ExtResource("11_xtcpm")
 
-[node name="Grass31" type="Sprite2D" parent="GrassBehind" unique_id=395288092]
+[node name="Grass31" type="Sprite2D" parent="GrassBehind" unique_id=399057852]
 position = Vector2(11312.001, 684.99994)
 rotation = 0.7853982
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("10_jk4n2")
+texture = ExtResource("11_xtcpm")
 
-[node name="Grass32" type="Sprite2D" parent="GrassBehind" unique_id=431894076]
+[node name="Grass32" type="Sprite2D" parent="GrassBehind" unique_id=758050897]
 position = Vector2(11376, 749.0001)
 rotation = 0.7853982
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("11_xtcpm")
+texture = ExtResource("10_jk4n2")
 
-[node name="Grass26" type="Sprite2D" parent="GrassBehind" unique_id=2019121793]
+[node name="Grass26" type="Sprite2D" parent="GrassBehind" unique_id=1745457399]
 position = Vector2(5757, 129)
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("11_xtcpm")
+texture = ExtResource("10_jk4n2")
 
-[node name="Grass33" type="Sprite2D" parent="GrassBehind" unique_id=820151165]
+[node name="Grass33" type="Sprite2D" parent="GrassBehind" unique_id=1617867316]
 position = Vector2(5814, 128)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("7_j8go6")
 flip_h = true
 
-[node name="GrassFront" type="Node2D" parent="." unique_id=226754784]
-z_index = 1
-
-[node name="Grass1" type="Sprite2D" parent="GrassFront" unique_id=1735079126]
-position = Vector2(98, 640)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("10_jk4n2")
-
-[node name="Grass2" type="Sprite2D" parent="GrassFront" unique_id=822896067]
-position = Vector2(520, 640)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("7_j8go6")
-
-[node name="Grass3" type="Sprite2D" parent="GrassFront" unique_id=242662405]
-position = Vector2(728, 640)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("11_xtcpm")
-
-[node name="Grass4" type="Sprite2D" parent="GrassFront" unique_id=124252047]
-position = Vector2(833, 768)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("10_jk4n2")
-
-[node name="Grass5" type="Sprite2D" parent="GrassFront" unique_id=641734259]
-position = Vector2(980, 768)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("7_j8go6")
-
-[node name="Grass6" type="Sprite2D" parent="GrassFront" unique_id=972884024]
-position = Vector2(1226, 768)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("11_xtcpm")
-
-[node name="Grass7" type="Sprite2D" parent="GrassFront" unique_id=466544855]
-position = Vector2(1300, 646)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("11_xtcpm")
-
-[node name="Grass8" type="Sprite2D" parent="GrassFront" unique_id=1200754089]
-position = Vector2(1410, 640)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("10_jk4n2")
-
-[node name="Grass9" type="Sprite2D" parent="GrassFront" unique_id=941412742]
-position = Vector2(1410, 640)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("10_jk4n2")
-
-[node name="Grass10" type="Sprite2D" parent="GrassFront" unique_id=1293674489]
-position = Vector2(1742, 640)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("11_xtcpm")
-flip_h = true
-
-[node name="Grass11" type="Sprite2D" parent="GrassFront" unique_id=945285381]
-position = Vector2(2102, 640)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("10_jk4n2")
-
-[node name="Grass12" type="Sprite2D" parent="GrassFront" unique_id=1504025419]
-position = Vector2(2273, 640)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("11_xtcpm")
-
-[node name="Grass13" type="Sprite2D" parent="GrassFront" unique_id=1922105362]
-position = Vector2(2372, 639)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("7_j8go6")
-flip_h = true
-
-[node name="Grass14" type="Sprite2D" parent="GrassFront" unique_id=1767733038]
-position = Vector2(2660, 641)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("11_xtcpm")
-
-[node name="Grass15" type="Sprite2D" parent="GrassFront" unique_id=1186341039]
-position = Vector2(2857, 1025)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("11_xtcpm")
-
-[node name="Grass16" type="Sprite2D" parent="GrassFront" unique_id=1030238638]
-position = Vector2(3153, 1025)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("10_jk4n2")
-flip_h = true
-
-[node name="Grass17" type="Sprite2D" parent="GrassFront" unique_id=1765832785]
-position = Vector2(3446, 1025)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("10_jk4n2")
-
-[node name="Grass18" type="Sprite2D" parent="GrassFront" unique_id=1095021460]
-position = Vector2(3986, 1022)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("7_j8go6")
-
-[node name="Grass20" type="Sprite2D" parent="GrassFront" unique_id=45228756]
-position = Vector2(4572, 1025)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("10_jk4n2")
-flip_h = true
-
-[node name="Grass19" type="Sprite2D" parent="GrassFront" unique_id=1210233943]
-position = Vector2(3378, 766)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("7_j8go6")
-
-[node name="Grass23" type="Sprite2D" parent="GrassFront" unique_id=288603892]
-position = Vector2(4236, 380.5)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("7_j8go6")
-
-[node name="Grass24" type="Sprite2D" parent="GrassFront" unique_id=1835153829]
-position = Vector2(4342, 380.5)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("7_j8go6")
-flip_h = true
-
-[node name="Grass25" type="Sprite2D" parent="GrassFront" unique_id=921669997]
-position = Vector2(4734, 386.00003)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("11_xtcpm")
-flip_h = true
-
-[node name="Grass29" type="Sprite2D" parent="GrassFront" unique_id=1641774064]
-position = Vector2(6190, 384)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("11_xtcpm")
-
-[node name="Grass30" type="Sprite2D" parent="GrassFront" unique_id=85454611]
-position = Vector2(6496.0005, 417)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("7_j8go6")
-flip_h = true
-
-[node name="Grass31" type="Sprite2D" parent="GrassFront" unique_id=1467933900]
+[node name="Grass34" type="Sprite2D" parent="GrassBehind" unique_id=1250767690]
 position = Vector2(6754, 513)
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("11_xtcpm")
-flip_h = true
-
-[node name="Grass32" type="Sprite2D" parent="GrassFront" unique_id=1826423522]
-position = Vector2(6943.0005, 247.00002)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("8_xkkwq")
-
-[node name="Grass103" type="Sprite2D" parent="GrassFront" unique_id=285328755]
-position = Vector2(5912, 1024)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("9_x8btf")
-
-[node name="Grass93" type="Sprite2D" parent="GrassFront" unique_id=1514542013]
-position = Vector2(6068, 1024)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("8_xkkwq")
-
-[node name="Grass94" type="Sprite2D" parent="GrassFront" unique_id=52889947]
-position = Vector2(6429, 1023.00006)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("9_x8btf")
-flip_h = true
-
-[node name="Grass95" type="Sprite2D" parent="GrassFront" unique_id=1533175419]
-position = Vector2(6715, 1022.00006)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("12_qkr1h")
-flip_h = true
-
-[node name="Grass96" type="Sprite2D" parent="GrassFront" unique_id=679010416]
-position = Vector2(7378, 1024)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("12_qkr1h")
-
-[node name="Grass97" type="Sprite2D" parent="GrassFront" unique_id=1205163719]
-position = Vector2(7486, 1027)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("12_qkr1h")
-flip_h = true
-
-[node name="Grass98" type="Sprite2D" parent="GrassFront" unique_id=2118459776]
-position = Vector2(7852, 1025)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("8_xkkwq")
-flip_h = true
-
-[node name="Grass99" type="Sprite2D" parent="GrassFront" unique_id=1363805495]
-position = Vector2(7960, 1025)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("9_x8btf")
-
-[node name="Grass100" type="Sprite2D" parent="GrassFront" unique_id=1955820338]
-position = Vector2(8261.001, 1024)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("9_x8btf")
-
-[node name="Grass101" type="Sprite2D" parent="GrassFront" unique_id=1850515704]
-position = Vector2(8548.001, 1024)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("8_xkkwq")
-
-[node name="Grass102" type="Sprite2D" parent="GrassFront" unique_id=617732063]
-position = Vector2(8905, 1024)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("8_xkkwq")
-flip_h = true
-
-[node name="Grass33" type="Sprite2D" parent="GrassFront" unique_id=40836106]
-position = Vector2(7133, 257.5)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("12_qkr1h")
-
-[node name="Grass34" type="Sprite2D" parent="GrassFront" unique_id=1825199370]
-position = Vector2(7207, 258.5)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("9_x8btf")
-flip_h = true
-
-[node name="Grass35" type="Sprite2D" parent="GrassFront" unique_id=1589050332]
-position = Vector2(7490.0005, 248.00002)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("12_qkr1h")
-flip_h = true
-
-[node name="Grass36" type="Sprite2D" parent="GrassFront" unique_id=414595599]
-position = Vector2(7503.0005, 640)
-scale = Vector2(1.5, 1.5)
 texture = ExtResource("10_jk4n2")
 flip_h = true
 
-[node name="Grass37" type="Sprite2D" parent="GrassFront" unique_id=531883034]
-position = Vector2(7700.0005, 525)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("11_xtcpm")
-flip_h = true
-
-[node name="Grass38" type="Sprite2D" parent="GrassFront" unique_id=968313408]
-position = Vector2(7965.0005, 513)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("7_j8go6")
-
-[node name="Grass39" type="Sprite2D" parent="GrassFront" unique_id=2078337606]
-position = Vector2(8344, 512)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("7_j8go6")
-
-[node name="Grass40" type="Sprite2D" parent="GrassFront" unique_id=247925688]
-z_index = 10
-position = Vector2(8667, 512.5)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("10_jk4n2")
-flip_h = true
-
-[node name="Grass41" type="Sprite2D" parent="GrassFront" unique_id=530228584]
-position = Vector2(8765, 510.5)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("11_xtcpm")
-flip_h = true
-
-[node name="Grass42" type="Sprite2D" parent="GrassFront" unique_id=1086666319]
-position = Vector2(9443, 260)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("11_xtcpm")
-flip_h = true
-
-[node name="Grass43" type="Sprite2D" parent="GrassFront" unique_id=1495900487]
-position = Vector2(9332, -64)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("12_qkr1h")
-
-[node name="Grass44" type="Sprite2D" parent="GrassFront" unique_id=556388506]
-position = Vector2(9517, -64)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("12_qkr1h")
-flip_h = true
-
-[node name="Grass45" type="Sprite2D" parent="GrassFront" unique_id=2077605777]
-position = Vector2(9018, -281)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("12_qkr1h")
-flip_h = true
-
-[node name="Grass46" type="Sprite2D" parent="GrassFront" unique_id=1349162477]
-position = Vector2(9715, -500)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("8_xkkwq")
-flip_h = true
-
-[node name="Grass49" type="Sprite2D" parent="GrassFront" unique_id=761655133]
-position = Vector2(9548, -500)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("12_qkr1h")
-
-[node name="Grass47" type="Sprite2D" parent="GrassFront" unique_id=965079134]
-position = Vector2(10078, -502.00003)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("9_x8btf")
-flip_h = true
-
-[node name="Grass48" type="Sprite2D" parent="GrassFront" unique_id=180579935]
-position = Vector2(10271, -502.00003)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("12_qkr1h")
-flip_h = true
-
-[node name="Grass50" type="Sprite2D" parent="GrassFront" unique_id=1428213424]
-position = Vector2(9885, 2)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("11_xtcpm")
-
-[node name="Grass51" type="Sprite2D" parent="GrassFront" unique_id=944760393]
-position = Vector2(10175, 2)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("7_j8go6")
-flip_h = true
-
-[node name="Grass52" type="Sprite2D" parent="GrassFront" unique_id=2082661223]
-position = Vector2(10357, 1024)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("8_xkkwq")
-
-[node name="Grass53" type="Sprite2D" parent="GrassFront" unique_id=1773608155]
-position = Vector2(10714, 1023.00006)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("9_x8btf")
-flip_h = true
-
-[node name="Grass54" type="Sprite2D" parent="GrassFront" unique_id=1089506762]
-position = Vector2(11000, 1022.00006)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("12_qkr1h")
-flip_h = true
-
-[node name="Grass55" type="Sprite2D" parent="GrassFront" unique_id=99767493]
-position = Vector2(11663, 1024)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("12_qkr1h")
-
-[node name="Grass56" type="Sprite2D" parent="GrassFront" unique_id=468120941]
-position = Vector2(11771, 1027)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("12_qkr1h")
-flip_h = true
-
-[node name="Grass69" type="Sprite2D" parent="GrassFront" unique_id=1293580802]
-position = Vector2(12137, 1025)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("8_xkkwq")
-flip_h = true
-
-[node name="Grass70" type="Sprite2D" parent="GrassFront" unique_id=2127439450]
-position = Vector2(12245, 1025)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("9_x8btf")
-
-[node name="Grass57" type="Sprite2D" parent="GrassFront" unique_id=1420926656]
-position = Vector2(12546.001, 1024)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("9_x8btf")
-
-[node name="Grass58" type="Sprite2D" parent="GrassFront" unique_id=315374594]
-position = Vector2(12833.001, 1024)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("8_xkkwq")
-
-[node name="Grass59" type="Sprite2D" parent="GrassFront" unique_id=440608623]
-position = Vector2(13190, 1024)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("8_xkkwq")
-flip_h = true
-
-[node name="Grass60" type="Sprite2D" parent="GrassFront" unique_id=229403476]
-position = Vector2(13262.001, 1024)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("9_x8btf")
-flip_h = true
-
-[node name="Grass61" type="Sprite2D" parent="GrassFront" unique_id=308614243]
-position = Vector2(13822, 1024)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("9_x8btf")
-flip_h = true
-
-[node name="Grass62" type="Sprite2D" parent="GrassFront" unique_id=1573770812]
-position = Vector2(13810.5, 1024)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("9_x8btf")
-
-[node name="Grass63" type="Sprite2D" parent="GrassFront" unique_id=411275630]
-position = Vector2(14097.5, 1024)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("8_xkkwq")
-
-[node name="Grass64" type="Sprite2D" parent="GrassFront" unique_id=1110651917]
-position = Vector2(14454.499, 1024)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("8_xkkwq")
-flip_h = true
-
-[node name="Grass65" type="Sprite2D" parent="GrassFront" unique_id=333603889]
-position = Vector2(14526.5, 1024)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("9_x8btf")
-flip_h = true
-
-[node name="Grass66" type="Sprite2D" parent="GrassFront" unique_id=1908223616]
-position = Vector2(14985.001, 1026)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("8_xkkwq")
-flip_h = true
-
-[node name="Grass67" type="Sprite2D" parent="GrassFront" unique_id=1280912570]
-position = Vector2(15069.001, 1024)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("12_qkr1h")
-flip_h = true
-
-[node name="Grass68" type="Sprite2D" parent="GrassFront" unique_id=564891363]
+[node name="Grass68" type="Sprite2D" parent="GrassBehind" unique_id=1678926162]
 position = Vector2(10816, -258)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("8_xkkwq")
 
-[node name="Grass71" type="Sprite2D" parent="GrassFront" unique_id=1279711730]
+[node name="Grass71" type="Sprite2D" parent="GrassBehind" unique_id=342859770]
 position = Vector2(11507, -255)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("8_xkkwq")
 flip_h = true
 
-[node name="Grass72" type="Sprite2D" parent="GrassFront" unique_id=755857194]
+[node name="Grass72" type="Sprite2D" parent="GrassBehind" unique_id=971027093]
 position = Vector2(11612, -253)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("12_qkr1h")
 flip_h = true
 
-[node name="Grass73" type="Sprite2D" parent="GrassFront" unique_id=1960454435]
+[node name="Grass73" type="Sprite2D" parent="GrassBehind" unique_id=1637400965]
 position = Vector2(11743, -253)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("12_qkr1h")
 flip_h = true
 
-[node name="Grass74" type="Sprite2D" parent="GrassFront" unique_id=609268169]
-position = Vector2(12445.001, -126)
+[node name="Grass36" type="Sprite2D" parent="GrassBehind" unique_id=1917919323]
+position = Vector2(7503.0005, 640)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("11_xtcpm")
+flip_h = true
+
+[node name="GrassFront" type="Node2D" parent="." unique_id=1627022867]
+z_index = 1
+
+[node name="Grass1" type="Sprite2D" parent="GrassFront" unique_id=1370891807]
+position = Vector2(98, 640)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("11_xtcpm")
 
-[node name="Grass75" type="Sprite2D" parent="GrassFront" unique_id=2012967644]
+[node name="Grass2" type="Sprite2D" parent="GrassFront" unique_id=566830871]
+position = Vector2(520, 642)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("7_j8go6")
+
+[node name="Grass3" type="Sprite2D" parent="GrassFront" unique_id=181369442]
+position = Vector2(728, 640)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("10_jk4n2")
+
+[node name="Grass4" type="Sprite2D" parent="GrassFront" unique_id=791232621]
+position = Vector2(833, 768)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("11_xtcpm")
+
+[node name="Grass5" type="Sprite2D" parent="GrassFront" unique_id=578737567]
+position = Vector2(980, 768)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("7_j8go6")
+
+[node name="Grass6" type="Sprite2D" parent="GrassFront" unique_id=2137311376]
+position = Vector2(1226, 768)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("10_jk4n2")
+
+[node name="Grass7" type="Sprite2D" parent="GrassFront" unique_id=1322168399]
+position = Vector2(1300, 646)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("10_jk4n2")
+
+[node name="Grass8" type="Sprite2D" parent="GrassFront" unique_id=65087641]
+position = Vector2(1410, 640)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("11_xtcpm")
+
+[node name="Grass9" type="Sprite2D" parent="GrassFront" unique_id=828222169]
+position = Vector2(1410, 640)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("11_xtcpm")
+
+[node name="Grass10" type="Sprite2D" parent="GrassFront" unique_id=646912770]
+position = Vector2(1742, 640)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("10_jk4n2")
+flip_h = true
+
+[node name="Grass11" type="Sprite2D" parent="GrassFront" unique_id=1436423109]
+position = Vector2(2102, 640)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("11_xtcpm")
+
+[node name="Grass12" type="Sprite2D" parent="GrassFront" unique_id=1585877670]
+position = Vector2(2273, 640)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("10_jk4n2")
+
+[node name="Grass13" type="Sprite2D" parent="GrassFront" unique_id=162688283]
+position = Vector2(2372, 639)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("7_j8go6")
+flip_h = true
+
+[node name="Grass14" type="Sprite2D" parent="GrassFront" unique_id=511005191]
+position = Vector2(2660, 641)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("10_jk4n2")
+
+[node name="Grass15" type="Sprite2D" parent="GrassFront" unique_id=716499299]
+position = Vector2(2857, 1025)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("10_jk4n2")
+
+[node name="Grass16" type="Sprite2D" parent="GrassFront" unique_id=720592537]
+position = Vector2(3153, 1025)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("11_xtcpm")
+flip_h = true
+
+[node name="Grass17" type="Sprite2D" parent="GrassFront" unique_id=237466212]
+position = Vector2(3446, 1025)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("11_xtcpm")
+
+[node name="Grass18" type="Sprite2D" parent="GrassFront" unique_id=154896193]
+position = Vector2(3986, 1022)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("7_j8go6")
+
+[node name="Grass20" type="Sprite2D" parent="GrassFront" unique_id=1476195449]
+position = Vector2(4572, 1025)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("11_xtcpm")
+flip_h = true
+
+[node name="Grass19" type="Sprite2D" parent="GrassFront" unique_id=105110223]
+position = Vector2(3378, 766)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("7_j8go6")
+
+[node name="Grass23" type="Sprite2D" parent="GrassFront" unique_id=1022890460]
+position = Vector2(4236, 380.5)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("7_j8go6")
+
+[node name="Grass24" type="Sprite2D" parent="GrassFront" unique_id=2085404113]
+position = Vector2(4342, 380.5)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("7_j8go6")
+flip_h = true
+
+[node name="Grass25" type="Sprite2D" parent="GrassFront" unique_id=1954223485]
+position = Vector2(4734, 386.00003)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("10_jk4n2")
+flip_h = true
+
+[node name="Grass29" type="Sprite2D" parent="GrassFront" unique_id=1515939242]
+position = Vector2(6190, 384)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("10_jk4n2")
+
+[node name="Grass30" type="Sprite2D" parent="GrassFront" unique_id=1315214081]
+position = Vector2(6496.0005, 383)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("7_j8go6")
+flip_h = true
+
+[node name="Grass103" type="Sprite2D" parent="GrassFront" unique_id=305473171]
+position = Vector2(5912, 1024)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("9_x8btf")
+
+[node name="Grass93" type="Sprite2D" parent="GrassFront" unique_id=1185724518]
+position = Vector2(6068, 1024)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("8_xkkwq")
+
+[node name="Grass94" type="Sprite2D" parent="GrassFront" unique_id=1443284205]
+position = Vector2(6429, 1023.00006)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("9_x8btf")
+flip_h = true
+
+[node name="Grass95" type="Sprite2D" parent="GrassFront" unique_id=1331472054]
+position = Vector2(6715, 1022.00006)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("12_qkr1h")
+flip_h = true
+
+[node name="Grass96" type="Sprite2D" parent="GrassFront" unique_id=282610497]
+position = Vector2(7378, 1024)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("12_qkr1h")
+
+[node name="Grass97" type="Sprite2D" parent="GrassFront" unique_id=1512938689]
+position = Vector2(7486, 1027)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("12_qkr1h")
+flip_h = true
+
+[node name="Grass98" type="Sprite2D" parent="GrassFront" unique_id=517881499]
+position = Vector2(7852, 1025)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("8_xkkwq")
+flip_h = true
+
+[node name="Grass99" type="Sprite2D" parent="GrassFront" unique_id=850295685]
+position = Vector2(7960, 1025)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("9_x8btf")
+
+[node name="Grass100" type="Sprite2D" parent="GrassFront" unique_id=657827443]
+position = Vector2(8261.001, 1024)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("9_x8btf")
+
+[node name="Grass101" type="Sprite2D" parent="GrassFront" unique_id=1006882838]
+position = Vector2(8548.001, 1024)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("8_xkkwq")
+
+[node name="Grass102" type="Sprite2D" parent="GrassFront" unique_id=474994976]
+position = Vector2(8905, 1024)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("8_xkkwq")
+flip_h = true
+
+[node name="Grass37" type="Sprite2D" parent="GrassFront" unique_id=1953544653]
+position = Vector2(7700.0005, 525)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("10_jk4n2")
+flip_h = true
+
+[node name="Grass38" type="Sprite2D" parent="GrassFront" unique_id=775337122]
+position = Vector2(7965.0005, 513)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("7_j8go6")
+
+[node name="Grass39" type="Sprite2D" parent="GrassFront" unique_id=335160602]
+position = Vector2(8344, 512)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("7_j8go6")
+
+[node name="Grass40" type="Sprite2D" parent="GrassFront" unique_id=688865868]
+z_index = 10
+position = Vector2(8667, 512.5)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("11_xtcpm")
+flip_h = true
+
+[node name="Grass41" type="Sprite2D" parent="GrassFront" unique_id=197639722]
+position = Vector2(8765, 510.5)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("10_jk4n2")
+flip_h = true
+
+[node name="Grass42" type="Sprite2D" parent="GrassFront" unique_id=204344385]
+position = Vector2(9443, 260)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("10_jk4n2")
+flip_h = true
+
+[node name="Grass48" type="Sprite2D" parent="GrassFront" unique_id=462084752]
+position = Vector2(10271, -502.00003)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("12_qkr1h")
+flip_h = true
+
+[node name="Grass50" type="Sprite2D" parent="GrassFront" unique_id=1956479513]
+position = Vector2(9885, 2)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("10_jk4n2")
+
+[node name="Grass51" type="Sprite2D" parent="GrassFront" unique_id=863160810]
+position = Vector2(10175, 2)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("7_j8go6")
+flip_h = true
+
+[node name="Grass52" type="Sprite2D" parent="GrassFront" unique_id=85114432]
+position = Vector2(10357, 1024)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("8_xkkwq")
+
+[node name="Grass53" type="Sprite2D" parent="GrassFront" unique_id=1307761680]
+position = Vector2(10714, 1023.00006)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("9_x8btf")
+flip_h = true
+
+[node name="Grass54" type="Sprite2D" parent="GrassFront" unique_id=955517087]
+position = Vector2(11000, 1022.00006)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("12_qkr1h")
+flip_h = true
+
+[node name="Grass55" type="Sprite2D" parent="GrassFront" unique_id=2107187086]
+position = Vector2(11663, 1024)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("12_qkr1h")
+
+[node name="Grass56" type="Sprite2D" parent="GrassFront" unique_id=1211806471]
+position = Vector2(11771, 1027)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("12_qkr1h")
+flip_h = true
+
+[node name="Grass69" type="Sprite2D" parent="GrassFront" unique_id=1791784185]
+position = Vector2(12137, 1025)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("8_xkkwq")
+flip_h = true
+
+[node name="Grass70" type="Sprite2D" parent="GrassFront" unique_id=1656097607]
+position = Vector2(12245, 1025)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("9_x8btf")
+
+[node name="Grass57" type="Sprite2D" parent="GrassFront" unique_id=717668175]
+position = Vector2(12546.001, 1024)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("9_x8btf")
+
+[node name="Grass58" type="Sprite2D" parent="GrassFront" unique_id=160140003]
+position = Vector2(12833.001, 1024)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("8_xkkwq")
+
+[node name="Grass59" type="Sprite2D" parent="GrassFront" unique_id=1188317004]
+position = Vector2(13190, 1024)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("8_xkkwq")
+flip_h = true
+
+[node name="Grass60" type="Sprite2D" parent="GrassFront" unique_id=1486681784]
+position = Vector2(13262.001, 1024)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("9_x8btf")
+flip_h = true
+
+[node name="Grass61" type="Sprite2D" parent="GrassFront" unique_id=1150070092]
+position = Vector2(13822, 1024)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("9_x8btf")
+flip_h = true
+
+[node name="Grass62" type="Sprite2D" parent="GrassFront" unique_id=2019407643]
+position = Vector2(13810.5, 1024)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("9_x8btf")
+
+[node name="Grass63" type="Sprite2D" parent="GrassFront" unique_id=1999238134]
+position = Vector2(14097.5, 1024)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("8_xkkwq")
+
+[node name="Grass64" type="Sprite2D" parent="GrassFront" unique_id=1628694353]
+position = Vector2(14454.499, 1024)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("8_xkkwq")
+flip_h = true
+
+[node name="Grass65" type="Sprite2D" parent="GrassFront" unique_id=479351078]
+position = Vector2(14526.5, 1024)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("9_x8btf")
+flip_h = true
+
+[node name="Grass66" type="Sprite2D" parent="GrassFront" unique_id=821067895]
+position = Vector2(14985.001, 1026)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("8_xkkwq")
+flip_h = true
+
+[node name="Grass67" type="Sprite2D" parent="GrassFront" unique_id=822018303]
+position = Vector2(15069.001, 1024)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("12_qkr1h")
+flip_h = true
+
+[node name="Grass74" type="Sprite2D" parent="GrassFront" unique_id=1659347506]
+position = Vector2(12445.001, -126)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("10_jk4n2")
+
+[node name="Grass75" type="Sprite2D" parent="GrassFront" unique_id=1874090848]
 position = Vector2(12656.001, -129)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("7_j8go6")
 
-[node name="Grass76" type="Sprite2D" parent="GrassFront" unique_id=2134433127]
+[node name="Grass76" type="Sprite2D" parent="GrassFront" unique_id=1910694572]
 position = Vector2(12766, -127)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("7_j8go6")
 flip_h = true
 
-[node name="Grass77" type="Sprite2D" parent="GrassFront" unique_id=1754405603]
+[node name="Grass77" type="Sprite2D" parent="GrassFront" unique_id=263776681]
 position = Vector2(13237, -127)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("10_jk4n2")
-flip_h = true
-
-[node name="Grass78" type="Sprite2D" parent="GrassFront" unique_id=1676164916]
-position = Vector2(13387, -127.00001)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("11_xtcpm")
 flip_h = true
 
-[node name="Grass79" type="Sprite2D" parent="GrassFront" unique_id=377519092]
+[node name="Grass78" type="Sprite2D" parent="GrassFront" unique_id=1015038379]
+position = Vector2(13387, -127.00001)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("10_jk4n2")
+flip_h = true
+
+[node name="Grass79" type="Sprite2D" parent="GrassFront" unique_id=1165889806]
 position = Vector2(13435, -127.00001)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("7_j8go6")
 flip_h = true
 
-[node name="Grass80" type="Sprite2D" parent="GrassFront" unique_id=1761886765]
+[node name="Grass80" type="Sprite2D" parent="GrassFront" unique_id=228640149]
 position = Vector2(13705, -127)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("10_jk4n2")
-
-[node name="Grass81" type="Sprite2D" parent="GrassFront" unique_id=1226659548]
-position = Vector2(13793.001, -127)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("11_xtcpm")
 
-[node name="Grass82" type="Sprite2D" parent="GrassFront" unique_id=302416933]
+[node name="Grass81" type="Sprite2D" parent="GrassFront" unique_id=314915914]
+position = Vector2(13793.001, -127)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("10_jk4n2")
+
+[node name="Grass82" type="Sprite2D" parent="GrassFront" unique_id=1744945652]
 position = Vector2(14403, -127.00001)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("7_j8go6")
 flip_h = true
 
-[node name="Grass83" type="Sprite2D" parent="GrassFront" unique_id=907326729]
+[node name="Grass83" type="Sprite2D" parent="GrassFront" unique_id=1050165058]
 position = Vector2(14673, -127)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("10_jk4n2")
-
-[node name="Grass84" type="Sprite2D" parent="GrassFront" unique_id=495939930]
-position = Vector2(14761.001, -127)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("11_xtcpm")
 
-[node name="Grass85" type="Sprite2D" parent="GrassFront" unique_id=1026140278]
+[node name="Grass84" type="Sprite2D" parent="GrassFront" unique_id=395439329]
+position = Vector2(14761.001, -127)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("10_jk4n2")
+
+[node name="Grass85" type="Sprite2D" parent="GrassFront" unique_id=843468032]
 position = Vector2(14945.001, -127.00001)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("7_j8go6")
 flip_h = true
-
-[node name="Grass86" type="Sprite2D" parent="GrassFront" unique_id=1010252466]
-position = Vector2(13856, -549)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("9_x8btf")
-flip_h = true
-
-[node name="Grass87" type="Sprite2D" parent="GrassFront" unique_id=1237179936]
-position = Vector2(14164.001, -548)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("12_qkr1h")
-flip_h = true
-
-[node name="Grass88" type="Sprite2D" parent="GrassFront" unique_id=1055631432]
-position = Vector2(13563, -866)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("12_qkr1h")
-
-[node name="Grass89" type="Sprite2D" parent="GrassFront" unique_id=1324010631]
-position = Vector2(13718, -866.00006)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("8_xkkwq")
-flip_h = true
-
-[node name="Grass90" type="Sprite2D" parent="GrassFront" unique_id=1881983756]
-position = Vector2(14298.001, -1039)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("8_xkkwq")
-flip_h = true
-
-[node name="Grass91" type="Sprite2D" parent="GrassFront" unique_id=681321903]
-position = Vector2(11880, -582)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("9_x8btf")
-flip_h = true
-
-[node name="Grass92" type="Sprite2D" parent="GrassFront" unique_id=274308996]
-position = Vector2(11814, -581)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("12_qkr1h")
