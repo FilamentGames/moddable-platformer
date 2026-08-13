@@ -143,6 +143,7 @@ func save_checkpoint() -> void:
 	}
 
 func load_checkpoint() -> void:
+	editor_scene_provider.stop_game()
 	editor_scene_provider.set_editor_scene()
 	_current_text_line = _checkpoint_quest_progress["text_line"]
 	global_coins = _checkpoint_quest_progress["global_coins"]
