@@ -277,8 +277,6 @@ func update_editable_objects(to_add: Array, to_remove: Array) -> void:
 		indicator.name = "EditableObjectIndicator"
 		object.add_child(indicator)
 		indicator.owner = scene
-	editor_scene_provider.update_and_save_node(scene)
-
 
 func get_last_checkpoint_position() -> Vector2:
 	return _checkpoint_quest_progress["last_position"]

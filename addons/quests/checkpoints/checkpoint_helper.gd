@@ -5,20 +5,24 @@ class_name CheckpointHelper
 
 const checkpoint_resource: String = "res://.temp/LastCheckpoint.tscn"
 
+var saved_checkpoint_scene: PackedScene
+
 ## A reference to our main editor plugin so we can call fancy editor methods
 var plugin: EditorPlugin
 
 ## Saves the current editor scene as the new checkpoint
 func save_editor_scene_as_checkpoint() -> void:
 	var scene_root = EditorInterface.get_edited_scene_root()
-	var packed_scene = PackedScene.new()
-	packed_scene.pack(scene_root)
-	ResourceSaver.save(packed_scene, checkpoint_resource)
+	saved_checkpoint_scene = PackedScene.new()
+	saved_checkpoint_scene.pack(scene_root)
+	# ResourceSaver.save(packed_scene, checkpoint_resource)
 
 ## Loads the current checkpoint into the current editor scene
 func set_editor_scene() -> void:
+	if not saved_checkpoint_scene:
+		return
 	var scene_root = EditorInterface.get_edited_scene_root().duplicate()
-	var root = load(checkpoint_resource).instantiate()
+	var root = saved_checkpoint_scene.instantiate()
 
 	_setup_undo_redo(root, scene_root)
 
