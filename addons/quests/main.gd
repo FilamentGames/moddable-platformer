@@ -139,7 +139,7 @@ func _auto_play_when_ready() -> void:
 			if scene != null and not scene.resource_path.is_empty():
 				var delay_sec = web_timeout if OS.has_feature("web") else desktop_timeout
 				await get_tree().create_timer(delay_sec).timeout
-				EditorInterface.play_custom_scene(scene.resource_path)
+				EditorInterface.play_main_scene()
 				return
 		await get_tree().process_frame
 
