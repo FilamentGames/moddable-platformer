@@ -65,6 +65,7 @@ func _reset_after_defeat() -> void:
 	_body_collision.disabled = false
 	_sprite.flip_v = false
 	_sprite.play(_default_anim_name)
+	direction = -1 if start_direction == 0 else 1
 
 func _physics_process(delta):
 	if defeated:
