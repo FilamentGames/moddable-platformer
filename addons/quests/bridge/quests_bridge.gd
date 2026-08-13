@@ -134,6 +134,7 @@ func _on_session_start() -> void:
 	GlobalQuests.quests.hide_bottom_panel()
 
 func _on_session_continue(session_id: int) -> void:
+	_on_session_start()
 	_send_message(session_id, -1, "game_unpaused", [])
 
 func _on_session_stop() -> void:
