@@ -94,8 +94,8 @@ static func register_mode_switch(mode: BabyGodotQuests.EditorMode = BabyGodotQue
 static func set_current_edited_scene(path: String) -> void:
 	_send_message_static("set_current_edited_scene", [-1, path])
 
-static func activate_level_checkpoint(checkpoint_id: String) -> void:
-	_send_message_static("activate_level_checkpoint", [-1, checkpoint_id])
+static func activate_level_checkpoint(checkpoint_id: String, npc_prefab: String) -> void:
+	_send_message_static("activate_level_checkpoint", [-1, checkpoint_id, npc_prefab])
 
 static func delete_node_in_editor(node: Node) -> void:
 	_send_message_static("delete_node_in_editor", [-1, UniqueSceneId.get_id(node)])

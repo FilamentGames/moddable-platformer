@@ -73,7 +73,11 @@ func _capture(message, data, session_id):
 			GlobalQuests.quests.set_current_edited_scene(data[1])
 			return true
 		"activate_level_checkpoint":
-			GlobalQuests.quests.activate_level_checkpoint(data[1])
+			_swapped_objects.push_back({
+				"parent": data[1],
+				"prefab": data[2]
+			})
+			GlobalQuests.quests.activate_level_checkpoint(data[1], _collected_objects, _swapped_objects)
 			return true
 		"delete_node_in_editor":
 			_collected_objects.append(data[1])

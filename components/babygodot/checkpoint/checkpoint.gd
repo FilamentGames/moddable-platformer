@@ -33,7 +33,7 @@ func _spawn_npc() -> void:
 	npc.position = position
 
 func send_checkpoint_message() -> void:
-	InGameQuestsBridge.activate_level_checkpoint(UniqueSceneId.get_id(self))
+	InGameQuestsBridge.activate_level_checkpoint(UniqueSceneId.get_id(self), npc_prefab.resource_path)
 
 func _trigger_global_checkpoint_activated_signal() -> void:
 	var pos := position

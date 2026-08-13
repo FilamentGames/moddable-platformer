@@ -168,12 +168,13 @@ func register_player_position(pos: Vector2) -> void:
 		return
 	_last_player_pos = pos
 
-func update_player_position() -> void:
+func update_player_position(save: bool = true) -> void:
 	var scene: Node2D = editor_scene_provider.get_editor_scene()
 	var player: Player = BabyGodotUtils.get_first_child_of_type(scene, Player)
 	if player:
 		player.position = _last_player_pos
-		editor_scene_provider.update_and_save_node(player)
+		if save:
+			editor_scene_provider.update_and_save_node(player)
 		editor_scene_provider.set_2d_viewport_focus(player.position, default_editor_zoom)
 	else:
 		print("Couldn't find player object")
@@ -189,26 +190,22 @@ func collect_scroll(scroll_id: String) -> void:
 		scroll_collected.emit()
 
 ## Activates a "Knit Witch" checkpoint, replacing the checkpoint trigger with the knit witch NPC in the editor so the checkpoint cannot be triggered again.
-func activate_level_checkpoint(checkpoint_id: String) -> void:
+func activate_level_checkpoint(checkpoint_id: String, removed_objects: Array, swapped_objects: Array) -> void:
+	print(removed_objects, swapped_objects)
 	var scene: Node2D = editor_scene_provider.get_editor_scene()
 	var target_checkpoint: Checkpoint = UniqueSceneId.find_by_id(scene, checkpoint_id)
 	if target_checkpoint:
-		var npc: Node2D = target_checkpoint.npc_prefab.instantiate()
-		target_checkpoint.get_parent().add_child(npc)
-		npc.owner = scene
-		npc.position = target_checkpoint.position
 		var player: Player = BabyGodotUtils.get_first_child_of_type(scene, Player)
 		if player:
 			_lock_player_position = true
 			_last_player_pos = player.get_parent().to_local(target_checkpoint.player_position_marker.global_position)
-			update_player_position()
+			update_player_position(false)
+		delete_nodes_in_editor(removed_objects, false, scene)
+		swap_nodes_with_prefabs(swapped_objects, scene)
 		_checkpoint_quest_progress["last_position"] = _last_player_pos
-		target_checkpoint.get_parent().remove_child(target_checkpoint)
-		target_checkpoint.free()
 		save_checkpoint.call_deferred()
 
-func delete_nodes_in_editor(node_ids: Array, save: bool = true) -> void:
-	var scene: Node2D = editor_scene_provider.get_editor_scene()
+func delete_nodes_in_editor(node_ids: Array, save: bool = true, scene: Node2D = editor_scene_provider.get_editor_scene()) -> void:
 	var editable_node_list: EditableNodeList = BabyGodotUtils.get_first_child_of_type(scene, EditableNodeList)
 	for node_id in node_ids:
 		var node: Node = UniqueSceneId.find_by_id(scene, node_id)
@@ -228,8 +225,7 @@ func delete_nodes_in_editor(node_ids: Array, save: bool = true) -> void:
 	if save:
 		editor_scene_provider.update_and_save_node(scene)
 
-func swap_nodes_with_prefabs(swapped_objects: Array[Dictionary]) -> void:
-	var scene: Node2D = editor_scene_provider.get_editor_scene()
+func swap_nodes_with_prefabs(swapped_objects: Array[Dictionary], scene: Node2D = editor_scene_provider.get_editor_scene()) -> void:
 	for swapped_object in swapped_objects:
 		var parent: Node = UniqueSceneId.find_by_id(scene, swapped_object["parent"])
 		var prefab: PackedScene = ResourceLoader.load(swapped_object["prefab"])
