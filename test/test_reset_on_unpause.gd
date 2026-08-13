@@ -49,3 +49,12 @@ func test_it_fires_a_signal_when_reset():
 
 	assert_eq(spy.get_number_of_calls(), 1)
 
+func test_it_can_ignore_resetting_position():
+	node.position = Vector2(123, 456)
+	behavior = autofree(ResetOnUnpause.new(node, autofree(MockEditorGameMessagingService.new())))
+
+	node.position = Vector2(456, 123)
+	behavior.reset_position = false
+	behavior.reset()
+
+	assert_eq(node.position, Vector2(456, 123))

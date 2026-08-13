@@ -16,6 +16,9 @@ var _initial_target_position: Vector2
 ## Whether the object is inert
 var inert: bool = false
 
+## Whether to reset the object's position or not
+var reset_position: bool = true
+
 ## Emitted when the reset function is called
 signal on_reset()
 
@@ -35,7 +38,8 @@ func fake_free() -> void:
 
 ## Resets the object back to its initial position.
 func reset() -> void:
-	_target.position = _initial_target_position
+	if reset_position:
+		_target.position = _initial_target_position
 	_target.process_mode = Node.PROCESS_MODE_INHERIT
 	_target.show()
 	inert = false
