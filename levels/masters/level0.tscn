@@ -438,19 +438,19 @@ size = Vector2(94, 258)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_un2y7"]
 resource_local_to_scene = true
-size = Vector2(94, 258)
+size = Vector2(352, 369)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aofud"]
 resource_local_to_scene = true
-size = Vector2(94, 258)
+size = Vector2(324, 373)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2kvr8"]
 resource_local_to_scene = true
-size = Vector2(94, 258)
+size = Vector2(413, 367)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_okfqf"]
 resource_local_to_scene = true
-size = Vector2(94, 258)
+size = Vector2(401, 356)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0ff8d"]
 size = Vector2(300, 137)
@@ -993,6 +993,7 @@ behavior = NodePath("Behavior")
 delete_from_scene = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle" index="0" unique_id=490838596]
+position = Vector2(129, -55.5)
 shape = SubResource("RectangleShape2D_un2y7")
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
@@ -1007,6 +1008,7 @@ behavior = NodePath("Behavior")
 delete_from_scene = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle" index="0" unique_id=490838596]
+position = Vector2(115, -57.5)
 shape = SubResource("RectangleShape2D_aofud")
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
@@ -1021,6 +1023,7 @@ behavior = NodePath("Behavior")
 delete_from_scene = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle2" index="0" unique_id=490838596]
+position = Vector2(159.5, -54.5)
 shape = SubResource("RectangleShape2D_2kvr8")
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle2" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
@@ -1035,6 +1038,7 @@ behavior = NodePath("Behavior")
 delete_from_scene = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" index="0" unique_id=490838596]
+position = Vector2(153.5, -49)
 shape = SubResource("RectangleShape2D_okfqf")
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
