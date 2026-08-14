@@ -33,7 +33,6 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 25.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -55,7 +54,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -25.0
 offset_top = 25.0
-offset_right = 10.0
 offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -120,15 +118,15 @@ grow_vertical = 2
 custom_minimum_size = Vector2(32, 300)
 layout_mode = 2
 offset_transform_enabled = true
-offset_transform_position = Vector2(0, 25)
+offset_transform_position = Vector2(-5, 25)
 theme_override_colors/font_color = Color(0.44738787, 0.37121013, 0.34726858, 1)
 theme_override_constants/line_spacing = -2
 theme_override_font_sizes/font_size = 16
-text = "Yes, Storyweaver! Select the pile of rocks and clear them from your path. When you're done, unpause and  let time flow (▶) through Threadbare again!"
+text = "Find me in the world of Threadbare! Press Play! (▶)"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
-visible_characters = 148
+visible_characters = 51
 
 [node name="CenterContainer2" type="VBoxContainer" parent="UI" unique_id=269182063]
 layout_mode = 2
@@ -153,6 +151,8 @@ custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
 size_flags_vertical = 4
 size_flags_stretch_ratio = 6.0
+offset_transform_enabled = true
+offset_transform_position = Vector2(-5, 0)
 hint = "Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. "
 
 [node name="Spacer2" type="Control" parent="UI/EndContainer" unique_id=1879052227]
