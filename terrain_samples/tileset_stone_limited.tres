@@ -1,0 +1,68 @@
+[gd_resource type="TileSet" format=3 uid="uid://dxsmhwoj10k6k"]
+
+[ext_resource type="Texture2D" uid="uid://bwqpjrcfe6tiy" path="res://terrain_samples/tiles-threadbare-stone-limited.png" id="1_2nqb4"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7rt66"]
+texture = ExtResource("1_2nqb4")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, -0.48400116, -64, -0.48400116)
+0:0/0/physics_layer_0/polygon_0/one_way = true
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, -0.48400116, -64, -0.48400116)
+1:0/0/physics_layer_0/polygon_0/one_way = true
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, -0.48400116, -64, -0.48400116)
+2:0/0/physics_layer_0/polygon_0/one_way = true
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, -0.48400116, -64, -0.48400116)
+3:0/0/physics_layer_0/polygon_0/one_way = true
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, -0.48400116, -64, -0.48400116)
+4:0/0/physics_layer_0/polygon_0/one_way = true
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, -0.48400116, -64, -0.48400116)
+5:0/0/physics_layer_0/polygon_0/one_way = true
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, -0.48400116, -64, -0.48400116)
+0:1/0/physics_layer_0/polygon_0/one_way = true
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, -0.48400116, -64, -0.48400116)
+1:1/0/physics_layer_0/polygon_0/one_way = true
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, -0.48400116, -64, -0.48400116)
+2:1/0/physics_layer_0/polygon_0/one_way = true
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, 64, 64, -64, 64, -15.972, -14.036003, 64)
+3:1/0/physics_layer_0/polygon_0/one_way = true
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, -0.48400116, -64, -0.48400116)
+4:1/0/physics_layer_0/polygon_0/one_way = true
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, 64, 10.164001, 64, -64, -14.036003)
+5:1/0/physics_layer_0/polygon_0/one_way = true
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+
+[resource]
+tile_size = Vector2i(128, 128)
+physics_layer_0/collision_layer = 4
+physics_layer_0/collision_mask = 0
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Plains"
+terrain_set_0/terrain_0/color = Color(0.23972544, 0.43794718, 0.28839993, 1)
+terrain_set_0/terrain_1/name = "Hills"
+terrain_set_0/terrain_1/color = Color(0.57405883, 0.12996274, 0.9395054, 1)
+terrain_set_0/terrain_2/name = "Stone"
+terrain_set_0/terrain_2/color = Color(0.46875, 0.5, 0.25, 1)
+terrain_set_0/terrain_3/name = "Rocks"
+terrain_set_0/terrain_3/color = Color(0.375, 0.5, 0.25, 1)
+terrain_set_0/terrain_4/name = "Bushes"
+terrain_set_0/terrain_4/color = Color(0.28125, 0.5, 0.25, 1)
+terrain_set_0/terrain_5/name = "Mushrooms"
+terrain_set_0/terrain_5/color = Color(0.25, 0.5, 0.3125, 1)
+sources/0 = SubResource("TileSetAtlasSource_7rt66")

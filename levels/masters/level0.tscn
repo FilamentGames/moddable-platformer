@@ -28,6 +28,7 @@
 [ext_resource type="TileSet" uid="uid://cpfdbax0jl6ew" path="res://terrain_samples/tileset_barriers.tres" id="12_vnrdr"]
 [ext_resource type="PackedScene" uid="uid://dpk1jwflxtjbn" path="res://components/babygodot/yarnspark/yarnspark.tscn" id="12_ycdye"]
 [ext_resource type="PackedScene" uid="uid://bbyqlrx2w6ir2" path="res://components/babygodot/yarnspark/subtypes/intro_yarnspark.tscn" id="14_8jun3"]
+[ext_resource type="TileSet" uid="uid://dxsmhwoj10k6k" path="res://terrain_samples/tileset_stone_limited.tres" id="14_ht26h"]
 [ext_resource type="PackedScene" uid="uid://bmpmfwhrjxgeh" path="res://components/babygodot/trigger/change_editable_objects_trigger/change_editable_objects_trigger.tscn" id="14_m7dqe"]
 [ext_resource type="PackedScene" uid="uid://8st4scqt06l8" path="res://components/player/player.tscn" id="14_su4jx"]
 [ext_resource type="PackedScene" uid="uid://b61aexqklqbhv" path="res://components/babygodot/trigger/screenshake_event_trigger/screen_shake_trigger.tscn" id="15_0aei4"]
@@ -436,23 +437,23 @@ _data = {
 &"open": SubResource("Animation_83ym3")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_okfqf"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s5qse"]
 resource_local_to_scene = true
 size = Vector2(94, 258)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_s5qse"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tt2is"]
 resource_local_to_scene = true
 size = Vector2(352, 369)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tt2is"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kvdav"]
 resource_local_to_scene = true
 size = Vector2(324, 373)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kvdav"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bktpv"]
 resource_local_to_scene = true
 size = Vector2(413, 367)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bktpv"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0yd5m"]
 resource_local_to_scene = true
 size = Vector2(401, 356)
 
@@ -521,10 +522,14 @@ tile_map_data = PackedByteArray("AAAFAAcAAQAAAAAAAAAFAAYAAQAAAAEAAAAFAAUAAQACAAA
 tile_set = ExtResource("9_v78as")
 
 [node name="DecorationSprites" type="Node2D" parent="TileMapLayer_Decorations" unique_id=516248196 instance=ExtResource("12_0bbcg")]
+metadata/_edit_lock_ = true
 
 [node name="TileMapLayer_Barriers" type="TileMapLayer" parent="." unique_id=916319666]
 tile_map_data = PackedByteArray("AAAhAAMAAAABAAAAAABCAAYAAAABAAAAAABCAAcAAAABAAAAAABDAAYAAAABAAAAAABDAAcAAAABAAAAAABEAAcAAAABAAAAAABBAAcAAAABAAAAAABBAAYAAAABAAAAAABAAAcAAAABAAAAAAAhAAQAAAABAAAAAAAhAAUAAAABAAAAAAAhAAYAAAABAAAAAAAhAAcAAAABAAAAAAAgAAYAAAABAAAAAAAiAAYAAAABAAAAAAAfAAcAAAABAAAAAAAgAAcAAAABAAAAAAAiAAcAAAABAAAAAAAjAAcAAAABAAAAAABjAAcAAAABAAAAAABjAAYAAAABAAAAAABlAAYAAAABAAAAAABlAAcAAAABAAAAAABmAAcAAAABAAAAAABiAAcAAAABAAAAAABCAAUAAAABAAAAAABCAAQAAAABAAAAAABTAAYAAAABAAAAAABTAAcAAAABAAAAAABSAAYAAAABAAAAAABUAAYAAAABAAAAAABSAAcAAAABAAAAAABUAAcAAAABAAAAAABRAAcAAAABAAAAAABVAAcAAAABAAAAAAD//wcAAAABAAAAAAD//wYAAAABAAAAAAD//wUAAAABAAAAAAD//wQAAAABAAAAAAD//wMAAAABAAAAAAD//wIAAAABAAAAAAD//wEAAAABAAAAAAD//wAAAAABAAAAAAD/////AAABAAAAAAD///7/AAABAAAAAAD///3/AAABAAAAAAD///z/AAABAAAAAAD///v/AAABAAAAAAD///r/AAABAAAAAAD///n/AAABAAAAAAD///j/AAABAAAAAAD///f/AAABAAAAAAD///b/AAABAAAAAAD///X/AAABAAAAAAD///T/AAABAAAAAAD///P/AAABAAAAAAD///L/AAABAAAAAAD///H/AAABAAAAAAAAAPH/AAABAAAAAAABAPH/AAABAAAAAAACAPH/AAABAAAAAAADAPH/AAABAAAAAAAEAPH/AAABAAAAAAAFAPH/AAABAAAAAAAGAPH/AAABAAAAAAAHAPH/AAABAAAAAAAIAPH/AAABAAAAAAAJAPH/AAABAAAAAAAKAPH/AAABAAAAAAALAPH/AAABAAAAAAAMAPH/AAABAAAAAAANAPH/AAABAAAAAAAOAPH/AAABAAAAAAAPAPH/AAABAAAAAAAQAPH/AAABAAAAAAARAPH/AAABAAAAAAASAPH/AAABAAAAAAATAPH/AAABAAAAAAAUAPH/AAABAAAAAAAVAPH/AAABAAAAAAAWAPH/AAABAAAAAAAXAPH/AAABAAAAAAAYAPH/AAABAAAAAAAZAPH/AAABAAAAAAAaAPH/AAABAAAAAAAbAPH/AAABAAAAAAAcAPH/AAABAAAAAAAdAPH/AAABAAAAAAAeAPH/AAABAAAAAAAfAPH/AAABAAAAAAAgAPH/AAABAAAAAAAhAPH/AAABAAAAAAAiAPH/AAABAAAAAAAjAPH/AAABAAAAAAAkAPH/AAABAAAAAAAlAPH/AAABAAAAAAAmAPH/AAABAAAAAAAnAPH/AAABAAAAAAAoAPH/AAABAAAAAAApAPH/AAABAAAAAAAqAPH/AAABAAAAAAArAPH/AAABAAAAAAAsAPH/AAABAAAAAAAtAPH/AAABAAAAAAAuAPH/AAABAAAAAAAvAPH/AAABAAAAAAAwAPH/AAABAAAAAAAxAPH/AAABAAAAAAAyAPH/AAABAAAAAAAzAPH/AAABAAAAAAA0APH/AAABAAAAAAA1APH/AAABAAAAAAA2APH/AAABAAAAAAA3APH/AAABAAAAAAA4APH/AAABAAAAAAA5APH/AAABAAAAAAA6APH/AAABAAAAAAA7APH/AAABAAAAAAA8APH/AAABAAAAAAA9APH/AAABAAAAAAA+APH/AAABAAAAAAA/APH/AAABAAAAAABAAPH/AAABAAAAAABBAPH/AAABAAAAAABCAPH/AAABAAAAAABDAPH/AAABAAAAAABEAPH/AAABAAAAAABFAPH/AAABAAAAAABGAPH/AAABAAAAAABHAPH/AAABAAAAAABIAPH/AAABAAAAAABJAPH/AAABAAAAAABKAPH/AAABAAAAAABLAPH/AAABAAAAAABMAPH/AAABAAAAAABNAPH/AAABAAAAAABOAPH/AAABAAAAAABPAPH/AAABAAAAAABQAPH/AAABAAAAAABRAPH/AAABAAAAAABSAPH/AAABAAAAAABTAPH/AAABAAAAAABUAPH/AAABAAAAAABVAPH/AAABAAAAAABWAPH/AAABAAAAAABXAPH/AAABAAAAAABYAPH/AAABAAAAAABZAPH/AAABAAAAAABaAPH/AAABAAAAAABbAPH/AAABAAAAAABcAPH/AAABAAAAAABdAPH/AAABAAAAAABeAPH/AAABAAAAAABfAPH/AAABAAAAAABgAPH/AAABAAAAAABhAPH/AAABAAAAAABiAPH/AAABAAAAAABjAPH/AAABAAAAAABkAPH/AAABAAAAAABlAPH/AAABAAAAAABmAPH/AAABAAAAAABnAPH/AAABAAAAAABoAPH/AAABAAAAAABpAPH/AAABAAAAAABqAPH/AAABAAAAAABrAPH/AAABAAAAAABsAPH/AAABAAAAAABtAPH/AAABAAAAAABuAPH/AAABAAAAAABvAPH/AAABAAAAAABwAPH/AAABAAAAAABxAPH/AAABAAAAAAByAPH/AAABAAAAAABzAPH/AAABAAAAAAB0APH/AAABAAAAAAB1APH/AAABAAAAAAB1APL/AAABAAAAAAB1APP/AAABAAAAAAB1APT/AAABAAAAAAB1APX/AAABAAAAAAB1APb/AAABAAAAAAB1APf/AAABAAAAAAB1APj/AAABAAAAAAB1APn/AAABAAAAAAB1APr/AAABAAAAAAB1APv/AAABAAAAAAB1APz/AAABAAAAAAB1AP3/AAABAAAAAAB1AP7/AAABAAAAAAB1AP//AAABAAAAAAB1AAAAAAABAAAAAAB1AAEAAAABAAAAAAB1AAIAAAABAAAAAAB1AAMAAAABAAAAAAB1AAQAAAABAAAAAAB1AAUAAAABAAAAAAB1AAYAAAABAAAAAAB1AAcAAAABAAAAAAAQAPL/AAABAAAAAAAQAPP/AAABAAAAAAAQAPT/AAABAAAAAAAQAPX/AAABAAAAAAAQAPb/AAABAAAAAAAQAPf/AAABAAAAAAAQAPj/AAABAAAAAAAQAPn/AAABAAAAAAAQAPr/AAABAAAAAAAQAPv/AAABAAAAAAAQAPz/AAABAAAAAAAQAP3/AAABAAAAAAAhAPL/AAABAAAAAAAhAPP/AAABAAAAAAAhAPT/AAABAAAAAAAhAPX/AAABAAAAAAAhAPb/AAABAAAAAAAhAPf/AAABAAAAAAAhAPj/AAABAAAAAAAhAPn/AAABAAAAAAAhAPr/AAABAAAAAAAhAPv/AAABAAAAAAAhAPz/AAABAAAAAAAhAP3/AAABAAAAAAAhAP7/AAABAAAAAAAhAP//AAABAAAAAAAhAAAAAAABAAAAAAAxAPL/AAABAAAAAAAxAPP/AAABAAAAAAAxAPT/AAABAAAAAAAxAPX/AAABAAAAAAAxAPb/AAABAAAAAAAxAPf/AAABAAAAAAAxAPj/AAABAAAAAAAxAPn/AAABAAAAAAAxAPr/AAABAAAAAAAxAPv/AAABAAAAAAAxAPz/AAABAAAAAAAxAP3/AAABAAAAAAAxAP7/AAABAAAAAAAxAP//AAABAAAAAAAxAAAAAAABAAAAAABCAPL/AAABAAAAAABCAPP/AAABAAAAAABCAPT/AAABAAAAAABCAPX/AAABAAAAAABCAPb/AAABAAAAAABCAPf/AAABAAAAAABCAPj/AAABAAAAAABCAPn/AAABAAAAAABCAPr/AAABAAAAAABCAPv/AAABAAAAAABCAPz/AAABAAAAAABCAP3/AAABAAAAAABCAP7/AAABAAAAAABCAP//AAABAAAAAABCAAAAAAABAAAAAABTAPb/AAABAAAAAABTAPf/AAABAAAAAABTAPj/AAABAAAAAABTAPn/AAABAAAAAABTAPr/AAABAAAAAABTAPv/AAABAAAAAABTAPz/AAABAAAAAABTAP3/AAABAAAAAABTAP7/AAABAAAAAABTAP//AAABAAAAAABUAPj/AAABAAAAAABVAPj/AAABAAAAAABWAPj/AAABAAAAAABXAPj/AAABAAAAAABYAPn/AAABAAAAAABYAPr/AAABAAAAAABkAPL/AAABAAAAAABkAPP/AAABAAAAAABkAPT/AAABAAAAAABkAPX/AAABAAAAAABkAPb/AAABAAAAAABkAPf/AAABAAAAAABkAPj/AAABAAAAAABkAPn/AAABAAAAAABkAPr/AAABAAAAAABkAPv/AAABAAAAAABkAPz/AAABAAAAAABkAP3/AAABAAAAAABkAP//AAABAAAAAABkAAAAAAABAAAAAABkAAEAAAABAAAAAABkAAIAAAABAAAAAABkAAMAAAABAAAAAABkAAQAAAABAAAAAABkAAUAAAABAAAAAABkAAYAAAABAAAAAABkAAcAAAABAAAAAAAgAAUAAAABAAAAAAAiAAUAAAABAAAAAABjAAUAAAABAAAAAABlAAUAAAABAAAAAABTAAUAAAABAAAAAABTAAQAAAABAAAAAAAxAAcAAAABAAAAAAAwAAcAAAABAAAAAAAyAAcAAAABAAAAAAAzAAcAAAABAAAAAAAvAAcAAAABAAAAAAAwAAYAAAABAAAAAAAyAAYAAAABAAAAAAAxAAYAAAABAAAAAAAxAAUAAAABAAAAAAAxAAQAAAABAAAAAAAxAAMAAAABAAAAAABUAPf/AAABAAAAAABVAPf/AAABAAAAAABUAPb/AAABAAAAAABWAPf/AAABAAAAAABXAPn/AAABAAAAAAAhAAEAAAABAAAAAAAxAAEAAAABAAAAAAA=")
 tile_set = ExtResource("12_vnrdr")
+
+[node name="TileMapLayer_StoneLimited" type="TileMapLayer" parent="." unique_id=357905169]
+tile_set = ExtResource("14_ht26h")
 
 [node name="RockPile" type="StaticBody2D" parent="." unique_id=2056135097 instance=ExtResource("8_sftbg")]
 position = Vector2(4214, 324)
@@ -944,7 +949,7 @@ behavior = NodePath("SkipQuestTriggerBehavior")
 delete_from_scene = true
 
 [node name="CollisionShape2D" parent="Triggers/ForceQuestProgressTrigger_SolvedRockPuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_okfqf")
+shape = SubResource("RectangleShape2D_s5qse")
 
 [node name="SkipQuestTriggerBehavior" parent="Triggers/ForceQuestProgressTrigger_SolvedRockPuzzle" index="1" unique_id=1238036962]
 script = ExtResource("29_poyld")
@@ -998,7 +1003,7 @@ delete_from_scene = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle" index="0" unique_id=490838596]
 position = Vector2(129, -55.5)
-shape = SubResource("RectangleShape2D_s5qse")
+shape = SubResource("RectangleShape2D_tt2is")
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
 script = ExtResource("23_8knqs")
@@ -1013,7 +1018,7 @@ delete_from_scene = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle" index="0" unique_id=490838596]
 position = Vector2(115, -57.5)
-shape = SubResource("RectangleShape2D_tt2is")
+shape = SubResource("RectangleShape2D_kvdav")
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
 script = ExtResource("23_8knqs")
@@ -1028,7 +1033,7 @@ delete_from_scene = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle2" index="0" unique_id=490838596]
 position = Vector2(159.5, -54.5)
-shape = SubResource("RectangleShape2D_kvdav")
+shape = SubResource("RectangleShape2D_bktpv")
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle2" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
 script = ExtResource("23_8knqs")
@@ -1043,11 +1048,11 @@ delete_from_scene = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" index="0" unique_id=490838596]
 position = Vector2(153.5, -49)
-shape = SubResource("RectangleShape2D_bktpv")
+shape = SubResource("RectangleShape2D_0yd5m")
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
 script = ExtResource("23_8knqs")
-add_objects = [NodePath("../../../TileMapLayer_Stone"), NodePath("../../../Enemies/Enemy3")]
+add_objects = [NodePath("../../../TileMapLayer_StoneLimited"), NodePath("../../../Enemies/Enemy3")]
 
 [node name="DemoEndTrigger" type="Area2D" parent="Triggers" unique_id=1681964514 node_paths=PackedStringArray("behavior") instance=ExtResource("32_t64e8")]
 position = Vector2(14531, -623)
