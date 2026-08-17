@@ -306,7 +306,7 @@ func _physics_process(delta):
 
 	# Handle jump
 	if is_on_floor():
-		if attack_buffer_timer > 0:
+		if attack_buffer_timer > 0 and not defeated:
 			_attack()
 			attack_buffer_timer = 0
 			return
@@ -329,6 +329,8 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 	
 	if defeated:
+		attack_buffer_timer = 0
+		jump_buffer_timer = 0
 		get_viewport().get_camera_2d().global_position = _defeated_camera_position
 		if velocity.y < 0:
 			velocity.y = 0
