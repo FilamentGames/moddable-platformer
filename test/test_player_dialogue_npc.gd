@@ -24,6 +24,7 @@ func make_dialogue_box_stub_prefab() -> PackedScene:
 	dialogue.add_child(next_button)
 	dialogue.label = label
 	dialogue.next_button = next_button
+	dialogue.adjust_position_if_cut_off = false
 	label.owner = dialogue
 	next_button.owner = dialogue
 

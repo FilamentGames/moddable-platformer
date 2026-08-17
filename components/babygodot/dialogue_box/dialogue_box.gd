@@ -11,6 +11,9 @@ class_name DialogueBox
 ## Whether to always show the next page indicator, even if there are no more lines of dialogue to show.
 @export var always_show_next_page_indicator: bool = true
 
+## If the dialogue box's position should be adjusted if it is cut off of the edge of the screen.
+@export var adjust_position_if_cut_off: bool = true
+
 @export_group("Internal Refs")
 ## The label which shows the current line of dialogue
 @export var label: RichTextLabel
@@ -27,6 +30,9 @@ class_name DialogueBox
 ## The animation player to wait for page turn animations on
 @export var animation_player: AnimationPlayer
 
+## The control that provides the bounding rect for the dialogue box.
+@export var bounding_rect_provider: Control
+
 ## Emitted once dialogue is done and the dialogue box is queued for deletion
 signal finished
 
@@ -38,6 +44,8 @@ func _ready() -> void:
 	if canvas_layer:
 		canvas_layer.offset = global_position
 		canvas_layer.visible = true
+	if adjust_position_if_cut_off:
+		_adjust_position_if_not_fully_on_screen()
 	await _play_and_wait_for_animation(&"appear")
 	_get_next_text()
 
@@ -64,7 +72,6 @@ func _on_next_button_click():
 	next.emit()
 	_get_next_text()
 
-
 func _on_dialogue_text_end_animating() -> void:
 	if corner_idle_sprite and (always_show_next_page_indicator or _is_next_page()):
 		corner_idle_sprite.visible = true
@@ -89,3 +96,30 @@ func _on_panel_gui_input(event: InputEvent, panel: NodePath) -> void:
 			var control: Control = get_node(panel)
 			control.accept_event()
 			_on_next_button_click()
+
+## Adjusts the position of the dialogue box if it is not fully on screen.
+func _adjust_position_if_not_fully_on_screen() -> void:
+	var camera_rect := get_camera_rect()
+	var bounding_rect := get_bounding_rect()
+	if not camera_rect.encloses(bounding_rect):
+		if bounding_rect.position.x < camera_rect.position.x:
+			global_position.x -= camera_rect.position.x
+		if bounding_rect.position.y < camera_rect.position.y:
+			global_position.y -= camera_rect.position.y
+		if bounding_rect.position.x + bounding_rect.size.x > camera_rect.position.x + camera_rect.size.x:
+			global_position.x -= camera_rect.position.x + camera_rect.size.x - bounding_rect.size.x
+		if bounding_rect.position.y + bounding_rect.size.y > camera_rect.position.y + camera_rect.size.y:
+			global_position.y -= camera_rect.position.y + camera_rect.size.y - bounding_rect.size.y
+		canvas_layer.offset = global_position
+	
+## Gets the camera rect for the dialogue box. This can be overridden in tests.
+func get_camera_rect() -> Rect2:
+	var viewport_rect = get_viewport_rect()
+	var canvas_transform = get_canvas_transform()
+	return Rect2(-canvas_transform.origin / canvas_transform.get_scale(), viewport_rect.size / canvas_transform.get_scale())
+
+## Gets the bounding rect for the dialogue box. This can be overridden in tests.
+func get_bounding_rect() -> Rect2:
+	var bounding_rect = bounding_rect_provider.get_global_rect()
+	bounding_rect.position += canvas_layer.offset
+	return bounding_rect

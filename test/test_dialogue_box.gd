@@ -10,6 +10,7 @@ func before_each():
 	next_button = autofree(Button.new())
 	dialogue.label = label
 	dialogue.next_button = next_button
+	dialogue.adjust_position_if_cut_off = false
 
 func test_it_does_nothing_if_no_dialogue():
 	var spy: CallableSpy = autofree(CallableSpy.new())

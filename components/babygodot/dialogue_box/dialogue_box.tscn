@@ -69,7 +69,7 @@ animations = [{
 "speed": 3.0
 }]
 
-[node name="DialogueBox" type="Node2D" unique_id=718634705 node_paths=PackedStringArray("label", "next_button", "canvas_layer", "corner_idle_sprite", "animation_player")]
+[node name="DialogueBox" type="Node2D" unique_id=718634705 node_paths=PackedStringArray("label", "next_button", "canvas_layer", "corner_idle_sprite", "animation_player", "bounding_rect_provider")]
 z_index = 1000
 script = ExtResource("1_j2sh0")
 label = NodePath("CanvasLayer/Container/Panel/MarginContainer/VBoxContainer/DialogueText")
@@ -77,6 +77,7 @@ next_button = NodePath("CanvasLayer/Container/Panel/MarginContainer/VBoxContaine
 canvas_layer = NodePath("CanvasLayer")
 corner_idle_sprite = NodePath("CanvasLayer/Container/Panel/PageTurn/CornerIdle")
 animation_player = NodePath("AnimationPlayer")
+bounding_rect_provider = NodePath("CanvasLayer/Container/BookBackground")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1031154575]
 layer = 2
