@@ -175,7 +175,7 @@ func _on_gravity_changed(new_gravity):
 
 # Handler for the Global.lives_changed signal, which is emitted when the player loses a life.
 func _on_lives_changed():
-	if Global.lives > 0:
+	if Global.lives > 0 and not control_locked and not movement_locked:
 		reset()
 
 
