@@ -36,7 +36,7 @@ metadata/_custom_type_script = "uid://wcqap044q4nm"
 
 [sub_resource type="Resource" id="Resource_fdhqc"]
 script = ExtResource("2_fdhqc")
-dialogue_line = "Yes, Storyweaver! Select the pile of rocks and clear them from your path. When you're done, unpause(⏸) to let time flow through Threadbare again!"
+dialogue_line = "Yes, Storyweaver! Select the pile of rocks and clear them from your path. When you're done, let time flow (▶) through Threadbare again!"
 progress_method = 4
 show_celebration_animation = true
 hints = Array[String](["You could move the rocks or delete them entirely...", "Select the RockPile and press the Delete key (DEL) on your keyboard. If you ever delete something you regret, Reset the World."])
