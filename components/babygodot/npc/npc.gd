@@ -55,6 +55,9 @@ func _ready() -> void:
 	bridge.quest_text.connect(func(_text):
 		bridge.request_all_nextbutton_quest_text()
 	)
+	bridge.game_unpaused.connect(func():
+		bridge.request_all_nextbutton_quest_text()
+	)
 	bridge.request_all_nextbutton_quest_text()
 		
 

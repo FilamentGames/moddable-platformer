@@ -191,4 +191,6 @@ layout_mode = 2
 
 [connection signal="celebration_animation" from="." to="Background/Elder/Clippy/CelebrationAnimationComponent" method="trigger_animation"]
 [connection signal="done" from="Background/Elder/Clippy/CelebrationAnimationComponent" to="." method="_on_celebration_animation_component_done"]
+[connection signal="end_animating" from="UI/QuestText" to="." method="_on_quest_text_end_animating"]
+[connection signal="start_animating" from="UI/QuestText" to="." method="_on_quest_text_start_animating"]
 [connection signal="pressed" from="UI/EndContainer/HintButton" to="." method="buy_hint"]
