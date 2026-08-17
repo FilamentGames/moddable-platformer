@@ -30,6 +30,8 @@ var movement_locked := false:
 
 var control_locked := false:
 	get:
+		if player and "control_locked" in player:
+			return player.control_locked
 		return _control_locked
 	set(val):
 		if player and "control_locked" in player:
@@ -41,7 +43,7 @@ var _movement_locked := false
 var _control_locked := false
 
 func _process(_delta: float) -> void:
-	if movement_locked:
+	if movement_locked or control_locked:
 		return
 	if Input.is_action_just_pressed("player_action"):
 		if dialogue_zones.size() > 0:

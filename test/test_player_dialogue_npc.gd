@@ -3,6 +3,7 @@ extends GutTest
 
 class MockPlayer extends CharacterBody2D:
 	var movement_locked := false
+	var control_locked := false
 
 class NpcTesting extends Npc:
 	var trigger_type_used: int = -1
@@ -220,3 +221,17 @@ func test_can_do_a_celebration_animation_even_if_it_has_no_global_quest_dialogue
 	npc.bridge.celebration_animation.emit()
 
 	assert_eq(spy.get_number_of_calls(), 1)
+
+func test_player_cannot_open_new_dialogue_while_control_locked():
+	npc._player_entered(player)
+	player.control_locked = true
+	
+	sender.action_down("player_action").wait_frames(1)
+	player_dialogue._process(1)
+	await(sender.idle)
+	sender.action_up("player_action").wait_frames(1)
+	player_dialogue._process(1)
+	await(sender.idle)
+
+	assert_false(player_dialogue.movement_locked)
+	assert_eq(npc.dialogue_container.get_children().size(), 0)
