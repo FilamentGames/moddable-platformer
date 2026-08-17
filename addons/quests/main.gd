@@ -122,30 +122,6 @@ func _enter_tree() -> void:
 		}
 		ProjectSettings.add_property_info(property_info)
 	ProjectSettings.set_initial_value(auto_play_on_start_setting_name, true)
-	if ProjectSettings.get_setting(auto_play_on_start_setting_name):
-		call_deferred("_auto_play_when_ready")
-
-func _auto_play_when_ready() -> void:
-	var filesystem = EditorInterface.get_resource_filesystem()
-	var main_scene: String = ProjectSettings.get_setting("application/run/main_scene")
-	var deadline_msec = Time.get_ticks_msec() + int(auto_play_ready_timeout_sec * 1000.0)
-
-	var web_timeout = 3.0
-	var desktop_timeout = 0.5
-
-	while Time.get_ticks_msec() < deadline_msec:
-		if not filesystem.is_scanning() and not filesystem.is_importing():
-			var scene: PackedScene = ResourceLoader.load(main_scene, "PackedScene")
-			if scene != null and not scene.resource_path.is_empty():
-				var delay_sec = web_timeout if OS.has_feature("web") else desktop_timeout
-				await get_tree().create_timer(delay_sec).timeout
-				EditorInterface.play_main_scene()
-				return
-		await get_tree().process_frame
-
-	push_warning(
-		"Auto-play aborted: main scene was not ready within %s seconds." % auto_play_ready_timeout_sec
-	)
 
 func _connect_scene_edit_signal() -> void:
 	scene_changed.connect(func(_arg: Variant):

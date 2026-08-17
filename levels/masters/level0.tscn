@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://jnrusvm3gric" path="res://spaces/background.tscn" id="2_evrqp"]
 [ext_resource type="Script" uid="uid://c4ap5hlwp57r0" path="res://scripts/rules_goals/game_logic.gd" id="3_8jun3"]
 [ext_resource type="PackedScene" uid="uid://d0v802hnw7unk" path="res://components/babygodot/npc/npc.tscn" id="3_27os8"]
+[ext_resource type="Script" uid="uid://dqf3onjvrgfr2" path="res://addons/quests_devtools/tool_objects/autoplay_on_clone.gd" id="3_twxhk"]
 [ext_resource type="PackedScene" uid="uid://dthyncc3spfks" path="res://spaces/dangerzone.tscn" id="4_2gokk"]
 [ext_resource type="PackedScene" uid="uid://danlrmsfmsros" path="res://spaces/tilemap.tscn" id="5_4yxw5"]
 [ext_resource type="PackedScene" uid="uid://b61bdl6mlg5jn" path="res://components/player/controls_instructions.tscn" id="5_x2f4c"]
@@ -437,23 +438,23 @@ _data = {
 &"open": SubResource("Animation_83ym3")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_s5qse"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tt2is"]
 resource_local_to_scene = true
 size = Vector2(94, 258)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tt2is"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kvdav"]
 resource_local_to_scene = true
 size = Vector2(352, 369)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kvdav"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bktpv"]
 resource_local_to_scene = true
 size = Vector2(324, 373)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bktpv"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0yd5m"]
 resource_local_to_scene = true
 size = Vector2(413, 367)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0yd5m"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_41jwn"]
 resource_local_to_scene = true
 size = Vector2(401, 356)
 
@@ -468,6 +469,9 @@ nodes = [NodePath("../RockPile")]
 
 [node name="MasterLevelLock" type="Node" parent="." unique_id=678410586]
 script = ExtResource("1_p5pw3")
+
+[node name="AutoplayOnClone" type="Node" parent="." unique_id=589868875]
+script = ExtResource("3_twxhk")
 
 [node name="GameLogic" type="Node" parent="." unique_id=1461208797 instance=ExtResource("1_eem6l")]
 script = ExtResource("3_8jun3")
@@ -949,7 +953,7 @@ behavior = NodePath("SkipQuestTriggerBehavior")
 delete_from_scene = true
 
 [node name="CollisionShape2D" parent="Triggers/ForceQuestProgressTrigger_SolvedRockPuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_s5qse")
+shape = SubResource("RectangleShape2D_tt2is")
 
 [node name="SkipQuestTriggerBehavior" parent="Triggers/ForceQuestProgressTrigger_SolvedRockPuzzle" index="1" unique_id=1238036962]
 script = ExtResource("29_poyld")
@@ -1003,7 +1007,7 @@ delete_from_scene = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle" index="0" unique_id=490838596]
 position = Vector2(129, -55.5)
-shape = SubResource("RectangleShape2D_tt2is")
+shape = SubResource("RectangleShape2D_kvdav")
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
 script = ExtResource("23_8knqs")
@@ -1018,7 +1022,7 @@ delete_from_scene = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle" index="0" unique_id=490838596]
 position = Vector2(115, -57.5)
-shape = SubResource("RectangleShape2D_kvdav")
+shape = SubResource("RectangleShape2D_bktpv")
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
 script = ExtResource("23_8knqs")
@@ -1033,7 +1037,7 @@ delete_from_scene = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle2" index="0" unique_id=490838596]
 position = Vector2(159.5, -54.5)
-shape = SubResource("RectangleShape2D_bktpv")
+shape = SubResource("RectangleShape2D_0yd5m")
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle2" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
 script = ExtResource("23_8knqs")
@@ -1048,7 +1052,7 @@ delete_from_scene = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" index="0" unique_id=490838596]
 position = Vector2(153.5, -49)
-shape = SubResource("RectangleShape2D_0yd5m")
+shape = SubResource("RectangleShape2D_41jwn")
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
 script = ExtResource("23_8knqs")
