@@ -17,7 +17,7 @@ var sender: GutInputSender = InputSender.new(Input)
 
 func make_dialogue_box_stub_prefab() -> PackedScene:
 	var dialogue: DialogueBox = autofree(DialogueBox.new())
-	var label: Label = autofree(Label.new())
+	var label: RichTextLabel = autofree(RichTextLabel.new())
 	var next_button: Button = autofree(Button.new())
 	dialogue.add_child(label)
 	dialogue.add_child(next_button)

@@ -1,12 +1,12 @@
 extends GutTest
 
 var dialogue: DialogueBox
-var label: Label
+var label: RichTextLabel
 var next_button: Button
 
 func before_each():
 	dialogue = autofree(DialogueBox.new())
-	label = autofree(Label.new())
+	label = autofree(RichTextLabel.new())
 	next_button = autofree(Button.new())
 	dialogue.label = label
 	dialogue.next_button = next_button

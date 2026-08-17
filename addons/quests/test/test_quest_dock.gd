@@ -10,7 +10,7 @@ func make_quest_line(text: String, progress_method := QuestLine.ProgressMethod.N
 
 func before_each():
 	dock = autofree(BabyGodotQuestDock.new())
-	dock.text = autofree(Label.new())
+	dock.text = autofree(RichTextLabel.new())
 	dock.next_button = autofree(Button.new())
 	dock.hint_button = autofree(Button.new())
 	dock.hint_display = autofree(HintDisplay.new())
