@@ -3,7 +3,7 @@ extends Control
 class_name BabyGodotQuestDock
 
 ## The Label control that displays the current quest text
-@export var text: Label
+@export var text: RichTextLabel
 
 @export_group("Sprite Refs")
 ## An animated sprite to animate while the text is animating

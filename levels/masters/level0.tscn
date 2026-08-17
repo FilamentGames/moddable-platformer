@@ -28,7 +28,6 @@
 [ext_resource type="TileSet" uid="uid://cpfdbax0jl6ew" path="res://terrain_samples/tileset_barriers.tres" id="12_vnrdr"]
 [ext_resource type="PackedScene" uid="uid://dpk1jwflxtjbn" path="res://components/babygodot/yarnspark/yarnspark.tscn" id="12_ycdye"]
 [ext_resource type="PackedScene" uid="uid://bbyqlrx2w6ir2" path="res://components/babygodot/yarnspark/subtypes/intro_yarnspark.tscn" id="14_8jun3"]
-[ext_resource type="TileSet" uid="uid://dxsmhwoj10k6k" path="res://terrain_samples/tileset_stone_limited.tres" id="14_ht26h"]
 [ext_resource type="PackedScene" uid="uid://bmpmfwhrjxgeh" path="res://components/babygodot/trigger/change_editable_objects_trigger/change_editable_objects_trigger.tscn" id="14_m7dqe"]
 [ext_resource type="PackedScene" uid="uid://8st4scqt06l8" path="res://components/player/player.tscn" id="14_su4jx"]
 [ext_resource type="PackedScene" uid="uid://b61aexqklqbhv" path="res://components/babygodot/trigger/screenshake_event_trigger/screen_shake_trigger.tscn" id="15_0aei4"]
@@ -74,7 +73,6 @@
 [ext_resource type="Script" uid="uid://ynmusiscbscn" path="res://components/babygodot/yarnspark/condition_types/object_property_equality_scroll_condition.gd" id="34_nspkk"]
 [ext_resource type="PackedScene" uid="uid://cq253lfclbbbq" path="res://components/babygodot/npc/npc_elder.tscn" id="34_vnrdr"]
 [ext_resource type="Script" uid="uid://ctlotfccvl4jn" path="res://scripts/flag.gd" id="35_fnu5h"]
-[ext_resource type="PackedScene" uid="uid://darbqvupa166w" path="res://components/platform/platform_level0_bridge.tscn" id="36_8knqs"]
 [ext_resource type="Texture2D" uid="uid://b8k3kxtymkdd4" path="res://components/babygodot/scroll_gate/assets/LanternRight_Front.png" id="36_bktpv"]
 [ext_resource type="SpriteFrames" uid="uid://b3orjhfv6eeud" path="res://components/flag/flag-spriteframes-green.tres" id="36_jf12t"]
 [ext_resource type="Script" uid="uid://cf1o67bfqt8o" path="res://components/babygodot/info_indicator/info_indicator.gd" id="37_0yd5m"]
@@ -437,23 +435,23 @@ _data = {
 &"open": SubResource("Animation_83ym3")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_s5qse"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2kvr8"]
 resource_local_to_scene = true
 size = Vector2(94, 258)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tt2is"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_okfqf"]
 resource_local_to_scene = true
 size = Vector2(352, 369)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kvdav"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s5qse"]
 resource_local_to_scene = true
 size = Vector2(324, 373)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bktpv"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tt2is"]
 resource_local_to_scene = true
 size = Vector2(413, 367)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0yd5m"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kvdav"]
 resource_local_to_scene = true
 size = Vector2(401, 356)
 
@@ -522,14 +520,10 @@ tile_map_data = PackedByteArray("AAAFAAcAAQAAAAAAAAAFAAYAAQAAAAEAAAAFAAUAAQACAAA
 tile_set = ExtResource("9_v78as")
 
 [node name="DecorationSprites" type="Node2D" parent="TileMapLayer_Decorations" unique_id=516248196 instance=ExtResource("12_0bbcg")]
-metadata/_edit_lock_ = true
 
 [node name="TileMapLayer_Barriers" type="TileMapLayer" parent="." unique_id=916319666]
 tile_map_data = PackedByteArray("AAAhAAMAAAABAAAAAABCAAYAAAABAAAAAABCAAcAAAABAAAAAABDAAYAAAABAAAAAABDAAcAAAABAAAAAABEAAcAAAABAAAAAABBAAcAAAABAAAAAABBAAYAAAABAAAAAABAAAcAAAABAAAAAAAhAAQAAAABAAAAAAAhAAUAAAABAAAAAAAhAAYAAAABAAAAAAAhAAcAAAABAAAAAAAgAAYAAAABAAAAAAAiAAYAAAABAAAAAAAfAAcAAAABAAAAAAAgAAcAAAABAAAAAAAiAAcAAAABAAAAAAAjAAcAAAABAAAAAABjAAcAAAABAAAAAABjAAYAAAABAAAAAABlAAYAAAABAAAAAABlAAcAAAABAAAAAABmAAcAAAABAAAAAABiAAcAAAABAAAAAABCAAUAAAABAAAAAABCAAQAAAABAAAAAABTAAYAAAABAAAAAABTAAcAAAABAAAAAABSAAYAAAABAAAAAABUAAYAAAABAAAAAABSAAcAAAABAAAAAABUAAcAAAABAAAAAABRAAcAAAABAAAAAABVAAcAAAABAAAAAAD//wcAAAABAAAAAAD//wYAAAABAAAAAAD//wUAAAABAAAAAAD//wQAAAABAAAAAAD//wMAAAABAAAAAAD//wIAAAABAAAAAAD//wEAAAABAAAAAAD//wAAAAABAAAAAAD/////AAABAAAAAAD///7/AAABAAAAAAD///3/AAABAAAAAAD///z/AAABAAAAAAD///v/AAABAAAAAAD///r/AAABAAAAAAD///n/AAABAAAAAAD///j/AAABAAAAAAD///f/AAABAAAAAAD///b/AAABAAAAAAD///X/AAABAAAAAAD///T/AAABAAAAAAD///P/AAABAAAAAAD///L/AAABAAAAAAD///H/AAABAAAAAAAAAPH/AAABAAAAAAABAPH/AAABAAAAAAACAPH/AAABAAAAAAADAPH/AAABAAAAAAAEAPH/AAABAAAAAAAFAPH/AAABAAAAAAAGAPH/AAABAAAAAAAHAPH/AAABAAAAAAAIAPH/AAABAAAAAAAJAPH/AAABAAAAAAAKAPH/AAABAAAAAAALAPH/AAABAAAAAAAMAPH/AAABAAAAAAANAPH/AAABAAAAAAAOAPH/AAABAAAAAAAPAPH/AAABAAAAAAAQAPH/AAABAAAAAAARAPH/AAABAAAAAAASAPH/AAABAAAAAAATAPH/AAABAAAAAAAUAPH/AAABAAAAAAAVAPH/AAABAAAAAAAWAPH/AAABAAAAAAAXAPH/AAABAAAAAAAYAPH/AAABAAAAAAAZAPH/AAABAAAAAAAaAPH/AAABAAAAAAAbAPH/AAABAAAAAAAcAPH/AAABAAAAAAAdAPH/AAABAAAAAAAeAPH/AAABAAAAAAAfAPH/AAABAAAAAAAgAPH/AAABAAAAAAAhAPH/AAABAAAAAAAiAPH/AAABAAAAAAAjAPH/AAABAAAAAAAkAPH/AAABAAAAAAAlAPH/AAABAAAAAAAmAPH/AAABAAAAAAAnAPH/AAABAAAAAAAoAPH/AAABAAAAAAApAPH/AAABAAAAAAAqAPH/AAABAAAAAAArAPH/AAABAAAAAAAsAPH/AAABAAAAAAAtAPH/AAABAAAAAAAuAPH/AAABAAAAAAAvAPH/AAABAAAAAAAwAPH/AAABAAAAAAAxAPH/AAABAAAAAAAyAPH/AAABAAAAAAAzAPH/AAABAAAAAAA0APH/AAABAAAAAAA1APH/AAABAAAAAAA2APH/AAABAAAAAAA3APH/AAABAAAAAAA4APH/AAABAAAAAAA5APH/AAABAAAAAAA6APH/AAABAAAAAAA7APH/AAABAAAAAAA8APH/AAABAAAAAAA9APH/AAABAAAAAAA+APH/AAABAAAAAAA/APH/AAABAAAAAABAAPH/AAABAAAAAABBAPH/AAABAAAAAABCAPH/AAABAAAAAABDAPH/AAABAAAAAABEAPH/AAABAAAAAABFAPH/AAABAAAAAABGAPH/AAABAAAAAABHAPH/AAABAAAAAABIAPH/AAABAAAAAABJAPH/AAABAAAAAABKAPH/AAABAAAAAABLAPH/AAABAAAAAABMAPH/AAABAAAAAABNAPH/AAABAAAAAABOAPH/AAABAAAAAABPAPH/AAABAAAAAABQAPH/AAABAAAAAABRAPH/AAABAAAAAABSAPH/AAABAAAAAABTAPH/AAABAAAAAABUAPH/AAABAAAAAABVAPH/AAABAAAAAABWAPH/AAABAAAAAABXAPH/AAABAAAAAABYAPH/AAABAAAAAABZAPH/AAABAAAAAABaAPH/AAABAAAAAABbAPH/AAABAAAAAABcAPH/AAABAAAAAABdAPH/AAABAAAAAABeAPH/AAABAAAAAABfAPH/AAABAAAAAABgAPH/AAABAAAAAABhAPH/AAABAAAAAABiAPH/AAABAAAAAABjAPH/AAABAAAAAABkAPH/AAABAAAAAABlAPH/AAABAAAAAABmAPH/AAABAAAAAABnAPH/AAABAAAAAABoAPH/AAABAAAAAABpAPH/AAABAAAAAABqAPH/AAABAAAAAABrAPH/AAABAAAAAABsAPH/AAABAAAAAABtAPH/AAABAAAAAABuAPH/AAABAAAAAABvAPH/AAABAAAAAABwAPH/AAABAAAAAABxAPH/AAABAAAAAAByAPH/AAABAAAAAABzAPH/AAABAAAAAAB0APH/AAABAAAAAAB1APH/AAABAAAAAAB1APL/AAABAAAAAAB1APP/AAABAAAAAAB1APT/AAABAAAAAAB1APX/AAABAAAAAAB1APb/AAABAAAAAAB1APf/AAABAAAAAAB1APj/AAABAAAAAAB1APn/AAABAAAAAAB1APr/AAABAAAAAAB1APv/AAABAAAAAAB1APz/AAABAAAAAAB1AP3/AAABAAAAAAB1AP7/AAABAAAAAAB1AP//AAABAAAAAAB1AAAAAAABAAAAAAB1AAEAAAABAAAAAAB1AAIAAAABAAAAAAB1AAMAAAABAAAAAAB1AAQAAAABAAAAAAB1AAUAAAABAAAAAAB1AAYAAAABAAAAAAB1AAcAAAABAAAAAAAQAPL/AAABAAAAAAAQAPP/AAABAAAAAAAQAPT/AAABAAAAAAAQAPX/AAABAAAAAAAQAPb/AAABAAAAAAAQAPf/AAABAAAAAAAQAPj/AAABAAAAAAAQAPn/AAABAAAAAAAQAPr/AAABAAAAAAAQAPv/AAABAAAAAAAQAPz/AAABAAAAAAAQAP3/AAABAAAAAAAhAPL/AAABAAAAAAAhAPP/AAABAAAAAAAhAPT/AAABAAAAAAAhAPX/AAABAAAAAAAhAPb/AAABAAAAAAAhAPf/AAABAAAAAAAhAPj/AAABAAAAAAAhAPn/AAABAAAAAAAhAPr/AAABAAAAAAAhAPv/AAABAAAAAAAhAPz/AAABAAAAAAAhAP3/AAABAAAAAAAhAP7/AAABAAAAAAAhAP//AAABAAAAAAAhAAAAAAABAAAAAAAxAPL/AAABAAAAAAAxAPP/AAABAAAAAAAxAPT/AAABAAAAAAAxAPX/AAABAAAAAAAxAPb/AAABAAAAAAAxAPf/AAABAAAAAAAxAPj/AAABAAAAAAAxAPn/AAABAAAAAAAxAPr/AAABAAAAAAAxAPv/AAABAAAAAAAxAPz/AAABAAAAAAAxAP3/AAABAAAAAAAxAP7/AAABAAAAAAAxAP//AAABAAAAAAAxAAAAAAABAAAAAABCAPL/AAABAAAAAABCAPP/AAABAAAAAABCAPT/AAABAAAAAABCAPX/AAABAAAAAABCAPb/AAABAAAAAABCAPf/AAABAAAAAABCAPj/AAABAAAAAABCAPn/AAABAAAAAABCAPr/AAABAAAAAABCAPv/AAABAAAAAABCAPz/AAABAAAAAABCAP3/AAABAAAAAABCAP7/AAABAAAAAABCAP//AAABAAAAAABCAAAAAAABAAAAAABTAPb/AAABAAAAAABTAPf/AAABAAAAAABTAPj/AAABAAAAAABTAPn/AAABAAAAAABTAPr/AAABAAAAAABTAPv/AAABAAAAAABTAPz/AAABAAAAAABTAP3/AAABAAAAAABTAP7/AAABAAAAAABTAP//AAABAAAAAABUAPj/AAABAAAAAABVAPj/AAABAAAAAABWAPj/AAABAAAAAABXAPj/AAABAAAAAABYAPn/AAABAAAAAABYAPr/AAABAAAAAABkAPL/AAABAAAAAABkAPP/AAABAAAAAABkAPT/AAABAAAAAABkAPX/AAABAAAAAABkAPb/AAABAAAAAABkAPf/AAABAAAAAABkAPj/AAABAAAAAABkAPn/AAABAAAAAABkAPr/AAABAAAAAABkAPv/AAABAAAAAABkAPz/AAABAAAAAABkAP3/AAABAAAAAABkAP//AAABAAAAAABkAAAAAAABAAAAAABkAAEAAAABAAAAAABkAAIAAAABAAAAAABkAAMAAAABAAAAAABkAAQAAAABAAAAAABkAAUAAAABAAAAAABkAAYAAAABAAAAAABkAAcAAAABAAAAAAAgAAUAAAABAAAAAAAiAAUAAAABAAAAAABjAAUAAAABAAAAAABlAAUAAAABAAAAAABTAAUAAAABAAAAAABTAAQAAAABAAAAAAAxAAcAAAABAAAAAAAwAAcAAAABAAAAAAAyAAcAAAABAAAAAAAzAAcAAAABAAAAAAAvAAcAAAABAAAAAAAwAAYAAAABAAAAAAAyAAYAAAABAAAAAAAxAAYAAAABAAAAAAAxAAUAAAABAAAAAAAxAAQAAAABAAAAAAAxAAMAAAABAAAAAABUAPf/AAABAAAAAABVAPf/AAABAAAAAABUAPb/AAABAAAAAABWAPf/AAABAAAAAABXAPn/AAABAAAAAAAhAAEAAAABAAAAAAAxAAEAAAABAAAAAAA=")
 tile_set = ExtResource("12_vnrdr")
-
-[node name="TileMapLayer_StoneLimited" type="TileMapLayer" parent="." unique_id=357905169]
-tile_set = ExtResource("14_ht26h")
 
 [node name="RockPile" type="StaticBody2D" parent="." unique_id=2056135097 instance=ExtResource("8_sftbg")]
 position = Vector2(4214, 324)
@@ -949,7 +943,7 @@ behavior = NodePath("SkipQuestTriggerBehavior")
 delete_from_scene = true
 
 [node name="CollisionShape2D" parent="Triggers/ForceQuestProgressTrigger_SolvedRockPuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_s5qse")
+shape = SubResource("RectangleShape2D_2kvr8")
 
 [node name="SkipQuestTriggerBehavior" parent="Triggers/ForceQuestProgressTrigger_SolvedRockPuzzle" index="1" unique_id=1238036962]
 script = ExtResource("29_poyld")
@@ -1003,7 +997,7 @@ delete_from_scene = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle" index="0" unique_id=490838596]
 position = Vector2(129, -55.5)
-shape = SubResource("RectangleShape2D_tt2is")
+shape = SubResource("RectangleShape2D_okfqf")
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
 script = ExtResource("23_8knqs")
@@ -1018,7 +1012,7 @@ delete_from_scene = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle" index="0" unique_id=490838596]
 position = Vector2(115, -57.5)
-shape = SubResource("RectangleShape2D_kvdav")
+shape = SubResource("RectangleShape2D_s5qse")
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
 script = ExtResource("23_8knqs")
@@ -1033,7 +1027,7 @@ delete_from_scene = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle2" index="0" unique_id=490838596]
 position = Vector2(159.5, -54.5)
-shape = SubResource("RectangleShape2D_bktpv")
+shape = SubResource("RectangleShape2D_tt2is")
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle2" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
 script = ExtResource("23_8knqs")
@@ -1048,11 +1042,11 @@ delete_from_scene = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" index="0" unique_id=490838596]
 position = Vector2(153.5, -49)
-shape = SubResource("RectangleShape2D_0yd5m")
+shape = SubResource("RectangleShape2D_kvdav")
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
 script = ExtResource("23_8knqs")
-add_objects = [NodePath("../../../TileMapLayer_StoneLimited"), NodePath("../../../Enemies/Enemy3")]
+add_objects = [NodePath("../../../TileMapLayer_Stone"), NodePath("../../../Enemies/Enemy3")]
 
 [node name="DemoEndTrigger" type="Area2D" parent="Triggers" unique_id=1681964514 node_paths=PackedStringArray("behavior") instance=ExtResource("32_t64e8")]
 position = Vector2(14531, -623)
@@ -1105,13 +1099,13 @@ placeholder_sprite = NodePath("PlaceholderSprite")
 position = Vector2(4065, 314)
 script = ExtResource("26_1tk8l")
 editor_unlock = 1
-unlock_dialogue = Array[String](["You unlocked the Scene Tree Dock!", "This allows you to see the list of objects in the current game scene.", "Press the Stop button (■) and see which objects you can edit in Godot!"])
+unlock_dialogue = Array[String](["You unlocked the Scene Tree Dock!", "This allows you to see the list of objects in the current game scene.", "Press the Pause button (⏸) and see which objects you can edit in Godot!"])
 collision_area = NodePath("Root/Sprite2D/Area2D")
 
 [node name="InspectorPowerup" type="Node2D" parent="EditorPowerUps" unique_id=459242062 node_paths=PackedStringArray("collision_area") instance=ExtResource("16_m7dqe")]
 position = Vector2(7382, 183)
 script = ExtResource("26_1tk8l")
-unlock_dialogue = Array[String](["You unlocked the Inspector Dock!", "This allows you to view and edit properties of individual objects in the game world.", "Try it out! Stop the flow of time (■) and click on an object in the editor to view its properties."])
+unlock_dialogue = Array[String](["You unlocked the Inspector Dock!", "This allows you to view and edit properties of individual objects in the game world.", "Try it out! Pause the flow of time (⏸) and click on an object in the editor to view its properties."])
 collision_area = NodePath("Root/Sprite2D/Area2D")
 
 [node name="Coins" type="Node2D" parent="." unique_id=1860713878]
@@ -1483,6 +1477,18 @@ texture = ExtResource("7_y3jo1")
 [node name="Platforms" type="Node2D" parent="." unique_id=1115693790]
 position = Vector2(1920, -64)
 
+[node name="Platform" type="Node2D" parent="Platforms" unique_id=1439632278 instance=ExtResource("29_vnrdr")]
+position = Vector2(3011, 182)
+rotation = -1.5707964
+script = ExtResource("24_twxhk")
+width = 6
+one_way = true
+tile_set = ExtResource("9_pjmyj")
+tile_set_index = 1
+tile_set_left_frame = Vector2i(4, 1)
+tile_set_middle_frame = Vector2i(5, 1)
+tile_set_right_frame = Vector2i(6, 1)
+
 [node name="Platform17" type="Node2D" parent="Platforms" unique_id=1889629645 instance=ExtResource("31_w6d5o")]
 position = Vector2(5285, 375)
 script = ExtResource("24_twxhk")
@@ -1735,17 +1741,6 @@ scale = Vector2(1.5, 1.5)
 texture = ExtResource("19_y8cc3")
 flip_h = true
 
-[node name="Platform" type="Node2D" parent="Platforms" unique_id=1439632278 instance=ExtResource("36_8knqs")]
-position = Vector2(3011, 182)
-rotation = -1.5707964
-script = ExtResource("24_twxhk")
-width = 6
-tile_set = ExtResource("9_pjmyj")
-tile_set_index = 1
-tile_set_left_frame = Vector2i(4, 1)
-tile_set_middle_frame = Vector2i(5, 1)
-tile_set_right_frame = Vector2i(6, 1)
-
 [node name="Signs" type="Node2D" parent="." unique_id=567327781]
 
 [node name="Sign" type="Node2D" parent="Signs" unique_id=279814009 node_paths=PackedStringArray("label", "info_indicator") instance=ExtResource("11_q0xf2")]
@@ -1765,7 +1760,7 @@ info_indicator = NodePath("InfoIndicator")
 [node name="Sign3" type="Node2D" parent="Signs" unique_id=983755090 node_paths=PackedStringArray("label", "info_indicator") instance=ExtResource("11_q0xf2")]
 position = Vector2(9776, -802)
 script = ExtResource("26_ht26h")
-text = "Tile painters only beyond this point! ↑"
+text = "Tile painters only beyond this point! [img=20]res://assets/text_icons/up_arrow.png[/img]"
 label = NodePath("InfoIndicator/InfoTree/CanvasLayer/UIContainer/PanelContainer/RichTextLabel")
 info_indicator = NodePath("InfoIndicator")
 

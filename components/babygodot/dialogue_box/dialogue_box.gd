@@ -13,7 +13,7 @@ class_name DialogueBox
 
 @export_group("Internal Refs")
 ## The label which shows the current line of dialogue
-@export var label: Label
+@export var label: RichTextLabel
 
 ## The button which progresses dialogue
 @export var next_button: Button

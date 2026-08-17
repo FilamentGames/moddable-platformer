@@ -6,8 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://e1vos3sffoiq" path="res://components/babygodot/dialogue_box/assets/PanelNPC_BookBackground.png" id="2_wh6ei"]
 [ext_resource type="Texture2D" uid="uid://cfwfae8hcgci1" path="res://components/babygodot/dialogue_box/assets/PanelNPC_Page.png" id="3_u6c1r"]
 [ext_resource type="FontFile" uid="uid://huadpmbapadr" path="res://components/babygodot/info_indicator/Info Story.ttf" id="4_umonf"]
+[ext_resource type="Script" uid="uid://dxumxevg5rxwb" path="res://addons/quests/quest_dock/components/label_symbol_dictionary.gd" id="6_tildi"]
+[ext_resource type="Texture2D" uid="uid://c8b36h3t54a02" path="res://assets/text_icons/pause.png" id="7_qhch8"]
 [ext_resource type="Texture2D" uid="uid://cd3kiw0i383ek" path="res://components/babygodot/dialogue_box/assets/PanelNPC_PageCorner.png" id="7_umonf"]
+[ext_resource type="Texture2D" uid="uid://by25byra0tifn" path="res://assets/text_icons/play.png" id="8_bdsv1"]
 [ext_resource type="AnimationLibrary" uid="uid://de84gy7ed28mn" path="res://components/babygodot/dialogue_box/page_turn.tres" id="8_ll2xx"]
+[ext_resource type="Texture2D" uid="uid://crxd508ruf76t" path="res://assets/text_icons/up_arrow.png" id="9_8uhf2"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hmpfs"]
 texture = ExtResource("2_wh6ei")
@@ -15,10 +19,23 @@ texture = ExtResource("2_wh6ei")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_acawv"]
 texture = ExtResource("3_u6c1r")
 
-[sub_resource type="LabelSettings" id="LabelSettings_j2sh0"]
-font = ExtResource("4_umonf")
-font_size = 36
-font_color = Color(0, 0, 0, 1)
+[sub_resource type="Resource" id="Resource_mcogv"]
+script = ExtResource("6_tildi")
+text_symbol = "⏸"
+image = ExtResource("7_qhch8")
+metadata/_custom_type_script = "uid://dxumxevg5rxwb"
+
+[sub_resource type="Resource" id="Resource_tildi"]
+script = ExtResource("6_tildi")
+text_symbol = "▶"
+image = ExtResource("8_bdsv1")
+metadata/_custom_type_script = "uid://dxumxevg5rxwb"
+
+[sub_resource type="Resource" id="Resource_75jbi"]
+script = ExtResource("6_tildi")
+text_symbol = "↑"
+image = ExtResource("9_8uhf2")
+metadata/_custom_type_script = "uid://dxumxevg5rxwb"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ll2xx"]
 atlas = ExtResource("7_umonf")
@@ -119,19 +136,29 @@ layout_mode = 2
 mouse_filter = 2
 mouse_behavior_recursive = 1
 
-[node name="DialogueText" type="Label" parent="CanvasLayer/Container/Panel/MarginContainer/VBoxContainer" unique_id=1968753694]
+[node name="DialogueText" type="RichTextLabel" parent="CanvasLayer/Container/Panel/MarginContainer/VBoxContainer" unique_id=416880659]
 custom_minimum_size = Vector2(32, 32)
+clip_contents = false
 layout_mode = 2
 size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 2
 mouse_behavior_recursive = 1
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_umonf")
+theme_override_font_sizes/normal_font_size = 36
+theme_override_font_sizes/bold_font_size = 36
+theme_override_font_sizes/bold_italics_font_size = 36
+theme_override_font_sizes/italics_font_size = 36
+theme_override_font_sizes/mono_font_size = 36
+bbcode_enabled = true
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
-label_settings = SubResource("LabelSettings_j2sh0")
+autowrap_mode = 2
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 2
 visible_characters = 78
 script = ExtResource("2_rqjea")
-metadata/_custom_type_script = "uid://dewvg666m6712"
+symbol_substitutions = Array[ExtResource("6_tildi")]([SubResource("Resource_mcogv"), SubResource("Resource_tildi"), SubResource("Resource_75jbi")])
 
 [node name="NextButton" type="Button" parent="CanvasLayer/Container/Panel/MarginContainer/VBoxContainer" unique_id=2044829538]
 visible = false
@@ -166,6 +193,4 @@ libraries/ = ExtResource("8_ll2xx")
 autoplay = &"appear"
 
 [connection signal="gui_input" from="CanvasLayer/Container/Panel" to="." method="_on_panel_gui_input" binds= [NodePath("CanvasLayer/Container/Panel")]]
-[connection signal="end_animating" from="CanvasLayer/Container/Panel/MarginContainer/VBoxContainer/DialogueText" to="." method="_on_dialogue_text_end_animating"]
-[connection signal="start_animating" from="CanvasLayer/Container/Panel/MarginContainer/VBoxContainer/DialogueText" to="." method="_on_dialogue_text_start_animating"]
 [connection signal="pressed" from="CanvasLayer/Container/Panel/MarginContainer/VBoxContainer/NextButton" to="." method="_on_next_button_click"]

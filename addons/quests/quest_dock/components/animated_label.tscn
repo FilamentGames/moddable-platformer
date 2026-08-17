@@ -2,6 +2,10 @@
 
 [ext_resource type="Script" uid="uid://dewvg666m6712" path="res://addons/quests/quest_dock/components/animated_label.gd" id="1_mpvh3"]
 
-[node name="AnimatedLabel" type="Label" unique_id=1035288938]
+[node name="AnimatedLabel" type="RichTextLabel" unique_id=1621662195]
+offset_right = 214.0
+offset_bottom = 23.0
+bbcode_enabled = true
 text = "Lorem ipsum dolor sit amet"
+visible_characters = 26
 script = ExtResource("1_mpvh3")

@@ -31,7 +31,7 @@ metadata/_custom_type_script = "uid://wcqap044q4nm"
 script = ExtResource("2_fdhqc")
 dialogue_line = "Take this knowledge next to me. Then pause the flow of time!"
 progress_method = 3
-hints = Array[String](["Press the Stop button (■) in the top right corner to make edits to the world."])
+hints = Array[String](["Press the pause button (⏸) in the top right corner to make edits to the world."])
 metadata/_custom_type_script = "uid://wcqap044q4nm"
 
 [sub_resource type="Resource" id="Resource_fdhqc"]

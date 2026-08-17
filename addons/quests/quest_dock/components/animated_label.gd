@@ -1,10 +1,12 @@
 @tool
-extends Label
+extends RichTextLabel
 class_name AnimatedLabel
 ## A label that animates text in
 
 ## Amount of time between each character appearing in seconds
 @export_range(0.005, 0.1, 0.005, "s") var seconds_per_character: float = 1.0/60.0
+
+@export var symbol_substitutions: Array[LabelSymbolDictionary] = []
 
 ## Emitted when text has started animating
 signal start_animating()
@@ -37,7 +39,14 @@ func _set(property: StringName, value: Variant) -> bool:
 		visible_characters = 0
 		_scroll_time = 0
 		start_animating.emit()
+		text = process_symbols(value)
+		return true
 	return false
+
+func process_symbols(value: String) -> String:
+	for substitution in symbol_substitutions:
+		value = value.replace(substitution.text_symbol, "[img height=1em]" + substitution.image.resource_path + "[/img]")
+	return value
 
 ## Show all characters in the label immediately.
 func show_all() -> void:
