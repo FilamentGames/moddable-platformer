@@ -74,6 +74,7 @@ func _ready() -> void:
 	if not _bridge and not Engine.is_editor_hint():
 		_bridge = InGameQuestsBridge.new()
 
+	if _bridge:
 		_bridge.game_unpaused.connect(func():
 			condition_updated.emit(condition.is_condition_met())
 		)
