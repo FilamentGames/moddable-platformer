@@ -441,23 +441,23 @@ _data = {
 &"open": SubResource("Animation_83ym3")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fw5q1"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_63c7n"]
 resource_local_to_scene = true
 size = Vector2(94, 258)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ucnsv"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i2drw"]
 resource_local_to_scene = true
 size = Vector2(352, 369)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qyp0h"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x1an7"]
 resource_local_to_scene = true
 size = Vector2(324, 373)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_57xpr"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mpima"]
 resource_local_to_scene = true
 size = Vector2(413, 367)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_v371g"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dknyt"]
 resource_local_to_scene = true
 size = Vector2(401, 2044)
 
@@ -987,6 +987,7 @@ sprite_frames = ExtResource("49_11skj")
 metadata/_edit_lock_ = true
 
 [node name="Triggers" type="Node2D" parent="." unique_id=1993564345]
+visible = false
 metadata/_edit_lock_ = true
 
 [node name="ScreenShakeTrigger" type="Area2D" parent="Triggers" unique_id=1750362101 node_paths=PackedStringArray("behavior") instance=ExtResource("50_x7fbm")]
@@ -1051,7 +1052,7 @@ delete_from_scene = true
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" parent="Triggers/ForceQuestProgressTrigger_SolvedRockPuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_fw5q1")
+shape = SubResource("RectangleShape2D_63c7n")
 metadata/_edit_lock_ = true
 
 [node name="SkipQuestTriggerBehavior" parent="Triggers/ForceQuestProgressTrigger_SolvedRockPuzzle" index="1" unique_id=1238036962]
@@ -1113,7 +1114,7 @@ metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle" index="0" unique_id=490838596]
 position = Vector2(129, -55.5)
-shape = SubResource("RectangleShape2D_ucnsv")
+shape = SubResource("RectangleShape2D_i2drw")
 metadata/_edit_lock_ = true
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
@@ -1131,7 +1132,7 @@ metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle" index="0" unique_id=490838596]
 position = Vector2(115, -57.5)
-shape = SubResource("RectangleShape2D_qyp0h")
+shape = SubResource("RectangleShape2D_x1an7")
 metadata/_edit_lock_ = true
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
@@ -1149,7 +1150,7 @@ metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle2" index="0" unique_id=490838596]
 position = Vector2(159.5, -54.5)
-shape = SubResource("RectangleShape2D_57xpr")
+shape = SubResource("RectangleShape2D_mpima")
 metadata/_edit_lock_ = true
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle2" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
@@ -1167,7 +1168,7 @@ metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" index="0" unique_id=490838596]
 position = Vector2(153.5, -893)
-shape = SubResource("RectangleShape2D_v371g")
+shape = SubResource("RectangleShape2D_dknyt")
 metadata/_edit_lock_ = true
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]

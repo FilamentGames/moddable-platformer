@@ -906,6 +906,7 @@ script = ExtResource("35_fnu5h")
 sprite_frames = ExtResource("36_jf12t")
 
 [node name="Triggers" type="Node2D" parent="." unique_id=1993564345]
+visible = false
 
 [node name="ScreenShakeTrigger" type="Area2D" parent="Triggers" unique_id=1750362101 node_paths=PackedStringArray("behavior") instance=ExtResource("15_0aei4")]
 position = Vector2(460, 515)
