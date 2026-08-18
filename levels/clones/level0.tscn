@@ -1087,8 +1087,8 @@ metadata/_custom_type_script = "uid://bvs6l44borf1h"
 metadata/_edit_lock_ = true
 
 [node name="QuestScriptTrigger_ReachedTilePuzzle" type="Area2D" parent="Triggers" unique_id=1927004304 node_paths=PackedStringArray("behavior") instance=ExtResource("52_w4jyo")]
-position = Vector2(10784, -712)
-scale = Vector2(1.9023867, 12.631851)
+position = Vector2(10722, -712)
+scale = Vector2(1.0623868, 12.631851)
 script = ExtResource("51_0vv7t")
 behavior = NodePath("Behavior")
 delete_from_scene = true
