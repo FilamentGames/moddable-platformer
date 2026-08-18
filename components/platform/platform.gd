@@ -52,6 +52,12 @@ const FRAME_COORDS_SOLID := Vector2i(10, 1)
 		tile_set_right_frame = value
 		_on_platform_sprite_update()
 
+## How much to scale the collision shape vertically, useful for half-height platforms.
+@export_range(0.0, 1.0, 0.05, "suffix:x") var collision_shape_y_scale: float = 1.0:
+	set(value):
+		collision_shape_y_scale = value
+		_on_platform_sprite_update()
+
 @export_group("Falling Platform")
 
 ## Whether the platform should fall after the player-character touches it.
@@ -67,8 +73,8 @@ var fall_timer: Timer
 
 @onready var _rigid_body: RigidBody2D = %RigidBody2D
 @onready var _sprites := %Sprites
-@onready var _collision_shape := %CollisionShape2D
-@onready var _area_collision_shape := %AreaCollisionShape2D
+@onready var _collision_shape: CollisionShape2D = %CollisionShape2D
+@onready var _area_collision_shape: CollisionShape2D = %AreaCollisionShape2D
 @onready var _animation_player := %AnimationPlayer
 
 var _reset_on_unpause: ResetOnUnpause
@@ -106,7 +112,8 @@ func _recreate_sprites():
 	var sprite: Texture2D = tile_set.get_source(tile_set_index).texture
 
 	_collision_shape.one_way_collision = one_way
-	_collision_shape.shape.set_size(Vector2(width * tile_width, tile_width))
+	_collision_shape.position.y = tile_width * (1.0 - collision_shape_y_scale) / -2.0
+	_collision_shape.shape.set_size(Vector2(width * tile_width, tile_width * collision_shape_y_scale))
 	_area_collision_shape.shape.set_size(
 		Vector2(width * tile_width, _area_collision_shape.shape.size[1])
 	)
