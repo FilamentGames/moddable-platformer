@@ -458,7 +458,7 @@ size = Vector2(413, 367)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0yd5m"]
 resource_local_to_scene = true
-size = Vector2(401, 356)
+size = Vector2(401, 2044)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0ff8d"]
 size = Vector2(300, 137)
@@ -906,7 +906,6 @@ script = ExtResource("35_fnu5h")
 sprite_frames = ExtResource("36_jf12t")
 
 [node name="Triggers" type="Node2D" parent="." unique_id=1993564345]
-visible = false
 
 [node name="ScreenShakeTrigger" type="Area2D" parent="Triggers" unique_id=1750362101 node_paths=PackedStringArray("behavior") instance=ExtResource("15_0aei4")]
 position = Vector2(460, 515)
@@ -992,8 +991,8 @@ delete_from_scene = true
 metadata/_custom_type_script = "uid://bvs6l44borf1h"
 
 [node name="QuestScriptTrigger_ReachedTilePuzzle" type="Area2D" parent="Triggers" unique_id=1927004304 node_paths=PackedStringArray("behavior") instance=ExtResource("9_58r63")]
-position = Vector2(10772, 112.00005)
-scale = Vector2(1, 1.8800012)
+position = Vector2(10784, -712)
+scale = Vector2(1.9023867, 12.631851)
 script = ExtResource("60_tlhk2")
 behavior = NodePath("Behavior")
 delete_from_scene = true
@@ -1060,7 +1059,7 @@ behavior = NodePath("Behavior")
 delete_from_scene = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" index="0" unique_id=490838596]
-position = Vector2(153.5, -49)
+position = Vector2(153.5, -893)
 shape = SubResource("RectangleShape2D_0yd5m")
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
