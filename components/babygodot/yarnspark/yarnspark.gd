@@ -49,12 +49,6 @@ func _clear_error_state() -> void:
 	if label and condition:
 		label.text = condition.get_label_text()
 
-func print_all_properties():
-	for prop in get_property_list():
-		var prop_name = prop.name
-		var prop_value = get(prop_name)
-		print(prop_name, ": ", prop_value)
-
 func _ready() -> void:
 	if Engine.is_editor_hint():
 		info_indicator._on_activate()
@@ -79,7 +73,7 @@ func _ready() -> void:
 
 	if not _bridge and not Engine.is_editor_hint():
 		_bridge = InGameQuestsBridge.new()
-		
+
 		_bridge.game_unpaused.connect(func():
 			condition_updated.emit(condition.is_condition_met())
 		)

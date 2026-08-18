@@ -128,7 +128,6 @@ func _on_hint_purchased(session_id: int) -> void:
 	_send_message(session_id, -1, "coins_updated", [GlobalQuests.quests.global_coins])
 
 func _on_celebration_animation(session_id: int) -> void:
-	print("Emitting celebration animation message")
 	_send_message(session_id, -1, "celebration_animation", [])
 
 func _on_session_start() -> void:

@@ -191,7 +191,6 @@ func collect_scroll(scroll_id: String) -> void:
 
 ## Activates a "Knit Witch" checkpoint, replacing the checkpoint trigger with the knit witch NPC in the editor so the checkpoint cannot be triggered again.
 func activate_level_checkpoint(checkpoint_id: String, removed_objects: Array, swapped_objects: Array) -> void:
-	print(removed_objects, swapped_objects)
 	var scene: Node2D = editor_scene_provider.get_editor_scene()
 	var target_checkpoint: Checkpoint = UniqueSceneId.find_by_id(scene, checkpoint_id)
 	if target_checkpoint:
