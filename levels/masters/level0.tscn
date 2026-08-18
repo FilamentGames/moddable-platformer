@@ -98,6 +98,9 @@ default_font_size = 64
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rpdqf"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lwt5q"]
+size = Vector2(705.37476, 39.000004)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hmpfs"]
 size = Vector2(294.5, 260)
 
@@ -600,6 +603,14 @@ bridge_behavior = NodePath("ControllerObjects/GateBridgeBehavior")
 to_delete_on_open = [NodePath("TriggerArea"), NodePath("NewGate/GateCollision"), NodePath("ControllerObjects"), NodePath("AnimationPlayer"), NodePath("InfoIndicator")]
 info_indicator = NodePath("InfoIndicator")
 info_indicator_label = NodePath("InfoIndicator/InfoTree/CanvasLayer/UIContainer/PanelContainer/RichTextLabel")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ScrollGates" unique_id=1845215683]
+visible = false
+position = Vector2(11251.251, -88.74997)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScrollGates/StaticBody2D" unique_id=156359561]
+position = Vector2(-145.93848, -121.75003)
+shape = SubResource("RectangleShape2D_lwt5q")
 
 [node name="ScrollGate3" parent="ScrollGates" unique_id=710705362 node_paths=PackedStringArray("lanterns", "bridge_behavior", "to_delete_on_open", "info_indicator", "info_indicator_label") instance=ExtResource("24_obko3")]
 position = Vector2(11327, -391)
@@ -1495,6 +1506,7 @@ tile_set_index = 1
 tile_set_left_frame = Vector2i(4, 1)
 tile_set_middle_frame = Vector2i(5, 1)
 tile_set_right_frame = Vector2i(6, 1)
+collision_shape_y_scale = 0.5
 
 [node name="Platform17" type="Node2D" parent="Platforms" unique_id=1889629645 instance=ExtResource("31_w6d5o")]
 position = Vector2(5285, 375)
