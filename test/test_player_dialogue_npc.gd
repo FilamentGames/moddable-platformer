@@ -4,7 +4,10 @@ extends GutTest
 class MockPlayer extends CharacterBody2D:
 	var movement_locked := false
 	var control_locked := false
+	var turned_to_face := false
 
+	func turn_to_face_npc(_npc: Npc) -> void:
+		turned_to_face = true
 class NpcTesting extends Npc:
 	var trigger_type_used: int = -1
 
@@ -103,6 +106,7 @@ func test_it_can_spawn_dialogue():
 
 	assert_true(player_dialogue.movement_locked)
 	assert_gt(npc.dialogue_container.get_children().size(), 0)
+	assert_true(player.turned_to_face, "Player should have tried to face the NPC")
 
 func test_it_does_not_spawn_dialogue_when_dialogue_already_active():
 	npc._player_entered(player)
