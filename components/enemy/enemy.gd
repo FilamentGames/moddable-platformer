@@ -49,8 +49,9 @@ func _set_speed(new_speed):
 
 func _ready():
 	_default_anim_name = _sprite.animation
-	_reset_on_unpause = ResetOnUnpause.new(self)
-	_reset_on_unpause.on_reset.connect(_reset_after_defeat)
+	if not Engine.is_editor_hint():
+		_reset_on_unpause = ResetOnUnpause.new(self)
+		_reset_on_unpause.on_reset.connect(_reset_after_defeat)
 
 	Global.gravity_changed.connect(_on_gravity_changed)
 

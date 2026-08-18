@@ -143,7 +143,7 @@ func _set_speed(new_speed):
 
 #endregion
 
-var bridge := InGameQuestsBridge.new()
+var bridge: InGameQuestsBridge
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -151,6 +151,7 @@ func _ready():
 		set_process(false)
 		set_physics_process(false)
 	else:
+		bridge = InGameQuestsBridge.new()
 		Global.gravity_changed.connect(_on_gravity_changed)
 		Global.lives_changed.connect(_on_lives_changed)
 		Global.checkpoint_activated.connect(_on_checkpoint_reached)

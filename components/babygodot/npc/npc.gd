@@ -42,6 +42,8 @@ func _ready() -> void:
 	_set_control_display_fully_visible(show_talk_icon)
 	if not use_global_quest_dialogue and not celebration_animation.has_connections():
 		return
+	if Engine.is_editor_hint():
+		return
 	if not bridge:
 		bridge = InGameQuestsBridge.new()
 	bridge.celebration_animation.connect(func():

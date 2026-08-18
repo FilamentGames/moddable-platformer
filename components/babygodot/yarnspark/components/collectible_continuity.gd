@@ -6,6 +6,8 @@ class_name ScrollContinuity
 var bridge: InGameQuestsBridge
 
 func _ready() -> void:
+	if Engine.is_editor_hint():
+		return
 	bridge = InGameQuestsBridge.new()
 
 func _on_collect():

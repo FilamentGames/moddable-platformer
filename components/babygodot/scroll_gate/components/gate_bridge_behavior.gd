@@ -4,9 +4,12 @@ class_name GateBridgeBehavior
 ## The gate that this behavior is associated with.
 @export var gate: CollectibleGate
 
-var bridge := InGameQuestsBridge.new()
+var bridge: InGameQuestsBridge
 
 func _ready() -> void:
+	if Engine.is_editor_hint():
+		return
+	bridge = InGameQuestsBridge.new()
 	bridge.get_number_of_scrolls()
 	bridge.scroll_quantity.connect(on_scroll_quantity_changed)
 

@@ -79,10 +79,10 @@ func _ready() -> void:
 
 	if not _bridge and not Engine.is_editor_hint():
 		_bridge = InGameQuestsBridge.new()
-	
-	_bridge.game_unpaused.connect(func():
-		condition_updated.emit(condition.is_condition_met())
-	)
+		
+		_bridge.game_unpaused.connect(func():
+			condition_updated.emit(condition.is_condition_met())
+		)
 
 ## Called when the player collides with the scroll and tries to collect it
 func _player_collect() -> void:

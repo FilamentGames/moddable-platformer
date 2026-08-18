@@ -167,9 +167,10 @@ func _get_configuration_warnings() -> PackedStringArray:
 
 
 func _ready():
-	_reset_on_unpause = ResetOnUnpause.new(self)
-	_reset_on_unpause.reset_position = false
-	_reset_on_unpause.on_reset.connect(_reset.call_deferred)
+	if not Engine.is_editor_hint():
+		_reset_on_unpause = ResetOnUnpause.new(self)
+		_reset_on_unpause.reset_position = false
+		_reset_on_unpause.on_reset.connect(_reset.call_deferred)
 
 	_recreate_sprites()
 
