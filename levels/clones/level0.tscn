@@ -438,23 +438,23 @@ _data = {
 &"open": SubResource("Animation_83ym3")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_c5yfl"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fw5q1"]
 resource_local_to_scene = true
 size = Vector2(94, 258)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_f8q53"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ucnsv"]
 resource_local_to_scene = true
 size = Vector2(352, 369)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_f5e4c"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qyp0h"]
 resource_local_to_scene = true
 size = Vector2(324, 373)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lttqw"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_57xpr"]
 resource_local_to_scene = true
 size = Vector2(413, 367)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_s1r30"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v371g"]
 resource_local_to_scene = true
 size = Vector2(401, 356)
 
@@ -465,7 +465,7 @@ size = Vector2(300, 137)
 
 [node name="EditableNodeList" type="Node" parent="." unique_id=280926474 node_paths=PackedStringArray("nodes")]
 script = ExtResource("1_fw5q1")
-nodes = [NodePath("../RockPile")]
+nodes = [NodePath("../RockPile"), NodePath("../Player")]
 metadata/_edit_lock_ = true
 
 [node name="GameLogic" type="Node" parent="." unique_id=1461208797 instance=ExtResource("2_ucnsv")]
@@ -1039,7 +1039,7 @@ delete_from_scene = true
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" parent="Triggers/ForceQuestProgressTrigger_SolvedRockPuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_c5yfl")
+shape = SubResource("RectangleShape2D_fw5q1")
 metadata/_edit_lock_ = true
 
 [node name="SkipQuestTriggerBehavior" parent="Triggers/ForceQuestProgressTrigger_SolvedRockPuzzle" index="1" unique_id=1238036962]
@@ -1101,7 +1101,7 @@ metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle" index="0" unique_id=490838596]
 position = Vector2(129, -55.5)
-shape = SubResource("RectangleShape2D_f8q53")
+shape = SubResource("RectangleShape2D_ucnsv")
 metadata/_edit_lock_ = true
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
@@ -1119,7 +1119,7 @@ metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle" index="0" unique_id=490838596]
 position = Vector2(115, -57.5)
-shape = SubResource("RectangleShape2D_f5e4c")
+shape = SubResource("RectangleShape2D_qyp0h")
 metadata/_edit_lock_ = true
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
@@ -1137,7 +1137,7 @@ metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle2" index="0" unique_id=490838596]
 position = Vector2(159.5, -54.5)
-shape = SubResource("RectangleShape2D_lttqw")
+shape = SubResource("RectangleShape2D_57xpr")
 metadata/_edit_lock_ = true
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle2" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
@@ -1155,12 +1155,12 @@ metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" index="0" unique_id=490838596]
 position = Vector2(153.5, -49)
-shape = SubResource("RectangleShape2D_s1r30")
+shape = SubResource("RectangleShape2D_v371g")
 metadata/_edit_lock_ = true
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
 script = ExtResource("56_8oae3")
-add_objects = [NodePath("../../../TileMapLayer_Stone_Designer"), NodePath("../../../Enemies/Enemy3")]
+add_objects = [NodePath("../../../TileMapLayer_Stone"), NodePath("../../../Enemies/Enemy3")]
 metadata/_edit_lock_ = true
 
 [node name="DemoEndTrigger" type="Area2D" parent="Triggers" unique_id=1681964514 node_paths=PackedStringArray("behavior") instance=ExtResource("57_vnk7a")]
@@ -2212,13 +2212,21 @@ floor_snap_length = 32.0
 script = ExtResource("87_ebggu")
 sprite_frames = ExtResource("88_xyyth")
 jump_velocity = 850.0
-metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1408260423]
 position = Vector2(0, 15)
 limit_left = 0
 limit_bottom = 1080
 position_smoothing_enabled = true
+metadata/_edit_lock_ = true
+
+[node name="EditableObjectIndicator" type="Node2D" parent="Player" unique_id=1300236042 node_paths=PackedStringArray("edit_icon", "pencil_sprite", "arrow_rotation_pivot", "box") instance=ExtResource("18_4nsep")]
+script = ExtResource("19_57xpr")
+margins = Vector2(43, 37)
+edit_icon = NodePath("EditIcon")
+pencil_sprite = NodePath("EditIcon/Pencil")
+arrow_rotation_pivot = NodePath("EditIcon/Pencil/RotationPivot")
+box = NodePath("Box")
 metadata/_edit_lock_ = true
 
 [node name="Enemies" type="Node2D" parent="." unique_id=1698421393]
