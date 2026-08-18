@@ -293,6 +293,16 @@ func _physics_process(delta):
 	# Don't move if there are no lives left.
 	if Global.lives <= 0:
 		return
+
+	if movement_locked:
+		if is_on_floor():
+			_sprite.play("idle")
+		else:
+			if velocity.y > 0:
+				_sprite.play("jump_down")
+			else:
+				_sprite.play("jump_up")
+		return
 	
 	# Don't move if in some kind of cutscene, dialogue, etc.
 	if movement_locked or is_attacking:
@@ -413,3 +423,10 @@ func _on_attack_hitbox_body_exited(body: Node2D) -> void:
 func _on_checkpoint_reached(pos: Vector2) -> void:
 	original_position = pos
 	last_checkpoint_position = pos
+
+func turn_to_face_npc(npc: Npc) -> void:
+	if npc.position.x < position.x:
+		_sprite.flip_h = true
+	else:
+		_sprite.flip_h = false
+	_attack_hitbox.scale.x = -1 if _sprite.flip_h else 1

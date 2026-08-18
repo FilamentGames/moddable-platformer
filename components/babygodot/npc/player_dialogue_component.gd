@@ -48,6 +48,8 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("player_action"):
 		if dialogue_zones.size() > 0:
 			movement_locked = true
+			if player and "turn_to_face_npc" in player:
+				player.turn_to_face_npc(dialogue_zones.back())
 			dialogue_zones.back().spawn_dialogue_box(self)
 
 ## This is called once the dialogue is finished
