@@ -150,6 +150,7 @@ func _ready():
 	if Engine.is_editor_hint():
 		set_process(false)
 		set_physics_process(false)
+		_sprite.play("idle", 0)
 	else:
 		bridge = InGameQuestsBridge.new()
 		Global.gravity_changed.connect(_on_gravity_changed)
