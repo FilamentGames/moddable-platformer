@@ -458,7 +458,7 @@ size = Vector2(413, 367)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0yd5m"]
 resource_local_to_scene = true
-size = Vector2(401, 2044)
+size = Vector2(40, 2044)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0ff8d"]
 size = Vector2(300, 137)
@@ -1053,14 +1053,14 @@ script = ExtResource("23_8knqs")
 add_objects = [NodePath("../../../Enemies/Enemy"), NodePath("../../../Enemies/Enemy2")]
 
 [node name="ChangeEditableObjectsTrigger_StartTilePuzzle" parent="Triggers" unique_id=2100137793 node_paths=PackedStringArray("behavior") instance=ExtResource("14_m7dqe")]
-position = Vector2(10799, 125)
+position = Vector2(10749, 125)
 collision_layer = 0
 script = ExtResource("60_tlhk2")
 behavior = NodePath("Behavior")
 delete_from_scene = true
 
 [node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" index="0" unique_id=490838596]
-position = Vector2(153.5, -893)
+position = Vector2(-27, -893)
 shape = SubResource("RectangleShape2D_0yd5m")
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
