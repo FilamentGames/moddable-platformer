@@ -13,6 +13,8 @@ border_width_bottom = 2
 [sub_resource type="LabelSettings" id="LabelSettings_hmpfs"]
 font_size = 24
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j702k"]
+
 [node name="HintDisplay" type="Control" unique_id=1175709613 node_paths=PackedStringArray("label")]
 layout_mode = 3
 anchors_preset = 15
@@ -66,12 +68,13 @@ label_settings = SubResource("LabelSettings_hmpfs")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1793855135]
+[node name="Label" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1964885007]
 modulate = Color(0.45882353, 0.38431373, 0.35686275, 1)
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_constants/line_spacing = -2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_j702k")
+bbcode_enabled = true
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 3
