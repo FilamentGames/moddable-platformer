@@ -20,6 +20,8 @@ var current_cutscene_box: DialogueBox
 ## Whether the player's movement is locked or not
 var movement_locked := false:
 	get:
+		if player and "movement_locked" in player:
+			return player.movement_locked
 		return _movement_locked
 	set(val):
 		if player and "movement_locked" in player:
@@ -42,8 +44,13 @@ var _movement_locked := false
 
 var _control_locked := false
 
+var queued_dialogue: Array = []
+
 func _process(_delta: float) -> void:
 	if movement_locked or control_locked:
+		return
+	if queued_dialogue.size() > 0:
+		force_dialogue(queued_dialogue.pop_front())
 		return
 	if Input.is_action_just_pressed("player_action"):
 		if dialogue_zones.size() > 0:
@@ -58,6 +65,9 @@ func finished_dialogue() -> void:
 	control_locked = false
 
 func force_dialogue(lines: Array[String]) -> void:
+	if movement_locked:
+		queued_dialogue.append(lines)
+		return
 	movement_locked = true
 	var dialogue_box: DialogueBox = dialogue_box_prefab.instantiate()
 	dialogue_box.dialogue_lines = lines.duplicate()

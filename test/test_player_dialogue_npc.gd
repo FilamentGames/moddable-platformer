@@ -240,3 +240,15 @@ func test_player_cannot_open_new_dialogue_while_control_locked():
 
 	assert_false(player_dialogue.movement_locked)
 	assert_eq(npc.dialogue_container.get_children().size(), 0)
+
+func test_cutscene_dialogue_cannot_be_spawned_while_movement_locked():
+	player.movement_locked = true
+
+	player_dialogue.force_dialogue(["Lorem.", "Ipsum."])
+
+	assert_eq(player_dialogue.current_cutscene_box, null)
+
+	player.movement_locked = false
+	player_dialogue._process(1)
+
+	assert_eq(player_dialogue.current_cutscene_box.label.text, "Lorem.")
