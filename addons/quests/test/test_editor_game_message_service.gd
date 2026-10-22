@@ -1,4 +1,4 @@
-extends GutTest
+extends BabyGodotTest
 
 var service: MockEditorGameMessagingService
 
@@ -7,7 +7,7 @@ func before_each():
 
 func test_in_game_object_can_connect():
 	var bridge = autofree(InGameQuestsBridge.new(service))
-	var spy = autofree(CallableSpy.new())
+	var spy := create_spy()
 	bridge.quest_text.connect(spy.callable)
 	service._capture("reply_get_quest_text", [bridge.id, "Hello World"])
 	
@@ -15,7 +15,7 @@ func test_in_game_object_can_connect():
 
 func test_in_game_objects_only_receive_messages_for_their_id():
 	var bridge = autofree(InGameQuestsBridge.new(service))
-	var spy = autofree(CallableSpy.new())
+	var spy := create_spy()
 	bridge.quest_text.connect(spy.callable)
 	service._capture("reply_get_quest_text", [-1337, "Hello World"])
 	
@@ -31,8 +31,8 @@ func test_clears_objects_after_they_are_destroyed():
 func test_can_dispatch_a_global_message():
 	var bridge_1 = autofree(InGameQuestsBridge.new(service))
 	var bridge_2 = autofree(InGameQuestsBridge.new(service))
-	var spy_1 = autofree(CallableSpy.new())
-	var spy_2 = autofree(CallableSpy.new())
+	var spy_1 := create_spy()
+	var spy_2 := create_spy()
 	bridge_1.quest_text.connect(spy_1.callable)
 	bridge_2.quest_text.connect(spy_2.callable)
 	service._capture("text_updated", [-1, "New Text"])

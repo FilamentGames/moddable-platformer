@@ -1,4 +1,4 @@
-extends GutTest
+extends BabyGodotTest
 
 var gate: CollectibleGate
 
@@ -54,7 +54,7 @@ func test_it_emits_an_event_when_the_player_enters_the_trigger_area_and_does_not
 	gate.bridge_behavior.current_collectible_count = 1
 	gate.bridge_behavior.is_ready = true
 
-	var spy: CallableSpy = autofree(CallableSpy.new())
+	var spy:= create_spy()
 	gate.not_enough_collectibles.connect(spy.callable)
 
 	gate.player_entered()
@@ -70,7 +70,7 @@ func test_it_emits_an_event_when_the_player_enters_the_trigger_area_and_has_enou
 	gate.bridge_behavior.current_collectible_count = 10
 	gate.bridge_behavior.is_ready = true
 
-	var spy: CallableSpy = autofree(CallableSpy.new())
+	var spy:= create_spy()
 	gate.gate_opening.connect(spy.callable)
 
 	gate.player_entered()
@@ -79,7 +79,7 @@ func test_it_emits_an_event_when_the_player_enters_the_trigger_area_and_has_enou
 	assert_true(gate.bridge_behavior.gate_opened, "Gate should be opened through bridge")
 
 func test_it_emits_an_event_when_the_player_has_left_the_trigger_area():
-	var spy: CallableSpy = autofree(CallableSpy.new())
+	var spy:= create_spy()
 	gate.hide_info_message.connect(spy.callable)
 
 	gate.player_exited()
@@ -91,7 +91,7 @@ func test_it_retries_if_the_bridge_behavior_is_not_ready():
 	gate.bridge_behavior = autofree(MockBridgeBehavior.new())
 	gate.bridge_retry_timeout = 0.01
 
-	var spy: CallableSpy = autofree(CallableSpy.new())
+	var spy:= create_spy()
 	gate.gate_opening.connect(spy.callable)
 
 	add_child(gate)

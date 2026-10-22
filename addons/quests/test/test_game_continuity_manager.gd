@@ -1,4 +1,4 @@
-extends GutTest
+extends BabyGodotTest
 
 var debugger_message_sent = false
 
@@ -50,7 +50,7 @@ func test_it_sends_a_debugger_message_on_delete():
 	player.position.x = 100
 	player.position.y = -100
 	continuity._process(1)
-	var spy: CallableSpy = autofree(CallableSpy.new())
+	var spy:= create_spy()
 	continuity.debugger_message_spy = spy
 
 	continuity.free()

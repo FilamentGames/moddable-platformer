@@ -1,4 +1,4 @@
-extends GutTest
+extends BabyGodotTest
 ## Tests for the PlayerDialogueComponent and Npc objects
 
 class MockPlayer extends CharacterBody2D:
@@ -218,7 +218,7 @@ func test_can_do_a_celebration_animation_even_if_it_has_no_global_quest_dialogue
 	npc.dialogue_container = autofree(Node2D.new())
 	npc.bridge = autofree(InGameQuestsBridge.new(autofree(MockEditorGameMessagingService.new())))
 
-	var spy: CallableSpy = autofree(CallableSpy.new())
+	var spy:= create_spy()
 	npc.celebration_animation.connect(spy.callable)
 
 	add_child(npc)

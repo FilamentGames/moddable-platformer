@@ -1,4 +1,4 @@
-extends GutTest
+extends BabyGodotTest
 
 const scene_path := "res://addons/quests/test/scenes/unique_scene_id_test.tscn"
 var packed_scene := preload("res://addons/quests/test/scenes/unique_scene_id_test.tscn")

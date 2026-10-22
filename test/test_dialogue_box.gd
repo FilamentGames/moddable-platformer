@@ -1,4 +1,4 @@
-extends GutTest
+extends BabyGodotTest
 
 var dialogue: DialogueBox
 var label: RichTextLabel
@@ -13,7 +13,7 @@ func before_each():
 	dialogue.adjust_position_if_cut_off = false
 
 func test_it_does_nothing_if_no_dialogue():
-	var spy: CallableSpy = autofree(CallableSpy.new())
+	var spy:= create_spy()
 	dialogue.finished.connect(spy.callable)
 	add_child(dialogue)
 
@@ -34,7 +34,7 @@ func test_it_can_move_onto_next_dialogue_with_button():
 	assert_eq(label.text, "Ipsum")
 
 func test_it_emits_a_signal_and_queues_for_deletion_once_finished():
-	var spy: CallableSpy = autofree(CallableSpy.new())
+	var spy:= create_spy()
 	dialogue.dialogue_lines = ["Lorem"]
 	dialogue.finished.connect(spy.callable)
 	add_child(dialogue)
@@ -45,7 +45,7 @@ func test_it_emits_a_signal_and_queues_for_deletion_once_finished():
 	assert_true(dialogue.is_queued_for_deletion())
 
 func test_it_emits_a_signal_when_next_button_is_clicked():
-	var spy: CallableSpy = autofree(CallableSpy.new())
+	var spy:= create_spy()
 	dialogue.dialogue_lines = ["Lorem", "Ipsum"]
 	dialogue.next.connect(spy.callable)
 	add_child(dialogue)

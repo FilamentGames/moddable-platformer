@@ -1,4 +1,4 @@
-extends GutTest
+extends BabyGodotTest
 
 var dock: BabyGodotQuestDock
 

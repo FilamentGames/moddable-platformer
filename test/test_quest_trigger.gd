@@ -1,4 +1,4 @@
-extends GutTest
+extends BabyGodotTest
 
 class MockTriggerBehavior extends AbstractTriggerBehavior:
 	var executed := false

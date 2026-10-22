@@ -1,4 +1,4 @@
-extends GutTest
+extends BabyGodotTest
 
 var behavior: ResetOnUnpause
 var node: Node2D
@@ -42,7 +42,7 @@ func test_it_auto_listens_to_the_game_unpause_event():
 	assert_eq(node.position, Vector2(123, 456))
 	
 func test_it_fires_a_signal_when_reset():
-	var spy: CallableSpy = autofree(CallableSpy.new())
+	var spy:= create_spy()
 	behavior.on_reset.connect(spy.callable)
 
 	behavior.reset()

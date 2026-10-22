@@ -1,4 +1,4 @@
-extends GutTest
+extends BabyGodotTest
 
 var condition: ObjectPropertyEqualityScrollCondition
 var obj: MockObject

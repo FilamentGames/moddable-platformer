@@ -1,4 +1,4 @@
-extends GutTest
+extends BabyGodotTest
 
 func _get_size(builtin_size: Vector2, window_size: Vector2) -> Vector2:
 	return Hud2._get_scaled_viewport_size(builtin_size, window_size)

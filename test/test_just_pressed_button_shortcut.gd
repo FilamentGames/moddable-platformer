@@ -1,4 +1,4 @@
-extends GutTest
+extends BabyGodotTest
 
 var shortcut: JustPressedButtonShortcut
 var button: Button
@@ -15,7 +15,7 @@ func after_each():
 	sender.clear()
 
 func test_it_triggers_the_pressed_signal_when_action_just_pressed():
-	var spy: CallableSpy = autofree(CallableSpy.new())
+	var spy:= create_spy()
 	button.pressed.connect(spy.callable)
 
 	sender.action_up("player_action").wait_frames(1)

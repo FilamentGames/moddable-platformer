@@ -1,4 +1,4 @@
-extends GutTest
+extends BabyGodotTest
 
 var quests: BabyGodotQuests
 
@@ -20,7 +20,7 @@ func test_can_move_to_next_text():
 	assert_eq(quests.get_current_text(), "Test")
 
 func test_has_signal_when_text_updates():
-	var spy = autofree(CallableSpy.new())
+	var spy := create_spy()
 	quests.text_updated.connect(spy.callable)
 	quests.next()
 	assert_eq(spy.get_number_of_calls(), 1, "Expected `text_updated` signal to be called")
@@ -144,7 +144,7 @@ class MockScrollSceneProvider extends MockSceneProvider:
 		return scene
 
 func test_it_can_register_a_scroll_as_collected():
-	var spy: CallableSpy = autofree(CallableSpy.new())
+	var spy:= create_spy()
 	quests.scroll_collected.connect(spy.callable)
 	var provider = autofree(MockScrollSceneProvider.new())
 	quests.editor_scene_provider = provider
@@ -180,7 +180,7 @@ func test_can_buy_a_hint():
 	quests.global_coins = 10
 	quests.hint_cost = 5
 
-	var spy: CallableSpy = autofree(CallableSpy.new())
+	var spy:= create_spy()
 	quests.hint_purchased.connect(spy.callable)
 	var text = quests.buy_hint()
 
@@ -279,7 +279,7 @@ func test_it_emits_an_event_for_celebration_animations():
 	quests.text_data = [make_quest_line("Lorem"), make_quest_line("Ipsum"), make_quest_line("Test")]
 
 	quests.text_data[1].show_celebration_animation = true
-	var spy: CallableSpy = autofree(CallableSpy.new())
+	var spy:= create_spy()
 	quests.celebration_animation.connect(spy.callable)
 	
 	quests.next()

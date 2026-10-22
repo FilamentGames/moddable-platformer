@@ -1,4 +1,4 @@
-extends GutTest
+extends BabyGodotTest
 
 class MockDialogueBox extends DialogueBox:
 	var camera_rect: Rect2

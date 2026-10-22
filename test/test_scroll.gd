@@ -1,5 +1,5 @@
 @tool
-extends GutTest
+extends BabyGodotTest
 
 class MockScrollCondition extends CollectibleCondition:
 	var condition_met := false
@@ -58,7 +58,7 @@ func test_it_updates_its_error_state_when_condition_is_deleted():
 
 func test_it_emits_a_signal_when_a_condition_status_changes():
 	add_child(scroll)
-	var spy: CallableSpy = autofree(CallableSpy.new())
+	var spy:= create_spy()
 	scroll.condition_updated.connect(spy.callable)
 
 	condition.condition_met = true
@@ -70,7 +70,7 @@ func test_it_emits_a_signal_when_a_condition_status_changes():
 func test_it_emits_a_signal_when_it_is_collected_by_the_player():
 	condition.condition_met = true
 	add_child(scroll)
-	var spy: CallableSpy = autofree(CallableSpy.new())
+	var spy:= create_spy()
 	scroll.collected.connect(spy.callable)
 
 	scroll._player_collect()
@@ -79,7 +79,7 @@ func test_it_emits_a_signal_when_it_is_collected_by_the_player():
 
 func test_it_does_not_emit_a_signal_when_the_condition_state_does_not_change():
 	add_child(scroll)
-	var spy: CallableSpy = autofree(CallableSpy.new())
+	var spy:= create_spy()
 	scroll.condition_updated.connect(spy.callable)
 
 	for i in 10:
@@ -91,7 +91,7 @@ func test_it_does_not_emit_a_signal_when_the_condition_state_does_not_change():
 func test_it_rechecks_condition_status_when_game_is_unpaused():
 	condition.condition_met = false
 	add_child(scroll)
-	var spy: CallableSpy = autofree(CallableSpy.new())
+	var spy:= create_spy()
 	scroll.condition_updated.connect(spy.callable)
 
 	condition.condition_met = true

@@ -1,4 +1,4 @@
-extends GutTest
+extends BabyGodotTest
 
 var checkpoint: Checkpoint
 
@@ -18,7 +18,7 @@ func after_each() -> void:
 		npc.free()
 
 func test_fires_save_checkpoint_event_when_player_enters() -> void:
-	var spy: CallableSpy = autofree(CallableSpy.new())
+	var spy:= create_spy()
 	checkpoint.save_checkpoint.connect(spy.callable)
 
 	checkpoint.player_entered()
@@ -31,7 +31,7 @@ func test_fires_save_checkpoint_event_when_player_enters() -> void:
 
 func test_does_not_spawn_npc_if_npc_prefab_is_null() -> void:
 	checkpoint.npc_prefab = null
-	var spy: CallableSpy = autofree(CallableSpy.new())
+	var spy:= create_spy()
 	checkpoint.save_checkpoint.connect(spy.callable)
 
 	checkpoint.player_entered()
@@ -41,7 +41,7 @@ func test_does_not_spawn_npc_if_npc_prefab_is_null() -> void:
 	assert_null(get_node_or_null("KnitWitch"))
 
 func test_fires_global_checkpoint_activated_signal_when_player_enters() -> void:
-	var spy: CallableSpy = autofree(CallableSpy.new())
+	var spy:= create_spy()
 	Global.checkpoint_activated.connect(spy.callable)
 
 	checkpoint.player_entered()
