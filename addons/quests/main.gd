@@ -91,7 +91,7 @@ func _enter_tree() -> void:
 	save_timer.one_shot = true
 	add_child(save_timer)
 
-	checkpoints.plugin = self
+	checkpoints.undo_redo = get_undo_redo()
 
 	var quests: BabyGodotQuests = preload("res://addons/quests/quests/quests.tscn").instantiate()
 	quests.editor_scene_provider = self

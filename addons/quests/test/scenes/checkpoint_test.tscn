@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://o6n3d8c2i5dk"]
+
+[ext_resource type="PackedScene" uid="uid://8st4scqt06l8" path="res://components/player/player.tscn" id="1_bdy4r"]
+[ext_resource type="PackedScene" uid="uid://darbqvupa166w" path="res://components/platform/platform_level0_bridge.tscn" id="2_hke4w"]
+[ext_resource type="PackedScene" uid="uid://dr8km2gn8aenv" path="res://components/props/rock_pile.tscn" id="3_syvj6"]
+
+[node name="CheckpointTest" type="Node2D" unique_id=353895910]
+
+[node name="Player" parent="." unique_id=1041196418 instance=ExtResource("1_bdy4r")]
+position = Vector2(96, 95)
+
+[node name="Platform" parent="." unique_id=1439632278 instance=ExtResource("2_hke4w")]
+position = Vector2(609, 187)
+
+[node name="RockPile" parent="." unique_id=2056135097 instance=ExtResource("3_syvj6")]
+position = Vector2(299, -104)
