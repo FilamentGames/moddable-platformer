@@ -4,6 +4,7 @@
 [ext_resource type="SpriteFrames" uid="uid://de74lrhqf0xoa" path="res://components/player/spriteframes-storyweaver.tres" id="2_pvtfm"]
 [ext_resource type="Script" uid="uid://de8gy7evmnev5" path="res://components/babygodot/npc/player_dialogue_component.gd" id="3_pvtfm"]
 [ext_resource type="PackedScene" uid="uid://cyhp2s5q1v3mg" path="res://components/babygodot/dialogue_box/dialogue_box.tscn" id="4_02tnr"]
+[ext_resource type="PackedScene" uid="uid://b04d1ovc0l1yo" path="res://components/player/modulate_z_index_while_jumping.tscn" id="5_mpawu"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7x5a4"]
 radius = 31.0
@@ -41,7 +42,7 @@ color = Color(1, 1, 0, 1)
 unique_name_in_owner = true
 position = Vector2(0, -21)
 sprite_frames = ExtResource("2_pvtfm")
-animation = &"defeated"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1239802489]
@@ -74,6 +75,10 @@ metadata/_custom_type_script = "uid://de8gy7evmnev5"
 unique_name_in_owner = true
 wait_time = 1.5
 one_shot = true
+
+[node name="ModulateZIndexWhileJumping" parent="." unique_id=1971214821 node_paths=PackedStringArray("player") instance=ExtResource("5_mpawu")]
+editor_description = "This is a script that update's the players Z-Index while jumping so that they appear above foreground grass elements while jumping through platforms, but below them once they land."
+player = NodePath("..")
 
 [connection signal="body_entered" from="AttackHitbox" to="." method="_on_attack_hitbox_body_entered"]
 [connection signal="body_exited" from="AttackHitbox" to="." method="_on_attack_hitbox_body_exited"]

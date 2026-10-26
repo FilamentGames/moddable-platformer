@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b04d1ovc0l1yo"]
+
+[ext_resource type="Script" uid="uid://dobmdvm33d3ar" path="res://components/player/modulate_z_index_while_jumping.gd" id="1_vto8u"]
+
+[node name="ModulateZIndexWhileJumping" type="Node" unique_id=1971214821]
+script = ExtResource("1_vto8u")
