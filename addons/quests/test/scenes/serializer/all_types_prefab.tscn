@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c2rle7hdj8lt1"]
+
+[ext_resource type="Script" uid="uid://cxfgr08youled" path="res://addons/quests/test/scenes/serializer/all_types_prefab.gd" id="1_3d607"]
+
+[node name="AllTypesPrefab" type="Node2D" unique_id=2007139986]
+script = ExtResource("1_3d607")
