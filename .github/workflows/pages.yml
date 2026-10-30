@@ -31,10 +31,14 @@ jobs:
           PROJECT_ZIP_URL: ${{ secrets.TEMP_PROJECT_ZIP_URL }}
           WEB_EDITOR_ZIP_URL: ${{ secrets.TEMP_WEB_EDITOR_ZIP_URL }}
         run: |
-          mkdir site
+          set -euo pipefail
+          mkdir -p site dl
           curl -fSL -o site/project.zip "$PROJECT_ZIP_URL"
-          curl -fSL -o WEB_EDITOR.zip "$WEB_EDITOR_ZIP_URL"
-          unzip -o WEB_EDITOR.zip -d site
+          curl -fSL -o dl/WEB_EDITOR.zip "$WEB_EDITOR_ZIP_URL"
+          unzip -o dl/WEB_EDITOR.zip -d dl
+          cp dl/.web_zip/. site/
+          test -f site/godot.editor.html || { echo "godot.editor.html missing" >&2; exit 1; }
+          mv site/godot.editor.html site/index.html
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
