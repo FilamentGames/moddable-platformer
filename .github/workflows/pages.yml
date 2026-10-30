@@ -26,8 +26,6 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@
       - name: Test pages deployment using temp downloads
         env:
           PROJECT_ZIP_URL: ${{ secrets.TEMP_PROJECT_ZIP_URL }}
