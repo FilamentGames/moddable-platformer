@@ -32,8 +32,8 @@ jobs:
           WEB_EDITOR_ZIP_URL: ${{ secrets.TEMP_WEB_EDITOR_ZIP_URL }}
         run: |
           mkdir site
-          curl -fSL -o dl/project.zip "$PROJECT_ZIP_URL"
-          curl -fSL -o dl/WEB_EDITOR.zip "$WEB_EDITOR_ZIP_URL"
+          curl -fSL -o site/project.zip "$PROJECT_ZIP_URL"
+          curl -fSL -o WEB_EDITOR.zip "$WEB_EDITOR_ZIP_URL"
           unzip -o WEB_EDITOR.zip -d site
 
       - name: Setup Pages
