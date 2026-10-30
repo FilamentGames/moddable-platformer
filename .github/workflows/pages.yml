@@ -1,0 +1,51 @@
+# Adapted from:
+# https://github.com/actions/starter-workflows/blob/main/pages/static.yml
+
+name: Deploy
+
+on:
+  push:
+    branches:
+      - staging
+      - pagesCI
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@
+      - name: Test pages deployment using temp downloads
+        env:
+          PROJECT_ZIP_URL: ${{ secrets.TEMP_PROJECT_ZIP_URL }}
+          WEB_EDITOR_ZIP_URL: ${{ secrets.TEMP_WEB_EDITOR_ZIP_URL }}
+        run: |
+          mkdir site
+          curl -fSL -o dl/project.zip "$PROJECT_ZIP_URL"
+          curl -fSL -o dl/WEB_EDITOR.zip "$WEB_EDITOR_ZIP_URL"
+          unzip -o WEB_EDITOR.zip -d site
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'site'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
