@@ -1,7 +1,7 @@
 # Adapted from:
 # https://github.com/actions/starter-workflows/blob/main/pages/static.yml
 
-name: Deploy
+name: Pages
 
 on:
   push:
