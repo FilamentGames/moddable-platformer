@@ -8,6 +8,7 @@ on:
     branches:
       - staging
       - pagesCI
+      - feature/miniweb
   workflow_dispatch:
 
 permissions:
