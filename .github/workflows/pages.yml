@@ -40,7 +40,7 @@ jobs:
           mv dl/.web_zip/* site/
           mv -f dl/project.zip site/
           test -f site/godot.editor.html || { echo "godot.editor.html missing" >&2; exit 1; }
-          mv site/godot.editor.html site/index.html
+          cp site/godot.editor.html site/index.html
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
