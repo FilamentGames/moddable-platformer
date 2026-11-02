@@ -34,10 +34,11 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p site dl
-          curl -fSL -o site/project.zip "$PROJECT_ZIP_URL"
+          curl -fSL -o dl/project.zip "$PROJECT_ZIP_URL"
           curl -fSL -o dl/WEB_EDITOR.zip "$WEB_EDITOR_ZIP_URL"
           unzip -o dl/WEB_EDITOR.zip -d dl
           mv dl/.web_zip/* site/
+          mv -f dl/project.zip site/
           test -f site/godot.editor.html || { echo "godot.editor.html missing" >&2; exit 1; }
           mv site/godot.editor.html site/index.html
 
