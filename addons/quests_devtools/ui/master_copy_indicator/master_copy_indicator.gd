@@ -9,6 +9,9 @@ static var add_player_to_editable_nodes := false
 ## The prefab to use for editable object indicators.
 static var editable_object_indicator_prefab: PackedScene = preload("res://components/babygodot/editable_object_indicator/editable_object_indicator.tscn")
 
+## The prefab to use for the checkpoint data helper object
+static var checkpoint_data_helper_prefab: PackedScene = preload("res://addons/quests_devtools/tool_objects/checkpoint_data_helper.tscn")
+
 ## Used for not getting stuck in an endless loop when re-saving the master copy.
 var _locked := false
 
@@ -39,7 +42,7 @@ static func _get_master_copy_scene(scene: PackedScene) -> PackedScene:
 	return _add_editable_node_list_to_scene(_add_master_level_lock_to_scene(scene))
 
 static func _get_clone_copy_scene(scene: PackedScene) -> PackedScene:
-	return _lock_uneditable_nodes(_remove_master_level_lock_from_scene(scene))
+	return _calculate_checkpoint_watch_nodes(_lock_uneditable_nodes(_remove_master_level_lock_from_scene(scene)))
 
 static func _add_master_level_lock_to_scene(scene: PackedScene) -> PackedScene:
 	return _edit_scene(scene, func(root: Node):
@@ -92,10 +95,57 @@ static func _lock_uneditable_nodes(scene: PackedScene) -> PackedScene:
 				editable_object_indicator.owner = root
 	)
 
+static func __scan_for_connected_dependencies(node: Node, checkpoint_data: CheckpointDataHelper, root: Node):
+	# Find all other links to this object
+	for child in root.find_children("*"):
+		for prop in child.get_property_list():
+			if prop["type"] == Variant.Type.TYPE_OBJECT and prop["name"] != "owner":
+				var value = child.get(prop["name"])
+				if value and value is Node and value == node:
+					var child_entry := CheckpointWatchEntry.create(child, [node])
+					checkpoint_data.watched_nodes.push_back(child_entry)
+					# Edge case for Yarnsparks
+					if child is CollectibleCondition and child.get_parent() is Collectible:
+						var parent_entry := CheckpointWatchEntry.create(child.get_parent())
+						checkpoint_data.watched_nodes.push_back(parent_entry)
+						child_entry.dependencies.push_back(parent_entry.node)
+
+static func _calculate_checkpoint_watch_nodes(scene: PackedScene) -> PackedScene:
+	return _edit_scene(scene, func(root: Node):
+		var editable_nodes: Array[NodePath] = []
+		var checkpoint_data: CheckpointDataHelper = root.get_node_or_null("CheckpointDataHelper")
+		if not checkpoint_data:
+			checkpoint_data = checkpoint_data_helper_prefab.instantiate()
+			checkpoint_data.name = "CheckpointDataHelper"
+			root.add_child(checkpoint_data)
+			checkpoint_data.owner = root
+			root.move_child(checkpoint_data, 1)
+		checkpoint_data.watched_nodes.clear()
+		var editable_node_list: EditableNodeList = root.get_node_or_null("EditableNodeList")
+		if editable_node_list:
+			for node in editable_node_list.nodes:
+				var entry := CheckpointWatchEntry.create(node)
+				checkpoint_data.watched_nodes.push_back(entry)
+				editable_nodes.push_back(entry.node)
+				__scan_for_connected_dependencies(node, checkpoint_data, root)
+		
+		var node_change_triggers := BabyGodotUtils.get_all_children_of_type(root, ChangeEditableObjectsTriggerBehavior)
+		for change_list in node_change_triggers:
+			for node in change_list.add_objects:
+				var entry := CheckpointWatchEntry.create(node)
+				checkpoint_data.watched_nodes.push_back(entry)
+				editable_nodes.push_back(entry.node)
+				__scan_for_connected_dependencies(node, checkpoint_data, root)
+
+		var entry := CheckpointWatchEntry.create(editable_node_list)
+		entry.dependencies = editable_nodes
+		checkpoint_data.watched_nodes.push_back(entry)
+	)
+
 ## Helper method to edit a packed scene and return a new packed scene with any changes made from the callable.
 static func _edit_scene(scene: PackedScene, callable: Callable) -> PackedScene:
 	var packed_scene := PackedScene.new()
-	var root := scene.instantiate()
+	var root := scene.instantiate(PackedScene.GEN_EDIT_STATE_INSTANCE)
 	callable.call(root)
 	packed_scene.pack(root)
 	root.free() # Clear up the temp scene memory

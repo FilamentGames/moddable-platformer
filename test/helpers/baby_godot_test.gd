@@ -13,3 +13,8 @@ func create_spy() -> CallableSpy:
 func assert_vector2_almost_eq(vec1: Vector2, vec2: Vector2, delta: float = EPSILON, text: String = "") -> void:
 	assert_almost_eq(vec1.x, vec2.x, delta, text)
 	assert_almost_eq(vec1.y, vec2.y, delta, text)
+
+## Asserts that an array contains a specific value
+func assert_array_contains(arr: Array, value: Variant, text: String = "") -> void:
+	var msg = text if not text.is_empty() else "Expecting `" + str(arr) + "` to contain `" + str(value) + "`"
+	assert_true(arr.has(value), msg)

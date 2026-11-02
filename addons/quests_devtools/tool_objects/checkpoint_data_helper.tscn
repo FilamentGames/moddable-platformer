@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bh8ms07en6cqt"]
+
+[ext_resource type="Script" uid="uid://div6o81p1idln" path="res://addons/quests_devtools/tool_objects/checkpoint_data_helper.gd" id="1_bx2wv"]
+
+[node name="CheckpointDataHelper" type="Node" unique_id=6615840]
+editor_description = "This node is added to clone versions of levels to help the checkpoint system. The dev tools do a pretty expensive scan of the whole level to check for any objects the checkpoint system should watch and then saves them to this object so the checkpoint system doesn't have to do that big scan every time."
+script = ExtResource("1_bx2wv")

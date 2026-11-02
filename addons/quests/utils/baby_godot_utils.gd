@@ -38,3 +38,9 @@ static func toggle_streamlined_exclusive_dock(name: StringName, visible: bool) -
 		# Print a message to the output window so we know it would have worked in streamlined Godot
 		var verb := "open" if visible else "close"
 		print("Tried to " + verb + " the dock via `" + name + "` but it's not possible in this version of Godot!")
+
+## Gets a string representation of a node's path, without it needing to be inside the root tree.
+static func get_node_path(node: Node, stop_node: Node = null) -> String:
+	if node.get_parent() and node != stop_node:
+		return get_node_path(node.get_parent(), stop_node) + "/" + node.name
+	return node.name

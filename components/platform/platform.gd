@@ -8,6 +8,8 @@ const FRAME_COORDS_ONE_WAY_RIGHT := Vector2i(7, 0)
 const FRAME_COORDS_ONE_WAY_SINGLE := Vector2i(8, 0)
 const FRAME_COORDS_SOLID := Vector2i(10, 1)
 
+const CHECKPOINT_SYSTEM_IGNORED_PROPERTIES := [&"fall_timer"]
+
 ## How many tiles wide is the platform?
 @export_range(1, 20, 1, "suffix:tiles") var width: int = 3:
 	set = _set_width
@@ -78,6 +80,8 @@ var fall_timer: Timer
 @onready var _animation_player := %AnimationPlayer
 
 var _reset_on_unpause: ResetOnUnpause
+
+var _should_initialize_reset_on_unpause := true
 
 func _set_tile_set(new_tile_set):
 	if new_tile_set:
@@ -167,7 +171,7 @@ func _get_configuration_warnings() -> PackedStringArray:
 
 
 func _ready():
-	if not Engine.is_editor_hint():
+	if not Engine.is_editor_hint() and _should_initialize_reset_on_unpause:
 		_reset_on_unpause = ResetOnUnpause.new(self)
 		_reset_on_unpause.reset_position = false
 		_reset_on_unpause.on_reset.connect(_reset.call_deferred)
@@ -177,7 +181,7 @@ func _ready():
 	fall_timer = Timer.new()
 	fall_timer.one_shot = true
 	fall_timer.timeout.connect(_fall)
-	add_child(fall_timer)
+	add_child(fall_timer, false, Node.INTERNAL_MODE_BACK)
 
 func _reset() -> void:
 	if fall:

@@ -69,6 +69,8 @@ var _checkpoint_quest_progress: Dictionary = {
 	"last_position": Vector2.ZERO
 }
 
+var _checkpoint_helper: CheckpointHelper
+
 func _init() -> void:
 	text_updated.connect(func():
 		if text_data[_current_text_line].show_celebration_animation:
@@ -203,6 +205,8 @@ func activate_level_checkpoint(checkpoint_id: String, removed_objects: Array, sw
 		swap_nodes_with_prefabs(swapped_objects, scene)
 		_checkpoint_quest_progress["last_position"] = _last_player_pos
 		save_checkpoint.call_deferred()
+		removed_objects.clear()
+		swapped_objects.clear()
 
 func delete_nodes_in_editor(node_ids: Array, save: bool = true, scene: Node2D = editor_scene_provider.get_editor_scene()) -> void:
 	var editable_node_list: EditableNodeList = BabyGodotUtils.get_first_child_of_type(scene, EditableNodeList)
@@ -211,6 +215,7 @@ func delete_nodes_in_editor(node_ids: Array, save: bool = true, scene: Node2D = 
 		if node:
 			if editable_node_list:
 				editable_node_list.nodes.erase(node)
+			_checkpoint_helper.register_node_deleted(node)
 			node.get_parent().remove_child(node)
 			node.free()
 	if editable_node_list:
@@ -232,6 +237,8 @@ func swap_nodes_with_prefabs(swapped_objects: Array[Dictionary], scene: Node2D =
 		parent.get_parent().add_child(new_object)
 		new_object.owner = scene
 		new_object.position = parent.position
+		_checkpoint_helper.register_node_added(new_object)
+		_checkpoint_helper.register_node_deleted(parent)
 		parent.get_parent().remove_child(parent)
 		parent.queue_free()
 

@@ -1,0 +1,76 @@
+[gd_scene format=4 uid="uid://blhmxa47mhi75"]
+
+[ext_resource type="PackedScene" uid="uid://j6xngoe7ah5f" path="res://addons/quests_devtools/tool_objects/editable_node_list.tscn" id="1_aalxy"]
+[ext_resource type="PackedScene" uid="uid://8st4scqt06l8" path="res://components/player/player.tscn" id="2_43125"]
+[ext_resource type="PackedScene" uid="uid://bh8ms07en6cqt" path="res://addons/quests_devtools/tool_objects/checkpoint_data_helper.tscn" id="2_tm42y"]
+[ext_resource type="TileSet" uid="uid://cxchgr0dgfcak" path="res://terrain_samples/tileset_basket.tres" id="3_dm0vx"]
+[ext_resource type="Script" uid="uid://ktu5vp6h2n5i" path="res://addons/quests_devtools/tool_objects/checkpoint_watch_entry.gd" id="3_r1i4j"]
+[ext_resource type="PackedScene" uid="uid://daf24t18h3n5e" path="res://components/coin/coin.tscn" id="4_a83sg"]
+[ext_resource type="PackedScene" uid="uid://dbaal2g7b8ub0" path="res://components/enemy/storyvore_enemy.tscn" id="5_tm42y"]
+[ext_resource type="PackedScene" uid="uid://bk3nplruhw7kp" path="res://components/babygodot/scroll_gate/collectible_gate.tscn" id="6_a83sg"]
+[ext_resource type="PackedScene" uid="uid://dpk1jwflxtjbn" path="res://components/babygodot/yarnspark/yarnspark.tscn" id="7_tm42y"]
+[ext_resource type="PackedScene" uid="uid://cbr3k8b1gooxm" path="res://components/babygodot/yarnspark/condition_types/object_property_equality_scroll_condition.tscn" id="9_r1i4j"]
+
+[sub_resource type="Resource" id="Resource_qeuj3"]
+script = ExtResource("3_r1i4j")
+node = NodePath("Enemy")
+metadata/_custom_type_script = "uid://ktu5vp6h2n5i"
+
+[sub_resource type="Resource" id="Resource_sudf7"]
+script = ExtResource("3_r1i4j")
+node = NodePath("TileMapLayer")
+metadata/_custom_type_script = "uid://ktu5vp6h2n5i"
+
+[sub_resource type="Resource" id="Resource_v6c2d"]
+script = ExtResource("3_r1i4j")
+node = NodePath("Yarnspark/ObjectPropertyEqualityScrollCondition")
+dependencies = [NodePath("Enemy"), NodePath("Yarnspark")]
+metadata/_custom_type_script = "uid://ktu5vp6h2n5i"
+
+[sub_resource type="Resource" id="Resource_iu575"]
+script = ExtResource("3_r1i4j")
+node = NodePath("Yarnspark")
+metadata/_custom_type_script = "uid://ktu5vp6h2n5i"
+
+[sub_resource type="Resource" id="Resource_r1i4j"]
+script = ExtResource("3_r1i4j")
+node = NodePath("Yarnspark")
+metadata/_custom_type_script = "uid://ktu5vp6h2n5i"
+
+[node name="Node2D" type="Node2D" unique_id=1465673509]
+
+[node name="EditableNodeList" parent="." unique_id=1820513090 node_paths=PackedStringArray("nodes") instance=ExtResource("1_aalxy")]
+nodes = [NodePath("../Enemy"), NodePath("../TileMapLayer")]
+
+[node name="CheckpointDataHelper" parent="." unique_id=6615840 instance=ExtResource("2_tm42y")]
+watched_nodes = Array[ExtResource("3_r1i4j")]([SubResource("Resource_qeuj3"), SubResource("Resource_sudf7"), SubResource("Resource_v6c2d"), SubResource("Resource_iu575"), SubResource("Resource_r1i4j")])
+
+[node name="Player" parent="." unique_id=1041196418 instance=ExtResource("2_43125")]
+position = Vector2(114, 107)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=739050773]
+tile_map_data = PackedByteArray("AAAAAAEAAQAAAAAAAAABAAEAAQABAAAAAAACAAEAAQABAAAAAAADAAEAAQABAAAAAAAEAAEAAQABAAAAAAAFAAEAAQABAAAAAAAGAAEAAQABAAAAAAAHAAEAAQABAAAAAAAIAAEAAQABAAAAAAAJAAEAAQACAAAAAAA=")
+tile_set = ExtResource("3_dm0vx")
+
+[node name="Coin" parent="." unique_id=1095254317 instance=ExtResource("4_a83sg")]
+position = Vector2(299, 57)
+
+[node name="Coin2" parent="." unique_id=784313166 instance=ExtResource("4_a83sg")]
+position = Vector2(446, 55)
+
+[node name="Enemy" parent="." unique_id=834529607 instance=ExtResource("5_tm42y")]
+position = Vector2(697, 113)
+
+[node name="Enemy2" parent="." unique_id=308089925 instance=ExtResource("5_tm42y")]
+position = Vector2(844, 113)
+
+[node name="Gate" parent="." unique_id=1083236780 instance=ExtResource("6_a83sg")]
+position = Vector2(1342, -7)
+
+[node name="Yarnspark" parent="." unique_id=2086611064 instance=ExtResource("7_tm42y")]
+position = Vector2(995, 71)
+
+[node name="ObjectPropertyEqualityScrollCondition" parent="Yarnspark" unique_id=2071037534 node_paths=PackedStringArray("target") instance=ExtResource("9_r1i4j")]
+target = NodePath("../../Enemy")
+property_name = &"speed"
+value = "200"
