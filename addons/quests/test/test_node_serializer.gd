@@ -70,7 +70,7 @@ func test_it_serializes_node_references_as_paths():
 	var dict := serializer.serialize(coin)
 
 	assert_true(dict.has("animator"))
-	assert_eq(dict["animator"], "../Animator", "Node reference is serialized as path")
+	assert_eq(dict["animator"]["$"], "../Animator", "Node reference is serialized as path")
 
 	var new_coin: Coin = autofree(serializer.deserialize(dict, parent))
 
@@ -136,3 +136,81 @@ func test_it_serializes_ALL_the_types_in_JSON_friendly_format(params=use_paramet
 		assert_eq(scene.resource_path, new_node.get(params[0]).resource_path, "Scenes are equal")
 	else:
 		assert_eq(new_node.get(params[0]), params[1], "Type " + params[0] + " serialized/deserialized correctly.")
+
+func test_it_can_apply_a_deserialization_in_place_with_no_new_instantiation():
+	var coin: Coin = autofree(load("res://components/coin/coin.tscn").instantiate())
+	coin.position.x = 67
+	coin.position.y = 1337
+
+	var record := serializer.serialize(coin)
+
+	coin.position.x = -0xdeadbeef
+	coin.position.y = -0xdeadbeef
+
+	serializer.deserialize_in_place(coin, record)
+
+	assert_eq(coin.position.x, 67.0)
+	assert_eq(coin.position.y, 1337.0)
+
+func test_it_can_deserialize_a_tilemaplayer():
+	var level: Node2D = autofree(load("res://addons/quests/test/scenes/checkpoint_tests/checkpoint_level.tscn").instantiate())
+	var tilemap: TileMapLayer = level.get_node("TileMapLayer")
+
+	assert_not_null(tilemap)
+
+	var dict := JSON.parse_string(JSON.stringify(serializer.serialize(tilemap)))
+
+
+	var new_tilemap: TileMapLayer = autofree(serializer.deserialize(dict))
+
+	assert_eq(tilemap.tile_map_data, new_tilemap.tile_map_data, "Tile Map Data is preserved")
+	assert_eq(tilemap.tile_set, new_tilemap.tile_set)
+
+func test_it_can_serialize_the_bridge_platform_correctly():
+	var bridge: Node = autofree(load("res://components/platform/platform_level0_bridge.tscn").instantiate())
+	bridge._should_initialize_reset_on_unpause = false
+	var editable_object_indicator: EditableObjectIndicator = autofree(load("res://components/babygodot/editable_object_indicator/editable_object_indicator.tscn").instantiate())
+	add_child(bridge)
+
+	bridge.add_child(editable_object_indicator)
+
+	var dict = serializer.serialize(bridge)
+
+	assert_eq(dict["$children"].size(), 1)
+	assert_eq(dict.keys().size(), 3)
+
+func test_it_can_serialize_and_deserialize_an_array_of_nodes():
+	var scene: Node = autofree(Node.new())
+	var editable_node_list: EditableNodeList = autofree(EditableNodeList.new())
+	editable_node_list.name = "EditableNodeList"
+	var obj_a: Node2D = autofree(Node2D.new())
+	obj_a.name = "Potato"
+	var obj_b: Node2D = autofree(Node2D.new())
+	obj_b.name = "Tomato"
+	editable_node_list.nodes = [obj_a, obj_b]
+	scene.add_child(editable_node_list)
+	scene.add_child(obj_a)
+	scene.add_child(obj_b)
+
+	var dict := serializer.serialize(editable_node_list)
+
+	assert_true(dict.has("nodes"))
+	assert_eq(dict["nodes"]["$"].size(), 2)
+	assert_false(dict["nodes"]["$"][0] is Node)
+
+	var new_list: EditableNodeList = autofree(serializer.deserialize(dict, scene))
+
+	assert_eq(new_list.nodes.size(), 2)
+	assert_eq(new_list.nodes[0], obj_a)
+	assert_eq(new_list.nodes[1], obj_b)
+
+func test_it_resets_other_properties_to_default_if_its_deserializing_in_place():
+	var tilemap: TileMapLayer = autofree(TileMapLayer.new())
+
+	var level: Node2D = autofree(load("res://addons/quests/test/scenes/checkpoint_tests/checkpoint_level.tscn").instantiate())
+	var target_tilemap: TileMapLayer = level.get_node("TileMapLayer")
+	tilemap.tile_set = target_tilemap.tile_set
+
+	serializer.deserialize_in_place(target_tilemap, serializer.serialize(tilemap))
+
+	assert_eq(target_tilemap.tile_map_data, tilemap.tile_map_data)

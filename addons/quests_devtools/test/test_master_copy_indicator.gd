@@ -176,3 +176,60 @@ func test_it_adds_player_to_editable_nodes_if_add_player_to_editable_nodes_is_tr
 	assert_not_null(clone_copy.get_node_or_null("Player"))
 
 	clone_copy.free()
+
+func test_it_scans_the_level_for_watchable_nodes():
+	var scene: PackedScene = load("res://addons/quests_devtools/test/scenes/test_checkpoint_data_helper_scene.tscn")
+
+	var processed_scene: Node2D = autofree(MasterCopyIndicator._get_clone_copy_scene(scene).instantiate())
+	var checkpoint_data: CheckpointDataHelper = processed_scene.get_node_or_null("CheckpointDataHelper")
+
+
+	assert_not_null(checkpoint_data)
+
+	var bare_nodes_list = checkpoint_data.watched_nodes.map(func(entry): return entry.node)
+	var i = checkpoint_data.watched_nodes.find_custom(func(entry):
+		return entry.node == ^"Yarnspark/ObjectPropertyEqualityScrollCondition"
+	)
+	var condition_entry = checkpoint_data.watched_nodes[i]
+
+	## Gets nodes from the editable nodes list
+	assert_array_contains(bare_nodes_list, ^"Coin")
+	assert_array_contains(bare_nodes_list, ^"Enemy")
+
+	## Gets nodes that have any connections to editable nodes
+	assert_array_contains(bare_nodes_list, ^"Yarnspark/ObjectPropertyEqualityScrollCondition")
+	assert_array_contains(condition_entry.dependencies, "Enemy")
+	assert_array_contains(condition_entry.dependencies, ^"Yarnspark")
+	assert_eq(condition_entry.dependencies.size(), 2, "Dependencies list is correct size")
+
+	## Gets nodes in any future editable object list changes
+	assert_array_contains(bare_nodes_list, ^"Coin3")
+
+	## Gets nodes that have any connections to FUTURE editable nodes
+	i = checkpoint_data.watched_nodes.find_custom(func(entry):
+		return entry.node == ^"FutureCondition"
+	)
+	var future_condition_entry = checkpoint_data.watched_nodes[i]
+	assert_array_contains(bare_nodes_list, ^"FutureCondition")
+	assert_array_contains(future_condition_entry.dependencies, "Coin3")
+	assert_eq(future_condition_entry.dependencies.size(), 1, "Dependencies list is correct size")
+
+	## Adds the editable nodes list AND makes its dependencies
+	i = checkpoint_data.watched_nodes.find_custom(func(entry):
+		return entry.node == ^"EditableNodeList"
+	)
+	var editable_nodes_list = checkpoint_data.watched_nodes[i]
+	assert_array_contains(bare_nodes_list, ^"EditableNodeList")
+	assert_array_contains(editable_nodes_list.dependencies, "Coin")
+	assert_array_contains(editable_nodes_list.dependencies, "Enemy")
+	assert_array_contains(editable_nodes_list.dependencies, "Coin3")
+	assert_eq(editable_nodes_list.dependencies.size(), 3)
+
+	## Edge-case support for yarnsparks, that are collectible in-engine but may have a child that's watched and so they need to be constructed properly.
+	i = checkpoint_data.watched_nodes.find_custom(func(entry):
+		return entry.node == ^"Yarnspark"
+	)
+	var yarnspark = checkpoint_data.watched_nodes[i]
+	assert_array_contains(bare_nodes_list, ^"Yarnspark")
+
+	assert_eq(checkpoint_data.watched_nodes.size(), 7, "Watched object list is correct size")	

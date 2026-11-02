@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://ctm16bien4cep"]
+
+[ext_resource type="PackedScene" uid="uid://j6xngoe7ah5f" path="res://addons/quests_devtools/tool_objects/editable_node_list.tscn" id="1_j604h"]
+[ext_resource type="PackedScene" uid="uid://daf24t18h3n5e" path="res://components/coin/coin.tscn" id="1_xluus"]
+[ext_resource type="PackedScene" uid="uid://dbaal2g7b8ub0" path="res://components/enemy/storyvore_enemy.tscn" id="2_j604h"]
+[ext_resource type="PackedScene" uid="uid://dpk1jwflxtjbn" path="res://components/babygodot/yarnspark/yarnspark.tscn" id="3_45v7o"]
+[ext_resource type="PackedScene" uid="uid://bmpmfwhrjxgeh" path="res://components/babygodot/trigger/change_editable_objects_trigger/change_editable_objects_trigger.tscn" id="4_45v7o"]
+[ext_resource type="PackedScene" uid="uid://cbr3k8b1gooxm" path="res://components/babygodot/yarnspark/condition_types/object_property_equality_scroll_condition.tscn" id="4_k084w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_45v7o"]
+resource_local_to_scene = true
+size = Vector2(94, 258)
+
+[node name="TestCheckpointDataHelperScene" type="Node2D" unique_id=310938199]
+
+[node name="EditableNodeList" parent="." unique_id=1820513090 node_paths=PackedStringArray("nodes") instance=ExtResource("1_j604h")]
+nodes = [NodePath("../Coin"), NodePath("../Enemy")]
+
+[node name="Coin" parent="." unique_id=1095254317 instance=ExtResource("1_xluus")]
+position = Vector2(89, 96)
+
+[node name="Coin2" parent="." unique_id=616719998 instance=ExtResource("1_xluus")]
+position = Vector2(241, 100)
+
+[node name="Coin3" parent="." unique_id=1714231443 instance=ExtResource("1_xluus")]
+position = Vector2(421, 90)
+
+[node name="Enemy" parent="." unique_id=834529607 instance=ExtResource("2_j604h")]
+position = Vector2(627, 132)
+
+[node name="ChangeEditableObjectsTrigger" parent="." unique_id=1750362101 instance=ExtResource("4_45v7o")]
+position = Vector2(1222, 122)
+
+[node name="CollisionShape2D" parent="ChangeEditableObjectsTrigger" index="0" unique_id=490838596]
+shape = SubResource("RectangleShape2D_45v7o")
+
+[node name="Behavior" parent="ChangeEditableObjectsTrigger" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
+add_objects = [NodePath("../../Coin3")]
+
+[node name="Yarnspark" parent="." unique_id=2086611064 instance=ExtResource("3_45v7o")]
+position = Vector2(956, 134)
+
+[node name="ObjectPropertyEqualityScrollCondition" parent="Yarnspark" unique_id=2071037534 node_paths=PackedStringArray("target") instance=ExtResource("4_k084w")]
+target = NodePath("../../Enemy")
+property_name = &"speed"
+value = "250"
+
+[node name="FutureCondition" parent="." unique_id=1272463565 node_paths=PackedStringArray("target") instance=ExtResource("4_k084w")]
+target = NodePath("../Coin3")
+property_name = &"visible"
+value = "false"
+
+[editable path="ChangeEditableObjectsTrigger"]

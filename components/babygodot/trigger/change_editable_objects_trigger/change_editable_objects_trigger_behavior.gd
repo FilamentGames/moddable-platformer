@@ -1,4 +1,5 @@
 extends AbstractTriggerBehavior
+class_name ChangeEditableObjectsTriggerBehavior
 
 @export var add_objects: Array[Node] = []
 

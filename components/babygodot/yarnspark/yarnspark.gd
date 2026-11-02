@@ -92,3 +92,8 @@ func _collection_animation_done() -> void:
 
 func _exit_tree() -> void:
 	_clear_error_state()
+
+func _on_checkpoint_reset() -> void:
+	_clear_error_state()
+	info_indicator._ready.call_deferred()
+	_ready.call_deferred()
