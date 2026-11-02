@@ -9,7 +9,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     container:
-      image: barichello/godot-ci:4.6.2
+      image: barichello/godot-ci:4.7.2
     steps:
       - uses: actions/checkout@v2
 
