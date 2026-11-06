@@ -61,3 +61,10 @@ func _do_checkpoint_commit(scene_delta_dict: Dictionary) -> void:
 	scene_delta.import(scene_delta_dict)
 	scene_delta.reset_to_checkpoint()
 
+## Exports the scene delta's contents as a JSON-friendly dictionary
+func export() -> Dictionary:
+	return scene_delta.export()
+
+## Imports an exported dictionary into the scene delta
+func import(dict: Dictionary) -> void:
+	scene_delta.import(dict)
