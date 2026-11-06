@@ -3,45 +3,6 @@ extends BabyGodotTest
 var checkpoint: CheckpointHelper
 var editor_interface: FakeEditorInterface
 
-class FakeEditorInterface:
-	var scene_root: Node
-
-	var edited_nodes: Array[Node] = []
-	var saved_scene_calls: int = 0
-
-	func get_edited_scene_root() -> Node:
-		return scene_root
-	
-	func edit_node(node: Node) -> void:
-		edited_nodes.append(node)
-	
-	func save_scene() -> void:
-		saved_scene_calls += 1
-
-class FakeUndoRedo:
-	var actions: Array[String] = []
-	var do_methods: Array[Callable] = []
-	var undo_methods: Array[Callable] = []
-
-	func create_action(action: String) -> void:
-		actions.append(action)
-	
-	func add_do_method(target: Object, method: StringName, ...args: Array) -> void:
-		do_methods.append(Callable(target, method).bindv(args))
-	
-	func add_undo_method(target: Object, method: StringName, ...args: Array) -> void:
-		undo_methods.append(Callable(target, method).bindv(args))
-	
-	func commit_action(execute: bool = true) -> void:
-		if execute:
-			for method in do_methods:
-				method.call()
-	
-	## Simulates the undo operation
-	func undo() -> void:
-		for method in undo_methods:
-			method.call()
-
 func before_each():
 	editor_interface = autofree(FakeEditorInterface.new())
 	editor_interface.scene_root = autofree(Node2D.new())

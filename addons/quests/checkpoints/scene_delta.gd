@@ -40,6 +40,8 @@ func _get_serialized_watched_nodes() -> Dictionary:
 		"dependencies": {}
 	}
 	var checkpoint_data_node: CheckpointDataHelper = BabyGodotUtils.get_first_child_of_type(_editor_scene, CheckpointDataHelper)
+	if not checkpoint_data_node:
+		return out
 	for node in checkpoint_data_node.watched_nodes:
 		var real_node = _editor_scene.get_node_or_null(node.node)
 		if not real_node:
@@ -121,6 +123,8 @@ func import(dict: Dictionary) -> void:
 	_added_nodes = dict["added"]
 	_watched_nodes = dict["watched"]
 	_removed_nodes = dict["removed"]
+	if not _player_watcher:
+		_player_watcher = CheckpointPlayerWatcher.new(_editor_scene)
 	_player_watcher.import(dict["player"])
 
 func invert_export(dict: Dictionary) -> Dictionary:
@@ -132,5 +136,8 @@ func invert_export(dict: Dictionary) -> Dictionary:
 		dict["removed"][path] = _serializer.serialize(node)
 	dict["added"] = removed.keys().map(_get_path_from_scene_root)
 	dict["watched"] = _get_serialized_watched_nodes()["watch"]
-	dict["player"] = _player_watcher.get_player_position()
+	dict["player"] = _serialize_vector2(_player_watcher.get_player_position())
 	return dict
+
+func _serialize_vector2(vec: Vector2) -> Array:
+	return [vec.x, vec.y]

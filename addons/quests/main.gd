@@ -96,6 +96,8 @@ func _enter_tree() -> void:
 	var quests: BabyGodotQuests = preload("res://addons/quests/quests/quests.tscn").instantiate()
 	quests.editor_scene_provider = self
 	quests._checkpoint_helper = checkpoints
+	quests._save_data_handler = SaveFactory.create()
+	quests._save_data_handler.load(quests)
 	GlobalQuests.quests = quests
 	dock_scene = preload("res://addons/quests/quest_dock/quest_dock.tscn").instantiate()
 

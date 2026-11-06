@@ -17,6 +17,8 @@ func _get_player() -> Player:
 func get_player_position() -> Vector2:
 	if not _player:
 		_player = _get_player()
+	if not _player:
+		return Vector2(0, 0)
 	return _player.global_position
 
 func take_player_snapshot() -> void:
@@ -27,8 +29,8 @@ func apply_player_snapshot() -> void:
 		return
 	_player.global_position = _player_position
 
-func export() -> Vector2:
-	return _player_position
+func export() -> Array:
+	return [_player_position.x, _player_position.y]
 
-func import(pos: Vector2) -> void:
-	_player_position = pos
+func import(pos: Array) -> void:
+	_player_position = Vector2(pos[0], pos[1])

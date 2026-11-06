@@ -71,6 +71,8 @@ var _checkpoint_quest_progress: Dictionary = {
 
 var _checkpoint_helper: CheckpointHelper
 
+var _save_data_handler: SaveDataHandler
+
 func _init() -> void:
 	text_updated.connect(func():
 		if text_data[_current_text_line].show_celebration_animation:
@@ -94,7 +96,6 @@ func get_all_nextbutton_quest_text() -> Array[String]:
 	array.push_back(text_data[i].dialogue_line)
 	return array
 	
-	
 ## Move to the next line of text
 func next(method := QuestLine.ProgressMethod.NextButton) -> void:
 	if text_data[_current_text_line].progress_method != QuestLine.ProgressMethod.NextButton and text_data[_current_text_line].progress_method != method:
@@ -106,6 +107,7 @@ func next(method := QuestLine.ProgressMethod.NextButton) -> void:
 	_current_text_line = min(_current_text_line, text_data.size() - 1)
 	_current_hint_index = -1
 	text_updated.emit()
+	attempt_save()
 
 func skip_to_text_line(line: Variant) -> void:
 	var target := -1
@@ -120,6 +122,7 @@ func skip_to_text_line(line: Variant) -> void:
 	_current_text_line = target
 	_current_hint_index = -1
 	text_updated.emit()
+	attempt_save()
 
 ## If the UI can manually proceed to the next line of text
 func can_proceed() -> bool:
@@ -152,6 +155,7 @@ func load_checkpoint() -> void:
 	scrolls_collected = _checkpoint_quest_progress["scrolls_collected"].duplicate()
 	scroll_collected.emit()
 	text_updated.emit()
+	attempt_save()
 
 func set_inspector_dock_visible(visible: bool) -> void:
 	editor_scene_provider.set_inspector_dock_visible(visible)
@@ -178,6 +182,7 @@ func update_player_position(save: bool = true) -> void:
 		if save:
 			editor_scene_provider.update_and_save_node(player)
 		editor_scene_provider.set_2d_viewport_focus(player.position, default_editor_zoom)
+		attempt_save()
 	else:
 		print("Couldn't find player object")
 
@@ -190,6 +195,7 @@ func collect_scroll(scroll_id: String) -> void:
 	if target_scroll:
 		scrolls_collected.push_back(scroll_id)
 		scroll_collected.emit()
+		attempt_save()
 
 ## Activates a "Knit Witch" checkpoint, replacing the checkpoint trigger with the knit witch NPC in the editor so the checkpoint cannot be triggered again.
 func activate_level_checkpoint(checkpoint_id: String, removed_objects: Array, swapped_objects: Array) -> void:
@@ -207,6 +213,7 @@ func activate_level_checkpoint(checkpoint_id: String, removed_objects: Array, sw
 		save_checkpoint.call_deferred()
 		removed_objects.clear()
 		swapped_objects.clear()
+	attempt_save()
 
 func delete_nodes_in_editor(node_ids: Array, save: bool = true, scene: Node2D = editor_scene_provider.get_editor_scene()) -> void:
 	var editable_node_list: EditableNodeList = BabyGodotUtils.get_first_child_of_type(scene, EditableNodeList)
@@ -228,6 +235,7 @@ func delete_nodes_in_editor(node_ids: Array, save: bool = true, scene: Node2D = 
 		editable_node_list.nodes.assign(new_editable_nodes)
 	if save:
 		editor_scene_provider.update_and_save_node(scene)
+	attempt_save()
 
 func swap_nodes_with_prefabs(swapped_objects: Array[Dictionary], scene: Node2D = editor_scene_provider.get_editor_scene()) -> void:
 	for swapped_object in swapped_objects:
@@ -241,6 +249,7 @@ func swap_nodes_with_prefabs(swapped_objects: Array[Dictionary], scene: Node2D =
 		_checkpoint_helper.register_node_deleted(parent)
 		parent.get_parent().remove_child(parent)
 		parent.queue_free()
+	attempt_save()
 
 func delete_node_in_editor(node_id: String) -> void:
 	delete_nodes_in_editor([node_id])
@@ -248,6 +257,7 @@ func delete_node_in_editor(node_id: String) -> void:
 func collect_coin() -> void:
 	global_coins += 1
 	coins_changed.emit()
+	attempt_save()
 
 ## Resets the player's quest progress. Mainly useful for dev tools.
 func reset_progress() -> void:
@@ -257,6 +267,7 @@ func reset_progress() -> void:
 	text_updated.emit()
 	scroll_collected.emit()
 	_skipped_checkpoints.clear()
+	attempt_save()
 
 func update_editable_objects(to_add: Array, to_remove: Array) -> void:
 	var scene: Node2D = editor_scene_provider.get_editor_scene()
@@ -297,6 +308,7 @@ func buy_hint() -> Variant:
 	coins_changed.emit()
 	hint_purchased.emit()
 	_current_hint_index += 1
+	attempt_save()
 	return text_data[_current_text_line].hints[_current_hint_index]
 
 func deplete_scrolls(quantity: int) -> void:
@@ -325,3 +337,7 @@ func skip_to_next_checkpoint() -> void:
 ## An stop feature for dev tools to allow us to do things like reset the whole level. Could be useful for switching levels in a full scope?
 func stop_game() -> void:
 	editor_scene_provider.stop_game()
+
+func attempt_save() -> void:
+	if _save_data_handler:
+		_save_data_handler.save(self)
