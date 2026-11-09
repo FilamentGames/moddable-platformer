@@ -9,9 +9,6 @@ static var add_player_to_editable_nodes := false
 ## The prefab to use for editable object indicators.
 static var editable_object_indicator_prefab: PackedScene = preload("res://components/babygodot/editable_object_indicator/editable_object_indicator.tscn")
 
-## The prefab to use for the checkpoint data helper object
-static var checkpoint_data_helper_prefab: PackedScene = preload("res://addons/quests_devtools/tool_objects/checkpoint_data_helper.tscn")
-
 ## Used for not getting stuck in an endless loop when re-saving the master copy.
 var _locked := false
 
@@ -115,8 +112,9 @@ static func _calculate_checkpoint_watch_nodes(scene: PackedScene) -> PackedScene
 		var editable_nodes: Array[NodePath] = []
 		var checkpoint_data: CheckpointDataHelper = root.get_node_or_null("CheckpointDataHelper")
 		if not checkpoint_data:
-			checkpoint_data = checkpoint_data_helper_prefab.instantiate()
+			checkpoint_data = CheckpointDataHelper.new()
 			checkpoint_data.name = "CheckpointDataHelper"
+			checkpoint_data.editor_description = "This node is added to clone versions of levels to help the checkpoint system. The dev tools do a pretty expensive scan of the whole level to check for any objects the checkpoint system should watch and then saves them to this object so the checkpoint system doesn't have to do that big scan every time."
 			root.add_child(checkpoint_data)
 			checkpoint_data.owner = root
 			root.move_child(checkpoint_data, 1)
