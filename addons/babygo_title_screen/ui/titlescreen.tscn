@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://cxway2ytvsp8m"]
+
+[ext_resource type="Script" uid="uid://f0xgknk5bql5" path="res://addons/babygo_title_screen/ui/titlescreen.gd" id="1_8nnhw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hmpfs"]
+font_size = 48
+
+[node name="Titlescreen" type="Control" unique_id=892788714]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_8nnhw")
+
+[node name="Container" type="VBoxContainer" parent="." unique_id=1807363962]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Container" unique_id=1917874629]
+layout_mode = 2
+text = "Baby Godot"
+label_settings = SubResource("LabelSettings_hmpfs")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Container" unique_id=95203352]
+layout_mode = 2
+text = "
+[placeholder title screen]
+"
+horizontal_alignment = 1
+
+[node name="NewGameButton" type="Button" parent="Container" unique_id=25010602]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "New Game"
+
+[node name="Continue" type="Button" parent="Container" unique_id=906636940]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Continue"
+
+[connection signal="pressed" from="Container/NewGameButton" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="Container/Continue" to="." method="_on_continue_button_pressed"]

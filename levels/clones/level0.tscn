@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://cwvs5uqu4hx5e" path="res://addons/quests_devtools/tool_objects/editable_node_list.gd" id="1_fw5q1"]
 [ext_resource type="PackedScene" uid="uid://bh8ms07en6cqt" path="res://addons/quests_devtools/tool_objects/checkpoint_data_helper.tscn" id="2_bywdy"]
 [ext_resource type="PackedScene" uid="uid://cswheshouik14" path="res://rules_goals/game_logic.tscn" id="2_ucnsv"]
-[ext_resource type="Script" uid="uid://div6o81p1idln" path="res://addons/quests_devtools/tool_objects/checkpoint_data_helper.gd" id="3_sh2wx"]
 [ext_resource type="PackedScene" uid="uid://jnrusvm3gric" path="res://spaces/background.tscn" id="4_57xpr"]
 [ext_resource type="PackedScene" uid="uid://b61bdl6mlg5jn" path="res://components/player/controls_instructions.tscn" id="5_v371g"]
 [ext_resource type="PackedScene" uid="uid://dthyncc3spfks" path="res://spaces/dangerzone.tscn" id="6_82kwf"]
@@ -21,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://dpk1jwflxtjbn" path="res://components/babygodot/yarnspark/yarnspark.tscn" id="22_c2m1k"]
 [ext_resource type="PackedScene" uid="uid://cbr3k8b1gooxm" path="res://components/babygodot/yarnspark/condition_types/object_property_equality_scroll_condition.tscn" id="24_c5j5x"]
 [ext_resource type="PackedScene" uid="uid://bk3nplruhw7kp" path="res://components/babygodot/scroll_gate/collectible_gate.tscn" id="26_reyn1"]
+[ext_resource type="PackedScene" uid="uid://il08cnnaosyi" path="res://components/babygodot/checkpoint/checkpoint_npc.tscn" id="30_sh2wx"]
 [ext_resource type="Texture2D" uid="uid://64pgkmiayedd" path="res://components/babygodot/scroll_gate/assets/LanternLeft_Front.png" id="38_n0gy7"]
 [ext_resource type="Texture2D" uid="uid://8j30hcey6goj" path="res://components/babygodot/info_indicator/InfoPanel.png" id="42_c5yfl"]
 [ext_resource type="PackedScene" uid="uid://beuisy5yrw0bq" path="res://components/flag/flag.tscn" id="47_ht7yq"]
@@ -429,9 +429,7 @@ script = ExtResource("1_fw5q1")
 nodes = [NodePath("../RockPile")]
 metadata/_edit_lock_ = true
 
-[node name="CheckpointDataHelper" type="Node" parent="." unique_id=6615840 instance=ExtResource("2_bywdy")]
-editor_description = "This node is added to clone versions of levels to help the checkpoint system. The dev tools do a pretty expensive scan of the whole level to check for any objects the checkpoint system should watch and then saves them to this object so the checkpoint system doesn't have to do that big scan every time."
-script = ExtResource("3_sh2wx")
+[node name="CheckpointDataHelper" parent="." unique_id=6615840 instance=ExtResource("2_bywdy")]
 
 [node name="GameLogic" parent="." unique_id=1461208797 instance=ExtResource("2_ucnsv")]
 win_by_collecting_coins = true
@@ -839,11 +837,6 @@ metadata/_edit_lock_ = true
 [node name="Checkpoints" type="Node2D" parent="." unique_id=1977743448]
 metadata/_edit_lock_ = true
 
-[node name="Checkpoint" parent="Checkpoints" unique_id=951106919 instance=ExtResource("58_vcx8o")]
-position = Vector2(-560, 455)
-scale = Vector2(8.4, 1)
-metadata/_edit_lock_ = true
-
 [node name="Checkpoint2" parent="Checkpoints" unique_id=182555001 instance=ExtResource("58_vcx8o")]
 position = Vector2(4500, 190)
 metadata/_edit_lock_ = true
@@ -860,6 +853,9 @@ metadata/_edit_lock_ = true
 position = Vector2(10987, 65)
 metadata/_edit_lock_ = true
 
+[node name="CheckpointNpc" type="Node2D" parent="Checkpoints" unique_id=2087593707 instance=ExtResource("30_sh2wx")]
+position = Vector2(-560, 455)
+
 [node name="EditorPowerUps" type="Node2D" parent="." unique_id=721056742]
 metadata/_edit_lock_ = true
 
@@ -874,11 +870,6 @@ metadata/_edit_lock_ = true
 [node name="Coins" type="Node2D" parent="." unique_id=1860713878]
 metadata/_edit_lock_ = true
 
-[node name="Coin" parent="Coins" unique_id=469589313 instance=ExtResource("64_n3thj")]
-position = Vector2(1434, 563)
-texture = ExtResource("66_qme65")
-metadata/_edit_lock_ = true
-
 [node name="Coin4" parent="Coins" unique_id=1137508267 instance=ExtResource("64_n3thj")]
 position = Vector2(9317, -592)
 texture = ExtResource("66_qme65")
@@ -886,21 +877,6 @@ metadata/_edit_lock_ = true
 
 [node name="Coin19" parent="Coins" unique_id=1095254317 instance=ExtResource("64_n3thj")]
 position = Vector2(9423, -592)
-texture = ExtResource("66_qme65")
-metadata/_edit_lock_ = true
-
-[node name="Coin8" parent="Coins" unique_id=1399238642 instance=ExtResource("64_n3thj")]
-position = Vector2(2933, 380)
-texture = ExtResource("66_qme65")
-metadata/_edit_lock_ = true
-
-[node name="Coin12" parent="Coins" unique_id=345869264 instance=ExtResource("64_n3thj")]
-position = Vector2(3030, 318)
-texture = ExtResource("66_qme65")
-metadata/_edit_lock_ = true
-
-[node name="Coin13" parent="Coins" unique_id=2104738955 instance=ExtResource("64_n3thj")]
-position = Vector2(3123, 380)
 texture = ExtResource("66_qme65")
 metadata/_edit_lock_ = true
 
@@ -1026,31 +1002,6 @@ metadata/_edit_lock_ = true
 
 [node name="Coin39" parent="Coins" unique_id=1174696577 instance=ExtResource("64_n3thj")]
 position = Vector2(11133, -446)
-texture = ExtResource("66_qme65")
-metadata/_edit_lock_ = true
-
-[node name="Coin22" parent="Coins" unique_id=91508137 instance=ExtResource("64_n3thj")]
-position = Vector2(1697, 558)
-texture = ExtResource("66_qme65")
-metadata/_edit_lock_ = true
-
-[node name="Coin24" parent="Coins" unique_id=334811006 instance=ExtResource("64_n3thj")]
-position = Vector2(1569, 558)
-texture = ExtResource("66_qme65")
-metadata/_edit_lock_ = true
-
-[node name="Coin2" parent="Coins" unique_id=2004393446 instance=ExtResource("64_n3thj")]
-position = Vector2(3599, 964)
-texture = ExtResource("66_qme65")
-metadata/_edit_lock_ = true
-
-[node name="Coin23" parent="Coins" unique_id=966695602 instance=ExtResource("64_n3thj")]
-position = Vector2(3862, 959)
-texture = ExtResource("66_qme65")
-metadata/_edit_lock_ = true
-
-[node name="Coin40" parent="Coins" unique_id=1379372883 instance=ExtResource("64_n3thj")]
-position = Vector2(3734, 959)
 texture = ExtResource("66_qme65")
 metadata/_edit_lock_ = true
 
@@ -1480,7 +1431,7 @@ rotation_speed = 0.9
 metadata/_edit_lock_ = true
 
 [node name="Player" parent="." unique_id=1041196418 instance=ExtResource("86_3y2io")]
-position = Vector2(240, 634)
+position = Vector2(3643.1565, 567.97687)
 collision_mask = 7
 sprite_frames = ExtResource("88_xyyth")
 jump_velocity = 850.0
