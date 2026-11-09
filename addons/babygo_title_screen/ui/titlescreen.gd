@@ -11,6 +11,7 @@ func _on_new_game_button_pressed() -> void:
 	start()
 
 func _on_continue_button_pressed() -> void:
+	GlobalQuests.quests._save_data_handler.load_docks(GlobalQuests.quests)
 	start()
 
 func start() -> void:

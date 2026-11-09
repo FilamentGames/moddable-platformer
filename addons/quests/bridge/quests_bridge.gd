@@ -62,9 +62,11 @@ func _capture(message, data, session_id):
 			return true
 		"set_inspector_dock_visible":
 			_editor_unlock_state["inspector"] = data[1]
+			GlobalQuests.quests._register_dock_visible("inspector", data[1], true)
 			return true
 		"set_scene_tree_dock_visible":
 			_editor_unlock_state["scene_tree"] = data[1]
+			GlobalQuests.quests._register_dock_visible("scenetree", data[1], true)
 			return true
 		"register_mode_switch":
 			GlobalQuests.quests.register_mode_switch(data[1])
@@ -132,9 +134,11 @@ func _on_celebration_animation(session_id: int) -> void:
 
 func _on_session_start() -> void:
 	print("Quest bridge started")
-	GlobalQuests.quests.set_inspector_dock_visible(false)
-	GlobalQuests.quests.set_scene_tree_dock_visible(false)
-	GlobalQuests.quests.set_quest_dock_visible(false)
+	_editor_unlock_state["inspector"] = GlobalQuests.quests._unlocked_docks.has("inspector")
+	_editor_unlock_state["scene_tree"] = GlobalQuests.quests._unlocked_docks.has("scenetree")
+	GlobalQuests.quests.set_inspector_dock_visible(false, false)
+	GlobalQuests.quests.set_scene_tree_dock_visible(false, false)
+	GlobalQuests.quests.set_quest_dock_visible(false, false)
 	GlobalQuests.quests.hide_bottom_panel()
 
 func _on_session_continue(session_id: int) -> void:
@@ -149,6 +153,6 @@ func _on_session_stop() -> void:
 	_collected_objects.clear()
 	GlobalQuests.quests.update_player_position()
 	GlobalQuests.quests.register_mode_switch(BabyGodotQuests.EditorMode.EDIT)
-	GlobalQuests.quests.set_inspector_dock_visible(_editor_unlock_state["inspector"])
-	GlobalQuests.quests.set_scene_tree_dock_visible(_editor_unlock_state["scene_tree"])
+	GlobalQuests.quests.set_inspector_dock_visible(_editor_unlock_state["inspector"], false)
+	GlobalQuests.quests.set_scene_tree_dock_visible(_editor_unlock_state["scene_tree"], false)
 	GlobalQuests.quests.set_quest_dock_visible(true)

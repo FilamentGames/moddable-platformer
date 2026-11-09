@@ -12,13 +12,29 @@ class MockSaveDataHandler extends SaveDataHandler:
 	func clear_data() -> void:
 		MockSaveDataHandler.saved_data = ""
 
-class StubEditorSceneProvider:
+class StubEditorSceneProvider extends RefCounted:
+	var docks := {
+		"quest": false,
+		"inspector": false,
+		"scenetree": false
+	}
+
 	func save_editor_scene_as_checkpoint():
 		pass
+	
+	func set_inspector_dock_visible(visible: bool):
+		docks["inspector"] = visible
+	
+	func set_scene_tree_dock_visible(visible: bool):
+		docks["scenetree"] = visible
+	
+	func set_quest_dock_visible(visible: bool):
+		docks["quest"] = visible
 
 var handler: MockSaveDataHandler
 var quests: BabyGodotQuests
 var editor_interface: FakeEditorInterface
+var docks: StubEditorSceneProvider
 
 func populate_quests_data() -> void:
 	quests.text_data = []
@@ -32,7 +48,8 @@ func before_each():
 	handler.clear_data()
 	quests = autofree(BabyGodotQuests.new())
 	populate_quests_data()
-	quests.editor_scene_provider = autofree(StubEditorSceneProvider.new())
+	docks = StubEditorSceneProvider.new()
+	quests.editor_scene_provider = docks
 	editor_interface = FakeEditorInterface.new()
 	editor_interface.scene_root = autofree(Node.new())
 	quests._checkpoint_helper = autofree(CheckpointHelper.new(editor_interface))
@@ -63,6 +80,7 @@ func test_it_can_load_quest_data():
 
 	quests.free()
 	quests = autofree(BabyGodotQuests.new())
+	quests.editor_scene_provider = docks
 	quests._checkpoint_helper = autofree(CheckpointHelper.new(editor_interface))
 	quests._checkpoint_helper.undo_redo = FakeUndoRedo.new()
 	populate_quests_data()
@@ -113,7 +131,7 @@ func test_it_can_also_load_checkpoint_data():
 
 	quests.free()
 	quests = autofree(BabyGodotQuests.new())
-	quests.editor_scene_provider = autofree(StubEditorSceneProvider.new())
+	quests.editor_scene_provider = docks
 	quests._checkpoint_helper = autofree(CheckpointHelper.new(editor_interface))
 	quests._checkpoint_helper.undo_redo = FakeUndoRedo.new()
 	populate_quests_data()
@@ -125,3 +143,27 @@ func test_it_does_nothing_if_no_save_data_found_when_loading():
 	handler.load(quests)
 
 	assert_eq(quests._current_text_line, 0)
+
+func test_it_saves_and_loads_dock_state():
+	quests.set_quest_dock_visible(true)
+	quests.set_scene_tree_dock_visible(true)
+	quests.set_inspector_dock_visible(false)
+
+	handler.save(quests)
+
+	var dict := JSON.parse_string(MockSaveDataHandler.saved_data)
+
+	assert_true(dict["quests"].has("docks"))
+	assert_array_contains(dict["quests"]["docks"], "quest")
+	assert_array_contains(dict["quests"]["docks"], "scenetree")
+	assert_array_does_not_contain(dict["quests"]["docks"], "inspector")
+
+	docks.docks["quest"] = false
+	docks.docks["scenetree"] = false
+	docks.docks["inspector"] = true
+
+	handler.load_docks(quests)
+
+	assert_true(docks.docks["quest"])
+	assert_true(docks.docks["scenetree"])
+	assert_false(docks.docks["inspector"])

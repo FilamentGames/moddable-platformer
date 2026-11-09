@@ -11,6 +11,7 @@ func save(quests: BabyGodotQuests) -> void:
 		"coins": quests.global_coins,
 		"hint": quests._current_hint_index,
 		"scrolls": quests.scrolls_collected,
+		"docks": quests._unlocked_docks.values()
 	}
 	dict["checkpoint_quest"] = _serialize_checkpoint_data_progress(quests)
 	dict["checkpoint"] = quests._checkpoint_helper.export()
@@ -20,7 +21,7 @@ func load(quests: BabyGodotQuests) -> void:
 	var json := JSON.new()
 	var err := json.parse(_fetch_data())
 	if err != OK:
-		# No save data exists or its corrupted. Abort!
+		# No save data exists or it's corrupted. Abort!
 		return
 	var dict: Dictionary = json.data
 	quests._current_text_line = dict["quests"]["line"]
@@ -42,6 +43,24 @@ func _deserialize_checkpoint_data_progress(quests: BabyGodotQuests, dict: Dictio
 	var d = dict["checkpoint_quest"]
 	d["last_position"] = Vector2(d["last_position"][0], d["last_position"][1])
 	quests._checkpoint_quest_progress = d
+
+func load_docks(quests: BabyGodotQuests) -> void:
+	var json := JSON.new()
+	var err := json.parse(_fetch_data())
+	if err != OK:
+		# No save data exists or it's corrupted. Abort!
+		return
+	var dict: Dictionary = json.data
+	var unlocked_docks = dict["quests"]["docks"]
+	var dock_method_map = {
+		"quest": "set_quest_dock_visible",
+		"scenetree": "set_scene_tree_dock_visible",
+		"inspector": "set_inspector_dock_visible"
+	}
+	for method in dock_method_map.values():
+		quests.call(method, false, false)
+	for dock in unlocked_docks:
+		quests.call(dock_method_map[dock], true)
 
 @abstract func _write_json(data: String) -> void
 @abstract func _fetch_data() -> String
