@@ -17,6 +17,9 @@ jobs:
       
       - name: Enable autorun in editor
         run: ./.github/workflows/scripts/enable_autorun.sh
+      
+      - name: Generate level backups
+        run: ./.github/workflows/scripts/create_level_backups.sh
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4

@@ -91,6 +91,8 @@ func _enter_tree() -> void:
 	save_timer.one_shot = true
 	add_child(save_timer)
 
+	add_child(LevelResetter.new())
+
 	checkpoints.undo_redo = get_undo_redo()
 
 	var quests: BabyGodotQuests = preload("res://addons/quests/quests/quests.tscn").instantiate()
@@ -109,6 +111,8 @@ func _enter_tree() -> void:
 
 	add_dock(dock)
 
+	set_quest_dock_visible(false)
+
 	_connect_scene_edit_signal()
 
 	bridge = BabyGodotQuestsBridge.new()
@@ -117,16 +121,16 @@ func _enter_tree() -> void:
 	BabyGodotUtils.toggle_streamlined_exclusive_dock("get_inspector_dock", false)
 	BabyGodotUtils.toggle_streamlined_exclusive_dock("get_scene_tree_dock", false)
 
-	if not ProjectSettings.has_setting(auto_play_on_start_setting_name):
-		ProjectSettings.set_setting(auto_play_on_start_setting_name, true)
-		var property_info := {
-			"name": auto_play_on_start_setting_name,
-			"type": TYPE_BOOL,
-		}
-		ProjectSettings.add_property_info(property_info)
-	ProjectSettings.set_initial_value(auto_play_on_start_setting_name, true)
-	if ProjectSettings.get_setting(auto_play_on_start_setting_name):
-		call_deferred("_auto_play_when_ready")
+	# if not ProjectSettings.has_setting(auto_play_on_start_setting_name):
+	# 	ProjectSettings.set_setting(auto_play_on_start_setting_name, true)
+	# 	var property_info := {
+	# 		"name": auto_play_on_start_setting_name,
+	# 		"type": TYPE_BOOL,
+	# 	}
+	# 	ProjectSettings.add_property_info(property_info)
+	# ProjectSettings.set_initial_value(auto_play_on_start_setting_name, true)
+	# if ProjectSettings.get_setting(auto_play_on_start_setting_name):
+	# 	call_deferred("_auto_play_when_ready")
 
 func _auto_play_when_ready() -> void:
 	var filesystem = EditorInterface.get_resource_filesystem()
