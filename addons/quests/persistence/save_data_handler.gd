@@ -3,6 +3,8 @@ extends RefCounted
 class_name SaveDataHandler
 ## Handles fetching and processing save data for the given platform.
 
+var has_save_file := false
+
 ## Saves the current quest state into the proper location
 func save(quests: BabyGodotQuests) -> void:
 	var dict := {}
@@ -16,6 +18,7 @@ func save(quests: BabyGodotQuests) -> void:
 	dict["checkpoint_quest"] = _serialize_checkpoint_data_progress(quests)
 	dict["checkpoint"] = quests._checkpoint_helper.export()
 	_write_json(JSON.stringify(dict))
+	has_save_file = true
 
 func load(quests: BabyGodotQuests) -> void:
 	var json := JSON.new()
@@ -23,6 +26,7 @@ func load(quests: BabyGodotQuests) -> void:
 	if err != OK:
 		# No save data exists or it's corrupted. Abort!
 		return
+	has_save_file = true
 	var dict: Dictionary = json.data
 	quests._current_text_line = dict["quests"]["line"]
 	quests.global_coins = dict["quests"]["coins"]
@@ -50,6 +54,7 @@ func load_docks(quests: BabyGodotQuests) -> void:
 	if err != OK:
 		# No save data exists or it's corrupted. Abort!
 		return
+	has_save_file = true
 	var dict: Dictionary = json.data
 	var unlocked_docks = dict["quests"]["docks"]
 	var dock_method_map = {
