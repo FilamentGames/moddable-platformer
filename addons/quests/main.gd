@@ -112,6 +112,8 @@ func _enter_tree() -> void:
 	add_dock(dock)
 
 	set_quest_dock_visible(false)
+	set_inspector_dock_visible(false)
+	set_scene_tree_dock_visible(false)
 
 	_connect_scene_edit_signal()
 

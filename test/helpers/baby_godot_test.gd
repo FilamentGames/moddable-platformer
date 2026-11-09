@@ -18,3 +18,7 @@ func assert_vector2_almost_eq(vec1: Vector2, vec2: Vector2, delta: float = EPSIL
 func assert_array_contains(arr: Array, value: Variant, text: String = "") -> void:
 	var msg = text if not text.is_empty() else "Expecting `" + str(arr) + "` to contain `" + str(value) + "`"
 	assert_true(arr.has(value), msg)
+
+func assert_array_does_not_contain(arr: Array, value: Variant, text: String = "") -> void:
+	var msg = text if not text.is_empty() else "Expecting `" + str(arr) + "` not to contain `" + str(value) + "`"
+	assert_false(arr.has(value), msg)

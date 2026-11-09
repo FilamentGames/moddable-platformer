@@ -73,6 +73,8 @@ var _checkpoint_helper: CheckpointHelper
 
 var _save_data_handler: SaveDataHandler
 
+var _unlocked_docks: Set = Set.new()
+
 func _init() -> void:
 	text_updated.connect(func():
 		if text_data[_current_text_line].show_celebration_animation:
@@ -157,14 +159,22 @@ func load_checkpoint() -> void:
 	text_updated.emit()
 	attempt_save()
 
-func set_inspector_dock_visible(visible: bool) -> void:
+func set_inspector_dock_visible(visible: bool, save: bool = true) -> void:
 	editor_scene_provider.set_inspector_dock_visible(visible)
+	_register_dock_visible("inspector", visible, save)
 
-func set_scene_tree_dock_visible(visible: bool) -> void:
+func set_scene_tree_dock_visible(visible: bool, save: bool = true) -> void:
 	editor_scene_provider.set_scene_tree_dock_visible(visible)
+	_register_dock_visible("scenetree", visible, save)
 
-func set_quest_dock_visible(visible: bool) -> void:
+func set_quest_dock_visible(visible: bool, save: bool = true) -> void:
 	editor_scene_provider.set_quest_dock_visible(visible)
+	_register_dock_visible("quest", visible, save)
+
+func _register_dock_visible(dock: String, visible: bool, save: bool = true) -> void:
+	if save:
+		_unlocked_docks.add(dock) if visible else _unlocked_docks.remove(dock)
+		attempt_save()
 
 func hide_bottom_panel() -> void:
 	editor_scene_provider.hide_bottom_panel()
