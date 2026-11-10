@@ -114,3 +114,6 @@ static func deplete_scrolls(quantity: int) -> void:
 
 static func swap_node_with_prefab(node: Node, prefab_path: String) -> void:
 	_send_message_static("swap_node_with_prefab", [-1, UniqueSceneId.get_id(node), prefab_path])
+
+static func set_node_property(node: Node, property_path: String, value: Variant) -> void:
+	_send_message_static("set_node_property", [-1, UniqueSceneId.get_id(node), property_path, value])

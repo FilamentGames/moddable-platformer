@@ -104,7 +104,7 @@ var attack_buffer_timer: float = 0
 var attack_hitbox_targets: Array[Node2D] = []
 
 ## List of hittable objects that will get triggered by their attack
-var attack_hittable_objects: Array[HittableObject] = []
+var attack_hittable_objects: Array[Node2D] = []
 
 ## If the player has been defeated and we are watching their lifeless corpse. Er, I mean whimsical thread full of imagination.
 var defeated := false
@@ -441,7 +441,7 @@ func turn_to_face_npc(npc: Npc) -> void:
 	_attack_hitbox.scale.x = -1 if _sprite.flip_h else 1
 
 func _on_attack_hitbox_area_entered(area: Area2D) -> void:
-	if area.get_parent() is HittableObject:
+	if SwordTriggerObject.is_sword_trigger_object(area.get_parent()):
 		attack_hittable_objects.append(area.get_parent())
 
 func _on_attack_hitbox_area_exited(area: Area2D) -> void:

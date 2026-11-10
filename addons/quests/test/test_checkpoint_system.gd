@@ -221,3 +221,19 @@ func test_can_reset_a_collected_yarnspark():
 
 	assert_not_null(editor_interface.scene_root.get_node_or_null("Yarnspark"))
 	assert_not_null(editor_interface.scene_root.get_node_or_null("Yarnspark/ObjectPropertyEqualityScrollCondition"))
+
+func test_can_reset_a_switched_on_switch():
+	editor_interface.scene_root = autofree(load("res://addons/quests/test/scenes/checkpoint_tests/checkpoint_level.tscn").instantiate())
+	checkpoint.save_editor_scene_as_checkpoint()
+
+	var switch: Switch = editor_interface.scene_root.get_node("Switch")
+	switch.on = true
+	checkpoint.register_node_modified(switch, "on", false, true)
+
+	checkpoint.set_editor_scene()
+
+	assert_false(switch.on, "Switch property is restored to before checkpoint")
+
+	checkpoint.undo_redo.undo()
+
+	assert_true(switch.on, "Switch property is restored to after checkpoint")

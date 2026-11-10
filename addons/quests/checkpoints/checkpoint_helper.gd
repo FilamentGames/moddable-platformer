@@ -46,6 +46,9 @@ func register_node_deleted(node: Node) -> void:
 func register_node_added(node: Node) -> void:
 	scene_delta.register_node_added(node)
 
+func register_node_modified(node: Node, property: StringName, previous_value: Variant, new_value: Variant) -> void:
+	scene_delta.register_node_modified(node, property, previous_value, new_value)
+
 ## Loads the current checkpoint into the current editor scene
 func set_editor_scene() -> void:
 	_bind_editor_scene_to_scene_delta()

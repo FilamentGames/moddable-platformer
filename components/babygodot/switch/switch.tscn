@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://d342fcnp72jx1"]
+
+[ext_resource type="Script" uid="uid://cttrfbpbxakcu" path="res://components/babygodot/switch/switch.gd" id="1_e3n3v"]
+[ext_resource type="Texture2D" uid="uid://c478xk8dfbwxg" path="res://components/babygodot/switch/Lever.png" id="1_n14rc"]
+[ext_resource type="Script" uid="uid://cvugtde1oamf" path="res://components/babygodot/switch/switch_sprite_controller.gd" id="3_g3hp8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hmpfs"]
+radius = 63.33
+
+[node name="Switch" type="Node2D" unique_id=1104361663]
+script = ExtResource("1_e3n3v")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=474229262]
+scale = Vector2(2, 2)
+texture = ExtResource("1_n14rc")
+hframes = 2
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1490512406]
+collision_layer = 32
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=279979436]
+visible = false
+shape = SubResource("CircleShape2D_hmpfs")
+
+[node name="SwitchSpriteController" type="Node" parent="." unique_id=377058457 node_paths=PackedStringArray("sprite", "switch")]
+script = ExtResource("3_g3hp8")
+sprite = NodePath("../Sprite2D")
+switch = NodePath("..")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_hittable_object_collision" unbinds=1]

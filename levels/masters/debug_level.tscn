@@ -10,6 +10,7 @@
 [ext_resource type="TileSet" uid="uid://cxchgr0dgfcak" path="res://terrain_samples/tileset_basket.tres" id="6_4uyol"]
 [ext_resource type="TileSet" uid="uid://c135ryrbljtjg" path="res://terrain_samples/tileset_decorations.tres" id="9_01yeg"]
 [ext_resource type="PackedScene" uid="uid://3jvl3cbr8eu3" path="res://components/babygodot/hittable/hittable_object.tscn" id="10_hhs2l"]
+[ext_resource type="PackedScene" uid="uid://d342fcnp72jx1" path="res://components/babygodot/switch/switch.tscn" id="11_4uyol"]
 
 [node name="DebugLevel" type="Node2D" unique_id=486818484]
 
@@ -29,18 +30,6 @@ win_by_reaching_flag = true
 [node name="Dangerzone" parent="." unique_id=1478570527 instance=ExtResource("3_xv7di")]
 position = Vector2(3072, 1216)
 
-[node name="Player" parent="." unique_id=1041196418 instance=ExtResource("4_01yeg")]
-position = Vector2(240, 634)
-collision_mask = 7
-sprite_frames = ExtResource("5_hhs2l")
-jump_velocity = 850.0
-
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=360442972]
-position = Vector2(0, 15)
-limit_left = 0
-limit_bottom = 1080
-position_smoothing_enabled = true
-
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1444943124]
 tile_map_data = PackedByteArray("AAAAAAUAAQAAAAAAAAABAAUAAQABAAAAAAACAAUAAQABAAAAAAADAAUAAQABAAAAAAAEAAUAAQABAAAAAAAFAAUAAQABAAAAAAAGAAUAAQABAAAAAAAHAAUAAQABAAAAAAAIAAUAAQABAAAAAAAJAAUAAQABAAAAAAAKAAUAAQABAAAAAAALAAUAAQABAAAAAAAMAAUAAQABAAAAAAANAAUAAQABAAAAAAAOAAUAAQABAAAAAAAPAAUAAQABAAAAAAAQAAUAAQABAAAAAAARAAUAAQABAAAAAAASAAUAAQABAAAAAAATAAUAAQABAAAAAAAUAAUAAQABAAAAAAAVAAUAAQABAAAAAAAWAAUAAQABAAAAAAAAAAYAAQAAAAEAAAAAAAcAAQAAAAEAAAAAAAgAAQAAAAEAAAABAAgAAQAAAAEAAAABAAcAAQAAAAEAAAABAAYAAQAAAAEAAAACAAYAAQAAAAEAAAADAAYAAQAAAAEAAAAEAAYAAQAAAAEAAAAFAAYAAQAAAAEAAAAGAAYAAQAAAAEAAAACAAgAAQAAAAEAAAADAAgAAQAAAAEAAAAEAAgAAQAAAAEAAAAFAAgAAQAAAAEAAAAGAAgAAQAAAAEAAAAHAAgAAQAAAAEAAAAIAAgAAQAAAAEAAAAJAAgAAQAAAAEAAAAKAAgAAQAAAAEAAAALAAgAAQAAAAEAAAAMAAgAAQAAAAEAAAANAAgAAQAAAAEAAAAOAAgAAQAAAAEAAAAPAAgAAQAAAAEAAAAWAAYAAQAAAAEAAAAWAAcAAQAAAAEAAAAWAAgAAQAAAAEAAAAVAAgAAQAAAAEAAAAUAAgAAQAAAAEAAAATAAgAAQAAAAEAAAASAAgAAQAAAAEAAAARAAgAAQAAAAEAAAAQAAgAAQAAAAEAAAAJAAcAAQAAAAEAAAAJAAYAAQAAAAEAAAAIAAYAAQAAAAEAAAAHAAYAAQAAAAEAAAAHAAcAAQAAAAEAAAAGAAcAAQAAAAEAAAAFAAcAAQAAAAEAAAAEAAcAAQAAAAEAAAADAAcAAQAAAAEAAAACAAcAAQAAAAEAAAAIAAcAAQAAAAEAAAAKAAYAAQAAAAEAAAAKAAcAAQAAAAEAAAALAAcAAQAAAAEAAAALAAYAAQAAAAEAAAAMAAYAAQAAAAEAAAAMAAcAAQAAAAEAAAANAAcAAQAAAAEAAAANAAYAAQAAAAEAAAAOAAYAAQAAAAEAAAAOAAcAAQAAAAEAAAAPAAcAAQAAAAEAAAAPAAYAAQAAAAEAAAAQAAYAAQAAAAEAAAAQAAcAAQAAAAEAAAARAAcAAQAAAAEAAAARAAYAAQAAAAEAAAASAAYAAQAAAAEAAAASAAcAAQAAAAEAAAATAAcAAQAAAAEAAAATAAYAAQAAAAEAAAAUAAYAAQAAAAEAAAAUAAcAAQAAAAEAAAAVAAcAAQAAAAEAAAAVAAYAAQAAAAEAAAA=")
 tile_set = ExtResource("6_4uyol")
@@ -54,3 +43,18 @@ position = Vector2(397, 597)
 
 [node name="HittableObject2" parent="." unique_id=2133451933 instance=ExtResource("10_hhs2l")]
 position = Vector2(704, 480)
+
+[node name="Switch" parent="." unique_id=1104361663 instance=ExtResource("11_4uyol")]
+position = Vector2(1155, 603)
+
+[node name="Player" parent="." unique_id=1041196418 instance=ExtResource("4_01yeg")]
+position = Vector2(240, 634)
+collision_mask = 7
+sprite_frames = ExtResource("5_hhs2l")
+jump_velocity = 850.0
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=360442972]
+position = Vector2(0, 15)
+limit_left = 0
+limit_bottom = 1080
+position_smoothing_enabled = true

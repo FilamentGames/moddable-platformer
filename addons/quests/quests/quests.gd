@@ -261,6 +261,14 @@ func swap_nodes_with_prefabs(swapped_objects: Array[Dictionary], scene: Node2D =
 		parent.queue_free()
 	attempt_save()
 
+func set_node_properties(set_node_properties: Array[Dictionary], scene: Node2D = editor_scene_provider.get_editor_scene()) -> void:
+	for set_node_property in set_node_properties:
+		var object: Node = UniqueSceneId.find_by_id(scene, set_node_property["node"])
+		var prop: StringName = set_node_property["property"]
+		_checkpoint_helper.register_node_modified(object, prop, object[prop], set_node_property["value"])
+		object[prop] = set_node_property["value"]
+	attempt_save()
+
 func delete_node_in_editor(node_id: String) -> void:
 	delete_nodes_in_editor([node_id])
 

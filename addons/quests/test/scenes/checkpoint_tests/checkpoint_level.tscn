@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bk3nplruhw7kp" path="res://components/babygodot/scroll_gate/collectible_gate.tscn" id="6_a83sg"]
 [ext_resource type="PackedScene" uid="uid://dpk1jwflxtjbn" path="res://components/babygodot/yarnspark/yarnspark.tscn" id="7_tm42y"]
 [ext_resource type="PackedScene" uid="uid://cbr3k8b1gooxm" path="res://components/babygodot/yarnspark/condition_types/object_property_equality_scroll_condition.tscn" id="9_r1i4j"]
+[ext_resource type="PackedScene" uid="uid://d342fcnp72jx1" path="res://components/babygodot/switch/switch.tscn" id="11_qeuj3"]
 
 [sub_resource type="Resource" id="Resource_qeuj3"]
 script = ExtResource("3_r1i4j")
@@ -74,3 +75,6 @@ position = Vector2(995, 71)
 target = NodePath("../../Enemy")
 property_name = &"speed"
 value = "200"
+
+[node name="Switch" parent="." unique_id=1104361663 instance=ExtResource("11_qeuj3")]
+position = Vector2(545, -69)

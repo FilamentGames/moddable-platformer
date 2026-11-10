@@ -13,6 +13,9 @@ var _collected_objects: Array[String] = []
 ## Each dictionary contains the object to swap and the prefab path of the new object.
 var _swapped_objects: Array[Dictionary] = []
 
+## Contains a list of objects which have had their properties updated dynamically by a script which we want to persist into the editor (e.g. switches which we want the player to trigger in-game but persist their on state into the editor)
+var _set_properties: Array[Dictionary] = []
+
 ## Contains the state of the editor's docks, so that they can be restored at the end of the session.
 var _editor_unlock_state: Dictionary = {
 	"inspector": false,
@@ -111,6 +114,13 @@ func _capture(message, data, session_id):
 				"prefab": data[2],
 			})
 			return true
+		"set_node_property":
+			_set_properties.append({
+				"node": data[1],
+				"property": data[2],
+				"value": data[3]
+			})
+			return true
 	return false
 
 func _setup_session(session_id):
@@ -151,6 +161,8 @@ func _on_session_stop() -> void:
 	_swapped_objects.clear()
 	GlobalQuests.quests.delete_nodes_in_editor(_collected_objects, false)
 	_collected_objects.clear()
+	GlobalQuests.quests.set_node_properties(_set_properties)
+	_set_properties.clear()
 	GlobalQuests.quests.update_player_position()
 	GlobalQuests.quests.register_mode_switch(BabyGodotQuests.EditorMode.EDIT)
 	GlobalQuests.quests.set_inspector_dock_visible(_editor_unlock_state["inspector"], false)

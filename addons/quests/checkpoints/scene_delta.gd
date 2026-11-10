@@ -6,6 +6,7 @@ var _editor_scene: Node
 
 var _removed_nodes: Dictionary
 var _watched_nodes: Dictionary
+var _modified_nodes: Dictionary
 var _added_nodes: Array = []
 
 var _watched_node_dependencies: Dictionary
@@ -63,6 +64,15 @@ func register_node_deleted(node: Node) -> void:
 func register_node_added(node: Node) -> void:
 	_added_nodes.push_back(_get_path_from_scene_root(_get_node_path(node)))
 
+func register_node_modified(node: Node, property: StringName, previous_value: Variant, new_value: Variant) -> void:
+	var path := _get_path_from_scene_root(_get_node_path(node))
+	if not _modified_nodes.has(path):
+		_modified_nodes[path] = {}
+	_modified_nodes[path][property] = {
+		"-": previous_value,
+		"+": new_value
+	}
+
 func _get_node_path(node: Node) -> String:
 	return BabyGodotUtils.get_node_path(node, _editor_scene)
 
@@ -107,15 +117,23 @@ func reset_to_checkpoint() -> void:
 		var node: Node = _editor_scene.get_node_or_null(id)
 		node.get_parent().remove_child(node)
 		node.queue_free()
+	for id: String in _modified_nodes.keys():
+		var node: Node = _editor_scene.get_node_or_null(id)
+		for property: StringName in _modified_nodes[id].keys():
+			node[property] = _modified_nodes[id][property]["-"]
 	_player_watcher.apply_player_snapshot()
 	_added_nodes.clear()
 	_removed_nodes.clear()
+	_modified_nodes.clear()
 
 func export() -> Dictionary:
+	if not _player_watcher:
+		_player_watcher = CheckpointPlayerWatcher.new(_editor_scene)
 	return {
 		"added": _added_nodes,
 		"watched": _watched_nodes,
 		"removed": _removed_nodes,
+		"modified": _modified_nodes,
 		"player": _player_watcher.export()
 	}
 
@@ -123,6 +141,7 @@ func import(dict: Dictionary) -> void:
 	_added_nodes = dict["added"]
 	_watched_nodes = dict["watched"]
 	_removed_nodes = dict["removed"]
+	_modified_nodes = dict["modified"]
 	if not _player_watcher:
 		_player_watcher = CheckpointPlayerWatcher.new(_editor_scene)
 	_player_watcher.import(dict["player"])
@@ -136,8 +155,17 @@ func invert_export(dict: Dictionary) -> Dictionary:
 		dict["removed"][path] = _serializer.serialize(node)
 	dict["added"] = removed.keys().map(_get_path_from_scene_root)
 	dict["watched"] = _get_serialized_watched_nodes()["watch"]
+	dict["modified"] = _invert_modified_nodes_list(dict["modified"])
 	dict["player"] = _serialize_vector2(_player_watcher.get_player_position())
 	return dict
+
+func _invert_modified_nodes_list(dict: Dictionary) -> Dictionary:
+	var inverse: Dictionary = dict.duplicate(true)
+	for id: String in inverse.keys():
+		for property in inverse[id]:
+			inverse[id][property]["-"] = dict[id][property]["+"]
+			inverse[id][property]["+"] = dict[id][property]["-"]
+	return inverse
 
 func _serialize_vector2(vec: Vector2) -> Array:
 	return [vec.x, vec.y]
