@@ -13,6 +13,9 @@ height = 92.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_ddthk"]
 radius = 106.01887
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_hmpfs"]
+radius = 31.33
+
 [node name="Player" type="CharacterBody2D" unique_id=1041196418 groups=["players"]]
 collision_layer = 3
 collision_mask = 5
@@ -54,7 +57,7 @@ one_way_collision = true
 unique_name_in_owner = true
 visible = false
 collision_layer = 16
-collision_mask = 8
+collision_mask = 32
 input_pickable = false
 monitorable = false
 
@@ -62,6 +65,19 @@ monitorable = false
 position = Vector2(58, -46)
 shape = SubResource("CircleShape2D_ddthk")
 debug_color = Color(0.9889129, 0, 0.30188364, 0.41960785)
+
+[node name="SwordTriggerHitbox" type="Area2D" parent="." unique_id=722506482]
+unique_name_in_owner = true
+visible = false
+collision_layer = 16
+collision_mask = 32
+input_pickable = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SwordTriggerHitbox" unique_id=1916779135]
+position = Vector2(42, -34)
+shape = SubResource("CircleShape2D_hmpfs")
+debug_color = Color(1, 0.5833334, 0, 0.41960785)
 
 [node name="PlayerDialogueComponent" type="Node" parent="." unique_id=1376200695 node_paths=PackedStringArray("player", "dialogue_mount")]
 editor_description = "This node controls logic for dialogue interactions. It exists as its own node so we don't have to mess with the base Player class too much"
@@ -82,3 +98,5 @@ player = NodePath("..")
 
 [connection signal="body_entered" from="AttackHitbox" to="." method="_on_attack_hitbox_body_entered"]
 [connection signal="body_exited" from="AttackHitbox" to="." method="_on_attack_hitbox_body_exited"]
+[connection signal="area_entered" from="SwordTriggerHitbox" to="." method="_on_attack_hitbox_area_entered"]
+[connection signal="area_exited" from="SwordTriggerHitbox" to="." method="_on_attack_hitbox_area_exited"]

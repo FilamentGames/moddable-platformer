@@ -1,0 +1,56 @@
+[gd_scene format=4 uid="uid://brikrmnwokpd4"]
+
+[ext_resource type="PackedScene" uid="uid://cswheshouik14" path="res://rules_goals/game_logic.tscn" id="1_0f3y3"]
+[ext_resource type="Script" uid="uid://cwvs5uqu4hx5e" path="res://addons/quests_devtools/tool_objects/editable_node_list.gd" id="1_faf6h"]
+[ext_resource type="Script" uid="uid://c204y3amh8gkj" path="res://addons/quests_devtools/tool_objects/master_level_lock.gd" id="2_5s137"]
+[ext_resource type="PackedScene" uid="uid://jnrusvm3gric" path="res://spaces/background.tscn" id="2_nkki3"]
+[ext_resource type="PackedScene" uid="uid://dthyncc3spfks" path="res://spaces/dangerzone.tscn" id="3_xv7di"]
+[ext_resource type="PackedScene" uid="uid://8st4scqt06l8" path="res://components/player/player.tscn" id="4_01yeg"]
+[ext_resource type="SpriteFrames" uid="uid://de74lrhqf0xoa" path="res://components/player/spriteframes-storyweaver.tres" id="5_hhs2l"]
+[ext_resource type="TileSet" uid="uid://cxchgr0dgfcak" path="res://terrain_samples/tileset_basket.tres" id="6_4uyol"]
+[ext_resource type="TileSet" uid="uid://c135ryrbljtjg" path="res://terrain_samples/tileset_decorations.tres" id="9_01yeg"]
+[ext_resource type="PackedScene" uid="uid://3jvl3cbr8eu3" path="res://components/babygodot/hittable/hittable_object.tscn" id="10_hhs2l"]
+
+[node name="DebugLevel" type="Node2D" unique_id=486818484]
+
+[node name="EditableNodeList" type="Node" parent="." unique_id=1901483370 node_paths=PackedStringArray("nodes")]
+script = ExtResource("1_faf6h")
+nodes = [NodePath("../Player"), NodePath("../HittableObject"), NodePath("../HittableObject2")]
+
+[node name="MasterLevelLock" type="Node" parent="." unique_id=1682041110]
+script = ExtResource("2_5s137")
+
+[node name="GameLogic" parent="." unique_id=1103330635 instance=ExtResource("1_0f3y3")]
+win_by_collecting_coins = true
+win_by_reaching_flag = true
+
+[node name="Background" parent="." unique_id=474635500 instance=ExtResource("2_nkki3")]
+
+[node name="Dangerzone" parent="." unique_id=1478570527 instance=ExtResource("3_xv7di")]
+position = Vector2(3072, 1216)
+
+[node name="Player" parent="." unique_id=1041196418 instance=ExtResource("4_01yeg")]
+position = Vector2(240, 634)
+collision_mask = 7
+sprite_frames = ExtResource("5_hhs2l")
+jump_velocity = 850.0
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=360442972]
+position = Vector2(0, 15)
+limit_left = 0
+limit_bottom = 1080
+position_smoothing_enabled = true
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1444943124]
+tile_map_data = PackedByteArray("AAAAAAUAAQAAAAAAAAABAAUAAQABAAAAAAACAAUAAQABAAAAAAADAAUAAQABAAAAAAAEAAUAAQABAAAAAAAFAAUAAQABAAAAAAAGAAUAAQABAAAAAAAHAAUAAQABAAAAAAAIAAUAAQABAAAAAAAJAAUAAQABAAAAAAAKAAUAAQABAAAAAAALAAUAAQABAAAAAAAMAAUAAQABAAAAAAANAAUAAQABAAAAAAAOAAUAAQABAAAAAAAPAAUAAQABAAAAAAAQAAUAAQABAAAAAAARAAUAAQABAAAAAAASAAUAAQABAAAAAAATAAUAAQABAAAAAAAUAAUAAQABAAAAAAAVAAUAAQABAAAAAAAWAAUAAQABAAAAAAAAAAYAAQAAAAEAAAAAAAcAAQAAAAEAAAAAAAgAAQAAAAEAAAABAAgAAQAAAAEAAAABAAcAAQAAAAEAAAABAAYAAQAAAAEAAAACAAYAAQAAAAEAAAADAAYAAQAAAAEAAAAEAAYAAQAAAAEAAAAFAAYAAQAAAAEAAAAGAAYAAQAAAAEAAAACAAgAAQAAAAEAAAADAAgAAQAAAAEAAAAEAAgAAQAAAAEAAAAFAAgAAQAAAAEAAAAGAAgAAQAAAAEAAAAHAAgAAQAAAAEAAAAIAAgAAQAAAAEAAAAJAAgAAQAAAAEAAAAKAAgAAQAAAAEAAAALAAgAAQAAAAEAAAAMAAgAAQAAAAEAAAANAAgAAQAAAAEAAAAOAAgAAQAAAAEAAAAPAAgAAQAAAAEAAAAWAAYAAQAAAAEAAAAWAAcAAQAAAAEAAAAWAAgAAQAAAAEAAAAVAAgAAQAAAAEAAAAUAAgAAQAAAAEAAAATAAgAAQAAAAEAAAASAAgAAQAAAAEAAAARAAgAAQAAAAEAAAAQAAgAAQAAAAEAAAAJAAcAAQAAAAEAAAAJAAYAAQAAAAEAAAAIAAYAAQAAAAEAAAAHAAYAAQAAAAEAAAAHAAcAAQAAAAEAAAAGAAcAAQAAAAEAAAAFAAcAAQAAAAEAAAAEAAcAAQAAAAEAAAADAAcAAQAAAAEAAAACAAcAAQAAAAEAAAAIAAcAAQAAAAEAAAAKAAYAAQAAAAEAAAAKAAcAAQAAAAEAAAALAAcAAQAAAAEAAAALAAYAAQAAAAEAAAAMAAYAAQAAAAEAAAAMAAcAAQAAAAEAAAANAAcAAQAAAAEAAAANAAYAAQAAAAEAAAAOAAYAAQAAAAEAAAAOAAcAAQAAAAEAAAAPAAcAAQAAAAEAAAAPAAYAAQAAAAEAAAAQAAYAAQAAAAEAAAAQAAcAAQAAAAEAAAARAAcAAQAAAAEAAAARAAYAAQAAAAEAAAASAAYAAQAAAAEAAAASAAcAAQAAAAEAAAATAAcAAQAAAAEAAAATAAYAAQAAAAEAAAAUAAYAAQAAAAEAAAAUAAcAAQAAAAEAAAAVAAcAAQAAAAEAAAAVAAYAAQAAAAEAAAA=")
+tile_set = ExtResource("6_4uyol")
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=848835936]
+tile_map_data = PackedByteArray("AAAMAAQAAQAFAAIAAAAFAAQAAQAFAAIAAAA=")
+tile_set = ExtResource("9_01yeg")
+
+[node name="HittableObject" parent="." unique_id=1845041128 instance=ExtResource("10_hhs2l")]
+position = Vector2(397, 597)
+
+[node name="HittableObject2" parent="." unique_id=2133451933 instance=ExtResource("10_hhs2l")]
+position = Vector2(704, 480)

@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://3jvl3cbr8eu3"]
+
+[ext_resource type="Script" uid="uid://qabf1t04dem0" path="res://components/babygodot/hittable/hittable_object.gd" id="1_0nar6"]
+[ext_resource type="PackedScene" uid="uid://blaby3fu7jxcf" path="res://components/babygodot/hittable/hittable_controller.tscn" id="1_s58kc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hmpfs"]
+size = Vector2(40, 40)
+
+[node name="HittableObject" type="CharacterBody2D" unique_id=1845041128]
+collision_layer = 36
+collision_mask = 20
+script = ExtResource("1_0nar6")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=91317153]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.26666668, 0.26666668, 0.26666668, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=62720356]
+visible = false
+shape = SubResource("RectangleShape2D_hmpfs")
+
+[node name="HittableController" parent="." unique_id=657948980 node_paths=PackedStringArray("target") instance=ExtResource("1_s58kc")]
+speed = 450.0
+target = NodePath("..")
+
+[node name="SwordHitbox" type="Area2D" parent="." unique_id=1569599197]
+collision_layer = 32
+collision_mask = 16
+input_pickable = false
+monitoring = false
+
+[node name="Shape" type="CollisionShape2D" parent="SwordHitbox" unique_id=1326283975]
+shape = SubResource("RectangleShape2D_hmpfs")
+
+[connection signal="_do_hit" from="." to="HittableController" method="on_hit"]
+[connection signal="hit" from="." to="." method="_on_hit"]
+[connection signal="hit_wall" from="." to="HittableController" method="stop"]

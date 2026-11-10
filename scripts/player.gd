@@ -103,6 +103,9 @@ var attack_buffer_timer: float = 0
 ## List of enemies that the player would currently hit with their attack.
 var attack_hitbox_targets: Array[Node2D] = []
 
+## List of hittable objects that will get triggered by their attack
+var attack_hittable_objects: Array[HittableObject] = []
+
 ## If the player has been defeated and we are watching their lifeless corpse. Er, I mean whimsical thread full of imagination.
 var defeated := false
 
@@ -124,6 +127,7 @@ static var last_checkpoint_position: Vector2 = Vector2.ZERO
 @onready var _double_jump_particles: CPUParticles2D = %DoubleJumpParticles
 
 @onready var _attack_hitbox: Area2D = %AttackHitbox
+@onready var _sword_trigger_hitbox: Area2D = %SwordTriggerHitbox
 @onready var _defeated_timer: Timer = %DefeatedTimer
 #endregion
 
@@ -281,6 +285,8 @@ func _attack():
 		for target in attack_hitbox_targets:
 			## Defeat all enemies immediately on the start of the attack so it feels responsive.
 			target.defeat(sign(target.position.x - position.x))
+		for target in attack_hittable_objects:
+			target.hit.emit(sign(target.position.x - position.x))
 		attack_hitbox_targets.clear()
 		await _sprite.animation_finished
 		_attack_hitbox.visible = false
@@ -381,6 +387,7 @@ func _physics_process(delta):
 			_sprite.flip_h = velocity.x < 0
 
 	_attack_hitbox.scale.x = -1 if _sprite.flip_h else 1
+	_sword_trigger_hitbox.scale.x = _attack_hitbox.scale.x
 	move_and_slide()
 
 	# Remove the '#' below to enable the teleport special ability
@@ -432,3 +439,10 @@ func turn_to_face_npc(npc: Npc) -> void:
 	else:
 		_sprite.flip_h = false
 	_attack_hitbox.scale.x = -1 if _sprite.flip_h else 1
+
+func _on_attack_hitbox_area_entered(area: Area2D) -> void:
+	if area.get_parent() is HittableObject:
+		attack_hittable_objects.append(area.get_parent())
+
+func _on_attack_hitbox_area_exited(area: Area2D) -> void:
+	attack_hittable_objects.erase(area.get_parent())

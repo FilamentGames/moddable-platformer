@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://blaby3fu7jxcf"]
+
+[ext_resource type="Script" uid="uid://dmhviw8acikr7" path="res://components/babygodot/hittable/hittable_controller.gd" id="1_3lxbp"]
+
+[node name="HittableController" type="Node" unique_id=657948980]
+script = ExtResource("1_3lxbp")
