@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://1gwbwvnyhbw1"]
+
+[ext_resource type="Script" uid="uid://hbdb84ktd7je" path="res://components/babygodot/hittable/seeking/seeking_hittable_object.gd" id="1_7dm0m"]
+[ext_resource type="PackedScene" uid="uid://blaby3fu7jxcf" path="res://components/babygodot/hittable/hittable_controller.tscn" id="2_4ixhu"]
+[ext_resource type="Script" uid="uid://dro7xxt7xoy2j" path="res://components/babygodot/hittable/seeking/seeking_hittable_controller.gd" id="3_7dm0m"]
+[ext_resource type="Script" uid="uid://ca5d8gptpow1e" path="res://components/babygodot/hittable/hittable_active_collision_controller.gd" id="4_is0gl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hmpfs"]
+size = Vector2(40, 40)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_is0gl"]
+radius = 36.2
+
+[node name="SeekingHittableObject" type="CharacterBody2D" unique_id=1845041128]
+collision_layer = 36
+collision_mask = 20
+script = ExtResource("1_7dm0m")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=91317153]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.26666668, 0.26666668, 0.26666668, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=62720356]
+visible = false
+shape = SubResource("RectangleShape2D_hmpfs")
+
+[node name="HittableController" parent="." unique_id=657948980 node_paths=PackedStringArray("target") instance=ExtResource("2_4ixhu")]
+unique_name_in_owner = true
+script = ExtResource("3_7dm0m")
+seeks_onto = 0
+speed = 450.0
+target = NodePath("..")
+
+[node name="ActiveCollisionController" type="Node" parent="." unique_id=495048712 node_paths=PackedStringArray("area")]
+script = ExtResource("4_is0gl")
+area = NodePath("../AttackHitbox")
+
+[node name="SwordHitbox" type="Area2D" parent="." unique_id=1569599197]
+visible = false
+collision_layer = 32
+collision_mask = 16
+input_pickable = false
+monitoring = false
+
+[node name="Shape" type="CollisionShape2D" parent="SwordHitbox" unique_id=1326283975]
+shape = SubResource("RectangleShape2D_hmpfs")
+
+[node name="AttackHitbox" type="Area2D" parent="." unique_id=1898151603]
+visible = false
+collision_layer = 64
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackHitbox" unique_id=1451109115]
+shape = SubResource("CircleShape2D_is0gl")
+debug_color = Color(0.99428815, 0, 0.23171434, 0.41960785)
+
+[connection signal="_do_hit" from="." to="HittableController" method="on_hit"]
+[connection signal="changed_seeking_target" from="." to="HittableController" method="change_target"]
+[connection signal="hit" from="." to="." method="_on_hit"]
+[connection signal="hit_wall" from="." to="HittableController" method="stop"]
+[connection signal="move_state_changed" from="HittableController" to="ActiveCollisionController" method="set_collision_active"]

@@ -13,6 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://d342fcnp72jx1" path="res://components/babygodot/switch/switch.tscn" id="11_4uyol"]
 [ext_resource type="PackedScene" uid="uid://dhywn8qbdx6cc" path="res://components/babygodot/switch/subtypes/timed_switch.tscn" id="11_ynceb"]
 [ext_resource type="PackedScene" uid="uid://dcyp5nu5cr4e8" path="res://components/babygodot/switch/placeholder_gate/placeholder_switch_gate.tscn" id="12_6aj24"]
+[ext_resource type="PackedScene" uid="uid://6xuod5sofp8c" path="res://components/platform/platform_basket_thin.tscn" id="13_38qs6"]
+[ext_resource type="PackedScene" uid="uid://1gwbwvnyhbw1" path="res://components/babygodot/hittable/seeking/seeking_hittable_object.tscn" id="14_gi7fq"]
+[ext_resource type="PackedScene" uid="uid://dbaal2g7b8ub0" path="res://components/enemy/storyvore_enemy.tscn" id="16_oaw4a"]
 
 [node name="DebugLevel" type="Node2D" unique_id=486818484]
 
@@ -50,14 +53,27 @@ position = Vector2(704, 480)
 position = Vector2(1155, 603)
 
 [node name="PlaceholderSwitchGate" parent="." unique_id=770346740 instance=ExtResource("12_6aj24")]
-position = Vector2(1608, 139)
+position = Vector2(1601, 138)
 
 [node name="TimedSwitch" parent="." unique_id=417686659 instance=ExtResource("11_ynceb")]
-position = Vector2(1372, 603)
+position = Vector2(1362, 603)
 seconds_active = 0.5
 
+[node name="HittableObject3" parent="." unique_id=1198991687 instance=ExtResource("14_gi7fq")]
+position = Vector2(909, 597)
+seeks_onto = 1
+hittable = true
+
+[node name="HittableObject4" parent="." unique_id=1610812864 instance=ExtResource("14_gi7fq")]
+position = Vector2(2025, 602)
+seeks_onto = 2
+hittable = true
+
+[node name="Platform" parent="." unique_id=1439632278 instance=ExtResource("13_38qs6")]
+position = Vector2(2204, 396)
+
 [node name="Player" parent="." unique_id=1041196418 instance=ExtResource("4_01yeg")]
-position = Vector2(240, 634)
+position = Vector2(173, 577)
 collision_mask = 7
 sprite_frames = ExtResource("5_hhs2l")
 jump_velocity = 850.0
@@ -67,5 +83,8 @@ position = Vector2(0, 15)
 limit_left = 0
 limit_bottom = 1080
 position_smoothing_enabled = true
+
+[node name="StoryvoreEnemy" parent="." unique_id=834529607 instance=ExtResource("16_oaw4a")]
+position = Vector2(2202, 297)
 
 [connection signal="on_toggle" from="Switch" to="PlaceholderSwitchGate" method="on_toggle"]

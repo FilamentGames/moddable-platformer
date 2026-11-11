@@ -8,7 +8,6 @@ var main_screen_reference
 
 func _enter_tree() -> void:
 	continue_button.disabled = not GlobalQuests.quests._save_data_handler.has_save_file
-	print(GlobalQuests.quests._save_data_handler.has_save_file)
 
 func _on_new_game_button_pressed() -> void:
 	if GlobalQuests.quests._save_data_handler.has_save_file:

@@ -10,6 +10,8 @@ signal hit_wall
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+var use_gravity := true
+
 var _reset_on_unpause: ResetOnUnpause
 
 func _ready() -> void:
@@ -20,7 +22,8 @@ func _ready() -> void:
 	)
 
 func _physics_process(_delta: float) -> void:
-	velocity.y = gravity
+	if use_gravity:
+		velocity.y = gravity
 	move_and_slide()
 
 	if is_on_wall():

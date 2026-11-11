@@ -113,6 +113,8 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 	if area.get_collision_layer_value(5):
 		player_loses_life = false
 		queue_free()
+	elif area.get_collision_layer_value(7):
+		defeat.call_deferred(sign(area.global_position.x - global_position.x))
 
 func defeat(attack_sign: int = 0) -> void:
 	_hitbox.monitorable = false

@@ -113,6 +113,7 @@ player_1_attack={
 2d_physics/layer_4="Enemy"
 2d_physics/layer_5="Player Attacks"
 2d_physics/layer_6="Hittable Objects"
+2d_physics/layer_7="Immediately Hurts Enemies"
 
 [rendering]
 
