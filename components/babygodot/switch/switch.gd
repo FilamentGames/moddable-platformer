@@ -24,6 +24,7 @@ func _ready() -> void:
 	on_toggle.connect(func(enabled: bool):
 		InGameQuestsBridge.set_node_property(self, "on", enabled)
 	)
+	on_toggle.emit(_on)
 
 func _on_hittable_object_collision() -> void:
 	hit.emit(0)
