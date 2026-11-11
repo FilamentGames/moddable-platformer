@@ -11,6 +11,7 @@
 [ext_resource type="TileSet" uid="uid://c135ryrbljtjg" path="res://terrain_samples/tileset_decorations.tres" id="9_01yeg"]
 [ext_resource type="PackedScene" uid="uid://3jvl3cbr8eu3" path="res://components/babygodot/hittable/hittable_object.tscn" id="10_hhs2l"]
 [ext_resource type="PackedScene" uid="uid://d342fcnp72jx1" path="res://components/babygodot/switch/switch.tscn" id="11_4uyol"]
+[ext_resource type="PackedScene" uid="uid://dcyp5nu5cr4e8" path="res://components/babygodot/switch/placeholder_gate/placeholder_switch_gate.tscn" id="12_6aj24"]
 
 [node name="DebugLevel" type="Node2D" unique_id=486818484]
 
@@ -47,6 +48,9 @@ position = Vector2(704, 480)
 [node name="Switch" parent="." unique_id=1104361663 instance=ExtResource("11_4uyol")]
 position = Vector2(1155, 603)
 
+[node name="PlaceholderSwitchGate" parent="." unique_id=770346740 instance=ExtResource("12_6aj24")]
+position = Vector2(1608, 139)
+
 [node name="Player" parent="." unique_id=1041196418 instance=ExtResource("4_01yeg")]
 position = Vector2(240, 634)
 collision_mask = 7
@@ -58,3 +62,5 @@ position = Vector2(0, 15)
 limit_left = 0
 limit_bottom = 1080
 position_smoothing_enabled = true
+
+[connection signal="on_toggle" from="Switch" to="PlaceholderSwitchGate" method="on_toggle"]
