@@ -52,3 +52,18 @@ func _on_skip_to_next_checkpoint_button_pressed() -> void:
 func _on_stop_button_pressed() -> void:
 	if GlobalQuests and GlobalQuests.quests:
 		GlobalQuests.quests.stop_game()
+
+
+func _on_debug_level_button_pressed() -> void:
+	ProjectSettings.set_setting("application/run/main_scene", "res://levels/clones/debug_level.tscn")
+	ProjectSettings.save()
+	EditorInterface.open_scene_from_path("res://levels/clones/debug_level.tscn")
+	var dialog = AcceptDialog.new()
+	dialog.dialog_text = "Make sure not to commit changes to the main scene!"
+	if OS.has_feature("web"):
+		dialog.dialog_text = "To reset back to the main level0, you will need to do a hard refresh of the project."
+	dialog.title = "Debug Level Selected"
+	add_child(dialog)
+	dialog.popup_centered()
+
+	
