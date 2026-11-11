@@ -13,56 +13,61 @@
 [ext_resource type="TileSet" uid="uid://c135ryrbljtjg" path="res://terrain_samples/tileset_decorations.tres" id="11_gkcm4"]
 [ext_resource type="PackedScene" uid="uid://3jvl3cbr8eu3" path="res://components/babygodot/hittable/hittable_object.tscn" id="12_igtor"]
 [ext_resource type="PackedScene" uid="uid://d342fcnp72jx1" path="res://components/babygodot/switch/switch.tscn" id="13_jkkd4"]
+[ext_resource type="PackedScene" uid="uid://dhywn8qbdx6cc" path="res://components/babygodot/switch/subtypes/timed_switch.tscn" id="13_qbtu4"]
 [ext_resource type="PackedScene" uid="uid://dcyp5nu5cr4e8" path="res://components/babygodot/switch/placeholder_gate/placeholder_switch_gate.tscn" id="14_pdrer"]
 
-[sub_resource type="Resource" id="Resource_pdrer"]
+[sub_resource type="Resource" id="Resource_qbtu4"]
 script = ExtResource("2_1yyfg")
 node = NodePath("Player")
 
-[sub_resource type="Resource" id="Resource_qbtu4"]
+[sub_resource type="Resource" id="Resource_t86gp"]
 script = ExtResource("2_1yyfg")
 node = NodePath("Player/PlayerDialogueComponent")
 dependencies = ["Player"]
 
-[sub_resource type="Resource" id="Resource_t86gp"]
+[sub_resource type="Resource" id="Resource_ncx0t"]
 script = ExtResource("2_1yyfg")
 node = NodePath("Player/ModulateZIndexWhileJumping")
 dependencies = ["Player"]
 
-[sub_resource type="Resource" id="Resource_ncx0t"]
+[sub_resource type="Resource" id="Resource_jjtxt"]
 script = ExtResource("2_1yyfg")
 node = NodePath("HittableObject")
 
-[sub_resource type="Resource" id="Resource_jjtxt"]
+[sub_resource type="Resource" id="Resource_fqo7e"]
 script = ExtResource("2_1yyfg")
 node = NodePath("HittableObject/HittableController")
 dependencies = ["HittableObject"]
 
-[sub_resource type="Resource" id="Resource_fqo7e"]
+[sub_resource type="Resource" id="Resource_iohjs"]
 script = ExtResource("2_1yyfg")
 node = NodePath("HittableObject2")
 
-[sub_resource type="Resource" id="Resource_iohjs"]
+[sub_resource type="Resource" id="Resource_b4ar5"]
 script = ExtResource("2_1yyfg")
 node = NodePath("HittableObject2/HittableController")
 dependencies = ["HittableObject2"]
 
-[sub_resource type="Resource" id="Resource_b4ar5"]
+[sub_resource type="Resource" id="Resource_rihlu"]
+script = ExtResource("2_1yyfg")
+node = NodePath("TimedSwitch")
+
+[sub_resource type="Resource" id="Resource_pjphm"]
 script = ExtResource("2_1yyfg")
 node = NodePath("EditableNodeList")
-dependencies = Array[NodePath]([NodePath("Player"), NodePath("HittableObject"), NodePath("HittableObject2")])
+dependencies = Array[NodePath]([NodePath("Player"), NodePath("HittableObject"), NodePath("HittableObject2"), NodePath("TimedSwitch")])
 
 [node name="DebugLevel" type="Node2D" unique_id=486818484]
 
 [node name="EditableNodeList" type="Node" parent="." unique_id=1901483370 node_paths=PackedStringArray("nodes")]
 script = ExtResource("1_fer7d")
-nodes = [NodePath("../Player"), NodePath("../HittableObject"), NodePath("../HittableObject2")]
+nodes = [NodePath("../Player"), NodePath("../HittableObject"), NodePath("../HittableObject2"), NodePath("../TimedSwitch")]
 metadata/_edit_lock_ = true
 
-[node name="CheckpointDataHelper" type="Node" parent="." unique_id=209793301]
+[node name="CheckpointDataHelper" type="Node" parent="." unique_id=1302272897]
 editor_description = "This node is added to clone versions of levels to help the checkpoint system. The dev tools do a pretty expensive scan of the whole level to check for any objects the checkpoint system should watch and then saves them to this object so the checkpoint system doesn't have to do that big scan every time."
 script = ExtResource("1_2qgy8")
-watched_nodes = Array[ExtResource("2_1yyfg")]([SubResource("Resource_pdrer"), SubResource("Resource_qbtu4"), SubResource("Resource_t86gp"), SubResource("Resource_ncx0t"), SubResource("Resource_jjtxt"), SubResource("Resource_fqo7e"), SubResource("Resource_iohjs"), SubResource("Resource_b4ar5")])
+watched_nodes = Array[ExtResource("2_1yyfg")]([SubResource("Resource_qbtu4"), SubResource("Resource_t86gp"), SubResource("Resource_ncx0t"), SubResource("Resource_jjtxt"), SubResource("Resource_fqo7e"), SubResource("Resource_iohjs"), SubResource("Resource_b4ar5"), SubResource("Resource_rihlu"), SubResource("Resource_pjphm")])
 
 [node name="GameLogic" parent="." unique_id=1103330635 instance=ExtResource("1_y2rpf")]
 win_by_collecting_coins = true
@@ -95,7 +100,7 @@ metadata/_edit_lock_ = true
 [node name="HittableObject2" parent="." unique_id=2133451933 instance=ExtResource("12_igtor")]
 position = Vector2(704, 480)
 
-[node name="EditableObjectIndicator" parent="HittableObject2" unique_id=1628748928 instance=ExtResource("9_ly7wx")]
+[node name="EditableObjectIndicator" parent="HittableObject2" unique_id=637617081 instance=ExtResource("9_ly7wx")]
 metadata/_edit_lock_ = true
 
 [node name="Switch" parent="." unique_id=1104361663 instance=ExtResource("13_jkkd4")]
@@ -104,6 +109,13 @@ metadata/_edit_lock_ = true
 
 [node name="PlaceholderSwitchGate" parent="." unique_id=770346740 instance=ExtResource("14_pdrer")]
 position = Vector2(1608, 139)
+metadata/_edit_lock_ = true
+
+[node name="TimedSwitch" parent="." unique_id=417686659 instance=ExtResource("13_qbtu4")]
+position = Vector2(1372, 603)
+seconds_active = 0.5
+
+[node name="EditableObjectIndicator" parent="TimedSwitch" unique_id=20435073 instance=ExtResource("9_ly7wx")]
 metadata/_edit_lock_ = true
 
 [node name="Player" parent="." unique_id=1041196418 instance=ExtResource("6_gkcm4")]
@@ -119,7 +131,7 @@ limit_bottom = 1080
 position_smoothing_enabled = true
 metadata/_edit_lock_ = true
 
-[node name="EditableObjectIndicator" parent="Player" unique_id=1011114484 instance=ExtResource("9_ly7wx")]
+[node name="EditableObjectIndicator" parent="Player" unique_id=2052745254 instance=ExtResource("9_ly7wx")]
 metadata/_edit_lock_ = true
 
 [connection signal="on_toggle" from="Switch" to="PlaceholderSwitchGate" method="on_toggle"]

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dhywn8qbdx6cc"]
+
+[ext_resource type="PackedScene" uid="uid://d342fcnp72jx1" path="res://components/babygodot/switch/switch.tscn" id="1_g7wnh"]
+[ext_resource type="Script" uid="uid://c3q56gixy40i2" path="res://components/babygodot/switch/subtypes/timed_switch.gd" id="1_tnyd4"]
+
+[node name="TimedSwitch" type="Node2D" unique_id=417686659]
+script = ExtResource("1_tnyd4")
+
+[node name="Timer" type="Timer" parent="." unique_id=18267996]
+unique_name_in_owner = true
+
+[node name="Switch" parent="." unique_id=1104361663 instance=ExtResource("1_g7wnh")]
+unique_name_in_owner = true
+modulate = Color(0.92133343, 0.41000003, 1, 1)
+
+[editable path="Switch"]

@@ -11,13 +11,14 @@
 [ext_resource type="TileSet" uid="uid://c135ryrbljtjg" path="res://terrain_samples/tileset_decorations.tres" id="9_01yeg"]
 [ext_resource type="PackedScene" uid="uid://3jvl3cbr8eu3" path="res://components/babygodot/hittable/hittable_object.tscn" id="10_hhs2l"]
 [ext_resource type="PackedScene" uid="uid://d342fcnp72jx1" path="res://components/babygodot/switch/switch.tscn" id="11_4uyol"]
+[ext_resource type="PackedScene" uid="uid://dhywn8qbdx6cc" path="res://components/babygodot/switch/subtypes/timed_switch.tscn" id="11_ynceb"]
 [ext_resource type="PackedScene" uid="uid://dcyp5nu5cr4e8" path="res://components/babygodot/switch/placeholder_gate/placeholder_switch_gate.tscn" id="12_6aj24"]
 
 [node name="DebugLevel" type="Node2D" unique_id=486818484]
 
 [node name="EditableNodeList" type="Node" parent="." unique_id=1901483370 node_paths=PackedStringArray("nodes")]
 script = ExtResource("1_faf6h")
-nodes = [NodePath("../Player"), NodePath("../HittableObject"), NodePath("../HittableObject2")]
+nodes = [NodePath("../Player"), NodePath("../HittableObject"), NodePath("../HittableObject2"), NodePath("../TimedSwitch")]
 
 [node name="MasterLevelLock" type="Node" parent="." unique_id=1682041110]
 script = ExtResource("2_5s137")
@@ -50,6 +51,10 @@ position = Vector2(1155, 603)
 
 [node name="PlaceholderSwitchGate" parent="." unique_id=770346740 instance=ExtResource("12_6aj24")]
 position = Vector2(1608, 139)
+
+[node name="TimedSwitch" parent="." unique_id=417686659 instance=ExtResource("11_ynceb")]
+position = Vector2(1372, 603)
+seconds_active = 0.5
 
 [node name="Player" parent="." unique_id=1041196418 instance=ExtResource("4_01yeg")]
 position = Vector2(240, 634)
