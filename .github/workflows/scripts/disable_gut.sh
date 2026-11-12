@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Remove GUT from enabled editor plugins
-sed -i -E 's/(, )?"res:\/\/addons\/gut\/plugin.cfg"(, )?//g' project.godot
+sed -i -E 's/"res:\/\/addons\/gut\/plugin.cfg"(, )?//g' project.godot
 
 # Delete all /test folders
 TEST_FOLDERS=$(find . -type d -name "test")
