@@ -16,8 +16,8 @@ jobs:
       - name: Remove and disable GUT tests
         run: ./.github/workflows/scripts/disable_gut.sh
       
-      - name: Enable autorun in editor
-        run: ./.github/workflows/scripts/enable_autorun.sh
+      # - name: Enable autorun in editor
+      #   run: ./.github/workflows/scripts/enable_autorun.sh
       
       - name: Generate level backups
         run: ./.github/workflows/scripts/create_level_backups.sh
