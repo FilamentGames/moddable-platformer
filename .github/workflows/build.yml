@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - ci/dotGodotGen
   workflow_dispatch:
 
 jobs:
