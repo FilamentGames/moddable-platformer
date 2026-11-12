@@ -40,7 +40,8 @@ jobs:
 
           # godot.linuxbsd.editor.x86_64.mono
           unzip -o dl/linux_editor.zip -d dl/linux
-          editor=$(find "$dl/linux" -name 'godot.linuxbsd.editor.*' -type f | head -1)
+
+          editor=$(find "dl/linux" -name 'godot.linuxbsd.editor.*' -type f | head -1)
           chmod +x "$editor"
           "$editor" --headless --path . --import --quit
 
