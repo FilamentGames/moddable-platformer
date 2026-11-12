@@ -1,0 +1,68 @@
+# Adapted from:
+# https://github.com/actions/starter-workflows/blob/main/pages/static.yml
+
+name: Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download web editor release and project build
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GODOT_REPO: FilamentGames/godot
+        run: |
+          set -euo pipefail
+          mkdir -p site dl
+
+          # Newest fila-* release (incl. prereleases) that has a web-editor asset
+          tag=$(gh api "repos/$GODOT_REPO/releases?per_page=30" --jq \
+            '[.[] | select(.tag_name | startswith("fila-"))
+                  | select(any(.assets[]; .name | startswith("web-editor-")))][0].tag_name // empty')
+          [ -n "$tag" ] || { echo "No fila-* web-editor release found" >&2; exit 1; }
+          echo "Using $GODOT_REPO release $tag"
+          gh release download "$tag" --repo "$GODOT_REPO" --pattern 'web-editor-*.zip' --output dl/WEB_EDITOR.zip
+
+          # Newest unexpired project.zip artifact from build.yml
+          art=$(gh api "repos/$GITHUB_REPOSITORY/actions/artifacts?name=project.zip&per_page=10" --jq \
+            '[.artifacts[] | select(.expired | not)][0].id // empty')
+          [ -n "$art" ] || { echo "No unexpired project.zip artifact found" >&2; exit 1; }
+          echo "Using artifact $art"
+          gh api "repos/$GITHUB_REPOSITORY/actions/artifacts/$art/zip" > dl/project.zip
+
+          unzip -o dl/WEB_EDITOR.zip -d dl/web
+          mv dl/web/* site/
+          mv -f dl/project.zip site/
+          test -f site/godot.editor.html || { echo "godot.editor.html missing" >&2; exit 1; }
+          cp site/godot.editor.html site/index.html
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'site'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
