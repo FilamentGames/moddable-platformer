@@ -4,10 +4,12 @@
 name: Pages
 
 on:
-  push:
-    branches:
-      - main
+  # re-enable for troubleshooting.
+  # push:
+  #   branches:
+  #     - pagesCI
   workflow_dispatch:
+  workflow_call:
 
 permissions:
   contents: read
