@@ -22,28 +22,14 @@ jobs:
       - name: Generate level backups
         run: ./.github/workflows/scripts/create_level_backups.sh
 
-      - name: Generate dot-Godot folder via precompiled editor.
-        env:
-          GH_TOKEN: ${{ github.token }}
-          GODOT_REPO: FilamentGames/godot
-        run: |
-          set -euo pipefail
-          mkdir -p dl
+      - name: Setup Godot
+        uses: chickensoft-games/setup-godot@v2
+        with:
+          version: 4.7.0
+          use-dotnet: false
 
-          # Newest fila-* release (incl. prereleases) that has a web-editor asset
-          tag=$(gh api "repos/$GODOT_REPO/releases?per_page=30" --jq \
-            '[.[] | select(.tag_name | startswith("fila-"))
-                  | select(any(.assets[]; .name | startswith("web-editor-")))][0].tag_name // empty')
-          [ -n "$tag" ] || { echo "No fila-* web-editor release found" >&2; exit 1; }
-          echo "Using $GODOT_REPO release $tag"
-          gh release download "$tag" --repo "$GODOT_REPO" --pattern 'linux-editor-*.zip' --output dl/linux_editor.zip
-
-          # godot.linuxbsd.editor.x86_64.mono
-          unzip -o dl/linux_editor.zip -d dl/linux
-
-          editor=$(find "dl/linux" -name 'godot.linuxbsd.editor.*' -type f | head -1)
-          chmod +x "$editor"
-          "$editor" --headless --path . --import --quit
+      - name: Generate dot-Godot folder
+        run: godot --headless --path . --import --quit
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
