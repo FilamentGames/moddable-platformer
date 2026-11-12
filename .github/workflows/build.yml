@@ -52,3 +52,13 @@ jobs:
           # This is set in GitHub by going:
           #   Settings -> Secrets and Varaibles -> Actions -> Variables
           path: ${{ vars.ARTIFACT_PATHS }}
+
+  deploy-pages:
+    name: Deploy Artifacts to Pages
+    needs: build
+    permissions:
+      contents: read
+      actions: read
+      pages: write
+      id-token: write
+    uses: ./.github/workflows/pages.yml
