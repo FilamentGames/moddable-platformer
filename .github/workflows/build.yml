@@ -10,9 +10,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    # There's no official image available for Godot, but this community
-    #  container has a lot of tools that will be helpful in the long run
-    container: barichello/godot-ci:4.4.1
+    # # There's no official image available for Godot, but this community
+    # #  container has a lot of tools that will be helpful in the long run
+    # container: barichello/godot-ci:4.4.1
     steps:
       - uses: actions/checkout@v7
     
@@ -25,9 +25,9 @@ jobs:
       - name: Generate level backups
         run: ./.github/workflows/scripts/create_level_backups.sh
 
-      - name: Generate dot-Godot folder
-        # the container puts godot on the path
-        run: godot --headless --path . --import --quit
+      # - name: Generate dot-Godot folder
+      #   # the container puts godot on the path
+      #   run: godot --headless --path . --import --quit
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
