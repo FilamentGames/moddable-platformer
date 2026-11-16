@@ -58,6 +58,22 @@ default_font_size = 64
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0ff8d"]
 size = Vector2(300, 137)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ht26h"]
+resource_local_to_scene = true
+size = Vector2(94, 258)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kexs0"]
+resource_local_to_scene = true
+size = Vector2(352, 369)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_weabp"]
+resource_local_to_scene = true
+size = Vector2(324, 373)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7cn4d"]
+resource_local_to_scene = true
+size = Vector2(413, 367)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hmpfs"]
 size = Vector2(294.5, 260)
 
@@ -400,22 +416,6 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lwt5q"]
 size = Vector2(705.37476, 39.000004)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ht26h"]
-resource_local_to_scene = true
-size = Vector2(94, 258)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kexs0"]
-resource_local_to_scene = true
-size = Vector2(352, 369)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_weabp"]
-resource_local_to_scene = true
-size = Vector2(324, 373)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7cn4d"]
-resource_local_to_scene = true
-size = Vector2(413, 367)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fnu5h"]
 resource_local_to_scene = true
 size = Vector2(40, 2044)
@@ -588,6 +588,30 @@ position = Vector2(928, 765)
 [node name="Enemy5" parent="Room01_RockPuzzle" unique_id=628973578 groups=["enemies"] instance=ExtResource("17_d6rl2")]
 position = Vector2(2939, 528)
 
+[node name="ScreenShakeTrigger" parent="Room01_RockPuzzle" unique_id=1750362101 groups=["triggers"] instance=ExtResource("15_0aei4")]
+visible = false
+position = Vector2(460, 515)
+
+[node name="ScreenShakeTrigger2" parent="Room01_RockPuzzle" unique_id=1943245400 groups=["triggers"] instance=ExtResource("15_0aei4")]
+visible = false
+position = Vector2(2238, 518)
+
+[node name="QuestScriptTrigger_ReachedRockPuzzle" parent="Room01_RockPuzzle" unique_id=1651920811 groups=["triggers"] instance=ExtResource("9_58r63")]
+visible = false
+position = Vector2(3943.0002, 159)
+scale = Vector2(5.301431, 2.9200006)
+
+[node name="ForceQuestProgressTrigger_SolvedRockPuzzle" parent="Room01_RockPuzzle" unique_id=1381343308 groups=["triggers"] instance=ExtResource("17_foth1")]
+visible = false
+position = Vector2(4316.0005, 319)
+scale = Vector2(0.7200195, -0.5200013)
+
+[node name="CollisionShape2D" parent="Room01_RockPuzzle/ForceQuestProgressTrigger_SolvedRockPuzzle" index="0" unique_id=490838596]
+shape = SubResource("RectangleShape2D_ht26h")
+
+[node name="SkipQuestTriggerBehavior" parent="Room01_RockPuzzle/ForceQuestProgressTrigger_SolvedRockPuzzle" index="1" unique_id=1238036962]
+quest_line_identifier = "ProceedToKnitwitch"
+
 [node name="Room02_BridgePuzzle" type="Node2D" parent="." unique_id=1065081788]
 
 [node name="Checkpoint2" parent="Room02_BridgePuzzle" unique_id=182555001 groups=["checkpoints"] instance=ExtResource("27_dt6hy")]
@@ -644,6 +668,26 @@ shape = SubResource("RectangleShape2D_0ff8d")
 [node name="ControlDisplay" parent="Room02_BridgePuzzle/Npc_Sheep" index="3" unique_id=1300373774]
 visible = false
 position = Vector2(0, -75)
+
+[node name="ScreenShakeTrigger3" parent="Room02_BridgePuzzle" unique_id=1434990298 groups=["triggers"] instance=ExtResource("15_0aei4")]
+visible = false
+position = Vector2(4673, 184)
+
+[node name="QuestScriptTrigger_ReachedRotatePuzzle" parent="Room02_BridgePuzzle" unique_id=166743452 groups=["triggers"] instance=ExtResource("9_58r63")]
+visible = false
+position = Vector2(4723.0005, 184.00002)
+scale = Vector2(2.5600097, 2.6)
+
+[node name="ChangeEditableObjectsTrigger_StartRotatePuzzle" parent="Room02_BridgePuzzle" unique_id=419466133 groups=["triggers"] instance=ExtResource("14_m7dqe")]
+visible = false
+position = Vector2(4401, 256)
+
+[node name="CollisionShape2D" parent="Room02_BridgePuzzle/ChangeEditableObjectsTrigger_StartRotatePuzzle" index="0" unique_id=490838596]
+position = Vector2(129, -55.5)
+shape = SubResource("RectangleShape2D_kexs0")
+
+[node name="Behavior" parent="Room02_BridgePuzzle/ChangeEditableObjectsTrigger_StartRotatePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
+add_objects = [NodePath("../../BridgePlatform")]
 
 [node name="Room03_GetYarnsparkPuzzle" type="Node2D" parent="." unique_id=543502581]
 
@@ -735,6 +779,21 @@ position = Vector2(0, -75)
 
 [node name="Enemy6" parent="Room03_GetYarnsparkPuzzle" unique_id=1452245350 groups=["enemies"] instance=ExtResource("17_d6rl2")]
 position = Vector2(8071, 1010)
+
+[node name="QuestScriptTrigger_ReachedScrollPuzzle" parent="Room03_GetYarnsparkPuzzle" unique_id=286924423 groups=["triggers"] instance=ExtResource("9_58r63")]
+visible = false
+position = Vector2(6420, 312)
+
+[node name="ChangeEditableObjectsTrigger_StartScrollPuzzle" parent="Room03_GetYarnsparkPuzzle" unique_id=422413793 groups=["triggers"] instance=ExtResource("14_m7dqe")]
+visible = false
+position = Vector2(6448, 259)
+
+[node name="CollisionShape2D" parent="Room03_GetYarnsparkPuzzle/ChangeEditableObjectsTrigger_StartScrollPuzzle" index="0" unique_id=490838596]
+position = Vector2(115, -57.5)
+shape = SubResource("RectangleShape2D_weabp")
+
+[node name="Behavior" parent="Room03_GetYarnsparkPuzzle/ChangeEditableObjectsTrigger_StartScrollPuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
+add_objects = [NodePath("../../Yarnspark")]
 
 [node name="Room04_EnemyEdgePuzzle" type="Node2D" parent="." unique_id=1430148417]
 
@@ -906,6 +965,31 @@ position = Vector2(9960, -28)
 [node name="Enemy2" parent="Room04_EnemyEdgePuzzle" unique_id=834529607 instance=ExtResource("17_d6rl2")]
 position = Vector2(10150, -30)
 
+[node name="ScreenShakeTrigger4" parent="Room04_EnemyEdgePuzzle" unique_id=1041071259 groups=["triggers"] instance=ExtResource("15_0aei4")]
+visible = false
+position = Vector2(8965, -410)
+
+[node name="QuestScriptTrigger_ReachedTwoScrollsPuzzle" parent="Room04_EnemyEdgePuzzle" unique_id=814843015 groups=["triggers"] instance=ExtResource("9_58r63")]
+visible = false
+position = Vector2(8599, 355)
+scale = Vector2(1, 1.8800012)
+
+[node name="QuestScriptTrigger_ReachedTilePuzzle" parent="Room04_EnemyEdgePuzzle" unique_id=1927004304 groups=["triggers"] instance=ExtResource("9_58r63")]
+visible = false
+position = Vector2(10722, -712)
+scale = Vector2(1.0623868, 12.631851)
+
+[node name="ChangeEditableObjectsTrigger_StartScrollPuzzle2" parent="Room04_EnemyEdgePuzzle" unique_id=457228071 groups=["triggers"] instance=ExtResource("14_m7dqe")]
+visible = false
+position = Vector2(8621, 385)
+
+[node name="CollisionShape2D" parent="Room04_EnemyEdgePuzzle/ChangeEditableObjectsTrigger_StartScrollPuzzle2" index="0" unique_id=490838596]
+position = Vector2(159.5, -54.5)
+shape = SubResource("RectangleShape2D_7cn4d")
+
+[node name="Behavior" parent="Room04_EnemyEdgePuzzle/ChangeEditableObjectsTrigger_StartScrollPuzzle2" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
+add_objects = [NodePath("../../Enemy"), NodePath("../../Enemy2")]
+
 [node name="Room05_PaintPuzzle" type="Node2D" parent="." unique_id=1592049848]
 
 [node name="Yarnspark4" parent="Room05_PaintPuzzle" unique_id=826339784 groups=["yarnsparkGates"] instance=ExtResource("12_ycdye")]
@@ -1051,6 +1135,26 @@ position = Vector2(11251.251, -88.74997)
 position = Vector2(-145.93848, -121.75003)
 shape = SubResource("RectangleShape2D_lwt5q")
 
+[node name="ScreenShakeTrigger5" parent="Room05_PaintPuzzle" unique_id=440247938 groups=["triggers"] instance=ExtResource("15_0aei4")]
+visible = false
+position = Vector2(12474, -254)
+
+[node name="QuestScriptTrigger_SolvedTilePuzzle" parent="Room05_PaintPuzzle" unique_id=794312811 groups=["triggers"] instance=ExtResource("9_58r63")]
+visible = false
+position = Vector2(12724, -204)
+scale = Vector2(3.7999609, 1)
+
+[node name="ChangeEditableObjectsTrigger_StartTilePuzzle" parent="Room05_PaintPuzzle" unique_id=2100137793 groups=["triggers"] instance=ExtResource("14_m7dqe")]
+visible = false
+position = Vector2(10749, 125)
+
+[node name="CollisionShape2D" parent="Room05_PaintPuzzle/ChangeEditableObjectsTrigger_StartTilePuzzle" index="0" unique_id=490838596]
+position = Vector2(-27, -893)
+shape = SubResource("RectangleShape2D_fnu5h")
+
+[node name="Behavior" parent="Room05_PaintPuzzle/ChangeEditableObjectsTrigger_StartTilePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
+add_objects = [NodePath("../../../TileMapLayer_Stone"), NodePath("../../Enemy3")]
+
 [node name="Room06_GiantMothBoss" type="Node2D" parent="." unique_id=547116571]
 
 [node name="Platform13" parent="Room06_GiantMothBoss" unique_id=891981076 groups=["platforms"] instance=ExtResource("29_vnrdr")]
@@ -1108,108 +1212,19 @@ position = Vector2(14033, -331)
 [node name="Enemy9" parent="Room06_GiantMothBoss" unique_id=2135558886 groups=["enemies"] instance=ExtResource("17_d6rl2")]
 position = Vector2(14875, -19)
 
-[node name="Flag" parent="." unique_id=1243516226 instance=ExtResource("18_crtlj")]
+[node name="ScreenShakeTrigger6" parent="Room06_GiantMothBoss" unique_id=55876667 groups=["triggers"] instance=ExtResource("15_0aei4")]
 visible = false
-position = Vector2(12637, -192)
-
-[node name="Triggers" type="Node2D" parent="." unique_id=1993564345]
-visible = false
-
-[node name="ScreenShakeTrigger" parent="Triggers" unique_id=1750362101 instance=ExtResource("15_0aei4")]
-position = Vector2(460, 515)
-
-[node name="ScreenShakeTrigger2" parent="Triggers" unique_id=1943245400 instance=ExtResource("15_0aei4")]
-position = Vector2(2238, 518)
-
-[node name="ScreenShakeTrigger3" parent="Triggers" unique_id=1434990298 instance=ExtResource("15_0aei4")]
-position = Vector2(4673, 184)
-
-[node name="ScreenShakeTrigger4" parent="Triggers" unique_id=1041071259 instance=ExtResource("15_0aei4")]
-position = Vector2(8965, -410)
-
-[node name="ScreenShakeTrigger5" parent="Triggers" unique_id=440247938 instance=ExtResource("15_0aei4")]
-position = Vector2(12474, -254)
-
-[node name="ScreenShakeTrigger6" parent="Triggers" unique_id=55876667 instance=ExtResource("15_0aei4")]
 position = Vector2(13666, -282)
 scale = Vector2(1, 2.1199985)
 
-[node name="QuestScriptTrigger_ReachedRockPuzzle" parent="Triggers" unique_id=1651920811 instance=ExtResource("9_58r63")]
-position = Vector2(3943.0002, 159)
-scale = Vector2(5.301431, 2.9200006)
-
-[node name="ForceQuestProgressTrigger_SolvedRockPuzzle" parent="Triggers" unique_id=1381343308 instance=ExtResource("17_foth1")]
-position = Vector2(4316.0005, 319)
-scale = Vector2(0.7200195, -0.5200013)
-
-[node name="CollisionShape2D" parent="Triggers/ForceQuestProgressTrigger_SolvedRockPuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_ht26h")
-
-[node name="SkipQuestTriggerBehavior" parent="Triggers/ForceQuestProgressTrigger_SolvedRockPuzzle" index="1" unique_id=1238036962]
-quest_line_identifier = "ProceedToKnitwitch"
-
-[node name="QuestScriptTrigger_ReachedRotatePuzzle" parent="Triggers" unique_id=166743452 instance=ExtResource("9_58r63")]
-position = Vector2(4723.0005, 184.00002)
-scale = Vector2(2.5600097, 2.6)
-
-[node name="QuestScriptTrigger_ReachedScrollPuzzle" parent="Triggers" unique_id=286924423 instance=ExtResource("9_58r63")]
-position = Vector2(6420, 312)
-
-[node name="QuestScriptTrigger_ReachedTwoScrollsPuzzle" parent="Triggers" unique_id=814843015 instance=ExtResource("9_58r63")]
-position = Vector2(8599, 355)
-scale = Vector2(1, 1.8800012)
-
-[node name="QuestScriptTrigger_ReachedTilePuzzle" parent="Triggers" unique_id=1927004304 instance=ExtResource("9_58r63")]
-position = Vector2(10722, -712)
-scale = Vector2(1.0623868, 12.631851)
-
-[node name="QuestScriptTrigger_SolvedTilePuzzle" parent="Triggers" unique_id=794312811 instance=ExtResource("9_58r63")]
-position = Vector2(12724, -204)
-scale = Vector2(3.7999609, 1)
-
-[node name="ChangeEditableObjectsTrigger_StartRotatePuzzle" parent="Triggers" unique_id=419466133 instance=ExtResource("14_m7dqe")]
-position = Vector2(4401, 256)
-
-[node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle" index="0" unique_id=490838596]
-position = Vector2(129, -55.5)
-shape = SubResource("RectangleShape2D_kexs0")
-
-[node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
-add_objects = [NodePath("../../../Room02_BridgePuzzle/BridgePlatform")]
-
-[node name="ChangeEditableObjectsTrigger_StartScrollPuzzle" parent="Triggers" unique_id=422413793 instance=ExtResource("14_m7dqe")]
-position = Vector2(6448, 259)
-
-[node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle" index="0" unique_id=490838596]
-position = Vector2(115, -57.5)
-shape = SubResource("RectangleShape2D_weabp")
-
-[node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
-add_objects = [NodePath("../../../Room03_GetYarnsparkPuzzle/Yarnspark")]
-
-[node name="ChangeEditableObjectsTrigger_StartScrollPuzzle2" parent="Triggers" unique_id=457228071 instance=ExtResource("14_m7dqe")]
-position = Vector2(8621, 385)
-
-[node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle2" index="0" unique_id=490838596]
-position = Vector2(159.5, -54.5)
-shape = SubResource("RectangleShape2D_7cn4d")
-
-[node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle2" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
-add_objects = [NodePath("../../../Room04_EnemyEdgePuzzle/Enemy"), NodePath("../../../Room04_EnemyEdgePuzzle/Enemy2")]
-
-[node name="ChangeEditableObjectsTrigger_StartTilePuzzle" parent="Triggers" unique_id=2100137793 instance=ExtResource("14_m7dqe")]
-position = Vector2(10749, 125)
-
-[node name="CollisionShape2D" parent="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" index="0" unique_id=490838596]
-position = Vector2(-27, -893)
-shape = SubResource("RectangleShape2D_fnu5h")
-
-[node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
-add_objects = [NodePath("../../../TileMapLayer_Stone"), NodePath("../../../Room05_PaintPuzzle/Enemy3")]
-
-[node name="DemoEndTrigger" parent="Triggers" unique_id=1681964514 instance=ExtResource("32_t64e8")]
+[node name="DemoEndTrigger" parent="Room06_GiantMothBoss" unique_id=1681964514 groups=["triggers"] instance=ExtResource("32_t64e8")]
+visible = false
 position = Vector2(14531, -497)
 scale = Vector2(0.88, 1)
+
+[node name="Flag" parent="." unique_id=1243516226 instance=ExtResource("18_crtlj")]
+visible = false
+position = Vector2(12637, -192)
 
 [node name="SpecialCoins" type="Node2D" parent="." unique_id=1574538873]
 visible = false
@@ -1233,15 +1248,15 @@ position_smoothing_enabled = true
 [node name="Hud2" parent="." unique_id=1514961890 instance=ExtResource("39_v78as")]
 
 [editable path="Room01_RockPuzzle/Npc_MonkFlavor"]
+[editable path="Room01_RockPuzzle/ForceQuestProgressTrigger_SolvedRockPuzzle"]
 [editable path="Room02_BridgePuzzle/Npc_Sheep"]
+[editable path="Room02_BridgePuzzle/ChangeEditableObjectsTrigger_StartRotatePuzzle"]
 [editable path="Room03_GetYarnsparkPuzzle/Npc_Sheep2"]
 [editable path="Room03_GetYarnsparkPuzzle/Npc_Sheep3"]
+[editable path="Room03_GetYarnsparkPuzzle/ChangeEditableObjectsTrigger_StartScrollPuzzle"]
+[editable path="Room04_EnemyEdgePuzzle/ChangeEditableObjectsTrigger_StartScrollPuzzle2"]
 [editable path="Room05_PaintPuzzle/YarnsparkGate3"]
 [editable path="Room05_PaintPuzzle/YarnsparkGate3/NewGate/GateCollision/DoorOpenDust/DustLeft"]
 [editable path="Room05_PaintPuzzle/YarnsparkGate3/NewGate/GateCollision/DoorOpenDust/DustRight"]
 [editable path="Room05_PaintPuzzle/YarnsparkGate3/InfoIndicator"]
-[editable path="Triggers/ForceQuestProgressTrigger_SolvedRockPuzzle"]
-[editable path="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle"]
-[editable path="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle"]
-[editable path="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle2"]
-[editable path="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle"]
+[editable path="Room05_PaintPuzzle/ChangeEditableObjectsTrigger_StartTilePuzzle"]
