@@ -10,6 +10,9 @@ var dock_scene: BabyGodotQuestDock
 ## Holds the instance of the quests bridge debugger plugin
 var bridge: BabyGodotQuestsBridge
 
+## True while the dock is registered with the editor (remove_dock errors otherwise)
+var _dock_added := false
+
 var save_timer: Timer
 
 var _save_queue: int = 0
@@ -64,10 +67,14 @@ func set_scene_tree_dock_visible(visible: bool) -> void:
 func set_quest_dock_visible(visible: bool) -> void:
 	if visible:
 		dock_scene.show()
-		add_dock(dock)
+		if not _dock_added:
+			add_dock(dock)
+			_dock_added = true
 	else:
 		dock_scene.hide()
-		remove_dock(dock)
+		if _dock_added:
+			remove_dock(dock)
+			_dock_added = false
 
 func set_2d_viewport_focus(position: Vector2, zoom: float) -> void:
 	# EditorInterface.get_canvas_item_editor only exists in our customized version of
@@ -110,6 +117,7 @@ func _enter_tree() -> void:
 	dock.available_layouts = EditorDock.DOCK_LAYOUT_ALL
 
 	add_dock(dock)
+	_dock_added = true
 
 	set_quest_dock_visible(false)
 	set_inspector_dock_visible(false)
@@ -163,5 +171,7 @@ func _connect_scene_edit_signal() -> void:
 
 func _exit_tree() -> void:
 	remove_debugger_plugin(bridge)
-	remove_dock(dock)
+	if _dock_added:
+		remove_dock(dock)
+		_dock_added = false
 	dock.queue_free()

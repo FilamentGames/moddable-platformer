@@ -2,6 +2,7 @@
 .godot/
 
 # Working directory
+bin/
 build/
 
 # For simplicity this repo does not use Git LFS; so committing potentially large
