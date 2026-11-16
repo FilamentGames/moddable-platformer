@@ -45,6 +45,15 @@ enabled=PackedStringArray("res://addons/babygo_title_screen/plugin.cfg", "res://
 
 players=""
 coins="Coins that must be collected to win the level"
+checkpoints=""
+enemies=""
+powerups=""
+signs=""
+platforms=""
+npcs=""
+yarnsparks=""
+yarnsparkGates=""
+triggers=""
 
 [input]
 

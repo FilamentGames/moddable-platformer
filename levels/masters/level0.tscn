@@ -515,11 +515,11 @@ tile_set = ExtResource("14_ht26h")
 [node name="RockPile" parent="Room01_RockPuzzle" unique_id=2056135097 instance=ExtResource("8_sftbg")]
 position = Vector2(4214, 324)
 
-[node name="Checkpoint" parent="Room01_RockPuzzle" unique_id=951106919 instance=ExtResource("27_dt6hy")]
+[node name="Checkpoint" parent="Room01_RockPuzzle" unique_id=951106919 groups=["checkpoints"] instance=ExtResource("27_dt6hy")]
 position = Vector2(-560, 455)
 scale = Vector2(8.4, 1)
 
-[node name="SceneTreePowerup" parent="Room01_RockPuzzle" unique_id=857147533 instance=ExtResource("15_dt6hy")]
+[node name="SceneTreePowerup" parent="Room01_RockPuzzle" unique_id=857147533 groups=["powerups"] instance=ExtResource("15_dt6hy")]
 position = Vector2(4065, 314)
 
 [node name="Coin" parent="Room01_RockPuzzle" unique_id=469589313 instance=ExtResource("6_qy02x")]
@@ -558,17 +558,17 @@ texture = ExtResource("7_y3jo1")
 position = Vector2(3734, 959)
 texture = ExtResource("7_y3jo1")
 
-[node name="Platform16" parent="Room01_RockPuzzle" unique_id=895645003 instance=ExtResource("32_1tk8l")]
+[node name="Platform16" parent="Room01_RockPuzzle" unique_id=895645003 groups=["platforms"] instance=ExtResource("32_1tk8l")]
 position = Vector2(3024, 594)
 fall = true
 
-[node name="NpcElder_Premise" parent="Room01_RockPuzzle" unique_id=688628462 instance=ExtResource("34_vnrdr")]
+[node name="NpcElder_Premise" parent="Room01_RockPuzzle" unique_id=688628462 groups=["npcs"] instance=ExtResource("34_vnrdr")]
 position = Vector2(550, 583)
 
-[node name="NpcElder_RockPuzzle" parent="Room01_RockPuzzle" unique_id=342457569 instance=ExtResource("34_vnrdr")]
+[node name="NpcElder_RockPuzzle" parent="Room01_RockPuzzle" unique_id=342457569 groups=["npcs"] instance=ExtResource("34_vnrdr")]
 position = Vector2(3930, 329)
 
-[node name="Npc_MonkFlavor" parent="Room01_RockPuzzle" unique_id=1327020053 instance=ExtResource("3_27os8")]
+[node name="Npc_MonkFlavor" parent="Room01_RockPuzzle" unique_id=1327020053 groups=["npcs"] instance=ExtResource("3_27os8")]
 position = Vector2(2115, 613)
 dialogue_lines = Array[String](["The void has come to Threadbare. Are you the one to save us?"])
 
@@ -582,15 +582,15 @@ shape = SubResource("RectangleShape2D_0ff8d")
 visible = false
 position = Vector2(0, -75)
 
-[node name="Enemy4" parent="Room01_RockPuzzle" unique_id=947503997 instance=ExtResource("17_d6rl2")]
+[node name="Enemy4" parent="Room01_RockPuzzle" unique_id=947503997 groups=["enemies"] instance=ExtResource("17_d6rl2")]
 position = Vector2(928, 765)
 
-[node name="Enemy5" parent="Room01_RockPuzzle" unique_id=628973578 instance=ExtResource("17_d6rl2")]
+[node name="Enemy5" parent="Room01_RockPuzzle" unique_id=628973578 groups=["enemies"] instance=ExtResource("17_d6rl2")]
 position = Vector2(2939, 528)
 
 [node name="Room02_BridgePuzzle" type="Node2D" parent="." unique_id=1065081788]
 
-[node name="Checkpoint2" parent="Room02_BridgePuzzle" unique_id=182555001 instance=ExtResource("27_dt6hy")]
+[node name="Checkpoint2" parent="Room02_BridgePuzzle" unique_id=182555001 groups=["checkpoints"] instance=ExtResource("27_dt6hy")]
 position = Vector2(4500, 190)
 
 [node name="Coin20" parent="Room02_BridgePuzzle" unique_id=1594543700 instance=ExtResource("6_qy02x")]
@@ -617,20 +617,20 @@ texture = ExtResource("7_y3jo1")
 position = Vector2(5896, -210)
 texture = ExtResource("7_y3jo1")
 
-[node name="BridgePlatform" parent="Room02_BridgePuzzle" unique_id=1439632278 instance=ExtResource("33_twxhk")]
+[node name="BridgePlatform" parent="Room02_BridgePuzzle" unique_id=1439632278 groups=["platforms"] instance=ExtResource("33_twxhk")]
 position = Vector2(4927, 92)
 rotation = -1.5707964
 
-[node name="Platform10" parent="Room02_BridgePuzzle" unique_id=1440331607 instance=ExtResource("32_1tk8l")]
+[node name="Platform10" parent="Room02_BridgePuzzle" unique_id=1440331607 groups=["platforms"] instance=ExtResource("32_1tk8l")]
 position = Vector2(6022, -82)
 width = 2
 fall = true
 
-[node name="Sign_Bridge" parent="Room02_BridgePuzzle" unique_id=1037848522 instance=ExtResource("11_q0xf2")]
+[node name="Sign_Bridge" parent="Room02_BridgePuzzle" unique_id=1037848522 groups=["signs"] instance=ExtResource("11_q0xf2")]
 position = Vector2(4724, 385)
 text = "Bridge closed for repair"
 
-[node name="Npc_Sheep" parent="Room02_BridgePuzzle" unique_id=949624559 instance=ExtResource("3_27os8")]
+[node name="Npc_Sheep" parent="Room02_BridgePuzzle" unique_id=949624559 groups=["npcs"] instance=ExtResource("3_27os8")]
 position = Vector2(5776, 114)
 dialogue_lines = Array[String](["Baaaaa!"])
 flip_to_face_player = true
@@ -647,16 +647,16 @@ position = Vector2(0, -75)
 
 [node name="Room03_GetYarnsparkPuzzle" type="Node2D" parent="." unique_id=543502581]
 
-[node name="Yarnspark" parent="Room03_GetYarnsparkPuzzle" unique_id=2086611064 instance=ExtResource("14_8jun3")]
+[node name="Yarnspark" parent="Room03_GetYarnsparkPuzzle" unique_id=2086611064 groups=["yarnsparks"] instance=ExtResource("14_8jun3")]
 position = Vector2(6878, 981)
 
-[node name="ScrollGate" parent="Room03_GetYarnsparkPuzzle" unique_id=68402488 instance=ExtResource("24_obko3")]
+[node name="YarnsparkGate" parent="Room03_GetYarnsparkPuzzle" unique_id=68402488 groups=["yarnsparkGates"] instance=ExtResource("24_obko3")]
 position = Vector2(8512, 378)
 
-[node name="Checkpoint3" parent="Room03_GetYarnsparkPuzzle" unique_id=535871779 instance=ExtResource("27_dt6hy")]
+[node name="Checkpoint3" parent="Room03_GetYarnsparkPuzzle" unique_id=535871779 groups=["checkpoints"] instance=ExtResource("27_dt6hy")]
 position = Vector2(6554, 188)
 
-[node name="InspectorPowerup" parent="Room03_GetYarnsparkPuzzle" unique_id=459242062 instance=ExtResource("16_m7dqe")]
+[node name="InspectorPowerup" parent="Room03_GetYarnsparkPuzzle" unique_id=459242062 groups=["powerups"] instance=ExtResource("16_m7dqe")]
 position = Vector2(7382, 183)
 
 [node name="Coin18" parent="Room03_GetYarnsparkPuzzle" unique_id=1295739469 instance=ExtResource("6_qy02x")]
@@ -671,7 +671,7 @@ texture = ExtResource("7_y3jo1")
 position = Vector2(7115, 171)
 texture = ExtResource("7_y3jo1")
 
-[node name="Platform17" parent="Room03_GetYarnsparkPuzzle" unique_id=1889629645 instance=ExtResource("31_w6d5o")]
+[node name="Platform17" parent="Room03_GetYarnsparkPuzzle" unique_id=1889629645 groups=["platforms"] instance=ExtResource("31_w6d5o")]
 position = Vector2(7205, 311)
 width = 5
 
@@ -697,10 +697,10 @@ scale = Vector2(1.5, 1.5)
 texture = ExtResource("23_xns2c")
 flip_h = true
 
-[node name="NpcElder_ScrollPuzzle" parent="Room03_GetYarnsparkPuzzle" unique_id=1152959677 instance=ExtResource("34_vnrdr")]
+[node name="NpcElder_ScrollPuzzle" parent="Room03_GetYarnsparkPuzzle" unique_id=1152959677 groups=["npcs"] instance=ExtResource("34_vnrdr")]
 position = Vector2(7984, 460)
 
-[node name="Npc_Sheep2" parent="Room03_GetYarnsparkPuzzle" unique_id=434471359 instance=ExtResource("3_27os8")]
+[node name="Npc_Sheep2" parent="Room03_GetYarnsparkPuzzle" unique_id=434471359 groups=["npcs"] instance=ExtResource("3_27os8")]
 z_index = 2
 position = Vector2(7176, 242)
 dialogue_lines = Array[String](["Baa-a-a-a!"])
@@ -717,7 +717,7 @@ shape = SubResource("RectangleShape2D_0ff8d")
 visible = false
 position = Vector2(0, -75)
 
-[node name="Npc_Sheep3" parent="Room03_GetYarnsparkPuzzle" unique_id=1255304457 instance=ExtResource("3_27os8")]
+[node name="Npc_Sheep3" parent="Room03_GetYarnsparkPuzzle" unique_id=1255304457 groups=["npcs"] instance=ExtResource("3_27os8")]
 z_index = 2
 position = Vector2(7729, 510)
 dialogue_lines = Array[String](["Baaaaa!"])
@@ -733,327 +733,327 @@ shape = SubResource("RectangleShape2D_0ff8d")
 visible = false
 position = Vector2(0, -75)
 
-[node name="Enemy6" parent="Room03_GetYarnsparkPuzzle" unique_id=1452245350 instance=ExtResource("17_d6rl2")]
+[node name="Enemy6" parent="Room03_GetYarnsparkPuzzle" unique_id=1452245350 groups=["enemies"] instance=ExtResource("17_d6rl2")]
 position = Vector2(8071, 1010)
 
-[node name="Room04_YarnsparkFallOffEdgePuzzle" type="Node2D" parent="." unique_id=1430148417]
+[node name="Room04_EnemyEdgePuzzle" type="Node2D" parent="." unique_id=1430148417]
 
-[node name="Scroll2" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=593369878 instance=ExtResource("12_ycdye")]
+[node name="Yarnspark2" parent="Room04_EnemyEdgePuzzle" unique_id=593369878 groups=["yarnsparks"] instance=ExtResource("12_ycdye")]
 position = Vector2(10177, -562)
 
-[node name="ObjectPropertyEqualityScrollCondition" parent="Room04_YarnsparkFallOffEdgePuzzle/Scroll2" unique_id=2071037534 node_paths=PackedStringArray("target") instance=ExtResource("12_bs6b0")]
+[node name="ObjectPropertyEqualityScrollCondition" parent="Room04_EnemyEdgePuzzle/Yarnspark2" unique_id=2071037534 node_paths=PackedStringArray("target") instance=ExtResource("12_bs6b0")]
 target = NodePath("../../Enemy2")
 property_name = &"fall_off_edge"
 value = "true"
 
-[node name="Scroll3" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=1488490395 instance=ExtResource("12_ycdye")]
+[node name="Yarnspark3" parent="Room04_EnemyEdgePuzzle" unique_id=1488490395 groups=["yarnsparks"] instance=ExtResource("12_ycdye")]
 position = Vector2(9424, -111)
 
-[node name="ObjectPropertyEqualityScrollCondition" parent="Room04_YarnsparkFallOffEdgePuzzle/Scroll3" unique_id=125528445 node_paths=PackedStringArray("target") instance=ExtResource("12_bs6b0")]
+[node name="ObjectPropertyEqualityScrollCondition" parent="Room04_EnemyEdgePuzzle/Yarnspark3" unique_id=125528445 node_paths=PackedStringArray("target") instance=ExtResource("12_bs6b0")]
 target = NodePath("../../Enemy")
 property_name = &"fall_off_edge"
 value = "true"
 
-[node name="ScrollGate2" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=735731128 instance=ExtResource("24_obko3")]
+[node name="YarnsparkGate2" parent="Room04_EnemyEdgePuzzle" unique_id=735731128 groups=["yarnsparkGates"] instance=ExtResource("24_obko3")]
 position = Vector2(10688, 122)
 required_collectibles = 2
 
-[node name="Checkpoint4" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=980201351 instance=ExtResource("27_dt6hy")]
+[node name="Checkpoint4" parent="Room04_EnemyEdgePuzzle" unique_id=980201351 groups=["checkpoints"] instance=ExtResource("27_dt6hy")]
 position = Vector2(8811, 319)
 
-[node name="Coin4" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=1137508267 instance=ExtResource("6_qy02x")]
+[node name="Coin4" parent="Room04_EnemyEdgePuzzle" unique_id=1137508267 instance=ExtResource("6_qy02x")]
 position = Vector2(9317, -592)
 texture = ExtResource("7_y3jo1")
 
-[node name="Coin19" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=1095254317 instance=ExtResource("6_qy02x")]
+[node name="Coin19" parent="Room04_EnemyEdgePuzzle" unique_id=1095254317 instance=ExtResource("6_qy02x")]
 position = Vector2(9423, -592)
 texture = ExtResource("7_y3jo1")
 
-[node name="Coin5" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=1885911067 instance=ExtResource("6_qy02x")]
+[node name="Coin5" parent="Room04_EnemyEdgePuzzle" unique_id=1885911067 instance=ExtResource("6_qy02x")]
 position = Vector2(9798, -1615)
 texture = ExtResource("7_y3jo1")
 
-[node name="Coin6" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=1933861692 instance=ExtResource("6_qy02x")]
+[node name="Coin6" parent="Room04_EnemyEdgePuzzle" unique_id=1933861692 instance=ExtResource("6_qy02x")]
 position = Vector2(8968, -408)
 texture = ExtResource("7_y3jo1")
 
-[node name="Coin14" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=626819192 instance=ExtResource("6_qy02x")]
+[node name="Coin14" parent="Room04_EnemyEdgePuzzle" unique_id=626819192 instance=ExtResource("6_qy02x")]
 position = Vector2(9272, 187)
 texture = ExtResource("7_y3jo1")
 
-[node name="Coin15" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=1171510110 instance=ExtResource("6_qy02x")]
+[node name="Coin15" parent="Room04_EnemyEdgePuzzle" unique_id=1171510110 instance=ExtResource("6_qy02x")]
 position = Vector2(9410, 183)
 texture = ExtResource("7_y3jo1")
 
-[node name="Coin9" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=2052277588 instance=ExtResource("6_qy02x")]
+[node name="Coin9" parent="Room04_EnemyEdgePuzzle" unique_id=2052277588 instance=ExtResource("6_qy02x")]
 position = Vector2(9689, -1615)
 texture = ExtResource("7_y3jo1")
 
-[node name="Coin42" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=458561684 instance=ExtResource("6_qy02x")]
+[node name="Coin42" parent="Room04_EnemyEdgePuzzle" unique_id=458561684 instance=ExtResource("6_qy02x")]
 position = Vector2(10018, -1617)
 texture = ExtResource("7_y3jo1")
 
-[node name="Coin45" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=1523881153 instance=ExtResource("6_qy02x")]
+[node name="Coin45" parent="Room04_EnemyEdgePuzzle" unique_id=1523881153 instance=ExtResource("6_qy02x")]
 position = Vector2(9909, -1617)
 texture = ExtResource("7_y3jo1")
 
-[node name="Coin46" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=336789027 instance=ExtResource("6_qy02x")]
+[node name="Coin46" parent="Room04_EnemyEdgePuzzle" unique_id=336789027 instance=ExtResource("6_qy02x")]
 position = Vector2(10235, -1619)
 texture = ExtResource("7_y3jo1")
 
-[node name="Coin47" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=2012651532 instance=ExtResource("6_qy02x")]
+[node name="Coin47" parent="Room04_EnemyEdgePuzzle" unique_id=2012651532 instance=ExtResource("6_qy02x")]
 position = Vector2(10126, -1619)
 texture = ExtResource("7_y3jo1")
 
-[node name="Coin48" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=1846924354 instance=ExtResource("6_qy02x")]
+[node name="Coin48" parent="Room04_EnemyEdgePuzzle" unique_id=1846924354 instance=ExtResource("6_qy02x")]
 position = Vector2(10458, -1618)
 texture = ExtResource("7_y3jo1")
 
-[node name="Coin49" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=1840950659 instance=ExtResource("6_qy02x")]
+[node name="Coin49" parent="Room04_EnemyEdgePuzzle" unique_id=1840950659 instance=ExtResource("6_qy02x")]
 position = Vector2(10349, -1618)
 texture = ExtResource("7_y3jo1")
 
-[node name="Coin50" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=1794793462 instance=ExtResource("6_qy02x")]
+[node name="Coin50" parent="Room04_EnemyEdgePuzzle" unique_id=1794793462 instance=ExtResource("6_qy02x")]
 position = Vector2(10678, -1620)
 texture = ExtResource("7_y3jo1")
 
-[node name="Coin51" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=858251819 instance=ExtResource("6_qy02x")]
+[node name="Coin51" parent="Room04_EnemyEdgePuzzle" unique_id=858251819 instance=ExtResource("6_qy02x")]
 position = Vector2(10569, -1620)
 texture = ExtResource("7_y3jo1")
 
-[node name="Coin10" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=2073649153 instance=ExtResource("6_qy02x")]
+[node name="Coin10" parent="Room04_EnemyEdgePuzzle" unique_id=2073649153 instance=ExtResource("6_qy02x")]
 position = Vector2(8840, -344)
 texture = ExtResource("7_y3jo1")
 
-[node name="Coin11" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=1756350612 instance=ExtResource("6_qy02x")]
+[node name="Coin11" parent="Room04_EnemyEdgePuzzle" unique_id=1756350612 instance=ExtResource("6_qy02x")]
 position = Vector2(9096, -344)
 texture = ExtResource("7_y3jo1")
 
-[node name="Platform5" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=695973061 instance=ExtResource("32_1tk8l")]
+[node name="Platform5" parent="Room04_EnemyEdgePuzzle" unique_id=695973061 groups=["platforms"] instance=ExtResource("32_1tk8l")]
 position = Vector2(9912, -437)
 width = 2
 fall = true
 
-[node name="Platform4" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=25429054 instance=ExtResource("32_1tk8l")]
+[node name="Platform4" parent="Room04_EnemyEdgePuzzle" unique_id=25429054 groups=["platforms"] instance=ExtResource("32_1tk8l")]
 position = Vector2(9373, -439)
 width = 2
 fall = true
 
-[node name="Platform6" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=803509960 instance=ExtResource("29_vnrdr")]
+[node name="Platform6" parent="Room04_EnemyEdgePuzzle" unique_id=803509960 groups=["platforms"] instance=ExtResource("29_vnrdr")]
 position = Vector2(9423, 12)
 width = 2
 
-[node name="Grass43" type="Sprite2D" parent="Room04_YarnsparkFallOffEdgePuzzle/Platform6" unique_id=1495900487]
+[node name="Grass43" type="Sprite2D" parent="Room04_EnemyEdgePuzzle/Platform6" unique_id=1495900487]
 position = Vector2(-91, -65)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("23_xns2c")
 
-[node name="Grass44" type="Sprite2D" parent="Room04_YarnsparkFallOffEdgePuzzle/Platform6" unique_id=556388506]
+[node name="Grass44" type="Sprite2D" parent="Room04_EnemyEdgePuzzle/Platform6" unique_id=556388506]
 position = Vector2(94, -65)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("23_xns2c")
 flip_h = true
 
-[node name="Platform8" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=434364931 instance=ExtResource("29_vnrdr")]
+[node name="Platform8" parent="Room04_EnemyEdgePuzzle" unique_id=434364931 groups=["platforms"] instance=ExtResource("29_vnrdr")]
 position = Vector2(8962, -218)
 width = 2
 
-[node name="Grass45" type="Sprite2D" parent="Room04_YarnsparkFallOffEdgePuzzle/Platform8" unique_id=2077605777]
+[node name="Grass45" type="Sprite2D" parent="Room04_EnemyEdgePuzzle/Platform8" unique_id=2077605777]
 position = Vector2(56, -63)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("23_xns2c")
 flip_h = true
 
-[node name="Platform9" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=1016935612 instance=ExtResource("29_vnrdr")]
+[node name="Platform9" parent="Room04_EnemyEdgePuzzle" unique_id=1016935612 groups=["platforms"] instance=ExtResource("29_vnrdr")]
 position = Vector2(9642, -439)
 width = 2
 
-[node name="Grass46" type="Sprite2D" parent="Room04_YarnsparkFallOffEdgePuzzle/Platform9" unique_id=1349162477]
+[node name="Grass46" type="Sprite2D" parent="Room04_EnemyEdgePuzzle/Platform9" unique_id=1349162477]
 position = Vector2(73, -61)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("19_y8cc3")
 flip_h = true
 
-[node name="Grass49" type="Sprite2D" parent="Room04_YarnsparkFallOffEdgePuzzle/Platform9" unique_id=761655133]
+[node name="Grass49" type="Sprite2D" parent="Room04_EnemyEdgePuzzle/Platform9" unique_id=761655133]
 position = Vector2(-94, -61)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("23_xns2c")
 
-[node name="Platform18" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=120942991 instance=ExtResource("29_vnrdr")]
+[node name="Platform18" parent="Room04_EnemyEdgePuzzle" unique_id=120942991 groups=["platforms"] instance=ExtResource("29_vnrdr")]
 position = Vector2(9776, -766)
 width = 2
 
-[node name="Platform11" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=678243494 instance=ExtResource("29_vnrdr")]
+[node name="Platform11" parent="Room04_EnemyEdgePuzzle" unique_id=678243494 groups=["platforms"] instance=ExtResource("29_vnrdr")]
 position = Vector2(10180, -439)
 width = 2
 
-[node name="Grass47" type="Sprite2D" parent="Room04_YarnsparkFallOffEdgePuzzle/Platform11" unique_id=965079134]
+[node name="Grass47" type="Sprite2D" parent="Room04_EnemyEdgePuzzle/Platform11" unique_id=965079134]
 position = Vector2(-102, -63.00003)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("20_6lr5j")
 flip_h = true
 
-[node name="Sign_TileTeaser" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=983755090 instance=ExtResource("11_q0xf2")]
+[node name="Sign_TileTeaser" parent="Room04_EnemyEdgePuzzle" unique_id=983755090 groups=["signs"] instance=ExtResource("11_q0xf2")]
 position = Vector2(9776, -826)
 text = "Tile painters only beyond this point! [img=20]res://assets/text_icons/up_arrow.png[/img]"
 
-[node name="NpcElder_TwoScrollsPuzzle" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=1015220593 instance=ExtResource("34_vnrdr")]
+[node name="NpcElder_TwoScrollsPuzzle" parent="Room04_EnemyEdgePuzzle" unique_id=1015220593 groups=["npcs"] instance=ExtResource("34_vnrdr")]
 position = Vector2(9644, -555)
 
-[node name="Enemy" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=1312464076 instance=ExtResource("17_d6rl2")]
+[node name="Enemy" parent="Room04_EnemyEdgePuzzle" unique_id=1312464076 instance=ExtResource("17_d6rl2")]
 position = Vector2(9960, -28)
 
-[node name="Enemy2" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=834529607 instance=ExtResource("17_d6rl2")]
+[node name="Enemy2" parent="Room04_EnemyEdgePuzzle" unique_id=834529607 instance=ExtResource("17_d6rl2")]
 position = Vector2(10150, -30)
 
-[node name="Room05_PaintTilePuzzle" type="Node2D" parent="." unique_id=1592049848]
+[node name="Room05_PaintPuzzle" type="Node2D" parent="." unique_id=1592049848]
 
-[node name="Scroll4" parent="Room05_PaintTilePuzzle" unique_id=826339784 instance=ExtResource("12_ycdye")]
+[node name="Yarnspark4" parent="Room05_PaintPuzzle" unique_id=826339784 groups=["yarnsparkGates"] instance=ExtResource("12_ycdye")]
 position = Vector2(11779, -625)
 
-[node name="ObjectPropertyEqualityScrollCondition" parent="Room05_PaintTilePuzzle/Scroll4" unique_id=672431096 node_paths=PackedStringArray("target") instance=ExtResource("12_bs6b0")]
+[node name="ObjectPropertyEqualityScrollCondition" parent="Room05_PaintPuzzle/Yarnspark4" unique_id=672431096 node_paths=PackedStringArray("target") instance=ExtResource("12_bs6b0")]
 target = NodePath("../../Enemy3")
 property_name = &"defeated_y_velocity"
 value = "1000"
 
-[node name="ScrollGate3" parent="Room05_PaintTilePuzzle" unique_id=710705362 instance=ExtResource("24_obko3")]
+[node name="YarnsparkGate3" parent="Room05_PaintPuzzle" unique_id=710705362 instance=ExtResource("24_obko3")]
 position = Vector2(11327, -391)
 rotation = 3.1415927
 scale = Vector2(1, -1)
 
-[node name="CollisionShape2D" parent="Room05_PaintTilePuzzle/ScrollGate3/TriggerArea" parent_id_path=PackedInt32Array(710705362, 1096462271) index="0" unique_id=233322335]
+[node name="CollisionShape2D" parent="Room05_PaintPuzzle/YarnsparkGate3/TriggerArea" parent_id_path=PackedInt32Array(710705362, 1096462271) index="0" unique_id=233322335]
 shape = SubResource("RectangleShape2D_hmpfs")
 
-[node name="CollisionShape2D" parent="Room05_PaintTilePuzzle/ScrollGate3/NewGate/TopColumns" parent_id_path=PackedInt32Array(710705362, 1881226027) index="1" unique_id=1798812344]
+[node name="CollisionShape2D" parent="Room05_PaintPuzzle/YarnsparkGate3/NewGate/TopColumns" parent_id_path=PackedInt32Array(710705362, 1881226027) index="1" unique_id=1798812344]
 shape = SubResource("RectangleShape2D_ddthk")
 
-[node name="BottomColumns" parent="Room05_PaintTilePuzzle/ScrollGate3/NewGate" parent_id_path=PackedInt32Array(710705362, 409550080) index="1" unique_id=1360310001]
+[node name="BottomColumns" parent="Room05_PaintPuzzle/YarnsparkGate3/NewGate" parent_id_path=PackedInt32Array(710705362, 409550080) index="1" unique_id=1360310001]
 visible = false
 
-[node name="CollisionShape2D" parent="Room05_PaintTilePuzzle/ScrollGate3/NewGate/BottomColumns" index="1" unique_id=139504450]
+[node name="CollisionShape2D" parent="Room05_PaintPuzzle/YarnsparkGate3/NewGate/BottomColumns" index="1" unique_id=139504450]
 shape = SubResource("RectangleShape2D_kk0ge")
 disabled = true
 
-[node name="CollisionShape2D" parent="Room05_PaintTilePuzzle/ScrollGate3/NewGate/GateCollision" parent_id_path=PackedInt32Array(710705362, 1756864930) index="0" unique_id=1034297921]
+[node name="CollisionShape2D" parent="Room05_PaintPuzzle/YarnsparkGate3/NewGate/GateCollision" parent_id_path=PackedInt32Array(710705362, 1756864930) index="0" unique_id=1034297921]
 shape = SubResource("RectangleShape2D_dt3ue")
 
-[node name="LanternLeft" parent="Room05_PaintTilePuzzle/ScrollGate3/NewGate" parent_id_path=PackedInt32Array(710705362, 409550080) index="5" unique_id=890313050]
+[node name="LanternLeft" parent="Room05_PaintPuzzle/YarnsparkGate3/NewGate" parent_id_path=PackedInt32Array(710705362, 409550080) index="5" unique_id=890313050]
 lantern_front_texture = ExtResource("18_w6d5o")
 
-[node name="IdleSway" parent="Room05_PaintTilePuzzle/ScrollGate3/NewGate/LanternLeft" index="5" unique_id=1291916171]
+[node name="IdleSway" parent="Room05_PaintPuzzle/YarnsparkGate3/NewGate/LanternLeft" index="5" unique_id=1291916171]
 libraries/ = SubResource("AnimationLibrary_r8prq")
 
-[node name="IdleSway" parent="Room05_PaintTilePuzzle/ScrollGate3/NewGate/LanternRight" parent_id_path=PackedInt32Array(710705362, 1119542889) index="5" unique_id=449541373]
+[node name="IdleSway" parent="Room05_PaintPuzzle/YarnsparkGate3/NewGate/LanternRight" parent_id_path=PackedInt32Array(710705362, 1119542889) index="5" unique_id=449541373]
 libraries/ = SubResource("AnimationLibrary_r8prq")
 
-[node name="CanvasLayer" parent="Room05_PaintTilePuzzle/ScrollGate3/InfoIndicator/InfoTree" parent_id_path=PackedInt32Array(710705362, 1774361635, 233706681) index="0" unique_id=240023699]
+[node name="CanvasLayer" parent="Room05_PaintPuzzle/YarnsparkGate3/InfoIndicator/InfoTree" parent_id_path=PackedInt32Array(710705362, 1774361635, 233706681) index="0" unique_id=240023699]
 offset = Vector2(11325, -488)
 transform = Transform2D(1, 0, 0, 1, 11325, -488)
 
-[node name="PanelContainer" parent="Room05_PaintTilePuzzle/ScrollGate3/InfoIndicator/InfoTree/CanvasLayer/UIContainer" parent_id_path=PackedInt32Array(710705362, 1774361635, 536485302) index="0" unique_id=2042454767]
+[node name="PanelContainer" parent="Room05_PaintPuzzle/YarnsparkGate3/InfoIndicator/InfoTree/CanvasLayer/UIContainer" parent_id_path=PackedInt32Array(710705362, 1774361635, 536485302) index="0" unique_id=2042454767]
 theme_override_styles/panel = SubResource("StyleBoxTexture_hmpfs")
 
-[node name="AnimationPlayer" parent="Room05_PaintTilePuzzle/ScrollGate3" index="4" unique_id=70195527]
+[node name="AnimationPlayer" parent="Room05_PaintPuzzle/YarnsparkGate3" index="4" unique_id=70195527]
 libraries/ = SubResource("AnimationLibrary_83ym3")
 
-[node name="Checkpoint5" parent="Room05_PaintTilePuzzle" unique_id=1077397314 instance=ExtResource("27_dt6hy")]
+[node name="Checkpoint5" parent="Room05_PaintPuzzle" unique_id=1077397314 groups=["checkpoints"] instance=ExtResource("27_dt6hy")]
 position = Vector2(10987, 65)
 
-[node name="Coin25" parent="Room05_PaintTilePuzzle" unique_id=2141970909 instance=ExtResource("6_qy02x")]
+[node name="Coin25" parent="Room05_PaintPuzzle" unique_id=2141970909 instance=ExtResource("6_qy02x")]
 position = Vector2(11581, 167)
 texture = ExtResource("7_y3jo1")
 
-[node name="Coin26" parent="Room05_PaintTilePuzzle" unique_id=339068610 instance=ExtResource("6_qy02x")]
+[node name="Coin26" parent="Room05_PaintPuzzle" unique_id=339068610 instance=ExtResource("6_qy02x")]
 position = Vector2(11709, 167)
 texture = ExtResource("7_y3jo1")
 
-[node name="Coin27" parent="Room05_PaintTilePuzzle" unique_id=255646174 instance=ExtResource("6_qy02x")]
+[node name="Coin27" parent="Room05_PaintPuzzle" unique_id=255646174 instance=ExtResource("6_qy02x")]
 position = Vector2(11453, 167)
 texture = ExtResource("7_y3jo1")
 
-[node name="Coin28" parent="Room05_PaintTilePuzzle" unique_id=1070127638 instance=ExtResource("6_qy02x")]
+[node name="Coin28" parent="Room05_PaintPuzzle" unique_id=1070127638 instance=ExtResource("6_qy02x")]
 position = Vector2(12088, -108)
 texture = ExtResource("7_y3jo1")
 
-[node name="Coin29" parent="Room05_PaintTilePuzzle" unique_id=1367226272 instance=ExtResource("6_qy02x")]
+[node name="Coin29" parent="Room05_PaintPuzzle" unique_id=1367226272 instance=ExtResource("6_qy02x")]
 position = Vector2(12216, -108)
 texture = ExtResource("7_y3jo1")
 
-[node name="Coin30" parent="Room05_PaintTilePuzzle" unique_id=326576021 instance=ExtResource("6_qy02x")]
+[node name="Coin30" parent="Room05_PaintPuzzle" unique_id=326576021 instance=ExtResource("6_qy02x")]
 position = Vector2(11960, -108)
 texture = ExtResource("7_y3jo1")
 
-[node name="Coin31" parent="Room05_PaintTilePuzzle" unique_id=203810966 instance=ExtResource("6_qy02x")]
+[node name="Coin31" parent="Room05_PaintPuzzle" unique_id=203810966 instance=ExtResource("6_qy02x")]
 position = Vector2(10837, -705)
 texture = ExtResource("7_y3jo1")
 
-[node name="Coin32" parent="Room05_PaintTilePuzzle" unique_id=474037 instance=ExtResource("6_qy02x")]
+[node name="Coin32" parent="Room05_PaintPuzzle" unique_id=474037 instance=ExtResource("6_qy02x")]
 position = Vector2(10988, -705)
 texture = ExtResource("7_y3jo1")
 
-[node name="Coin33" parent="Room05_PaintTilePuzzle" unique_id=2031944195 instance=ExtResource("6_qy02x")]
+[node name="Coin33" parent="Room05_PaintPuzzle" unique_id=2031944195 instance=ExtResource("6_qy02x")]
 position = Vector2(11136, -705)
 texture = ExtResource("7_y3jo1")
 
-[node name="Coin34" parent="Room05_PaintTilePuzzle" unique_id=1663518018 instance=ExtResource("6_qy02x")]
+[node name="Coin34" parent="Room05_PaintPuzzle" unique_id=1663518018 instance=ExtResource("6_qy02x")]
 position = Vector2(10834, -579)
 texture = ExtResource("7_y3jo1")
 
-[node name="Coin35" parent="Room05_PaintTilePuzzle" unique_id=1358032541 instance=ExtResource("6_qy02x")]
+[node name="Coin35" parent="Room05_PaintPuzzle" unique_id=1358032541 instance=ExtResource("6_qy02x")]
 position = Vector2(10985, -579)
 texture = ExtResource("7_y3jo1")
 
-[node name="Coin36" parent="Room05_PaintTilePuzzle" unique_id=1180510130 instance=ExtResource("6_qy02x")]
+[node name="Coin36" parent="Room05_PaintPuzzle" unique_id=1180510130 instance=ExtResource("6_qy02x")]
 position = Vector2(11133, -579)
 texture = ExtResource("7_y3jo1")
 
-[node name="Coin37" parent="Room05_PaintTilePuzzle" unique_id=2023911982 instance=ExtResource("6_qy02x")]
+[node name="Coin37" parent="Room05_PaintPuzzle" unique_id=2023911982 instance=ExtResource("6_qy02x")]
 position = Vector2(10834, -446)
 texture = ExtResource("7_y3jo1")
 
-[node name="Coin38" parent="Room05_PaintTilePuzzle" unique_id=1202771543 instance=ExtResource("6_qy02x")]
+[node name="Coin38" parent="Room05_PaintPuzzle" unique_id=1202771543 instance=ExtResource("6_qy02x")]
 position = Vector2(10985, -446)
 texture = ExtResource("7_y3jo1")
 
-[node name="Coin39" parent="Room05_PaintTilePuzzle" unique_id=1174696577 instance=ExtResource("6_qy02x")]
+[node name="Coin39" parent="Room05_PaintPuzzle" unique_id=1174696577 instance=ExtResource("6_qy02x")]
 position = Vector2(11133, -446)
 texture = ExtResource("7_y3jo1")
 
-[node name="Platform12" parent="Room05_PaintTilePuzzle" unique_id=1402230692 instance=ExtResource("29_vnrdr")]
+[node name="Platform12" parent="Room05_PaintPuzzle" unique_id=1402230692 groups=["platforms"] instance=ExtResource("29_vnrdr")]
 position = Vector2(11776, -519)
 width = 2
 
-[node name="Grass91" type="Sprite2D" parent="Room05_PaintTilePuzzle/Platform12" unique_id=681321903]
+[node name="Grass91" type="Sprite2D" parent="Room05_PaintPuzzle/Platform12" unique_id=681321903]
 position = Vector2(104, -63)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("20_6lr5j")
 flip_h = true
 
-[node name="Grass92" type="Sprite2D" parent="Room05_PaintTilePuzzle/Platform12" unique_id=274308996]
+[node name="Grass92" type="Sprite2D" parent="Room05_PaintPuzzle/Platform12" unique_id=274308996]
 position = Vector2(38, -62)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("23_xns2c")
 
-[node name="NpcElder_TilePuzzle" parent="Room05_PaintTilePuzzle" unique_id=3347555 instance=ExtResource("34_vnrdr")]
+[node name="NpcElder_TilePuzzle" parent="Room05_PaintPuzzle" unique_id=3347555 groups=["npcs"] instance=ExtResource("34_vnrdr")]
 position = Vector2(11706, 974)
 
-[node name="NpcElder_Congrats" parent="Room05_PaintTilePuzzle" unique_id=664077588 instance=ExtResource("34_vnrdr")]
+[node name="NpcElder_Congrats" parent="Room05_PaintPuzzle" unique_id=664077588 groups=["npcs"] instance=ExtResource("34_vnrdr")]
 position = Vector2(12702, -179)
 
-[node name="Enemy3" parent="Room05_PaintTilePuzzle" unique_id=1094109507 instance=ExtResource("17_d6rl2")]
+[node name="Enemy3" parent="Room05_PaintPuzzle" unique_id=1094109507 groups=["enemies"] instance=ExtResource("17_d6rl2")]
 position = Vector2(10834, -284)
 
-[node name="StaticBody2D_FloorBarrier" type="StaticBody2D" parent="Room05_PaintTilePuzzle" unique_id=1845215683]
+[node name="StaticBody2D_FloorBarrier" type="StaticBody2D" parent="Room05_PaintPuzzle" unique_id=1845215683]
 visible = false
 position = Vector2(11251.251, -88.74997)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Room05_PaintTilePuzzle/StaticBody2D_FloorBarrier" unique_id=156359561]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room05_PaintPuzzle/StaticBody2D_FloorBarrier" unique_id=156359561]
 position = Vector2(-145.93848, -121.75003)
 shape = SubResource("RectangleShape2D_lwt5q")
 
 [node name="Room06_GiantMothBoss" type="Node2D" parent="." unique_id=547116571]
 
-[node name="Platform13" parent="Room06_GiantMothBoss" unique_id=891981076 instance=ExtResource("29_vnrdr")]
+[node name="Platform13" parent="Room06_GiantMothBoss" unique_id=891981076 groups=["platforms"] instance=ExtResource("29_vnrdr")]
 position = Vector2(14019, -242)
 
 [node name="Grass86" type="Sprite2D" parent="Room06_GiantMothBoss/Platform13" unique_id=1010252466]
@@ -1068,7 +1068,7 @@ scale = Vector2(1.5, 1.5)
 texture = ExtResource("23_xns2c")
 flip_h = true
 
-[node name="Platform14" parent="Room06_GiantMothBoss" unique_id=653415634 instance=ExtResource("29_vnrdr")]
+[node name="Platform14" parent="Room06_GiantMothBoss" unique_id=653415634 groups=["platforms"] instance=ExtResource("29_vnrdr")]
 position = Vector2(13650, -566)
 width = 2
 
@@ -1083,7 +1083,7 @@ scale = Vector2(1.5, 1.5)
 texture = ExtResource("19_y8cc3")
 flip_h = true
 
-[node name="Platform15" parent="Room06_GiantMothBoss" unique_id=1426766162 instance=ExtResource("29_vnrdr")]
+[node name="Platform15" parent="Room06_GiantMothBoss" unique_id=1426766162 groups=["platforms"] instance=ExtResource("29_vnrdr")]
 position = Vector2(14253, -709)
 width = 2
 
@@ -1099,16 +1099,14 @@ scale = Vector2(2, 2)
 radius = 125.0
 rotation_speed = 0.9
 
-[node name="Enemy7" parent="Room06_GiantMothBoss" unique_id=1307871349 instance=ExtResource("17_d6rl2")]
+[node name="Enemy7" parent="Room06_GiantMothBoss" unique_id=1307871349 groups=["enemies"] instance=ExtResource("17_d6rl2")]
 position = Vector2(13647, -664)
 
-[node name="Enemy8" parent="Room06_GiantMothBoss" unique_id=607084219 instance=ExtResource("17_d6rl2")]
+[node name="Enemy8" parent="Room06_GiantMothBoss" unique_id=607084219 groups=["enemies"] instance=ExtResource("17_d6rl2")]
 position = Vector2(14033, -331)
 
-[node name="Enemy9" parent="Room06_GiantMothBoss" unique_id=2135558886 instance=ExtResource("17_d6rl2")]
+[node name="Enemy9" parent="Room06_GiantMothBoss" unique_id=2135558886 groups=["enemies"] instance=ExtResource("17_d6rl2")]
 position = Vector2(14875, -19)
-
-[node name="ScrollGates" type="Node2D" parent="." unique_id=1903180490]
 
 [node name="Flag" parent="." unique_id=1243516226 instance=ExtResource("18_crtlj")]
 visible = false
@@ -1197,7 +1195,7 @@ position = Vector2(159.5, -54.5)
 shape = SubResource("RectangleShape2D_7cn4d")
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle2" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
-add_objects = [NodePath("../../../Room04_YarnsparkFallOffEdgePuzzle/Enemy"), NodePath("../../../Room04_YarnsparkFallOffEdgePuzzle/Enemy2")]
+add_objects = [NodePath("../../../Room04_EnemyEdgePuzzle/Enemy"), NodePath("../../../Room04_EnemyEdgePuzzle/Enemy2")]
 
 [node name="ChangeEditableObjectsTrigger_StartTilePuzzle" parent="Triggers" unique_id=2100137793 instance=ExtResource("14_m7dqe")]
 position = Vector2(10749, 125)
@@ -1207,17 +1205,11 @@ position = Vector2(-27, -893)
 shape = SubResource("RectangleShape2D_fnu5h")
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
-add_objects = [NodePath("../../../TileMapLayer_Stone"), NodePath("../../../Room05_PaintTilePuzzle/Enemy3")]
+add_objects = [NodePath("../../../TileMapLayer_Stone"), NodePath("../../../Room05_PaintPuzzle/Enemy3")]
 
 [node name="DemoEndTrigger" parent="Triggers" unique_id=1681964514 instance=ExtResource("32_t64e8")]
 position = Vector2(14531, -497)
 scale = Vector2(0.88, 1)
-
-[node name="Checkpoints" type="Node2D" parent="." unique_id=1977743448]
-
-[node name="EditorPowerUps" type="Node2D" parent="." unique_id=721056742]
-
-[node name="Coins" type="Node2D" parent="." unique_id=1860713878]
 
 [node name="SpecialCoins" type="Node2D" parent="." unique_id=1574538873]
 visible = false
@@ -1225,15 +1217,6 @@ visible = false
 [node name="SpecialCoin" parent="SpecialCoins" unique_id=585640772 instance=ExtResource("9_16axh")]
 position = Vector2(4149, -1711)
 texture = ExtResource("7_y3jo1")
-
-[node name="Platforms" type="Node2D" parent="." unique_id=1115693790]
-position = Vector2(1920, -64)
-
-[node name="Signs" type="Node2D" parent="." unique_id=567327781]
-
-[node name="NPCs" type="Node2D" parent="." unique_id=147049230]
-
-[node name="Boss" type="Node2D" parent="." unique_id=2087395625]
 
 [node name="Player" parent="." unique_id=1041196418 instance=ExtResource("14_su4jx")]
 position = Vector2(240, 634)
@@ -1247,18 +1230,16 @@ limit_left = 0
 limit_bottom = 1080
 position_smoothing_enabled = true
 
-[node name="Enemies" type="Node2D" parent="." unique_id=1698421393]
-
 [node name="Hud2" parent="." unique_id=1514961890 instance=ExtResource("39_v78as")]
 
 [editable path="Room01_RockPuzzle/Npc_MonkFlavor"]
 [editable path="Room02_BridgePuzzle/Npc_Sheep"]
 [editable path="Room03_GetYarnsparkPuzzle/Npc_Sheep2"]
 [editable path="Room03_GetYarnsparkPuzzle/Npc_Sheep3"]
-[editable path="Room05_PaintTilePuzzle/ScrollGate3"]
-[editable path="Room05_PaintTilePuzzle/ScrollGate3/NewGate/GateCollision/DoorOpenDust/DustLeft"]
-[editable path="Room05_PaintTilePuzzle/ScrollGate3/NewGate/GateCollision/DoorOpenDust/DustRight"]
-[editable path="Room05_PaintTilePuzzle/ScrollGate3/InfoIndicator"]
+[editable path="Room05_PaintPuzzle/YarnsparkGate3"]
+[editable path="Room05_PaintPuzzle/YarnsparkGate3/NewGate/GateCollision/DoorOpenDust/DustLeft"]
+[editable path="Room05_PaintPuzzle/YarnsparkGate3/NewGate/GateCollision/DoorOpenDust/DustRight"]
+[editable path="Room05_PaintPuzzle/YarnsparkGate3/InfoIndicator"]
 [editable path="Triggers/ForceQuestProgressTrigger_SolvedRockPuzzle"]
 [editable path="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle"]
 [editable path="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle"]
