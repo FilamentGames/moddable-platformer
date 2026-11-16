@@ -22,14 +22,14 @@ jobs:
       - name: Generate level backups
         run: ./.github/workflows/scripts/create_level_backups.sh
 
-      - name: Setup Godot
-        uses: chickensoft-games/setup-godot@v2
-        with:
-          version: 4.7.0
-          use-dotnet: false
+      # - name: Setup Godot
+      #   uses: chickensoft-games/setup-godot@v2
+      #   with:
+      #     version: 4.7.0
+      #     use-dotnet: false
 
-      - name: Generate dot-Godot folder
-        run: godot --headless --path . --import --quit
+      # - name: Generate dot-Godot folder
+      #   run: godot --headless --path . --import --quit
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
