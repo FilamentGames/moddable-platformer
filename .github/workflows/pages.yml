@@ -53,6 +53,7 @@ jobs:
 
           unzip -o dl/WEB_EDITOR.zip -d dl/web
           mv dl/web/* site/
+          
           # Re-zip so the archive has explicit directory entries; the web editor's zip installer needs them.
           mkdir dl/proj
           unzip -q dl/project.zip -d dl/proj
