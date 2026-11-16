@@ -55,8 +55,8 @@
 [sub_resource type="Theme" id="Theme_ncwqi"]
 default_font_size = 64
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lwt5q"]
-size = Vector2(705.37476, 39.000004)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ff8d"]
+size = Vector2(300, 137)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hmpfs"]
 size = Vector2(294.5, 260)
@@ -397,6 +397,9 @@ _data = {
 &"open": SubResource("Animation_83ym3")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lwt5q"]
+size = Vector2(705.37476, 39.000004)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ht26h"]
 resource_local_to_scene = true
 size = Vector2(94, 258)
@@ -417,14 +420,11 @@ size = Vector2(413, 367)
 resource_local_to_scene = true
 size = Vector2(40, 2044)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ff8d"]
-size = Vector2(300, 137)
-
 [node name="Main3" type="Node2D" unique_id=1511591426]
 
 [node name="EditableNodeList" type="Node" parent="." unique_id=280926474 node_paths=PackedStringArray("nodes")]
 script = ExtResource("1_vnrdr")
-nodes = [NodePath("../RockPile")]
+nodes = [NodePath("../Room01_RockPuzzle/RockPile")]
 
 [node name="MasterLevelLock" type="Node" parent="." unique_id=678410586]
 script = ExtResource("1_p5pw3")
@@ -438,6 +438,7 @@ win_by_reaching_flag = true
 [node name="ControlsInstructions" parent="." unique_id=153286537 instance=ExtResource("5_x2f4c")]
 unique_name_in_owner = true
 theme = SubResource("Theme_ncwqi")
+metadata/_edit_use_anchors_ = true
 
 [node name="Dangerzone" parent="." unique_id=761224350 instance=ExtResource("4_2gokk")]
 position = Vector2(3072, 1216)
@@ -469,6 +470,39 @@ tile_set = ExtResource("9_v78as")
 
 [node name="DecorationSprites" parent="TileMapLayer_Decorations_Designer" unique_id=1611521217 instance=ExtResource("12_0bbcg")]
 
+[node name="DecorativeProps" type="Node2D" parent="TileMapLayer_Decorations_Designer" unique_id=195701104]
+z_index = 1
+
+[node name="BarleyCrops2" parent="TileMapLayer_Decorations_Designer/DecorativeProps" unique_id=120894355 instance=ExtResource("37_xvuht")]
+position = Vector2(2240, 1047)
+
+[node name="BarleyCrops6" parent="TileMapLayer_Decorations_Designer/DecorativeProps" unique_id=800374512 instance=ExtResource("37_xvuht")]
+position = Vector2(2496, 1047)
+
+[node name="BarleyCrops3" parent="TileMapLayer_Decorations_Designer/DecorativeProps" unique_id=91968817 instance=ExtResource("37_xvuht")]
+position = Vector2(1984, 1047)
+
+[node name="BarleyCrops4" parent="TileMapLayer_Decorations_Designer/DecorativeProps" unique_id=1524504017 instance=ExtResource("37_xvuht")]
+position = Vector2(1728, 1047)
+
+[node name="BarleyCrops7" parent="TileMapLayer_Decorations_Designer/DecorativeProps" unique_id=530531959 instance=ExtResource("37_xvuht")]
+position = Vector2(192, 1040)
+
+[node name="BarleyCrops8" parent="TileMapLayer_Decorations_Designer/DecorativeProps" unique_id=2016659643 instance=ExtResource("37_xvuht")]
+position = Vector2(441, 1044)
+
+[node name="BarleyCrops9" parent="TileMapLayer_Decorations_Designer/DecorativeProps" unique_id=1870673561 instance=ExtResource("37_xvuht")]
+position = Vector2(1212, 1046)
+
+[node name="BarleyCrops10" parent="TileMapLayer_Decorations_Designer/DecorativeProps" unique_id=210298573 instance=ExtResource("37_xvuht")]
+position = Vector2(1468, 1046)
+
+[node name="BarleyCrops11" parent="TileMapLayer_Decorations_Designer/DecorativeProps" unique_id=108985680 instance=ExtResource("37_xvuht")]
+position = Vector2(956, 1046)
+
+[node name="BarleyCrops12" parent="TileMapLayer_Decorations_Designer/DecorativeProps" unique_id=125971936 instance=ExtResource("37_xvuht")]
+position = Vector2(700, 1046)
+
 [node name="TileMapLayer_Barriers_Designer" type="TileMapLayer" parent="." unique_id=916319666]
 tile_map_data = PackedByteArray("AAAhAAMAAAABAAAAAABCAAYAAAABAAAAAABCAAcAAAABAAAAAABDAAYAAAABAAAAAABDAAcAAAABAAAAAABEAAcAAAABAAAAAABBAAcAAAABAAAAAABBAAYAAAABAAAAAABAAAcAAAABAAAAAAAhAAQAAAABAAAAAAAhAAUAAAABAAAAAAAhAAYAAAABAAAAAAAhAAcAAAABAAAAAAAgAAYAAAABAAAAAAAiAAYAAAABAAAAAAAfAAcAAAABAAAAAAAgAAcAAAABAAAAAAAiAAcAAAABAAAAAAAjAAcAAAABAAAAAABjAAcAAAABAAAAAABjAAYAAAABAAAAAABlAAYAAAABAAAAAABlAAcAAAABAAAAAABmAAcAAAABAAAAAABiAAcAAAABAAAAAABCAAUAAAABAAAAAABCAAQAAAABAAAAAABTAAYAAAABAAAAAABTAAcAAAABAAAAAABSAAYAAAABAAAAAABUAAYAAAABAAAAAABSAAcAAAABAAAAAABUAAcAAAABAAAAAABRAAcAAAABAAAAAABVAAcAAAABAAAAAAD//wcAAAABAAAAAAD//wYAAAABAAAAAAD//wUAAAABAAAAAAD//wQAAAABAAAAAAD//wMAAAABAAAAAAD//wIAAAABAAAAAAD//wEAAAABAAAAAAD//wAAAAABAAAAAAD/////AAABAAAAAAD///7/AAABAAAAAAD///3/AAABAAAAAAD///z/AAABAAAAAAD///v/AAABAAAAAAD///r/AAABAAAAAAD///n/AAABAAAAAAD///j/AAABAAAAAAD///f/AAABAAAAAAD///b/AAABAAAAAAD///X/AAABAAAAAAD///T/AAABAAAAAAD///P/AAABAAAAAAD///L/AAABAAAAAAD///H/AAABAAAAAAAAAPH/AAABAAAAAAABAPH/AAABAAAAAAACAPH/AAABAAAAAAADAPH/AAABAAAAAAAEAPH/AAABAAAAAAAFAPH/AAABAAAAAAAGAPH/AAABAAAAAAAHAPH/AAABAAAAAAAIAPH/AAABAAAAAAAJAPH/AAABAAAAAAAKAPH/AAABAAAAAAALAPH/AAABAAAAAAAMAPH/AAABAAAAAAANAPH/AAABAAAAAAAOAPH/AAABAAAAAAAPAPH/AAABAAAAAAAQAPH/AAABAAAAAAARAPH/AAABAAAAAAASAPH/AAABAAAAAAATAPH/AAABAAAAAAAUAPH/AAABAAAAAAAVAPH/AAABAAAAAAAWAPH/AAABAAAAAAAXAPH/AAABAAAAAAAYAPH/AAABAAAAAAAZAPH/AAABAAAAAAAaAPH/AAABAAAAAAAbAPH/AAABAAAAAAAcAPH/AAABAAAAAAAdAPH/AAABAAAAAAAeAPH/AAABAAAAAAAfAPH/AAABAAAAAAAgAPH/AAABAAAAAAAhAPH/AAABAAAAAAAiAPH/AAABAAAAAAAjAPH/AAABAAAAAAAkAPH/AAABAAAAAAAlAPH/AAABAAAAAAAmAPH/AAABAAAAAAAnAPH/AAABAAAAAAAoAPH/AAABAAAAAAApAPH/AAABAAAAAAAqAPH/AAABAAAAAAArAPH/AAABAAAAAAAsAPH/AAABAAAAAAAtAPH/AAABAAAAAAAuAPH/AAABAAAAAAAvAPH/AAABAAAAAAAwAPH/AAABAAAAAAAxAPH/AAABAAAAAAAyAPH/AAABAAAAAAAzAPH/AAABAAAAAAA0APH/AAABAAAAAAA1APH/AAABAAAAAAA2APH/AAABAAAAAAA3APH/AAABAAAAAAA4APH/AAABAAAAAAA5APH/AAABAAAAAAA6APH/AAABAAAAAAA7APH/AAABAAAAAAA8APH/AAABAAAAAAA9APH/AAABAAAAAAA+APH/AAABAAAAAAA/APH/AAABAAAAAABAAPH/AAABAAAAAABBAPH/AAABAAAAAABCAPH/AAABAAAAAABDAPH/AAABAAAAAABEAPH/AAABAAAAAABFAPH/AAABAAAAAABGAPH/AAABAAAAAABHAPH/AAABAAAAAABIAPH/AAABAAAAAABJAPH/AAABAAAAAABKAPH/AAABAAAAAABLAPH/AAABAAAAAABMAPH/AAABAAAAAABNAPH/AAABAAAAAABOAPH/AAABAAAAAABPAPH/AAABAAAAAABQAPH/AAABAAAAAABRAPH/AAABAAAAAABSAPH/AAABAAAAAABTAPH/AAABAAAAAABUAPH/AAABAAAAAABVAPH/AAABAAAAAABWAPH/AAABAAAAAABXAPH/AAABAAAAAABYAPH/AAABAAAAAABZAPH/AAABAAAAAABaAPH/AAABAAAAAABbAPH/AAABAAAAAABcAPH/AAABAAAAAABdAPH/AAABAAAAAABeAPH/AAABAAAAAABfAPH/AAABAAAAAABgAPH/AAABAAAAAABhAPH/AAABAAAAAABiAPH/AAABAAAAAABjAPH/AAABAAAAAABkAPH/AAABAAAAAABlAPH/AAABAAAAAABmAPH/AAABAAAAAABnAPH/AAABAAAAAABoAPH/AAABAAAAAABpAPH/AAABAAAAAABqAPH/AAABAAAAAABrAPH/AAABAAAAAABsAPH/AAABAAAAAABtAPH/AAABAAAAAABuAPH/AAABAAAAAABvAPH/AAABAAAAAABwAPH/AAABAAAAAABxAPH/AAABAAAAAAByAPH/AAABAAAAAABzAPH/AAABAAAAAAB0APH/AAABAAAAAAB1APH/AAABAAAAAAB1APL/AAABAAAAAAB1APP/AAABAAAAAAB1APT/AAABAAAAAAB1APX/AAABAAAAAAB1APb/AAABAAAAAAB1APf/AAABAAAAAAB1APj/AAABAAAAAAB1APn/AAABAAAAAAB1APr/AAABAAAAAAB1APv/AAABAAAAAAB1APz/AAABAAAAAAB1AP3/AAABAAAAAAB1AP7/AAABAAAAAAB1AP//AAABAAAAAAB1AAAAAAABAAAAAAB1AAEAAAABAAAAAAB1AAIAAAABAAAAAAB1AAMAAAABAAAAAAB1AAQAAAABAAAAAAB1AAUAAAABAAAAAAB1AAYAAAABAAAAAAB1AAcAAAABAAAAAAAQAPL/AAABAAAAAAAQAPP/AAABAAAAAAAQAPT/AAABAAAAAAAQAPX/AAABAAAAAAAQAPb/AAABAAAAAAAQAPf/AAABAAAAAAAQAPj/AAABAAAAAAAQAPn/AAABAAAAAAAQAPr/AAABAAAAAAAQAPv/AAABAAAAAAAQAPz/AAABAAAAAAAQAP3/AAABAAAAAAAhAPL/AAABAAAAAAAhAPP/AAABAAAAAAAhAPT/AAABAAAAAAAhAPX/AAABAAAAAAAhAPb/AAABAAAAAAAhAPf/AAABAAAAAAAhAPj/AAABAAAAAAAhAPn/AAABAAAAAAAhAPr/AAABAAAAAAAhAPv/AAABAAAAAAAhAPz/AAABAAAAAAAhAP3/AAABAAAAAAAhAP7/AAABAAAAAAAhAP//AAABAAAAAAAhAAAAAAABAAAAAAAxAPL/AAABAAAAAAAxAPP/AAABAAAAAAAxAPT/AAABAAAAAAAxAPX/AAABAAAAAAAxAPb/AAABAAAAAAAxAPf/AAABAAAAAAAxAPj/AAABAAAAAAAxAPn/AAABAAAAAAAxAPr/AAABAAAAAAAxAPv/AAABAAAAAAAxAPz/AAABAAAAAAAxAP3/AAABAAAAAAAxAP7/AAABAAAAAAAxAP//AAABAAAAAAAxAAAAAAABAAAAAABCAPL/AAABAAAAAABCAPP/AAABAAAAAABCAPT/AAABAAAAAABCAPX/AAABAAAAAABCAPb/AAABAAAAAABCAPf/AAABAAAAAABCAPj/AAABAAAAAABCAPn/AAABAAAAAABCAPr/AAABAAAAAABCAPv/AAABAAAAAABCAPz/AAABAAAAAABCAP3/AAABAAAAAABCAP7/AAABAAAAAABCAP//AAABAAAAAABCAAAAAAABAAAAAABTAPb/AAABAAAAAABTAPf/AAABAAAAAABTAPj/AAABAAAAAABTAPn/AAABAAAAAABTAPr/AAABAAAAAABTAPv/AAABAAAAAABTAPz/AAABAAAAAABTAP3/AAABAAAAAABTAP7/AAABAAAAAABTAP//AAABAAAAAABUAPj/AAABAAAAAABVAPj/AAABAAAAAABWAPj/AAABAAAAAABXAPj/AAABAAAAAABYAPn/AAABAAAAAABYAPr/AAABAAAAAABkAPL/AAABAAAAAABkAPP/AAABAAAAAABkAPT/AAABAAAAAABkAPX/AAABAAAAAABkAPb/AAABAAAAAABkAPf/AAABAAAAAABkAPj/AAABAAAAAABkAPn/AAABAAAAAABkAPr/AAABAAAAAABkAPv/AAABAAAAAABkAPz/AAABAAAAAABkAP3/AAABAAAAAABkAP//AAABAAAAAABkAAAAAAABAAAAAABkAAEAAAABAAAAAABkAAIAAAABAAAAAABkAAMAAAABAAAAAABkAAQAAAABAAAAAABkAAUAAAABAAAAAABkAAYAAAABAAAAAABkAAcAAAABAAAAAAAgAAUAAAABAAAAAAAiAAUAAAABAAAAAABjAAUAAAABAAAAAABlAAUAAAABAAAAAABTAAUAAAABAAAAAABTAAQAAAABAAAAAAAxAAcAAAABAAAAAAAwAAcAAAABAAAAAAAyAAcAAAABAAAAAAAzAAcAAAABAAAAAAAvAAcAAAABAAAAAAAwAAYAAAABAAAAAAAyAAYAAAABAAAAAAAxAAYAAAABAAAAAAAxAAUAAAABAAAAAAAxAAQAAAABAAAAAAAxAAMAAAABAAAAAABUAPf/AAABAAAAAABVAPf/AAABAAAAAABUAPb/AAABAAAAAABWAPf/AAABAAAAAABXAPn/AAABAAAAAAAhAAEAAAABAAAAAAAxAAEAAAABAAAAAAA=")
 tile_set = ExtResource("12_vnrdr")
@@ -476,91 +510,605 @@ tile_set = ExtResource("12_vnrdr")
 [node name="TileMapLayer_Stone" type="TileMapLayer" parent="." unique_id=1330231855]
 tile_set = ExtResource("14_ht26h")
 
-[node name="RockPile" parent="." unique_id=2056135097 instance=ExtResource("8_sftbg")]
+[node name="Room01_RockPuzzle" type="Node2D" parent="." unique_id=764395788]
+
+[node name="RockPile" parent="Room01_RockPuzzle" unique_id=2056135097 instance=ExtResource("8_sftbg")]
 position = Vector2(4214, 324)
 
-[node name="Yarnspark" parent="." unique_id=2086611064 instance=ExtResource("14_8jun3")]
+[node name="Checkpoint" parent="Room01_RockPuzzle" unique_id=951106919 instance=ExtResource("27_dt6hy")]
+position = Vector2(-560, 455)
+scale = Vector2(8.4, 1)
+
+[node name="SceneTreePowerup" parent="Room01_RockPuzzle" unique_id=857147533 instance=ExtResource("15_dt6hy")]
+position = Vector2(4065, 314)
+
+[node name="Coin" parent="Room01_RockPuzzle" unique_id=469589313 instance=ExtResource("6_qy02x")]
+position = Vector2(1434, 563)
+texture = ExtResource("7_y3jo1")
+
+[node name="Coin8" parent="Room01_RockPuzzle" unique_id=1399238642 instance=ExtResource("6_qy02x")]
+position = Vector2(2933, 380)
+texture = ExtResource("7_y3jo1")
+
+[node name="Coin12" parent="Room01_RockPuzzle" unique_id=345869264 instance=ExtResource("6_qy02x")]
+position = Vector2(3030, 318)
+texture = ExtResource("7_y3jo1")
+
+[node name="Coin13" parent="Room01_RockPuzzle" unique_id=2104738955 instance=ExtResource("6_qy02x")]
+position = Vector2(3123, 380)
+texture = ExtResource("7_y3jo1")
+
+[node name="Coin22" parent="Room01_RockPuzzle" unique_id=91508137 instance=ExtResource("6_qy02x")]
+position = Vector2(1697, 558)
+texture = ExtResource("7_y3jo1")
+
+[node name="Coin24" parent="Room01_RockPuzzle" unique_id=334811006 instance=ExtResource("6_qy02x")]
+position = Vector2(1569, 558)
+texture = ExtResource("7_y3jo1")
+
+[node name="Coin2" parent="Room01_RockPuzzle" unique_id=2004393446 instance=ExtResource("6_qy02x")]
+position = Vector2(3599, 964)
+texture = ExtResource("7_y3jo1")
+
+[node name="Coin23" parent="Room01_RockPuzzle" unique_id=966695602 instance=ExtResource("6_qy02x")]
+position = Vector2(3862, 959)
+texture = ExtResource("7_y3jo1")
+
+[node name="Coin40" parent="Room01_RockPuzzle" unique_id=1379372883 instance=ExtResource("6_qy02x")]
+position = Vector2(3734, 959)
+texture = ExtResource("7_y3jo1")
+
+[node name="Platform16" parent="Room01_RockPuzzle" unique_id=895645003 instance=ExtResource("32_1tk8l")]
+position = Vector2(3024, 594)
+fall = true
+
+[node name="NpcElder_Premise" parent="Room01_RockPuzzle" unique_id=688628462 instance=ExtResource("34_vnrdr")]
+position = Vector2(550, 583)
+
+[node name="NpcElder_RockPuzzle" parent="Room01_RockPuzzle" unique_id=342457569 instance=ExtResource("34_vnrdr")]
+position = Vector2(3930, 329)
+
+[node name="Npc_MonkFlavor" parent="Room01_RockPuzzle" unique_id=1327020053 instance=ExtResource("3_27os8")]
+position = Vector2(2115, 613)
+dialogue_lines = Array[String](["The void has come to Threadbare. Are you the one to save us?"])
+
+[node name="AnimatedSprite2D" parent="Room01_RockPuzzle/Npc_MonkFlavor" index="0" unique_id=1376270546]
+sprite_frames = ExtResource("12_m7dqe")
+
+[node name="CollisionShape2D" parent="Room01_RockPuzzle/Npc_MonkFlavor/Area2D" parent_id_path=PackedInt32Array(1327020053, 18542653) index="0" unique_id=226621961]
+shape = SubResource("RectangleShape2D_0ff8d")
+
+[node name="ControlDisplay" parent="Room01_RockPuzzle/Npc_MonkFlavor" index="3" unique_id=1300373774]
+visible = false
+position = Vector2(0, -75)
+
+[node name="Enemy4" parent="Room01_RockPuzzle" unique_id=947503997 instance=ExtResource("17_d6rl2")]
+position = Vector2(928, 765)
+
+[node name="Enemy5" parent="Room01_RockPuzzle" unique_id=628973578 instance=ExtResource("17_d6rl2")]
+position = Vector2(2939, 528)
+
+[node name="Room02_BridgePuzzle" type="Node2D" parent="." unique_id=1065081788]
+
+[node name="Checkpoint2" parent="Room02_BridgePuzzle" unique_id=182555001 instance=ExtResource("27_dt6hy")]
+position = Vector2(4500, 190)
+
+[node name="Coin20" parent="Room02_BridgePuzzle" unique_id=1594543700 instance=ExtResource("6_qy02x")]
+position = Vector2(5184, 34)
+texture = ExtResource("7_y3jo1")
+
+[node name="Coin21" parent="Room02_BridgePuzzle" unique_id=1885096095 instance=ExtResource("6_qy02x")]
+position = Vector2(5281, -28)
+texture = ExtResource("7_y3jo1")
+
+[node name="Coin41" parent="Room02_BridgePuzzle" unique_id=1112483359 instance=ExtResource("6_qy02x")]
+position = Vector2(5374, 34)
+texture = ExtResource("7_y3jo1")
+
+[node name="Coin7" parent="Room02_BridgePuzzle" unique_id=1112119096 instance=ExtResource("6_qy02x")]
+position = Vector2(6024, -210)
+texture = ExtResource("7_y3jo1")
+
+[node name="Coin16" parent="Room02_BridgePuzzle" unique_id=2061226785 instance=ExtResource("6_qy02x")]
+position = Vector2(6152, -210)
+texture = ExtResource("7_y3jo1")
+
+[node name="Coin17" parent="Room02_BridgePuzzle" unique_id=813038471 instance=ExtResource("6_qy02x")]
+position = Vector2(5896, -210)
+texture = ExtResource("7_y3jo1")
+
+[node name="BridgePlatform" parent="Room02_BridgePuzzle" unique_id=1439632278 instance=ExtResource("33_twxhk")]
+position = Vector2(4927, 92)
+rotation = -1.5707964
+
+[node name="Platform10" parent="Room02_BridgePuzzle" unique_id=1440331607 instance=ExtResource("32_1tk8l")]
+position = Vector2(6022, -82)
+width = 2
+fall = true
+
+[node name="Sign_Bridge" parent="Room02_BridgePuzzle" unique_id=1037848522 instance=ExtResource("11_q0xf2")]
+position = Vector2(4724, 385)
+text = "Bridge closed for repair"
+
+[node name="Npc_Sheep" parent="Room02_BridgePuzzle" unique_id=949624559 instance=ExtResource("3_27os8")]
+position = Vector2(5776, 114)
+dialogue_lines = Array[String](["Baaaaa!"])
+flip_to_face_player = true
+
+[node name="AnimatedSprite2D" parent="Room02_BridgePuzzle/Npc_Sheep" index="0" unique_id=1376270546]
+sprite_frames = ExtResource("25_pj073")
+
+[node name="CollisionShape2D" parent="Room02_BridgePuzzle/Npc_Sheep/Area2D" parent_id_path=PackedInt32Array(949624559, 18542653) index="0" unique_id=226621961]
+shape = SubResource("RectangleShape2D_0ff8d")
+
+[node name="ControlDisplay" parent="Room02_BridgePuzzle/Npc_Sheep" index="3" unique_id=1300373774]
+visible = false
+position = Vector2(0, -75)
+
+[node name="Room03_GetYarnsparkPuzzle" type="Node2D" parent="." unique_id=543502581]
+
+[node name="Yarnspark" parent="Room03_GetYarnsparkPuzzle" unique_id=2086611064 instance=ExtResource("14_8jun3")]
 position = Vector2(6878, 981)
 
-[node name="Scroll2" parent="." unique_id=593369878 instance=ExtResource("12_ycdye")]
-position = Vector2(10177, -562)
-
-[node name="ObjectPropertyEqualityScrollCondition" parent="Scroll2" unique_id=2071037534 node_paths=PackedStringArray("target") instance=ExtResource("12_bs6b0")]
-target = NodePath("../../Enemies/Enemy2")
-property_name = &"fall_off_edge"
-value = "true"
-
-[node name="Scroll3" parent="." unique_id=1488490395 instance=ExtResource("12_ycdye")]
-position = Vector2(9424, -111)
-
-[node name="ObjectPropertyEqualityScrollCondition" parent="Scroll3" unique_id=125528445 node_paths=PackedStringArray("target") instance=ExtResource("12_bs6b0")]
-target = NodePath("../../Enemies/Enemy")
-property_name = &"fall_off_edge"
-value = "true"
-
-[node name="Scroll4" parent="." unique_id=826339784 instance=ExtResource("12_ycdye")]
-position = Vector2(11779, -625)
-
-[node name="ObjectPropertyEqualityScrollCondition" parent="Scroll4" unique_id=672431096 node_paths=PackedStringArray("target") instance=ExtResource("12_bs6b0")]
-target = NodePath("../../Enemies/Enemy3")
-property_name = &"defeated_y_velocity"
-value = "1000"
-
-[node name="ScrollGates" type="Node2D" parent="." unique_id=1903180490]
-
-[node name="ScrollGate" parent="ScrollGates" unique_id=68402488 instance=ExtResource("24_obko3")]
+[node name="ScrollGate" parent="Room03_GetYarnsparkPuzzle" unique_id=68402488 instance=ExtResource("24_obko3")]
 position = Vector2(8512, 378)
 
-[node name="ScrollGate2" parent="ScrollGates" unique_id=735731128 instance=ExtResource("24_obko3")]
+[node name="Checkpoint3" parent="Room03_GetYarnsparkPuzzle" unique_id=535871779 instance=ExtResource("27_dt6hy")]
+position = Vector2(6554, 188)
+
+[node name="InspectorPowerup" parent="Room03_GetYarnsparkPuzzle" unique_id=459242062 instance=ExtResource("16_m7dqe")]
+position = Vector2(7382, 183)
+
+[node name="Coin18" parent="Room03_GetYarnsparkPuzzle" unique_id=1295739469 instance=ExtResource("6_qy02x")]
+position = Vector2(6980, 176)
+texture = ExtResource("7_y3jo1")
+
+[node name="Coin43" parent="Room03_GetYarnsparkPuzzle" unique_id=1119710353 instance=ExtResource("6_qy02x")]
+position = Vector2(7243, 171)
+texture = ExtResource("7_y3jo1")
+
+[node name="Coin44" parent="Room03_GetYarnsparkPuzzle" unique_id=217978787 instance=ExtResource("6_qy02x")]
+position = Vector2(7115, 171)
+texture = ExtResource("7_y3jo1")
+
+[node name="Platform17" parent="Room03_GetYarnsparkPuzzle" unique_id=1889629645 instance=ExtResource("31_w6d5o")]
+position = Vector2(7205, 311)
+width = 5
+
+[node name="Grass104" type="Sprite2D" parent="Room03_GetYarnsparkPuzzle/Platform17" unique_id=74230533]
+position = Vector2(-298, -59)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("20_6lr5j")
+
+[node name="Grass33" type="Sprite2D" parent="Room03_GetYarnsparkPuzzle/Platform17" unique_id=651974346]
+position = Vector2(-57, -50)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("23_xns2c")
+
+[node name="Grass34" type="Sprite2D" parent="Room03_GetYarnsparkPuzzle/Platform17" unique_id=208821012]
+position = Vector2(0, -50.5)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("20_6lr5j")
+flip_h = true
+
+[node name="Grass35" type="Sprite2D" parent="Room03_GetYarnsparkPuzzle/Platform17" unique_id=380642676]
+position = Vector2(288, -61)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("23_xns2c")
+flip_h = true
+
+[node name="NpcElder_ScrollPuzzle" parent="Room03_GetYarnsparkPuzzle" unique_id=1152959677 instance=ExtResource("34_vnrdr")]
+position = Vector2(7984, 460)
+
+[node name="Npc_Sheep2" parent="Room03_GetYarnsparkPuzzle" unique_id=434471359 instance=ExtResource("3_27os8")]
+z_index = 2
+position = Vector2(7176, 242)
+dialogue_lines = Array[String](["Baa-a-a-a!"])
+flip_to_face_player = true
+
+[node name="AnimatedSprite2D" parent="Room03_GetYarnsparkPuzzle/Npc_Sheep2" index="0" unique_id=1376270546]
+sprite_frames = ExtResource("25_pj073")
+flip_h = true
+
+[node name="CollisionShape2D" parent="Room03_GetYarnsparkPuzzle/Npc_Sheep2/Area2D" parent_id_path=PackedInt32Array(434471359, 18542653) index="0" unique_id=226621961]
+shape = SubResource("RectangleShape2D_0ff8d")
+
+[node name="ControlDisplay" parent="Room03_GetYarnsparkPuzzle/Npc_Sheep2" index="3" unique_id=1300373774]
+visible = false
+position = Vector2(0, -75)
+
+[node name="Npc_Sheep3" parent="Room03_GetYarnsparkPuzzle" unique_id=1255304457 instance=ExtResource("3_27os8")]
+z_index = 2
+position = Vector2(7729, 510)
+dialogue_lines = Array[String](["Baaaaa!"])
+flip_to_face_player = true
+
+[node name="AnimatedSprite2D" parent="Room03_GetYarnsparkPuzzle/Npc_Sheep3" index="0" unique_id=1376270546]
+sprite_frames = ExtResource("25_pj073")
+
+[node name="CollisionShape2D" parent="Room03_GetYarnsparkPuzzle/Npc_Sheep3/Area2D" parent_id_path=PackedInt32Array(1255304457, 18542653) index="0" unique_id=226621961]
+shape = SubResource("RectangleShape2D_0ff8d")
+
+[node name="ControlDisplay" parent="Room03_GetYarnsparkPuzzle/Npc_Sheep3" index="3" unique_id=1300373774]
+visible = false
+position = Vector2(0, -75)
+
+[node name="Enemy6" parent="Room03_GetYarnsparkPuzzle" unique_id=1452245350 instance=ExtResource("17_d6rl2")]
+position = Vector2(8071, 1010)
+
+[node name="Room04_YarnsparkFallOffEdgePuzzle" type="Node2D" parent="." unique_id=1430148417]
+
+[node name="Scroll2" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=593369878 instance=ExtResource("12_ycdye")]
+position = Vector2(10177, -562)
+
+[node name="ObjectPropertyEqualityScrollCondition" parent="Room04_YarnsparkFallOffEdgePuzzle/Scroll2" unique_id=2071037534 node_paths=PackedStringArray("target") instance=ExtResource("12_bs6b0")]
+target = NodePath("../../Enemy2")
+property_name = &"fall_off_edge"
+value = "true"
+
+[node name="Scroll3" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=1488490395 instance=ExtResource("12_ycdye")]
+position = Vector2(9424, -111)
+
+[node name="ObjectPropertyEqualityScrollCondition" parent="Room04_YarnsparkFallOffEdgePuzzle/Scroll3" unique_id=125528445 node_paths=PackedStringArray("target") instance=ExtResource("12_bs6b0")]
+target = NodePath("../../Enemy")
+property_name = &"fall_off_edge"
+value = "true"
+
+[node name="ScrollGate2" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=735731128 instance=ExtResource("24_obko3")]
 position = Vector2(10688, 122)
 required_collectibles = 2
 
-[node name="StaticBody2D" type="StaticBody2D" parent="ScrollGates" unique_id=1845215683]
-visible = false
-position = Vector2(11251.251, -88.74997)
+[node name="Checkpoint4" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=980201351 instance=ExtResource("27_dt6hy")]
+position = Vector2(8811, 319)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ScrollGates/StaticBody2D" unique_id=156359561]
-position = Vector2(-145.93848, -121.75003)
-shape = SubResource("RectangleShape2D_lwt5q")
+[node name="Coin4" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=1137508267 instance=ExtResource("6_qy02x")]
+position = Vector2(9317, -592)
+texture = ExtResource("7_y3jo1")
 
-[node name="ScrollGate3" parent="ScrollGates" unique_id=710705362 instance=ExtResource("24_obko3")]
+[node name="Coin19" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=1095254317 instance=ExtResource("6_qy02x")]
+position = Vector2(9423, -592)
+texture = ExtResource("7_y3jo1")
+
+[node name="Coin5" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=1885911067 instance=ExtResource("6_qy02x")]
+position = Vector2(9798, -1615)
+texture = ExtResource("7_y3jo1")
+
+[node name="Coin6" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=1933861692 instance=ExtResource("6_qy02x")]
+position = Vector2(8968, -408)
+texture = ExtResource("7_y3jo1")
+
+[node name="Coin14" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=626819192 instance=ExtResource("6_qy02x")]
+position = Vector2(9272, 187)
+texture = ExtResource("7_y3jo1")
+
+[node name="Coin15" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=1171510110 instance=ExtResource("6_qy02x")]
+position = Vector2(9410, 183)
+texture = ExtResource("7_y3jo1")
+
+[node name="Coin9" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=2052277588 instance=ExtResource("6_qy02x")]
+position = Vector2(9689, -1615)
+texture = ExtResource("7_y3jo1")
+
+[node name="Coin42" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=458561684 instance=ExtResource("6_qy02x")]
+position = Vector2(10018, -1617)
+texture = ExtResource("7_y3jo1")
+
+[node name="Coin45" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=1523881153 instance=ExtResource("6_qy02x")]
+position = Vector2(9909, -1617)
+texture = ExtResource("7_y3jo1")
+
+[node name="Coin46" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=336789027 instance=ExtResource("6_qy02x")]
+position = Vector2(10235, -1619)
+texture = ExtResource("7_y3jo1")
+
+[node name="Coin47" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=2012651532 instance=ExtResource("6_qy02x")]
+position = Vector2(10126, -1619)
+texture = ExtResource("7_y3jo1")
+
+[node name="Coin48" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=1846924354 instance=ExtResource("6_qy02x")]
+position = Vector2(10458, -1618)
+texture = ExtResource("7_y3jo1")
+
+[node name="Coin49" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=1840950659 instance=ExtResource("6_qy02x")]
+position = Vector2(10349, -1618)
+texture = ExtResource("7_y3jo1")
+
+[node name="Coin50" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=1794793462 instance=ExtResource("6_qy02x")]
+position = Vector2(10678, -1620)
+texture = ExtResource("7_y3jo1")
+
+[node name="Coin51" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=858251819 instance=ExtResource("6_qy02x")]
+position = Vector2(10569, -1620)
+texture = ExtResource("7_y3jo1")
+
+[node name="Coin10" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=2073649153 instance=ExtResource("6_qy02x")]
+position = Vector2(8840, -344)
+texture = ExtResource("7_y3jo1")
+
+[node name="Coin11" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=1756350612 instance=ExtResource("6_qy02x")]
+position = Vector2(9096, -344)
+texture = ExtResource("7_y3jo1")
+
+[node name="Platform5" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=695973061 instance=ExtResource("32_1tk8l")]
+position = Vector2(9912, -437)
+width = 2
+fall = true
+
+[node name="Platform4" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=25429054 instance=ExtResource("32_1tk8l")]
+position = Vector2(9373, -439)
+width = 2
+fall = true
+
+[node name="Platform6" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=803509960 instance=ExtResource("29_vnrdr")]
+position = Vector2(9423, 12)
+width = 2
+
+[node name="Grass43" type="Sprite2D" parent="Room04_YarnsparkFallOffEdgePuzzle/Platform6" unique_id=1495900487]
+position = Vector2(-91, -65)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("23_xns2c")
+
+[node name="Grass44" type="Sprite2D" parent="Room04_YarnsparkFallOffEdgePuzzle/Platform6" unique_id=556388506]
+position = Vector2(94, -65)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("23_xns2c")
+flip_h = true
+
+[node name="Platform8" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=434364931 instance=ExtResource("29_vnrdr")]
+position = Vector2(8962, -218)
+width = 2
+
+[node name="Grass45" type="Sprite2D" parent="Room04_YarnsparkFallOffEdgePuzzle/Platform8" unique_id=2077605777]
+position = Vector2(56, -63)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("23_xns2c")
+flip_h = true
+
+[node name="Platform9" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=1016935612 instance=ExtResource("29_vnrdr")]
+position = Vector2(9642, -439)
+width = 2
+
+[node name="Grass46" type="Sprite2D" parent="Room04_YarnsparkFallOffEdgePuzzle/Platform9" unique_id=1349162477]
+position = Vector2(73, -61)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("19_y8cc3")
+flip_h = true
+
+[node name="Grass49" type="Sprite2D" parent="Room04_YarnsparkFallOffEdgePuzzle/Platform9" unique_id=761655133]
+position = Vector2(-94, -61)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("23_xns2c")
+
+[node name="Platform18" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=120942991 instance=ExtResource("29_vnrdr")]
+position = Vector2(9776, -766)
+width = 2
+
+[node name="Platform11" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=678243494 instance=ExtResource("29_vnrdr")]
+position = Vector2(10180, -439)
+width = 2
+
+[node name="Grass47" type="Sprite2D" parent="Room04_YarnsparkFallOffEdgePuzzle/Platform11" unique_id=965079134]
+position = Vector2(-102, -63.00003)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("20_6lr5j")
+flip_h = true
+
+[node name="Sign_TileTeaser" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=983755090 instance=ExtResource("11_q0xf2")]
+position = Vector2(9776, -826)
+text = "Tile painters only beyond this point! [img=20]res://assets/text_icons/up_arrow.png[/img]"
+
+[node name="NpcElder_TwoScrollsPuzzle" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=1015220593 instance=ExtResource("34_vnrdr")]
+position = Vector2(9644, -555)
+
+[node name="Enemy" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=1312464076 instance=ExtResource("17_d6rl2")]
+position = Vector2(9960, -28)
+
+[node name="Enemy2" parent="Room04_YarnsparkFallOffEdgePuzzle" unique_id=834529607 instance=ExtResource("17_d6rl2")]
+position = Vector2(10150, -30)
+
+[node name="Room05_PaintTilePuzzle" type="Node2D" parent="." unique_id=1592049848]
+
+[node name="Scroll4" parent="Room05_PaintTilePuzzle" unique_id=826339784 instance=ExtResource("12_ycdye")]
+position = Vector2(11779, -625)
+
+[node name="ObjectPropertyEqualityScrollCondition" parent="Room05_PaintTilePuzzle/Scroll4" unique_id=672431096 node_paths=PackedStringArray("target") instance=ExtResource("12_bs6b0")]
+target = NodePath("../../Enemy3")
+property_name = &"defeated_y_velocity"
+value = "1000"
+
+[node name="ScrollGate3" parent="Room05_PaintTilePuzzle" unique_id=710705362 instance=ExtResource("24_obko3")]
 position = Vector2(11327, -391)
-scale = Vector2(-1, 1)
+rotation = 3.1415927
+scale = Vector2(1, -1)
 
-[node name="CollisionShape2D" parent="ScrollGates/ScrollGate3/TriggerArea" parent_id_path=PackedInt32Array(710705362, 1096462271) index="0" unique_id=233322335]
+[node name="CollisionShape2D" parent="Room05_PaintTilePuzzle/ScrollGate3/TriggerArea" parent_id_path=PackedInt32Array(710705362, 1096462271) index="0" unique_id=233322335]
 shape = SubResource("RectangleShape2D_hmpfs")
 
-[node name="CollisionShape2D" parent="ScrollGates/ScrollGate3/NewGate/TopColumns" parent_id_path=PackedInt32Array(710705362, 1881226027) index="1" unique_id=1798812344]
+[node name="CollisionShape2D" parent="Room05_PaintTilePuzzle/ScrollGate3/NewGate/TopColumns" parent_id_path=PackedInt32Array(710705362, 1881226027) index="1" unique_id=1798812344]
 shape = SubResource("RectangleShape2D_ddthk")
 
-[node name="BottomColumns" parent="ScrollGates/ScrollGate3/NewGate" parent_id_path=PackedInt32Array(710705362, 409550080) index="1" unique_id=1360310001]
+[node name="BottomColumns" parent="Room05_PaintTilePuzzle/ScrollGate3/NewGate" parent_id_path=PackedInt32Array(710705362, 409550080) index="1" unique_id=1360310001]
 visible = false
 
-[node name="CollisionShape2D" parent="ScrollGates/ScrollGate3/NewGate/BottomColumns" index="1" unique_id=139504450]
+[node name="CollisionShape2D" parent="Room05_PaintTilePuzzle/ScrollGate3/NewGate/BottomColumns" index="1" unique_id=139504450]
 shape = SubResource("RectangleShape2D_kk0ge")
 disabled = true
 
-[node name="CollisionShape2D" parent="ScrollGates/ScrollGate3/NewGate/GateCollision" parent_id_path=PackedInt32Array(710705362, 1756864930) index="0" unique_id=1034297921]
+[node name="CollisionShape2D" parent="Room05_PaintTilePuzzle/ScrollGate3/NewGate/GateCollision" parent_id_path=PackedInt32Array(710705362, 1756864930) index="0" unique_id=1034297921]
 shape = SubResource("RectangleShape2D_dt3ue")
 
-[node name="LanternLeft" parent="ScrollGates/ScrollGate3/NewGate" parent_id_path=PackedInt32Array(710705362, 409550080) index="5" unique_id=890313050]
+[node name="LanternLeft" parent="Room05_PaintTilePuzzle/ScrollGate3/NewGate" parent_id_path=PackedInt32Array(710705362, 409550080) index="5" unique_id=890313050]
 lantern_front_texture = ExtResource("18_w6d5o")
 
-[node name="IdleSway" parent="ScrollGates/ScrollGate3/NewGate/LanternLeft" index="5" unique_id=1291916171]
+[node name="IdleSway" parent="Room05_PaintTilePuzzle/ScrollGate3/NewGate/LanternLeft" index="5" unique_id=1291916171]
 libraries/ = SubResource("AnimationLibrary_r8prq")
 
-[node name="IdleSway" parent="ScrollGates/ScrollGate3/NewGate/LanternRight" parent_id_path=PackedInt32Array(710705362, 1119542889) index="5" unique_id=449541373]
+[node name="IdleSway" parent="Room05_PaintTilePuzzle/ScrollGate3/NewGate/LanternRight" parent_id_path=PackedInt32Array(710705362, 1119542889) index="5" unique_id=449541373]
 libraries/ = SubResource("AnimationLibrary_r8prq")
 
-[node name="CanvasLayer" parent="ScrollGates/ScrollGate3/InfoIndicator/InfoTree" parent_id_path=PackedInt32Array(710705362, 1774361635, 233706681) index="0" unique_id=240023699]
+[node name="CanvasLayer" parent="Room05_PaintTilePuzzle/ScrollGate3/InfoIndicator/InfoTree" parent_id_path=PackedInt32Array(710705362, 1774361635, 233706681) index="0" unique_id=240023699]
 offset = Vector2(11325, -488)
 transform = Transform2D(1, 0, 0, 1, 11325, -488)
 
-[node name="PanelContainer" parent="ScrollGates/ScrollGate3/InfoIndicator/InfoTree/CanvasLayer/UIContainer" parent_id_path=PackedInt32Array(710705362, 1774361635, 536485302) index="0" unique_id=2042454767]
+[node name="PanelContainer" parent="Room05_PaintTilePuzzle/ScrollGate3/InfoIndicator/InfoTree/CanvasLayer/UIContainer" parent_id_path=PackedInt32Array(710705362, 1774361635, 536485302) index="0" unique_id=2042454767]
 theme_override_styles/panel = SubResource("StyleBoxTexture_hmpfs")
 
-[node name="AnimationPlayer" parent="ScrollGates/ScrollGate3" index="4" unique_id=70195527]
+[node name="AnimationPlayer" parent="Room05_PaintTilePuzzle/ScrollGate3" index="4" unique_id=70195527]
 libraries/ = SubResource("AnimationLibrary_83ym3")
+
+[node name="Checkpoint5" parent="Room05_PaintTilePuzzle" unique_id=1077397314 instance=ExtResource("27_dt6hy")]
+position = Vector2(10987, 65)
+
+[node name="Coin25" parent="Room05_PaintTilePuzzle" unique_id=2141970909 instance=ExtResource("6_qy02x")]
+position = Vector2(11581, 167)
+texture = ExtResource("7_y3jo1")
+
+[node name="Coin26" parent="Room05_PaintTilePuzzle" unique_id=339068610 instance=ExtResource("6_qy02x")]
+position = Vector2(11709, 167)
+texture = ExtResource("7_y3jo1")
+
+[node name="Coin27" parent="Room05_PaintTilePuzzle" unique_id=255646174 instance=ExtResource("6_qy02x")]
+position = Vector2(11453, 167)
+texture = ExtResource("7_y3jo1")
+
+[node name="Coin28" parent="Room05_PaintTilePuzzle" unique_id=1070127638 instance=ExtResource("6_qy02x")]
+position = Vector2(12088, -108)
+texture = ExtResource("7_y3jo1")
+
+[node name="Coin29" parent="Room05_PaintTilePuzzle" unique_id=1367226272 instance=ExtResource("6_qy02x")]
+position = Vector2(12216, -108)
+texture = ExtResource("7_y3jo1")
+
+[node name="Coin30" parent="Room05_PaintTilePuzzle" unique_id=326576021 instance=ExtResource("6_qy02x")]
+position = Vector2(11960, -108)
+texture = ExtResource("7_y3jo1")
+
+[node name="Coin31" parent="Room05_PaintTilePuzzle" unique_id=203810966 instance=ExtResource("6_qy02x")]
+position = Vector2(10837, -705)
+texture = ExtResource("7_y3jo1")
+
+[node name="Coin32" parent="Room05_PaintTilePuzzle" unique_id=474037 instance=ExtResource("6_qy02x")]
+position = Vector2(10988, -705)
+texture = ExtResource("7_y3jo1")
+
+[node name="Coin33" parent="Room05_PaintTilePuzzle" unique_id=2031944195 instance=ExtResource("6_qy02x")]
+position = Vector2(11136, -705)
+texture = ExtResource("7_y3jo1")
+
+[node name="Coin34" parent="Room05_PaintTilePuzzle" unique_id=1663518018 instance=ExtResource("6_qy02x")]
+position = Vector2(10834, -579)
+texture = ExtResource("7_y3jo1")
+
+[node name="Coin35" parent="Room05_PaintTilePuzzle" unique_id=1358032541 instance=ExtResource("6_qy02x")]
+position = Vector2(10985, -579)
+texture = ExtResource("7_y3jo1")
+
+[node name="Coin36" parent="Room05_PaintTilePuzzle" unique_id=1180510130 instance=ExtResource("6_qy02x")]
+position = Vector2(11133, -579)
+texture = ExtResource("7_y3jo1")
+
+[node name="Coin37" parent="Room05_PaintTilePuzzle" unique_id=2023911982 instance=ExtResource("6_qy02x")]
+position = Vector2(10834, -446)
+texture = ExtResource("7_y3jo1")
+
+[node name="Coin38" parent="Room05_PaintTilePuzzle" unique_id=1202771543 instance=ExtResource("6_qy02x")]
+position = Vector2(10985, -446)
+texture = ExtResource("7_y3jo1")
+
+[node name="Coin39" parent="Room05_PaintTilePuzzle" unique_id=1174696577 instance=ExtResource("6_qy02x")]
+position = Vector2(11133, -446)
+texture = ExtResource("7_y3jo1")
+
+[node name="Platform12" parent="Room05_PaintTilePuzzle" unique_id=1402230692 instance=ExtResource("29_vnrdr")]
+position = Vector2(11776, -519)
+width = 2
+
+[node name="Grass91" type="Sprite2D" parent="Room05_PaintTilePuzzle/Platform12" unique_id=681321903]
+position = Vector2(104, -63)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("20_6lr5j")
+flip_h = true
+
+[node name="Grass92" type="Sprite2D" parent="Room05_PaintTilePuzzle/Platform12" unique_id=274308996]
+position = Vector2(38, -62)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("23_xns2c")
+
+[node name="NpcElder_TilePuzzle" parent="Room05_PaintTilePuzzle" unique_id=3347555 instance=ExtResource("34_vnrdr")]
+position = Vector2(11706, 974)
+
+[node name="NpcElder_Congrats" parent="Room05_PaintTilePuzzle" unique_id=664077588 instance=ExtResource("34_vnrdr")]
+position = Vector2(12702, -179)
+
+[node name="Enemy3" parent="Room05_PaintTilePuzzle" unique_id=1094109507 instance=ExtResource("17_d6rl2")]
+position = Vector2(10834, -284)
+
+[node name="StaticBody2D_FloorBarrier" type="StaticBody2D" parent="Room05_PaintTilePuzzle" unique_id=1845215683]
+visible = false
+position = Vector2(11251.251, -88.74997)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room05_PaintTilePuzzle/StaticBody2D_FloorBarrier" unique_id=156359561]
+position = Vector2(-145.93848, -121.75003)
+shape = SubResource("RectangleShape2D_lwt5q")
+
+[node name="Room06_GiantMothBoss" type="Node2D" parent="." unique_id=547116571]
+
+[node name="Platform13" parent="Room06_GiantMothBoss" unique_id=891981076 instance=ExtResource("29_vnrdr")]
+position = Vector2(14019, -242)
+
+[node name="Grass86" type="Sprite2D" parent="Room06_GiantMothBoss/Platform13" unique_id=1010252466]
+position = Vector2(-163, -64)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("20_6lr5j")
+flip_h = true
+
+[node name="Grass87" type="Sprite2D" parent="Room06_GiantMothBoss/Platform13" unique_id=1237179936]
+position = Vector2(145.00098, -63)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("23_xns2c")
+flip_h = true
+
+[node name="Platform14" parent="Room06_GiantMothBoss" unique_id=653415634 instance=ExtResource("29_vnrdr")]
+position = Vector2(13650, -566)
+width = 2
+
+[node name="Grass88" type="Sprite2D" parent="Room06_GiantMothBoss/Platform14" unique_id=1055631432]
+position = Vector2(-87, -63.00006)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("23_xns2c")
+
+[node name="Grass89" type="Sprite2D" parent="Room06_GiantMothBoss/Platform14" unique_id=1324010631]
+position = Vector2(68, -62.00006)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("19_y8cc3")
+flip_h = true
+
+[node name="Platform15" parent="Room06_GiantMothBoss" unique_id=1426766162 instance=ExtResource("29_vnrdr")]
+position = Vector2(14253, -709)
+width = 2
+
+[node name="Grass90" type="Sprite2D" parent="Room06_GiantMothBoss/Platform15" unique_id=1881983756]
+position = Vector2(45.000977, -62)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("19_y8cc3")
+flip_h = true
+
+[node name="Moth" parent="Room06_GiantMothBoss" unique_id=1891005358 instance=ExtResource("27_x2f4c")]
+position = Vector2(14514, -346)
+scale = Vector2(2, 2)
+radius = 125.0
+rotation_speed = 0.9
+
+[node name="Enemy7" parent="Room06_GiantMothBoss" unique_id=1307871349 instance=ExtResource("17_d6rl2")]
+position = Vector2(13647, -664)
+
+[node name="Enemy8" parent="Room06_GiantMothBoss" unique_id=607084219 instance=ExtResource("17_d6rl2")]
+position = Vector2(14033, -331)
+
+[node name="Enemy9" parent="Room06_GiantMothBoss" unique_id=2135558886 instance=ExtResource("17_d6rl2")]
+position = Vector2(14875, -19)
+
+[node name="ScrollGates" type="Node2D" parent="." unique_id=1903180490]
 
 [node name="Flag" parent="." unique_id=1243516226 instance=ExtResource("18_crtlj")]
 visible = false
@@ -629,7 +1177,7 @@ position = Vector2(129, -55.5)
 shape = SubResource("RectangleShape2D_kexs0")
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
-add_objects = [NodePath("../../../Platforms/BridgePlatform")]
+add_objects = [NodePath("../../../Room02_BridgePuzzle/BridgePlatform")]
 
 [node name="ChangeEditableObjectsTrigger_StartScrollPuzzle" parent="Triggers" unique_id=422413793 instance=ExtResource("14_m7dqe")]
 position = Vector2(6448, 259)
@@ -639,7 +1187,7 @@ position = Vector2(115, -57.5)
 shape = SubResource("RectangleShape2D_weabp")
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
-add_objects = [NodePath("../../../Yarnspark")]
+add_objects = [NodePath("../../../Room03_GetYarnsparkPuzzle/Yarnspark")]
 
 [node name="ChangeEditableObjectsTrigger_StartScrollPuzzle2" parent="Triggers" unique_id=457228071 instance=ExtResource("14_m7dqe")]
 position = Vector2(8621, 385)
@@ -649,7 +1197,7 @@ position = Vector2(159.5, -54.5)
 shape = SubResource("RectangleShape2D_7cn4d")
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle2" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
-add_objects = [NodePath("../../../Enemies/Enemy"), NodePath("../../../Enemies/Enemy2")]
+add_objects = [NodePath("../../../Room04_YarnsparkFallOffEdgePuzzle/Enemy"), NodePath("../../../Room04_YarnsparkFallOffEdgePuzzle/Enemy2")]
 
 [node name="ChangeEditableObjectsTrigger_StartTilePuzzle" parent="Triggers" unique_id=2100137793 instance=ExtResource("14_m7dqe")]
 position = Vector2(10749, 125)
@@ -659,7 +1207,7 @@ position = Vector2(-27, -893)
 shape = SubResource("RectangleShape2D_fnu5h")
 
 [node name="Behavior" parent="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
-add_objects = [NodePath("../../../TileMapLayer_Stone"), NodePath("../../../Enemies/Enemy3")]
+add_objects = [NodePath("../../../TileMapLayer_Stone"), NodePath("../../../Room05_PaintTilePuzzle/Enemy3")]
 
 [node name="DemoEndTrigger" parent="Triggers" unique_id=1681964514 instance=ExtResource("32_t64e8")]
 position = Vector2(14531, -497)
@@ -667,231 +1215,9 @@ scale = Vector2(0.88, 1)
 
 [node name="Checkpoints" type="Node2D" parent="." unique_id=1977743448]
 
-[node name="Checkpoint" parent="Checkpoints" unique_id=951106919 instance=ExtResource("27_dt6hy")]
-position = Vector2(-560, 455)
-scale = Vector2(8.4, 1)
-
-[node name="Checkpoint2" parent="Checkpoints" unique_id=182555001 instance=ExtResource("27_dt6hy")]
-position = Vector2(4500, 190)
-
-[node name="Checkpoint3" parent="Checkpoints" unique_id=535871779 instance=ExtResource("27_dt6hy")]
-position = Vector2(6554, 188)
-
-[node name="Checkpoint4" parent="Checkpoints" unique_id=980201351 instance=ExtResource("27_dt6hy")]
-position = Vector2(8811, 319)
-
-[node name="Checkpoint5" parent="Checkpoints" unique_id=1077397314 instance=ExtResource("27_dt6hy")]
-position = Vector2(10987, 65)
-
 [node name="EditorPowerUps" type="Node2D" parent="." unique_id=721056742]
 
-[node name="SceneTreePowerup" parent="EditorPowerUps" unique_id=857147533 instance=ExtResource("15_dt6hy")]
-position = Vector2(4065, 314)
-
-[node name="InspectorPowerup" parent="EditorPowerUps" unique_id=459242062 instance=ExtResource("16_m7dqe")]
-position = Vector2(7382, 183)
-
 [node name="Coins" type="Node2D" parent="." unique_id=1860713878]
-
-[node name="Coin" parent="Coins" unique_id=469589313 instance=ExtResource("6_qy02x")]
-position = Vector2(1434, 563)
-texture = ExtResource("7_y3jo1")
-
-[node name="Coin4" parent="Coins" unique_id=1137508267 instance=ExtResource("6_qy02x")]
-position = Vector2(9317, -592)
-texture = ExtResource("7_y3jo1")
-
-[node name="Coin19" parent="Coins" unique_id=1095254317 instance=ExtResource("6_qy02x")]
-position = Vector2(9423, -592)
-texture = ExtResource("7_y3jo1")
-
-[node name="Coin8" parent="Coins" unique_id=1399238642 instance=ExtResource("6_qy02x")]
-position = Vector2(2933, 380)
-texture = ExtResource("7_y3jo1")
-
-[node name="Coin12" parent="Coins" unique_id=345869264 instance=ExtResource("6_qy02x")]
-position = Vector2(3030, 318)
-texture = ExtResource("7_y3jo1")
-
-[node name="Coin13" parent="Coins" unique_id=2104738955 instance=ExtResource("6_qy02x")]
-position = Vector2(3123, 380)
-texture = ExtResource("7_y3jo1")
-
-[node name="Coin20" parent="Coins" unique_id=1594543700 instance=ExtResource("6_qy02x")]
-position = Vector2(5184, 34)
-texture = ExtResource("7_y3jo1")
-
-[node name="Coin21" parent="Coins" unique_id=1885096095 instance=ExtResource("6_qy02x")]
-position = Vector2(5281, -28)
-texture = ExtResource("7_y3jo1")
-
-[node name="Coin41" parent="Coins" unique_id=1112483359 instance=ExtResource("6_qy02x")]
-position = Vector2(5374, 34)
-texture = ExtResource("7_y3jo1")
-
-[node name="Coin5" parent="Coins" unique_id=1885911067 instance=ExtResource("6_qy02x")]
-position = Vector2(9798, -1615)
-texture = ExtResource("7_y3jo1")
-
-[node name="Coin6" parent="Coins" unique_id=1933861692 instance=ExtResource("6_qy02x")]
-position = Vector2(8968, -408)
-texture = ExtResource("7_y3jo1")
-
-[node name="Coin14" parent="Coins" unique_id=626819192 instance=ExtResource("6_qy02x")]
-position = Vector2(9272, 187)
-texture = ExtResource("7_y3jo1")
-
-[node name="Coin15" parent="Coins" unique_id=1171510110 instance=ExtResource("6_qy02x")]
-position = Vector2(9410, 183)
-texture = ExtResource("7_y3jo1")
-
-[node name="Coin7" parent="Coins" unique_id=1112119096 instance=ExtResource("6_qy02x")]
-position = Vector2(6024, -210)
-texture = ExtResource("7_y3jo1")
-
-[node name="Coin16" parent="Coins" unique_id=2061226785 instance=ExtResource("6_qy02x")]
-position = Vector2(6152, -210)
-texture = ExtResource("7_y3jo1")
-
-[node name="Coin17" parent="Coins" unique_id=813038471 instance=ExtResource("6_qy02x")]
-position = Vector2(5896, -210)
-texture = ExtResource("7_y3jo1")
-
-[node name="Coin25" parent="Coins" unique_id=2141970909 instance=ExtResource("6_qy02x")]
-position = Vector2(11581, 167)
-texture = ExtResource("7_y3jo1")
-
-[node name="Coin26" parent="Coins" unique_id=339068610 instance=ExtResource("6_qy02x")]
-position = Vector2(11709, 167)
-texture = ExtResource("7_y3jo1")
-
-[node name="Coin27" parent="Coins" unique_id=255646174 instance=ExtResource("6_qy02x")]
-position = Vector2(11453, 167)
-texture = ExtResource("7_y3jo1")
-
-[node name="Coin28" parent="Coins" unique_id=1070127638 instance=ExtResource("6_qy02x")]
-position = Vector2(12088, -108)
-texture = ExtResource("7_y3jo1")
-
-[node name="Coin29" parent="Coins" unique_id=1367226272 instance=ExtResource("6_qy02x")]
-position = Vector2(12216, -108)
-texture = ExtResource("7_y3jo1")
-
-[node name="Coin30" parent="Coins" unique_id=326576021 instance=ExtResource("6_qy02x")]
-position = Vector2(11960, -108)
-texture = ExtResource("7_y3jo1")
-
-[node name="Coin31" parent="Coins" unique_id=203810966 instance=ExtResource("6_qy02x")]
-position = Vector2(10837, -705)
-texture = ExtResource("7_y3jo1")
-
-[node name="Coin32" parent="Coins" unique_id=474037 instance=ExtResource("6_qy02x")]
-position = Vector2(10988, -705)
-texture = ExtResource("7_y3jo1")
-
-[node name="Coin33" parent="Coins" unique_id=2031944195 instance=ExtResource("6_qy02x")]
-position = Vector2(11136, -705)
-texture = ExtResource("7_y3jo1")
-
-[node name="Coin34" parent="Coins" unique_id=1663518018 instance=ExtResource("6_qy02x")]
-position = Vector2(10834, -579)
-texture = ExtResource("7_y3jo1")
-
-[node name="Coin35" parent="Coins" unique_id=1358032541 instance=ExtResource("6_qy02x")]
-position = Vector2(10985, -579)
-texture = ExtResource("7_y3jo1")
-
-[node name="Coin36" parent="Coins" unique_id=1180510130 instance=ExtResource("6_qy02x")]
-position = Vector2(11133, -579)
-texture = ExtResource("7_y3jo1")
-
-[node name="Coin37" parent="Coins" unique_id=2023911982 instance=ExtResource("6_qy02x")]
-position = Vector2(10834, -446)
-texture = ExtResource("7_y3jo1")
-
-[node name="Coin38" parent="Coins" unique_id=1202771543 instance=ExtResource("6_qy02x")]
-position = Vector2(10985, -446)
-texture = ExtResource("7_y3jo1")
-
-[node name="Coin39" parent="Coins" unique_id=1174696577 instance=ExtResource("6_qy02x")]
-position = Vector2(11133, -446)
-texture = ExtResource("7_y3jo1")
-
-[node name="Coin22" parent="Coins" unique_id=91508137 instance=ExtResource("6_qy02x")]
-position = Vector2(1697, 558)
-texture = ExtResource("7_y3jo1")
-
-[node name="Coin24" parent="Coins" unique_id=334811006 instance=ExtResource("6_qy02x")]
-position = Vector2(1569, 558)
-texture = ExtResource("7_y3jo1")
-
-[node name="Coin2" parent="Coins" unique_id=2004393446 instance=ExtResource("6_qy02x")]
-position = Vector2(3599, 964)
-texture = ExtResource("7_y3jo1")
-
-[node name="Coin23" parent="Coins" unique_id=966695602 instance=ExtResource("6_qy02x")]
-position = Vector2(3862, 959)
-texture = ExtResource("7_y3jo1")
-
-[node name="Coin40" parent="Coins" unique_id=1379372883 instance=ExtResource("6_qy02x")]
-position = Vector2(3734, 959)
-texture = ExtResource("7_y3jo1")
-
-[node name="Coin18" parent="Coins" unique_id=1295739469 instance=ExtResource("6_qy02x")]
-position = Vector2(6980, 176)
-texture = ExtResource("7_y3jo1")
-
-[node name="Coin43" parent="Coins" unique_id=1119710353 instance=ExtResource("6_qy02x")]
-position = Vector2(7243, 171)
-texture = ExtResource("7_y3jo1")
-
-[node name="Coin44" parent="Coins" unique_id=217978787 instance=ExtResource("6_qy02x")]
-position = Vector2(7115, 171)
-texture = ExtResource("7_y3jo1")
-
-[node name="Coin9" parent="Coins" unique_id=2052277588 instance=ExtResource("6_qy02x")]
-position = Vector2(9689, -1615)
-texture = ExtResource("7_y3jo1")
-
-[node name="Coin42" parent="Coins" unique_id=458561684 instance=ExtResource("6_qy02x")]
-position = Vector2(10018, -1617)
-texture = ExtResource("7_y3jo1")
-
-[node name="Coin45" parent="Coins" unique_id=1523881153 instance=ExtResource("6_qy02x")]
-position = Vector2(9909, -1617)
-texture = ExtResource("7_y3jo1")
-
-[node name="Coin46" parent="Coins" unique_id=336789027 instance=ExtResource("6_qy02x")]
-position = Vector2(10235, -1619)
-texture = ExtResource("7_y3jo1")
-
-[node name="Coin47" parent="Coins" unique_id=2012651532 instance=ExtResource("6_qy02x")]
-position = Vector2(10126, -1619)
-texture = ExtResource("7_y3jo1")
-
-[node name="Coin48" parent="Coins" unique_id=1846924354 instance=ExtResource("6_qy02x")]
-position = Vector2(10458, -1618)
-texture = ExtResource("7_y3jo1")
-
-[node name="Coin49" parent="Coins" unique_id=1840950659 instance=ExtResource("6_qy02x")]
-position = Vector2(10349, -1618)
-texture = ExtResource("7_y3jo1")
-
-[node name="Coin50" parent="Coins" unique_id=1794793462 instance=ExtResource("6_qy02x")]
-position = Vector2(10678, -1620)
-texture = ExtResource("7_y3jo1")
-
-[node name="Coin51" parent="Coins" unique_id=858251819 instance=ExtResource("6_qy02x")]
-position = Vector2(10569, -1620)
-texture = ExtResource("7_y3jo1")
-
-[node name="Coin10" parent="Coins" unique_id=2073649153 instance=ExtResource("6_qy02x")]
-position = Vector2(8840, -344)
-texture = ExtResource("7_y3jo1")
-
-[node name="Coin11" parent="Coins" unique_id=1756350612 instance=ExtResource("6_qy02x")]
-position = Vector2(9096, -344)
-texture = ExtResource("7_y3jo1")
 
 [node name="SpecialCoins" type="Node2D" parent="." unique_id=1574538873]
 visible = false
@@ -903,263 +1229,11 @@ texture = ExtResource("7_y3jo1")
 [node name="Platforms" type="Node2D" parent="." unique_id=1115693790]
 position = Vector2(1920, -64)
 
-[node name="BridgePlatform" parent="Platforms" unique_id=1439632278 instance=ExtResource("33_twxhk")]
-position = Vector2(3007, 156)
-rotation = -1.5707964
-
-[node name="Platform17" parent="Platforms" unique_id=1889629645 instance=ExtResource("31_w6d5o")]
-position = Vector2(5285, 375)
-width = 5
-
-[node name="Grass104" type="Sprite2D" parent="Platforms/Platform17" unique_id=74230533]
-position = Vector2(-298, -59)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("20_6lr5j")
-
-[node name="Grass33" type="Sprite2D" parent="Platforms/Platform17" unique_id=651974346]
-position = Vector2(-57, -50)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("23_xns2c")
-
-[node name="Grass34" type="Sprite2D" parent="Platforms/Platform17" unique_id=208821012]
-position = Vector2(0, -50.5)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("20_6lr5j")
-flip_h = true
-
-[node name="Grass35" type="Sprite2D" parent="Platforms/Platform17" unique_id=380642676]
-position = Vector2(288, -61)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("23_xns2c")
-flip_h = true
-
-[node name="Platform10" parent="Platforms" unique_id=1440331607 instance=ExtResource("32_1tk8l")]
-position = Vector2(4102, -18)
-width = 2
-fall = true
-
-[node name="Platform16" parent="Platforms" unique_id=895645003 instance=ExtResource("32_1tk8l")]
-position = Vector2(1104, 658)
-fall = true
-
-[node name="Platform5" parent="Platforms" unique_id=695973061 instance=ExtResource("32_1tk8l")]
-position = Vector2(7992, -373)
-width = 2
-fall = true
-
-[node name="Platform4" parent="Platforms" unique_id=25429054 instance=ExtResource("32_1tk8l")]
-position = Vector2(7453, -375)
-width = 2
-fall = true
-
-[node name="Platform6" parent="Platforms" unique_id=803509960 instance=ExtResource("29_vnrdr")]
-position = Vector2(7503, 76)
-width = 2
-
-[node name="Grass43" type="Sprite2D" parent="Platforms/Platform6" unique_id=1495900487]
-position = Vector2(-91, -65)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("23_xns2c")
-
-[node name="Grass44" type="Sprite2D" parent="Platforms/Platform6" unique_id=556388506]
-position = Vector2(94, -65)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("23_xns2c")
-flip_h = true
-
-[node name="Platform8" parent="Platforms" unique_id=434364931 instance=ExtResource("29_vnrdr")]
-position = Vector2(7042, -154)
-width = 2
-
-[node name="Grass45" type="Sprite2D" parent="Platforms/Platform8" unique_id=2077605777]
-position = Vector2(56, -63)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("23_xns2c")
-flip_h = true
-
-[node name="Platform9" parent="Platforms" unique_id=1016935612 instance=ExtResource("29_vnrdr")]
-position = Vector2(7722, -375)
-width = 2
-
-[node name="Grass46" type="Sprite2D" parent="Platforms/Platform9" unique_id=1349162477]
-position = Vector2(73, -61)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("19_y8cc3")
-flip_h = true
-
-[node name="Grass49" type="Sprite2D" parent="Platforms/Platform9" unique_id=761655133]
-position = Vector2(-94, -61)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("23_xns2c")
-
-[node name="Platform18" parent="Platforms" unique_id=120942991 instance=ExtResource("29_vnrdr")]
-position = Vector2(7856, -702)
-width = 2
-
-[node name="Platform11" parent="Platforms" unique_id=678243494 instance=ExtResource("29_vnrdr")]
-position = Vector2(8260, -375)
-width = 2
-
-[node name="Grass47" type="Sprite2D" parent="Platforms/Platform11" unique_id=965079134]
-position = Vector2(-102, -63.00003)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("20_6lr5j")
-flip_h = true
-
-[node name="Platform12" parent="Platforms" unique_id=1402230692 instance=ExtResource("29_vnrdr")]
-position = Vector2(9856, -455)
-width = 2
-
-[node name="Grass91" type="Sprite2D" parent="Platforms/Platform12" unique_id=681321903]
-position = Vector2(104, -63)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("20_6lr5j")
-flip_h = true
-
-[node name="Grass92" type="Sprite2D" parent="Platforms/Platform12" unique_id=274308996]
-position = Vector2(38, -62)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("23_xns2c")
-
-[node name="Platform13" parent="Platforms" unique_id=891981076 instance=ExtResource("29_vnrdr")]
-position = Vector2(12099, -178)
-
-[node name="Grass86" type="Sprite2D" parent="Platforms/Platform13" unique_id=1010252466]
-position = Vector2(-163, -64)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("20_6lr5j")
-flip_h = true
-
-[node name="Grass87" type="Sprite2D" parent="Platforms/Platform13" unique_id=1237179936]
-position = Vector2(145.00098, -63)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("23_xns2c")
-flip_h = true
-
-[node name="Platform14" parent="Platforms" unique_id=653415634 instance=ExtResource("29_vnrdr")]
-position = Vector2(11730, -502)
-width = 2
-
-[node name="Grass88" type="Sprite2D" parent="Platforms/Platform14" unique_id=1055631432]
-position = Vector2(-87, -63.00006)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("23_xns2c")
-
-[node name="Grass89" type="Sprite2D" parent="Platforms/Platform14" unique_id=1324010631]
-position = Vector2(68, -62.00006)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("19_y8cc3")
-flip_h = true
-
-[node name="Platform15" parent="Platforms" unique_id=1426766162 instance=ExtResource("29_vnrdr")]
-position = Vector2(12333, -645)
-width = 2
-
-[node name="Grass90" type="Sprite2D" parent="Platforms/Platform15" unique_id=1881983756]
-position = Vector2(45.000977, -62)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("19_y8cc3")
-flip_h = true
-
 [node name="Signs" type="Node2D" parent="." unique_id=567327781]
-
-[node name="Sign_Bridge" parent="Signs" unique_id=1037848522 instance=ExtResource("11_q0xf2")]
-position = Vector2(4724, 385)
-text = "Bridge closed for repair"
-
-[node name="Sign_TileTeaser" parent="Signs" unique_id=983755090 instance=ExtResource("11_q0xf2")]
-position = Vector2(9776, -826)
-text = "Tile painters only beyond this point! [img=20]res://assets/text_icons/up_arrow.png[/img]"
 
 [node name="NPCs" type="Node2D" parent="." unique_id=147049230]
 
-[node name="NpcElder_Premise" parent="NPCs" unique_id=688628462 instance=ExtResource("34_vnrdr")]
-position = Vector2(550, 583)
-
-[node name="NpcElder_RockPuzzle" parent="NPCs" unique_id=342457569 instance=ExtResource("34_vnrdr")]
-position = Vector2(3930, 329)
-
-[node name="NpcElder_ScrollPuzzle" parent="NPCs" unique_id=1152959677 instance=ExtResource("34_vnrdr")]
-position = Vector2(7984, 460)
-
-[node name="NpcElder_TwoScrollsPuzzle" parent="NPCs" unique_id=1015220593 instance=ExtResource("34_vnrdr")]
-position = Vector2(9644, -555)
-
-[node name="NpcElder_TilePuzzle" parent="NPCs" unique_id=3347555 instance=ExtResource("34_vnrdr")]
-position = Vector2(11706, 974)
-
-[node name="NpcElder_Congrats" parent="NPCs" unique_id=664077588 instance=ExtResource("34_vnrdr")]
-position = Vector2(12702, -179)
-
-[node name="Npc_MonkFlavor" parent="NPCs" unique_id=1327020053 instance=ExtResource("3_27os8")]
-position = Vector2(2115, 613)
-dialogue_lines = Array[String](["The void has come to Threadbare. Are you the one to save us?"])
-
-[node name="AnimatedSprite2D" parent="NPCs/Npc_MonkFlavor" index="0" unique_id=1376270546]
-sprite_frames = ExtResource("12_m7dqe")
-
-[node name="CollisionShape2D" parent="NPCs/Npc_MonkFlavor/Area2D" parent_id_path=PackedInt32Array(1327020053, 18542653) index="0" unique_id=226621961]
-shape = SubResource("RectangleShape2D_0ff8d")
-
-[node name="ControlDisplay" parent="NPCs/Npc_MonkFlavor" index="3" unique_id=1300373774]
-visible = false
-position = Vector2(0, -75)
-
-[node name="Npc_Sheep" parent="NPCs" unique_id=949624559 instance=ExtResource("3_27os8")]
-position = Vector2(5776, 114)
-dialogue_lines = Array[String](["Baaaaa!"])
-flip_to_face_player = true
-
-[node name="AnimatedSprite2D" parent="NPCs/Npc_Sheep" index="0" unique_id=1376270546]
-sprite_frames = ExtResource("25_pj073")
-
-[node name="CollisionShape2D" parent="NPCs/Npc_Sheep/Area2D" parent_id_path=PackedInt32Array(949624559, 18542653) index="0" unique_id=226621961]
-shape = SubResource("RectangleShape2D_0ff8d")
-
-[node name="ControlDisplay" parent="NPCs/Npc_Sheep" index="3" unique_id=1300373774]
-visible = false
-position = Vector2(0, -75)
-
-[node name="Npc_Sheep2" parent="NPCs" unique_id=434471359 instance=ExtResource("3_27os8")]
-z_index = 2
-position = Vector2(7176, 242)
-dialogue_lines = Array[String](["Baa-a-a-a!"])
-flip_to_face_player = true
-
-[node name="AnimatedSprite2D" parent="NPCs/Npc_Sheep2" index="0" unique_id=1376270546]
-sprite_frames = ExtResource("25_pj073")
-flip_h = true
-
-[node name="CollisionShape2D" parent="NPCs/Npc_Sheep2/Area2D" parent_id_path=PackedInt32Array(434471359, 18542653) index="0" unique_id=226621961]
-shape = SubResource("RectangleShape2D_0ff8d")
-
-[node name="ControlDisplay" parent="NPCs/Npc_Sheep2" index="3" unique_id=1300373774]
-visible = false
-position = Vector2(0, -75)
-
-[node name="Npc_Sheep3" parent="NPCs" unique_id=1255304457 instance=ExtResource("3_27os8")]
-z_index = 2
-position = Vector2(7729, 510)
-dialogue_lines = Array[String](["Baaaaa!"])
-flip_to_face_player = true
-
-[node name="AnimatedSprite2D" parent="NPCs/Npc_Sheep3" index="0" unique_id=1376270546]
-sprite_frames = ExtResource("25_pj073")
-
-[node name="CollisionShape2D" parent="NPCs/Npc_Sheep3/Area2D" parent_id_path=PackedInt32Array(1255304457, 18542653) index="0" unique_id=226621961]
-shape = SubResource("RectangleShape2D_0ff8d")
-
-[node name="ControlDisplay" parent="NPCs/Npc_Sheep3" index="3" unique_id=1300373774]
-visible = false
-position = Vector2(0, -75)
-
 [node name="Boss" type="Node2D" parent="." unique_id=2087395625]
-
-[node name="Moth" parent="Boss" unique_id=1891005358 instance=ExtResource("27_x2f4c")]
-position = Vector2(14514, -346)
-scale = Vector2(2, 2)
-radius = 125.0
-rotation_speed = 0.9
 
 [node name="Player" parent="." unique_id=1041196418 instance=ExtResource("14_su4jx")]
 position = Vector2(240, 634)
@@ -1175,77 +1249,18 @@ position_smoothing_enabled = true
 
 [node name="Enemies" type="Node2D" parent="." unique_id=1698421393]
 
-[node name="Enemy" parent="Enemies" unique_id=1312464076 instance=ExtResource("17_d6rl2")]
-position = Vector2(9960, -28)
-
-[node name="Enemy2" parent="Enemies" unique_id=834529607 instance=ExtResource("17_d6rl2")]
-position = Vector2(10150, -30)
-
-[node name="Enemy3" parent="Enemies" unique_id=1094109507 instance=ExtResource("17_d6rl2")]
-position = Vector2(10834, -284)
-
-[node name="Enemy4" parent="Enemies" unique_id=947503997 instance=ExtResource("17_d6rl2")]
-position = Vector2(928, 765)
-
-[node name="Enemy5" parent="Enemies" unique_id=628973578 instance=ExtResource("17_d6rl2")]
-position = Vector2(2939, 528)
-
-[node name="Enemy6" parent="Enemies" unique_id=1452245350 instance=ExtResource("17_d6rl2")]
-position = Vector2(8071, 1010)
-
-[node name="Enemy7" parent="Enemies" unique_id=1307871349 instance=ExtResource("17_d6rl2")]
-position = Vector2(13647, -664)
-
-[node name="Enemy8" parent="Enemies" unique_id=607084219 instance=ExtResource("17_d6rl2")]
-position = Vector2(14033, -331)
-
-[node name="Enemy9" parent="Enemies" unique_id=2135558886 instance=ExtResource("17_d6rl2")]
-position = Vector2(14875, -19)
-
-[node name="DecorativeProps" type="Node2D" parent="." unique_id=195701104]
-
-[node name="BarleyCrops2" parent="DecorativeProps" unique_id=120894355 instance=ExtResource("37_xvuht")]
-position = Vector2(2240, 1047)
-
-[node name="BarleyCrops6" parent="DecorativeProps" unique_id=800374512 instance=ExtResource("37_xvuht")]
-position = Vector2(2496, 1047)
-
-[node name="BarleyCrops3" parent="DecorativeProps" unique_id=91968817 instance=ExtResource("37_xvuht")]
-position = Vector2(1984, 1047)
-
-[node name="BarleyCrops4" parent="DecorativeProps" unique_id=1524504017 instance=ExtResource("37_xvuht")]
-position = Vector2(1728, 1047)
-
-[node name="BarleyCrops7" parent="DecorativeProps" unique_id=530531959 instance=ExtResource("37_xvuht")]
-position = Vector2(192, 1040)
-
-[node name="BarleyCrops8" parent="DecorativeProps" unique_id=2016659643 instance=ExtResource("37_xvuht")]
-position = Vector2(441, 1044)
-
-[node name="BarleyCrops9" parent="DecorativeProps" unique_id=1870673561 instance=ExtResource("37_xvuht")]
-position = Vector2(1212, 1046)
-
-[node name="BarleyCrops10" parent="DecorativeProps" unique_id=210298573 instance=ExtResource("37_xvuht")]
-position = Vector2(1468, 1046)
-
-[node name="BarleyCrops11" parent="DecorativeProps" unique_id=108985680 instance=ExtResource("37_xvuht")]
-position = Vector2(956, 1046)
-
-[node name="BarleyCrops12" parent="DecorativeProps" unique_id=125971936 instance=ExtResource("37_xvuht")]
-position = Vector2(700, 1046)
-
 [node name="Hud2" parent="." unique_id=1514961890 instance=ExtResource("39_v78as")]
 
-[editable path="ScrollGates/ScrollGate3"]
-[editable path="ScrollGates/ScrollGate3/NewGate/GateCollision/DoorOpenDust/DustLeft"]
-[editable path="ScrollGates/ScrollGate3/NewGate/GateCollision/DoorOpenDust/DustRight"]
-[editable path="ScrollGates/ScrollGate3/InfoIndicator"]
+[editable path="Room01_RockPuzzle/Npc_MonkFlavor"]
+[editable path="Room02_BridgePuzzle/Npc_Sheep"]
+[editable path="Room03_GetYarnsparkPuzzle/Npc_Sheep2"]
+[editable path="Room03_GetYarnsparkPuzzle/Npc_Sheep3"]
+[editable path="Room05_PaintTilePuzzle/ScrollGate3"]
+[editable path="Room05_PaintTilePuzzle/ScrollGate3/NewGate/GateCollision/DoorOpenDust/DustLeft"]
+[editable path="Room05_PaintTilePuzzle/ScrollGate3/NewGate/GateCollision/DoorOpenDust/DustRight"]
+[editable path="Room05_PaintTilePuzzle/ScrollGate3/InfoIndicator"]
 [editable path="Triggers/ForceQuestProgressTrigger_SolvedRockPuzzle"]
 [editable path="Triggers/ChangeEditableObjectsTrigger_StartRotatePuzzle"]
 [editable path="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle"]
 [editable path="Triggers/ChangeEditableObjectsTrigger_StartScrollPuzzle2"]
 [editable path="Triggers/ChangeEditableObjectsTrigger_StartTilePuzzle"]
-[editable path="NPCs/Npc_MonkFlavor"]
-[editable path="NPCs/Npc_Sheep"]
-[editable path="NPCs/Npc_Sheep2"]
-[editable path="NPCs/Npc_Sheep3"]
