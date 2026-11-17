@@ -44,20 +44,30 @@ jobs:
           echo "Using $GODOT_REPO release $tag"
           gh release download "$tag" --repo "$GODOT_REPO" --pattern 'web-editor-*.zip' --output dl/WEB_EDITOR.zip
 
-          # Newest unexpired project.zip artifact from build.yml
-          art=$(gh api "repos/$GITHUB_REPOSITORY/actions/artifacts?name=project.zip&per_page=10" --jq \
-            '[.artifacts[] | select(.expired | not)][0].id // empty')
-          [ -n "$art" ] || { echo "No unexpired project.zip artifact found" >&2; exit 1; }
-          echo "Using artifact $art"
-          gh api "repos/$GITHUB_REPOSITORY/actions/artifacts/$art/zip" > dl/project.zip
-
           unzip -o dl/WEB_EDITOR.zip -d dl/web
           mv dl/web/* site/
-          
-          # Re-zip so the archive has explicit directory entries; the web editor's zip installer needs them.
-          mkdir dl/proj
-          unzip -q dl/project.zip -d dl/proj
-          (cd dl/proj && zip -qr ../../site/project.zip .)
+          mkdir -p site/projects
+
+          # fetch_chapter <artifact name> <chapter name>
+          # Newest unexpired artifact from build.yml, re-zipped into site/projects/<chapter>.zip
+          fetch_chapter() {
+            local artname="$1" chapter="$2" art
+            art=$(gh api "repos/$GITHUB_REPOSITORY/actions/artifacts?name=$artname&per_page=10" --jq \
+              '[.artifacts[] | select(.expired | not)][0].id // empty')
+            [ -n "$art" ] || { echo "No unexpired $artname artifact found" >&2; exit 1; }
+            echo "Using artifact $art for chapter $chapter"
+            gh api "repos/$GITHUB_REPOSITORY/actions/artifacts/$art/zip" > "dl/$chapter.zip"
+
+            # Re-zip so the archive has explicit directory entries; the web editor's zip installer needs them.
+            mkdir "dl/$chapter"
+            unzip -q "dl/$chapter.zip" -d "dl/$chapter"
+            (cd "dl/$chapter" && zip -qr "../../site/projects/$chapter.zip" .)
+            test -f "site/projects/$chapter.zip" || { echo "$chapter.zip missing" >&2; exit 1; }
+          }
+
+          fetch_chapter project.zip project
+          fetch_chapter debug-project.zip debug-project
+
           test -f site/godot.editor.html || { echo "godot.editor.html missing" >&2; exit 1; }
           cp site/godot.editor.html site/index.html
 
