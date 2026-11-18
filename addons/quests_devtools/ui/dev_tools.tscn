@@ -8,7 +8,7 @@ font_size = 32
 [sub_resource type="LabelSettings" id="LabelSettings_dlvm1"]
 font_size = 24
 
-[node name="DevTools" type="Control" unique_id=1991389250]
+[node name="DevTools" type="Control" unique_id=1991389250 node_paths=PackedStringArray("add_player_to_editable_nodes_checkbox", "jump_to_quest_id_input")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -18,6 +18,8 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_dlvm1")
+add_player_to_editable_nodes_checkbox = NodePath("VBoxContainer/VBoxContainer/HBoxContainer/CheckBox")
+jump_to_quest_id_input = NodePath("VBoxContainer/VBoxContainer/HBoxContainer2/LineEdit")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1000950660]
 layout_mode = 1
@@ -156,6 +158,26 @@ layout_mode = 2
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/VBoxContainer" unique_id=1981126737]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer2" unique_id=705956438]
+layout_mode = 2
+text = "Jump to Quest ID: "
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/VBoxContainer/HBoxContainer2" unique_id=1163181364]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+
+[node name="JumpToIdButton" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer2" unique_id=1985178808]
+layout_mode = 2
+text = "Go"
+
+[node name="Spacer7" type="Control" parent="VBoxContainer/VBoxContainer" unique_id=446227445]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
 [node name="CoinButton" type="Button" parent="VBoxContainer/VBoxContainer" unique_id=938176066]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -173,4 +195,5 @@ text = "+1 Coin"
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/SkipToNextCheckpointButton" to="." method="_on_skip_to_next_checkpoint_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/DebugLevelButton" to="." method="_on_debug_level_button_pressed"]
 [connection signal="toggled" from="VBoxContainer/VBoxContainer/HBoxContainer/CheckBox" to="." method="_on_check_box_toggled"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/HBoxContainer2/JumpToIdButton" to="." method="_on_jump_to_id_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/CoinButton" to="." method="_on_coin_button_pressed"]

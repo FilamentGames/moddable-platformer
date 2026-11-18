@@ -3,6 +3,7 @@ extends Control
 class_name DevTools
 
 @export var add_player_to_editable_nodes_checkbox: CheckBox
+@export var jump_to_quest_id_input: LineEdit
 
 func _ready() -> void:
 	print("Baby Godot Dev Tools active")
@@ -44,7 +45,6 @@ func _on_master_reset_button_pressed() -> void:
 	await get_tree().process_frame
 	EditorInterface.open_scene_from_path("res://levels/clones/level0.tscn")
 
-
 func _on_skip_to_next_checkpoint_button_pressed() -> void:
 	if GlobalQuests and GlobalQuests.quests:
 		GlobalQuests.quests.skip_to_next_checkpoint()
@@ -52,7 +52,6 @@ func _on_skip_to_next_checkpoint_button_pressed() -> void:
 func _on_stop_button_pressed() -> void:
 	if GlobalQuests and GlobalQuests.quests:
 		GlobalQuests.quests.stop_game()
-
 
 func _on_debug_level_button_pressed() -> void:
 	ProjectSettings.set_setting("application/run/main_scene", "res://levels/clones/debug_level.tscn")
@@ -66,4 +65,5 @@ func _on_debug_level_button_pressed() -> void:
 	add_child(dialog)
 	dialog.popup_centered()
 
-	
+func _on_jump_to_id_button_pressed() -> void:
+	GlobalQuests.quests.skip_to_text_line(jump_to_quest_id_input.text)
