@@ -2,9 +2,17 @@ name: Build
 
 on:
   push:
+    # Each listed branch is built (and deployed as a chapter) when pushed.
+    # To add a chapter, add the branch here and merge this file into that branch.
     branches:
       - main
+      - staging
+      - production
   workflow_dispatch:
+
+concurrency:
+  group: build-${{ github.ref_name }}
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -14,7 +22,11 @@ jobs:
         shell: bash
     steps:
       - uses: actions/checkout@v7
-    
+
+      - name: Compute chapter name
+        # Artifact/folder names can't contain '/'
+        run: echo "CHAPTER=${GITHUB_REF_NAME//\//-}" >> "$GITHUB_ENV"
+
       - name: Remove and disable GUT tests
         run: ./.github/workflows/scripts/disable_gut.sh
       
@@ -36,10 +48,10 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: debug-project.zip
+          name: debug-project-${{ env.CHAPTER }}
           include-hidden-files: true
           if-no-files-found: error
-          retention-days: 7
+          retention-days: 90
           # This is set in GitHub by going:
           #   Settings -> Secrets and Varaibles -> Actions -> Variables
           path: ${{ vars.ARTIFACT_PATHS }}
@@ -50,20 +62,13 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: project.zip
+          name: project-${{ env.CHAPTER }}
           include-hidden-files: true
           if-no-files-found: error
-          retention-days: 7
+          retention-days: 90
           # This is set in GitHub by going:
           #   Settings -> Secrets and Varaibles -> Actions -> Variables
           path: ${{ vars.ARTIFACT_PATHS }}
 
-  deploy-pages:
-    name: Deploy Artifacts to Pages
-    needs: build
-    permissions:
-      contents: read
-      actions: read
-      pages: write
-      id-token: write
-    uses: ./.github/workflows/pages.yml
+  # Pages deployment is started by pages.yml via workflow_run (always runs from
+  # the default branch, which the github-pages environment requires).
