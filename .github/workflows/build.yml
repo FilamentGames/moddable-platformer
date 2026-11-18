@@ -8,7 +8,6 @@ on:
       - main
       - staging
       - production
-      - pages/multiProjects
   workflow_dispatch:
 
 concurrency:
