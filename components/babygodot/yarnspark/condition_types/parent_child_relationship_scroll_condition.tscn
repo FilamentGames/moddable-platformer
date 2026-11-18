@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://ci2y224l5trhk"]
+
+[ext_resource type="Script" uid="uid://c3cm478hfod0u" path="res://components/babygodot/yarnspark/condition_types/parent_child_relationship_scroll_condition.gd" id="1_87h54"]
+
+[node name="ParentChildRelationshipScrollCondition" type="Node" unique_id=695386769]
+script = ExtResource("1_87h54")
+metadata/_custom_type_script = "uid://c3cm478hfod0u"

@@ -20,6 +20,7 @@ func _ready() -> void:
 	if Engine.is_editor_hint():
 		var inspector = EditorInterface.get_inspector()
 		var tree = EditorInterface.get_edited_scene_root()
+		get_tree().tree_changed.connect(_on_editor_update.bind(1))
 		tree.child_entered_tree.connect(_on_editor_update)
 		inspector.property_edited.connect(_on_editor_update)
 		GlobalQuests.quests.current_scene_updated.connect(_on_editor_update.bind(true))

@@ -16,6 +16,8 @@
 [ext_resource type="PackedScene" uid="uid://6xuod5sofp8c" path="res://components/platform/platform_basket_thin.tscn" id="13_38qs6"]
 [ext_resource type="PackedScene" uid="uid://1gwbwvnyhbw1" path="res://components/babygodot/hittable/seeking/seeking_hittable_object.tscn" id="14_gi7fq"]
 [ext_resource type="PackedScene" uid="uid://dbaal2g7b8ub0" path="res://components/enemy/storyvore_enemy.tscn" id="16_oaw4a"]
+[ext_resource type="PackedScene" uid="uid://dpk1jwflxtjbn" path="res://components/babygodot/yarnspark/yarnspark.tscn" id="17_oaw4a"]
+[ext_resource type="PackedScene" uid="uid://ci2y224l5trhk" path="res://components/babygodot/yarnspark/condition_types/parent_child_relationship_scroll_condition.tscn" id="18_mkx31"]
 
 [node name="DebugLevel" type="Node2D" unique_id=486818484]
 
@@ -86,5 +88,16 @@ position_smoothing_enabled = true
 
 [node name="StoryvoreEnemy" parent="." unique_id=834529607 instance=ExtResource("16_oaw4a")]
 position = Vector2(2202, 297)
+
+[node name="Yarnspark" parent="." unique_id=2086611064 instance=ExtResource("17_oaw4a")]
+position = Vector2(2722, 541)
+
+[node name="ParentChildRelationshipScrollCondition" parent="Yarnspark" unique_id=695386769 node_paths=PackedStringArray("parent_node", "child_node") instance=ExtResource("18_mkx31")]
+parent_node = NodePath("../TestParent")
+child_node = NodePath("../TestChild")
+
+[node name="TestParent" type="Node" parent="Yarnspark" unique_id=1531264936]
+
+[node name="TestChild" type="Node" parent="Yarnspark" unique_id=169603939]
 
 [connection signal="on_toggle" from="Switch" to="PlaceholderSwitchGate" method="on_toggle"]
