@@ -32,13 +32,6 @@ fetch_artifact() {
 gh api --paginate "repos/$GITHUB_REPOSITORY/actions/artifacts?per_page=100" --jq \
   '.artifacts[] | select(.expired | not) | select(.name | test("^(debug-)?project-")) | "\(.name) \(.id)"' \
   | awk '!seen[$1]++' > dl/artifacts.txt
-
-# >>> TEST ONLY (delete this block and the TEST_ONLY_CHAPTER check below to undo) >>>
-TEST_ONLY_CHAPTER="pages-multiProjects"
-grep -E "^(debug-)?project-$TEST_ONLY_CHAPTER " dl/artifacts.txt > dl/artifacts.filtered.txt || true
-mv dl/artifacts.filtered.txt dl/artifacts.txt
-# <<< TEST ONLY <<<
-
 cat dl/artifacts.txt
 
 # Chapters = every branch that has a project-<chapter> artifact.
@@ -56,11 +49,7 @@ while read -r name id; do
   fi
 done < <(grep -v '^debug-' dl/artifacts.txt)
 
-if [ -n "${TEST_ONLY_CHAPTER:-}" ]; then # TEST ONLY: main is skipped
-  test -f "site/chapters/$TEST_ONLY_CHAPTER/project.zip" || { echo "Test chapter '$TEST_ONLY_CHAPTER' has no build" >&2; exit 1; }
-else
-  test -f site/chapters/main/project.zip || { echo "Default chapter 'main' has no build" >&2; exit 1; }
-fi
+test -f site/chapters/main/project.zip || { echo "Default chapter 'main' has no build" >&2; exit 1; }
 jq -R . dl/chapters.txt | jq -s '{chapters: .}' > site/chapters/index.json
 
 test -f site/godot.editor.html || { echo "godot.editor.html missing" >&2; exit 1; }
