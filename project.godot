@@ -54,6 +54,7 @@ npcs=""
 yarnsparks=""
 yarnsparkGates=""
 triggers=""
+editable=""
 
 [input]
 

@@ -59,23 +59,23 @@ metadata/_custom_type_script = "uid://wcqap044q4nm"
 
 [sub_resource type="Resource" id="Resource_dt6hy"]
 script = ExtResource("2_fdhqc")
-dialogue_line = "The yarnspark is the key."
+dialogue_line = "The YarnSpark is the key."
 progress_method = 3
 metadata/_custom_type_script = "uid://wcqap044q4nm"
 
 [sub_resource type="Resource" id="Resource_m7dqe"]
 script = ExtResource("2_fdhqc")
-dialogue_line = "The power of the yarnspark is nearby! Change the property the yarnspark demands..."
+dialogue_line = "The power of the YarnSpark is nearby! Change the property the YarnSpark demands..."
 progress_method = 4
 show_celebration_animation = true
-hints = Array[String](["Look for a checkbox on the yarnspark...", "In the Scene Tree, select the node called Yarnspark. In the Inspector, check the \"Can I get the yarnspark\" checkbox."])
+hints = Array[String](["Look for a checkbox on the YarnSpark...", "In the Scene Tree, select the node called YarnSpark. In the Inspector, check the \"Can I get the YarnSpark\" checkbox."])
 metadata/_custom_type_script = "uid://wcqap044q4nm"
 
 [sub_resource type="Resource" id="Resource_ivp3h"]
 script = ExtResource("2_fdhqc")
-dialogue_line = "The yarnspark has great power over the simple minds of these Storyvores."
+dialogue_line = "The YarnSpark has great power over the simple minds of these Storyvores."
 progress_method = 4
-hints = Array[String](["Search each enemy for the property the yarnspark demands.", "In the Scene Tree, select the Enemy node. In the Inspector, check the Fall Off Edge checkbox. Do the same for Enemy2."])
+hints = Array[String](["Search each enemy for the property the YarnSpark demands.", "In the Scene Tree, select the Enemy node. In the Inspector, check the Fall Off Edge checkbox. Do the same for Enemy2."])
 metadata/_custom_type_script = "uid://wcqap044q4nm"
 
 [sub_resource type="Resource" id="Resource_goto6"]
