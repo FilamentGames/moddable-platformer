@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cgxv5yqfnl7u"]
+
+[ext_resource type="Script" uid="uid://uqa6hu47vyhn" path="res://components/platform/animatable_platform/animatable_platform.gd" id="1_bqd1h"]
+[ext_resource type="TileSet" uid="uid://321ocrwkcyye" path="res://spaces/tileset-threadbare.tres" id="2_ww113"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o2vn2"]
+resource_local_to_scene = true
+size = Vector2(384, 128)
+
+[node name="MovingPlatform" type="AnimatableBody2D" unique_id=226124787]
+script = ExtResource("1_bqd1h")
+tile_set = ExtResource("2_ww113")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=587124361]
+unique_name_in_owner = true
+shape = SubResource("RectangleShape2D_o2vn2")
+
+[node name="Sprites" type="Node2D" parent="." unique_id=1902982461]
+unique_name_in_owner = true
+texture_filter = 3

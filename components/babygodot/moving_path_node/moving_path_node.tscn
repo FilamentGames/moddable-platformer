@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://b5hpe7b55n7b8"]
+
+[ext_resource type="Script" uid="uid://cy6lnabs37sjh" path="res://components/babygodot/moving_path_node/moving_path_node.gd" id="1_lg7ko"]
+
+[node name="MovingPathNode" type="PathFollow2D" unique_id=285414996]
+rotates = false
+cubic_interp = false
+script = ExtResource("1_lg7ko")

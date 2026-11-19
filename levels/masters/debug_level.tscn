@@ -18,6 +18,14 @@
 [ext_resource type="PackedScene" uid="uid://dbaal2g7b8ub0" path="res://components/enemy/storyvore_enemy.tscn" id="16_oaw4a"]
 [ext_resource type="PackedScene" uid="uid://dpk1jwflxtjbn" path="res://components/babygodot/yarnspark/yarnspark.tscn" id="17_oaw4a"]
 [ext_resource type="PackedScene" uid="uid://ci2y224l5trhk" path="res://components/babygodot/yarnspark/condition_types/parent_child_relationship_scroll_condition.tscn" id="18_mkx31"]
+[ext_resource type="PackedScene" uid="uid://b5hpe7b55n7b8" path="res://components/babygodot/moving_path_node/moving_path_node.tscn" id="19_3l80m"]
+[ext_resource type="PackedScene" uid="uid://cgxv5yqfnl7u" path="res://components/platform/animatable_platform/animatable_platform.tscn" id="20_3l80m"]
+
+[sub_resource type="Curve2D" id="Curve2D_24xr1"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 911, -1, 0, 0, 0, 0, 271, -549)
+}
+point_count = 3
 
 [node name="DebugLevel" type="Node2D" unique_id=486818484]
 
@@ -99,5 +107,19 @@ child_node = NodePath("../TestChild")
 [node name="TestParent" type="Node" parent="Yarnspark" unique_id=1531264936]
 
 [node name="TestChild" type="Node" parent="Yarnspark" unique_id=169603939]
+
+[node name="Path2D" type="Path2D" parent="." unique_id=858978426]
+position = Vector2(317, 351)
+curve = SubResource("Curve2D_24xr1")
+
+[node name="PathFollower" parent="Path2D" unique_id=811366471 instance=ExtResource("19_3l80m")]
+rotation = -0.0010976944
+cycle_time = 10.0
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Path2D/PathFollower" unique_id=2074058540]
+remote_path = NodePath("../../MovingPlatform")
+
+[node name="MovingPlatform" parent="Path2D" unique_id=1213343189 instance=ExtResource("20_3l80m")]
+rotation = -0.0010976944
 
 [connection signal="on_toggle" from="Switch" to="PlaceholderSwitchGate" method="on_toggle"]
