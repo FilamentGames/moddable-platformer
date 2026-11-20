@@ -441,7 +441,7 @@ size = Vector2(40, 2044)
 
 [node name="EditableNodeList" type="Node" parent="." unique_id=280926474 node_paths=PackedStringArray("nodes")]
 script = ExtResource("1_vnrdr")
-nodes = [NodePath("../Room01_RockPuzzle/RockPile")]
+nodes = [NodePath("../Room01_IntroAndRockPuzzle/RockPile")]
 
 [node name="MasterLevelLock" type="Node" parent="." unique_id=678410586]
 script = ExtResource("1_p5pw3")
@@ -546,510 +546,534 @@ enabled = false
 tile_set = ExtResource("12_vnrdr")
 collision_enabled = false
 
-[node name="TileMapLayer_Stone" type="TileMapLayer" parent="." unique_id=1330231855 groups=["editable"]]
-tile_set = ExtResource("14_ht26h")
+[node name="Room01_IntroAndRockPuzzle" type="Node2D" parent="." unique_id=764395788]
 
-[node name="Room01_RockPuzzle" type="Node2D" parent="." unique_id=764395788]
-
-[node name="RockPile" parent="Room01_RockPuzzle" unique_id=2056135097 groups=["editable"] instance=ExtResource("8_sftbg")]
-position = Vector2(4214, 324)
-
-[node name="Checkpoint" parent="Room01_RockPuzzle" unique_id=951106919 groups=["checkpoints"] instance=ExtResource("27_dt6hy")]
-position = Vector2(-560, 455)
-scale = Vector2(8.4, 1)
-
-[node name="SceneTreePowerup" parent="Room01_RockPuzzle" unique_id=857147533 groups=["powerups"] instance=ExtResource("15_dt6hy")]
-position = Vector2(4065, 314)
-
-[node name="Coin" parent="Room01_RockPuzzle" unique_id=469589313 instance=ExtResource("6_qy02x")]
-position = Vector2(1434, 563)
-texture = ExtResource("7_y3jo1")
-
-[node name="Coin8" parent="Room01_RockPuzzle" unique_id=1399238642 instance=ExtResource("6_qy02x")]
-position = Vector2(2933, 380)
-texture = ExtResource("7_y3jo1")
-
-[node name="Coin12" parent="Room01_RockPuzzle" unique_id=345869264 instance=ExtResource("6_qy02x")]
-position = Vector2(3030, 318)
-texture = ExtResource("7_y3jo1")
-
-[node name="Coin13" parent="Room01_RockPuzzle" unique_id=2104738955 instance=ExtResource("6_qy02x")]
-position = Vector2(3123, 380)
-texture = ExtResource("7_y3jo1")
-
-[node name="Coin22" parent="Room01_RockPuzzle" unique_id=91508137 instance=ExtResource("6_qy02x")]
-position = Vector2(1697, 558)
-texture = ExtResource("7_y3jo1")
-
-[node name="Coin24" parent="Room01_RockPuzzle" unique_id=334811006 instance=ExtResource("6_qy02x")]
-position = Vector2(1569, 558)
-texture = ExtResource("7_y3jo1")
-
-[node name="Coin2" parent="Room01_RockPuzzle" unique_id=2004393446 instance=ExtResource("6_qy02x")]
-position = Vector2(3599, 964)
-texture = ExtResource("7_y3jo1")
-
-[node name="Coin23" parent="Room01_RockPuzzle" unique_id=966695602 instance=ExtResource("6_qy02x")]
-position = Vector2(3862, 959)
-texture = ExtResource("7_y3jo1")
-
-[node name="Coin40" parent="Room01_RockPuzzle" unique_id=1379372883 instance=ExtResource("6_qy02x")]
-position = Vector2(3734, 959)
-texture = ExtResource("7_y3jo1")
-
-[node name="Platform16" parent="Room01_RockPuzzle" unique_id=895645003 groups=["platforms"] instance=ExtResource("32_1tk8l")]
-position = Vector2(3024, 594)
-fall = true
-
-[node name="NpcElder_Premise" parent="Room01_RockPuzzle" unique_id=688628462 groups=["npcs"] instance=ExtResource("34_vnrdr")]
-position = Vector2(550, 583)
-
-[node name="NpcElder_RockPuzzle" parent="Room01_RockPuzzle" unique_id=342457569 groups=["npcs"] instance=ExtResource("34_vnrdr")]
-position = Vector2(3930, 329)
-
-[node name="Npc_MonkFlavor" parent="Room01_RockPuzzle" unique_id=1327020053 groups=["npcs"] instance=ExtResource("3_27os8")]
-position = Vector2(2115, 613)
-dialogue_lines = Array[String](["The void has come to Threadbare. Are you the one to save us?"])
-
-[node name="AnimatedSprite2D" parent="Room01_RockPuzzle/Npc_MonkFlavor" index="0" unique_id=1376270546]
-sprite_frames = ExtResource("12_m7dqe")
-
-[node name="CollisionShape2D" parent="Room01_RockPuzzle/Npc_MonkFlavor/Area2D" parent_id_path=PackedInt32Array(1327020053, 18542653) index="0" unique_id=226621961]
-shape = SubResource("RectangleShape2D_0ff8d")
-
-[node name="ControlDisplay" parent="Room01_RockPuzzle/Npc_MonkFlavor" index="3" unique_id=1300373774]
-visible = false
-position = Vector2(0, -75)
-
-[node name="Enemy4" parent="Room01_RockPuzzle" unique_id=947503997 groups=["enemies"] instance=ExtResource("17_d6rl2")]
-position = Vector2(928, 765)
-
-[node name="Enemy5" parent="Room01_RockPuzzle" unique_id=628973578 groups=["enemies"] instance=ExtResource("17_d6rl2")]
-position = Vector2(2939, 528)
-
-[node name="ScreenShakeTrigger" parent="Room01_RockPuzzle" unique_id=1750362101 groups=["triggers"] instance=ExtResource("15_0aei4")]
-visible = false
-position = Vector2(460, 515)
-
-[node name="ScreenShakeTrigger2" parent="Room01_RockPuzzle" unique_id=1943245400 groups=["triggers"] instance=ExtResource("15_0aei4")]
-visible = false
-position = Vector2(2238, 518)
-
-[node name="QuestScriptTrigger_ReachedRockPuzzle" parent="Room01_RockPuzzle" unique_id=1651920811 groups=["triggers"] instance=ExtResource("9_58r63")]
-visible = false
-position = Vector2(3943.0002, 159)
-scale = Vector2(5.301431, 2.9200006)
-
-[node name="ForceQuestProgressTrigger_SolvedRockPuzzle" parent="Room01_RockPuzzle" unique_id=1381343308 groups=["triggers"] instance=ExtResource("17_foth1")]
-visible = false
-position = Vector2(4316.0005, 319)
-scale = Vector2(0.7200195, -0.5200013)
-
-[node name="CollisionShape2D" parent="Room01_RockPuzzle/ForceQuestProgressTrigger_SolvedRockPuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_y8cc3")
-
-[node name="SkipQuestTriggerBehavior" parent="Room01_RockPuzzle/ForceQuestProgressTrigger_SolvedRockPuzzle" index="1" unique_id=1238036962]
-quest_line_identifier = "ProceedToKnitwitch"
-
-[node name="Room02_BridgePuzzle" type="Node2D" parent="." unique_id=1065081788]
-
-[node name="BridgePuzzle_TileMapLayer_Basket" type="TileMapLayer" parent="Room02_BridgePuzzle" unique_id=874539525]
-tile_map_data = PackedByteArray("AAAgAAgAAQABAAAAAAAfAAgAAQABAAAAAAAeAAgAAQABAAAAAAAdAAgAAQABAAAAAAAcAAgAAQABAAAAAAAbAAgAAQABAAAAAAAaAAgAAQABAAAAAAAZAAgAAQABAAAAAAAYAAgAAQABAAAAAAAXAAgAAQABAAAAAAAWAAgAAQABAAAAAAAVAAgAAQABAAAAAAAUAAgAAQAJAAAAAAATAAgAAQAJAAAAAAASAAgAAQAJAAAAAAARAAgAAQAJAAAAAAAQAAgAAQAJAAAAAAAPAAgAAQAJAAAAAAAOAAgAAQAJAAAAAAANAAgAAQAJAAAAAAAMAAgAAQAJAAAAAAALAAgAAQAJAAAAAAAKAAgAAQAJAAAAAAAJAAgAAQAJAAAAAAAIAAgAAQAJAAAAAAAHAAgAAQAJAAAAAAAGAAgAAQAJAAAAAAAFAAgAAQAJAAAAAAAEAAgAAQAJAAAAAAAFAAcAAQABAAEAAAAFAAYAAQABAAEAAAAFAAUAAQACAAAAAAAEAAcAAQABAAEAAAAEAAYAAQABAAEAAAAEAAUAAQABAAAAAAADAAcAAQABAAEAAAADAAYAAQABAAEAAAADAAUAAQABAAAAAAACAAcAAQABAAEAAAACAAYAAQABAAEAAAACAAUAAQABAAAAAAABAAcAAQABAAEAAAABAAYAAQABAAEAAAABAAUAAQABAAAAAAAAAAcAAQABAAEAAAAAAAYAAQABAAEAAAAAAAUAAQAAAAAAAAAJAAcAAQABAAEAAAAJAAYAAQABAAAAAAAIAAcAAQABAAEAAAAIAAYAAQABAAAAAAAHAAcAAQABAAEAAAAHAAYAAQABAAAAAAAGAAcAAQABAAEAAAAGAAYAAQABAAAAAAAUAAcAAQACAAEAAAAUAAYAAQACAAEAAAAUAAUAAQACAAAAAAATAAcAAQABAAEAAAATAAYAAQABAAEAAAATAAUAAQABAAAAAAASAAcAAQABAAEAAAASAAYAAQABAAEAAAASAAUAAQABAAAAAAARAAcAAQABAAEAAAARAAYAAQABAAEAAAARAAUAAQABAAAAAAAQAAcAAQABAAEAAAAQAAYAAQABAAEAAAAQAAUAAQABAAAAAAAPAAcAAQABAAEAAAAPAAYAAQABAAEAAAAPAAUAAQABAAAAAAAOAAcAAQABAAEAAAAOAAYAAQABAAEAAAAOAAUAAQABAAAAAAANAAcAAQABAAEAAAANAAYAAQABAAEAAAANAAUAAQABAAAAAAAMAAcAAQABAAEAAAAMAAYAAQABAAEAAAAMAAUAAQABAAAAAAALAAcAAQABAAEAAAALAAYAAQABAAEAAAALAAUAAQABAAAAAAAKAAcAAQABAAEAAAAKAAYAAQABAAEAAAAKAAUAAQAAAAAAAAAfAAMAAQABAAAAAAAgAAMAAQAKAAEAAAAfAAQAAQABAAEAAAAfAAUAAQABAAEAAAAfAAYAAQABAAEAAAAgAAYAAQABAAEAAAAgAAcAAQABAAEAAAAfAAcAAQABAAEAAAAgAAUAAQABAAEAAAAgAAQAAQAKAAIAAAAcAAUAAQAJAAIAAAAdAAQAAQAJAAIAAAAeAAMAAQAKAAEAAAAeAAQAAQAKAAIAAAAdAAUAAQAKAAIAAAAcAAYAAQAKAAIAAAAeAAUAAQAKAAIAAAAeAAYAAQAKAAIAAAAdAAYAAQAKAAIAAAAcAAcAAQAKAAIAAAAdAAcAAQAKAAIAAAAeAAcAAQAKAAIAAAAbAAYAAQAGAAIAAAABAAgAAQAJAAAAAAACAAgAAQAJAAAAAAADAAgAAQAJAAAAAAAiAAgAAQABAAAAAAAjAAgAAQABAAAAAAAkAAgAAQABAAAAAAAlAAgAAQACAAAAAAAxAAgAAQABAAEAAAAiAAcAAQAKAAIAAAAiAAYAAQAKAAIAAAAiAAUAAQAKAAIAAAAiAAQAAQAKAAIAAAAiAAMAAQAKAAEAAAAxAAQAAQABAAEAAAAxAAUAAQABAAEAAAAxAAYAAQABAAEAAAAxAAcAAQABAAEAAAAxAAMAAQAKAAEAAAAjAAMAAQABAAAAAAAjAAQAAQABAAEAAAAjAAUAAQABAAEAAAAjAAYAAQABAAEAAAAjAAcAAQABAAEAAAAkAAQAAQABAAEAAAAkAAUAAQABAAEAAAAkAAYAAQABAAEAAAAkAAcAAQABAAEAAAAlAAQAAQACAAEAAAAlAAUAAQACAAEAAAAlAAYAAQACAAEAAAAlAAcAAQACAAEAAAAkAAMAAQABAAAAAAAlAAMAAQACAAAAAAAdAAMAAQAJAAEAAAAcAAQAAQAJAAEAAAAbAAUAAQAJAAEAAAAaAAYAAQAEAAEAAAAbAAcAAQAAAAEAAAAsAAEAAQAHAAEAAAAtAAEAAQAKAAEAAAAuAAEAAQALAAEAAAAvAAIAAQALAAEAAAAwAAMAAQAKAAEAAAAuAAIAAQALAAIAAAAvAAMAAQALAAIAAAAtAAIAAQAAAAEAAAAtAAMAAQAAAAEAAAAtAAQAAQAAAAEAAAAtAAUAAQAAAAEAAAAtAAYAAQAAAAEAAAAtAAcAAQAAAAEAAAAuAAMAAQAKAAIAAAAuAAQAAQAKAAIAAAAuAAUAAQAKAAIAAAAuAAYAAQAKAAIAAAAuAAcAAQAKAAIAAAAvAAcAAQAKAAIAAAAwAAcAAQAKAAIAAAAwAAYAAQAKAAIAAAAvAAYAAQAKAAIAAAAvAAUAAQAKAAIAAAAwAAUAAQAKAAIAAAAwAAQAAQAKAAIAAAAvAAQAAQAKAAIAAAAAAAgAAQAJAAAAAAAtAAgAAQAAAAEAAAAuAAgAAQABAAEAAAAvAAgAAQABAAEAAAAwAAgAAQABAAEAAAAhAAMAAQABAAAAAAAhAAQAAQABAAEAAAAhAAUAAQABAAEAAAAhAAYAAQABAAEAAAAhAAcAAQABAAEAAAAhAAgAAQABAAAAAAD//wgAAQAJAAAAAAA4AAQAAQAKAAIAAAA5AAQAAQAKAAIAAAA6AAQAAQAKAAIAAAA7AAQAAQAKAAIAAAA8AAQAAQAKAAIAAAA9AAQAAQAKAAIAAABAAAMAAQAKAAEAAABBAAMAAQAKAAEAAABAAAQAAQAKAAIAAAA+AAQAAQAKAAIAAAA/AAQAAQAKAAIAAABBAAQAAQAKAAIAAAAyAAgAAQAKAAIAAAAzAAgAAQAKAAIAAAA0AAgAAQAKAAIAAAA1AAgAAQAKAAIAAAA2AAgAAQAKAAIAAAA3AAgAAQAKAAIAAAA4AAgAAQAKAAIAAAA5AAUAAQAKAAIAAAA5AAgAAQAKAAIAAAA6AAUAAQAKAAIAAAA6AAYAAQAKAAIAAAA6AAcAAQAKAAIAAAA6AAgAAQAKAAIAAAA7AAUAAQAKAAIAAAA7AAYAAQAKAAIAAAA7AAcAAQAKAAIAAAA7AAgAAQAKAAIAAAA8AAUAAQAKAAIAAAA8AAYAAQAKAAIAAAA8AAcAAQAKAAIAAAA8AAgAAQAKAAIAAAA9AAUAAQAKAAIAAAA9AAYAAQAKAAIAAAA9AAcAAQAKAAIAAAA9AAgAAQAKAAIAAAA+AAUAAQAKAAIAAAA+AAYAAQAKAAIAAAA+AAcAAQAKAAIAAAA+AAgAAQAKAAIAAAA/AAUAAQAKAAIAAAA/AAYAAQAKAAIAAAA/AAcAAQAKAAIAAAA/AAgAAQAKAAIAAABAAAUAAQAKAAIAAABAAAYAAQAKAAIAAABAAAcAAQAKAAIAAABAAAgAAQAKAAIAAABBAAUAAQAKAAIAAABBAAYAAQAKAAIAAABBAAcAAQAKAAIAAABBAAgAAQAKAAIAAAA3AAMAAQAKAAEAAAA4AAMAAQAKAAEAAAA5AAMAAQAKAAEAAAA6AAMAAQAKAAEAAAA7AAMAAQAKAAEAAAA9AAMAAQAKAAEAAAA8AAMAAQAKAAEAAAA+AAMAAQAKAAEAAAA/AAMAAQAKAAEAAAA1AAMAAQAKAAEAAAA2AAMAAQAKAAEAAAA2AAQAAQAKAAIAAAA3AAQAAQAKAAIAAAA3AAUAAQAKAAIAAAA4AAUAAQAKAAIAAAA4AAYAAQAKAAIAAAA5AAYAAQAKAAIAAAA5AAcAAQABAAEAAAAyAAYAAQAKAAIAAAAyAAcAAQAKAAIAAAAzAAcAAQAKAAIAAAAyAAMAAQABAAAAAAAzAAMAAQABAAAAAAA0AAMAAQABAAAAAAAyAAQAAQABAAEAAAAzAAQAAQABAAEAAAA0AAQAAQABAAEAAAA1AAQAAQABAAEAAAA1AAUAAQABAAEAAAAyAAUAAQABAAEAAAAzAAUAAQABAAEAAAA0AAUAAQABAAEAAAA2AAUAAQABAAEAAAAzAAYAAQABAAEAAAA0AAYAAQABAAEAAAA1AAYAAQABAAEAAAA2AAYAAQABAAEAAAA3AAYAAQABAAEAAAA0AAcAAQABAAEAAAA1AAcAAQABAAEAAAA2AAcAAQABAAEAAAA3AAcAAQABAAEAAAA4AAcAAQABAAEAAABCAAcAAQABAAEAAABCAAYAAQABAAEAAABCAAUAAQABAAEAAABCAAQAAQABAAEAAABCAAMAAQABAAAAAABBAAAAAQACAAAAAABAAAAAAQABAAAAAAA/AAAAAQABAAAAAAA+AAAAAQABAAAAAAA9AAAAAQABAAAAAAA8AAAAAQABAAAAAAA7AAAAAQABAAAAAAA6AAAAAQAAAAAAAAA4AAIAAQAAAAAAAAA5AAIAAQABAAAAAAA6AAIAAQACAAAAAAA6AAEAAQAAAAEAAAA7AAEAAQABAAEAAAA8AAEAAQABAAEAAAA9AAEAAQABAAEAAAA+AAEAAQABAAEAAAA/AAEAAQABAAEAAABAAAEAAQABAAEAAABBAAEAAQACAAEAAABBAAIAAQACAAEAAABAAAIAAQABAAEAAAA/AAIAAQABAAEAAAA+AAIAAQABAAEAAAA9AAIAAQABAAEAAAA8AAIAAQABAAEAAAA7AAIAAQABAAEAAAA=")
+[node name="RockPuzzle_TileMapLayer_Basket" type="TileMapLayer" parent="Room01_IntroAndRockPuzzle" unique_id=733559600]
+tile_map_data = PackedByteArray("AAAgAAgAAQABAAAAAAAfAAgAAQABAAAAAAAeAAgAAQABAAAAAAAdAAgAAQABAAAAAAAcAAgAAQABAAAAAAAbAAgAAQABAAAAAAAaAAgAAQABAAAAAAAZAAgAAQABAAAAAAAYAAgAAQABAAAAAAAXAAgAAQABAAAAAAAWAAgAAQABAAAAAAAVAAgAAQABAAAAAAAUAAgAAQAJAAAAAAATAAgAAQAJAAAAAAASAAgAAQAJAAAAAAARAAgAAQAJAAAAAAAQAAgAAQAJAAAAAAAPAAgAAQAJAAAAAAAOAAgAAQAJAAAAAAANAAgAAQAJAAAAAAAMAAgAAQAJAAAAAAALAAgAAQAJAAAAAAAKAAgAAQAJAAAAAAAJAAgAAQAJAAAAAAAIAAgAAQAJAAAAAAAHAAgAAQAJAAAAAAAGAAgAAQAJAAAAAAAFAAgAAQAJAAAAAAAEAAgAAQAJAAAAAAAFAAcAAQABAAEAAAAFAAYAAQABAAEAAAAFAAUAAQACAAAAAAAEAAcAAQABAAEAAAAEAAYAAQABAAEAAAAEAAUAAQABAAAAAAADAAcAAQABAAEAAAADAAYAAQABAAEAAAADAAUAAQABAAAAAAACAAcAAQABAAEAAAACAAYAAQABAAEAAAACAAUAAQABAAAAAAABAAcAAQABAAEAAAABAAYAAQABAAEAAAABAAUAAQABAAAAAAAAAAcAAQABAAEAAAAAAAYAAQABAAEAAAAAAAUAAQAAAAAAAAAJAAcAAQABAAEAAAAJAAYAAQABAAAAAAAIAAcAAQABAAEAAAAIAAYAAQABAAAAAAAHAAcAAQABAAEAAAAHAAYAAQABAAAAAAAGAAcAAQABAAEAAAAGAAYAAQABAAAAAAAUAAcAAQACAAEAAAAUAAYAAQACAAEAAAAUAAUAAQACAAAAAAATAAcAAQABAAEAAAATAAYAAQABAAEAAAATAAUAAQABAAAAAAASAAcAAQABAAEAAAASAAYAAQABAAEAAAASAAUAAQABAAAAAAARAAcAAQABAAEAAAARAAYAAQABAAEAAAARAAUAAQABAAAAAAAQAAcAAQABAAEAAAAQAAYAAQABAAEAAAAQAAUAAQABAAAAAAAPAAcAAQABAAEAAAAPAAYAAQABAAEAAAAPAAUAAQABAAAAAAAOAAcAAQABAAEAAAAOAAYAAQABAAEAAAAOAAUAAQABAAAAAAANAAcAAQABAAEAAAANAAYAAQABAAEAAAANAAUAAQABAAAAAAAMAAcAAQABAAEAAAAMAAYAAQABAAEAAAAMAAUAAQABAAAAAAALAAcAAQABAAEAAAALAAYAAQABAAEAAAALAAUAAQABAAAAAAAKAAcAAQABAAEAAAAKAAYAAQABAAEAAAAKAAUAAQAAAAAAAAAfAAMAAQABAAAAAAAgAAMAAQAKAAEAAAAfAAQAAQABAAEAAAAfAAUAAQABAAEAAAAfAAYAAQABAAEAAAAgAAYAAQABAAEAAAAgAAcAAQABAAEAAAAfAAcAAQABAAEAAAAgAAUAAQABAAEAAAAgAAQAAQAKAAIAAAAcAAUAAQAJAAIAAAAdAAQAAQAJAAIAAAAeAAMAAQAKAAEAAAAeAAQAAQAKAAIAAAAdAAUAAQAKAAIAAAAcAAYAAQAKAAIAAAAeAAUAAQAKAAIAAAAeAAYAAQAKAAIAAAAdAAYAAQAKAAIAAAAcAAcAAQAKAAIAAAAdAAcAAQAKAAIAAAAeAAcAAQAKAAIAAAAbAAYAAQAGAAIAAAABAAgAAQAJAAAAAAACAAgAAQAJAAAAAAADAAgAAQAJAAAAAAAdAAMAAQAJAAEAAAAcAAQAAQAJAAEAAAAbAAUAAQAJAAEAAAAaAAYAAQAEAAEAAAAbAAcAAQAAAAEAAAAAAAgAAQAJAAAAAAAhAAMAAQABAAAAAAAhAAQAAQABAAEAAAAhAAUAAQABAAEAAAAhAAYAAQABAAEAAAAhAAcAAQABAAEAAAAhAAgAAQABAAAAAAD//wgAAQAJAAAAAAA=")
 tile_set = ExtResource("10_xvuht")
 
-[node name="BridgePuzzle_TileMapLayer_Stone" type="TileMapLayer" parent="Room02_BridgePuzzle" unique_id=840072359]
-tile_map_data = PackedByteArray("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")
+[node name="RockPuzzle_TileMapLayer_Stone" type="TileMapLayer" parent="Room01_IntroAndRockPuzzle" unique_id=248894541]
+tile_map_data = PackedByteArray("AAD//wgAAQAFAAIAAAD//wcAAQAFAAIAAAD//wYAAQAFAAIAAAD//wUAAQAFAAIAAAD//wQAAQAFAAIAAAD//wMAAQAFAAIAAAD//wIAAQAFAAIAAAD//wEAAQAFAAIAAAD//wAAAQAFAAIAAAD/////AQAFAAIAAAD///7/AQAFAAIAAAD///3/AQAFAAIAAAD///z/AQAFAAIAAAD///v/AQAFAAIAAAAAAAgAAQAFAAIAAAAhAAgAAQAFAAIAAAAgAAgAAQAFAAIAAAAfAAgAAQAFAAIAAAAeAAgAAQAFAAIAAAAdAAgAAQAFAAIAAAAcAAgAAQAFAAIAAAAbAAgAAQAFAAIAAAAaAAgAAQAFAAIAAAAZAAgAAQAFAAIAAAAYAAgAAQAFAAIAAAAXAAgAAQAFAAIAAAAWAAgAAQAFAAIAAAAVAAgAAQAFAAIAAAAUAAgAAQAFAAIAAAATAAgAAQAFAAIAAAASAAgAAQAFAAIAAAARAAgAAQAFAAIAAAAQAAgAAQAFAAIAAAAPAAgAAQAFAAIAAAAOAAgAAQAFAAIAAAANAAgAAQAFAAIAAAAMAAgAAQAFAAIAAAALAAgAAQAFAAIAAAAKAAgAAQAFAAIAAAAJAAgAAQAFAAIAAAAIAAgAAQAFAAIAAAAHAAgAAQAFAAIAAAAGAAgAAQAFAAIAAAAFAAgAAQAFAAIAAAAEAAgAAQAFAAIAAAAQAPr/AQAFAAIAAAAQAPn/AQAFAAIAAAAQAPj/AQAFAAIAAAAQAPf/AQAFAAIAAAAQAPb/AQAFAAIAAAAQAPX/AQAFAAIAAAAhAAMAAQAFAAIAAAAhAAcAAQAFAAIAAAAhAAYAAQAFAAIAAAAhAAUAAQAFAAIAAAAhAAQAAQAFAAIAAAAPAPH/AQAFAAIAAAAQAPT/AQAFAAIAAAAQAPP/AQAFAAIAAAAQAPL/AQAFAAIAAAAQAPH/AQAFAAIAAAARAPH/AQAFAAIAAAASAPH/AQAFAAIAAAATAPH/AQAFAAIAAAAUAPH/AQAFAAIAAAAVAPH/AQAFAAIAAAAWAPH/AQAFAAIAAAAXAPH/AQAFAAIAAAAYAPH/AQAFAAIAAAAZAPH/AQAFAAIAAAAaAPH/AQAFAAIAAAAbAPH/AQAFAAIAAAAcAPH/AQAFAAIAAAAdAPH/AQAFAAIAAAAeAPH/AQAFAAIAAAAfAPH/AQAFAAIAAAAgAPH/AQAFAAIAAAAhAPH/AQAFAAIAAAD///r/AQAFAAIAAAD///n/AQAFAAIAAAD///j/AQAFAAIAAAD///f/AQAFAAIAAAD///b/AQAFAAIAAAD///X/AQAFAAIAAAD///T/AQAFAAIAAAD///P/AQAFAAIAAAD///L/AQAFAAIAAAD///H/AQAFAAIAAAAAAPH/AQAFAAIAAAABAPH/AQAFAAIAAAACAPH/AQAFAAIAAAADAPH/AQAFAAIAAAAEAPH/AQAFAAIAAAAFAPH/AQAFAAIAAAAGAPH/AQAFAAIAAAAHAPH/AQAFAAIAAAAIAPH/AQAFAAIAAAAJAPH/AQAFAAIAAAAKAPH/AQAFAAIAAAALAPH/AQAFAAIAAAAMAPH/AQAFAAIAAAANAPH/AQAFAAIAAAAOAPH/AQAFAAIAAAAiAPH/AQAFAAIAAAAjAPH/AQAFAAIAAAAkAPH/AQAFAAIAAAAlAPH/AQAFAAIAAAAmAPH/AQAFAAIAAAAnAPH/AQAFAAIAAAAoAPH/AQAFAAIAAAAhAAAAAQAFAAIAAAAhAP//AQAFAAIAAAAhAP7/AQAFAAIAAAAhAP3/AQAFAAIAAAAhAPz/AQAFAAIAAAAhAPv/AQAFAAIAAAAhAPr/AQAFAAIAAAAhAPn/AQAFAAIAAAAhAPj/AQAFAAIAAAAhAPf/AQAFAAIAAAAhAPb/AQAFAAIAAAAhAPX/AQAFAAIAAAAhAPT/AQAFAAIAAAAhAPP/AQAFAAIAAAAhAPL/AQAFAAIAAAAiAAgAAQAFAAIAAAAjAAgAAQAFAAIAAAAkAAgAAQAFAAIAAAAlAAgAAQAFAAIAAAAhAAEAAQAFAAIAAAAQAPv/AQAFAAIAAAAQAPz/AQAFAAIAAAAQAP3/AQAFAAIAAAA=")
 tile_set = ExtResource("9_pjmyj")
 
-[node name="BridgePuzzle_TileMapLayer_Decorations" type="TileMapLayer" parent="Room02_BridgePuzzle" unique_id=927547064]
-tile_map_data = PackedByteArray("AAAFAAcAAQAAAAAAAAAFAAYAAQAAAAEAAAAFAAUAAQACAAAAAAAEAAcAAQABAAEAAAAEAAUAAQABAAEAAAADAAYAAQABAAAAAAACAAcAAQACAAAAAAACAAYAAQABAAEAAAAAAAcAAQACAAAAAAAAAAUAAQAAAAAAAAAJAAYAAQAAAAAAAAAHAAcAAQAAAAEAAAAHAAYAAQACAAAAAAAbAAYAAQAJAAIAAAAbAAcAAQACAAAAAAAcAAUAAQABAAEAAAAcAAYAAQAKAAIAAAAcAAcAAQAKAAIAAAAdAAQAAQAJAAIAAAAdAAUAAQAKAAIAAAAdAAYAAQAAAAAAAAAdAAcAAQAKAAIAAAAeAAMAAQABAAAAAAAeAAQAAQAKAAIAAAAeAAUAAQAKAAIAAAAeAAYAAQAKAAIAAAAeAAcAAQAKAAIAAAAgAAQAAQAKAAIAAAAiAAQAAQAKAAIAAAAiAAUAAQAKAAIAAAAiAAcAAQACAAAAAAAsAAEAAQADAAEAAAAtAAEAAQAEAAEAAAAtAAIAAQABAAEAAAAtAAMAAQAKAAIAAAAtAAQAAQAAAAAAAAAtAAUAAQAKAAIAAAAtAAYAAQAKAAIAAAAtAAcAAQAKAAIAAAAuAAIAAQALAAIAAAAuAAMAAQAKAAIAAAAuAAQAAQAKAAIAAAAuAAUAAQAKAAIAAAAuAAYAAQABAAAAAAACAAUAAQAAAAEAAAASAAYAAQABAAAAAAALAAcAAQAAAAAAAAAPAAcAAQACAAEAAAAKAAYAAQABAAEAAAANAAcAAQABAAEAAAAPAAUAAQAEAAEAAAARAAUAAQACAAAAAAAQAAcAAQAAAAEAAAASAAcAAQAAAAEAAAATAAUAAQAAAAEAAAALAAUAAQABAAEAAAASAAUAAQABAAEAAAAMAAUAAQAAAAEAAAAMAAcAAQAAAAEAAAAUAAYAAQABAAEAAAAfAAQAAQAAAAAAAAAfAAcAAQAAAAEAAAAgAAYAAQACAAEAAAAjAAUAAQACAAEAAAAlAAcAAQABAAAAAAAkAAMAAQACAAAAAAAlAAQAAQABAAEAAAAjAAYAAQAAAAEAAAAvAAMAAQACAAAAAAAwAAcAAQACAAAAAAAwAAQAAQAAAAEAAAAvAAUAAQABAAEAAAAHAAUAAQABAAIAAAASAAQAAQAAAAIAAAAOAAUAAQADAAEAAAAIAAYAAQADAAAAAAAiAAMAAQADAAEAAAAjAAMAAQAEAAEAAAA5AAMAAQADAAAAAAA=")
+[node name="RockPuzzle_TileMapLayer_Decorations" type="TileMapLayer" parent="Room01_IntroAndRockPuzzle" unique_id=387151058]
+tile_map_data = PackedByteArray("AAAFAAcAAQAAAAAAAAAFAAYAAQAAAAEAAAAFAAUAAQACAAAAAAAEAAcAAQABAAEAAAAEAAUAAQABAAEAAAADAAYAAQABAAAAAAACAAcAAQACAAAAAAACAAYAAQABAAEAAAAAAAcAAQACAAAAAAAAAAUAAQAAAAAAAAAJAAYAAQAAAAAAAAAHAAcAAQAAAAEAAAAHAAYAAQACAAAAAAAbAAYAAQAJAAIAAAAbAAcAAQACAAAAAAAcAAUAAQABAAEAAAAcAAYAAQAKAAIAAAAcAAcAAQAKAAIAAAAdAAQAAQAJAAIAAAAdAAUAAQAKAAIAAAAdAAYAAQAAAAAAAAAdAAcAAQAKAAIAAAAeAAMAAQABAAAAAAAeAAQAAQAKAAIAAAAeAAUAAQAKAAIAAAAeAAYAAQAKAAIAAAAeAAcAAQAKAAIAAAAgAAQAAQAKAAIAAAACAAUAAQAAAAEAAAASAAYAAQABAAAAAAALAAcAAQAAAAAAAAAPAAcAAQACAAEAAAAKAAYAAQABAAEAAAANAAcAAQABAAEAAAAPAAUAAQAEAAEAAAARAAUAAQACAAAAAAAQAAcAAQAAAAEAAAASAAcAAQAAAAEAAAATAAUAAQAAAAEAAAALAAUAAQABAAEAAAASAAUAAQABAAEAAAAMAAUAAQAAAAEAAAAMAAcAAQAAAAEAAAAUAAYAAQABAAEAAAAfAAQAAQAAAAAAAAAfAAcAAQAAAAEAAAAgAAYAAQACAAEAAAAOAAUAAQADAAEAAAAIAAYAAQADAAAAAAASAAQAAQAAAAIAAAAHAAUAAQABAAIAAAA=")
 tile_set = ExtResource("9_v78as")
 
-[node name="DecorationSprites" type="Node2D" parent="Room02_BridgePuzzle/BridgePuzzle_TileMapLayer_Decorations" unique_id=1859982001]
+[node name="DecorationSprites" type="Node2D" parent="Room01_IntroAndRockPuzzle/RockPuzzle_TileMapLayer_Decorations" unique_id=1121470382]
 metadata/_edit_lock_ = true
 
-[node name="BushesBehind" type="Node2D" parent="Room02_BridgePuzzle/BridgePuzzle_TileMapLayer_Decorations/DecorationSprites" unique_id=1281978921]
+[node name="BushesBehind" type="Node2D" parent="Room01_IntroAndRockPuzzle/RockPuzzle_TileMapLayer_Decorations/DecorationSprites" unique_id=2094838107]
 position = Vector2(0, 1)
 
-[node name="LargeGreen1" type="AnimatedSprite2D" parent="Room02_BridgePuzzle/BridgePuzzle_TileMapLayer_Decorations/DecorationSprites/BushesBehind" unique_id=980077795]
+[node name="LargeGreen1" type="AnimatedSprite2D" parent="Room01_IntroAndRockPuzzle/RockPuzzle_TileMapLayer_Decorations/DecorationSprites/BushesBehind" unique_id=1430373433]
 position = Vector2(79, 618)
 sprite_frames = ExtResource("29_poyld")
 autoplay = "default"
 
-[node name="LargeGreen2" type="AnimatedSprite2D" parent="Room02_BridgePuzzle/BridgePuzzle_TileMapLayer_Decorations/DecorationSprites/BushesBehind" unique_id=77241755]
+[node name="LargeGreen2" type="AnimatedSprite2D" parent="Room01_IntroAndRockPuzzle/RockPuzzle_TileMapLayer_Decorations/DecorationSprites/BushesBehind" unique_id=1337487766]
 position = Vector2(3134, 1002)
 sprite_frames = ExtResource("29_poyld")
 autoplay = "default"
 
-[node name="LargeGreen3" type="AnimatedSprite2D" parent="Room02_BridgePuzzle/BridgePuzzle_TileMapLayer_Decorations/DecorationSprites/BushesBehind" unique_id=503720936]
-position = Vector2(6994, 361)
-sprite_frames = ExtResource("29_poyld")
-autoplay = "default"
-
-[node name="LargeRed3" type="AnimatedSprite2D" parent="Room02_BridgePuzzle/BridgePuzzle_TileMapLayer_Decorations/DecorationSprites/BushesBehind" unique_id=1435838062]
+[node name="LargeRed3" type="AnimatedSprite2D" parent="Room01_IntroAndRockPuzzle/RockPuzzle_TileMapLayer_Decorations/DecorationSprites/BushesBehind" unique_id=604994855]
 position = Vector2(3436, 1006)
 sprite_frames = ExtResource("30_2yf5f")
 autoplay = "default"
 flip_h = true
 
-[node name="SmallPurple3" type="AnimatedSprite2D" parent="Room02_BridgePuzzle/BridgePuzzle_TileMapLayer_Decorations/DecorationSprites/BushesBehind" unique_id=879157167]
+[node name="SmallPurple3" type="AnimatedSprite2D" parent="Room01_IntroAndRockPuzzle/RockPuzzle_TileMapLayer_Decorations/DecorationSprites/BushesBehind" unique_id=799903992]
 position = Vector2(2836, 1013)
 sprite_frames = ExtResource("31_vm00m")
 autoplay = "default"
 
-[node name="SmallRed2" type="AnimatedSprite2D" parent="Room02_BridgePuzzle/BridgePuzzle_TileMapLayer_Decorations/DecorationSprites/BushesBehind" unique_id=1833022678]
+[node name="SmallRed2" type="AnimatedSprite2D" parent="Room01_IntroAndRockPuzzle/RockPuzzle_TileMapLayer_Decorations/DecorationSprites/BushesBehind" unique_id=1341641315]
 position = Vector2(3178, 1014)
 sprite_frames = ExtResource("32_v4g46")
 autoplay = "default"
 
-[node name="SmallRed1" type="AnimatedSprite2D" parent="Room02_BridgePuzzle/BridgePuzzle_TileMapLayer_Decorations/DecorationSprites/BushesBehind" unique_id=508939526]
+[node name="SmallRed1" type="AnimatedSprite2D" parent="Room01_IntroAndRockPuzzle/RockPuzzle_TileMapLayer_Decorations/DecorationSprites/BushesBehind" unique_id=461937574]
 position = Vector2(126, 628)
 sprite_frames = ExtResource("32_v4g46")
 autoplay = "default"
 
-[node name="SmallRed3" type="AnimatedSprite2D" parent="Room02_BridgePuzzle/BridgePuzzle_TileMapLayer_Decorations/DecorationSprites/BushesBehind" unique_id=743514667]
-position = Vector2(6949, 372)
-sprite_frames = ExtResource("32_v4g46")
-autoplay = "default"
-
-[node name="LargePurple1" type="AnimatedSprite2D" parent="Room02_BridgePuzzle/BridgePuzzle_TileMapLayer_Decorations/DecorationSprites/BushesBehind" unique_id=1461957128]
+[node name="LargePurple1" type="AnimatedSprite2D" parent="Room01_IntroAndRockPuzzle/RockPuzzle_TileMapLayer_Decorations/DecorationSprites/BushesBehind" unique_id=109831331]
 position = Vector2(2630, 619)
 sprite_frames = ExtResource("33_y8cc3")
 autoplay = "default"
 
-[node name="SmallGreen1" type="AnimatedSprite2D" parent="Room02_BridgePuzzle/BridgePuzzle_TileMapLayer_Decorations/DecorationSprites/BushesBehind" unique_id=627210169]
+[node name="SmallGreen1" type="AnimatedSprite2D" parent="Room01_IntroAndRockPuzzle/RockPuzzle_TileMapLayer_Decorations/DecorationSprites/BushesBehind" unique_id=548420757]
 position = Vector2(2593, 628)
 sprite_frames = ExtResource("34_6lr5j")
 autoplay = "default"
 flip_h = true
 
-[node name="SmallPurple1" type="AnimatedSprite2D" parent="Room02_BridgePuzzle/BridgePuzzle_TileMapLayer_Decorations/DecorationSprites/BushesBehind" unique_id=1243837675]
-position = Vector2(4375, 370)
-sprite_frames = ExtResource("31_vm00m")
-autoplay = "default"
+[node name="GrassBehind" type="Node2D" parent="Room01_IntroAndRockPuzzle/RockPuzzle_TileMapLayer_Decorations/DecorationSprites" unique_id=2072310723]
 
-[node name="GrassBehind" type="Node2D" parent="Room02_BridgePuzzle/BridgePuzzle_TileMapLayer_Decorations/DecorationSprites" unique_id=663517584]
-
-[node name="Grass21" type="Sprite2D" parent="Room02_BridgePuzzle/BridgePuzzle_TileMapLayer_Decorations/DecorationSprites/GrassBehind" unique_id=1265972876]
+[node name="Grass21" type="Sprite2D" parent="Room01_IntroAndRockPuzzle/RockPuzzle_TileMapLayer_Decorations/DecorationSprites/GrassBehind" unique_id=710957443]
 position = Vector2(3624.0918, 595.5477)
 rotation = -0.7853982
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("35_ioj4p")
 
-[node name="Grass22" type="Sprite2D" parent="Room02_BridgePuzzle/BridgePuzzle_TileMapLayer_Decorations/DecorationSprites/GrassBehind" unique_id=1405477586]
+[node name="Grass22" type="Sprite2D" parent="Room01_IntroAndRockPuzzle/RockPuzzle_TileMapLayer_Decorations/DecorationSprites/GrassBehind" unique_id=346130941]
 position = Vector2(3794.0918, 424.54773)
 rotation = -0.7853982
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("36_33ble")
 
-[node name="Grass27" type="Sprite2D" parent="Room02_BridgePuzzle/BridgePuzzle_TileMapLayer_Decorations/DecorationSprites/GrassBehind" unique_id=1856004517]
-position = Vector2(5966, 204)
-rotation = 0.7853982
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("36_33ble")
-
-[node name="Grass28" type="Sprite2D" parent="Room02_BridgePuzzle/BridgePuzzle_TileMapLayer_Decorations/DecorationSprites/GrassBehind" unique_id=931456996]
-position = Vector2(6016, 253.99979)
-rotation = 0.7853982
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("35_ioj4p")
-
-[node name="Grass26" type="Sprite2D" parent="Room02_BridgePuzzle/BridgePuzzle_TileMapLayer_Decorations/DecorationSprites/GrassBehind" unique_id=1046680649]
-position = Vector2(5757, 129)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("35_ioj4p")
-
-[node name="Grass33" type="Sprite2D" parent="Room02_BridgePuzzle/BridgePuzzle_TileMapLayer_Decorations/DecorationSprites/GrassBehind" unique_id=546541430]
-position = Vector2(5814, 128)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("37_xns2c")
-flip_h = true
-
-[node name="Grass19" type="Sprite2D" parent="Room02_BridgePuzzle/BridgePuzzle_TileMapLayer_Decorations/DecorationSprites/GrassBehind" unique_id=2096288807]
+[node name="Grass19" type="Sprite2D" parent="Room01_IntroAndRockPuzzle/RockPuzzle_TileMapLayer_Decorations/DecorationSprites/GrassBehind" unique_id=1083395880]
 position = Vector2(3378, 766)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("37_xns2c")
 
-[node name="GrassFront" type="Node2D" parent="Room02_BridgePuzzle/BridgePuzzle_TileMapLayer_Decorations/DecorationSprites" unique_id=368603377]
+[node name="GrassFront" type="Node2D" parent="Room01_IntroAndRockPuzzle/RockPuzzle_TileMapLayer_Decorations/DecorationSprites" unique_id=1533759343]
 z_index = 1
 
-[node name="Grass1" type="Sprite2D" parent="Room02_BridgePuzzle/BridgePuzzle_TileMapLayer_Decorations/DecorationSprites/GrassFront" unique_id=1909248949]
+[node name="Grass1" type="Sprite2D" parent="Room01_IntroAndRockPuzzle/RockPuzzle_TileMapLayer_Decorations/DecorationSprites/GrassFront" unique_id=1879002038]
 position = Vector2(98, 640)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("36_33ble")
 
-[node name="Grass2" type="Sprite2D" parent="Room02_BridgePuzzle/BridgePuzzle_TileMapLayer_Decorations/DecorationSprites/GrassFront" unique_id=996152116]
+[node name="Grass2" type="Sprite2D" parent="Room01_IntroAndRockPuzzle/RockPuzzle_TileMapLayer_Decorations/DecorationSprites/GrassFront" unique_id=1412287940]
 position = Vector2(520, 642)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("37_xns2c")
 
-[node name="Grass3" type="Sprite2D" parent="Room02_BridgePuzzle/BridgePuzzle_TileMapLayer_Decorations/DecorationSprites/GrassFront" unique_id=1590492556]
+[node name="Grass3" type="Sprite2D" parent="Room01_IntroAndRockPuzzle/RockPuzzle_TileMapLayer_Decorations/DecorationSprites/GrassFront" unique_id=1664985283]
 position = Vector2(728, 640)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("35_ioj4p")
 
-[node name="Grass4" type="Sprite2D" parent="Room02_BridgePuzzle/BridgePuzzle_TileMapLayer_Decorations/DecorationSprites/GrassFront" unique_id=1394549450]
+[node name="Grass4" type="Sprite2D" parent="Room01_IntroAndRockPuzzle/RockPuzzle_TileMapLayer_Decorations/DecorationSprites/GrassFront" unique_id=1161581065]
 position = Vector2(833, 768)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("36_33ble")
 
-[node name="Grass5" type="Sprite2D" parent="Room02_BridgePuzzle/BridgePuzzle_TileMapLayer_Decorations/DecorationSprites/GrassFront" unique_id=630114835]
+[node name="Grass5" type="Sprite2D" parent="Room01_IntroAndRockPuzzle/RockPuzzle_TileMapLayer_Decorations/DecorationSprites/GrassFront" unique_id=1257564894]
 position = Vector2(980, 768)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("37_xns2c")
 
-[node name="Grass6" type="Sprite2D" parent="Room02_BridgePuzzle/BridgePuzzle_TileMapLayer_Decorations/DecorationSprites/GrassFront" unique_id=1920208098]
+[node name="Grass6" type="Sprite2D" parent="Room01_IntroAndRockPuzzle/RockPuzzle_TileMapLayer_Decorations/DecorationSprites/GrassFront" unique_id=402073606]
 position = Vector2(1226, 768)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("35_ioj4p")
 
-[node name="Grass7" type="Sprite2D" parent="Room02_BridgePuzzle/BridgePuzzle_TileMapLayer_Decorations/DecorationSprites/GrassFront" unique_id=551493032]
+[node name="Grass7" type="Sprite2D" parent="Room01_IntroAndRockPuzzle/RockPuzzle_TileMapLayer_Decorations/DecorationSprites/GrassFront" unique_id=1690691033]
 position = Vector2(1300, 646)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("35_ioj4p")
 
-[node name="Grass8" type="Sprite2D" parent="Room02_BridgePuzzle/BridgePuzzle_TileMapLayer_Decorations/DecorationSprites/GrassFront" unique_id=1953481130]
+[node name="Grass8" type="Sprite2D" parent="Room01_IntroAndRockPuzzle/RockPuzzle_TileMapLayer_Decorations/DecorationSprites/GrassFront" unique_id=841795680]
 position = Vector2(1410, 640)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("36_33ble")
 
-[node name="Grass9" type="Sprite2D" parent="Room02_BridgePuzzle/BridgePuzzle_TileMapLayer_Decorations/DecorationSprites/GrassFront" unique_id=2137890422]
+[node name="Grass9" type="Sprite2D" parent="Room01_IntroAndRockPuzzle/RockPuzzle_TileMapLayer_Decorations/DecorationSprites/GrassFront" unique_id=461854693]
 position = Vector2(1410, 640)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("36_33ble")
 
-[node name="Grass10" type="Sprite2D" parent="Room02_BridgePuzzle/BridgePuzzle_TileMapLayer_Decorations/DecorationSprites/GrassFront" unique_id=605051717]
+[node name="Grass10" type="Sprite2D" parent="Room01_IntroAndRockPuzzle/RockPuzzle_TileMapLayer_Decorations/DecorationSprites/GrassFront" unique_id=776264886]
 position = Vector2(1742, 640)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("35_ioj4p")
 flip_h = true
 
-[node name="Grass11" type="Sprite2D" parent="Room02_BridgePuzzle/BridgePuzzle_TileMapLayer_Decorations/DecorationSprites/GrassFront" unique_id=1022539653]
+[node name="Grass11" type="Sprite2D" parent="Room01_IntroAndRockPuzzle/RockPuzzle_TileMapLayer_Decorations/DecorationSprites/GrassFront" unique_id=826618111]
 position = Vector2(2102, 640)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("36_33ble")
 
-[node name="Grass12" type="Sprite2D" parent="Room02_BridgePuzzle/BridgePuzzle_TileMapLayer_Decorations/DecorationSprites/GrassFront" unique_id=238639735]
+[node name="Grass12" type="Sprite2D" parent="Room01_IntroAndRockPuzzle/RockPuzzle_TileMapLayer_Decorations/DecorationSprites/GrassFront" unique_id=32408335]
 position = Vector2(2273, 640)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("35_ioj4p")
 
-[node name="Grass13" type="Sprite2D" parent="Room02_BridgePuzzle/BridgePuzzle_TileMapLayer_Decorations/DecorationSprites/GrassFront" unique_id=1449267712]
+[node name="Grass13" type="Sprite2D" parent="Room01_IntroAndRockPuzzle/RockPuzzle_TileMapLayer_Decorations/DecorationSprites/GrassFront" unique_id=1795082582]
 position = Vector2(2372, 639)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("37_xns2c")
 flip_h = true
 
-[node name="Grass14" type="Sprite2D" parent="Room02_BridgePuzzle/BridgePuzzle_TileMapLayer_Decorations/DecorationSprites/GrassFront" unique_id=264311332]
+[node name="Grass14" type="Sprite2D" parent="Room01_IntroAndRockPuzzle/RockPuzzle_TileMapLayer_Decorations/DecorationSprites/GrassFront" unique_id=1205447575]
 position = Vector2(2660, 641)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("35_ioj4p")
 
-[node name="Grass15" type="Sprite2D" parent="Room02_BridgePuzzle/BridgePuzzle_TileMapLayer_Decorations/DecorationSprites/GrassFront" unique_id=849344651]
+[node name="Grass15" type="Sprite2D" parent="Room01_IntroAndRockPuzzle/RockPuzzle_TileMapLayer_Decorations/DecorationSprites/GrassFront" unique_id=2060065727]
 position = Vector2(2857, 1025)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("35_ioj4p")
 
-[node name="Grass16" type="Sprite2D" parent="Room02_BridgePuzzle/BridgePuzzle_TileMapLayer_Decorations/DecorationSprites/GrassFront" unique_id=1847307426]
+[node name="Grass16" type="Sprite2D" parent="Room01_IntroAndRockPuzzle/RockPuzzle_TileMapLayer_Decorations/DecorationSprites/GrassFront" unique_id=1093998034]
 position = Vector2(3153, 1025)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("36_33ble")
 flip_h = true
 
-[node name="Grass17" type="Sprite2D" parent="Room02_BridgePuzzle/BridgePuzzle_TileMapLayer_Decorations/DecorationSprites/GrassFront" unique_id=731016545]
+[node name="Grass17" type="Sprite2D" parent="Room01_IntroAndRockPuzzle/RockPuzzle_TileMapLayer_Decorations/DecorationSprites/GrassFront" unique_id=1232220313]
 position = Vector2(3446, 1025)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("36_33ble")
 
-[node name="Grass18" type="Sprite2D" parent="Room02_BridgePuzzle/BridgePuzzle_TileMapLayer_Decorations/DecorationSprites/GrassFront" unique_id=2093480788]
+[node name="Grass18" type="Sprite2D" parent="Room01_IntroAndRockPuzzle/RockPuzzle_TileMapLayer_Decorations/DecorationSprites/GrassFront" unique_id=265390425]
 position = Vector2(3986, 1022)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("37_xns2c")
 
-[node name="Grass20" type="Sprite2D" parent="Room02_BridgePuzzle/BridgePuzzle_TileMapLayer_Decorations/DecorationSprites/GrassFront" unique_id=1418658972]
+[node name="Grass23" type="Sprite2D" parent="Room01_IntroAndRockPuzzle/RockPuzzle_TileMapLayer_Decorations/DecorationSprites/GrassFront" unique_id=2007165996]
+position = Vector2(4236, 380.5)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("37_xns2c")
+
+[node name="DecorativeProps" type="Node2D" parent="Room01_IntroAndRockPuzzle/RockPuzzle_TileMapLayer_Decorations" unique_id=1686249329]
+z_index = 1
+
+[node name="BarleyCrops2" parent="Room01_IntroAndRockPuzzle/RockPuzzle_TileMapLayer_Decorations/DecorativeProps" unique_id=1028998255 instance=ExtResource("37_xvuht")]
+position = Vector2(2240, 1047)
+
+[node name="BarleyCrops6" parent="Room01_IntroAndRockPuzzle/RockPuzzle_TileMapLayer_Decorations/DecorativeProps" unique_id=906955499 instance=ExtResource("37_xvuht")]
+position = Vector2(2496, 1047)
+
+[node name="BarleyCrops3" parent="Room01_IntroAndRockPuzzle/RockPuzzle_TileMapLayer_Decorations/DecorativeProps" unique_id=1021831841 instance=ExtResource("37_xvuht")]
+position = Vector2(1984, 1047)
+
+[node name="BarleyCrops4" parent="Room01_IntroAndRockPuzzle/RockPuzzle_TileMapLayer_Decorations/DecorativeProps" unique_id=1113966294 instance=ExtResource("37_xvuht")]
+position = Vector2(1728, 1047)
+
+[node name="BarleyCrops7" parent="Room01_IntroAndRockPuzzle/RockPuzzle_TileMapLayer_Decorations/DecorativeProps" unique_id=1053895013 instance=ExtResource("37_xvuht")]
+position = Vector2(192, 1040)
+
+[node name="BarleyCrops8" parent="Room01_IntroAndRockPuzzle/RockPuzzle_TileMapLayer_Decorations/DecorativeProps" unique_id=92350470 instance=ExtResource("37_xvuht")]
+position = Vector2(441, 1044)
+
+[node name="BarleyCrops9" parent="Room01_IntroAndRockPuzzle/RockPuzzle_TileMapLayer_Decorations/DecorativeProps" unique_id=947603237 instance=ExtResource("37_xvuht")]
+position = Vector2(1212, 1046)
+
+[node name="BarleyCrops10" parent="Room01_IntroAndRockPuzzle/RockPuzzle_TileMapLayer_Decorations/DecorativeProps" unique_id=1895937734 instance=ExtResource("37_xvuht")]
+position = Vector2(1468, 1046)
+
+[node name="BarleyCrops11" parent="Room01_IntroAndRockPuzzle/RockPuzzle_TileMapLayer_Decorations/DecorativeProps" unique_id=1664000290 instance=ExtResource("37_xvuht")]
+position = Vector2(956, 1046)
+
+[node name="BarleyCrops12" parent="Room01_IntroAndRockPuzzle/RockPuzzle_TileMapLayer_Decorations/DecorativeProps" unique_id=2019160326 instance=ExtResource("37_xvuht")]
+position = Vector2(700, 1046)
+
+[node name="RockPuzzle_TileMapLayer_Barriers" type="TileMapLayer" parent="Room01_IntroAndRockPuzzle" unique_id=1776158053]
+tile_map_data = PackedByteArray("AAAhAAMAAAABAAAAAAAhAAQAAAABAAAAAAAhAAUAAAABAAAAAAAhAAYAAAABAAAAAAAhAAcAAAABAAAAAAAgAAYAAAABAAAAAAAfAAcAAAABAAAAAAAgAAcAAAABAAAAAAD//wcAAAABAAAAAAD//wYAAAABAAAAAAD//wUAAAABAAAAAAD//wQAAAABAAAAAAD//wMAAAABAAAAAAD//wIAAAABAAAAAAD//wEAAAABAAAAAAD//wAAAAABAAAAAAD/////AAABAAAAAAD///7/AAABAAAAAAD///3/AAABAAAAAAD///z/AAABAAAAAAD///v/AAABAAAAAAD///r/AAABAAAAAAD///n/AAABAAAAAAD///j/AAABAAAAAAD///f/AAABAAAAAAD///b/AAABAAAAAAD///X/AAABAAAAAAD///T/AAABAAAAAAD///P/AAABAAAAAAD///L/AAABAAAAAAD///H/AAABAAAAAAAAAPH/AAABAAAAAAABAPH/AAABAAAAAAACAPH/AAABAAAAAAADAPH/AAABAAAAAAAEAPH/AAABAAAAAAAFAPH/AAABAAAAAAAGAPH/AAABAAAAAAAHAPH/AAABAAAAAAAIAPH/AAABAAAAAAAJAPH/AAABAAAAAAAKAPH/AAABAAAAAAALAPH/AAABAAAAAAAMAPH/AAABAAAAAAANAPH/AAABAAAAAAAOAPH/AAABAAAAAAAPAPH/AAABAAAAAAAQAPH/AAABAAAAAAARAPH/AAABAAAAAAASAPH/AAABAAAAAAATAPH/AAABAAAAAAAUAPH/AAABAAAAAAAVAPH/AAABAAAAAAAWAPH/AAABAAAAAAAXAPH/AAABAAAAAAAYAPH/AAABAAAAAAAZAPH/AAABAAAAAAAaAPH/AAABAAAAAAAbAPH/AAABAAAAAAAcAPH/AAABAAAAAAAdAPH/AAABAAAAAAAeAPH/AAABAAAAAAAfAPH/AAABAAAAAAAgAPH/AAABAAAAAAAhAPH/AAABAAAAAAAQAPL/AAABAAAAAAAQAPP/AAABAAAAAAAQAPT/AAABAAAAAAAQAPX/AAABAAAAAAAQAPb/AAABAAAAAAAQAPf/AAABAAAAAAAQAPj/AAABAAAAAAAQAPn/AAABAAAAAAAQAPr/AAABAAAAAAAQAPv/AAABAAAAAAAQAPz/AAABAAAAAAAQAP3/AAABAAAAAAAhAPL/AAABAAAAAAAhAPP/AAABAAAAAAAhAPT/AAABAAAAAAAhAPX/AAABAAAAAAAhAPb/AAABAAAAAAAhAPf/AAABAAAAAAAhAPj/AAABAAAAAAAhAPn/AAABAAAAAAAhAPr/AAABAAAAAAAhAPv/AAABAAAAAAAhAPz/AAABAAAAAAAhAP3/AAABAAAAAAAhAP7/AAABAAAAAAAhAP//AAABAAAAAAAhAAAAAAABAAAAAAAgAAUAAAABAAAAAAAhAAEAAAABAAAAAAA=")
+tile_set = ExtResource("12_vnrdr")
+
+[node name="RockPile" parent="Room01_IntroAndRockPuzzle" unique_id=2056135097 groups=["editable"] instance=ExtResource("8_sftbg")]
+position = Vector2(4214, 324)
+
+[node name="Checkpoint" parent="Room01_IntroAndRockPuzzle" unique_id=951106919 groups=["checkpoints"] instance=ExtResource("27_dt6hy")]
+position = Vector2(-560, 455)
+scale = Vector2(8.4, 1)
+
+[node name="SceneTreePowerup" parent="Room01_IntroAndRockPuzzle" unique_id=857147533 groups=["powerups"] instance=ExtResource("15_dt6hy")]
+position = Vector2(4065, 314)
+
+[node name="Coin" parent="Room01_IntroAndRockPuzzle" unique_id=469589313 instance=ExtResource("6_qy02x")]
+position = Vector2(1434, 563)
+texture = ExtResource("7_y3jo1")
+
+[node name="Coin8" parent="Room01_IntroAndRockPuzzle" unique_id=1399238642 instance=ExtResource("6_qy02x")]
+position = Vector2(2933, 380)
+texture = ExtResource("7_y3jo1")
+
+[node name="Coin12" parent="Room01_IntroAndRockPuzzle" unique_id=345869264 instance=ExtResource("6_qy02x")]
+position = Vector2(3030, 318)
+texture = ExtResource("7_y3jo1")
+
+[node name="Coin13" parent="Room01_IntroAndRockPuzzle" unique_id=2104738955 instance=ExtResource("6_qy02x")]
+position = Vector2(3123, 380)
+texture = ExtResource("7_y3jo1")
+
+[node name="Coin22" parent="Room01_IntroAndRockPuzzle" unique_id=91508137 instance=ExtResource("6_qy02x")]
+position = Vector2(1697, 558)
+texture = ExtResource("7_y3jo1")
+
+[node name="Coin24" parent="Room01_IntroAndRockPuzzle" unique_id=334811006 instance=ExtResource("6_qy02x")]
+position = Vector2(1569, 558)
+texture = ExtResource("7_y3jo1")
+
+[node name="Coin2" parent="Room01_IntroAndRockPuzzle" unique_id=2004393446 instance=ExtResource("6_qy02x")]
+position = Vector2(3599, 964)
+texture = ExtResource("7_y3jo1")
+
+[node name="Coin23" parent="Room01_IntroAndRockPuzzle" unique_id=966695602 instance=ExtResource("6_qy02x")]
+position = Vector2(3862, 959)
+texture = ExtResource("7_y3jo1")
+
+[node name="Coin40" parent="Room01_IntroAndRockPuzzle" unique_id=1379372883 instance=ExtResource("6_qy02x")]
+position = Vector2(3734, 959)
+texture = ExtResource("7_y3jo1")
+
+[node name="Platform16" parent="Room01_IntroAndRockPuzzle" unique_id=895645003 groups=["platforms"] instance=ExtResource("32_1tk8l")]
+position = Vector2(3024, 594)
+fall = true
+
+[node name="NpcElder_Premise" parent="Room01_IntroAndRockPuzzle" unique_id=688628462 groups=["npcs"] instance=ExtResource("34_vnrdr")]
+position = Vector2(550, 583)
+
+[node name="NpcElder_RockPuzzle" parent="Room01_IntroAndRockPuzzle" unique_id=342457569 groups=["npcs"] instance=ExtResource("34_vnrdr")]
+position = Vector2(3930, 329)
+
+[node name="Npc_MonkFlavor" parent="Room01_IntroAndRockPuzzle" unique_id=1327020053 groups=["npcs"] instance=ExtResource("3_27os8")]
+position = Vector2(2115, 613)
+dialogue_lines = Array[String](["The void has come to Threadbare. Are you the one to save us?"])
+
+[node name="AnimatedSprite2D" parent="Room01_IntroAndRockPuzzle/Npc_MonkFlavor" index="0" unique_id=1376270546]
+sprite_frames = ExtResource("12_m7dqe")
+
+[node name="CollisionShape2D" parent="Room01_IntroAndRockPuzzle/Npc_MonkFlavor/Area2D" parent_id_path=PackedInt32Array(1327020053, 18542653) index="0" unique_id=226621961]
+shape = SubResource("RectangleShape2D_0ff8d")
+
+[node name="ControlDisplay" parent="Room01_IntroAndRockPuzzle/Npc_MonkFlavor" index="3" unique_id=1300373774]
+visible = false
+position = Vector2(0, -75)
+
+[node name="Enemy4" parent="Room01_IntroAndRockPuzzle" unique_id=947503997 groups=["enemies"] instance=ExtResource("17_d6rl2")]
+position = Vector2(928, 765)
+
+[node name="Enemy5" parent="Room01_IntroAndRockPuzzle" unique_id=628973578 groups=["enemies"] instance=ExtResource("17_d6rl2")]
+position = Vector2(2939, 528)
+
+[node name="ScreenShakeTrigger" parent="Room01_IntroAndRockPuzzle" unique_id=1750362101 groups=["triggers"] instance=ExtResource("15_0aei4")]
+visible = false
+position = Vector2(460, 515)
+
+[node name="ScreenShakeTrigger2" parent="Room01_IntroAndRockPuzzle" unique_id=1943245400 groups=["triggers"] instance=ExtResource("15_0aei4")]
+visible = false
+position = Vector2(2238, 518)
+
+[node name="QuestScriptTrigger_ReachedRockPuzzle" parent="Room01_IntroAndRockPuzzle" unique_id=1651920811 groups=["triggers"] instance=ExtResource("9_58r63")]
+visible = false
+position = Vector2(3943.0002, 159)
+scale = Vector2(5.301431, 2.9200006)
+
+[node name="ForceQuestProgressTrigger_SolvedRockPuzzle" parent="Room01_IntroAndRockPuzzle" unique_id=1381343308 groups=["triggers"] instance=ExtResource("17_foth1")]
+visible = false
+position = Vector2(4316.0005, 319)
+scale = Vector2(0.7200195, -0.5200013)
+
+[node name="CollisionShape2D" parent="Room01_IntroAndRockPuzzle/ForceQuestProgressTrigger_SolvedRockPuzzle" index="0" unique_id=490838596]
+shape = SubResource("RectangleShape2D_y8cc3")
+
+[node name="SkipQuestTriggerBehavior" parent="Room01_IntroAndRockPuzzle/ForceQuestProgressTrigger_SolvedRockPuzzle" index="1" unique_id=1238036962]
+quest_line_identifier = "ProceedToKnitwitch"
+
+[node name="Room02_BridgeAndSwitchPuzzles" type="Node2D" parent="." unique_id=1065081788]
+
+[node name="BridgePuzzle_TileMapLayer_Basket" type="TileMapLayer" parent="Room02_BridgeAndSwitchPuzzles" unique_id=874539525]
+tile_map_data = PackedByteArray("AAAiAAgAAQABAAAAAAAjAAgAAQABAAAAAAAkAAgAAQABAAAAAAAlAAgAAQACAAAAAAAxAAgAAQABAAEAAAAiAAcAAQAKAAIAAAAiAAYAAQAKAAIAAAAiAAUAAQAKAAIAAAAiAAQAAQAKAAIAAAAiAAMAAQAKAAEAAAAxAAQAAQABAAEAAAAxAAUAAQABAAEAAAAxAAYAAQABAAEAAAAxAAcAAQABAAEAAAAxAAMAAQAKAAEAAAAjAAMAAQABAAAAAAAjAAQAAQABAAEAAAAjAAUAAQABAAEAAAAjAAYAAQABAAEAAAAjAAcAAQABAAEAAAAkAAQAAQABAAEAAAAkAAUAAQABAAEAAAAkAAYAAQABAAEAAAAkAAcAAQABAAEAAAAlAAQAAQACAAEAAAAlAAUAAQACAAEAAAAlAAYAAQACAAEAAAAlAAcAAQACAAEAAAAkAAMAAQABAAAAAAAlAAMAAQACAAAAAAAsAAEAAQAHAAEAAAAtAAEAAQAKAAEAAAAuAAEAAQALAAEAAAAvAAIAAQALAAEAAAAwAAMAAQAKAAEAAAAuAAIAAQALAAIAAAAvAAMAAQALAAIAAAAtAAIAAQAAAAEAAAAtAAMAAQAAAAEAAAAtAAQAAQAAAAEAAAAtAAUAAQAAAAEAAAAtAAYAAQAAAAEAAAAtAAcAAQAAAAEAAAAuAAMAAQAKAAIAAAAuAAQAAQAKAAIAAAAuAAUAAQAKAAIAAAAuAAYAAQAKAAIAAAAuAAcAAQAKAAIAAAAvAAcAAQAKAAIAAAAwAAcAAQAKAAIAAAAwAAYAAQAKAAIAAAAvAAYAAQAKAAIAAAAvAAUAAQAKAAIAAAAwAAUAAQAKAAIAAAAwAAQAAQAKAAIAAAAvAAQAAQAKAAIAAAAtAAgAAQAAAAEAAAAuAAgAAQABAAEAAAAvAAgAAQABAAEAAAAwAAgAAQABAAEAAAA4AAQAAQAKAAIAAAA5AAQAAQAKAAIAAAA6AAQAAQAKAAIAAAA7AAQAAQAKAAIAAAA8AAQAAQAKAAIAAAA9AAQAAQAKAAIAAABAAAMAAQAKAAEAAABBAAMAAQAKAAEAAABAAAQAAQAKAAIAAAA+AAQAAQAKAAIAAAA/AAQAAQAKAAIAAABBAAQAAQAKAAIAAAAyAAgAAQAKAAIAAAAzAAgAAQAKAAIAAAA0AAgAAQAKAAIAAAA1AAgAAQAKAAIAAAA2AAgAAQAKAAIAAAA3AAgAAQAKAAIAAAA4AAgAAQAKAAIAAAA5AAUAAQAKAAIAAAA5AAgAAQAKAAIAAAA6AAUAAQAKAAIAAAA6AAYAAQAKAAIAAAA6AAcAAQAKAAIAAAA6AAgAAQAKAAIAAAA7AAUAAQAKAAIAAAA7AAYAAQAKAAIAAAA7AAcAAQAKAAIAAAA7AAgAAQAKAAIAAAA8AAUAAQAKAAIAAAA8AAYAAQAKAAIAAAA8AAcAAQAKAAIAAAA8AAgAAQAKAAIAAAA9AAUAAQAKAAIAAAA9AAYAAQAKAAIAAAA9AAcAAQAKAAIAAAA9AAgAAQAKAAIAAAA+AAUAAQAKAAIAAAA+AAYAAQAKAAIAAAA+AAcAAQAKAAIAAAA+AAgAAQAKAAIAAAA/AAUAAQAKAAIAAAA/AAYAAQAKAAIAAAA/AAcAAQAKAAIAAAA/AAgAAQAKAAIAAABAAAUAAQAKAAIAAABAAAYAAQAKAAIAAABAAAcAAQAKAAIAAABAAAgAAQAKAAIAAABBAAUAAQAKAAIAAABBAAYAAQAKAAIAAABBAAcAAQAKAAIAAABBAAgAAQAKAAIAAAA3AAMAAQAKAAEAAAA4AAMAAQAKAAEAAAA5AAMAAQAKAAEAAAA6AAMAAQAKAAEAAAA7AAMAAQAKAAEAAAA9AAMAAQAKAAEAAAA8AAMAAQAKAAEAAAA+AAMAAQAKAAEAAAA/AAMAAQAKAAEAAAA1AAMAAQAKAAEAAAA2AAMAAQAKAAEAAAA2AAQAAQAKAAIAAAA3AAQAAQAKAAIAAAA3AAUAAQAKAAIAAAA4AAUAAQAKAAIAAAA4AAYAAQAKAAIAAAA5AAYAAQAKAAIAAAA5AAcAAQABAAEAAAAyAAYAAQAKAAIAAAAyAAcAAQAKAAIAAAAzAAcAAQAKAAIAAAAyAAMAAQABAAAAAAAzAAMAAQABAAAAAAA0AAMAAQABAAAAAAAyAAQAAQABAAEAAAAzAAQAAQABAAEAAAA0AAQAAQABAAEAAAA1AAQAAQABAAEAAAA1AAUAAQABAAEAAAAyAAUAAQABAAEAAAAzAAUAAQABAAEAAAA0AAUAAQABAAEAAAA2AAUAAQABAAEAAAAzAAYAAQABAAEAAAA0AAYAAQABAAEAAAA1AAYAAQABAAEAAAA2AAYAAQABAAEAAAA3AAYAAQABAAEAAAA0AAcAAQABAAEAAAA1AAcAAQABAAEAAAA2AAcAAQABAAEAAAA3AAcAAQABAAEAAAA4AAcAAQABAAEAAABCAAcAAQABAAEAAABCAAYAAQABAAEAAABCAAUAAQABAAEAAABCAAQAAQABAAEAAABCAAMAAQABAAAAAABBAAAAAQACAAAAAABAAAAAAQABAAAAAAA/AAAAAQABAAAAAAA+AAAAAQABAAAAAAA9AAAAAQABAAAAAAA8AAAAAQABAAAAAAA7AAAAAQABAAAAAAA6AAAAAQAAAAAAAAA4AAIAAQAAAAAAAAA5AAIAAQABAAAAAAA6AAIAAQACAAAAAAA6AAEAAQAAAAEAAAA7AAEAAQABAAEAAAA8AAEAAQABAAEAAAA9AAEAAQABAAEAAAA+AAEAAQABAAEAAAA/AAEAAQABAAEAAABAAAEAAQABAAEAAABBAAEAAQACAAEAAABBAAIAAQACAAEAAABAAAIAAQABAAEAAAA/AAIAAQABAAEAAAA+AAIAAQABAAEAAAA9AAIAAQABAAEAAAA8AAIAAQABAAEAAAA7AAIAAQABAAEAAAA=")
+tile_set = ExtResource("10_xvuht")
+
+[node name="BridgePuzzle_TileMapLayer_Stone" type="TileMapLayer" parent="Room02_BridgeAndSwitchPuzzles" unique_id=840072359]
+tile_map_data = PackedByteArray("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")
+tile_set = ExtResource("9_pjmyj")
+
+[node name="BridgePuzzle_TileMapLayer_Decorations" type="TileMapLayer" parent="Room02_BridgeAndSwitchPuzzles" unique_id=927547064]
+tile_map_data = PackedByteArray("AAAiAAQAAQAKAAIAAAAiAAUAAQAKAAIAAAAiAAcAAQACAAAAAAAsAAEAAQADAAEAAAAtAAEAAQAEAAEAAAAtAAIAAQABAAEAAAAtAAMAAQAKAAIAAAAtAAQAAQAAAAAAAAAtAAUAAQAKAAIAAAAtAAYAAQAKAAIAAAAtAAcAAQAKAAIAAAAuAAIAAQALAAIAAAAuAAMAAQAKAAIAAAAuAAQAAQAKAAIAAAAuAAUAAQAKAAIAAAAuAAYAAQABAAAAAAAjAAUAAQACAAEAAAAlAAcAAQABAAAAAAAkAAMAAQACAAAAAAAlAAQAAQABAAEAAAAjAAYAAQAAAAEAAAAvAAMAAQACAAAAAAAwAAcAAQACAAAAAAAwAAQAAQAAAAEAAAAvAAUAAQABAAEAAAAiAAMAAQADAAEAAAAjAAMAAQAEAAEAAAA5AAMAAQADAAAAAAA=")
+tile_set = ExtResource("9_v78as")
+
+[node name="DecorationSprites" type="Node2D" parent="Room02_BridgeAndSwitchPuzzles/BridgePuzzle_TileMapLayer_Decorations" unique_id=1859982001]
+metadata/_edit_lock_ = true
+
+[node name="BushesBehind" type="Node2D" parent="Room02_BridgeAndSwitchPuzzles/BridgePuzzle_TileMapLayer_Decorations/DecorationSprites" unique_id=1281978921]
+position = Vector2(0, 1)
+
+[node name="LargeGreen3" type="AnimatedSprite2D" parent="Room02_BridgeAndSwitchPuzzles/BridgePuzzle_TileMapLayer_Decorations/DecorationSprites/BushesBehind" unique_id=503720936]
+position = Vector2(6994, 361)
+sprite_frames = ExtResource("29_poyld")
+autoplay = "default"
+
+[node name="SmallRed3" type="AnimatedSprite2D" parent="Room02_BridgeAndSwitchPuzzles/BridgePuzzle_TileMapLayer_Decorations/DecorationSprites/BushesBehind" unique_id=743514667]
+position = Vector2(6949, 372)
+sprite_frames = ExtResource("32_v4g46")
+autoplay = "default"
+
+[node name="SmallPurple1" type="AnimatedSprite2D" parent="Room02_BridgeAndSwitchPuzzles/BridgePuzzle_TileMapLayer_Decorations/DecorationSprites/BushesBehind" unique_id=1243837675]
+position = Vector2(4375, 370)
+sprite_frames = ExtResource("31_vm00m")
+autoplay = "default"
+
+[node name="GrassBehind" type="Node2D" parent="Room02_BridgeAndSwitchPuzzles/BridgePuzzle_TileMapLayer_Decorations/DecorationSprites" unique_id=663517584]
+
+[node name="Grass27" type="Sprite2D" parent="Room02_BridgeAndSwitchPuzzles/BridgePuzzle_TileMapLayer_Decorations/DecorationSprites/GrassBehind" unique_id=1856004517]
+position = Vector2(5966, 204)
+rotation = 0.7853982
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("36_33ble")
+
+[node name="Grass28" type="Sprite2D" parent="Room02_BridgeAndSwitchPuzzles/BridgePuzzle_TileMapLayer_Decorations/DecorationSprites/GrassBehind" unique_id=931456996]
+position = Vector2(6016, 253.99979)
+rotation = 0.7853982
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("35_ioj4p")
+
+[node name="Grass26" type="Sprite2D" parent="Room02_BridgeAndSwitchPuzzles/BridgePuzzle_TileMapLayer_Decorations/DecorationSprites/GrassBehind" unique_id=1046680649]
+position = Vector2(5757, 129)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("35_ioj4p")
+
+[node name="Grass33" type="Sprite2D" parent="Room02_BridgeAndSwitchPuzzles/BridgePuzzle_TileMapLayer_Decorations/DecorationSprites/GrassBehind" unique_id=546541430]
+position = Vector2(5814, 128)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("37_xns2c")
+flip_h = true
+
+[node name="GrassFront" type="Node2D" parent="Room02_BridgeAndSwitchPuzzles/BridgePuzzle_TileMapLayer_Decorations/DecorationSprites" unique_id=368603377]
+z_index = 1
+
+[node name="Grass20" type="Sprite2D" parent="Room02_BridgeAndSwitchPuzzles/BridgePuzzle_TileMapLayer_Decorations/DecorationSprites/GrassFront" unique_id=1418658972]
 position = Vector2(4572, 1025)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("36_33ble")
 flip_h = true
 
-[node name="Grass23" type="Sprite2D" parent="Room02_BridgePuzzle/BridgePuzzle_TileMapLayer_Decorations/DecorationSprites/GrassFront" unique_id=878400543]
-position = Vector2(4236, 380.5)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("37_xns2c")
-
-[node name="Grass24" type="Sprite2D" parent="Room02_BridgePuzzle/BridgePuzzle_TileMapLayer_Decorations/DecorationSprites/GrassFront" unique_id=667992059]
+[node name="Grass24" type="Sprite2D" parent="Room02_BridgeAndSwitchPuzzles/BridgePuzzle_TileMapLayer_Decorations/DecorationSprites/GrassFront" unique_id=667992059]
 position = Vector2(4342, 380.5)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("37_xns2c")
 flip_h = true
 
-[node name="Grass25" type="Sprite2D" parent="Room02_BridgePuzzle/BridgePuzzle_TileMapLayer_Decorations/DecorationSprites/GrassFront" unique_id=1082962586]
+[node name="Grass25" type="Sprite2D" parent="Room02_BridgeAndSwitchPuzzles/BridgePuzzle_TileMapLayer_Decorations/DecorationSprites/GrassFront" unique_id=1082962586]
 position = Vector2(4734, 386.00003)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("35_ioj4p")
 flip_h = true
 
-[node name="Grass29" type="Sprite2D" parent="Room02_BridgePuzzle/BridgePuzzle_TileMapLayer_Decorations/DecorationSprites/GrassFront" unique_id=2057564927]
+[node name="Grass29" type="Sprite2D" parent="Room02_BridgeAndSwitchPuzzles/BridgePuzzle_TileMapLayer_Decorations/DecorationSprites/GrassFront" unique_id=2057564927]
 position = Vector2(6190, 384)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("35_ioj4p")
 
-[node name="Grass103" type="Sprite2D" parent="Room02_BridgePuzzle/BridgePuzzle_TileMapLayer_Decorations/DecorationSprites/GrassFront" unique_id=121291347]
+[node name="Grass103" type="Sprite2D" parent="Room02_BridgeAndSwitchPuzzles/BridgePuzzle_TileMapLayer_Decorations/DecorationSprites/GrassFront" unique_id=121291347]
 position = Vector2(5912, 1024)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("20_6lr5j")
 
-[node name="Grass93" type="Sprite2D" parent="Room02_BridgePuzzle/BridgePuzzle_TileMapLayer_Decorations/DecorationSprites/GrassFront" unique_id=1682571429]
+[node name="Grass93" type="Sprite2D" parent="Room02_BridgeAndSwitchPuzzles/BridgePuzzle_TileMapLayer_Decorations/DecorationSprites/GrassFront" unique_id=1682571429]
 position = Vector2(6068, 1024)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("19_y8cc3")
 
-[node name="DecorativeProps" type="Node2D" parent="Room02_BridgePuzzle/BridgePuzzle_TileMapLayer_Decorations" unique_id=313991362]
-z_index = 1
-
-[node name="BarleyCrops2" parent="Room02_BridgePuzzle/BridgePuzzle_TileMapLayer_Decorations/DecorativeProps" unique_id=524720451 instance=ExtResource("37_xvuht")]
-position = Vector2(2240, 1047)
-
-[node name="BarleyCrops6" parent="Room02_BridgePuzzle/BridgePuzzle_TileMapLayer_Decorations/DecorativeProps" unique_id=1949252048 instance=ExtResource("37_xvuht")]
-position = Vector2(2496, 1047)
-
-[node name="BarleyCrops3" parent="Room02_BridgePuzzle/BridgePuzzle_TileMapLayer_Decorations/DecorativeProps" unique_id=1131882216 instance=ExtResource("37_xvuht")]
-position = Vector2(1984, 1047)
-
-[node name="BarleyCrops4" parent="Room02_BridgePuzzle/BridgePuzzle_TileMapLayer_Decorations/DecorativeProps" unique_id=1570562820 instance=ExtResource("37_xvuht")]
-position = Vector2(1728, 1047)
-
-[node name="BarleyCrops7" parent="Room02_BridgePuzzle/BridgePuzzle_TileMapLayer_Decorations/DecorativeProps" unique_id=1851532597 instance=ExtResource("37_xvuht")]
-position = Vector2(192, 1040)
-
-[node name="BarleyCrops8" parent="Room02_BridgePuzzle/BridgePuzzle_TileMapLayer_Decorations/DecorativeProps" unique_id=1523391507 instance=ExtResource("37_xvuht")]
-position = Vector2(441, 1044)
-
-[node name="BarleyCrops9" parent="Room02_BridgePuzzle/BridgePuzzle_TileMapLayer_Decorations/DecorativeProps" unique_id=29045562 instance=ExtResource("37_xvuht")]
-position = Vector2(1212, 1046)
-
-[node name="BarleyCrops10" parent="Room02_BridgePuzzle/BridgePuzzle_TileMapLayer_Decorations/DecorativeProps" unique_id=770892609 instance=ExtResource("37_xvuht")]
-position = Vector2(1468, 1046)
-
-[node name="BarleyCrops11" parent="Room02_BridgePuzzle/BridgePuzzle_TileMapLayer_Decorations/DecorativeProps" unique_id=1707824938 instance=ExtResource("37_xvuht")]
-position = Vector2(956, 1046)
-
-[node name="BarleyCrops12" parent="Room02_BridgePuzzle/BridgePuzzle_TileMapLayer_Decorations/DecorativeProps" unique_id=842813092 instance=ExtResource("37_xvuht")]
-position = Vector2(700, 1046)
-
-[node name="BridgePuzzle_TileMapLayer_Barriers" type="TileMapLayer" parent="Room02_BridgePuzzle" unique_id=301696030]
-tile_map_data = PackedByteArray("AAAhAAMAAAABAAAAAAAhAAQAAAABAAAAAAAhAAUAAAABAAAAAAAhAAYAAAABAAAAAAAhAAcAAAABAAAAAAAgAAYAAAABAAAAAAAiAAYAAAABAAAAAAAfAAcAAAABAAAAAAAgAAcAAAABAAAAAAAiAAcAAAABAAAAAAAjAAcAAAABAAAAAAD//wcAAAABAAAAAAD//wYAAAABAAAAAAD//wUAAAABAAAAAAD//wQAAAABAAAAAAD//wMAAAABAAAAAAD//wIAAAABAAAAAAD//wEAAAABAAAAAAD//wAAAAABAAAAAAD/////AAABAAAAAAD///7/AAABAAAAAAD///3/AAABAAAAAAD///z/AAABAAAAAAD///v/AAABAAAAAAD///r/AAABAAAAAAD///n/AAABAAAAAAD///j/AAABAAAAAAD///f/AAABAAAAAAD///b/AAABAAAAAAD///X/AAABAAAAAAD///T/AAABAAAAAAD///P/AAABAAAAAAD///L/AAABAAAAAAD///H/AAABAAAAAAAAAPH/AAABAAAAAAABAPH/AAABAAAAAAACAPH/AAABAAAAAAADAPH/AAABAAAAAAAEAPH/AAABAAAAAAAFAPH/AAABAAAAAAAGAPH/AAABAAAAAAAHAPH/AAABAAAAAAAIAPH/AAABAAAAAAAJAPH/AAABAAAAAAAKAPH/AAABAAAAAAALAPH/AAABAAAAAAAMAPH/AAABAAAAAAANAPH/AAABAAAAAAAOAPH/AAABAAAAAAAPAPH/AAABAAAAAAAQAPH/AAABAAAAAAARAPH/AAABAAAAAAASAPH/AAABAAAAAAATAPH/AAABAAAAAAAUAPH/AAABAAAAAAAVAPH/AAABAAAAAAAWAPH/AAABAAAAAAAXAPH/AAABAAAAAAAYAPH/AAABAAAAAAAZAPH/AAABAAAAAAAaAPH/AAABAAAAAAAbAPH/AAABAAAAAAAcAPH/AAABAAAAAAAdAPH/AAABAAAAAAAeAPH/AAABAAAAAAAfAPH/AAABAAAAAAAgAPH/AAABAAAAAAAhAPH/AAABAAAAAAAiAPH/AAABAAAAAAAjAPH/AAABAAAAAAAkAPH/AAABAAAAAAAlAPH/AAABAAAAAAAmAPH/AAABAAAAAAAnAPH/AAABAAAAAAAoAPH/AAABAAAAAAApAPH/AAABAAAAAAAqAPH/AAABAAAAAAArAPH/AAABAAAAAAAsAPH/AAABAAAAAAAtAPH/AAABAAAAAAAuAPH/AAABAAAAAAAvAPH/AAABAAAAAAAwAPH/AAABAAAAAAAxAPH/AAABAAAAAAAQAPL/AAABAAAAAAAQAPP/AAABAAAAAAAQAPT/AAABAAAAAAAQAPX/AAABAAAAAAAQAPb/AAABAAAAAAAQAPf/AAABAAAAAAAQAPj/AAABAAAAAAAQAPn/AAABAAAAAAAQAPr/AAABAAAAAAAQAPv/AAABAAAAAAAQAPz/AAABAAAAAAAQAP3/AAABAAAAAAAhAPL/AAABAAAAAAAhAPP/AAABAAAAAAAhAPT/AAABAAAAAAAhAPX/AAABAAAAAAAhAPb/AAABAAAAAAAhAPf/AAABAAAAAAAhAPj/AAABAAAAAAAhAPn/AAABAAAAAAAhAPr/AAABAAAAAAAhAPv/AAABAAAAAAAhAPz/AAABAAAAAAAhAP3/AAABAAAAAAAhAP7/AAABAAAAAAAhAP//AAABAAAAAAAhAAAAAAABAAAAAAAxAPL/AAABAAAAAAAxAPP/AAABAAAAAAAxAPT/AAABAAAAAAAxAPX/AAABAAAAAAAxAPb/AAABAAAAAAAxAPf/AAABAAAAAAAxAPj/AAABAAAAAAAxAPn/AAABAAAAAAAxAPr/AAABAAAAAAAxAPv/AAABAAAAAAAxAPz/AAABAAAAAAAgAAUAAAABAAAAAAAiAAUAAAABAAAAAAAhAAEAAAABAAAAAAAyAPH/AAABAAAAAAAzAPH/AAABAAAAAAA0APH/AAABAAAAAAA1APH/AAABAAAAAAA2APH/AAABAAAAAAA3APH/AAABAAAAAAA4APH/AAABAAAAAAA5APH/AAABAAAAAAA6APH/AAABAAAAAAA7APH/AAABAAAAAAA8APH/AAABAAAAAAA9APH/AAABAAAAAAA+APH/AAABAAAAAAA/APH/AAABAAAAAABAAPH/AAABAAAAAABBAPH/AAABAAAAAABCAPH/AAABAAAAAABCAPL/AAABAAAAAABCAPP/AAABAAAAAABCAPT/AAABAAAAAABCAPX/AAABAAAAAABCAPb/AAABAAAAAABCAPf/AAABAAAAAABCAPj/AAABAAAAAABCAPn/AAABAAAAAABCAPr/AAABAAAAAABCAPv/AAABAAAAAABCAPz/AAABAAAAAABCAP3/AAABAAAAAABCAP7/AAABAAAAAABCAP//AAABAAAAAABCAAUAAAABAAAAAABCAAYAAAABAAAAAABCAAcAAAABAAAAAABBAAYAAAABAAAAAABBAAcAAAABAAAAAABAAAcAAAABAAAAAAAxAP3/AAABAAAAAAAwAAYAAAABAAAAAAAxAAYAAAABAAAAAAAxAAUAAAABAAAAAAAxAAQAAAABAAAAAAAxAAMAAAABAAAAAAAvAAcAAAABAAAAAAAwAAcAAAABAAAAAAAxAAcAAAABAAAAAAAyAAYAAAABAAAAAAAyAAcAAAABAAAAAAAzAAcAAAABAAAAAAA+APr/AAABAAAAAAA/APr/AAABAAAAAABAAPr/AAABAAAAAABBAPr/AAABAAAAAAA=")
+[node name="BridgePuzzle_TileMapLayer_Barriers" type="TileMapLayer" parent="Room02_BridgeAndSwitchPuzzles" unique_id=301696030]
+tile_map_data = PackedByteArray("AAAiAAYAAAABAAAAAAAiAAcAAAABAAAAAAAjAAcAAAABAAAAAAAiAPH/AAABAAAAAAAjAPH/AAABAAAAAAAkAPH/AAABAAAAAAAlAPH/AAABAAAAAAAmAPH/AAABAAAAAAAnAPH/AAABAAAAAAAoAPH/AAABAAAAAAApAPH/AAABAAAAAAAqAPH/AAABAAAAAAArAPH/AAABAAAAAAAsAPH/AAABAAAAAAAtAPH/AAABAAAAAAAuAPH/AAABAAAAAAAvAPH/AAABAAAAAAAwAPH/AAABAAAAAAAxAPH/AAABAAAAAAAxAPL/AAABAAAAAAAxAPP/AAABAAAAAAAxAPT/AAABAAAAAAAxAPX/AAABAAAAAAAxAPb/AAABAAAAAAAxAPf/AAABAAAAAAAxAPj/AAABAAAAAAAxAPn/AAABAAAAAAAxAPr/AAABAAAAAAAxAPv/AAABAAAAAAAxAPz/AAABAAAAAAAiAAUAAAABAAAAAAAyAPH/AAABAAAAAAAzAPH/AAABAAAAAAA0APH/AAABAAAAAAA1APH/AAABAAAAAAA2APH/AAABAAAAAAA3APH/AAABAAAAAAA4APH/AAABAAAAAAA5APH/AAABAAAAAAA6APH/AAABAAAAAAA7APH/AAABAAAAAAA8APH/AAABAAAAAAA9APH/AAABAAAAAAA+APH/AAABAAAAAAA/APH/AAABAAAAAABAAPH/AAABAAAAAABBAPH/AAABAAAAAABCAPH/AAABAAAAAABCAPL/AAABAAAAAABCAPP/AAABAAAAAABCAPT/AAABAAAAAABCAPX/AAABAAAAAABCAPb/AAABAAAAAABCAPf/AAABAAAAAABCAPj/AAABAAAAAABCAPn/AAABAAAAAABCAPr/AAABAAAAAABCAPv/AAABAAAAAABCAPz/AAABAAAAAABCAP3/AAABAAAAAABCAP7/AAABAAAAAABCAP//AAABAAAAAABCAAUAAAABAAAAAABCAAYAAAABAAAAAABCAAcAAAABAAAAAABBAAYAAAABAAAAAABBAAcAAAABAAAAAABAAAcAAAABAAAAAAAxAP3/AAABAAAAAAAwAAYAAAABAAAAAAAxAAYAAAABAAAAAAAxAAUAAAABAAAAAAAxAAQAAAABAAAAAAAxAAMAAAABAAAAAAAvAAcAAAABAAAAAAAwAAcAAAABAAAAAAAxAAcAAAABAAAAAAAyAAYAAAABAAAAAAAyAAcAAAABAAAAAAAzAAcAAAABAAAAAAA+APr/AAABAAAAAAA/APr/AAABAAAAAABAAPr/AAABAAAAAABBAPr/AAABAAAAAAA=")
 tile_set = ExtResource("12_vnrdr")
 
-[node name="YarnSparkGate0" parent="Room02_BridgePuzzle" unique_id=1083236780 groups=["yarnsparkGates"] instance=ExtResource("24_obko3")]
+[node name="YarnSparkGate0" parent="Room02_BridgeAndSwitchPuzzles" unique_id=1083236780 groups=["yarnsparkGates"] instance=ExtResource("24_obko3")]
 position = Vector2(8512, 250)
 
-[node name="PlaceholderSwitchGate" parent="Room02_BridgePuzzle" unique_id=770346740 instance=ExtResource("41_vm00m")]
+[node name="PlaceholderSwitchGate" parent="Room02_BridgeAndSwitchPuzzles" unique_id=770346740 instance=ExtResource("41_vm00m")]
 position = Vector2(6428, -2)
 
-[node name="PlaceholderSwitchGate2" parent="Room02_BridgePuzzle" unique_id=1454345526 instance=ExtResource("41_vm00m")]
+[node name="PlaceholderSwitchGate2" parent="Room02_BridgeAndSwitchPuzzles" unique_id=1454345526 instance=ExtResource("41_vm00m")]
 position = Vector2(7909, -445)
 
-[node name="Switch" parent="Room02_BridgePuzzle" unique_id=1104361663 instance=ExtResource("42_v4g46")]
+[node name="Switch" parent="Room02_BridgeAndSwitchPuzzles" unique_id=1104361663 instance=ExtResource("42_v4g46")]
 position = Vector2(6284, 348)
 
-[node name="Switch2" parent="Room02_BridgePuzzle" unique_id=1743692174 instance=ExtResource("42_v4g46")]
+[node name="Switch2" parent="Room02_BridgeAndSwitchPuzzles" unique_id=1743692174 instance=ExtResource("42_v4g46")]
 position = Vector2(8365, -29)
 
-[node name="HittableObject" parent="Room02_BridgePuzzle" unique_id=1845041128 groups=["editable"] instance=ExtResource("43_v4g46")]
+[node name="HittableObject" parent="Room02_BridgeAndSwitchPuzzles" unique_id=1845041128 groups=["editable"] instance=ExtResource("43_v4g46")]
 position = Vector2(7689, -52)
 scale = Vector2(2, 2)
 hittable = true
 
-[node name="YarnSpark0" parent="Room02_BridgePuzzle" unique_id=2086611064 groups=["yarnsparks"] instance=ExtResource("14_8jun3")]
+[node name="YarnSpark0" parent="Room02_BridgeAndSwitchPuzzles" unique_id=2086611064 groups=["yarnsparks"] instance=ExtResource("14_8jun3")]
 position = Vector2(8114, -158)
 can_i_get_the_yarnspark = true
 
-[node name="Checkpoint2" parent="Room02_BridgePuzzle" unique_id=182555001 groups=["checkpoints"] instance=ExtResource("27_dt6hy")]
+[node name="Checkpoint2" parent="Room02_BridgeAndSwitchPuzzles" unique_id=182555001 groups=["checkpoints"] instance=ExtResource("27_dt6hy")]
 position = Vector2(4500, 190)
 
-[node name="Coin20" parent="Room02_BridgePuzzle" unique_id=1594543700 instance=ExtResource("6_qy02x")]
+[node name="Coin20" parent="Room02_BridgeAndSwitchPuzzles" unique_id=1594543700 instance=ExtResource("6_qy02x")]
 position = Vector2(5184, 34)
 texture = ExtResource("7_y3jo1")
 
-[node name="Coin21" parent="Room02_BridgePuzzle" unique_id=1885096095 instance=ExtResource("6_qy02x")]
+[node name="Coin21" parent="Room02_BridgeAndSwitchPuzzles" unique_id=1885096095 instance=ExtResource("6_qy02x")]
 position = Vector2(5281, -28)
 texture = ExtResource("7_y3jo1")
 
-[node name="Coin41" parent="Room02_BridgePuzzle" unique_id=1112483359 instance=ExtResource("6_qy02x")]
+[node name="Coin41" parent="Room02_BridgeAndSwitchPuzzles" unique_id=1112483359 instance=ExtResource("6_qy02x")]
 position = Vector2(5374, 34)
 texture = ExtResource("7_y3jo1")
 
-[node name="Coin7" parent="Room02_BridgePuzzle" unique_id=1112119096 instance=ExtResource("6_qy02x")]
+[node name="Coin7" parent="Room02_BridgeAndSwitchPuzzles" unique_id=1112119096 instance=ExtResource("6_qy02x")]
 position = Vector2(6024, -210)
 texture = ExtResource("7_y3jo1")
 
-[node name="Coin16" parent="Room02_BridgePuzzle" unique_id=2061226785 instance=ExtResource("6_qy02x")]
+[node name="Coin16" parent="Room02_BridgeAndSwitchPuzzles" unique_id=2061226785 instance=ExtResource("6_qy02x")]
 position = Vector2(6152, -210)
 texture = ExtResource("7_y3jo1")
 
-[node name="Coin17" parent="Room02_BridgePuzzle" unique_id=813038471 instance=ExtResource("6_qy02x")]
+[node name="Coin17" parent="Room02_BridgeAndSwitchPuzzles" unique_id=813038471 instance=ExtResource("6_qy02x")]
 position = Vector2(5896, -210)
 texture = ExtResource("7_y3jo1")
 
-[node name="BridgePlatform" parent="Room02_BridgePuzzle" unique_id=1439632278 groups=["editable", "platforms"] instance=ExtResource("33_twxhk")]
+[node name="BridgePlatform" parent="Room02_BridgeAndSwitchPuzzles" unique_id=1439632278 groups=["editable", "platforms"] instance=ExtResource("33_twxhk")]
 position = Vector2(4927, 92)
 rotation = -1.5707964
 
-[node name="Platform10" parent="Room02_BridgePuzzle" unique_id=1440331607 groups=["platforms"] instance=ExtResource("32_1tk8l")]
+[node name="Platform10" parent="Room02_BridgeAndSwitchPuzzles" unique_id=1440331607 groups=["platforms"] instance=ExtResource("32_1tk8l")]
 position = Vector2(6022, -82)
 width = 2
 fall = true
 
-[node name="Sign_Bridge" parent="Room02_BridgePuzzle" unique_id=1037848522 groups=["signs"] instance=ExtResource("11_q0xf2")]
+[node name="Sign_Bridge" parent="Room02_BridgeAndSwitchPuzzles" unique_id=1037848522 groups=["signs"] instance=ExtResource("11_q0xf2")]
 position = Vector2(4724, 385)
 text = "Bridge closed for repair"
 
-[node name="Npc_Sheep" parent="Room02_BridgePuzzle" unique_id=949624559 groups=["npcs"] instance=ExtResource("3_27os8")]
+[node name="Npc_Sheep" parent="Room02_BridgeAndSwitchPuzzles" unique_id=949624559 groups=["npcs"] instance=ExtResource("3_27os8")]
 position = Vector2(5776, 114)
 dialogue_lines = Array[String](["Baaaaa!"])
 flip_to_face_player = true
 
-[node name="AnimatedSprite2D" parent="Room02_BridgePuzzle/Npc_Sheep" index="0" unique_id=1376270546]
+[node name="AnimatedSprite2D" parent="Room02_BridgeAndSwitchPuzzles/Npc_Sheep" index="0" unique_id=1376270546]
 sprite_frames = ExtResource("25_pj073")
 
-[node name="CollisionShape2D" parent="Room02_BridgePuzzle/Npc_Sheep/Area2D" parent_id_path=PackedInt32Array(949624559, 18542653) index="0" unique_id=226621961]
+[node name="CollisionShape2D" parent="Room02_BridgeAndSwitchPuzzles/Npc_Sheep/Area2D" parent_id_path=PackedInt32Array(949624559, 18542653) index="0" unique_id=226621961]
 shape = SubResource("RectangleShape2D_0ff8d")
 
-[node name="ControlDisplay" parent="Room02_BridgePuzzle/Npc_Sheep" index="3" unique_id=1300373774]
+[node name="ControlDisplay" parent="Room02_BridgeAndSwitchPuzzles/Npc_Sheep" index="3" unique_id=1300373774]
 visible = false
 position = Vector2(0, -75)
 
-[node name="ScreenShakeTrigger3" parent="Room02_BridgePuzzle" unique_id=1434990298 groups=["triggers"] instance=ExtResource("15_0aei4")]
+[node name="ScreenShakeTrigger3" parent="Room02_BridgeAndSwitchPuzzles" unique_id=1434990298 groups=["triggers"] instance=ExtResource("15_0aei4")]
 visible = false
 position = Vector2(4673, 184)
 
-[node name="QuestScriptTrigger_ReachedRotatePuzzle" parent="Room02_BridgePuzzle" unique_id=166743452 groups=["triggers"] instance=ExtResource("9_58r63")]
+[node name="QuestScriptTrigger_ReachedRotatePuzzle" parent="Room02_BridgeAndSwitchPuzzles" unique_id=166743452 groups=["triggers"] instance=ExtResource("9_58r63")]
 visible = false
 position = Vector2(4723.0005, 184.00002)
 scale = Vector2(2.5600097, 2.6)
 
-[node name="ChangeEditableObjectsTrigger_StartRotatePuzzle" parent="Room02_BridgePuzzle" unique_id=419466133 groups=["triggers"] instance=ExtResource("14_m7dqe")]
+[node name="ChangeEditableObjectsTrigger_StartRotatePuzzle" parent="Room02_BridgeAndSwitchPuzzles" unique_id=419466133 groups=["triggers"] instance=ExtResource("14_m7dqe")]
 visible = false
 position = Vector2(4401, 256)
 
-[node name="CollisionShape2D" parent="Room02_BridgePuzzle/ChangeEditableObjectsTrigger_StartRotatePuzzle" index="0" unique_id=490838596]
+[node name="CollisionShape2D" parent="Room02_BridgeAndSwitchPuzzles/ChangeEditableObjectsTrigger_StartRotatePuzzle" index="0" unique_id=490838596]
 position = Vector2(129, -55.5)
 shape = SubResource("RectangleShape2D_6lr5j")
 
-[node name="Behavior" parent="Room02_BridgePuzzle/ChangeEditableObjectsTrigger_StartRotatePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
+[node name="Behavior" parent="Room02_BridgeAndSwitchPuzzles/ChangeEditableObjectsTrigger_StartRotatePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
 add_objects = [NodePath("../../BridgePlatform")]
 
-[node name="ChangeEditableObjectsTrigger_StartSwitchPuzzle" parent="Room02_BridgePuzzle" unique_id=30684380 groups=["triggers"] instance=ExtResource("14_m7dqe")]
+[node name="ChangeEditableObjectsTrigger_StartSwitchPuzzle" parent="Room02_BridgeAndSwitchPuzzles" unique_id=30684380 groups=["triggers"] instance=ExtResource("14_m7dqe")]
 visible = false
 position = Vector2(5721, -52.000004)
 scale = Vector2(1.800005, 1.3861381)
 
-[node name="CollisionShape2D" parent="Room02_BridgePuzzle/ChangeEditableObjectsTrigger_StartSwitchPuzzle" index="0" unique_id=490838596]
+[node name="CollisionShape2D" parent="Room02_BridgeAndSwitchPuzzles/ChangeEditableObjectsTrigger_StartSwitchPuzzle" index="0" unique_id=490838596]
 position = Vector2(129, -55.5)
 shape = SubResource("RectangleShape2D_ioj4p")
 
-[node name="Behavior" parent="Room02_BridgePuzzle/ChangeEditableObjectsTrigger_StartSwitchPuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
+[node name="Behavior" parent="Room02_BridgeAndSwitchPuzzles/ChangeEditableObjectsTrigger_StartSwitchPuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
 add_objects = [NodePath("../../HittableObject")]
 
 [node name="Room03_GetYarnSparkPuzzle" type="Node2D" parent="." unique_id=543502581]
@@ -1886,6 +1910,10 @@ add_objects = [NodePath("../../Enemy"), NodePath("../../Enemy2")]
 [node name="Room05_PaintPuzzle" type="Node2D" parent="." unique_id=1592049848]
 position = Vector2(2176, 0)
 
+[node name="TileMapLayer_Stone" type="TileMapLayer" parent="Room05_PaintPuzzle" unique_id=1330231855 groups=["editable"]]
+position = Vector2(-2176, 0)
+tile_set = ExtResource("14_ht26h")
+
 [node name="YarnSpark4" parent="Room05_PaintPuzzle" unique_id=826339784 groups=["yarnsparkGates"] instance=ExtResource("12_ycdye")]
 position = Vector2(11779, -625)
 
@@ -2047,7 +2075,7 @@ position = Vector2(-27, -893)
 shape = SubResource("RectangleShape2D_g55af")
 
 [node name="Behavior" parent="Room05_PaintPuzzle/ChangeEditableObjectsTrigger_StartTilePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
-add_objects = [NodePath("../../../TileMapLayer_Stone"), NodePath("../../Enemy3")]
+add_objects = [NodePath("../../TileMapLayer_Stone"), NodePath("../../Enemy3")]
 
 [node name="Room06_GiantMothBoss" type="Node2D" parent="." unique_id=547116571]
 position = Vector2(2176, 0)
@@ -2142,15 +2170,15 @@ position_smoothing_enabled = true
 
 [node name="Hud2" parent="." unique_id=1514961890 instance=ExtResource("39_v78as")]
 
-[connection signal="on_toggle" from="Room02_BridgePuzzle/Switch" to="Room02_BridgePuzzle/PlaceholderSwitchGate" method="on_toggle"]
-[connection signal="on_toggle" from="Room02_BridgePuzzle/Switch2" to="Room02_BridgePuzzle/PlaceholderSwitchGate2" method="on_toggle"]
+[connection signal="on_toggle" from="Room02_BridgeAndSwitchPuzzles/Switch" to="Room02_BridgeAndSwitchPuzzles/PlaceholderSwitchGate" method="on_toggle"]
+[connection signal="on_toggle" from="Room02_BridgeAndSwitchPuzzles/Switch2" to="Room02_BridgeAndSwitchPuzzles/PlaceholderSwitchGate2" method="on_toggle"]
 [connection signal="on_toggle" from="Room03_GetYarnSparkPuzzle/TimedSwitch" to="Room03_GetYarnSparkPuzzle/PlaceholderSwitchGate3" method="on_toggle"]
 
-[editable path="Room01_RockPuzzle/Npc_MonkFlavor"]
-[editable path="Room01_RockPuzzle/ForceQuestProgressTrigger_SolvedRockPuzzle"]
-[editable path="Room02_BridgePuzzle/Npc_Sheep"]
-[editable path="Room02_BridgePuzzle/ChangeEditableObjectsTrigger_StartRotatePuzzle"]
-[editable path="Room02_BridgePuzzle/ChangeEditableObjectsTrigger_StartSwitchPuzzle"]
+[editable path="Room01_IntroAndRockPuzzle/Npc_MonkFlavor"]
+[editable path="Room01_IntroAndRockPuzzle/ForceQuestProgressTrigger_SolvedRockPuzzle"]
+[editable path="Room02_BridgeAndSwitchPuzzles/Npc_Sheep"]
+[editable path="Room02_BridgeAndSwitchPuzzles/ChangeEditableObjectsTrigger_StartRotatePuzzle"]
+[editable path="Room02_BridgeAndSwitchPuzzles/ChangeEditableObjectsTrigger_StartSwitchPuzzle"]
 [editable path="Room03_GetYarnSparkPuzzle/Npc_Sheep2"]
 [editable path="Room03_GetYarnSparkPuzzle/Npc_Sheep3"]
 [editable path="Room03_GetYarnSparkPuzzle/ChangeEditableObjectsTrigger_StartScrollPuzzle"]
