@@ -15,6 +15,7 @@ extends Area2D
 
 @onready var _sprite: Sprite2D = %Sprite2D
 @onready var _initial_texture: Texture2D = %Sprite2D.texture
+@onready var _collect_sound_player: AudioStreamPlayer2D = %CollectSoundPlayer
 
 
 func _set_texture(new_texture: Texture2D):
@@ -50,8 +51,23 @@ func _on_body_entered(_body):
 
 	# Baby Godot: Collect this coin permanently in the editor.
 	InGameQuestsBridge.collect_coin(self)
-	
+
+	if _collect_sound_player:
+		_collect_sound_player.play()
+
 	if animator:
+		# The scene frees this coin when the collect animation ends. Delay that until the
+		# collect sound finishes so the SFX is not cut short.
+		if _collect_sound_player and animator.animation_finished.is_connected(queue_free):
+			animator.animation_finished.disconnect(queue_free)
 		animator.play(&"collect")
+		if not _collect_sound_player:
+			return
+		await animator.animation_finished
 	else:
-		queue_free()
+		visible = false
+
+	if _collect_sound_player and _collect_sound_player.playing:
+		await _collect_sound_player.finished
+
+	queue_free()
