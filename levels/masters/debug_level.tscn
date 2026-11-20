@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://ci2y224l5trhk" path="res://components/babygodot/yarnspark/condition_types/parent_child_relationship_scroll_condition.tscn" id="18_mkx31"]
 [ext_resource type="PackedScene" uid="uid://b5hpe7b55n7b8" path="res://components/babygodot/moving_path_node/moving_path_node.tscn" id="19_3l80m"]
 [ext_resource type="PackedScene" uid="uid://cgxv5yqfnl7u" path="res://components/platform/animatable_platform/animatable_platform.tscn" id="20_3l80m"]
+[ext_resource type="PackedScene" uid="uid://bpllocvcq2smk" path="res://components/enemy/shielded_storyvore_enemy.tscn" id="21_3l80m"]
 
 [sub_resource type="Curve2D" id="Curve2D_24xr1"]
 _data = {
@@ -82,6 +83,10 @@ hittable = true
 [node name="Platform" parent="." unique_id=1439632278 instance=ExtResource("13_38qs6")]
 position = Vector2(2204, 396)
 
+[node name="Platform2" parent="." unique_id=584020986 instance=ExtResource("13_38qs6")]
+position = Vector2(3341, 501)
+width = 6
+
 [node name="Player" parent="." unique_id=1041196418 instance=ExtResource("4_01yeg")]
 position = Vector2(173, 577)
 collision_mask = 7
@@ -95,7 +100,7 @@ limit_bottom = 1080
 position_smoothing_enabled = true
 
 [node name="StoryvoreEnemy" parent="." unique_id=834529607 instance=ExtResource("16_oaw4a")]
-position = Vector2(2202, 297)
+position = Vector2(2218, 315)
 
 [node name="Yarnspark" parent="." unique_id=2086611064 instance=ExtResource("17_oaw4a")]
 position = Vector2(2722, 541)
@@ -121,5 +126,8 @@ remote_path = NodePath("../../MovingPlatform")
 
 [node name="MovingPlatform" parent="Path2D" unique_id=1213343189 instance=ExtResource("20_3l80m")]
 rotation = -0.0010976944
+
+[node name="StoryvoreEnemy2" parent="." unique_id=2006130466 instance=ExtResource("21_3l80m")]
+position = Vector2(3315, 374)
 
 [connection signal="on_toggle" from="Switch" to="PlaceholderSwitchGate" method="on_toggle"]
