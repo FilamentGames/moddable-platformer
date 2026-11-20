@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b4j8f10agdcvu" path="res://scripts/coin.gd" id="1_4bks0"]
 [ext_resource type="SpriteFrames" uid="uid://ckrtnm2fqjeuo" path="res://components/coin/coin_spin.tres" id="2_6uny3"]
 [ext_resource type="Texture2D" uid="uid://84t7yee808cn" path="res://assets/items/button.png" id="2_u2mam"]
+[ext_resource type="AudioStream" uid="uid://brp8t8y6k0n5r" path="res://assets/sounds/545857__ezzin__coin-flip.ogg" id="3_khs0j"]
 [ext_resource type="PackedScene" uid="uid://cfouqrodflylp" path="res://components/babygodot/vfx/vfx_bokehCluster.tscn" id="4_bpn4l"]
 [ext_resource type="PackedScene" uid="uid://ds648tqxmypxm" path="res://components/babygodot/vfx/vfx_sparkle.tscn" id="5_2rmi4"]
 [ext_resource type="PackedScene" uid="uid://duigd0ecs02ll" path="res://components/babygodot/vfx/vfx_bokehCluster_driftUpwards.tscn" id="6_3x8ja"]
@@ -195,6 +196,10 @@ position = Vector2(0, -10)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=650559812]
 libraries/ = SubResource("AnimationLibrary_3x8ja")
+
+[node name="CollectSoundPlayer" type="AudioStreamPlayer2D" parent="." unique_id=2106882871]
+unique_name_in_owner = true
+stream = ExtResource("3_khs0j")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="queue_free"]
