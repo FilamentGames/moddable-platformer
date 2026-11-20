@@ -105,15 +105,18 @@ metadata/_custom_type_script = "uid://de8gy7evmnev5"
 [node name="JumpSFX" type="AudioStreamPlayer" parent="SoundEffects" unique_id=1297022897]
 unique_name_in_owner = true
 stream = SubResource("AudioStreamRandomizer_mpawu")
+bus = &"SFX"
 
 [node name="GlideSFX" type="AudioStreamPlayer" parent="SoundEffects" unique_id=1346432575]
 unique_name_in_owner = true
 stream = ExtResource("4_mpawu")
+bus = &"SFX"
 
 [node name="TeleportSFX" type="AudioStreamPlayer" parent="SoundEffects" unique_id=1064972734]
 unique_name_in_owner = true
 stream = SubResource("AudioStreamRandomizer_ph1f6")
 volume_db = -10.0
+bus = &"SFX"
 
 [node name="DefeatedTimer" type="Timer" parent="." unique_id=1926521605]
 unique_name_in_owner = true
