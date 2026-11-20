@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bpllocvcq2smk"]
+
+[ext_resource type="PackedScene" uid="uid://dbaal2g7b8ub0" path="res://components/enemy/storyvore_enemy.tscn" id="1_qseeg"]
+[ext_resource type="Script" uid="uid://fo0etihleu4n" path="res://components/enemy/enemy_with_shield.gd" id="2_ca7uv"]
+
+[node name="StoryvoreEnemy" unique_id=834529607 instance=ExtResource("1_qseeg")]
+script = ExtResource("2_ca7uv")
+
+[node name="ShieldParent" type="Node2D" parent="." index="6" unique_id=1038929424]
+unique_name_in_owner = true
+editor_description = "Holder for placeholder shield graphic. Will probably be removed and replaced with custom sprite revision."
+
+[node name="ColorRect" type="ColorRect" parent="ShieldParent" index="0" unique_id=1951121327]
+offset_left = 27.999998
+offset_top = -89.0
+offset_right = 64.87912
+offset_bottom = -37.93916
+scale = Vector2(0.6444751, 1.7430186)
+color = Color(0, 0, 0.59, 0.38039216)
