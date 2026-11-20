@@ -174,6 +174,21 @@ layout_mode = 2
 layout_mode = 2
 text = "Go"
 
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer/VBoxContainer" unique_id=840975485]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer3" unique_id=527918418]
+layout_mode = 2
+text = "SFX Volume:"
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer/VBoxContainer/HBoxContainer3" unique_id=180590268]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_vertical = 4
+value = 100.0
+tick_count = 5
+
 [node name="Spacer7" type="Control" parent="VBoxContainer/VBoxContainer" unique_id=446227445]
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
@@ -196,4 +211,5 @@ text = "+1 Coin"
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/DebugLevelButton" to="." method="_on_debug_level_button_pressed"]
 [connection signal="toggled" from="VBoxContainer/VBoxContainer/HBoxContainer/CheckBox" to="." method="_on_check_box_toggled"]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/HBoxContainer2/JumpToIdButton" to="." method="_on_jump_to_id_button_pressed"]
+[connection signal="value_changed" from="VBoxContainer/VBoxContainer/HBoxContainer3/HSlider" to="." method="_on_sfx_volume_value_changed"]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/CoinButton" to="." method="_on_coin_button_pressed"]

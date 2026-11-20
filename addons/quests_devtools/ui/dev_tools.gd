@@ -67,3 +67,9 @@ func _on_debug_level_button_pressed() -> void:
 
 func _on_jump_to_id_button_pressed() -> void:
 	GlobalQuests.quests.skip_to_text_line(jump_to_quest_id_input.text)
+
+
+func _on_sfx_volume_value_changed(value: float) -> void:
+	var bus_index := AudioServer.get_bus_index("SFX")
+	if bus_index != -1:
+		AudioServer.set_bus_volume_linear(bus_index, value / 100.0)
