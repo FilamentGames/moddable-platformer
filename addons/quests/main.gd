@@ -110,6 +110,8 @@ func _enter_tree() -> void:
 	GlobalQuests.quests = quests
 	dock_scene = preload("res://addons/quests/quest_dock/quest_dock.tscn").instantiate()
 
+	add_child(quests)
+
 	dock = EditorDock.new()
 	dock.add_child(dock_scene)
 	dock.title = "Quest"

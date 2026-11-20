@@ -21,6 +21,8 @@ enum EditorMode {
 ## The prefab to use for editable object indicators.
 @export var editable_object_indicator_prefab: PackedScene = preload("res://components/babygodot/editable_object_indicator/editable_object_indicator.tscn")
 
+@export var music: MusicManager
+
 ## Dispatched when the current scene has changed
 signal current_scene_updated()
 

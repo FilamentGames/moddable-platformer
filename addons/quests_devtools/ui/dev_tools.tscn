@@ -104,10 +104,6 @@ layout_mode = 2
 text = "Show
 "
 
-[node name="Spacer2" type="Control" parent="VBoxContainer/VBoxContainer" unique_id=1618953348]
-custom_minimum_size = Vector2(0, 32)
-layout_mode = 2
-
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/VBoxContainer" unique_id=194324554]
 layout_mode = 2
 
@@ -122,7 +118,7 @@ size_flags_horizontal = 4
 text = "Open Level0 Master"
 
 [node name="Spacer3" type="Control" parent="VBoxContainer/VBoxContainer" unique_id=984337318]
-custom_minimum_size = Vector2(0, 32)
+custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
 
 [node name="SkipToNextCheckpointButton" type="Button" parent="VBoxContainer/VBoxContainer" unique_id=1861148811]
@@ -130,17 +126,13 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "Skip to next checkpoint"
 
-[node name="Spacer5" type="Control" parent="VBoxContainer/VBoxContainer" unique_id=687240524]
-custom_minimum_size = Vector2(0, 32)
-layout_mode = 2
-
 [node name="DebugLevelButton" type="Button" parent="VBoxContainer/VBoxContainer" unique_id=2131102962]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Open Debug Level"
 
 [node name="Spacer6" type="Control" parent="VBoxContainer/VBoxContainer" unique_id=1332860647]
-custom_minimum_size = Vector2(0, 32)
+custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/VBoxContainer" unique_id=8806997]
@@ -155,7 +147,7 @@ text = "Auto-add player to clone's editable nodes: "
 layout_mode = 2
 
 [node name="Spacer4" type="Control" parent="VBoxContainer/VBoxContainer" unique_id=937543535]
-custom_minimum_size = Vector2(0, 32)
+custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/VBoxContainer" unique_id=1981126737]
@@ -189,8 +181,22 @@ size_flags_vertical = 4
 value = 100.0
 tick_count = 5
 
+[node name="HBoxContainer4" type="HBoxContainer" parent="VBoxContainer/VBoxContainer" unique_id=244285176]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer4" unique_id=2047270675]
+layout_mode = 2
+text = "Music Volume:"
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer/VBoxContainer/HBoxContainer4" unique_id=1101806726]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_vertical = 4
+tick_count = 5
+
 [node name="Spacer7" type="Control" parent="VBoxContainer/VBoxContainer" unique_id=446227445]
-custom_minimum_size = Vector2(0, 32)
+custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
 
 [node name="CoinButton" type="Button" parent="VBoxContainer/VBoxContainer" unique_id=938176066]
@@ -212,4 +218,5 @@ text = "+1 Coin"
 [connection signal="toggled" from="VBoxContainer/VBoxContainer/HBoxContainer/CheckBox" to="." method="_on_check_box_toggled"]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/HBoxContainer2/JumpToIdButton" to="." method="_on_jump_to_id_button_pressed"]
 [connection signal="value_changed" from="VBoxContainer/VBoxContainer/HBoxContainer3/HSlider" to="." method="_on_sfx_volume_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/VBoxContainer/HBoxContainer4/HSlider" to="." method="_on_music_volume_value_changed"]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/CoinButton" to="." method="_on_coin_button_pressed"]

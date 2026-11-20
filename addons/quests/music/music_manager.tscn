@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cpjj17nd7gxcy"]
+
+[ext_resource type="AudioStream" uid="uid://d4cs80pbi6dwo" path="res://assets/sounds/music/Threadbare_Main_Loud.ogg" id="1_q436f"]
+[ext_resource type="Script" uid="uid://gwjwispv8bil" path="res://addons/quests/music/music_manager.gd" id="1_ripes"]
+
+[node name="MusicManager" type="Node" unique_id=246403785 node_paths=PackedStringArray("play_mode_track", "edit_mode_track")]
+script = ExtResource("1_ripes")
+play_mode_track = NodePath("PlayMusic")
+edit_mode_track = NodePath("EditMusic")
+crossfade_duration = 0.5
+
+[node name="PlayMusic" type="AudioStreamPlayer" parent="." unique_id=1130070343]
+stream = ExtResource("1_q436f")
+bus = &"PlayMusic"
+parameters/looping = true
+
+[node name="EditMusic" type="AudioStreamPlayer" parent="." unique_id=1019074]
+stream = ExtResource("1_q436f")
+bus = &"EditMusic"
+parameters/looping = true
