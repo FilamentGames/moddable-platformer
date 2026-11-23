@@ -150,6 +150,7 @@ func _on_session_start() -> void:
 	GlobalQuests.quests.set_scene_tree_dock_visible(false, false)
 	GlobalQuests.quests.set_quest_dock_visible(false, false)
 	GlobalQuests.quests.hide_bottom_panel()
+	GlobalQuests.quests.mode_switched.emit()
 	GlobalQuests.quests.music.crossfade_tracks(MusicManager.Mode.PLAY_MODE)
 
 func _on_session_continue(session_id: int) -> void:
@@ -169,4 +170,5 @@ func _on_session_stop() -> void:
 	GlobalQuests.quests.set_inspector_dock_visible(_editor_unlock_state["inspector"], false)
 	GlobalQuests.quests.set_scene_tree_dock_visible(_editor_unlock_state["scene_tree"], false)
 	GlobalQuests.quests.set_quest_dock_visible(true)
+	GlobalQuests.quests.mode_switched.emit()
 	GlobalQuests.quests.music.crossfade_tracks(MusicManager.Mode.EDIT_MODE)

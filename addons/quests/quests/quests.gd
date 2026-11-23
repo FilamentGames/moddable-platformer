@@ -21,6 +21,10 @@ enum EditorMode {
 ## The prefab to use for editable object indicators.
 @export var editable_object_indicator_prefab: PackedScene = preload("res://components/babygodot/editable_object_indicator/editable_object_indicator.tscn")
 
+## Prefab to create for editor play/pause callouts.
+@export var editor_callout_prefab: PackedScene = preload("res://addons/quests/editor_callouts/play_pause_callout.tscn")
+
+## A reference to a music manager node.
 @export var music: MusicManager
 
 ## Dispatched when the current scene has changed
@@ -40,6 +44,12 @@ signal hint_purchased()
 
 ## Dispatched when a celebration animation is to be played
 signal celebration_animation()
+
+## Dispatched when the new quest line includes a given tag
+signal tag_reached(tag: String)
+
+## Dispatched when the mode has switched
+signal mode_switched()
 
 ## An object with methods `get_editor_scene`/`set_editor_scene` that provides access to the current editor scene. This should be the main plugin.
 var editor_scene_provider
@@ -81,7 +91,13 @@ func _init() -> void:
 	text_updated.connect(func():
 		if text_data[_current_text_line].show_celebration_animation:
 			celebration_animation.emit()
+		for tag in text_data[_current_text_line].tags:
+			tag_reached.emit.call_deferred(tag)
 	)
+
+func _ready() -> void:
+	var callout = editor_callout_prefab.instantiate()
+	callout.bind_to_editor.call_deferred()
 
 ## Get the current line of text of the quest
 func get_current_text() -> String:

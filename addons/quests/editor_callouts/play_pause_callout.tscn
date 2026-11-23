@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://d4mc2nhw5nflq"]
+
+[ext_resource type="Script" uid="uid://d1qmdja1f8c04" path="res://addons/quests/editor_callouts/play_pause_callout.gd" id="1_5ssy6"]
+
+[sub_resource type="Animation" id="Animation_5ssy6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ReferenceRect:border_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ReferenceRect:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_bdqi2"]
+resource_name = "callout_idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ReferenceRect:border_color")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 0, 1), Color(1, 0.5019608, 0, 1), Color(1, 0.99607843, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ReferenceRect:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8vif5"]
+_data = {
+&"RESET": SubResource("Animation_5ssy6"),
+&"callout_idle": SubResource("Animation_bdqi2")
+}
+
+[node name="PlayPauseCallout" type="Node2D" unique_id=1046960653 node_paths=PackedStringArray("timer", "border_rect", "animation_player")]
+script = ExtResource("1_5ssy6")
+timer = NodePath("WaitTimer")
+border_rect = NodePath("ReferenceRect")
+animation_player = NodePath("AnimationPlayer")
+
+[node name="WaitTimer" type="Timer" parent="." unique_id=59620249]
+wait_time = 10.0
+
+[node name="ReferenceRect" type="ReferenceRect" parent="." unique_id=293123926]
+offset_right = 32.0
+offset_bottom = 32.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+mouse_filter = 2
+border_color = Color(1, 1, 0, 1)
+border_width = 3.0
+editor_only = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1267024833]
+libraries/ = SubResource("AnimationLibrary_8vif5")
+autoplay = &"RESET"

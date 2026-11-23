@@ -338,3 +338,32 @@ func test_resetting_progress_resets_skipped_checkpoints():
 	assert_eq(provider._scene.get_node("Player").position, provider._scene.get_node("Checkpoint").position)
 
 	provider._scene.free()
+
+func test_handles_tags_on_quest_lines():
+	quests.text_data = [make_quest_line("Lorem"), make_quest_line("Ipsum"), make_quest_line("Potato")]
+	quests.text_data[1].tags = ["test"]
+
+	var spy := create_spy()
+	quests.tag_reached.connect(spy.callable)
+
+	quests.next()
+	quests.next()
+
+	await get_tree().process_frame
+
+	assert_eq(1, spy.get_number_of_calls())
+	assert_eq("test", spy._calls[0][0])
+
+func test_can_handle_multiple_tags_on_quest_lines():
+	quests.text_data = [make_quest_line("Lorem"), make_quest_line("Ipsum"), make_quest_line("Potato")]
+	quests.text_data[1].tags = ["test", "potato", "loremipsum", "etc"]
+
+	var spy := create_spy()
+	quests.tag_reached.connect(spy.callable)
+
+	quests.next()
+	quests.next()
+
+	await get_tree().process_frame
+
+	assert_eq(4, spy.get_number_of_calls())

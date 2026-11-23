@@ -23,3 +23,6 @@ enum ProgressMethod {
 
 ## A unique identifier for this text line that can be used to skip to it. That way we don't have to use the index of the text line OR the text itself, which may be subject to change.
 @export var identifier: String = ""
+
+## Additional data tags added to this script line, analogous to # tags in Ink. Can be used for things like triggering editor callouts or other functions when this dialogue line appears.
+@export var tags: Array[String] = []
