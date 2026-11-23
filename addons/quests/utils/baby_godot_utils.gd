@@ -39,6 +39,15 @@ static func toggle_streamlined_exclusive_dock(name: StringName, visible: bool) -
 		var verb := "open" if visible else "close"
 		print("Tried to " + verb + " the dock via `" + name + "` but it's not possible in this version of Godot!")
 
+## Set the minimum size of a dock we have access to in the streamlined editor.[br]
+## Example: `set_streamlined_exclusive_min_dock_size("get_inspector_dock", 120, 0)`
+static func set_streamlined_exclusive_min_dock_size(name: StringName, width: int, height: int = 0) -> void:
+	var dock: EditorDock = _get_streamlined_exclusive_dock(name)
+	if dock:
+		dock.custom_minimum_size = Vector2(maxf(0.0, width), maxf(0.0, height))
+	else:
+		print("Tried to set the size of the dock via `" + name + "` but it's not possible in this version of Godot!")
+
 ## Gets a string representation of a node's path, without it needing to be inside the root tree.
 static func get_node_path(node: Node, stop_node: Node = null) -> String:
 	if node.get_parent() and node != stop_node:

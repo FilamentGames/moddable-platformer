@@ -57,6 +57,11 @@ func update_and_save_node(node: Node) -> void:
 		await save_timer.timeout
 		EditorInterface.save_scene()
 
+func set_inspector_dock_min_size(width: int, height: int = 0) -> void:
+	BabyGodotUtils.set_streamlined_exclusive_min_dock_size("get_inspector_dock", width, height);
+
+func set_scene_tree_dock_min_size(width: int, height: int = 0) -> void:
+	BabyGodotUtils.set_streamlined_exclusive_min_dock_size("get_scene_tree_dock", width, height);
 
 func set_inspector_dock_visible(visible: bool) -> void:
 	BabyGodotUtils.toggle_streamlined_exclusive_dock("get_inspector_dock", visible)
@@ -115,13 +120,20 @@ func _enter_tree() -> void:
 	dock.title = "Quest"
 	dock.default_slot = EditorDock.DOCK_SLOT_LEFT_UL
 	dock.available_layouts = EditorDock.DOCK_LAYOUT_ALL
-
+	
 	add_dock(dock)
 	_dock_added = true
 
 	set_quest_dock_visible(false)
 	set_inspector_dock_visible(false)
 	set_scene_tree_dock_visible(false)
+
+	#	We can't hard-set a dock size, but what we can do is set a minimum
+	#	 so that when the dock *does* open, it can't go below this:
+	set_inspector_dock_min_size(500)
+	set_scene_tree_dock_min_size(200)
+	#	Quest dock
+	dock.custom_minimum_size = Vector2(300.0, 0)
 
 	_connect_scene_edit_signal()
 
