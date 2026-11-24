@@ -26,6 +26,7 @@ func _on_new_game_button_pressed() -> void:
 		_start_new_game()
 
 func _start_new_game() -> void:
+	GlobalQuests.quests.stop_game()
 	LevelResetter.instance.reset_levels()
 	GlobalQuests.quests._save_data_handler.clear_data()
 	GlobalQuests.quests.reset_progress()
