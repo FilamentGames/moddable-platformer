@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dqp5k1q6rn6pt"]
+
+[ext_resource type="Script" uid="uid://c7x25vo2hh3p" path="res://addons/quests/continuity/restore_saved_player_position.gd" id="1_jwtt0"]
+
+[node name="RestoreSavedPlayerPosition" type="Node" unique_id=700907317]
+script = ExtResource("1_jwtt0")

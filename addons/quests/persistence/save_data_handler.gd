@@ -9,6 +9,7 @@ var has_save_file := false
 func save(quests: BabyGodotQuests) -> void:
 	var dict := {}
 	dict["quests"] = {
+		"player": BabyGodotUtils.serialize_vector2(quests._last_player_pos),
 		"line": quests._current_text_line,
 		"coins": quests.global_coins,
 		"hint": quests._current_hint_index,
@@ -17,6 +18,7 @@ func save(quests: BabyGodotQuests) -> void:
 	}
 	dict["checkpoint_quest"] = _serialize_checkpoint_data_progress(quests)
 	dict["checkpoint"] = quests._checkpoint_helper.export()
+	dict["session"] = quests._play_session_state if quests._play_session_state else {}
 	_write_json(JSON.stringify(dict))
 	has_save_file = true
 
@@ -28,12 +30,14 @@ func load(quests: BabyGodotQuests) -> void:
 		return
 	has_save_file = true
 	var dict: Dictionary = json.data
+	quests._last_player_pos = BabyGodotUtils.deserialize_vector2(dict["quests"]["player"])
 	quests._current_text_line = dict["quests"]["line"]
 	quests.global_coins = dict["quests"]["coins"]
 	quests._current_hint_index = dict["quests"]["hint"]
 	quests.scrolls_collected = dict["quests"]["scrolls"].duplicate()
 	_deserialize_checkpoint_data_progress(quests, dict)
 	quests._checkpoint_helper.import(dict["checkpoint"])
+	quests._play_session_state = dict["session"] if dict.has("session") else {}
 	quests.text_updated.emit()
 	quests.coins_changed.emit()
 	quests.scroll_collected.emit()

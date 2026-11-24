@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://dymj5ixlolf1e"]
 
 [ext_resource type="Script" uid="uid://cwvs5uqu4hx5e" path="res://addons/quests_devtools/tool_objects/editable_node_list.gd" id="1_mp48n"]
+[ext_resource type="Script" uid="uid://c7x25vo2hh3p" path="res://addons/quests/continuity/restore_saved_player_position.gd" id="1_vjwix"]
 [ext_resource type="Script" uid="uid://div6o81p1idln" path="res://addons/quests_devtools/tool_objects/checkpoint_data_helper.gd" id="2_vjwix"]
 [ext_resource type="Script" uid="uid://ktu5vp6h2n5i" path="res://addons/quests_devtools/tool_objects/checkpoint_watch_entry.gd" id="3_n2vjn"]
 [ext_resource type="PackedScene" uid="uid://cswheshouik14" path="res://rules_goals/game_logic.tscn" id="4_ovnls"]
@@ -67,89 +68,89 @@
 [ext_resource type="SpriteFrames" uid="uid://de74lrhqf0xoa" path="res://components/player/spriteframes-storyweaver.tres" id="65_n0gy7"]
 [ext_resource type="PackedScene" uid="uid://do0lxo8lxw312" path="res://components/hud/hud2.tscn" id="66_ebggu"]
 
-[sub_resource type="Resource" id="Resource_mp48n"]
+[sub_resource type="Resource" id="Resource_vjwix"]
 script = ExtResource("3_n2vjn")
 node = NodePath("Room01_IntroAndRockPuzzle/RockPile")
 
-[sub_resource type="Resource" id="Resource_vjwix"]
+[sub_resource type="Resource" id="Resource_n2vjn"]
 script = ExtResource("3_n2vjn")
 node = NodePath("Room02_BridgeAndSwitchPuzzles/BridgePlatform")
 
-[sub_resource type="Resource" id="Resource_n2vjn"]
+[sub_resource type="Resource" id="Resource_ovnls"]
 script = ExtResource("3_n2vjn")
 node = NodePath("Room02_BridgeAndSwitchPuzzles/HittableObject")
 
-[sub_resource type="Resource" id="Resource_ovnls"]
+[sub_resource type="Resource" id="Resource_4bour"]
 script = ExtResource("3_n2vjn")
 node = NodePath("Room02_BridgeAndSwitchPuzzles/HittableObject/HittableController")
 dependencies = ["Room02_BridgeAndSwitchPuzzles/HittableObject"]
 
-[sub_resource type="Resource" id="Resource_4bour"]
+[sub_resource type="Resource" id="Resource_2d8dw"]
 script = ExtResource("3_n2vjn")
 node = NodePath("Room03_GetYarnSparkPuzzle/YarnSpark")
 
-[sub_resource type="Resource" id="Resource_2d8dw"]
+[sub_resource type="Resource" id="Resource_2h05j"]
 script = ExtResource("3_n2vjn")
 node = NodePath("Room03_GetYarnSparkPuzzle/YarnSpark/ObjectPropertyEqualityScrollCondition")
 dependencies = ["Room03_GetYarnSparkPuzzle/YarnSpark", NodePath("Room03_GetYarnSparkPuzzle/YarnSpark")]
 
-[sub_resource type="Resource" id="Resource_2h05j"]
+[sub_resource type="Resource" id="Resource_m8hul"]
 script = ExtResource("3_n2vjn")
 node = NodePath("Room03_GetYarnSparkPuzzle/YarnSpark")
 
-[sub_resource type="Resource" id="Resource_m8hul"]
+[sub_resource type="Resource" id="Resource_mlbs2"]
 script = ExtResource("3_n2vjn")
 node = NodePath("Room03_GetYarnSparkPuzzle/YarnSpark/Controllers/CollectibleContinuity")
 dependencies = ["Room03_GetYarnSparkPuzzle/YarnSpark"]
 
-[sub_resource type="Resource" id="Resource_mlbs2"]
+[sub_resource type="Resource" id="Resource_xuycu"]
 script = ExtResource("3_n2vjn")
 node = NodePath("Room03_GetYarnSparkPuzzle/TimedSwitch")
 
-[sub_resource type="Resource" id="Resource_xuycu"]
+[sub_resource type="Resource" id="Resource_ypkbb"]
 script = ExtResource("3_n2vjn")
 node = NodePath("Room04_EnemyEdgePuzzle/Enemy")
 
-[sub_resource type="Resource" id="Resource_ypkbb"]
+[sub_resource type="Resource" id="Resource_1nw5v"]
 script = ExtResource("3_n2vjn")
 node = NodePath("Room04_EnemyEdgePuzzle/YarnSpark3/ObjectPropertyEqualityScrollCondition")
 dependencies = ["Room04_EnemyEdgePuzzle/Enemy", NodePath("Room04_EnemyEdgePuzzle/YarnSpark3")]
 
-[sub_resource type="Resource" id="Resource_1nw5v"]
+[sub_resource type="Resource" id="Resource_8s37o"]
 script = ExtResource("3_n2vjn")
 node = NodePath("Room04_EnemyEdgePuzzle/YarnSpark3")
 
-[sub_resource type="Resource" id="Resource_8s37o"]
+[sub_resource type="Resource" id="Resource_yfohq"]
 script = ExtResource("3_n2vjn")
 node = NodePath("Room04_EnemyEdgePuzzle/Enemy2")
 
-[sub_resource type="Resource" id="Resource_yfohq"]
+[sub_resource type="Resource" id="Resource_gefjw"]
 script = ExtResource("3_n2vjn")
 node = NodePath("Room04_EnemyEdgePuzzle/YarnSpark2/ObjectPropertyEqualityScrollCondition")
 dependencies = ["Room04_EnemyEdgePuzzle/Enemy2", NodePath("Room04_EnemyEdgePuzzle/YarnSpark2")]
 
-[sub_resource type="Resource" id="Resource_gefjw"]
+[sub_resource type="Resource" id="Resource_ibf5t"]
 script = ExtResource("3_n2vjn")
 node = NodePath("Room04_EnemyEdgePuzzle/YarnSpark2")
 
-[sub_resource type="Resource" id="Resource_ibf5t"]
+[sub_resource type="Resource" id="Resource_rnh1a"]
 script = ExtResource("3_n2vjn")
 node = NodePath("Room05_PaintPuzzle/TileMapLayer_Stone")
 
-[sub_resource type="Resource" id="Resource_rnh1a"]
+[sub_resource type="Resource" id="Resource_k710v"]
 script = ExtResource("3_n2vjn")
 node = NodePath("Room05_PaintPuzzle/Enemy3")
 
-[sub_resource type="Resource" id="Resource_k710v"]
+[sub_resource type="Resource" id="Resource_235oo"]
 script = ExtResource("3_n2vjn")
 node = NodePath("Room05_PaintPuzzle/YarnSpark4/ObjectPropertyEqualityScrollCondition")
 dependencies = ["Room05_PaintPuzzle/Enemy3", NodePath("Room05_PaintPuzzle/YarnSpark4")]
 
-[sub_resource type="Resource" id="Resource_235oo"]
+[sub_resource type="Resource" id="Resource_4p881"]
 script = ExtResource("3_n2vjn")
 node = NodePath("Room05_PaintPuzzle/YarnSpark4")
 
-[sub_resource type="Resource" id="Resource_4p881"]
+[sub_resource type="Resource" id="Resource_5bsex"]
 script = ExtResource("3_n2vjn")
 node = NodePath("EditableNodeList")
 dependencies = Array[NodePath]([NodePath("Room01_IntroAndRockPuzzle/RockPile"), NodePath("Room02_BridgeAndSwitchPuzzles/BridgePlatform"), NodePath("Room02_BridgeAndSwitchPuzzles/HittableObject"), NodePath("Room03_GetYarnSparkPuzzle/YarnSpark"), NodePath("Room03_GetYarnSparkPuzzle/TimedSwitch"), NodePath("Room04_EnemyEdgePuzzle/Enemy"), NodePath("Room04_EnemyEdgePuzzle/Enemy2"), NodePath("Room05_PaintPuzzle/TileMapLayer_Stone"), NodePath("Room05_PaintPuzzle/Enemy3")])
@@ -160,13 +161,9 @@ default_font_size = 64
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0ff8d"]
 size = Vector2(300, 137)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5bsex"]
-resource_local_to_scene = true
-size = Vector2(94, 258)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o0rts"]
 resource_local_to_scene = true
-size = Vector2(352, 369)
+size = Vector2(94, 258)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_10g7q"]
 resource_local_to_scene = true
@@ -174,9 +171,13 @@ size = Vector2(352, 369)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c5fri"]
 resource_local_to_scene = true
-size = Vector2(324, 373)
+size = Vector2(352, 369)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sj77e"]
+resource_local_to_scene = true
+size = Vector2(324, 373)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0v71i"]
 resource_local_to_scene = true
 size = Vector2(413, 367)
 
@@ -522,21 +523,24 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lwt5q"]
 size = Vector2(705.37476, 39.000004)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0v71i"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tkbxy"]
 resource_local_to_scene = true
 size = Vector2(40, 2044)
 
 [node name="Main3" type="Node2D" unique_id=1511591426]
+
+[node name="RestoreSavedPlayerPosition" type="Node" parent="." unique_id=1441529708]
+script = ExtResource("1_vjwix")
 
 [node name="EditableNodeList" type="Node" parent="." unique_id=280926474 node_paths=PackedStringArray("nodes")]
 script = ExtResource("1_mp48n")
 nodes = [NodePath("../Room01_IntroAndRockPuzzle/RockPile")]
 metadata/_edit_lock_ = true
 
-[node name="CheckpointDataHelper" type="Node" parent="." unique_id=1500902680]
+[node name="CheckpointDataHelper" type="Node" parent="." unique_id=2039592710]
 editor_description = "This node is added to clone versions of levels to help the checkpoint system. The dev tools do a pretty expensive scan of the whole level to check for any objects the checkpoint system should watch and then saves them to this object so the checkpoint system doesn't have to do that big scan every time."
 script = ExtResource("2_vjwix")
-watched_nodes = Array[ExtResource("3_n2vjn")]([SubResource("Resource_mp48n"), SubResource("Resource_vjwix"), SubResource("Resource_n2vjn"), SubResource("Resource_ovnls"), SubResource("Resource_4bour"), SubResource("Resource_2d8dw"), SubResource("Resource_2h05j"), SubResource("Resource_m8hul"), SubResource("Resource_mlbs2"), SubResource("Resource_xuycu"), SubResource("Resource_ypkbb"), SubResource("Resource_1nw5v"), SubResource("Resource_8s37o"), SubResource("Resource_yfohq"), SubResource("Resource_gefjw"), SubResource("Resource_ibf5t"), SubResource("Resource_rnh1a"), SubResource("Resource_k710v"), SubResource("Resource_235oo"), SubResource("Resource_4p881")])
+watched_nodes = Array[ExtResource("3_n2vjn")]([SubResource("Resource_vjwix"), SubResource("Resource_n2vjn"), SubResource("Resource_ovnls"), SubResource("Resource_4bour"), SubResource("Resource_2d8dw"), SubResource("Resource_2h05j"), SubResource("Resource_m8hul"), SubResource("Resource_mlbs2"), SubResource("Resource_xuycu"), SubResource("Resource_ypkbb"), SubResource("Resource_1nw5v"), SubResource("Resource_8s37o"), SubResource("Resource_yfohq"), SubResource("Resource_gefjw"), SubResource("Resource_ibf5t"), SubResource("Resource_rnh1a"), SubResource("Resource_k710v"), SubResource("Resource_235oo"), SubResource("Resource_4p881"), SubResource("Resource_5bsex")])
 
 [node name="GameLogic" parent="." unique_id=1461208797 instance=ExtResource("4_ovnls")]
 win_by_collecting_coins = true
@@ -1055,7 +1059,7 @@ scale = Vector2(0.7200195, -0.5200013)
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" parent="Room01_IntroAndRockPuzzle/ForceQuestProgressTrigger_SolvedRockPuzzle" index="0" unique_id=490838596]
-shape = SubResource("RectangleShape2D_5bsex")
+shape = SubResource("RectangleShape2D_o0rts")
 metadata/_edit_lock_ = true
 
 [node name="SkipQuestTriggerBehavior" parent="Room01_IntroAndRockPuzzle/ForceQuestProgressTrigger_SolvedRockPuzzle" index="1" unique_id=1238036962]
@@ -1307,7 +1311,7 @@ metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" parent="Room02_BridgeAndSwitchPuzzles/ChangeEditableObjectsTrigger_StartRotatePuzzle" index="0" unique_id=490838596]
 position = Vector2(129, -55.5)
-shape = SubResource("RectangleShape2D_o0rts")
+shape = SubResource("RectangleShape2D_10g7q")
 metadata/_edit_lock_ = true
 
 [node name="Behavior" parent="Room02_BridgeAndSwitchPuzzles/ChangeEditableObjectsTrigger_StartRotatePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
@@ -1322,7 +1326,7 @@ metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" parent="Room02_BridgeAndSwitchPuzzles/ChangeEditableObjectsTrigger_StartSwitchPuzzle" index="0" unique_id=490838596]
 position = Vector2(129, -55.5)
-shape = SubResource("RectangleShape2D_10g7q")
+shape = SubResource("RectangleShape2D_c5fri")
 metadata/_edit_lock_ = true
 
 [node name="Behavior" parent="Room02_BridgeAndSwitchPuzzles/ChangeEditableObjectsTrigger_StartSwitchPuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
@@ -2094,7 +2098,7 @@ metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" parent="Room03_GetYarnSparkPuzzle/ChangeEditableObjectsTrigger_StartScrollPuzzle" index="0" unique_id=490838596]
 position = Vector2(115, -57.5)
-shape = SubResource("RectangleShape2D_c5fri")
+shape = SubResource("RectangleShape2D_sj77e")
 metadata/_edit_lock_ = true
 
 [node name="Behavior" parent="Room03_GetYarnSparkPuzzle/ChangeEditableObjectsTrigger_StartScrollPuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
@@ -2337,7 +2341,7 @@ metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" parent="Room04_EnemyEdgePuzzle/ChangeEditableObjectsTrigger_StartScrollPuzzle2" index="0" unique_id=490838596]
 position = Vector2(159.5, -54.5)
-shape = SubResource("RectangleShape2D_sj77e")
+shape = SubResource("RectangleShape2D_0v71i")
 metadata/_edit_lock_ = true
 
 [node name="Behavior" parent="Room04_EnemyEdgePuzzle/ChangeEditableObjectsTrigger_StartScrollPuzzle2" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]
@@ -2651,7 +2655,7 @@ metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" parent="Room05_PaintPuzzle/ChangeEditableObjectsTrigger_StartTilePuzzle" index="0" unique_id=490838596]
 position = Vector2(-27, -893)
-shape = SubResource("RectangleShape2D_0v71i")
+shape = SubResource("RectangleShape2D_tkbxy")
 metadata/_edit_lock_ = true
 
 [node name="Behavior" parent="Room05_PaintPuzzle/ChangeEditableObjectsTrigger_StartTilePuzzle" index="1" unique_id=1344129436 node_paths=PackedStringArray("add_objects")]

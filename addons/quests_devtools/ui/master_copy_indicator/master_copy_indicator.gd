@@ -39,7 +39,18 @@ static func _get_master_copy_scene(scene: PackedScene) -> PackedScene:
 	return _add_editable_node_list_to_scene(_add_master_level_lock_to_scene(scene))
 
 static func _get_clone_copy_scene(scene: PackedScene) -> PackedScene:
-	return _calculate_checkpoint_watch_nodes(_lock_uneditable_nodes(_remove_master_level_lock_from_scene(scene)))
+	return _add_restore_player_position(_calculate_checkpoint_watch_nodes(_lock_uneditable_nodes(_remove_master_level_lock_from_scene(scene))))
+
+static func _add_restore_player_position(scene: PackedScene) -> PackedScene:
+	## TODO: Refactor to eliminate some more code duplication?
+	return _edit_scene(scene, func(root: Node):
+		if not root.get_node_or_null("RestoreSavedPlayerPosition"):
+			var save := RestoreSavedPlayerPosition.new()
+			save.name = "RestoreSavedPlayerPosition"
+			root.add_child(save)
+			save.owner = root
+			root.move_child(save, 0)
+	)
 
 static func _add_master_level_lock_to_scene(scene: PackedScene) -> PackedScene:
 	return _edit_scene(scene, func(root: Node):

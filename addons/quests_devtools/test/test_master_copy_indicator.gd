@@ -232,4 +232,15 @@ func test_it_scans_the_level_for_watchable_nodes():
 	var yarnspark = checkpoint_data.watched_nodes[i]
 	assert_array_contains(bare_nodes_list, ^"Yarnspark")
 
-	assert_eq(checkpoint_data.watched_nodes.size(), 7, "Watched object list is correct size")	
+	assert_eq(checkpoint_data.watched_nodes.size(), 7, "Watched object list is correct size")
+
+func test_it_creates_restore_saved_player_position_object():
+	var scene: Node = autofree(Node.new())
+
+	var packed_scene: PackedScene = autofree(PackedScene.new())
+	packed_scene.pack(scene)
+	var clone_copy: Node = autofree(MasterCopyIndicator._add_restore_player_position(packed_scene).instantiate())
+
+	assert_not_null(clone_copy.get_node_or_null("RestoreSavedPlayerPosition"), "No errors when RestoreSavedPlayerPosition is absent")
+
+	clone_copy.free()

@@ -53,3 +53,9 @@ static func get_node_path(node: Node, stop_node: Node = null) -> String:
 	if node.get_parent() and node != stop_node:
 		return get_node_path(node.get_parent(), stop_node) + "/" + node.name
 	return node.name
+
+static func serialize_vector2(vec: Vector2) -> Array:
+	return [vec.x, vec.y]
+
+static func deserialize_vector2(arr: Array) -> Vector2:
+	return Vector2(arr[0], arr[1])

@@ -86,6 +86,7 @@ func _capture(message, data, session_id):
 			return true
 		"delete_node_in_editor":
 			_collected_objects.append(data[1])
+			_save_session_data()
 			return true
 		"update_editable_objects":
 			GlobalQuests.quests.update_editable_objects(data[1], data[2])
@@ -93,6 +94,7 @@ func _capture(message, data, session_id):
 		"collect_coin":
 			GlobalQuests.quests.collect_coin()
 			_collected_objects.append(data[1])
+			_save_session_data()
 			return true
 		"get_global_coins":
 			_send_message(session_id, sender_id, "reply_get_global_coins", [GlobalQuests.quests.global_coins])
@@ -113,6 +115,7 @@ func _capture(message, data, session_id):
 				"parent": data[1],
 				"prefab": data[2],
 			})
+			_save_session_data()
 			return true
 		"set_node_property":
 			_set_properties.append({
@@ -120,6 +123,7 @@ func _capture(message, data, session_id):
 				"property": data[2],
 				"value": data[3]
 			})
+			_save_session_data()
 			return true
 	return false
 
@@ -172,3 +176,8 @@ func _on_session_stop() -> void:
 	GlobalQuests.quests.set_quest_dock_visible(true)
 	GlobalQuests.quests.mode_switched.emit()
 	GlobalQuests.quests.music.crossfade_tracks(MusicManager.Mode.EDIT_MODE)
+
+func _save_session_data() -> void:
+	GlobalQuests.quests.save_current_play_session(
+		QuestsBridgeSerializer.serialize(self)
+	)

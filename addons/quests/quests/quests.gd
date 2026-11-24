@@ -87,6 +87,9 @@ var _save_data_handler: SaveDataHandler
 
 var _unlocked_docks: Set = Set.new()
 
+## Used for saving changes made in the current play session in case the player refreshes before pausing.
+var _play_session_state: Dictionary = {}
+
 func _init() -> void:
 	text_updated.connect(func():
 		if text_data[_current_text_line].show_celebration_animation:
@@ -201,6 +204,7 @@ func register_player_position(pos: Vector2) -> void:
 	if _lock_player_position:
 		return
 	_last_player_pos = pos
+	attempt_save()
 
 func update_player_position(save: bool = true) -> void:
 	var scene: Node2D = editor_scene_provider.get_editor_scene()
@@ -379,3 +383,11 @@ func stop_game() -> void:
 func attempt_save() -> void:
 	if _save_data_handler:
 		_save_data_handler.save(self)
+
+func save_current_play_session(session_data: Dictionary) -> void:
+	_play_session_state = session_data
+	attempt_save()
+
+func apply_session_data() -> void:
+	if _play_session_state and _play_session_state.keys().size() > 0:
+		QuestsBridgeSerializer.hydrate(_play_session_state, self)
