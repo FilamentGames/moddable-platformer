@@ -7,9 +7,11 @@ var main_screen_reference
 @export var continue_button: Button
 
 func _enter_tree() -> void:
+	await get_tree().process_frame
 	continue_button.disabled = not GlobalQuests.quests._save_data_handler.has_save_file
 
 func _on_new_game_button_pressed() -> void:
+	await get_tree().process_frame
 	if GlobalQuests.quests._save_data_handler.has_save_file:
 		var dialog := ConfirmationDialog.new()
 		dialog.title = "Erase Save Data?"
